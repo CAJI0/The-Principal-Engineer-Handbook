@@ -1,0 +1,9 @@
+extends: existence
+message: "Do not resolve author decisions by inventing content. Use AUTHOR NOTE when author input is needed."
+level: warning
+ignorecase: true
+tokens:
+  - obviously
+  - clearly
+  - simply
+  - everyone knows

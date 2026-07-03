@@ -1,0 +1,21 @@
+name: Author decision
+description: Track a question that requires author input.
+title: "Author decision: "
+labels:
+  - author-decision
+body:
+  - type: textarea
+    id: question
+    attributes:
+      label: Decision needed
+      description: What decision do authors need to make?
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: Where does this affect the manuscript or repository?
+    validations:
+      required: true
+

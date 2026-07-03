@@ -1,0 +1,29 @@
+name: Manuscript maintenance
+description: Organize, format, cross-reference, or improve maintainability without inventing content.
+title: "Manuscript maintenance: "
+labels:
+  - manuscript
+  - maintenance
+body:
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope
+      description: What part of the manuscript or repository needs maintenance?
+    validations:
+      required: true
+  - type: textarea
+    id: author-boundary
+    attributes:
+      label: Author boundary
+      description: What author decisions, if any, must not be changed?
+    validations:
+      required: false
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: This issue does not ask maintainers to invent new manuscript content.
+          required: true
+

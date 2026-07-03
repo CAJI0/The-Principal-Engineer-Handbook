@@ -1,0 +1,314 @@
+version: 0.1.0
+project: The Principal Engineer Handbook
+codename: PEAK
+entities:
+  vocabulary:
+    - id: VOCAB-001
+      type: vocabulary
+      name: Change Radius
+      path: vocabulary/change-radius.md
+      status: draft
+    - id: VOCAB-002
+      type: vocabulary
+      name: Weak Signal
+      path: vocabulary/weak-signal.md
+      status: draft
+    - id: VOCAB-003
+      type: vocabulary
+      name: Decision Journal
+      path: vocabulary/decision-journal.md
+      status: draft
+    - id: VOCAB-004
+      type: vocabulary
+      name: Mistake Ledger
+      path: vocabulary/mistake-ledger.md
+      status: draft
+    - id: VOCAB-005
+      type: vocabulary
+      name: Deletion Day
+      path: vocabulary/deletion-day.md
+      status: draft
+    - id: VOCAB-006
+      type: vocabulary
+      name: Architecture Freeze
+      path: vocabulary/architecture-freeze.md
+      status: draft
+    - id: VOCAB-007
+      type: vocabulary
+      name: Architecture Health
+      path: vocabulary/architecture-health.md
+      status: draft
+    - id: VOCAB-008
+      type: vocabulary
+      name: Silent Coupling
+      path: vocabulary/silent-coupling.md
+      status: draft
+    - id: VOCAB-009
+      type: vocabulary
+      name: Utility Gravity
+      path: vocabulary/utility-gravity.md
+      status: draft
+    - id: VOCAB-010
+      type: vocabulary
+      name: Boolean Explosion
+      path: vocabulary/boolean-explosion.md
+      status: draft
+  laws:
+    - id: LAW-001
+      type: law
+      name: Every State Has One Owner
+      path: laws/every-state-has-one-owner.md
+      status: draft
+    - id: LAW-002
+      type: law
+      name: Every API Is a Promise
+      path: laws/every-api-is-a-promise.md
+      status: draft
+    - id: LAW-003
+      type: law
+      name: Time Is a Dependency
+      path: laws/time-is-a-dependency.md
+      status: draft
+    - id: LAW-004
+      type: law
+      name: Simplicity Is a Feature
+      path: laws/simplicity-is-a-feature.md
+      status: draft
+    - id: LAW-005
+      type: law
+      name: Evidence Before Confidence
+      path: laws/evidence-before-confidence.md
+      status: draft
+    - id: LAW-006
+      type: law
+      name: Unused Flexibility Is Waste
+      path: laws/unused-flexibility-is-waste.md
+      status: draft
+  principles: []
+  maxims: []
+  artifacts:
+    - id: ARTIFACT-001
+      type: artifact
+      name: ADR
+      path: artifacts/adr.md
+      status: draft
+    - id: ARTIFACT-002
+      type: artifact
+      name: RFC
+      path: artifacts/rfc.md
+      status: draft
+    - id: ARTIFACT-003
+      type: artifact
+      name: Decision Journal
+      path: artifacts/decision-journal.md
+      status: draft
+    - id: ARTIFACT-004
+      type: artifact
+      name: Mistake Ledger
+      path: artifacts/mistake-ledger.md
+      status: draft
+    - id: ARTIFACT-005
+      type: artifact
+      name: Event Catalog
+      path: artifacts/event-catalog.md
+      status: draft
+    - id: ARTIFACT-006
+      type: artifact
+      name: Architecture Ledger
+      path: artifacts/architecture-ledger.md
+      status: draft
+    - id: ARTIFACT-007
+      type: artifact
+      name: Weak Signal Register
+      path: artifacts/weak-signal-register.md
+      status: draft
+  rituals:
+    - id: RITUAL-001
+      type: ritual
+      name: Architecture Review
+      path: rituals/architecture-review.md
+      status: draft
+    - id: RITUAL-002
+      type: ritual
+      name: Architecture Freeze
+      path: rituals/architecture-freeze.md
+      status: draft
+    - id: RITUAL-003
+      type: ritual
+      name: Deletion Day
+      path: rituals/deletion-day.md
+      status: draft
+    - id: RITUAL-004
+      type: ritual
+      name: Architecture Health Review
+      path: rituals/architecture-health-review.md
+      status: draft
+    - id: RITUAL-005
+      type: ritual
+      name: Architecture Court
+      path: rituals/architecture-court.md
+      status: draft
+    - id: RITUAL-006
+      type: ritual
+      name: RFC Friday
+      path: rituals/rfc-friday.md
+      status: draft
+  metrics:
+    - id: METRIC-001
+      type: metric
+      name: Change Radius
+      path: metrics/change-radius.md
+      status: draft
+    - id: METRIC-002
+      type: metric
+      name: Bus Factor
+      path: metrics/bus-factor.md
+      status: draft
+    - id: METRIC-003
+      type: metric
+      name: Discoverability
+      path: metrics/discoverability.md
+      status: draft
+    - id: METRIC-004
+      type: metric
+      name: API Stability
+      path: metrics/api-stability.md
+      status: draft
+    - id: METRIC-005
+      type: metric
+      name: Architecture Health
+      path: metrics/architecture-health.md
+      status: draft
+  smells:
+    - id: SMELL-001
+      type: smell
+      name: Silent Coupling
+      path: smells/silent-coupling.md
+      status: draft
+    - id: SMELL-002
+      type: smell
+      name: Utility Gravity
+      path: smells/utility-gravity.md
+      status: draft
+    - id: SMELL-003
+      type: smell
+      name: Boolean Explosion
+      path: smells/boolean-explosion.md
+      status: draft
+    - id: SMELL-004
+      type: smell
+      name: Hidden State
+      path: smells/hidden-state.md
+      status: draft
+    - id: SMELL-005
+      type: smell
+      name: Platform Leakage
+      path: smells/platform-leakage.md
+      status: draft
+    - id: SMELL-006
+      type: smell
+      name: Event Explosion
+      path: smells/event-explosion.md
+      status: draft
+  anti_patterns:
+    - id: ANTIPATTERN-001
+      type: anti_pattern
+      name: God Module
+      path: anti-patterns/god-module.md
+      status: draft
+    - id: ANTIPATTERN-002
+      type: anti_pattern
+      name: HAL Everywhere
+      path: anti-patterns/hal-everywhere.md
+      status: draft
+    - id: ANTIPATTERN-003
+      type: anti_pattern
+      name: Global Configuration
+      path: anti-patterns/global-configuration.md
+      status: draft
+    - id: ANTIPATTERN-004
+      type: anti_pattern
+      name: Manager Mania
+      path: anti-patterns/manager-mania.md
+      status: draft
+    - id: ANTIPATTERN-005
+      type: anti_pattern
+      name: Callback Hell
+      path: anti-patterns/callback-hell.md
+      status: draft
+    - id: ANTIPATTERN-006
+      type: anti_pattern
+      name: Temporary Solution
+      path: anti-patterns/temporary-solution.md
+      status: draft
+  stories: []
+  failure_stories:
+    - id: FAILURE-001
+      type: failure_story
+      name: Logger That Became a Platform
+      path: failure-stories/logger-that-became-a-platform.md
+      status: draft
+    - id: FAILURE-002
+      type: failure_story
+      name: One Lost Packet
+      path: failure-stories/one-lost-packet.md
+      status: draft
+    - id: FAILURE-003
+      type: failure_story
+      name: The Successful Prototype
+      path: failure-stories/successful-prototype.md
+      status: draft
+    - id: FAILURE-004
+      type: failure_story
+      name: The Hero Engineer
+      path: failure-stories/hero-engineer.md
+      status: draft
+    - id: FAILURE-005
+      type: failure_story
+      name: The Release We Should Have Delayed
+      path: failure-stories/release-we-should-have-delayed.md
+      status: draft
+  chapters:
+    - id: CHAPTER-001
+      type: chapter
+      name: What Is a Principal Engineer?
+      path: ../book/01-thinking-like-a-principal/01-what-is-a-principal-engineer.md
+      status: canonical
+  adrs:
+    - id: ADR-001
+      type: adr
+      name: Use ADRs for Book Decisions
+      path: ../editor/decisions/ADR-001-use-adr-for-book-decisions.md
+      status: accepted
+  rfcs: []
+relationships:
+  - from: LAW-002
+    type: related_to
+    to: ARTIFACT-001
+  - from: SMELL-002
+    type: violates
+    to: LAW-004
+  - from: FAILURE-001
+    type: illustrates
+    to: LAW-006
+  - from: METRIC-001
+    type: related_to
+    to: RITUAL-004
+  - from: RITUAL-001
+    type: produces
+    to: ARTIFACT-001
+  - from: ARTIFACT-002
+    type: mitigates
+    to: SMELL-001
+  - from: FAILURE-002
+    type: illustrates
+    to: LAW-003
+  - from: ANTIPATTERN-003
+    type: violates
+    to: LAW-001
+  - from: CHAPTER-001
+    type: references
+    to: ARTIFACT-001
+  - from: CHAPTER-001
+    type: illustrates
+    to: SMELL-001

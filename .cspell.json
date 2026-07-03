@@ -1,0 +1,29 @@
+{
+  "version": "0.2",
+  "language": "en",
+  "files": [
+    "**/*.md",
+    "mkdocs.yml"
+  ],
+  "ignorePaths": [
+    ".git",
+    "site",
+    "node_modules"
+  ],
+  "words": [
+    "ADR",
+    "ADRs",
+    "HAL",
+    "MkDocs",
+    "Mermaid",
+    "PEAK",
+    "RFC",
+    "RFCs",
+    "STM32",
+    "VOCAB",
+    "markdownlint",
+    "playbook",
+    "pymdownx",
+    "proselint"
+  ]
+}

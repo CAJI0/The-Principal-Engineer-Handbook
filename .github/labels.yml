@@ -1,0 +1,22 @@
+- name: author-decision
+  color: "B60205"
+  description: Requires an author decision before maintainers proceed.
+- name: build
+  color: "1D76DB"
+  description: Build and publishing pipeline work.
+- name: documentation
+  color: "0075CA"
+  description: Repository documentation.
+- name: maintenance
+  color: "C2E0C6"
+  description: Repository or manuscript maintenance.
+- name: manuscript
+  color: "5319E7"
+  description: Manuscript organization and editing infrastructure.
+- name: quality
+  color: "FBCA04"
+  description: Linting, spelling, links, and quality gates.
+- name: release
+  color: "0E8A16"
+  description: Release preparation and publishing.
+

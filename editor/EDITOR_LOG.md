@@ -1,0 +1,99 @@
+# Editor Log
+
+Chronological log of editorial maintenance work.
+
+## 2026-07-03
+
+- Bootstrapped Sprint 0 repository foundation.
+- Reviewed Sprint 0 repository foundation and recorded cleanup recommendations.
+- Started Sprint 1 reader-facing manuscript work by creating front matter before chapters.
+- Added manifesto, preface, and table of contents to keep the project architecture-first.
+- Defined the canonical chapter architecture before drafting Chapter 1.
+- Started Sprint 3 and created the first manuscript chapter.
+- Applied the canonical chapter architecture to Chapter 1.
+- Introduced PEAK as the internal knowledge model behind the handbook.
+- Moved the project from a linear manuscript toward a knowledge-backed handbook.
+- Established that future chapters should reuse PEAK concepts instead of redefining them.
+
+## Sprint 4 Knowledge Architecture
+
+- Introduced PEAK as a structured knowledge model.
+- Treated the handbook as one rendering of a broader engineering knowledge graph.
+- Added stable IDs, relationship types, and the first machine-readable knowledge index.
+
+## Sprint 5 Architecture Review 0
+
+- The project paused manuscript expansion to review repository architecture and PEAK knowledge architecture.
+- This follows the handbook's own principle that architecture should be reviewed before scaling implementation.
+
+## Sprint 6 Foundation Cleanup Before Freeze
+
+- Resolved main Architecture Review 0 actions before Freeze 0.
+- Defined source-of-truth rules for manuscript, documentation, knowledge concepts, canon, book architecture, and templates.
+- Made stable knowledge IDs visible in existing concept Markdown files.
+- Clarified that `book/` is canonical manuscript source and `docs/` is publishing support.
+
+## Phase 2 Chapter 1 Reviews
+
+- Chapter: What Is a Principal Engineer?
+- Editorial Review: Approved with minor changes.
+- Editorial result: tightened narrative flow, reduced repetition, and preserved the chapter's central thesis.
+- Canon Review followed as a separate stage.
+- Canon Review: Approved with minor changes.
+- Canon result: resolved the chapter-level principle versus PEAK law conflict, clarified the chapter-local ADR label, and aligned CHAPTER-001 PEAK relationships.
+- Technical Review followed as a separate stage.
+- Technical Review: Approved with minor changes.
+- Technical result: tightened technical precision around story causality, duplicated assumptions, role contrast, technical debt, abstraction obligations, decision timing, decision retirement, and the architecture exercise.
+- Unresolved AUTHOR NOTE items: none.
+- Freeze Review has not been performed.
+
+## Phase 2 Chapter 1 Technical Review Remediation
+
+- Chapter: What Is a Principal Engineer?
+- Stage: Technical Review remediation.
+- Outcome: Approved with minor changes.
+- Remaining technical review areas examined: manufacturing-story causality, duplicated assumptions, role distinction, technical debt, abstraction obligations, decision lifecycle, architecture exercise, and remaining absolutes.
+- Corrections: clarified investigation signals versus confirmed cause, replaced unowned duplication wording with an authoritative calibration contract, clarified retirement of commitments versus preservation of decision records, and tightened architecture exercise criteria.
+- Unresolved AUTHOR NOTE items: none.
+- Freeze Review has not been performed.
+
+## Phase 2 Chapter 1 Freeze Review
+
+- Chapter: What Is a Principal Engineer?
+- Stable ID: CHAPTER-001.
+- Stage: Freeze Review.
+- Baseline commit reviewed: 7825661b612573c5a0ce43ce22df26ecc532e39f.
+- Outcome: Approved.
+- Prior review stages present: Editorial Review, Canon Review, Technical Review, and Technical Review remediation.
+- Freeze Criteria checked: review history, one central idea, canonical chapter architecture,
+  editorial stability, canon stability, technical stability, story credibility, PEAK integrity,
+  and reader value.
+- Manuscript changes made: none.
+- Unresolved AUTHOR NOTE items: none in Chapter 1.
+- Validation commands and results:
+  - `git diff --check`: passed.
+  - Direct Python Freeze checks: section order, AUTHOR NOTE, conflict markers, CHAPTER-001 uniqueness,
+    path resolution, relationships, supported statuses, supported relationship types, and lifecycle state passed.
+  - `npm run lint:md`: not run; `npm` is unavailable in the local PATH.
+  - `npm run lint:spelling`: not run; `npm` is unavailable in the local PATH.
+  - `npm run lint:links`: not run; `npm` is unavailable in the local PATH.
+  - `vale docs`: not run; `vale` is unavailable in the local PATH.
+  - `mkdocs build --strict`: not run; `mkdocs` is unavailable in the local PATH.
+- Final lifecycle state: CHAPTER-001 moved from draft to canonical.
+- Chapter 1 is Frozen.
+- Future substantive changes require reopening the chapter at the appropriate review stage.
+
+## Chapter 1 Post-Freeze Consistency Maintenance
+
+- Removed the stale `(Draft)` marker from the reader-facing table of contents.
+- Chapter 1 remains Frozen and canonical.
+- Manuscript content changed: none.
+- Review stage reopened: none.
+
+## Pre-Chapter 2 Canon Classification Alignment
+
+- Found classification drift between the editorial canon summary and the PEAK registry.
+- Moved `LAW-002` through `LAW-006` from the Maxims summary to the Laws summary.
+- PEAK IDs, concept files, statuses, and relationships changed: none.
+- Chapter 1 remains Frozen and canonical.
+- Chapter 2 was not started.
