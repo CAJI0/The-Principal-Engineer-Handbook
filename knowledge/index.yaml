@@ -355,3 +355,12 @@ relationships:
   - from: CHAPTER-003
     type: references
     to: SMELL-004
+  - from: CHAPTER-003
+    type: references
+    to: SMELL-001
+  - from: CHAPTER-003
+    type: references
+    to: ARTIFACT-007
+  - from: CHAPTER-003
+    type: references
+    to: RITUAL-001

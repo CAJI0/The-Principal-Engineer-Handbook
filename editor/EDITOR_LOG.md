@@ -408,3 +408,65 @@ Chronological log of editorial maintenance work.
 - Chapter 4 started: no.
 - Chapter 3 Canon Review performed: no.
 - Next lifecycle stage: Chapter 3 Canon Review.
+
+## Phase 3 Chapter 3 Canon Review
+
+- Chapter: Asking Better Engineering Questions.
+- Stable ID: CHAPTER-003.
+- Branch: `chapter3`.
+- Reviewed baseline commit: `fee89e71243f12af07515a602d1672da85676bea`.
+- Lifecycle stage: Canon Review.
+- Review scope: central idea, chapter boundaries, canonical terminology, PEAK concept reuse, Chapter 3 relationships,
+  concept duplication, chapter-local Engineering Principle, chapter-local ADR, and chapter architecture.
+- Review outcome: Approved with minor changes.
+- Central-idea result: preserved; every major section supports making hidden assumptions testable before they become
+  architecture.
+- Chapter-boundary result relative to Chapters 1 and 2: Chapter 3 builds on Chapter 1's question discipline and stops
+  before Chapter 2's option selection, accepted risk, and commitment-management work.
+- Later-chapter boundary result: ownership, evidence quality, incident handling, and Architecture Review remain bounded
+  support topics rather than replacement chapter theses.
+- Terminology result: canonical names and IDs are used correctly for `LAW-005`, `LAW-001`, `LAW-002`, `LAW-003`,
+  `VOCAB-002`, `ARTIFACT-007`, `SMELL-001`, `SMELL-004`, and `RITUAL-001`.
+- Undefined-term result: no undefined canonical terminology found.
+- Canonical-name and stable-ID result: all explicit PEAK IDs in the manuscript exist and match their entity types.
+- PEAK concept reuse result: existing concepts are reused without redefining them.
+- Concept-duplication result: no duplicate law, ritual, artifact, metric, smell, or vocabulary concept is implied.
+- New-concept requirement: none.
+- Chapter-local Engineering Principle result: preserved exactly and not registered as a PEAK law or principle.
+- Chapter-local ADR result: locally scoped; wording clarified so device ownership is a story-local decision, not a
+  universal mandate.
+- Existing Chapter 3 relationships audited: `CHAPTER-003 illustrates LAW-005`; `CHAPTER-003 references VOCAB-002`;
+  `CHAPTER-003 references LAW-001`; `CHAPTER-003 references LAW-002`; `CHAPTER-003 references LAW-003`;
+  `CHAPTER-003 references SMELL-004`.
+- Relationships retained: all existing Chapter 3 relationships.
+- Relationships added: `CHAPTER-003 references SMELL-001`; `CHAPTER-003 references ARTIFACT-007`;
+  `CHAPTER-003 references RITUAL-001`.
+- Relationships removed: none.
+- Relationships corrected: none.
+- Relationship-change justification: `SMELL-001`, `ARTIFACT-007`, and `RITUAL-001` are explicitly named and materially
+  used in the Chapter 3 discussion; `references` is the strongest accurate supported relationship type.
+- Draft-log reuse discrepancy: Draft log listed `METRIC-003`, but the manuscript uses discoverability only as ordinary
+  prose; no `CHAPTER-003` relationship to `METRIC-003` was added.
+- Manuscript corrections made: clarified story-local scope of the Chapter ADR decision.
+- Unresolved canon issues: none.
+- Remaining `AUTHOR NOTE` items: none.
+- Files changed: `book/01-thinking-like-a-principal/03-asking-better-engineering-questions.md`, `knowledge/index.yaml`,
+  and `editor/EDITOR_LOG.md`.
+- Validation commands and results:
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `vale --config .vale.ini book/01-thinking-like-a-principal/03-asking-better-engineering-questions.md editor/EDITOR_LOG.md`:
+    passed with 0 errors, 0 warnings, and 0 suggestions.
+  - `python -m mkdocs build --strict`: passed.
+  - `python -m pip check`: passed.
+  - `knowledge/index.yaml` parsed successfully and direct Chapter 3 relationship integrity checks passed.
+- `editor/CANON.md` changed: no.
+- PEAK concept files changed: no.
+- PEAK entity statuses changed: no.
+- Frozen chapters changed: no.
+- Chapter 4 started: no.
+- Technical Review performed: no.
+- Freeze Review performed: no.
+- Next lifecycle stage: Technical Review.

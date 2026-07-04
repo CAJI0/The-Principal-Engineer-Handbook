@@ -285,7 +285,7 @@ command acceptance, completed state change, and freshness of observed state.
 
 ### Decision
 
-The device owns authoritative operational state.
+In this system, the device owns authoritative operational state.
 
 The gateway publishes last-observed state with explicit freshness metadata. Acknowledgment, command acceptance, and
 resulting state are separate facts. Consumers do not infer freshness from transport success. Timing and validity semantics
