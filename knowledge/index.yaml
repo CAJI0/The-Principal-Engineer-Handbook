@@ -278,7 +278,7 @@ entities:
       type: chapter
       name: Decision-Making Under Constraints
       path: ../book/01-thinking-like-a-principal/02-decision-making-under-constraints.md
-      status: draft
+      status: canonical
   adrs:
     - id: ADR-001
       type: adr

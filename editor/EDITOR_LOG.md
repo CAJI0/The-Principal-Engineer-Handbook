@@ -264,3 +264,43 @@ Chronological log of editorial maintenance work.
 - Freeze Review Retry has not been performed.
 - Branch merged: no.
 - Chapter 3 started: no.
+
+## Phase 2 Chapter 2 Freeze Review Retry
+
+- Chapter: Decision-Making Under Constraints.
+- Stable ID: CHAPTER-002.
+- Branch: `chapter2`.
+- Technical Review baseline commit: `847db1aec67e93d961512f66e61c908dc342e7c8`.
+- Freeze Validation Remediation baseline commit: `fbcb07d`.
+- Previous Freeze Review outcome: Request changes.
+- Freeze Validation Remediation outcome: Approved with minor changes.
+- Retry outcome: Approved.
+- Review-history verification: Draft, Editorial Review, Canon Review, Technical Review, previous Freeze Review, and
+  Freeze Validation Remediation records are present and distinct.
+- Freeze Criteria result: central idea, chapter architecture, editorial stability, canon stability, technical stability,
+  PEAK integrity, and validation remediation were checked and passed.
+- Validation commands and results:
+  - `git status --short`: only `knowledge/index.yaml` changed before this log entry.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `vale --config .vale.ini book/01-thinking-like-a-principal/02-decision-making-under-constraints.md`: passed with
+    0 errors, 0 warnings, and 0 suggestions.
+  - `Remove-Item Env:ENABLE_PDF_EXPORT -ErrorAction SilentlyContinue; python -m mkdocs build --strict`: passed.
+  - `python -m pip check`: passed.
+  - `vale .`: passed with 0 errors and 5 existing AuthorBoundary warnings outside Chapter 2.
+  - `knowledge/index.yaml` parsed successfully.
+- Manuscript changes made: none.
+- PEAK integrity result: `CHAPTER-002` exists exactly once, path resolves, expected relationships are present, targets
+  exist, relationship types are supported, and no duplicate relationship edge exists.
+- Unresolved canon issues: none.
+- Unresolved technical issues: none.
+- Unresolved validation blockers: none.
+- Unresolved `AUTHOR NOTE` items: none in Chapter 2.
+- Final lifecycle state: `CHAPTER-002` moved from `draft` to `canonical`.
+- Chapter 2 is Frozen.
+- Future substantive changes require reopening the chapter at the appropriate review stage.
+- Chapter 1 remains Frozen and canonical.
+- Branch merged: no.
+- Chapter 3 started: no.
