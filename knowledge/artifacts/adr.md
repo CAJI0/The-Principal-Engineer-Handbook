@@ -34,4 +34,3 @@ Use an ADR when a decision will affect future architecture, ownership, cost, or 
 - [Decision Journal](decision-journal.md)
 - [Architecture Review](../rituals/architecture-review.md)
 - [Every API Is a Promise](../laws/every-api-is-a-promise.md)
-

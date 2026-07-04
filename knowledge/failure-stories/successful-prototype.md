@@ -38,4 +38,3 @@ A demo firmware architecture ships because it passed customer validation before 
 ## Notes
 
 Use this story when discussing prototype-to-product transitions.
-

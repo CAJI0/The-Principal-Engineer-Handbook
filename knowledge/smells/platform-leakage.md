@@ -38,4 +38,3 @@ Application code checks a vendor-specific error value instead of receiving a pro
 ## Notes
 
 Not every platform detail needs hiding, but every leak should be intentional.
-

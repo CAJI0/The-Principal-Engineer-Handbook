@@ -36,4 +36,3 @@ The freeze becomes permanent, vague, or used to avoid necessary fixes.
 - [Architecture Freeze](../vocabulary/architecture-freeze.md)
 - [ADR](../artifacts/adr.md)
 - [Architecture Health](../vocabulary/architecture-health.md)
-

@@ -38,4 +38,3 @@ A firmware update stalls because one acknowledgment is lost and no component own
 ## Notes
 
 Use this story when discussing protocol and event contracts.
-

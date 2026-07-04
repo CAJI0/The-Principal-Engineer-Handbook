@@ -35,4 +35,3 @@ Use it when firmware, tools, tests, or products communicate through events.
 - [Time Is a Dependency](../laws/time-is-a-dependency.md)
 - [Event Explosion](../smells/event-explosion.md)
 - [Every State Has One Owner](../laws/every-state-has-one-owner.md)
-

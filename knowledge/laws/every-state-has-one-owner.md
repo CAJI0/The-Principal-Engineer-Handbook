@@ -32,4 +32,3 @@ Name the state, assign ownership, remove duplicate writers, and document the con
 - [Boolean Explosion](../vocabulary/boolean-explosion.md)
 - [Hidden State](../smells/hidden-state.md)
 - [ADR](../artifacts/adr.md)
-

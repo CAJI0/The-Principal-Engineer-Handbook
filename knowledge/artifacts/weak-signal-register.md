@@ -35,4 +35,3 @@ Use it when patterns are visible but evidence is incomplete.
 - [Weak Signal](../vocabulary/weak-signal.md)
 - [Architecture Health Review](../rituals/architecture-health-review.md)
 - [Evidence Before Confidence](../laws/evidence-before-confidence.md)
-

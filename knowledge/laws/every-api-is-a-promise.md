@@ -32,4 +32,3 @@ Document the promise, version the contract when needed, and review dependents.
 - [Silent Coupling](../vocabulary/silent-coupling.md)
 - [API Stability](../metrics/api-stability.md)
 - [ADR](../artifacts/adr.md)
-

@@ -274,6 +274,11 @@ entities:
       name: What Is a Principal Engineer?
       path: ../book/01-thinking-like-a-principal/01-what-is-a-principal-engineer.md
       status: canonical
+    - id: CHAPTER-002
+      type: chapter
+      name: Decision-Making Under Constraints
+      path: ../book/01-thinking-like-a-principal/02-decision-making-under-constraints.md
+      status: canonical
   adrs:
     - id: ADR-001
       type: adr
@@ -312,3 +317,18 @@ relationships:
   - from: CHAPTER-001
     type: illustrates
     to: SMELL-001
+  - from: CHAPTER-002
+    type: illustrates
+    to: LAW-005
+  - from: CHAPTER-002
+    type: references
+    to: ARTIFACT-003
+  - from: CHAPTER-002
+    type: references
+    to: VOCAB-001
+  - from: CHAPTER-002
+    type: references
+    to: LAW-004
+  - from: CHAPTER-002
+    type: references
+    to: LAW-006

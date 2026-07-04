@@ -36,4 +36,3 @@ Deletion happens without evidence, or the ritual becomes cosmetic cleanup only.
 - [Deletion Day](../vocabulary/deletion-day.md)
 - [Unused Flexibility Is Waste](../laws/unused-flexibility-is-waste.md)
 - [Simplicity Is a Feature](../laws/simplicity-is-a-feature.md)
-

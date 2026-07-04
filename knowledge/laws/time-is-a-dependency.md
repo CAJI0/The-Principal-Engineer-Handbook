@@ -32,4 +32,3 @@ Name timing contracts, test boundaries, and make ownership of time-sensitive beh
 - [Event Catalog](../artifacts/event-catalog.md)
 - [Hidden State](../smells/hidden-state.md)
 - [Architecture Review](../rituals/architecture-review.md)
-

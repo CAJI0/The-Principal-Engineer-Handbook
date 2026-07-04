@@ -18,4 +18,3 @@ This process describes how maintainers prepare a release. It does not approve ma
 ## Versioning
 
 > AUTHOR NOTE: Authors and maintainers to choose versioning rules for manuscript releases.
-

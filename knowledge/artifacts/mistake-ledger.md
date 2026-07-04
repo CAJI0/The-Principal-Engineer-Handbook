@@ -34,4 +34,3 @@ Use it after incidents, escaped defects, delayed releases, or repeated review fa
 - [Mistake Ledger Vocabulary](../vocabulary/mistake-ledger.md)
 - [Architecture Health Review](../rituals/architecture-health-review.md)
 - [Release We Should Have Delayed](../failure-stories/release-we-should-have-delayed.md)
-

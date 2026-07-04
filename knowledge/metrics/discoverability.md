@@ -38,4 +38,3 @@ A new maintainer finds the retry code but cannot find why the retry limit is thr
 ## Notes
 
 Discoverability is improved by names, links, ownership, and short records.
-

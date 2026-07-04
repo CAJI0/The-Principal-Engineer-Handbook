@@ -38,4 +38,3 @@ A product mode flag changes logging, calibration, connectivity, and power behavi
 ## Notes
 
 Configuration should have scope, owner, and validation.
-

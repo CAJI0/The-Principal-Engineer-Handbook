@@ -36,4 +36,3 @@ The ritual becomes too broad, too ceremonial, or disconnected from actual decisi
 - [RFC](../artifacts/rfc.md)
 - [Decision Journal](../artifacts/decision-journal.md)
 - [Architecture Review](architecture-review.md)
-

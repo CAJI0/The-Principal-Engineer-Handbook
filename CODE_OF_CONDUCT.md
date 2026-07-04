@@ -20,4 +20,3 @@ This project uses a simple contributor standard until the authors select a forma
 ## Reporting
 
 Report conduct concerns to the repository maintainers. Maintainers should handle reports privately, promptly, and with care.
-

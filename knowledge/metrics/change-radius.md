@@ -38,4 +38,3 @@ Changing a timeout requires firmware, test station, release note, and support-to
 ## Notes
 
 Measure approximate affected surface; do not chase false precision.
-

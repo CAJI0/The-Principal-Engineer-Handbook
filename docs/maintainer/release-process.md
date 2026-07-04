@@ -20,4 +20,3 @@ This page mirrors the repository release process.
 ## Versioning
 
 > AUTHOR NOTE: Authors and maintainers to choose versioning rules for manuscript releases.
-

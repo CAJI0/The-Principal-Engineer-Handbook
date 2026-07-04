@@ -38,11 +38,6 @@ plugins:
   - search
   - minify:
       minify_html: true
-  - with-pdf:
-      enabled_if_env: ENABLE_PDF_EXPORT
-      output_path: pdf/the-principal-engineer-handbook.pdf
-      cover_title: The Principal Engineer Handbook
-      cover_subtitle: Author-approved manuscript export
 
 markdown_extensions:
   - admonition

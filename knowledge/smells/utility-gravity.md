@@ -38,4 +38,3 @@ A common helper module becomes responsible for logging, parsing, retries, and pr
 ## Notes
 
 Generic names often hide architectural decisions.
-

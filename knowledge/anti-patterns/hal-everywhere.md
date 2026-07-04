@@ -38,4 +38,3 @@ Feature code reads GPIO and timer details directly instead of depending on a pro
 ## Notes
 
 A HAL is useful only when its boundary protects product decisions.
-

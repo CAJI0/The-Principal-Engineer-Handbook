@@ -38,4 +38,3 @@ Only one engineer knows why the firmware update protocol rejects certain packet 
 ## Notes
 
 Use bus factor to identify documentation and ownership risks.
-

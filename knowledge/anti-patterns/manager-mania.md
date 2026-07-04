@@ -38,4 +38,3 @@ A DeviceManager owns connectivity, storage, firmware update, and factory-mode be
 ## Notes
 
 Rename is not enough; ownership must become clearer.
-

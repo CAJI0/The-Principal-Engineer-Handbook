@@ -38,4 +38,3 @@ Factory, debug, safe, recovery, and legacy flags combine into states that were n
 ## Notes
 
 Replace flag combinations with named states when behavior matters.
-

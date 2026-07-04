@@ -38,4 +38,3 @@ A small timing helper becomes the place for retries, logging, protocol parsing, 
 ## Notes
 
 Watch for utility code with many reasons to change.
-

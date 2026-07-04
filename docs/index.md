@@ -7,4 +7,3 @@ This site is the maintainable manuscript workspace for *The Principal Engineer H
 ## Maintainer Boundary
 
 Maintainers organize, refactor, format, cross-reference, and improve maintainability. Maintainers do not invent manuscript content.
-

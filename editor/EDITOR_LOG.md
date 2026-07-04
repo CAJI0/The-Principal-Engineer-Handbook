@@ -97,3 +97,210 @@ Chronological log of editorial maintenance work.
 - PEAK IDs, concept files, statuses, and relationships changed: none.
 - Chapter 1 remains Frozen and canonical.
 - Chapter 2 was not started.
+
+## Phase 2 Chapter 2 Draft
+
+- Title: Decision-Making Under Constraints.
+- Stable ID: CHAPTER-002.
+- Manuscript path: `book/01-thinking-like-a-principal/02-decision-making-under-constraints.md`.
+- Central idea: a sound engineering decision makes constraints, evidence, uncertainty, consequences,
+  and cost of reversal explicit before committing.
+- Story type: embedded-product release and hardware-freeze decision under memory, recovery, scope,
+  schedule, and qualification constraints.
+- Primary PEAK concepts used: `LAW-005`, `ARTIFACT-003`, and `VOCAB-001`.
+- Supporting PEAK concepts used: `LAW-004` and `LAW-006`.
+- Chapter-local ADR title: Preserve Recovery by Reducing Scope.
+- Status: Draft.
+- Editorial Review has not been performed.
+- Canon Review has not been performed.
+- Technical Review has not been performed.
+- Freeze Review has not been performed.
+- Chapter 1 remains Frozen and canonical.
+
+## Phase 2 Chapter 2 Editorial Review
+
+- Chapter: Decision-Making Under Constraints.
+- Stable ID: CHAPTER-002.
+- Branch: `chapter2`.
+- Stage: Editorial Review.
+- Current `origin/main` tip: `1e01e56`.
+- Current `origin/chapter2` tip: `dc4b926`.
+- Current merge base: `1e01e56`.
+- Current Draft baseline commit: `da10687`.
+- Outcome: Approved with minor changes.
+- Major editorial improvements: tightened the opening quote, smoothed story rhythm, removed meta-manuscript wording,
+  reduced repeated discussion, integrated PEAK references into natural prose, and strengthened the closing transition.
+- Material intentionally preserved: embedded-product release story, central constrained-decision thesis, final engineering
+  decision, Decision Journal example fields, chapter-local ADR structure, required chapter architecture, and all existing
+  PEAK references.
+- Unresolved `AUTHOR NOTE` items: none.
+- Chapter 1 remains Frozen and canonical.
+- Canon Review has not been performed.
+- Technical Review has not been performed.
+- Freeze Review has not been performed.
+- Branch merged: no.
+
+## Phase 2 Chapter 2 Canon Review
+
+- Chapter: Decision-Making Under Constraints.
+- Stable ID: CHAPTER-002.
+- Branch: `chapter2`.
+- Stage: Canon Review.
+- Current `origin/main` tip: `1e01e56`.
+- Current `origin/chapter2` tip: `e67bf6c`.
+- Current merge base: `1e01e56`.
+- Current Editorial Review baseline: `e67bf6c`.
+- Outcome: Approved.
+- Central idea verified: the chapter remains focused on making constraints, evidence, uncertainty, consequences, and
+  reversal cost explicit before committing.
+- Chapter-boundary result: distinct from Chapter 1, not a release-management chapter, not a Decision Journal tutorial,
+  and not an early draft of Chapter 3.
+- Terminology reviewed: constraint language remains descriptive, not a formal taxonomy; reversibility, ownership,
+  decision quality, and accepted risk do not introduce new PEAK concepts.
+- PEAK relationships preserved: `CHAPTER-002 illustrates LAW-005`; `CHAPTER-002 references ARTIFACT-003`;
+  `CHAPTER-002 references VOCAB-001`; `CHAPTER-002 references LAW-004`; `CHAPTER-002 references LAW-006`.
+- PEAK relationships added, removed, or corrected: none.
+- Chapter-local ADR result: reader-facing, locally scoped, unregistered, and structurally consistent.
+- Chapter 1 continuity result: Chapter 2 builds on future system cost and decision discipline without reopening or
+  contradicting Chapter 1.
+- Unresolved canon issues: none.
+- Unresolved `AUTHOR NOTE` items: none.
+- Chapter 1 remains Frozen and canonical.
+- Technical Review has not been performed.
+- Freeze Review has not been performed.
+- Branch merged: no.
+
+## Phase 2 Chapter 2 Technical Review
+
+- Chapter: Decision-Making Under Constraints.
+- Stable ID: CHAPTER-002.
+- Branch: `chapter2`.
+- Stage: Technical Review.
+- Current Canon Review baseline commit: `6085a8a`.
+- Outcome: Approved with minor changes.
+- Technical areas reviewed: software update and recovery model, meaning of validation and evidence, memory constraint
+  credibility, complex update mechanism, prototype evidence, interrupted-update examples, hardware qualification,
+  release commitments, recovery versus diagnostics, speculative flexibility, simplicity claims, Change Radius,
+  reversibility, decision quality versus outcome quality, risk ownership, review triggers, Decision Journal confidence,
+  architecture exercise, and chapter-local ADR consistency.
+- Technical corrections applied: replaced architecture-specific or guarantee-sounding recovery wording with neutral
+  recovery capability, recoverable update path, and validated recovery mode language.
+- Story-causality result: credible embedded-product release scenario; no unsupported causal leap found.
+- Update and recovery model result: preserved as a general recoverable update trade-off without prescribing dual-bank,
+  full-image rollback, compression, or delta-update architecture.
+- Change Radius and reversibility result: technically distinct and credible; reversibility is treated as evidence
+  threshold and learning capacity, not safety.
+- Unresolved technical issues: none.
+- Unresolved `AUTHOR NOTE` items: none.
+- Chapter 1 remains Frozen and canonical.
+- Freeze Review has not been performed.
+- Branch merged: no.
+
+## Phase 2 Chapter 2 Freeze Review
+
+- Chapter: Decision-Making Under Constraints.
+- Stable ID: CHAPTER-002.
+- Branch: `chapter2`.
+- Stage: Freeze Review.
+- Technical Review baseline commit: `847db1aec67e93d961512f66e61c908dc342e7c8`.
+- Outcome: Request changes.
+- Prior review stages present: Draft, Editorial Review, Canon Review, and Technical Review.
+- Freeze Criteria checked: review history, one central idea, distinct chapter role, canonical chapter architecture,
+  editorial stability, canon stability, technical stability, story credibility, PEAK integrity, Decision Journal
+  integrity, chapter-local ADR integrity, reader value, timelessness, and repository validation.
+- Manuscript changes made: none.
+- PEAK integrity result: Chapter 2 structure, path, status, and relationships are valid; `CHAPTER-002` remains `draft`
+  because repository validation did not pass.
+- Unresolved canon issues: none.
+- Unresolved technical issues: none.
+- Unresolved `AUTHOR NOTE` items: none.
+- Validation commands and results:
+  - Direct Freeze checks: passed.
+  - `git diff --check`: passed.
+  - YAML parse for `knowledge/index.yaml`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `vale book/01-thinking-like-a-principal/02-decision-making-under-constraints.md editor/EDITOR_LOG.md`: failed
+    because configured Vale styles are missing from the local styles path.
+  - `mkdocs build --strict`: failed because the configured Markdown extension package is missing.
+- Final lifecycle state: CHAPTER-002 remains `draft`.
+- Chapter 2 is not Frozen.
+- Chapter 1 remains Frozen and canonical.
+- Branch merged: no.
+- Chapter 3 started: no.
+
+## Phase 2 Chapter 2 Freeze Validation Remediation
+
+- Chapter: Decision-Making Under Constraints.
+- Stable ID: CHAPTER-002.
+- Branch: `chapter2`.
+- Stage: Freeze Validation Remediation.
+- Previous Freeze Review outcome: Request changes.
+- Previous blockers: Vale configured styles were not available to the local Vale installation; `mkdocs build --strict`
+  could not complete because required documentation dependencies were unavailable or incomplete.
+- Vale diagnosis: repository-local style and vocabulary are now available under `.vale/`; external package styles are not
+  required by the active repository configuration.
+- Vale remediation applied: repository Vale configuration and vocabulary were stabilized before this record; no manuscript
+  edits were made during this remediation.
+- Vale command and result: `vale --config .vale.ini book/01-thinking-like-a-principal/02-decision-making-under-constraints.md`
+  passed with 0 errors, 0 warnings, and 0 suggestions; `vale .` passed with 0 errors and 5 existing AuthorBoundary warnings
+  outside Chapter 2.
+- MkDocs diagnosis: `mkdocs.yml` directly uses `pymdownx.*` extensions, but `pymdown-extensions` was not declared in
+  `requirements.txt`; optional PDF export also caused the default strict site build to fail when PDF export was disabled.
+- MkDocs remediation applied: declared `pymdown-extensions` explicitly; kept default `mkdocs.yml` as the strict site-build
+  configuration; moved PDF export to `mkdocs-pdf.yml`; updated README commands.
+- MkDocs command and result: `Remove-Item Env:ENABLE_PDF_EXPORT -ErrorAction SilentlyContinue; python -m mkdocs build --strict`
+  passed; `$env:ENABLE_PDF_EXPORT = "1"; python -m mkdocs build --config-file mkdocs-pdf.yml` passed.
+- Other validation commands and results: `git diff --check` passed; `npm.cmd run lint:md` passed; `npm.cmd run lint:spelling`
+  passed; `npm.cmd run lint:links` passed; `knowledge/index.yaml` parsed successfully; `python -m pip check` passed.
+- Manuscript changed: no.
+- Canon changed: no.
+- PEAK changed: no.
+- `CHAPTER-001` remains `canonical`.
+- `CHAPTER-002` remains `draft`.
+- Unresolved validation blockers: none for the previous Freeze Review blockers.
+- Remediation outcome: Approved with minor changes.
+- Freeze Review Retry has not been performed.
+- Branch merged: no.
+- Chapter 3 started: no.
+
+## Phase 2 Chapter 2 Freeze Review Retry
+
+- Chapter: Decision-Making Under Constraints.
+- Stable ID: CHAPTER-002.
+- Branch: `chapter2`.
+- Technical Review baseline commit: `847db1aec67e93d961512f66e61c908dc342e7c8`.
+- Freeze Validation Remediation baseline commit: `fbcb07d`.
+- Previous Freeze Review outcome: Request changes.
+- Freeze Validation Remediation outcome: Approved with minor changes.
+- Retry outcome: Approved.
+- Review-history verification: Draft, Editorial Review, Canon Review, Technical Review, previous Freeze Review, and
+  Freeze Validation Remediation records are present and distinct.
+- Freeze Criteria result: central idea, chapter architecture, editorial stability, canon stability, technical stability,
+  PEAK integrity, and validation remediation were checked and passed.
+- Validation commands and results:
+  - `git status --short`: only `knowledge/index.yaml` changed before this log entry.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `vale --config .vale.ini book/01-thinking-like-a-principal/02-decision-making-under-constraints.md`: passed with
+    0 errors, 0 warnings, and 0 suggestions.
+  - `Remove-Item Env:ENABLE_PDF_EXPORT -ErrorAction SilentlyContinue; python -m mkdocs build --strict`: passed.
+  - `python -m pip check`: passed.
+  - `vale .`: passed with 0 errors and 5 existing AuthorBoundary warnings outside Chapter 2.
+  - `knowledge/index.yaml` parsed successfully.
+- Manuscript changes made: none.
+- PEAK integrity result: `CHAPTER-002` exists exactly once, path resolves, expected relationships are present, targets
+  exist, relationship types are supported, and no duplicate relationship edge exists.
+- Unresolved canon issues: none.
+- Unresolved technical issues: none.
+- Unresolved validation blockers: none.
+- Unresolved `AUTHOR NOTE` items: none in Chapter 2.
+- Final lifecycle state: `CHAPTER-002` moved from `draft` to `canonical`.
+- Chapter 2 is Frozen.
+- Future substantive changes require reopening the chapter at the appropriate review stage.
+- Chapter 1 remains Frozen and canonical.
+- Branch merged: no.
+- Chapter 3 started: no.

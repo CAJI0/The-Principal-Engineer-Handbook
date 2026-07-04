@@ -1,6 +1,6 @@
 # The Principal Engineer Handbook
 
-*Building Embedded Systems That Survive Change*
+Building Embedded Systems That Survive Change
 
 This is a professional long-term book project about how Principal Engineers think, design, document, review, and evolve long-living embedded systems.
 
@@ -97,13 +97,13 @@ mkdocs build --strict
 Build the PDF:
 
 ```powershell
-ENABLE_PDF_EXPORT=1 mkdocs build --strict
+ENABLE_PDF_EXPORT=1 mkdocs build --config-file mkdocs-pdf.yml
 ```
 
 On Windows PowerShell:
 
 ```powershell
-$env:ENABLE_PDF_EXPORT="1"; mkdocs build --strict
+$env:ENABLE_PDF_EXPORT="1"; mkdocs build --config-file mkdocs-pdf.yml
 ```
 
 Run Markdown and spelling checks after installing Node dependencies:
@@ -117,7 +117,7 @@ Run Vale after installing Vale:
 
 ```powershell
 vale sync
-vale docs
+vale .
 ```
 
 ## Manuscript Policy

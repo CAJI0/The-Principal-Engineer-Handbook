@@ -38,4 +38,3 @@ A firmware platform is considered unhealthy when every product variant requires 
 ## Notes
 
 Do not reduce architecture health to one number.
-

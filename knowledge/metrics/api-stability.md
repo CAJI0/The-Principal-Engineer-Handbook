@@ -38,4 +38,3 @@ A sensor API keeps the same signature but changes when it reports invalid readin
 ## Notes
 
 Stability includes behavior, errors, timing, and meaning.
-

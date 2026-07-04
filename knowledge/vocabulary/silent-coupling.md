@@ -38,4 +38,3 @@ A bootloader and update tool both assume the same packet ordering, but no protoc
 ## Notes
 
 Silent coupling should become either an explicit contract or a removed dependency.
-

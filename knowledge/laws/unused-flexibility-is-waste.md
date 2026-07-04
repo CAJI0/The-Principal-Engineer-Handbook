@@ -32,4 +32,3 @@ Remove unused paths or document the uncertainty that justifies keeping them.
 - [Deletion Day](../vocabulary/deletion-day.md)
 - [Simplicity Is a Feature](simplicity-is-a-feature.md)
 - [Temporary Solution](../anti-patterns/temporary-solution.md)
-

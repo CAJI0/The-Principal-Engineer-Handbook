@@ -38,4 +38,3 @@ A product team schedules one day per release to remove obsolete manufacturing mo
 ## Notes
 
 Deletion should be reviewed like any other architecture change.
-
