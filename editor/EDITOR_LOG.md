@@ -139,3 +139,33 @@ Chronological log of editorial maintenance work.
 - Technical Review has not been performed.
 - Freeze Review has not been performed.
 - Branch merged: no.
+
+## Phase 2 Chapter 2 Canon Review
+
+- Chapter: Decision-Making Under Constraints.
+- Stable ID: CHAPTER-002.
+- Branch: `chapter2`.
+- Stage: Canon Review.
+- Current `origin/main` tip: `1e01e56`.
+- Current `origin/chapter2` tip: `e67bf6c`.
+- Current merge base: `1e01e56`.
+- Current Editorial Review baseline: `e67bf6c`.
+- Outcome: Approved.
+- Central idea verified: the chapter remains focused on making constraints, evidence, uncertainty, consequences, and
+  reversal cost explicit before committing.
+- Chapter-boundary result: distinct from Chapter 1, not a release-management chapter, not a Decision Journal tutorial,
+  and not an early draft of Chapter 3.
+- Terminology reviewed: constraint language remains descriptive, not a formal taxonomy; reversibility, ownership,
+  decision quality, and accepted risk do not introduce new PEAK concepts.
+- PEAK relationships preserved: `CHAPTER-002 illustrates LAW-005`; `CHAPTER-002 references ARTIFACT-003`;
+  `CHAPTER-002 references VOCAB-001`; `CHAPTER-002 references LAW-004`; `CHAPTER-002 references LAW-006`.
+- PEAK relationships added, removed, or corrected: none.
+- Chapter-local ADR result: clearly reader-facing, locally scoped, unregistered, and structurally consistent.
+- Chapter 1 continuity result: Chapter 2 builds on future system cost and decision discipline without reopening or
+  contradicting Chapter 1.
+- Unresolved canon issues: none.
+- Unresolved `AUTHOR NOTE` items: none.
+- Chapter 1 remains Frozen and canonical.
+- Technical Review has not been performed.
+- Freeze Review has not been performed.
+- Branch merged: no.
