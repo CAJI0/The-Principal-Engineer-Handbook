@@ -310,7 +310,7 @@ Chronological log of editorial maintenance work.
 - Chapter: Asking Better Engineering Questions.
 - Stable ID: CHAPTER-003.
 - Branch: `chapter3`.
-- Baseline `main` commit: `d8ca57c42809f74610bf23b9d207900ac1e1220f`.
+- Baseline `main` commit: `3bdf3e9d38b98784235415e4ce339b815b12f6dc`.
 - Lifecycle stage: Draft.
 - Central idea: better engineering questions make hidden assumptions testable before those assumptions become architecture.
 - Story type: intermittent stale-state investigation across a device, gateway, and user-facing application.
