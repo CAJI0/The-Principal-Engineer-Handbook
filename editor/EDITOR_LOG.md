@@ -304,3 +304,36 @@ Chronological log of editorial maintenance work.
 - Chapter 1 remains Frozen and canonical.
 - Branch merged: no.
 - Chapter 3 started: no.
+
+## Phase 3 Chapter 3 Draft
+
+- Chapter: Asking Better Engineering Questions.
+- Stable ID: CHAPTER-003.
+- Branch: `chapter3`.
+- Baseline `main` commit: `d8ca57c42809f74610bf23b9d207900ac1e1220f`.
+- Lifecycle stage: Draft.
+- Central idea: better engineering questions make hidden assumptions testable before those assumptions become architecture.
+- Story type: intermittent stale-state investigation across a device, gateway, and user-facing application.
+- Engineering Principle: Better questions make assumptions testable before they become architecture.
+- Architecture Exercise: rewrite one unresolved engineering question by separating observations, interpretations,
+  assumptions, boundaries, explanations, discriminating evidence, ownership, and the next evidence-gathering action.
+- Chapter ADR: Define Authoritative State and Freshness Semantics.
+- PEAK concepts reused: `LAW-005`, `VOCAB-002`, `ARTIFACT-007`, `LAW-001`, `LAW-002`, `LAW-003`, `SMELL-001`,
+  `SMELL-004`, `RITUAL-001`, and `METRIC-003`.
+- Files changed: `book/01-thinking-like-a-principal/03-asking-better-engineering-questions.md`,
+  `knowledge/index.yaml`, and `editor/EDITOR_LOG.md`.
+- Validation commands and results:
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `vale --config .vale.ini book/01-thinking-like-a-principal/03-asking-better-engineering-questions.md`: passed with
+    0 errors, 0 warnings, and 0 suggestions.
+  - `python -m mkdocs build --strict`: passed.
+  - `python -m pip check`: passed.
+  - `knowledge/index.yaml` parsed successfully.
+- New PEAK concepts: none.
+- Canon changed: no.
+- Frozen chapters changed: no.
+- Chapter 4 started: no.
+- Next required lifecycle stage: Editorial Review.
