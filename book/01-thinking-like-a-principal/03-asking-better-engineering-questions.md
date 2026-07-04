@@ -99,7 +99,8 @@ The team also wrote down the question nobody had been answering:
 
 No final architectural decision had been made yet.
 
-That was correct. The team was still shaping the inquiry.
+That was correct. The team was still shaping the inquiry. The decision would come only after the evidence could
+distinguish the explanations.
 
 ## Discussion
 
@@ -201,6 +202,9 @@ An Architecture Review (`RITUAL-001`) may eventually be the right place to decid
 the work before that review. A review without a shaped question becomes a tour of opinions. A shaped question gives the
 review something to decide.
 
+The chapter-local ADR below belongs after that work. It represents the decision made once the inquiry has separated
+transport receipt, command acceptance, completed state change, and state freshness into distinct facts.
+
 The endpoint of this chapter is not a selected option. That belongs closer to Chapter 2, where constraints, consequences,
 and commitments are made explicit before a decision hardens. Chapter 3 stops earlier. It asks whether the team has turned
 an ambiguous problem into an inquiry that can be answered with evidence.
@@ -276,8 +280,8 @@ The device, gateway, and application all retain or infer device status. Transpor
 state is current. Retries make some failures less visible while allowing stale or duplicated observations to appear
 valid.
 
-The current interface does not separate transport receipt, command acceptance, completed state change, and
-freshness of observed state.
+After the inquiry separates the observable facts, the current interface still does not separate transport receipt,
+command acceptance, completed state change, and freshness of observed state.
 
 ### Decision
 

@@ -337,3 +337,55 @@ Chronological log of editorial maintenance work.
 - Frozen chapters changed: no.
 - Chapter 4 started: no.
 - Next required lifecycle stage: Editorial Review.
+
+## Phase 3 Chapter 3 Editorial Review
+
+- Chapter: Asking Better Engineering Questions.
+- Stable ID: CHAPTER-003.
+- Branch: `chapter3`.
+- Reviewed baseline commit: `0b67babf033d8f3aa4ac40bf802d2f6ce3f4b18c`.
+- Lifecycle stage: Editorial Review.
+- Review scope: clarity, structure, narrative flow, pacing, chapter architecture, continuity with Chapters 1 and 2,
+  prose quality, reader comprehension, repetition, and style-guide compliance.
+- Review outcome: Approved with minor changes.
+- Central-idea assessment: preserved; the chapter remains focused on making hidden assumptions testable before they
+  become architecture.
+- Story assessment: the stale-state story establishes customer-visible contradiction, plausible local questions, and a
+  Principal Engineer intervention that reshapes the inquiry rather than solving the incident by authority.
+- Structure and flow assessment: the chapter follows the canonical chapter architecture and moves from story, to
+  reasoning, to principle, exercise, notebook, ADR, and commentary.
+- Repetition and pacing assessment: purposeful reinforcement remains; no excessive repetition required structural
+  removal.
+- Continuity with Chapters 1 and 2: Chapter 3 advances Chapter 1's question discipline and stops before Chapter 2's
+  option selection and commitment-management territory.
+- Chapter-boundary assessment: clarified that the chapter-local ADR represents the resulting decision after the inquiry
+  becomes answerable, not a decision made before evidence is gathered.
+- Engineering Principle assessment: preserved exactly and supported by the story and discussion.
+- Architecture Exercise assessment: practical, evidence-oriented, and bounded before architectural option selection;
+  final question preserved.
+- Principal's Notebook assessment: concise, distinct from Chapters 1 and 2, and supported by the chapter.
+- Chapter ADR assessment: locally scoped, credible, and sequenced after the inquiry; it does not become a handbook-wide
+  mandate.
+- Editor's Commentary assessment: states the chapter's role after Chapters 1 and 2 and points to the next planned topic
+  without starting Chapter 4.
+- PEAK-reference readability assessment: references support the narrative and do not require Canon Review changes.
+- Editorial changes made: clarified the story-to-ADR chronology and tightened the transition showing that the ADR follows
+  the shaped inquiry.
+- Unresolved editorial issues: none.
+- Remaining `AUTHOR NOTE` items: none.
+- Files changed: `book/01-thinking-like-a-principal/03-asking-better-engineering-questions.md` and
+  `editor/EDITOR_LOG.md`.
+- Validation commands and results:
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `vale --config .vale.ini book/01-thinking-like-a-principal/03-asking-better-engineering-questions.md editor/EDITOR_LOG.md`:
+    passed with 0 errors, 0 warnings, and 0 suggestions.
+  - `python -m mkdocs build --strict`: passed.
+  - `python -m pip check`: passed.
+- Canon changed: no.
+- PEAK index changed: no.
+- Frozen chapters changed: no.
+- Chapter 4 started: no.
+- Next lifecycle stage: Canon Review.
