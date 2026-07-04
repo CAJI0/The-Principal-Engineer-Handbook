@@ -195,3 +195,37 @@ Chronological log of editorial maintenance work.
 - Chapter 1 remains Frozen and canonical.
 - Freeze Review has not been performed.
 - Branch merged: no.
+
+## Phase 2 Chapter 2 Freeze Review
+
+- Chapter: Decision-Making Under Constraints.
+- Stable ID: CHAPTER-002.
+- Branch: `chapter2`.
+- Stage: Freeze Review.
+- Technical Review baseline commit: `847db1aec67e93d961512f66e61c908dc342e7c8`.
+- Outcome: Request changes.
+- Prior review stages present: Draft, Editorial Review, Canon Review, and Technical Review.
+- Freeze Criteria checked: review history, one central idea, distinct chapter role, canonical chapter architecture,
+  editorial stability, canon stability, technical stability, story credibility, PEAK integrity, Decision Journal
+  integrity, chapter-local ADR integrity, reader value, timelessness, and repository validation.
+- Manuscript changes made: none.
+- PEAK integrity result: Chapter 2 structure, path, status, and relationships are valid; `CHAPTER-002` remains `draft`
+  because repository validation did not pass.
+- Unresolved canon issues: none.
+- Unresolved technical issues: none.
+- Unresolved `AUTHOR NOTE` items: none.
+- Validation commands and results:
+  - Direct Freeze checks: passed.
+  - `git diff --check`: passed.
+  - YAML parse for `knowledge/index.yaml`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `vale book/01-thinking-like-a-principal/02-decision-making-under-constraints.md editor/EDITOR_LOG.md`: failed
+    because configured Vale styles are missing from the local styles path.
+  - `mkdocs build --strict`: failed because the configured Markdown extension package is missing.
+- Final lifecycle state: CHAPTER-002 remains `draft`.
+- Chapter 2 is not Frozen.
+- Chapter 1 remains Frozen and canonical.
+- Branch merged: no.
+- Chapter 3 started: no.
