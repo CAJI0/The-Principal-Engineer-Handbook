@@ -229,3 +229,38 @@ Chronological log of editorial maintenance work.
 - Chapter 1 remains Frozen and canonical.
 - Branch merged: no.
 - Chapter 3 started: no.
+
+## Phase 2 Chapter 2 Freeze Validation Remediation
+
+- Chapter: Decision-Making Under Constraints.
+- Stable ID: CHAPTER-002.
+- Branch: `chapter2`.
+- Stage: Freeze Validation Remediation.
+- Previous Freeze Review outcome: Request changes.
+- Previous blockers: Vale configured styles were not available to the local Vale installation; `mkdocs build --strict`
+  could not complete because required documentation dependencies were unavailable or incomplete.
+- Vale diagnosis: repository-local style and vocabulary are now available under `.vale/`; external package styles are not
+  required by the active repository configuration.
+- Vale remediation applied: repository Vale configuration and vocabulary were stabilized before this record; no manuscript
+  edits were made during this remediation.
+- Vale command and result: `vale --config .vale.ini book/01-thinking-like-a-principal/02-decision-making-under-constraints.md`
+  passed with 0 errors, 0 warnings, and 0 suggestions; `vale .` passed with 0 errors and 5 existing AuthorBoundary warnings
+  outside Chapter 2.
+- MkDocs diagnosis: `mkdocs.yml` directly uses `pymdownx.*` extensions, but `pymdown-extensions` was not declared in
+  `requirements.txt`; optional PDF export also caused the default strict site build to fail when PDF export was disabled.
+- MkDocs remediation applied: declared `pymdown-extensions` explicitly; kept default `mkdocs.yml` as the strict site-build
+  configuration; moved PDF export to `mkdocs-pdf.yml`; updated README commands.
+- MkDocs command and result: `Remove-Item Env:ENABLE_PDF_EXPORT -ErrorAction SilentlyContinue; python -m mkdocs build --strict`
+  passed; `$env:ENABLE_PDF_EXPORT = "1"; python -m mkdocs build --config-file mkdocs-pdf.yml` passed.
+- Other validation commands and results: `git diff --check` passed; `npm.cmd run lint:md` passed; `npm.cmd run lint:spelling`
+  passed; `npm.cmd run lint:links` passed; `knowledge/index.yaml` parsed successfully; `python -m pip check` passed.
+- Manuscript changed: no.
+- Canon changed: no.
+- PEAK changed: no.
+- `CHAPTER-001` remains `canonical`.
+- `CHAPTER-002` remains `draft`.
+- Unresolved validation blockers: none for the previous Freeze Review blockers.
+- Remediation outcome: Approved with minor changes.
+- Freeze Review Retry has not been performed.
+- Branch merged: no.
+- Chapter 3 started: no.

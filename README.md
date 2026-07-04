@@ -97,13 +97,13 @@ mkdocs build --strict
 Build the PDF:
 
 ```powershell
-ENABLE_PDF_EXPORT=1 mkdocs build --strict
+ENABLE_PDF_EXPORT=1 mkdocs build --config-file mkdocs-pdf.yml
 ```
 
 On Windows PowerShell:
 
 ```powershell
-$env:ENABLE_PDF_EXPORT="1"; mkdocs build --strict
+$env:ENABLE_PDF_EXPORT="1"; mkdocs build --config-file mkdocs-pdf.yml
 ```
 
 Run Markdown and spelling checks after installing Node dependencies:
@@ -117,7 +117,7 @@ Run Vale after installing Vale:
 
 ```powershell
 vale sync
-vale docs
+vale .
 ```
 
 ## Manuscript Policy
