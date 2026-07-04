@@ -160,7 +160,7 @@ Chronological log of editorial maintenance work.
 - PEAK relationships preserved: `CHAPTER-002 illustrates LAW-005`; `CHAPTER-002 references ARTIFACT-003`;
   `CHAPTER-002 references VOCAB-001`; `CHAPTER-002 references LAW-004`; `CHAPTER-002 references LAW-006`.
 - PEAK relationships added, removed, or corrected: none.
-- Chapter-local ADR result: clearly reader-facing, locally scoped, unregistered, and structurally consistent.
+- Chapter-local ADR result: reader-facing, locally scoped, unregistered, and structurally consistent.
 - Chapter 1 continuity result: Chapter 2 builds on future system cost and decision discipline without reopening or
   contradicting Chapter 1.
 - Unresolved canon issues: none.

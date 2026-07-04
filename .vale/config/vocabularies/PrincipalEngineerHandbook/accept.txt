@@ -1,0 +1,14 @@
+ADRs
+APIs
+Discoverability
+Walkthrough
+anti_pattern
+booleans
+bootloader
+discoverability
+failure_story
+operationalized
+operationalizes
+reviewability
+rollout
+unmanaged

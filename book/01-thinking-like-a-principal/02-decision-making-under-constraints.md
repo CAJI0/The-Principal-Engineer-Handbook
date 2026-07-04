@@ -100,7 +100,7 @@ The future variant will need these hooks. The compressed updater will be fine be
 cannot operate without the full diagnostic package. Customers will not tolerate a slip. Later optimization will recover
 space. Any of these may be true. None of them should be allowed to harden without evidence.
 
-The Principal Engineer did not improve the decision by ranking everyone else's concerns. The useful move was to separate
+The Principal Engineer did not improve the decision by ranking the concerns in the room. The useful move was to separate
 different kinds of pressure so the team could reason about them without pretending they were the same.
 
 The recoverable update path belonged in the hard part of the list. A field device that cannot recover from a failed update
@@ -326,7 +326,7 @@ Chapter 1 established that principal engineering is responsibility for future sy
 responsibility looks like when every available option spends something the team would rather keep.
 
 This chapter exists because constrained decisions are where engineering judgment becomes visible. It is easy to speak
-clearly when one option is safe, cheap, simple, and reversible. Real systems rarely offer that kindness near release,
+plainly when one option is safe, cheap, simple, and reversible. Real systems rarely offer that kindness near release,
 hardware freeze, field deployment, or product commitment.
 
 The chapter does not teach a decision algorithm. It asks the reader to slow the decision down enough to see what kind of
