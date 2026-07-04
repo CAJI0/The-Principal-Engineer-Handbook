@@ -36,6 +36,10 @@ IDs are never reused.
 
 No canonical maxims are currently registered.
 
+## Vocabulary
+
+- Weak Signal
+
 ## Artifacts
 
 - Change Radius
@@ -60,7 +64,6 @@ No canonical maxims are currently registered.
 
 ## Smells
 
-- Weak Signal
 - Silent Coupling
 - Utility Gravity
 - Boolean Explosion

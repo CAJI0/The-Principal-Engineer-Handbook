@@ -389,3 +389,22 @@ Chronological log of editorial maintenance work.
 - Frozen chapters changed: no.
 - Chapter 4 started: no.
 - Next lifecycle stage: Canon Review.
+
+## Pre-Chapter 3 Canon Classification Alignment
+
+- Branch: `chapter3`.
+- Baseline commit: `1b5df5cfd9d249401f0ce7c4a2dbe6037d224528`.
+- Issue found: `Weak Signal` was incorrectly summarized under Smells in `editor/CANON.md`.
+- Authoritative classification: `VOCAB-002`, type `vocabulary`.
+- Correction made: moved the summary entry from Smells to Vocabulary.
+- Concept identity changed: no.
+- Stable ID changed: no.
+- Concept file changed: no.
+- `knowledge/index.yaml` changed: no.
+- PEAK relationships changed: no.
+- Manuscript changed: no.
+- Frozen chapters changed: no.
+- Chapter 3 lifecycle state changed: no.
+- Chapter 4 started: no.
+- Chapter 3 Canon Review performed: no.
+- Next lifecycle stage: Chapter 3 Canon Review.
