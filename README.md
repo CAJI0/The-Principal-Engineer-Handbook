@@ -1,6 +1,6 @@
 # The Principal Engineer Handbook
 
-*Building Embedded Systems That Survive Change*
+Building Embedded Systems That Survive Change
 
 This is a professional long-term book project about how Principal Engineers think, design, document, review, and evolve long-living embedded systems.
 

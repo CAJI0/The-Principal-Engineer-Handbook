@@ -38,4 +38,3 @@ A sensor calibration update requires firmware, station scripts, release packagin
 ## Notes
 
 Track change radius when reviewing architecture and release risk.
-

@@ -25,4 +25,3 @@ This page mirrors the repository style guide.
 - Prefer relative links to other manuscript pages.
 - Link to canonical definitions when a term is first used in a chapter.
 - Do not create links to missing pages unless the target file is also created with an author note.
-

@@ -38,4 +38,3 @@ Firmware startup depends on nested callbacks from storage, radio, calibration, a
 ## Notes
 
 Make ordering and failure behavior explicit.
-

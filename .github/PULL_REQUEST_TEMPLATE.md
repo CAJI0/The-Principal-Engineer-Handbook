@@ -16,4 +16,3 @@
 - [ ] Dead link check
 - [ ] MkDocs build
 - [ ] PDF build, if relevant
-

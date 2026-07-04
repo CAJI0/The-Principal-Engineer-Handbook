@@ -33,4 +33,3 @@ This page mirrors the repository roadmap.
 - [ ] Produce preview release.
 - [ ] Review PDF output.
 - [ ] Publish approved release artifacts.
-

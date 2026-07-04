@@ -38,4 +38,3 @@ A device release proceeds with known update instability because failures are rar
 ## Notes
 
 Use this story when discussing release readiness and risk ownership.
-

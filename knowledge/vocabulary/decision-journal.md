@@ -38,4 +38,3 @@ A team records why a cheaper flash part was accepted and when the decision must 
 ## Notes
 
 Use when a decision is important but does not need a full ADR.
-

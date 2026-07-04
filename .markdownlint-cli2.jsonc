@@ -1,11 +1,7 @@
 {
   "config": {
     "default": true,
-    "MD013": {
-      "line_length": 120,
-      "code_blocks": false,
-      "tables": false
-    },
+    "MD013": false,
     "MD024": {
       "siblings_only": true
     },
@@ -16,7 +12,7 @@
     "**/*.md"
   ],
   "ignores": [
+    "node_modules/**",
     "site/**"
   ]
 }
-

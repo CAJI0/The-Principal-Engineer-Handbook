@@ -38,4 +38,3 @@ An embedded logger starts carrying timestamps, retry counters, diagnostic routin
 ## Notes
 
 Use this story when discussing accidental platforms.
-

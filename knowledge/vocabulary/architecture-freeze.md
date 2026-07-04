@@ -38,4 +38,3 @@ Before field validation, a team freezes interface changes except for approved de
 ## Notes
 
 A freeze is useful only when exit criteria are explicit.
-

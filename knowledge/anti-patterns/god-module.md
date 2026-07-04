@@ -38,4 +38,3 @@ A system manager module handles startup, logging, retries, calibration, and prod
 ## Notes
 
 Split by ownership and reason to change, not by file size alone.
-

@@ -38,4 +38,3 @@ A release adds a calibration bypass for one customer issue and leaves it active 
 ## Notes
 
 A temporary solution needs an expiration condition.
-

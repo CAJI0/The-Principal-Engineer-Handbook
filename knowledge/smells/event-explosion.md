@@ -38,4 +38,3 @@ A device emits separate connected, ready, configured, and active events, but tea
 ## Notes
 
 Catalog events before adding more of them.
-

@@ -34,4 +34,3 @@ Use it for reversible or medium-sized decisions where evidence and review trigge
 - [Decision Journal Vocabulary](../vocabulary/decision-journal.md)
 - [Evidence Before Confidence](../laws/evidence-before-confidence.md)
 - [Architecture Ledger](architecture-ledger.md)
-

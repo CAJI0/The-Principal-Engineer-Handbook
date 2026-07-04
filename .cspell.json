@@ -13,6 +13,7 @@
   "words": [
     "ADR",
     "ADRs",
+    "ANTIPATTERN",
     "HAL",
     "MkDocs",
     "Mermaid",
@@ -21,9 +22,14 @@
     "RFCs",
     "STM32",
     "VOCAB",
+    "inlinehilite",
+    "linenums",
     "markdownlint",
+    "operationalized",
+    "operationalizes",
     "playbook",
     "pymdownx",
-    "proselint"
+    "proselint",
+    "superfences"
   ]
 }

@@ -38,4 +38,3 @@ A product line cannot add a variant without touching shared startup, calibration
 ## Notes
 
 Combine signals; do not reduce health to one score.
-

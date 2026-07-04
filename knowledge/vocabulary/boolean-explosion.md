@@ -38,4 +38,3 @@ A device has separate booleans for factory, debug, recovery, legacy, and safe mo
 ## Notes
 
 Replace uncontrolled flags with named states and ownership.
-

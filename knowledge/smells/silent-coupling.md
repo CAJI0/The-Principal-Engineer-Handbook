@@ -38,4 +38,3 @@ A manufacturing script and firmware parser depend on identical field ordering wi
 ## Notes
 
 Look for behavior that must change together but is reviewed separately.
-

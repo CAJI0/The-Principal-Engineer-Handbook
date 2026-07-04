@@ -36,4 +36,3 @@ The review becomes a presentation, happens too late, or avoids trade-offs.
 - [ADR](../artifacts/adr.md)
 - [RFC](../artifacts/rfc.md)
 - [Evidence Before Confidence](../laws/evidence-before-confidence.md)
-

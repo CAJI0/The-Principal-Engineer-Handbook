@@ -6,7 +6,7 @@ This page mirrors the repository book bible.
 
 ## Working Title
 
-*The Principal Engineer Handbook*
+The Principal Engineer Handbook
 
 ## Audience
 
@@ -31,4 +31,3 @@ This page mirrors the repository book bible.
 ## Examples and Case Studies
 
 > AUTHOR NOTE: Authors to list approved examples, stories, and case studies.
-

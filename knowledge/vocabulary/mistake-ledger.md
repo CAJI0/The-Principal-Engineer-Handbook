@@ -38,4 +38,3 @@ A release failure is logged with the missed assumption, detection gap, and futur
 ## Notes
 
 Keep entries factual and system-focused.
-

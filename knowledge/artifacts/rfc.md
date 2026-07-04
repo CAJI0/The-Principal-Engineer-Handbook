@@ -36,4 +36,3 @@ Use an RFC for proposals that need feedback across ownership boundaries.
 - [RFC Friday](../rituals/rfc-friday.md)
 - [Architecture Review](../rituals/architecture-review.md)
 - [Evidence Before Confidence](../laws/evidence-before-confidence.md)
-

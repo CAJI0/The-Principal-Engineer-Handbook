@@ -32,4 +32,3 @@ Identify the assumption, gather evidence, record confidence, and set a review tr
 - [Decision Journal](../vocabulary/decision-journal.md)
 - [Weak Signal](../vocabulary/weak-signal.md)
 - [Architecture Review](../rituals/architecture-review.md)
-

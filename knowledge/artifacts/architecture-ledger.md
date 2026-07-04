@@ -34,4 +34,3 @@ Use it when a system has many decisions spread across ADRs, RFCs, and team memor
 - [ADR](adr.md)
 - [Decision Journal](decision-journal.md)
 - [Architecture Health](../vocabulary/architecture-health.md)
-

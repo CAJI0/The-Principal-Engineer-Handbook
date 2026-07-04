@@ -32,4 +32,3 @@ Delete unused behavior, narrow interfaces, and make ownership explicit.
 - [Deletion Day](../rituals/deletion-day.md)
 - [Utility Gravity](../vocabulary/utility-gravity.md)
 - [Architecture Health](../vocabulary/architecture-health.md)
-

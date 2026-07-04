@@ -4,14 +4,14 @@
   "scripts": {
     "lint:md": "markdownlint-cli2 \"**/*.md\"",
     "lint:spelling": "cspell \"**/*.md\" \"mkdocs.yml\"",
-    "lint:links": "lychee --config .lychee.toml \"**/*.md\"",
+    "lint:links": "linkinator \"**/*.md\" --markdown --recurse --skip \"^mailto:\" --skip \"node_modules\" --skip \"site\" --timeout 20000",
     "lint": "npm run lint:md && npm run lint:spelling",
     "format:md": "prettier --write \"**/*.md\""
   },
   "devDependencies": {
     "cspell": "8.17.5",
+    "linkinator": "^7.6.1",
     "markdownlint-cli2": "0.15.0",
     "prettier": "3.4.2"
   }
 }
-

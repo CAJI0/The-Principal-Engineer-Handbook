@@ -38,4 +38,3 @@ Only one engineer knows the safe order for factory recovery after a failed updat
 ## Notes
 
 Use this story carefully; focus on system design, not personal blame.
-

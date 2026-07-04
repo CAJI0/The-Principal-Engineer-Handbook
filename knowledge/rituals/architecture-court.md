@@ -36,4 +36,3 @@ The ritual becomes politics, authority theater, or a substitute for earlier revi
 - [ADR](../artifacts/adr.md)
 - [Architecture Review](architecture-review.md)
 - [Evidence Before Confidence](../laws/evidence-before-confidence.md)
-

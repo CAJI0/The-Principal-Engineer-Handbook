@@ -38,4 +38,3 @@ A device behaves differently after factory calibration because a persistent flag
 ## Notes
 
 Hidden state should be named, owned, or removed.
-

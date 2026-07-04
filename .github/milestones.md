@@ -17,4 +17,3 @@ Review navigation, chapter order, cross-references, and author-note markers.
 ## Preview Release
 
 Generate an author-approved preview release of the web and PDF editions.
-

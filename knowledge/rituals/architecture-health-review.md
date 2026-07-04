@@ -36,4 +36,3 @@ The review becomes status reporting or avoids uncomfortable ownership questions.
 - [Architecture Health](../vocabulary/architecture-health.md)
 - [Weak Signal Register](../artifacts/weak-signal-register.md)
 - [Mistake Ledger](../artifacts/mistake-ledger.md)
-
