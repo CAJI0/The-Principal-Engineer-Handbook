@@ -97,3 +97,22 @@ Chronological log of editorial maintenance work.
 - PEAK IDs, concept files, statuses, and relationships changed: none.
 - Chapter 1 remains Frozen and canonical.
 - Chapter 2 was not started.
+
+## Phase 2 Chapter 2 Draft
+
+- Title: Decision-Making Under Constraints.
+- Stable ID: CHAPTER-002.
+- Manuscript path: `book/01-thinking-like-a-principal/02-decision-making-under-constraints.md`.
+- Central idea: a sound engineering decision makes constraints, evidence, uncertainty, consequences,
+  and cost of reversal explicit before committing.
+- Story type: embedded-product release and hardware-freeze decision under memory, recovery, scope,
+  schedule, and qualification constraints.
+- Primary PEAK concepts used: `LAW-005`, `ARTIFACT-003`, and `VOCAB-001`.
+- Supporting PEAK concepts used: `LAW-004` and `LAW-006`.
+- Chapter-local ADR title: Preserve Recovery by Reducing Scope.
+- Status: Draft.
+- Editorial Review has not been performed.
+- Canon Review has not been performed.
+- Technical Review has not been performed.
+- Freeze Review has not been performed.
+- Chapter 1 remains Frozen and canonical.
