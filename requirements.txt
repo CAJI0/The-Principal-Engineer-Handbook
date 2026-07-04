@@ -1,5 +1,5 @@
 mkdocs-material==9.5.50
 mkdocs-minify-plugin==0.8.0
 mkdocs-with-pdf==0.9.3
-pymdown-extensions==11.0.1
+pymdown-extensions==10.21.3
 
