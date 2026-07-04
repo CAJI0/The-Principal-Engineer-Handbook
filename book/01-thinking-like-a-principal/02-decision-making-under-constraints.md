@@ -2,7 +2,7 @@
 
 ## Opening Quote
 
-> A constraint is not a decision until someone accepts its cost.
+> A constraint becomes a decision when someone accepts its cost.
 
 ## Story
 
@@ -12,9 +12,8 @@ The device was approaching hardware freeze. The enclosure was fixed. The battery
 product team. The qualification plan had been scheduled. Field service had already started preparing the update
 procedure. The product was not new, but the next release mattered because it would stay in the field for years.
 
-The team needed a verified and recoverable software update path.
-
-That sentence sounded simple until the memory report arrived.
+The team needed a verified and recoverable software update path. That sentence sounded simple until the memory report
+arrived.
 
 The current product image fit. The recovery image fit only if the team treated several planned diagnostics as optional.
 The diagnostic package fit only if the update mechanism remained simple. A more complex update mechanism might recover
@@ -22,11 +21,10 @@ enough space, but the team had not validated it under field-like failure conditi
 variants consumed space too. They had been added months earlier because someone expected a product-line expansion, but
 no variant had been approved.
 
-Changing the hardware was technically possible. It was not free.
-
-A larger memory part would reopen qualification work. It would disturb the supply plan. It would also force another
-round of board review at the point when the hardware team was trying to stop change, not invite it. Nobody claimed the
-hardware was impossible to change. They claimed the cost of changing it now was high.
+Changing the hardware was technically possible, but it was not free. A larger memory part would reopen qualification
+work. It would disturb the supply plan. It would also force another round of board review at the point when the hardware
+team was trying to stop change, not invite it. Nobody claimed the hardware was impossible to change. They claimed the
+cost of changing it now was high.
 
 The release date had a real external commitment. A customer rollout depended on it. Field training depended on it.
 Manufacturing slots depended on it. The date was not a preference, but it was also not a law of physics.
@@ -47,7 +45,7 @@ For the first twenty minutes, the meeting treated every pressure as if it had th
 
 Each sentence used the same word, but the word hid different kinds of constraint. Some were physical limits. Some were
 safety and integrity requirements. Some were commitments to other groups. Some were assumptions that had never been
-reviewed. Some were preferences wearing hard hats.
+reviewed. Some were preferences stated with the force of constraints.
 
 The firmware lead wanted to keep the recovery path robust and defer diagnostics. The diagnostics owner argued that the
 new logs were the main reason service teams wanted the release. The product owner said the committed date could not move
@@ -57,7 +55,7 @@ update scheme could work, but the evidence was a prototype and a few bench runs.
 
 The Principal Engineer listened for a while, then asked for the options to be written without adjectives.
 
-The list looked less certain on the screen:
+The list looked different on the screen:
 
 - Reopen hardware and delay qualification.
 - Adopt the complex update mechanism with incomplete evidence.
@@ -67,11 +65,9 @@ The list looked less certain on the screen:
 - Delay the release.
 - Keep everything and assume later optimization will recover enough space.
 
-Nobody liked the list.
+Nobody liked the list. That was useful.
 
-That was useful.
-
-Then the Principal Engineer asked a slower question: "Which cost are we trying hardest not to say out loud?"
+Then the Principal Engineer asked a slower question: "Which cost are we avoiding naming?"
 
 The room did not answer immediately.
 
@@ -80,16 +76,15 @@ pointed at field recovery. The update engineer pointed at the lack of evidence f
 diagnostics owner pointed at service cost. Someone else pointed at the variant hooks and said, quietly, "We are
 protecting an option we have not proved we need."
 
-The meeting changed after that.
-
-The team was no longer trying to find an option that violated no constraint. It was trying to decide which constraint
-could be challenged, which cost could be accepted, and which risk would be unacceptable to transfer into the field.
+The meeting changed after that. The team was no longer trying to find an option that violated no constraint. It was
+trying to decide which constraint could be challenged, which cost could be accepted, and which risk would be unacceptable
+to transfer into the field.
 
 No decision had been made yet.
 
 ## Discussion
 
-The first mistake in a constrained decision is treating the constraint list as a wall.
+The meeting changed when the team stopped treating the constraint list as a wall.
 
 Some walls are real. A memory part has a capacity. A battery has limits. A watchdog window is not persuaded by optimism.
 An update path that cannot recover from interruption is not made safe by a confident meeting. These constraints deserve
@@ -129,10 +124,10 @@ supported deployed images. It had not been reviewed for recovery behavior after 
 exercised by field service. The team had confidence that the mechanism could be made to work. It did not yet have
 evidence that it should become the release path for a long-lived product.
 
-This is where Evidence Before Confidence (`LAW-005`) belongs in the chapter. The law does not say that engineers must
-wait for perfect proof. It says confidence should follow evidence, not replace it. A bench prototype can justify more
-investigation. It may justify a limited experiment. It should not automatically justify a low-reversibility commitment
-with field recovery consequences.
+This is Evidence Before Confidence (`LAW-005`) in practice. The law does not say that engineers must wait for perfect
+proof. It says confidence should follow evidence, not replace it. A bench prototype can justify more investigation. It
+may justify a limited experiment. It should not automatically justify a low-reversibility commitment with field recovery
+consequences.
 
 The option to accept a weaker recovery path was worse. It looked smaller than changing hardware or delaying release
 because it did not disturb the visible plan. That made it easy to underestimate. The cost would not be paid in the
@@ -144,22 +139,16 @@ cost to a future engineer with less time. Optimization can be real engineering w
 depend on optimization, it needed evidence, ownership, and a review trigger. Without those, the decision would only hide
 the shortage until the next freeze.
 
-That left the options nobody liked because they were honest.
-
-The team could defer part of the diagnostic package. It could remove speculative variant hooks. It could preserve the
-recovery path and keep the update mechanism simple enough to validate with the evidence available. This would not make
-the release painless. It would reduce the scope of the release to protect the property the product could least afford to
-lose.
-
-That is a different kind of decision from choosing the "best" option.
+That left the options nobody liked because they were honest. The team could defer part of the diagnostic package, remove
+speculative variant hooks, preserve the recovery path, and keep the update mechanism simple enough to validate with the
+evidence available. This would not make the release painless. It would reduce scope to protect the property the product
+could least afford to lose.
 
 There was no best option in the abstract. Reopening hardware might be best if recovery could not be preserved in
 software. Delaying release might be best if the customer commitment could absorb the change and the diagnostics were
 essential. The complex update mechanism might become best after stronger evidence. Keeping variant flexibility might be
 best if a committed variant depended on it. The responsible choice depended on the constraints, evidence, uncertainty,
-consequences, and reversibility in front of the team.
-
-Every option spent something.
+consequences, and reversibility in front of the team. Every option spent something.
 
 The selected direction spent product scope and some future optionality. It protected recovery, qualification evidence,
 and release predictability. It also created a cost for product and service teams because deferred diagnostics would have
@@ -193,8 +182,8 @@ release path would be harder to reverse after field deployment. Reopening hardwa
 qualification restarted. The more expensive the reversal, the more evidence the team needed before committing.
 
 This did not make reversible decisions harmless. A deferred diagnostic can still create support cost. A removed hook can
-still upset a future plan. A delayed feature can still matter to a customer. Reversibility only changes how much
-learning the team can buy before the decision becomes expensive.
+still upset a future plan. A delayed feature can still matter to a customer. Reversibility changes how much learning the
+team can buy before the decision becomes expensive.
 
 The team eventually chose a narrower release:
 
@@ -213,10 +202,8 @@ Date: 2026-07-04
 Decision: Preserve robust recovery by reducing release scope and removing unowned variant hooks.
 Evidence: Current image and recovery path fit after scope reduction; complex updater has only prototype evidence;
 hardware change would reopen qualification; no approved variant currently depends on the hooks.
-Confidence: Medium. Recovery behavior is supported by existing validation. Diagnostic deferral carries product and
-service cost.
-Review trigger: Revisit for the next hardware revision, an approved variant, or field-like evidence for the complex
-update mechanism.
+Confidence: Medium. Recovery behavior is supported by existing validation; diagnostic deferral carries product and service cost.
+Review trigger: Revisit for the next hardware revision, an approved variant, or field-like evidence for the complex update mechanism.
 ```
 
 That entry is not a ceremony. It is a guardrail against future misremembering.
@@ -278,7 +265,7 @@ Write short answers to these prompts:
 - What remains unknown?
 - What evidence is available?
 - What is the cost of being wrong?
-- What is the Change Radius?
+- What is its Change Radius?
 - How reversible is the decision?
 - Who owns the accepted risk?
 - What review trigger would reopen the decision?
@@ -346,6 +333,5 @@ The chapter does not teach a decision algorithm. It asks the reader to slow the 
 constraint is being discussed, what evidence exists, what uncertainty remains, what cost is being accepted, and who will
 own that cost later.
 
-That prepares the next chapter, Asking Better Engineering Questions, without stealing its work. Chapter 2 is about
-making a constrained commitment legible. The next step is learning how better questions expose the shape of that
-commitment before the system hardens around it.
+That prepares the next chapter, Asking Better Engineering Questions. Chapter 2 makes the constrained commitment legible.
+The next step is learning how better questions expose the shape of that commitment before the system hardens around it.

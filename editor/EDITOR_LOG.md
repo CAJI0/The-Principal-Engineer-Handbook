@@ -116,3 +116,26 @@ Chronological log of editorial maintenance work.
 - Technical Review has not been performed.
 - Freeze Review has not been performed.
 - Chapter 1 remains Frozen and canonical.
+
+## Phase 2 Chapter 2 Editorial Review
+
+- Chapter: Decision-Making Under Constraints.
+- Stable ID: CHAPTER-002.
+- Branch: `chapter2`.
+- Stage: Editorial Review.
+- Current `origin/main` tip: `1e01e56`.
+- Current `origin/chapter2` tip: `dc4b926`.
+- Current merge base: `1e01e56`.
+- Current Draft baseline commit: `da10687`.
+- Outcome: Approved with minor changes.
+- Major editorial improvements: tightened the opening quote, smoothed story rhythm, removed meta-manuscript wording,
+  reduced repeated discussion, integrated PEAK references into natural prose, and strengthened the closing transition.
+- Material intentionally preserved: embedded-product release story, central constrained-decision thesis, final engineering
+  decision, Decision Journal example fields, chapter-local ADR structure, required chapter architecture, and all existing
+  PEAK references.
+- Unresolved `AUTHOR NOTE` items: none.
+- Chapter 1 remains Frozen and canonical.
+- Canon Review has not been performed.
+- Technical Review has not been performed.
+- Freeze Review has not been performed.
+- Branch merged: no.
