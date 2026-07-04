@@ -12,14 +12,14 @@ The device was approaching hardware freeze. The enclosure was fixed. The battery
 product team. The qualification plan had been scheduled. Field service had already started preparing the update
 procedure. The product was not new, but the next release mattered because it would stay in the field for years.
 
-The team needed a verified and recoverable software update path. That sentence sounded simple until the memory report
+The team needed a validated and recoverable software update path. That sentence sounded simple until the memory report
 arrived.
 
-The current product image fit. The recovery image fit only if the team treated several planned diagnostics as optional.
-The diagnostic package fit only if the update mechanism remained simple. A more complex update mechanism might recover
-enough space, but the team had not validated it under field-like failure conditions. The speculative hooks for future
-variants consumed space too. They had been added months earlier because someone expected a product-line expansion, but
-no variant had been approved.
+The current product image fit. The recovery capability fit within the available memory only if the team treated several
+planned diagnostics as optional. The diagnostic package fit only if the update mechanism remained simple. A more complex
+update mechanism might recover enough space, but the team had not validated it under field-like failure conditions. The
+speculative hooks for future variants consumed space too. They had been added months earlier because someone expected a
+product-line expansion, but no variant had been approved.
 
 Changing the hardware was technically possible, but it was not free. A larger memory part would reopen qualification
 work. It would disturb the supply plan. It would also force another round of board review at the point when the hardware
@@ -47,7 +47,7 @@ Each sentence used the same word, but the word hid different kinds of constraint
 safety and integrity requirements. Some were commitments to other groups. Some were assumptions that had never been
 reviewed. Some were preferences stated with the force of constraints.
 
-The firmware lead wanted to keep the recovery path robust and defer diagnostics. The diagnostics owner argued that the
+The firmware lead wanted to keep the update path recoverable and defer diagnostics. The diagnostics owner argued that the
 new logs were the main reason service teams wanted the release. The product owner said the committed date could not move
 without a customer conversation nobody wanted to have. The hardware lead said changing memory would not only delay the
 board, it would reset evidence the team had already earned. The update engineer believed a more complex incremental
@@ -103,7 +103,7 @@ space. Any of these may be true. None of them should be allowed to harden withou
 The Principal Engineer did not improve the decision by ranking everyone else's concerns. The useful move was to separate
 different kinds of pressure so the team could reason about them without pretending they were the same.
 
-The robust recovery path belonged in the hard part of the list. A field device that cannot recover from a failed update
+The recoverable update path belonged in the hard part of the list. A field device that cannot recover from a failed update
 transfers cost to the worst possible place: the customer environment. The cost is not only repair time. It is trust,
 service capacity, support load, and the possibility that a future fix cannot be delivered safely.
 
@@ -161,8 +161,8 @@ that speculative variant hooks had to be preserved did not survive the discussio
 was ready did not survive either.
 
 Simplicity mattered, but not because simple designs are morally superior. Simplicity Is a Feature (`LAW-004`) because it
-preserves reviewability, testability, and explanation under pressure. A simpler update path with a robust recovery mode
-was easier to reason about before release and easier to support afterward.
+can preserve reviewability, testability, and explanation under pressure. A simpler update path with a validated recovery
+mode was easier to reason about before release and easier to support afterward.
 
 Flexibility mattered too. The team did not delete flexibility because flexibility is bad. It removed flexibility that
 was not protecting against real, evidenced uncertainty. Unused Flexibility Is Waste (`LAW-006`) when it consumes memory,
@@ -187,7 +187,7 @@ team can buy before the decision becomes expensive.
 
 The team eventually chose a narrower release:
 
-- Preserve the robust recovery path.
+- Preserve the recoverable update path.
 - Keep the update mechanism simple enough to validate with current evidence.
 - Defer a lower-value part of the diagnostic package.
 - Remove speculative variant hooks that had no committed owner.
@@ -199,8 +199,8 @@ A compact Decision Journal (`ARTIFACT-003`) entry captured the reasoning:
 
 ```text
 Date: 2026-07-04
-Decision: Preserve robust recovery by reducing release scope and removing unowned variant hooks.
-Evidence: Current image and recovery path fit after scope reduction; complex updater has only prototype evidence;
+Decision: Preserve recoverable updates by reducing release scope and removing unowned variant hooks.
+Evidence: Current image and recovery capability fit after scope reduction; complex updater has only prototype evidence;
 hardware change would reopen qualification; no approved variant currently depends on the hooks.
 Confidence: Medium. Recovery behavior is supported by existing validation; diagnostic deferral carries product and service cost.
 Review trigger: Revisit for the next hardware revision, an approved variant, or field-like evidence for the complex update mechanism.
@@ -287,7 +287,7 @@ What would you choose if the goal were not to remove all risk, but to make the a
 ### Context
 
 The team is approaching hardware and release freeze for a long-lived field device. The current memory budget cannot
-comfortably support the product image, robust recovery, all planned diagnostics, and speculative flexibility for
+comfortably support the product image, recovery capability, all planned diagnostics, and speculative flexibility for
 possible future variants.
 
 Changing hardware would reopen qualification. A more complex update mechanism lacks sufficient field-like evidence.
@@ -296,9 +296,9 @@ depend on unsupported optimism about later optimization.
 
 ### Decision
 
-Preserve the robust recovery path and keep the update mechanism simple enough to validate with current evidence. Reduce
-release scope by deferring lower-value diagnostics and removing speculative variant flexibility that has no committed
-owner.
+Preserve the recoverable update path and keep the update mechanism simple enough to validate with current evidence.
+Reduce release scope by deferring lower-value diagnostics and removing speculative variant flexibility that has no
+committed owner.
 
 Record the remaining uncertainty and revisit the decision when a future hardware revision, approved variant, or stronger
 update-mechanism evidence changes the constraints.

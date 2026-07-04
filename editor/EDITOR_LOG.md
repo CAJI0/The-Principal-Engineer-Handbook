@@ -169,3 +169,29 @@ Chronological log of editorial maintenance work.
 - Technical Review has not been performed.
 - Freeze Review has not been performed.
 - Branch merged: no.
+
+## Phase 2 Chapter 2 Technical Review
+
+- Chapter: Decision-Making Under Constraints.
+- Stable ID: CHAPTER-002.
+- Branch: `chapter2`.
+- Stage: Technical Review.
+- Current Canon Review baseline commit: `6085a8a`.
+- Outcome: Approved with minor changes.
+- Technical areas reviewed: software update and recovery model, meaning of validation and evidence, memory constraint
+  credibility, complex update mechanism, prototype evidence, interrupted-update examples, hardware qualification,
+  release commitments, recovery versus diagnostics, speculative flexibility, simplicity claims, Change Radius,
+  reversibility, decision quality versus outcome quality, risk ownership, review triggers, Decision Journal confidence,
+  architecture exercise, and chapter-local ADR consistency.
+- Technical corrections applied: replaced architecture-specific or guarantee-sounding recovery wording with neutral
+  recovery capability, recoverable update path, and validated recovery mode language.
+- Story-causality result: credible embedded-product release scenario; no unsupported causal leap found.
+- Update and recovery model result: preserved as a general recoverable update trade-off without prescribing dual-bank,
+  full-image rollback, compression, or delta-update architecture.
+- Change Radius and reversibility result: technically distinct and credible; reversibility is treated as evidence
+  threshold and learning capacity, not safety.
+- Unresolved technical issues: none.
+- Unresolved `AUTHOR NOTE` items: none.
+- Chapter 1 remains Frozen and canonical.
+- Freeze Review has not been performed.
+- Branch merged: no.
