@@ -50,8 +50,8 @@ The first sign was not a field failure. It was a release candidate that nobody w
 
 The service tool could not reliably determine which diagnostic behavior a device supported. The command response had the
 same shape in both firmware versions. The result code meant "manufacturing-ready" in one version and "service-ready" in
-another. A timeout that was safe for the old fixture looked too short for the new firmware. A timeout that was safe for
-the new firmware slowed older service sessions and made some support scripts look stuck.
+another. A timeout sufficient for the old fixture looked too short for the newer completion condition. A timeout long
+enough for the new firmware slowed older service sessions and made some support scripts look stuck.
 
 Manufacturing had an older sequence that still passed units on the line. Support had a newer procedure that assumed the
 longer verification. The tool team could add version detection, but only if firmware promised a reliable capability
@@ -75,14 +75,14 @@ All of those statements were true.
 
 None of them answered the question the release needed answered:
 
-"Who owns safe, versioned, supportable execution of this diagnostic workflow across manufacturing and field service?"
+"Who owns safe execution of the supported diagnostic workflow across manufacturing and field service?"
 
 The Principal Engineer became the person everyone asked.
 
-The firmware lead asked whether the old result code could still be treated as valid. The tool engineer asked which
-timeout should be used when firmware version information was missing. Manufacturing asked whether the fixture migration
-could wait one more release. Support asked which procedure was safe for devices that had skipped an update. Release
-engineering asked which combinations should be blocked.
+The firmware lead asked whether the old result code could still be treated as valid for the legacy workflow. The tool
+engineer asked which timeout should be used when firmware version information was missing. Manufacturing asked whether
+the fixture migration could wait one more release. Support asked which procedure remained supported for devices that had
+skipped an update. Release engineering asked which combinations should be blocked.
 
 The Principal Engineer knew the history. She remembered why the command had been introduced. She remembered the
 manufacturing assumption and the field cases that motivated the longer verification. She knew which firmware versions
@@ -109,8 +109,8 @@ Nobody owned the complete outcome, so one expert became the routing path.
 By the third release meeting, the Principal Engineer stopped answering the next compatibility question and wrote a
 different sentence on the board:
 
-"The owned outcome is safe, versioned, supportable execution of the diagnostic workflow across manufacturing and field
-service."
+"The owned outcome is safe for the supported diagnostic workflow, versioned, and supportable across manufacturing and
+field service."
 
 Then she asked:
 
@@ -140,11 +140,11 @@ procedure can be published, and a release can still contain an unowned outcome.
 The diagnostic story did not fail because teams were careless. It failed because their responsibilities were shaped
 around components, while the product consequence crossed components. Firmware completed the command change. Tools
 updated the service application. Manufacturing kept a working fixture. Support updated guidance. Release engineering
-packaged valid images. The local work was real.
+packaged images that were valid in isolation. The local work was real.
 
 The workflow was not closed.
 
-Closure meant more than finishing assigned tasks. It meant that the diagnostic behavior was safe across supported
+Closure meant more than finishing assigned tasks. It meant that the diagnostic behavior was supported across named
 firmware versions, understandable to the service tool, compatible with manufacturing migration, explainable to support,
 and governed by release rules that future engineers could find.
 
@@ -174,7 +174,7 @@ firmware command semantics by writing a better article.
 
 A bounded ownership statement looks different:
 
-"Own safe, versioned, supportable execution of the diagnostic workflow across manufacturing and field service."
+"Own safe execution of the supported diagnostic workflow across manufacturing and field service."
 
 That sentence names an outcome. It gives ownership a shape. It also prevents ownership from becoming infinite. The owner
 is not responsible for every diagnostic in the product, every service procedure, every firmware command, or every release
@@ -241,7 +241,7 @@ That is Every API Is a Promise (`LAW-002`) in a form that crosses teams. The pro
 or protocol field. It was a compatibility contract among firmware, tools, manufacturing, support, and release.
 
 The workflow also had state. A device either supported the new diagnostic semantics or it did not. A fixture either had
-migrated to the supported sequence or it had not. A release package either contained a valid combination or it did not.
+migrated to the supported sequence or it had not. A release package either contained a supported combination or it did not.
 Every State Has One Owner (`LAW-001`) applies because those states affect behavior. If no one owns capability truth, each
 consumer will infer it. If no one owns migration state, release planning will guess. If no one owns deprecation state,
 old behavior will remain half-supported.
@@ -277,16 +277,16 @@ Closure should be named before the work fragments.
 
 If the team waits until every component has finished to ask what closure means, integration becomes negotiation by
 surprise. Closure for the diagnostic workflow might include agreed command semantics, explicit behavior for old and new
-firmware, service-tool capability detection, manufacturing migration, support procedure alignment, release compatibility
+firmware, service-tool capability handling, manufacturing migration, support procedure alignment, release compatibility
 checks, named residual risks, accepted handoffs, and evidence that the workflow works across supported combinations.
 
 That list is not a universal checklist. It is the shape of closure for this outcome.
 
 The evidence matters because closure must be observable. The outcome owner should not declare closure because the room
 feels aligned or because the Principal Engineer remembers the intended behavior. Closure needs something observable:
-tests across supported versions, a compatibility table with an owner, a fixture migration record, release gates, a
-support procedure tied to firmware behavior, and an Architecture Ledger (`ARTIFACT-006`) or another discoverable record
-that points future engineers to the active decisions.
+tests across supported combinations, a compatibility table with an owner, a fixture migration record, release gates based
+on an agreed policy, a support procedure tied to firmware behavior, and a maintained Architecture Ledger
+(`ARTIFACT-006`) or another discoverable record that points future engineers to the active decisions.
 
 This chapter does not decide how good the evidence is. That belongs to the next chapter. Here, the point is narrower:
 closure without evidence is only a claim.
@@ -330,8 +330,8 @@ without one person carrying the missing architecture in their head.
 Ownership is responsibility for making a bounded outcome reach visible closure across boundaries.
 
 The thing being owned is not every task near the outcome. It is the outcome itself: a specific diagnostic workflow, a
-release property, a compatibility promise, a migration, a safety condition, or another consequential concern with a
-boundary that can be named.
+release property, a compatibility promise, a migration, a supportability condition, or another consequential concern
+with a boundary that can be named.
 
 Closure means the concern has reached a state that can be observed and explained. The required work is done or
 intentionally deferred. The remaining risks are named. The handoffs are accepted. The relevant states and interface
@@ -339,7 +339,7 @@ promises have owners. The evidence exists. The record is discoverable.
 
 Implementation remains distributed. Firmware still owns firmware. Tools still owns tools. Manufacturing still owns the
 fixture. Support still owns procedure. Release still owns package rules. The outcome owner does not absorb those
-responsibilities. The outcome owner ensures they compose into a result the product can safely carry.
+responsibilities. The outcome owner ensures they compose into a result the product can support.
 
 Ownership survives beyond one person when the system no longer depends on private memory. Future engineers can find the
 owner, the contract, the decision, the risk, the handoff, and the evidence without reconstructing them from old meetings.
@@ -386,8 +386,8 @@ What is currently assigned, but not truly owned?
 ### Context
 
 The diagnostic workflow crosses firmware, manufacturing, service tooling, support, release packaging, and compatibility
-rules. Each component has a local owner, but no one owns safety, compatibility, migration, supportability, and closure
-of the complete workflow.
+rules. Each component has a local owner, but no one owns supported behavior, compatibility, migration, supportability,
+and closure of the complete workflow.
 
 Command semantics differ across firmware versions. The service tool cannot reliably determine capability in all cases.
 Manufacturing still depends on an older sequence. Support lacks a complete compatibility rule. Deprecation and residual
@@ -400,7 +400,7 @@ Assign one owner responsible for end-to-end closure of the diagnostic workflow.
 
 This owner maintains the bounded product-level outcome, coordinates closure criteria, ensures command and compatibility
 semantics have explicit owners, keeps remaining risks visible, ensures handoffs are accepted, makes decisions and
-contracts discoverable, and verifies that agreed closure evidence exists.
+contracts discoverable, and verifies that agreed closure evidence exists and remains current.
 
 Component teams retain implementation responsibility for firmware, tools, manufacturing fixtures, support procedure,
 and release packaging.

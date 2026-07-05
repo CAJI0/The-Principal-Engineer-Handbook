@@ -845,3 +845,117 @@ Chronological log of editorial maintenance work.
   - `python -m pip check`: passed with no broken requirements.
   - `$env:ENABLE_PDF_EXPORT='1'; python -m mkdocs build --strict`: passed as the workflow-style PDF export build.
 - Next lifecycle stage: Chapter 4 Technical Review.
+
+## Phase 4 Chapter 4 Technical Review
+
+- Chapter: Ownership Beyond Code.
+- Stable ID: CHAPTER-004.
+- Branch: `chapter4`.
+- Reviewed Canon Review baseline commit: `3a5f0ad37ede5c5a719668e420e1c8a9ac3a36c8`.
+- Lifecycle stage: Technical Review.
+- Review scope: diagnostic-workflow system model, story causality, `ready` semantics, interface compatibility,
+  capability detection, old-firmware limitations, timeout language, command-versus-state boundaries, migration,
+  mixed-fleet support, release gates, supported-combination evidence, safety-language scope, technical ownership,
+  accepted risk lifecycle, deprecation, exercise usefulness, chapter-local ADR, and timelessness.
+- Review outcome: Approved with minor changes.
+- System-model result: plausible and internally coherent; manufacturing reuse, field-service reuse, changed firmware
+  semantics, unchanged response shape, mixed deployed versions, staggered fixture migration, support procedure drift,
+  and Principal Engineer routing dependency can coexist without contradiction.
+- Story-causality result: the sequence remains credible; local completion does not establish end-to-end compatibility
+  because semantic, tooling, fixture, support, and release concerns move on different schedules.
+- `ready` semantic result: treated as an interface semantic and completion condition, not as physical truth or a
+  universal safety guarantee.
+- Interface-compatibility result: the chapter correctly frames the problem as semantic compatibility, not response-shape
+  syntax alone.
+- Capability-detection result: credible after preserving the distinction between version information, capability
+  signaling, fallback handling, and already-shipped firmware that cannot be retrofitted.
+- Old-firmware limitation result: preserved; new capability signaling cannot make old firmware report a new capability.
+- Timeout-model result: minor wording was narrowed so timeout language refers to completion bounds and workflow behavior,
+  not a universal safe timeout.
+- Command-versus-state result: the chapter does not equate command receipt, diagnostic completion, service workflow
+  closure, or release support.
+- Retry behavior result: no retry or duplicate-command claim is made; no additional retry model was needed.
+- Manufacturing-fixture migration result: credible; fixture images and client libraries may migrate on a different
+  schedule from product firmware, and migration state affects supported combinations.
+- Mixed-fleet result: credible; the chapter allows old firmware, skipped updates, temporary compatibility handling,
+  support restrictions, and deprecation state without assuming every device can be updated.
+- Release-gate result: release gates are treated as enforcement of an agreed supported-combination policy, not as the
+  source of firmware or tool semantics.
+- Supported-combination evidence result: evidence examples were narrowed to supported combinations, agreed policy,
+  maintained records, and closure evidence rather than proof of all possible field behavior.
+- Safety-language result: broad safety wording was narrowed to supported diagnostic workflow behavior and
+  supportability.
+- Authoritative-state ownership result: separate authoritative owners for capability, migration, deprecation, release
+  combination, and risk state remain possible; the outcome owner does not become authoritative for every state.
+- Interface-promise result: firmware command semantics, timing/completion behavior, errors, capability applicability,
+  and deprecation remain interface promises rather than tool or documentation guesses.
+- Silent Coupling result: valid; fixture, service tool, support procedure, and release gate depend on shared diagnostic
+  meaning that must be explicit.
+- Hero Engineer result: valid; the failure mode is dependency on private compatibility knowledge, not expert involvement
+  itself.
+- Bus Factor and Discoverability result: valid; used as risk signals and maintenance properties, not proof of closure.
+- Architecture Ledger result: valid after narrowing; a maintained ledger or equivalent record improves discoverability
+  and does not replace validation or runtime truth.
+- Outcome-owner feasibility result: technically credible; one owner ensures composition of component owners, interface
+  owners, state owners, risk owners, accepted handoffs, and evidence without becoming universal implementer or approver.
+- Handoff-acceptance result: credible; acceptance means understanding the bounded concern, current state, contract,
+  uncertainty, consequence, closure condition, and ability to act or escalate.
+- Accepted-risk lifecycle result: credible; old firmware capability limits, temporary compatibility tables, delayed
+  fixture migration, support restrictions, and temporary compatibility behavior can have owners and review triggers.
+- Deprecation result: credible; deprecation remains an active lifecycle state, not a date written in a plan.
+- Engineering Principle result: preserved exactly and technically supported.
+- Architecture Exercise result: still actionable; prompts distinguish component owners, authoritative-state owners,
+  interface-promise owners, risk owners, closure evidence, discoverable records, and human single points of failure.
+- Chapter-local ADR result: technically credible and local to the diagnostic workflow; component ownership remains
+  distributed, bottleneck risk remains acknowledged, and records/evidence must stay maintained.
+- Timelessness result: no vendor, MCU, RTOS, protocol, cloud, CI provider, ticket system, or release-methodology
+  dependency was introduced.
+- Technical corrections made:
+  - narrowed `safe timeout` wording to timeout sufficiency for a completion condition;
+  - scoped `valid` result-code wording to the legacy workflow;
+  - scoped support-procedure and owned-outcome safety language to supported diagnostic workflow behavior;
+  - changed broad valid-image and valid-combination wording to supported or isolated validity language;
+  - narrowed closure evidence to supported combinations and release gates based on an agreed policy;
+  - clarified that discoverable records such as an Architecture Ledger must be maintained;
+  - replaced broad safety-condition language with supportability-condition language;
+  - clarified that closure evidence must remain current.
+- Unresolved technical issues: none.
+- Canon concerns deferred: none.
+- Editorial concerns deferred: none.
+- Remaining `AUTHOR NOTE` items: none in Chapter 4.
+- Files changed:
+  - `book/01-thinking-like-a-principal/04-ownership-beyond-code.md`;
+  - `editor/EDITOR_LOG.md`.
+- `knowledge/index.yaml` changed: no.
+- PEAK relationships changed: no.
+- `editor/CANON.md` changed: no.
+- PEAK concept files changed: no.
+- Frozen Chapters 1-3 changed: no.
+- Lifecycle remains: `draft`.
+- Freeze Review performed: no.
+- Branch merged: no.
+- Validation commands and results:
+  - `git fetch --all --prune`: passed.
+  - `git status --short --branch`: passed during preflight; branch was `chapter4` and working tree was clean.
+  - `git rev-parse HEAD`: `3a5f0ad37ede5c5a719668e420e1c8a9ac3a36c8` before review edits.
+  - `git merge-base origin/main HEAD`: `a29d238d9177a9d3cb583c352ca0a505623cc6c4`.
+  - Direct chapter structure and marker checks: passed for one H1, required H2 order, exactly three Principal's
+    Notebook entries, complete ADR sections, and no `TODO`, `TBD`, `AUTHOR NOTE`, placeholders, or conflict markers.
+  - Direct YAML graph checks: passed for `CHAPTER-004` draft status, exact seven Chapter 4 relationships, target
+    existence, supported relationship types, and no duplicate relationships.
+  - Targeted technical search: passed; no newly introduced vendor, protocol, packet-format, guarantee, formal-safety,
+    or technology-specific wording was found. The `CAN` search produced only ordinary-word false positives such as
+    `cannot`.
+  - `git diff --exit-code -- book/01-thinking-like-a-principal/01-what-is-a-principal-engineer.md book/01-thinking-like-a-principal/02-decision-making-under-constraints.md book/01-thinking-like-a-principal/03-asking-better-engineering-questions.md knowledge/index.yaml editor/CANON.md`:
+    passed; frozen Chapters 1-3, PEAK registry, and `editor/CANON.md` were unchanged.
+  - `git diff --check`: passed with local LF/CRLF notice only.
+  - `vale --config .vale.ini book/01-thinking-like-a-principal/04-ownership-beyond-code.md editor/EDITOR_LOG.md`:
+    passed with 0 errors, 0 warnings, and 0 suggestions.
+  - `npm.cmd run lint:md`: passed with 0 errors.
+  - `npm.cmd run lint:spelling`: passed with 0 issues.
+  - `npm.cmd run lint:links`: passed; 125 links scanned successfully.
+  - `Remove-Item Env:ENABLE_PDF_EXPORT -ErrorAction SilentlyContinue; python -m mkdocs build --strict`: passed.
+  - `python -m pip check`: passed with no broken requirements.
+  - `$env:ENABLE_PDF_EXPORT='1'; mkdocs build --strict`: passed as the PowerShell equivalent of the workflow-style PDF
+    export build.
+- Next lifecycle stage: Chapter 4 Freeze Review.
