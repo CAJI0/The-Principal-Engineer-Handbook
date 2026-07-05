@@ -279,6 +279,11 @@ entities:
       name: Decision-Making Under Constraints
       path: ../book/01-thinking-like-a-principal/02-decision-making-under-constraints.md
       status: canonical
+    - id: CHAPTER-003
+      type: chapter
+      name: Asking Better Engineering Questions
+      path: ../book/01-thinking-like-a-principal/03-asking-better-engineering-questions.md
+      status: canonical
   adrs:
     - id: ADR-001
       type: adr
@@ -332,3 +337,30 @@ relationships:
   - from: CHAPTER-002
     type: references
     to: LAW-006
+  - from: CHAPTER-003
+    type: illustrates
+    to: LAW-005
+  - from: CHAPTER-003
+    type: references
+    to: VOCAB-002
+  - from: CHAPTER-003
+    type: references
+    to: LAW-001
+  - from: CHAPTER-003
+    type: references
+    to: LAW-002
+  - from: CHAPTER-003
+    type: references
+    to: LAW-003
+  - from: CHAPTER-003
+    type: references
+    to: SMELL-004
+  - from: CHAPTER-003
+    type: references
+    to: SMELL-001
+  - from: CHAPTER-003
+    type: references
+    to: ARTIFACT-007
+  - from: CHAPTER-003
+    type: references
+    to: RITUAL-001
