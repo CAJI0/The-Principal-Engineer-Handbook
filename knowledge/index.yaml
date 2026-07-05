@@ -369,3 +369,24 @@ relationships:
   - from: CHAPTER-003
     type: references
     to: RITUAL-001
+  - from: CHAPTER-004
+    type: references
+    to: LAW-001
+  - from: CHAPTER-004
+    type: references
+    to: LAW-002
+  - from: CHAPTER-004
+    type: references
+    to: SMELL-001
+  - from: CHAPTER-004
+    type: illustrates
+    to: FAILURE-004
+  - from: CHAPTER-004
+    type: references
+    to: METRIC-002
+  - from: CHAPTER-004
+    type: references
+    to: METRIC-003
+  - from: CHAPTER-004
+    type: references
+    to: ARTIFACT-006

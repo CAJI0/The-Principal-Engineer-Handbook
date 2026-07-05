@@ -657,3 +657,24 @@ Chronological log of editorial maintenance work.
 - PEAK relationships added: none.
 - Editorial, Canon, Technical, and Freeze Review performed: no.
 - Chapter 1, Chapter 2, and Chapter 3 remain canonical and untouched.
+
+## Phase 3 Chapter 4 Author Draft
+
+- Chapter: Ownership Beyond Code.
+- Stable ID: CHAPTER-004.
+- Branch: `chapter4`.
+- Author Draft phase completed.
+- Reader-facing manuscript path: `book/01-thinking-like-a-principal/04-ownership-beyond-code.md`.
+- Central thesis: ownership is responsibility for closure across boundaries, not possession of every task.
+- Main story direction: a manufacturing diagnostic reused by service becomes assigned across teams but not owned as an
+  end-to-end workflow.
+- Chapter-local exercise included: Map an Ownership Gap.
+- Chapter-local ADR included: Assign End-to-End Ownership for the Diagnostic Workflow.
+- PEAK relationships added: `CHAPTER-004 references LAW-001`; `CHAPTER-004 references LAW-002`;
+  `CHAPTER-004 references SMELL-001`; `CHAPTER-004 illustrates FAILURE-004`;
+  `CHAPTER-004 references METRIC-002`; `CHAPTER-004 references METRIC-003`;
+  `CHAPTER-004 references ARTIFACT-006`.
+- Lifecycle remains: `draft`.
+- New PEAK concepts registered: none.
+- Editorial, Canon, Technical, and Freeze Review performed: no.
+- Next step: separate Editorial Review.
