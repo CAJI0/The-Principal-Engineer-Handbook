@@ -640,3 +640,427 @@ Chronological log of editorial maintenance work.
 - Chapter 3 is Frozen.
 - Future substantive changes require reopening the chapter at the appropriate review stage.
 - Next repository step: begin Chapter 4 only through a separate Draft prompt.
+
+## Phase 3 Chapter 4 Canonical Brief Setup
+
+- Chapter: Ownership Beyond Code.
+- Stable ID: CHAPTER-004.
+- Branch: `chapter4`.
+- Baseline commit: `a29d238d9177a9d3cb583c352ca0a505623cc6c4`.
+- Lifecycle stage: Draft preparation.
+- Chapter 4 preparation started.
+- Canonical brief and exact scope established at `editor/chapter-briefs/CHAPTER-004-ownership-beyond-code.md`.
+- `CHAPTER-004` registered as `draft` in `knowledge/index.yaml`.
+- Reader-facing Draft written: no.
+- Chapter 4 manuscript file created: no.
+- New PEAK concept registered: no.
+- PEAK relationships added: none.
+- Editorial, Canon, Technical, and Freeze Review performed: no.
+- Chapter 1, Chapter 2, and Chapter 3 remain canonical and untouched.
+
+## Phase 3 Chapter 4 Author Draft
+
+- Chapter: Ownership Beyond Code.
+- Stable ID: CHAPTER-004.
+- Branch: `chapter4`.
+- Author Draft phase completed.
+- Reader-facing manuscript path: `book/01-thinking-like-a-principal/04-ownership-beyond-code.md`.
+- Central thesis: ownership is responsibility for closure across boundaries, not possession of every task.
+- Main story direction: a manufacturing diagnostic reused by service becomes assigned across teams but not owned as an
+  end-to-end workflow.
+- Chapter-local exercise included: Map an Ownership Gap.
+- Chapter-local ADR included: Assign End-to-End Ownership for the Diagnostic Workflow.
+- PEAK relationships added: `CHAPTER-004 references LAW-001`; `CHAPTER-004 references LAW-002`;
+  `CHAPTER-004 references SMELL-001`; `CHAPTER-004 illustrates FAILURE-004`;
+  `CHAPTER-004 references METRIC-002`; `CHAPTER-004 references METRIC-003`;
+  `CHAPTER-004 references ARTIFACT-006`.
+- Lifecycle remains: `draft`.
+- New PEAK concepts registered: none.
+- Editorial, Canon, Technical, and Freeze Review performed: no.
+- Next step: separate Editorial Review.
+
+## Phase 4 Chapter 4 Editorial Review
+
+- Chapter: Ownership Beyond Code.
+- Stable ID: CHAPTER-004.
+- Branch: `chapter4`.
+- Reviewed baseline commit: `227f72468997aa3f4096041ed38afb7f1991e40a`.
+- Lifecycle stage: Editorial Review.
+- Review scope: clarity, structure, narrative flow, pacing, readability, continuity with Chapters 1-3, canonical chapter
+  architecture, style-guide compliance, repetition, terminology readability, and PEAK-reference readability.
+- Review outcome: Approved with minor changes.
+- Central-idea assessment: the chapter remains focused on ownership as responsibility for closure across boundaries,
+  not possession of every task.
+- Story assessment: the diagnostic workflow story remains intact; local teams remain reasonable, the Principal Engineer
+  routing dependency remains visible, and the owned outcome is named before Discussion.
+- Structure and flow assessment: required chapter sections remain in canonical order and progress from story to
+  discussion, principle, exercise, notebook, ADR, and commentary.
+- Repetition and pacing assessment: minor repeated phrasing around team reuse, private memory, and local ownership was
+  tightened without changing the story or decision.
+- Continuity with Chapters 1-3: Chapter 4 follows Chapter 3 by moving from exposed ownership gaps to bounded closure,
+  without reteaching the Chapter 1 role frame, Chapter 2 decision framework, or Chapter 3 question-shaping work.
+- Chapter-boundary assessment: the chapter does not become an org-chart, management, release-management, or Chapter 5
+  evidence-quality chapter.
+- Engineering Principle assessment: the principle remains singular and bounded: ownership means making a bounded
+  outcome reach visible closure across boundaries.
+- Architecture Exercise assessment: the exercise remains immediately usable and ends with the required question,
+  `What is currently assigned, but not truly owned?`
+- Principal's Notebook assessment: exactly three concise observations remain.
+- Chapter-local ADR assessment: the ADR remains local to the diagnostic workflow and preserves distributed component
+  ownership.
+- Editor's Commentary assessment: the commentary explains the Chapter 3-to-Chapter 4 transition, chapter boundary, use
+  of existing PEAK concepts, and the handoff to Chapter 5.
+- PEAK-reference readability assessment: direct references to `LAW-001`, `LAW-002`, `SMELL-001`, `FAILURE-004`,
+  `METRIC-002`, `METRIC-003`, and `ARTIFACT-006` remain readable and naturally integrated.
+- Editorial changes made:
+  - tightened repeated role-benefit phrasing in the Story;
+  - reduced repeated descriptions of the Principal Engineer's memory;
+  - removed an unnecessary standalone repetition about local owners not composing automatically;
+  - tightened outcome-owner language so it does not imply a universal implementer;
+  - clarified observable closure wording and avoided vague alignment language;
+  - made the Hero Engineer transition less heroic in tone.
+- Unresolved editorial issues: none.
+- Canon concerns deferred to Canon Review: verify that the existing PEAK relationships are sufficient and that no
+  ownership term should be promoted into canon.
+- Technical concerns deferred to Technical Review: validate the diagnostic compatibility, capability-detection,
+  migration, timeout, and release-gate details.
+- Remaining `AUTHOR NOTE` items: none.
+- Files changed:
+  - `book/01-thinking-like-a-principal/04-ownership-beyond-code.md`;
+  - `editor/EDITOR_LOG.md`.
+- Validation commands and results:
+  - `git fetch --all --prune`: passed during preflight.
+  - `git status --short --branch`: passed during preflight; branch was `chapter4` and working tree was clean.
+  - `git rev-parse HEAD`: `227f72468997aa3f4096041ed38afb7f1991e40a` before review edits.
+  - `git merge-base origin/main HEAD`: `a29d238d9177a9d3cb583c352ca0a505623cc6c4`.
+  - Direct Chapter 4 structural and PEAK checks: passed for heading order, one H1, required sections, exactly three
+    Principal's Notebook entries, ADR sections, no placeholder markers, `CHAPTER-004` draft status, expected
+    relationships, supported relationship types, and no duplicate relationship edges.
+  - `git diff --exit-code -- knowledge/index.yaml`: passed; PEAK relationships unchanged.
+  - `git diff --exit-code -- book/01-thinking-like-a-principal/01-what-is-a-principal-engineer.md book/01-thinking-like-a-principal/02-decision-making-under-constraints.md book/01-thinking-like-a-principal/03-asking-better-engineering-questions.md`:
+    passed; frozen Chapters 1-3 unchanged.
+  - `git diff --check`: passed with local LF/CRLF notices only.
+  - `vale --config .vale.ini book/01-thinking-like-a-principal/04-ownership-beyond-code.md editor/EDITOR_LOG.md`:
+    passed with 0 errors, 0 warnings, and 0 suggestions.
+  - `npm.cmd run lint:md`: passed with 0 errors.
+  - `npm.cmd run lint:spelling`: passed with 0 issues.
+  - `npm.cmd run lint:links`: passed; 125 links scanned successfully.
+  - `Remove-Item Env:ENABLE_PDF_EXPORT -ErrorAction SilentlyContinue; python -m mkdocs build --strict`: passed.
+  - `python -m pip check`: passed with no broken requirements.
+  - `$env:ENABLE_PDF_EXPORT='1'; python -m mkdocs build --strict`: passed as the workflow-style PDF export build.
+- Lifecycle remains: `draft`.
+- New PEAK concepts registered: none.
+- Canon Review performed: no.
+- Technical Review performed: no.
+- Freeze Review performed: no.
+- Branch merged: no.
+- Next lifecycle stage: separate Chapter 4 Canon Review.
+
+## Phase 4 Chapter 4 Canon Review
+
+- Chapter: Ownership Beyond Code.
+- Stable ID: CHAPTER-004.
+- Branch: `chapter4`.
+- Reviewed baseline commit: `c681aac409b64f818adb66553a413060c2ff55c6`.
+- Lifecycle stage: Canon Review.
+- Review scope: central idea, canonical brief compliance, chapter boundaries, canonical terminology, PEAK definitions,
+  stable IDs, relationship graph, chapter-local principle, chapter-local ADR, and new-concept risk.
+- Review outcome: Approved.
+- Central-idea result: Chapter 4 teaches one approved idea: ownership is responsibility for closure across boundaries,
+  not possession of every task.
+- Canonical-brief compliance result: the manuscript stays inside the approved brief for bounded responsibility, visible
+  closure, accepted handoffs, residual risks, discoverability, and avoidance of permanent Principal Engineer routing.
+- Boundary result relative to Chapters 1-3: Chapter 4 operationalizes one responsibility of the Principal Engineer role,
+  starts after an ownership gap is visible, and does not reteach Chapter 1 role definition, Chapter 2 constrained
+  decision-making, or Chapter 3 question shaping.
+- Later-chapter boundary result: the chapter requires observable closure evidence without teaching Chapter 5 evidence
+  quality or Chapter 6 broad stewardship.
+- Canonical terminology result: exact PEAK names and IDs are used where concepts are formal; ownership phrases remain
+  ordinary or chapter-local prose.
+- Undefined-term result: no undefined formal term blocks Canon Review.
+- Exact PEAK names and IDs reviewed: `LAW-001` Every State Has One Owner; `LAW-002` Every API Is a Promise;
+  `SMELL-001` Silent Coupling; `FAILURE-004` The Hero Engineer; `METRIC-002` Bus Factor; `METRIC-003`
+  Discoverability; `ARTIFACT-006` Architecture Ledger.
+- PEAK concept reuse result: existing concepts are applied without redefining laws, metrics, smells, artifacts, or
+  failure stories.
+- Concept-duplication result: no duplicate of an existing PEAK concept was found.
+- New-concept requirement result: no new PEAK concept is required.
+- Ownership-term promotion decision: `outcome owner`, `owner of closure`, `bounded ownership`, `ownership gap`,
+  `handoff acceptance`, `closure evidence`, `ownership architecture`, and `Own the closure, not all the work` remain
+  ordinary or chapter-local language.
+- Chapter-local Engineering Principle result: the principle is consistent with the brief, distinct from `LAW-001` and
+  `LAW-002`, and was not promoted into `editor/CANON.md` or `knowledge/index.yaml`.
+- Chapter-local ADR result: the ADR remains reader-facing, story-local, and scoped to the diagnostic workflow; it does
+  not create a repository-level ADR or universal ownership rule.
+- Chapter architecture result: required sections remain present in canonical order with one H1, exactly three
+  Principal's Notebook observations, and a complete chapter-local ADR.
+- Distinct handbook value result: Chapter 4 adds the move from exposed ownership gap to durable closure while avoiding
+  both fragmented responsibility and Hero Engineer centralization.
+- Existing Chapter 4 relationships audited:
+  - `CHAPTER-004 references LAW-001`.
+  - `CHAPTER-004 references LAW-002`.
+  - `CHAPTER-004 references SMELL-001`.
+  - `CHAPTER-004 illustrates FAILURE-004`.
+  - `CHAPTER-004 references METRIC-002`.
+  - `CHAPTER-004 references METRIC-003`.
+  - `CHAPTER-004 references ARTIFACT-006`.
+- Relationships retained: all seven Chapter 4 relationships.
+- Relationships added: none.
+- Relationships removed: none.
+- Relationships corrected: none.
+- Justification for relationship changes: not applicable; no relationship changes were needed.
+- Manuscript corrections made: none.
+- `editor/CANON.md` changed: no.
+- PEAK concept files changed: no.
+- PEAK entity statuses changed: no.
+- `knowledge/index.yaml` changed: no.
+- Unresolved canon issues: none.
+- Technical concerns deferred to Technical Review: diagnostic compatibility, capability detection, migration sequencing,
+  timeout behavior, and release-gate feasibility.
+- Remaining `AUTHOR NOTE` items: none in Chapter 4.
+- Frozen Chapters 1-3 changed: no.
+- Lifecycle remains: `draft`.
+- Technical Review performed: no.
+- Freeze Review performed: no.
+- Branch merged: no.
+- Validation commands and results:
+  - `git fetch --all --prune`: passed.
+  - `git status --short --branch`: passed; branch was `chapter4` and working tree was clean before the log entry.
+  - `git rev-parse HEAD`: `c681aac409b64f818adb66553a413060c2ff55c6` before the log entry.
+  - `git merge-base origin/main HEAD`: `a29d238d9177a9d3cb583c352ca0a505623cc6c4`.
+  - Direct chapter identity and PEAK ID checks: passed for `CHAPTER-004` uniqueness, type, name, manuscript path,
+    `draft` status, explicit PEAK IDs, and exact PEAK name/ID pairs in the manuscript.
+  - Direct chapter architecture and graph checks: passed for required section order, one H1, exactly three Principal's
+    Notebook entries, complete ADR sections, no placeholder markers, exact Chapter 4 edge set, target existence,
+    supported relationship types, no duplicate edges, and no self-edge.
+  - `git diff --exit-code c681aac409b64f818adb66553a413060c2ff55c6 -- book/01-thinking-like-a-principal/01-what-is-a-principal-engineer.md book/01-thinking-like-a-principal/02-decision-making-under-constraints.md book/01-thinking-like-a-principal/03-asking-better-engineering-questions.md knowledge/index.yaml editor/CANON.md`:
+    passed before the log entry; frozen Chapters 1-3, PEAK registry, and `editor/CANON.md` were unchanged.
+  - `git diff --check`: passed after the log entry with local LF/CRLF notice only.
+  - `vale --config .vale.ini book/01-thinking-like-a-principal/04-ownership-beyond-code.md editor/EDITOR_LOG.md`:
+    passed with 0 errors, 0 warnings, and 0 suggestions after the log entry.
+  - `npm.cmd run lint:md`: passed with 0 errors.
+  - `npm.cmd run lint:spelling`: passed with 0 issues.
+  - `npm.cmd run lint:links`: passed; 125 links scanned successfully.
+  - `Remove-Item Env:ENABLE_PDF_EXPORT -ErrorAction SilentlyContinue; python -m mkdocs build --strict`: passed.
+  - `python -m pip check`: passed with no broken requirements.
+  - `$env:ENABLE_PDF_EXPORT='1'; python -m mkdocs build --strict`: passed as the workflow-style PDF export build.
+- Next lifecycle stage: Chapter 4 Technical Review.
+
+## Phase 4 Chapter 4 Technical Review
+
+- Chapter: Ownership Beyond Code.
+- Stable ID: CHAPTER-004.
+- Branch: `chapter4`.
+- Reviewed Canon Review baseline commit: `3a5f0ad37ede5c5a719668e420e1c8a9ac3a36c8`.
+- Lifecycle stage: Technical Review.
+- Review scope: diagnostic-workflow system model, story causality, `ready` semantics, interface compatibility,
+  capability detection, old-firmware limitations, timeout language, command-versus-state boundaries, migration,
+  mixed-fleet support, release gates, supported-combination evidence, safety-language scope, technical ownership,
+  accepted risk lifecycle, deprecation, exercise usefulness, chapter-local ADR, and timelessness.
+- Review outcome: Approved with minor changes.
+- System-model result: plausible and internally coherent; manufacturing reuse, field-service reuse, changed firmware
+  semantics, unchanged response shape, mixed deployed versions, staggered fixture migration, support procedure drift,
+  and Principal Engineer routing dependency can coexist without contradiction.
+- Story-causality result: the sequence remains credible; local completion does not establish end-to-end compatibility
+  because semantic, tooling, fixture, support, and release concerns move on different schedules.
+- `ready` semantic result: treated as an interface semantic and completion condition, not as physical truth or a
+  universal safety guarantee.
+- Interface-compatibility result: the chapter correctly frames the problem as semantic compatibility, not response-shape
+  syntax alone.
+- Capability-detection result: credible after preserving the distinction between version information, capability
+  signaling, fallback handling, and already-shipped firmware that cannot be retrofitted.
+- Old-firmware limitation result: preserved; new capability signaling cannot make old firmware report a new capability.
+- Timeout-model result: minor wording was narrowed so timeout language refers to completion bounds and workflow behavior,
+  not a universal safe timeout.
+- Command-versus-state result: the chapter does not equate command receipt, diagnostic completion, service workflow
+  closure, or release support.
+- Retry behavior result: no retry or duplicate-command claim is made; no additional retry model was needed.
+- Manufacturing-fixture migration result: credible; fixture images and client libraries may migrate on a different
+  schedule from product firmware, and migration state affects supported combinations.
+- Mixed-fleet result: credible; the chapter allows old firmware, skipped updates, temporary compatibility handling,
+  support restrictions, and deprecation state without assuming every device can be updated.
+- Release-gate result: release gates are treated as enforcement of an agreed supported-combination policy, not as the
+  source of firmware or tool semantics.
+- Supported-combination evidence result: evidence examples were narrowed to supported combinations, agreed policy,
+  maintained records, and closure evidence rather than proof of all possible field behavior.
+- Safety-language result: broad safety wording was narrowed to supported diagnostic workflow behavior and
+  supportability.
+- Authoritative-state ownership result: separate authoritative owners for capability, migration, deprecation, release
+  combination, and risk state remain possible; the outcome owner does not become authoritative for every state.
+- Interface-promise result: firmware command semantics, timing/completion behavior, errors, capability applicability,
+  and deprecation remain interface promises rather than tool or documentation guesses.
+- Silent Coupling result: valid; fixture, service tool, support procedure, and release gate depend on shared diagnostic
+  meaning that must be explicit.
+- Hero Engineer result: valid; the failure mode is dependency on private compatibility knowledge, not expert involvement
+  itself.
+- Bus Factor and Discoverability result: valid; used as risk signals and maintenance properties, not proof of closure.
+- Architecture Ledger result: valid after narrowing; a maintained ledger or equivalent record improves discoverability
+  and does not replace validation or runtime truth.
+- Outcome-owner feasibility result: technically credible; one owner ensures composition of component owners, interface
+  owners, state owners, risk owners, accepted handoffs, and evidence without becoming universal implementer or approver.
+- Handoff-acceptance result: credible; acceptance means understanding the bounded concern, current state, contract,
+  uncertainty, consequence, closure condition, and ability to act or escalate.
+- Accepted-risk lifecycle result: credible; old firmware capability limits, temporary compatibility tables, delayed
+  fixture migration, support restrictions, and temporary compatibility behavior can have owners and review triggers.
+- Deprecation result: credible; deprecation remains an active lifecycle state, not a date written in a plan.
+- Engineering Principle result: preserved exactly and technically supported.
+- Architecture Exercise result: still actionable; prompts distinguish component owners, authoritative-state owners,
+  interface-promise owners, risk owners, closure evidence, discoverable records, and human single points of failure.
+- Chapter-local ADR result: technically credible and local to the diagnostic workflow; component ownership remains
+  distributed, bottleneck risk remains acknowledged, and records/evidence must stay maintained.
+- Timelessness result: no vendor, MCU, RTOS, protocol, cloud, CI provider, ticket system, or release-methodology
+  dependency was introduced.
+- Technical corrections made:
+  - narrowed `safe timeout` wording to timeout sufficiency for a completion condition;
+  - scoped `valid` result-code wording to the legacy workflow;
+  - scoped support-procedure and owned-outcome safety language to supported diagnostic workflow behavior;
+  - changed broad valid-image and valid-combination wording to supported or isolated validity language;
+  - narrowed closure evidence to supported combinations and release gates based on an agreed policy;
+  - clarified that discoverable records such as an Architecture Ledger must be maintained;
+  - replaced broad safety-condition language with supportability-condition language;
+  - clarified that closure evidence must remain current.
+- Unresolved technical issues: none.
+- Canon concerns deferred: none.
+- Editorial concerns deferred: none.
+- Remaining `AUTHOR NOTE` items: none in Chapter 4.
+- Files changed:
+  - `book/01-thinking-like-a-principal/04-ownership-beyond-code.md`;
+  - `editor/EDITOR_LOG.md`.
+- `knowledge/index.yaml` changed: no.
+- PEAK relationships changed: no.
+- `editor/CANON.md` changed: no.
+- PEAK concept files changed: no.
+- Frozen Chapters 1-3 changed: no.
+- Lifecycle remains: `draft`.
+- Freeze Review performed: no.
+- Branch merged: no.
+- Validation commands and results:
+  - `git fetch --all --prune`: passed.
+  - `git status --short --branch`: passed during preflight; branch was `chapter4` and working tree was clean.
+  - `git rev-parse HEAD`: `3a5f0ad37ede5c5a719668e420e1c8a9ac3a36c8` before review edits.
+  - `git merge-base origin/main HEAD`: `a29d238d9177a9d3cb583c352ca0a505623cc6c4`.
+  - Direct chapter structure and marker checks: passed for one H1, required H2 order, exactly three Principal's
+    Notebook entries, complete ADR sections, and no `TODO`, `TBD`, `AUTHOR NOTE`, placeholders, or conflict markers.
+  - Direct YAML graph checks: passed for `CHAPTER-004` draft status, exact seven Chapter 4 relationships, target
+    existence, supported relationship types, and no duplicate relationships.
+  - Targeted technical search: passed; no newly introduced vendor, protocol, packet-format, guarantee, formal-safety,
+    or technology-specific wording was found. The `CAN` search produced only ordinary-word false positives such as
+    `cannot`.
+  - `git diff --exit-code -- book/01-thinking-like-a-principal/01-what-is-a-principal-engineer.md book/01-thinking-like-a-principal/02-decision-making-under-constraints.md book/01-thinking-like-a-principal/03-asking-better-engineering-questions.md knowledge/index.yaml editor/CANON.md`:
+    passed; frozen Chapters 1-3, PEAK registry, and `editor/CANON.md` were unchanged.
+  - `git diff --check`: passed with local LF/CRLF notice only.
+  - `vale --config .vale.ini book/01-thinking-like-a-principal/04-ownership-beyond-code.md editor/EDITOR_LOG.md`:
+    passed with 0 errors, 0 warnings, and 0 suggestions.
+  - `npm.cmd run lint:md`: passed with 0 errors.
+  - `npm.cmd run lint:spelling`: passed with 0 issues.
+  - `npm.cmd run lint:links`: passed; 125 links scanned successfully.
+  - `Remove-Item Env:ENABLE_PDF_EXPORT -ErrorAction SilentlyContinue; python -m mkdocs build --strict`: passed.
+  - `python -m pip check`: passed with no broken requirements.
+  - `$env:ENABLE_PDF_EXPORT='1'; mkdocs build --strict`: passed as the PowerShell equivalent of the workflow-style PDF
+    export build.
+- Next lifecycle stage: Chapter 4 Freeze Review.
+
+## Phase 4 Chapter 4 Freeze Review
+
+- Chapter: Ownership Beyond Code.
+- Stable ID: CHAPTER-004.
+- Branch: `chapter4`.
+- Reviewed Technical Review baseline commit: `6fb3a8e9add08df0e9eed8af4b90eb018a8aea37`.
+- Lifecycle stage: Freeze Review.
+- Review outcome: Approved.
+- Prior review-history result: Draft preparation, Author Draft, Editorial Review, Canon Review, and Technical Review
+  records are present, distinct, ordered, and permit progression. No prior Chapter 4 Freeze Review was recorded.
+- Branch-scope result: branch diff against `origin/main` contains only Chapter 4 work:
+  `book/01-thinking-like-a-principal/04-ownership-beyond-code.md`, `editor/EDITOR_LOG.md`,
+  `editor/chapter-briefs/CHAPTER-004-ownership-beyond-code.md`, and `knowledge/index.yaml`.
+- Complete branch changed-file set:
+  - `book/01-thinking-like-a-principal/04-ownership-beyond-code.md`;
+  - `editor/EDITOR_LOG.md`;
+  - `editor/chapter-briefs/CHAPTER-004-ownership-beyond-code.md`;
+  - `knowledge/index.yaml`.
+- Central-idea result: passed; Chapter 4 teaches that ownership is responsibility for closure across boundaries, not
+  possession of every task.
+- Chapter-boundary result: passed; the chapter applies the Principal Engineer role without reteaching Chapters 1-3,
+  requires closure evidence without teaching Chapter 5 evidence quality, and does not become a management,
+  responsibility-matrix, release management, incident ownership, or organization-design chapter.
+- Chapter-architecture result: passed; one H1, required H2 sections in canonical order, no empty required section,
+  exactly three Principal's Notebook observations, complete chapter-local ADR, and no optional structure competing with
+  the chapter architecture.
+- Editorial-stability result: passed; story progression, terminology, paragraph density, PEAK integration, and tone are
+  stable after Editorial Review and Technical Review.
+- Canon-stability result: passed; Canon Review conclusions still hold, ownership phrases remain ordinary or
+  chapter-local prose, no new PEAK concept is required, `editor/CANON.md` remains unchanged, and PEAK concept files
+  remain unchanged.
+- Technical-stability result: passed; Technical Review conclusions remain present, including semantic compatibility,
+  capability detection, mixed-fleet support, bounded timeout language, supported-combination evidence, maintained records,
+  and bounded safety/supportability wording.
+- Story result: passed; the diagnostic workflow story remains realistic, shows local teams acting reasonably, exposes an
+  end-to-end ownership gap, avoids fabricated catastrophe, resolves through bounded ownership, and preserves distributed
+  implementation.
+- Engineering Principle result: passed; the principle remains chapter-local and distinct from `LAW-001` and `LAW-002`.
+- Architecture Exercise result: passed; Map an Ownership Gap remains immediately usable and ends with
+  `What is currently assigned, but not truly owned?`
+- Principal's Notebook result: passed; exactly three concise observations remain with distinct meanings.
+- Chapter-local ADR result: passed; the ADR is local to the diagnostic workflow, contains Context, Decision,
+  Consequences, and Alternatives Considered, preserves component implementation ownership, requires maintained current
+  evidence, and does not create a repository-level ADR.
+- Editor's Commentary result: passed; it explains why Chapter 4 follows Chapter 3, preserves the management and
+  Chapter 5 boundaries, reuses existing PEAK concepts, and does not contain repository workflow details.
+- PEAK entity result: `CHAPTER-004` exists exactly once, type `chapter`, name `Ownership Beyond Code`, path
+  `../book/01-thinking-like-a-principal/04-ownership-beyond-code.md`, and pre-transition status `draft`.
+- Relationships retained:
+  - `CHAPTER-004 references LAW-001`;
+  - `CHAPTER-004 references LAW-002`;
+  - `CHAPTER-004 references SMELL-001`;
+  - `CHAPTER-004 illustrates FAILURE-004`;
+  - `CHAPTER-004 references METRIC-002`;
+  - `CHAPTER-004 references METRIC-003`;
+  - `CHAPTER-004 references ARTIFACT-006`.
+- Relationship changes during Freeze Review: none.
+- PEAK concept changes: none.
+- `editor/CANON.md` changed: no.
+- Manuscript changes during Freeze Review: none.
+- Frozen Chapters 1-3 changed: no.
+- Chapter 5 started: no.
+- Branch merged: no.
+- Unresolved editorial issues: none.
+- Unresolved canon issues: none.
+- Unresolved technical issues: none.
+- Remaining `AUTHOR NOTE` items: none in Chapter 4.
+- Remaining validation blockers: none.
+- Validation commands and results:
+  - `git fetch --all --prune`: passed.
+  - `git status --short --branch`: passed; branch was `chapter4` and working tree was clean before transition.
+  - `git rev-parse HEAD`: `6fb3a8e9add08df0e9eed8af4b90eb018a8aea37` before transition.
+  - `git rev-parse origin/chapter4`: `6fb3a8e9add08df0e9eed8af4b90eb018a8aea37`.
+  - `git rev-parse origin/main`: `a29d238d9177a9d3cb583c352ca0a505623cc6c4`.
+  - `git merge-base origin/main HEAD`: `a29d238d9177a9d3cb583c352ca0a505623cc6c4`.
+  - `git log --decorate --graph origin/main..HEAD`: passed; branch contains the five expected Chapter 4
+    commits through Technical Review.
+  - `git diff --name-status origin/main...HEAD`: passed; only expected Chapter 4 files were present.
+  - `git diff --check`: passed.
+  - Direct pre-transition Freeze checks: passed for lifecycle records, no prior Freeze Review, exact chapter structure,
+    markers, complete ADR, `CHAPTER-004` draft status, Chapters 1-3 canonical status, exact seven Chapter 4
+    relationships, target existence, supported relationship types, no duplicate edges, no self-edge, no new PEAK
+    concept, no Chapter 5 manuscript, no duplicate Chapter 4 under `docs/`, and generated PDF output not tracked.
+  - YAML parse for `knowledge/index.yaml`: passed.
+  - `npm.cmd run lint:md`: passed with 0 errors.
+  - `npm.cmd run lint:spelling`: passed with 0 issues.
+  - `npm.cmd run lint:links`: passed; 125 links scanned successfully.
+  - `vale --config .vale.ini book/01-thinking-like-a-principal/04-ownership-beyond-code.md editor/EDITOR_LOG.md`:
+    passed with 0 errors, 0 warnings, and 0 suggestions before transition.
+  - `vale .`: exited 0 with 0 errors, 5 existing AuthorBoundary warnings outside Chapter 4, and 0 suggestions.
+  - `python -m pip check`: passed with no broken requirements.
+  - `Remove-Item Env:ENABLE_PDF_EXPORT -ErrorAction SilentlyContinue; python -m mkdocs build --strict`: passed.
+  - `$env:ENABLE_PDF_EXPORT='1'; python -m mkdocs build --config-file mkdocs-pdf.yml`: passed and generated
+    `site/pdf/the-principal-engineer-handbook.pdf`.
+  - `$env:ENABLE_PDF_EXPORT='1'; mkdocs build --strict`: passed as the PowerShell equivalent of the CI PDF command.
+  - Post-transition validation rerun: `git diff --check`, `npm.cmd run lint:md`, `npm.cmd run lint:spelling`,
+    `npm.cmd run lint:links`, targeted Vale, YAML parse, `python -m pip check`, strict MkDocs build, documented PDF
+    build, CI-equivalent PDF build, protected-file diff, final direct Freeze checks, and generated-output tracking checks
+    passed.
+- Pre-transition status: `CHAPTER-004` was `draft`.
+- Final lifecycle state: `CHAPTER-004` moved from `draft` to `canonical`.
+- Chapter 4 is Frozen.
+- Future-change rule: future substantive changes require reopening Chapter 4 at the appropriate review stage.
+- Next repository step: prepare and merge a pull request for `chapter4`; do not start Chapter 5 on this branch.
