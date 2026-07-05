@@ -283,7 +283,7 @@ entities:
       type: chapter
       name: Asking Better Engineering Questions
       path: ../book/01-thinking-like-a-principal/03-asking-better-engineering-questions.md
-      status: draft
+      status: canonical
   adrs:
     - id: ADR-001
       type: adr

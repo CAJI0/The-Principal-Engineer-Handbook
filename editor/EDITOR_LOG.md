@@ -531,3 +531,112 @@ Chronological log of editorial maintenance work.
 - Chapter 4 started: no.
 - Freeze Review performed: no.
 - Next lifecycle stage: Freeze Review.
+
+## Phase 3 Chapter 3 Freeze Review
+
+- Chapter: Asking Better Engineering Questions.
+- Stable ID: CHAPTER-003.
+- Branch: `chapter3`.
+- Reviewed baseline commit: `ace15331c69a2535410cbf86621f395ab1994c9b`.
+- Current `origin/main` commit: `3bdf3e9d38b98784235415e4ce339b815b12f6dc`.
+- Current merge base with `origin/main`: `3bdf3e9d38b98784235415e4ce339b815b12f6dc`.
+- Technical Review baseline commit: `a89cd3cddadc2c8fd83a3c18287ff2752fff551f`.
+- Lifecycle stage: Freeze Review.
+- Review outcome: Approved.
+- Lifecycle-history result: Draft, Editorial Review, Canon Review, Technical Review, and required pre-Freeze alignment
+  records are present; no prior Chapter 3 Freeze Review record existed.
+- Branch-scope result: branch changes are limited to Chapter 3 manuscript work, Chapter 3 PEAK/index updates,
+  Canon classification alignment, and editor log records; Chapter 1 and Chapter 2 remain untouched in this review.
+- Complete branch changed-file set before Freeze transition: `book/01-thinking-like-a-principal/03-asking-better-engineering-questions.md`,
+  `editor/CANON.md`, `editor/EDITOR_LOG.md`, and `knowledge/index.yaml`.
+- Central-idea result: the chapter remains focused on making assumptions testable before they become architecture.
+- Chapter-boundary result: Chapter 3 advances question quality and shaped inquiry; it does not become Chapter 1,
+  Chapter 2, an incident-response guide, an Architecture Review process, or Chapter 4.
+- Chapter-architecture result: required sections are present in canonical order.
+- Editorial-stability result: story, discussion, principle, exercise, notebook, ADR, and commentary are stable after
+  Editorial Review and Technical Review.
+- Canon-stability result: PEAK terminology and references match the existing canon; no new concept was required.
+- Technical-stability result: distributed state, acknowledgments, freshness, ordering, retries, and ownership language
+  remain bounded and technically credible after Technical Review.
+- Story result: the stale-state investigation is realistic and introduces the problem before the solution.
+- Engineering Principle result: `Better questions make assumptions testable before they become architecture.`
+- Architecture Exercise result: practical, evidence-oriented, and bounded before option selection.
+- Principal's Notebook result: exactly three concise observations.
+- Chapter ADR result: local to the story system and not registered as a handbook-wide ADR.
+- Editor's Commentary result: explains the chapter's position after Chapters 1 and 2 and points to Chapter 4 without
+  starting Chapter 4.
+- PEAK entity result: `CHAPTER-003` exists exactly once, path resolves, and status moved from `draft` to `canonical`.
+- PEAK relationships retained:
+  - `CHAPTER-003 illustrates LAW-005`.
+  - `CHAPTER-003 references VOCAB-002`.
+  - `CHAPTER-003 references LAW-001`.
+  - `CHAPTER-003 references LAW-002`.
+  - `CHAPTER-003 references LAW-003`.
+  - `CHAPTER-003 references SMELL-004`.
+  - `CHAPTER-003 references SMELL-001`.
+  - `CHAPTER-003 references ARTIFACT-007`.
+  - `CHAPTER-003 references RITUAL-001`.
+- PEAK relationships changed during Freeze Review: none.
+- PEAK concept files changed during Freeze Review: none.
+- `editor/CANON.md` changed during Freeze Review: no.
+- Manuscript changes made during Freeze Review: none.
+- Frozen chapters changed during Freeze Review: none.
+- Chapter 4 started: no.
+- Branch merged: no.
+- Unresolved editorial issues: none.
+- Unresolved canon issues: none.
+- Unresolved technical issues: none.
+- Remaining `AUTHOR NOTE` items: none.
+- Remaining validation blockers: none.
+- Validation commands and results:
+  - `git fetch --all --prune`: passed.
+  - `git switch chapter3`: passed; branch already current.
+  - `git pull --ff-only`: passed; branch already up to date.
+  - `git status --short`: passed; working tree clean before review edits.
+  - `git rev-parse HEAD`: `ace15331c69a2535410cbf86621f395ab1994c9b`.
+  - `git rev-parse origin/main`: `3bdf3e9d38b98784235415e4ce339b815b12f6dc`.
+  - `git merge-base origin/main HEAD`: `3bdf3e9d38b98784235415e4ce339b815b12f6dc`.
+  - `git diff --name-status origin/main...HEAD`: four expected branch files only.
+  - `python -m pip install -r requirements.txt`: passed after local network access was allowed.
+  - `python -m pip check`: passed with no broken requirements.
+  - `npm.cmd install`: passed; dependencies already up to date.
+  - `npm.cmd run lint:md`: passed with 0 errors.
+  - `npm.cmd run lint:spelling`: passed with 0 issues.
+  - `npm.cmd run lint:links`: passed; 123 links scanned successfully.
+  - `vale --config .vale.ini book/01-thinking-like-a-principal/03-asking-better-engineering-questions.md editor/EDITOR_LOG.md`:
+    passed with 0 errors, 0 warnings, and 0 suggestions before Freeze transition.
+  - `vale .`: exited 0 with 0 errors, 5 existing AuthorBoundary warnings outside Chapter 3, and 0 suggestions.
+  - `Remove-Item Env:ENABLE_PDF_EXPORT -ErrorAction SilentlyContinue; python -m mkdocs build --strict`: passed.
+  - `$env:ENABLE_PDF_EXPORT='1'; python -m mkdocs build --strict`: passed as the workflow-style PDF job command.
+  - `$env:ENABLE_PDF_EXPORT='1'; python -m mkdocs build --config-file mkdocs-pdf.yml`: passed and generated
+    `site/pdf/the-principal-engineer-handbook.pdf`.
+  - Direct pre-transition Freeze checks: passed for chapter architecture, markers, notebook count, Chapter 4 boundary,
+    YAML parse, `CHAPTER-003` draft status, `CHAPTER-001` and `CHAPTER-002` canonical status, unique `CHAPTER-003`,
+    path resolution, exact relationships, no `METRIC-003` edge, and no duplicate `CHAPTER-003` edge.
+  - `git diff --check`: passed before Freeze transition.
+  - `git status --short`: passed before Freeze transition; no tracked validation output changed.
+  - `git diff --name-only`: passed before Freeze transition; no tracked validation output changed.
+- Post-transition validation commands and results:
+  - `git diff --check`: passed with local LF/CRLF notices for the two changed files.
+  - `git diff --name-only`: returned only `editor/EDITOR_LOG.md` and `knowledge/index.yaml`.
+  - `git status --short`: returned only `editor/EDITOR_LOG.md` and `knowledge/index.yaml`.
+  - `git diff --exit-code -- book/01-thinking-like-a-principal/03-asking-better-engineering-questions.md`: passed.
+  - `git diff --exit-code -- book/01-thinking-like-a-principal/01-what-is-a-principal-engineer.md book/01-thinking-like-a-principal/02-decision-making-under-constraints.md`:
+    passed.
+  - `npm.cmd run lint:md`: passed with 0 errors.
+  - `npm.cmd run lint:spelling`: passed with 0 issues after replacing one log word that was not in the dictionary.
+  - `npm.cmd run lint:links`: passed; 123 links scanned successfully.
+  - `vale --config .vale.ini book/01-thinking-like-a-principal/03-asking-better-engineering-questions.md editor/EDITOR_LOG.md`:
+    passed with 0 errors, 0 warnings, and 0 suggestions.
+  - `vale .`: exited 0 with 0 errors, 5 existing AuthorBoundary warnings outside Chapter 3, and 0 suggestions.
+  - `python -m pip check`: passed with no broken requirements.
+  - `Remove-Item Env:ENABLE_PDF_EXPORT -ErrorAction SilentlyContinue; python -m mkdocs build --strict`: passed.
+  - `$env:ENABLE_PDF_EXPORT='1'; python -m mkdocs build --config-file mkdocs-pdf.yml`: passed and generated
+    `site/pdf/the-principal-engineer-handbook.pdf`.
+  - Direct final Freeze checks: passed for `CHAPTER-003` canonical status, `CHAPTER-001` and `CHAPTER-002` canonical
+    status, chapter architecture, markers, path resolution, exact relationships, no `METRIC-003` edge, no duplicate
+    edge, and Chapter 4 boundary.
+- Final lifecycle state: `CHAPTER-003` moved from `draft` to `canonical`.
+- Chapter 3 is Frozen.
+- Future substantive changes require reopening the chapter at the appropriate review stage.
+- Next repository step: begin Chapter 4 only through a separate Draft prompt.
