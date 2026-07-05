@@ -1130,3 +1130,93 @@ Chronological log of editorial maintenance work.
   - `editor/EDITOR_LOG.md`;
   - `knowledge/index.yaml`.
 - Next required lifecycle stage: separate Chapter 5 Editorial Review.
+
+## Phase 6 Chapter 5 Editorial Review
+
+- Chapter: Technical Judgment and Evidence.
+- Stable ID: CHAPTER-005.
+- Branch: `chapter5`.
+- Reviewed baseline full SHA: `153fa046afe5ceecb304ad89de84a1d98b98b91e`.
+- Lifecycle stage: Editorial Review.
+- Review scope: clarity, structure, narrative flow, pacing, readability, paragraph rhythm, continuity with Chapters 1-4,
+  Chapter 6 and later-part boundaries, canonical chapter architecture, style-guide compliance, repetition, terminology
+  readability, PEAK-reference integration, Architecture Exercise usability, chapter-local ADR, and Editor's Commentary.
+- Review outcome: Approved with minor changes.
+- Central-idea assessment: preserved; the chapter remains focused on evidence-calibrated technical judgment under
+  incomplete information.
+- Story assessment: credible and bounded; the NOR-flash logging story still moves from a successful endurance test to a
+  broader unsupported field-power durability claim, weak signals, targeted evidence gathering, minimum useful
+  operational feedback, and a staged commitment.
+- Structure and flow assessment: passed; the chapter keeps the canonical section order and the Discussion follows the
+  approved arc from claim, to reasoning layers, to evidence conditions, evidence quality, confidence, consequence,
+  next evidence action, weak signals, operational feedback, and visible residual uncertainty.
+- Repetition and pacing assessment: improved; several repeated transition sentences were consolidated, and the opening
+  story was tightened without changing the technical scenario.
+- Continuity with Chapters 1-4: preserved; the chapter builds on the Principal Engineer role, constrained commitments,
+  answerable questions, and ownership of closure without reteaching those chapters.
+- Chapter 6 and later-parts boundary assessment: preserved; the chapter points toward stewardship, observability,
+  validation, and release topics only as evidence sources or consumers, not as their definitive treatment.
+- Engineering Principle assessment: preserved; `LAW-005` remains the primary anchor, with one chapter-local operational
+  expression and no new canonical principle.
+- Architecture Exercise assessment: improved; the exercise was consolidated from a long prompt list into grouped prompts
+  while preserving the approved semantic targets and final question.
+- Principal's Notebook assessment: passed; exactly three concise observations remain with distinct meanings.
+- Chapter-local ADR assessment: passed; the ADR remains story-local, balanced about benefits and costs, and clear that
+  staged rollout is bounded learning rather than a validation substitute.
+- Editor's Commentary assessment: improved; it now states that the chapter reuses existing PEAK concepts instead of
+  creating a new evidence framework.
+- PEAK-reference readability assessment: improved; PEAK references remain naturally integrated and explainable from the
+  manuscript without changing the relationship set.
+- Editorial changes made:
+  - tightened the story's opening technical setup;
+  - replaced a jokey logging sentence with clearer product-language phrasing;
+  - consolidated short repeated transition paragraphs in the Discussion;
+  - grouped the Architecture Exercise prompts for usability;
+  - added a concise PEAK reuse sentence to the Editor's Commentary.
+- Unresolved editorial issues: none.
+- Canon concerns deferred to Canon Review: verify whether all seven Chapter 5 PEAK relationships remain materially
+  justified after editorial consolidation.
+- Technical concerns deferred to Technical Review: flash interruption boundaries, production-equivalent timing,
+  representative flash lots, staged rollout language, and operational feedback sufficiency should receive technical
+  scrutiny.
+- New PEAK concepts created: none.
+- `knowledge/index.yaml` changed during Editorial Review: no.
+- `editor/CANON.md` changed: no.
+- Frozen Chapters 1-4 changed: no.
+- Chapter 6 started: no.
+- Lifecycle remains: `draft`.
+- Canon Review performed: no.
+- Technical Review performed: no.
+- Freeze Review performed: no.
+- Validation commands and results:
+  - `git fetch --all --prune`: passed.
+  - `git status --short --branch`: passed during preflight; branch was `chapter5` and working tree was clean.
+  - `git rev-parse HEAD`: `153fa046afe5ceecb304ad89de84a1d98b98b91e`.
+  - `git rev-parse origin/chapter5`: `153fa046afe5ceecb304ad89de84a1d98b98b91e`.
+  - `git rev-parse origin/main`: `54d6b4e13b6ae8f38619b9b7be40c91b6bbb03c8`.
+  - `git merge-base origin/main HEAD`: `54d6b4e13b6ae8f38619b9b7be40c91b6bbb03c8`.
+  - Condensed decorated git log for `origin/main..HEAD`: passed; branch contained the two expected Chapter 5
+    commits before Editorial Review.
+  - `git diff --name-status origin/main...HEAD`: passed during preflight; branch diff contained only the expected
+    Chapter 5 file set.
+  - `git diff --check`: passed.
+  - Direct structural checks: passed for one H1, required H2 sections in canonical order, no empty required section,
+    exactly three Principal's Notebook observations, complete chapter-local ADR sections, no unresolved markers, no
+    duplicate Chapter 5 manuscript under `docs/`, no Chapter 6 manuscript, and no accidental new canonical-looking
+    artifact name or stable ID.
+  - Direct PEAK checks: passed for valid YAML parsing, exactly one `CHAPTER-005` entity, `CHAPTER-005` status `draft`,
+    Chapters 1-4 status `canonical`, unchanged Chapter 5 relationship set, valid relationship targets, supported
+    relationship types, no duplicate relationship edges, and no self-edges.
+  - Protected-file checks: passed for unchanged canonical brief, unchanged `knowledge/index.yaml`, unchanged
+    `editor/CANON.md`, unchanged existing PEAK concept files, unchanged Frozen Chapter 1-4 manuscripts, and no tracked
+    generated site or PDF output.
+  - `npm.cmd run lint:md`: passed with 0 errors.
+  - `npm.cmd run lint:spelling`: passed with 0 issues.
+  - `npm.cmd run lint:links`: passed; 127 links scanned successfully.
+  - `vale --config .vale.ini book/01-thinking-like-a-principal/05-technical-judgment-and-evidence.md editor/EDITOR_LOG.md`:
+    passed with 0 errors, 0 warnings, and 0 suggestions.
+  - `python -m pip check`: passed with no broken requirements.
+  - `Remove-Item Env:ENABLE_PDF_EXPORT -ErrorAction SilentlyContinue; python -m mkdocs build --strict`: passed.
+  - `$env:ENABLE_PDF_EXPORT = '1'; python -m mkdocs build --config-file mkdocs-pdf.yml`: passed and generated
+    `site/pdf/the-principal-engineer-handbook.pdf`.
+- Next required lifecycle stage: separate Chapter 5 Canon Review.

@@ -13,7 +13,8 @@ external NOR flash. The old path wrote too often, wore blocks unevenly, and some
 small stalls elsewhere in the system. The new design batched records in RAM, committed them in larger writes, and kept a
 compact recovery marker so the device could rebuild the log after reset.
 
-The change was not glamorous. It was the kind of engineering work that lets future incidents be understood.
+The change was ordinary in the best sense: it reduced wear, made bursts less intrusive, and promised better evidence
+when the next field issue arrived.
 
 The team had evidence. A prototype board had completed a multi-day endurance run. The test had written far more records
 than a typical customer site would write in the same period. The CRC checks passed. No data loss had been reproduced.
@@ -58,8 +59,8 @@ same sequence many times. That made it repeatable, but it did not make the evide
 The team did not like where the conversation was going.
 
 No one wanted to restart the release. No one wanted to dismiss a successful endurance test. No one wanted to add logging
-to the logging system until it collapsed under its own irony. The support lead also had a practical concern: field
-diagnostics were already weak, and delaying the new path meant keeping the old one longer.
+to the logging system until the diagnostic improvement became its own project. The support lead also had a practical
+concern: field diagnostics were already weak, and delaying the new path meant keeping the old one longer.
 
 Then the field notes arrived.
 
@@ -108,11 +109,9 @@ They had become less willing to let a successful test prove the wrong claim.
 
 ## Discussion
 
-Data does not interpret itself.
-
-A test result, measurement, prototype, benchmark, simulation, field report, or expert opinion becomes evidence only in
-relation to a claim. The same result can be strong evidence for one claim, weak evidence for another, and almost
-irrelevant for a third.
+Data does not interpret itself. A test result, measurement, prototype, benchmark, simulation, field report, or expert
+opinion becomes evidence only in relation to a claim. The same result can be strong evidence for one claim, weak
+evidence for another, and almost irrelevant for a third.
 
 The endurance run in the story was not bad evidence. It was good evidence for a bounded claim: the buffered logging path
 could run for several days, on that board, with that flash part, in that environment, along that repeated path, without
@@ -128,9 +127,8 @@ covered by the original test.
 That is the danger behind The Successful Prototype (`FAILURE-003`): a result that is valid in one environment becomes
 production architecture before the claim has been reviewed.
 
-Technical judgment begins with the claim.
-
-Before asking whether the evidence is sufficient, the team needs to say what the evidence is supposed to support. "The
+Technical judgment begins there: before asking whether the evidence is sufficient, the team needs to say what the
+evidence is supposed to support. "The
 logger passed endurance testing" is a result. "The logger preserves records through interrupted flash operations in the
 field" is a claim. "We should enable this path across the fleet" is a commitment. Those sentences are related, but they
 are not interchangeable.
@@ -145,10 +143,8 @@ The observation may be that no CRC failures appeared during a test. The interpre
 were internally consistent when checked. The inference may be that the recovery mechanism is likely working. The
 confidence may be medium for the tested path. The commitment may be a staged rollout or a broader release.
 
-Each arrow can introduce uncertainty.
-
-This does not mean every decision needs formal analysis. It means the Principal Engineer should notice when the team has
-skipped from observation to commitment without making the middle steps visible.
+Each arrow can introduce uncertainty. This does not mean every decision needs formal analysis. It means the Principal
+Engineer should notice when the team has skipped from observation to commitment without making the middle steps visible.
 
 Evidence has an envelope.
 
@@ -162,9 +158,8 @@ Supply voltage changes. Temperature changes. Flash lots differ. A debug build ma
 race. A fixture may reset the device cleanly while the field removes power halfway through a write. A test that repeats
 one path many times may provide confidence in that path without providing much confidence in adjacent states.
 
-Repetition is useful when it exercises the claim.
-
-Repetition is weaker when it repeats the same narrow path and then gets treated as independent confirmation. Ten
+Repetition is useful when it exercises the claim. It is weaker when it repeats the same narrow path and then gets treated
+as independent confirmation. Ten
 thousand clean writes through one sequence may be less valuable for the disputed claim than one carefully designed
 fault-injection run that interrupts the exact commit boundary everyone is assuming will recover.
 
@@ -197,11 +192,10 @@ comfort. A team that asks what would lower confidence protects judgment from bec
 
 None of these questions requires a statistics lecture. They require intellectual cleanliness.
 
-Confidence should attach to a specific claim.
-
-The team in the story could have high confidence that the implementation survived the lab endurance run. It could have
-lower confidence that recovery worked through interrupted flash operations. It could have lower confidence still that
-the product claim would hold across boards, lots, voltage, temperature, and field behavior.
+Confidence should attach to a specific claim. The team in the story could have high confidence that the implementation
+survived the lab endurance run. It could have lower confidence that recovery worked through interrupted flash operations.
+It could have lower confidence still that the product claim would hold across boards, lots, voltage, temperature, and
+field behavior.
 
 Those confidence levels can coexist without contradiction.
 
@@ -210,11 +204,9 @@ it. The law does not say that experience, intuition, and expert judgment are wor
 where systems break. Their judgment can identify which boundary deserves testing next. But experience still needs to
 show its basis. Otherwise confidence becomes private memory with a serious voice.
 
-The stronger the commitment, the stronger the evidence should be.
-
-Chapter 2 already covered constrained commitments: choosing among imperfect options when every path spends something.
-Chapter 5 uses consequence and reversibility in a narrower way. It asks how much confidence the evidence is allowed to
-support before the team commits.
+The stronger the commitment, the stronger the evidence should be. Chapter 2 already covered constrained commitments:
+choosing among imperfect options when every path spends something. Chapter 5 uses consequence and reversibility in a
+narrower way. It asks how much confidence the evidence is allowed to support before the team commits.
 
 A change with small exposure, easy rollback, strong detectability, and low recovery cost may be reasonable with modest
 evidence and a review trigger. A change with broad exposure, difficult rollback, weak detectability, high recovery cost,
@@ -225,16 +217,13 @@ surface must change, be reviewed, or be retested when the decision changes. If a
 firmware, support tooling, release notes, customer diagnostics, and field investigation, the consequence of being wrong
 is wider than the flash module alone.
 
-Detectability matters too.
+Detectability matters too. A failure that announces itself quickly allows learning after a limited commitment. A failure
+that hides inside missing diagnostic records is more dangerous because the evidence needed to understand it may disappear
+with the failure. In that case, "we have not seen failures" is not the same as "the system is reliable."
 
-A failure that announces itself quickly allows learning after a limited commitment. A failure that hides inside missing
-diagnostic records is more dangerous because the evidence needed to understand it may disappear with the failure. In
-that case, "we have not seen failures" is not the same as "the system is reliable."
-
-The next evidence action should attack the decision-critical uncertainty.
-
-"Test more" is usually too vague. More tests can produce more comfort without producing more judgment. The better
-question is which experiment, measurement, or observation can change the commitment.
+The next evidence action should attack the decision-critical uncertainty. "Test more" is usually too vague. More tests
+can produce more comfort without producing more judgment. The better question is which experiment, measurement, or
+observation can change the commitment.
 
 For the logger, the important next action was not another long run of the same path. It was targeted power-fault
 injection around erase, program, commit, and recovery boundaries. It was testing with production-equivalent timing. It
@@ -244,11 +233,10 @@ conditions where the production claim depended on them.
 The cheapest test is not automatically the most useful. The most comprehensive test is not automatically necessary. The
 right next evidence action reduces uncertainty that matters to the next commitment.
 
-Weak signals deserve a disciplined kind of respect.
-
-The field observations in the story did not prove that the buffered logger was wrong. Treating them as proof would be
-another form of bad judgment. They were early, low-confidence observations that conflicted with the team's broad
-confidence. That is enough to lower confidence in the broad claim and justify investigation.
+Weak signals deserve a disciplined kind of respect. The field observations in the story did not prove that the buffered
+logger was wrong. Treating them as proof would be another form of bad judgment. They were early, low-confidence
+observations that conflicted with the team's broad confidence. That is enough to lower confidence in the broad claim and
+justify investigation.
 
 A Weak Signal Register (`ARTIFACT-007`) can help when the team is not ready to decide. The useful entry records the
 observation, where it appeared, a possible cause, current confidence, next evidence to gather, and a review date or
@@ -286,12 +274,10 @@ Good outcomes do not retroactively strengthen weak evidence. A broad rollout mig
 confidence was poorly supported. A failure might occur even after responsible evidence work. Decision quality and outcome
 quality are related, but they are not the same thing.
 
-The narrower lesson for this chapter is that new evidence should update confidence.
-
-When field feedback contradicts the original evidence, the team should not defend the old confidence because it was
-written in a release plan. When stronger testing supports a claim, the team can raise confidence without pretending
-uncertainty is gone. When evidence supports only a smaller claim, the commitment should shrink or the next evidence
-action should become clearer.
+The narrower lesson for this chapter is that new evidence should update confidence. When field feedback contradicts the
+original evidence, the team should not defend the old confidence because it was written in a release plan. When stronger
+testing supports a claim, the team can raise confidence without pretending uncertainty is gone. When evidence supports
+only a smaller claim, the commitment should shrink or the next evidence action should become clearer.
 
 Evidence is sufficient when it justifies the next commitment, not when it eliminates every unknown.
 
@@ -325,30 +311,21 @@ Choose one pending or recent technical commitment.
 
 Write short answers to these prompts:
 
-1. What commitment is being considered?
-2. What exact claim must be true for that commitment to be responsible?
-3. What evidence was directly observed?
-4. What is being inferred from that evidence?
-5. What assumptions remain?
-6. Under which hardware, software, build, environment, load, timing, duration, and instrumentation conditions was the
-   evidence collected?
-7. How relevant is the evidence to the exact claim?
-8. How representative is it of real operating conditions?
-9. Which important states, boundaries, or failure modes are covered?
-10. Which important states, boundaries, or failure modes are not covered?
-11. Which evidence sources are independent, and which may be correlated repetitions?
-12. Is the evidence fresh enough for the current system?
-13. What measurement blind spots exist?
-14. What observations would contradict or lower confidence in the claim?
-15. What is the current confidence, and what is its scope?
-16. What is the Change Radius?
-17. How reversible is the commitment?
-18. How detectable would failure be?
-19. What would recovery cost?
-20. How much exposure does the commitment create?
-21. What next evidence action would most reduce decision-critical uncertainty?
-22. What evidence threshold is sufficient for the next commitment?
-23. What review trigger should reopen the judgment?
+1. Commitment and claim:
+   What commitment is being considered? What exact claim must be true for that commitment to be responsible?
+2. Evidence and reasoning:
+   What was directly observed? What is being inferred from that evidence? What assumptions remain?
+3. Evidence conditions and quality:
+   Under which hardware, software, build, environment, load, timing, duration, and instrumentation conditions was the
+   evidence collected? How relevant, representative, independent, and fresh is it? Which states, boundaries, failure
+   modes, and measurement blind spots are covered or missing? What observations would contradict or lower confidence in
+   the claim?
+4. Confidence and consequence:
+   What is the current confidence, and what is its scope? What is the Change Radius? How reversible is the commitment?
+   How detectable would failure be? What would recovery cost? How much exposure does the commitment create?
+5. Next action:
+   What next evidence action would most reduce decision-critical uncertainty? What evidence threshold is sufficient for
+   the next commitment? What review trigger should reopen the judgment?
 
 What evidence would justify this commitment, and what evidence would merely make the team feel more comfortable?
 
@@ -430,6 +407,11 @@ data proves.
 
 This chapter exists to make confidence reviewable. It teaches the reader to ask whether the evidence is good enough for
 the specific claim and commitment in front of the team.
+
+The chapter reuses existing PEAK concepts rather than creating a new evidence framework. Evidence Before Confidence
+(`LAW-005`), Weak Signal (`VOCAB-002`), Change Radius (`VOCAB-001` and `METRIC-001`), The Successful Prototype
+(`FAILURE-003`), the Weak Signal Register (`ARTIFACT-007`), and the Decision Journal (`ARTIFACT-003`) already provide
+enough shared language for the work.
 
 Chapter 6 retains the broader stewardship question: how a Principal Engineer leaves systems healthier, easier to change,
 and better supported after the immediate work is done.
