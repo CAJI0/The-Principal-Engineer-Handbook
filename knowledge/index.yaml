@@ -395,3 +395,24 @@ relationships:
   - from: CHAPTER-004
     type: references
     to: ARTIFACT-006
+  - from: CHAPTER-005
+    type: illustrates
+    to: LAW-005
+  - from: CHAPTER-005
+    type: references
+    to: ARTIFACT-003
+  - from: CHAPTER-005
+    type: references
+    to: VOCAB-002
+  - from: CHAPTER-005
+    type: references
+    to: ARTIFACT-007
+  - from: CHAPTER-005
+    type: references
+    to: VOCAB-001
+  - from: CHAPTER-005
+    type: references
+    to: METRIC-001
+  - from: CHAPTER-005
+    type: illustrates
+    to: FAILURE-003

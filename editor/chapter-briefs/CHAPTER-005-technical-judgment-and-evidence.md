@@ -70,7 +70,7 @@ Chapter 5 covers:
 - independence versus correlation between evidence sources;
 - evidence freshness;
 - missing, censored, or unobservable outcomes;
-- alternative explanations and disconfirming evidence;
+- alternative explanations and evidence that would lower confidence;
 - confidence attached to a specific claim;
 - residual uncertainty;
 - stronger evidence thresholds for severe, broad, difficult-to-reverse, difficult-to-detect, or difficult-to-recover
@@ -275,7 +275,7 @@ The exercise should ask the reader to examine one pending technical commitment a
 4. inference;
 5. assumptions;
 6. the evidence envelope;
-7. relevance, representativeness, coverage, independence, freshness, limitations, and disconfirming evidence;
+7. relevance, representativeness, coverage, independence, freshness, limitations, and confidence-lowering evidence;
 8. current confidence and its scope;
 9. Change Radius, reversibility, detectability, recovery cost, and exposure;
 10. the next evidence action;
@@ -373,7 +373,7 @@ Terms that remain ordinary or chapter-local prose unless a later Canon Review de
 - measurement;
 - validation envelope;
 - evidence envelope;
-- disconfirming evidence;
+- confidence-lowering evidence;
 - operational feedback;
 - evidence sufficiency;
 - evidence-bounded judgment;
@@ -413,7 +413,7 @@ Acceptance criteria:
 - Evidence quality dimensions are concrete and materially used.
 - Absence of observed failure is not treated automatically as reliability evidence.
 - Correlated repetitions are not treated as independent confirmation.
-- Disconfirming evidence and alternative explanations remain visible.
+- Evidence that would lower confidence and alternative explanations remain visible.
 - Confidence is scoped to a specific claim.
 - Residual uncertainty remains visible at commitment time.
 - Evidence threshold scales to consequence, reversibility, detectability, recovery cost, exposure, and Change Radius.

@@ -1064,3 +1064,69 @@ Chronological log of editorial maintenance work.
 - Chapter 4 is Frozen.
 - Future-change rule: future substantive changes require reopening Chapter 4 at the appropriate review stage.
 - Next repository step: prepare and merge a pull request for `chapter4`; do not start Chapter 5 on this branch.
+
+## Phase 5 Chapter 5 Author Draft
+
+- Chapter: Technical Judgment and Evidence.
+- Stable ID: CHAPTER-005.
+- Branch: `chapter5`.
+- Baseline `origin/main` commit: `54d6b4e13b6ae8f38619b9b7be40c91b6bbb03c8`.
+- Expected Chapter 4 merge SHA ancestor result: yes; the expected full SHA is the baseline.
+- Author Draft phase completed.
+- Canonical brief path: `editor/chapter-briefs/CHAPTER-005-technical-judgment-and-evidence.md`.
+- Manuscript path: `book/01-thinking-like-a-principal/05-technical-judgment-and-evidence.md`.
+- Central thesis: technical judgment is the disciplined calibration of confidence to evidence quality, remaining
+  uncertainty, and the consequences of being wrong.
+- Main story direction: an industrial controller's buffered NOR-flash logging path passes a narrow endurance test, but
+  the team must separate the tested laboratory claim from the broader production durability claim under power
+  disturbance and recovery conditions.
+- Engineering Principle: Evidence Before Confidence (`LAW-005`); the confidence behind a commitment should be no
+  stronger than the evidence that supports its specific claim.
+- Architecture Exercise: Build an Evidence-Bounded Judgment.
+- Chapter-local ADR: Stage the Flash-Logging Rollout Until Power-Loss Evidence Matches the Product Claim.
+- PEAK relationships added:
+  - `CHAPTER-005 illustrates LAW-005`.
+  - `CHAPTER-005 references ARTIFACT-003`.
+  - `CHAPTER-005 references VOCAB-002`.
+  - `CHAPTER-005 references ARTIFACT-007`.
+  - `CHAPTER-005 references VOCAB-001`.
+  - `CHAPTER-005 references METRIC-001`.
+  - `CHAPTER-005 illustrates FAILURE-003`.
+- New PEAK concepts: none.
+- Existing PEAK concept files changed: no.
+- `editor/CANON.md` changed: no.
+- Frozen Chapters 1-4 changed: no.
+- Lifecycle remains: `draft`.
+- Editorial Review performed: no.
+- Canon Review performed: no.
+- Technical Review performed: no.
+- Freeze Review performed: no.
+- Unresolved `AUTHOR NOTE` items: none.
+- Validation commands and results:
+  - `git fetch --all --prune`: passed.
+  - `git status --short --branch`: passed during preflight; branch was `chapter5` and working tree was clean.
+  - `git rev-parse origin/main`: `54d6b4e13b6ae8f38619b9b7be40c91b6bbb03c8`.
+  - `git log -1 origin/main` with one-line output: `54d6b4e Chapter 4: Ownership Beyond Code (#4)`.
+  - `git merge-base chapter5 origin/main`: `54d6b4e13b6ae8f38619b9b7be40c91b6bbb03c8`.
+  - `git branch -r --list origin/chapter5`: passed; no remote Chapter 5 branch existed during preflight.
+  - Direct structural checks: passed for one H1, required H2 sections in canonical order, exactly three Principal's
+    Notebook observations, complete chapter-local ADR sections, no unresolved markers, no duplicate Chapter 5 manuscript
+    under `docs/`, `CHAPTER-005` uniqueness, Chapters 1-4 canonical status, relationship target existence, supported
+    relationship types, no duplicate edges, no self-edges, and no new PEAK entity beyond `CHAPTER-005`.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed with 0 errors.
+  - `npm.cmd run lint:spelling`: passed with 0 issues after replacing one spelling-unrecognized term with ordinary
+    wording.
+  - `npm.cmd run lint:links`: passed; 127 links scanned successfully.
+  - `vale --config .vale.ini book/01-thinking-like-a-principal/05-technical-judgment-and-evidence.md editor/chapter-briefs/CHAPTER-005-technical-judgment-and-evidence.md`:
+    passed with 0 errors, 0 warnings, and 0 suggestions.
+  - `Remove-Item Env:ENABLE_PDF_EXPORT -ErrorAction SilentlyContinue; python -m mkdocs build --strict`: passed.
+  - `python -m pip check`: passed with no broken requirements.
+  - `$env:ENABLE_PDF_EXPORT = '1'; python -m mkdocs build --config-file mkdocs-pdf.yml`: passed and generated
+    `site/pdf/the-principal-engineer-handbook.pdf`.
+- Expected branch file set:
+  - `book/01-thinking-like-a-principal/05-technical-judgment-and-evidence.md`;
+  - `editor/chapter-briefs/CHAPTER-005-technical-judgment-and-evidence.md`;
+  - `editor/EDITOR_LOG.md`;
+  - `knowledge/index.yaml`.
+- Next required lifecycle stage: separate Chapter 5 Editorial Review.
