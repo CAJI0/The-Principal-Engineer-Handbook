@@ -294,6 +294,11 @@ entities:
       name: Technical Judgment and Evidence
       path: ../book/01-thinking-like-a-principal/05-technical-judgment-and-evidence.md
       status: canonical
+    - id: CHAPTER-006
+      type: chapter
+      name: Leaving Systems Better Than You Found Them
+      path: ../book/01-thinking-like-a-principal/06-leaving-systems-better-than-you-found-them.md
+      status: draft
   adrs:
     - id: ADR-001
       type: adr
@@ -416,3 +421,33 @@ relationships:
   - from: CHAPTER-005
     type: illustrates
     to: FAILURE-003
+  - from: CHAPTER-006
+    type: references
+    to: VOCAB-007
+  - from: CHAPTER-006
+    type: illustrates
+    to: LAW-004
+  - from: CHAPTER-006
+    type: illustrates
+    to: LAW-006
+  - from: CHAPTER-006
+    type: references
+    to: VOCAB-001
+  - from: CHAPTER-006
+    type: references
+    to: METRIC-001
+  - from: CHAPTER-006
+    type: references
+    to: METRIC-003
+  - from: CHAPTER-006
+    type: illustrates
+    to: SMELL-002
+  - from: CHAPTER-006
+    type: illustrates
+    to: SMELL-005
+  - from: CHAPTER-006
+    type: references
+    to: ANTIPATTERN-006
+  - from: CHAPTER-006
+    type: references
+    to: ARTIFACT-003

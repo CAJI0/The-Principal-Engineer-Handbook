@@ -1579,3 +1579,76 @@ Chronological log of editorial maintenance work.
 - Future-change rule: future substantive changes to Chapter 5 require reopening the appropriate review stage.
 - Branch merged status: no.
 - Next repository step: prepare and merge a pull request for `chapter5`; do not start Chapter 6 on this branch.
+
+## Phase 10 Chapter 6 Canonical Brief Registration
+
+- Chapter: Leaving Systems Better Than You Found Them.
+- Stable ID: `CHAPTER-006`.
+- Branch: `chapter6`.
+- Lifecycle stage: canonical brief registration / draft preparation.
+- Verified baseline `origin/main`: `749e6239c0561cf510bffc85f500261bdb287b0c`.
+- Registration commit present before this remediation: `1a079b02730d70fb4cc08b62edcaa2c593e0cb56`.
+- Chapter 5 merge ancestry was verified; merge base between `chapter6` and `origin/main` is
+  `749e6239c0561cf510bffc85f500261bdb287b0c`.
+- Chapters 1-5 remain Frozen and canonical.
+- Canonical brief path:
+  `editor/chapter-briefs/CHAPTER-006-leaving-systems-better-than-you-found-them.md`.
+- Reserved manuscript path:
+  `book/01-thinking-like-a-principal/06-leaving-systems-better-than-you-found-them.md`.
+- `CHAPTER-006` status: `draft`.
+- Reader-facing manuscript created: no.
+- Author Draft started: no.
+- Chapter 7 or Part II started: no.
+- Approved central thesis: When a change exposes or creates structural cost, include the smallest justified improvement
+  that reduces that cost without displacing the product outcome.
+- Recommended embedded story direction: a new board revision introduces another power-monitor peripheral; the fast path
+  would add another platform-specific conditional to an overloaded shared module; the bounded stewardship action
+  localizes device-specific behavior, removes one verified obsolete path or unused option, records the decision, and
+  adds only minimal useful diagnostics; the product commitment remains deliverable; no broad rewrite is started.
+- Engineering Principle target: When a change exposes or creates structural cost, include the smallest justified
+  improvement that reduces that cost without displacing the product outcome.
+- Architecture Exercise target: Define a Bounded Stewardship Action.
+- Chapter-local ADR working title: Localize Power-Monitor Variation While Delivering the New Board Revision.
+- Exact PEAK relationships registered:
+  - `CHAPTER-006 references VOCAB-007`.
+  - `CHAPTER-006 illustrates LAW-004`.
+  - `CHAPTER-006 illustrates LAW-006`.
+  - `CHAPTER-006 references VOCAB-001`.
+  - `CHAPTER-006 references METRIC-001`.
+  - `CHAPTER-006 references METRIC-003`.
+  - `CHAPTER-006 illustrates SMELL-002`.
+  - `CHAPTER-006 illustrates SMELL-005`.
+  - `CHAPTER-006 references ANTIPATTERN-006`.
+  - `CHAPTER-006 references ARTIFACT-003`.
+- New PEAK concepts created: none.
+- Existing PEAK concept files changed: no.
+- Existing entity statuses changed: no.
+- `editor/CANON.md` changed: no.
+- Frozen Chapters 1-5 changed: no.
+- Canonical manuscript duplicated under `docs/`: no.
+- Protected files changed during this remediation before the log entry: none.
+- Required repository reading completed: `editor/EDITOR_LOG.md`, `editor/REVIEW_PROCESS.md`,
+  `editor/SOURCE_OF_TRUTH.md`, `knowledge/index.yaml`, and the Chapter 6 canonical brief.
+- Validation commands and actual results:
+  - `git fetch --all --prune`: passed.
+  - `git switch chapter6`: passed; branch was already tracking `origin/chapter6`.
+  - `git status --short --branch`: passed before editing; branch was `chapter6` and the working tree was clean.
+  - `git rev-parse HEAD`: passed and returned `1a079b02730d70fb4cc08b62edcaa2c593e0cb56`.
+  - `git rev-parse origin/chapter6`: passed and returned `1a079b02730d70fb4cc08b62edcaa2c593e0cb56`.
+  - `git rev-parse origin/main`: passed and returned `749e6239c0561cf510bffc85f500261bdb287b0c`.
+  - `git merge-base HEAD origin/main`: passed and returned `749e6239c0561cf510bffc85f500261bdb287b0c`.
+  - Pre-edit `git diff --check`: passed.
+  - YAML parse and direct PEAK checks: passed; `CHAPTER-006` entity count was exactly 1; `CHAPTER-006` had type
+    `chapter`, name `Leaving Systems Better Than You Found Them`, path
+    `../book/01-thinking-like-a-principal/06-leaving-systems-better-than-you-found-them.md`, and status `draft`;
+    Chapters 1-5 remained `canonical`; outgoing Chapter 6 relationship count was exactly 10; the relationship set
+    exactly matched the approved set; every relationship target existed; no duplicate relationships were present; the
+    Chapter 6 manuscript was absent; the Chapter 6 canonical brief existed.
+  - `npm.cmd run lint:md`: passed with 0 errors across 129 Markdown files.
+  - `npm.cmd run lint:spelling`: passed with 0 spelling issues across 128 checked files after this log entry.
+  - Post-edit `git diff --check`: passed.
+  - Post-edit direct PEAK checks: passed.
+  - `vale --config .vale.ini editor\EDITOR_LOG.md`: passed with 0 errors, 0 warnings, and 0 suggestions.
+  - Changed-file verification: `git diff --name-status` showed only `editor/EDITOR_LOG.md`.
+- Changed-file intent for this remediation: only `editor/EDITOR_LOG.md`.
+- Next required stage: Chapter 6 Author Draft, only after author approval.
