@@ -89,9 +89,9 @@ That question did not solve the incident. It changed the investigation.
 
 The gateway engineer added logging for command receipt, command forwarding, device acknowledgment, and device state
 publication as separate events. The firmware engineer added an event when the command was accepted into the device state
-machine and another when the physical state transition completed. The application engineer stopped treating gateway
-acknowledgment as evidence that the displayed state was current. The test engineer built a run that delayed state reports
-without dropping command acknowledgments.
+machine and another when the device observed the resulting operational state. The application engineer stopped treating
+gateway acknowledgment as evidence that the displayed state was current. The test engineer built a run that delayed state
+reports without dropping command acknowledgments.
 
 The team also wrote down the question nobody had been answering:
 
@@ -149,7 +149,8 @@ It tests whether the accepted boundary is real. If the application shows the wro
 the device model, gateway cache, timing contract, command semantics, or a missing freshness promise between them.
 
 It identifies discriminating evidence. More logs are not automatically better. The team needed evidence that could tell
-delayed data from lost data, duplicated data from stale data, and command receipt from command completion.
+delayed data from lost data, duplicated data from stale data, and command receipt from command completion. Those events
+also needed a usable correlation or ordering model; local timestamps alone would not create one shared timeline.
 
 It reveals ownership. If three components can infer device state, but none owns the meaning of current state, the system
 has made Hidden State (`SMELL-004`) normal. Every State Has One Owner (`LAW-001`) does not mean every component stores no
@@ -182,11 +183,14 @@ needed to separate:
 - when the command was requested;
 - when the gateway received it;
 - when the device accepted it;
-- when the physical state changed;
+- when the device observed the resulting operational state;
 - when the device reported the resulting state;
 - when the application displayed it.
 
 That set of facts turned a vague stale-state complaint into an answerable inquiry.
+
+If retries were involved, the team also needed to distinguish the original command from duplicate attempts or repeated
+reports. Otherwise a retry could hide the failure mode it was meant to recover from.
 
 The team also found a Weak Signal (`VOCAB-002`). Several teams had already added small local defenses: an extra retry in
 the gateway, a local cache refresh in the application, a device-side repeat publish after wake, and a support note telling
@@ -294,11 +298,13 @@ are part of the interface promise.
 ### Consequences
 
 - Ownership of operational state becomes explicit.
-- Delay, loss, duplication, and stale-state conditions become distinguishable.
+- Delay, loss, duplication, and stale-state conditions become more distinguishable under the defined metadata and
+  instrumentation.
 - The application can show unknown or stale states instead of presenting old data as current.
 - The gateway must carry additional metadata and handling logic.
 - Tests must cover timing, freshness, delayed reports, duplicated reports, and command/state separation.
 - Interface documentation must make freshness semantics discoverable for future maintainers.
+- Existing consumers may need to handle unknown or stale states instead of assuming that the last value is current.
 
 ### Alternatives Considered
 

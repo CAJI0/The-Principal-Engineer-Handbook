@@ -470,3 +470,64 @@ Chronological log of editorial maintenance work.
 - Technical Review performed: no.
 - Freeze Review performed: no.
 - Next lifecycle stage: Technical Review.
+
+## Phase 3 Chapter 3 Technical Review
+
+- Chapter: Asking Better Engineering Questions.
+- Stable ID: CHAPTER-003.
+- Branch: `chapter3`.
+- Reviewed baseline commit: `a89cd3cddadc2c8fd83a3c18287ff2752fff551f`.
+- Lifecycle stage: Technical Review.
+- Review scope: distributed-system story model, embedded-device state semantics, observation versus inference,
+  acknowledgment semantics, command/state separation, authoritative state, timing and ordering, retries and duplication,
+  freshness and validity, evidence and instrumentation, exercise usefulness, chapter ADR, alternatives, and timelessness.
+- Review outcome: Approved with minor changes.
+- System-model result: credible application, gateway, field-device, command path, and state-reporting path model.
+- Story-causality result: the Principal Engineer reshapes evidence collection rather than diagnosing the answer in
+  advance.
+- Observation-versus-inference result: observations, interpretations, assumptions, and competing explanations remain
+  separated.
+- Acknowledgment-semantics result: transport receipt, command acceptance, operation result, and state publication remain
+  distinct.
+- Command/state separation result: command handling is not treated as proof of resulting state.
+- Authoritative-state result: story-local ownership remains scoped to this system.
+- Physical-reality wording result: physical-state completion language was narrowed to device-observed operational state.
+- Timing and clock-model result: local timestamps are not treated as a shared global timeline.
+- Ordering and correlation result: the investigation now names the need for a usable correlation or ordering model.
+- Retry and duplication result: retries are treated as potentially useful but capable of hiding duplicate attempts or
+  repeated reports.
+- Freshness and validity result: last-observed, latest received, current, stale, unknown, and pending states remain
+  distinguishable.
+- Stale/unknown/pending-state result: application presentation does not create state authority.
+- Evidence and instrumentation result: logs remain observations; instrumentation is framed as discriminating evidence,
+  not automatic proof.
+- Engineering Principle result: preserved exactly and technically supported.
+- Architecture Exercise result: still produces actionable evidence-gathering output and stops before option selection.
+- Chapter ADR result: technically credible after narrowing claims about what can be distinguished and adding
+  consumer-handling cost.
+- Alternatives result: alternatives remain credible and bounded to the story model.
+- Timelessness result: no vendor, protocol, RTOS, cloud, broker, or radio technology was introduced.
+- Technical corrections made: narrowed physical-state wording to device-observed operational state, added correlation
+  and ordering caveat, acknowledged duplicate attempts and repeated reports under retries, narrowed the ADR consequence
+  about distinguishing failure modes, and added consumer-handling cost for unknown or stale states.
+- Unresolved technical issues: none.
+- Remaining `AUTHOR NOTE` items: none.
+- Files changed: `book/01-thinking-like-a-principal/03-asking-better-engineering-questions.md` and
+  `editor/EDITOR_LOG.md`.
+- Validation commands and results:
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `vale --config .vale.ini book/01-thinking-like-a-principal/03-asking-better-engineering-questions.md editor/EDITOR_LOG.md`:
+    passed with 0 errors, 0 warnings, and 0 suggestions.
+  - `python -m mkdocs build --strict`: passed.
+  - `python -m pip check`: passed.
+- Canon changed: no.
+- `knowledge/index.yaml` changed: no.
+- PEAK relationships changed: no.
+- PEAK concept files changed: no.
+- Frozen chapters changed: no.
+- Chapter 4 started: no.
+- Freeze Review performed: no.
+- Next lifecycle stage: Freeze Review.
