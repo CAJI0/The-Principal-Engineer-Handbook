@@ -17,9 +17,9 @@ For the first product revision, that was enough.
 Then the product entered the field.
 
 Field service began using the same diagnostic path through a service tool. Support liked it because it reduced guesswork.
-Manufacturing liked it because the command already existed. Firmware liked it because the implementation was already
-tested on the line. Release engineering liked it because no new protocol had to be packaged. The tool team liked it
-because the service application could reuse an existing command instead of waiting for a new service-only interface.
+Manufacturing already had the command on the line. Firmware already had tests around the implementation. Release
+engineering did not need to package a new protocol. The tool team could reuse an existing command instead of waiting for
+a service-only interface.
 
 Nothing about that decision looked reckless at the time.
 
@@ -85,8 +85,8 @@ could wait one more release. Support asked which procedure was safe for devices 
 engineering asked which combinations should be blocked.
 
 The Principal Engineer knew the history. She remembered why the command had been introduced. She remembered the
-manufacturing assumption. She remembered the field cases that motivated the longer verification. She knew which firmware
-versions had shipped to which customers and which fixture images were still deployed at contract manufacturing sites.
+manufacturing assumption and the field cases that motivated the longer verification. She knew which firmware versions
+had shipped to which customers and which fixture images were still deployed at contract manufacturing sites.
 
 For a while, that helped.
 
@@ -154,8 +154,6 @@ That does not make component ownership wrong. Component ownership is necessary. 
 tool behavior, support procedure, and package rules each need owners who understand the local details. The mistake is
 assuming those local owners automatically compose into ownership of the complete outcome.
 
-They do not.
-
 The boundary that matters for ownership is not always the boundary that appears in the organization chart or repository
 layout. The diagnostic workflow lived in firmware, tooling, manufacturing, support, and release. Its risk lived in the
 spaces between them.
@@ -193,8 +191,8 @@ Ownership needs a bounded object because closure needs a boundary.
 Outcome ownership is not component ownership.
 
 The owner of closure does not replace the firmware lead, tool lead, manufacturing engineer, support owner, or release
-engineer. That would centralize work in exactly the wrong place. One person cannot safely become the universal
-implementer for a workflow that crosses several domains.
+engineer. That would centralize work in exactly the wrong place. A cross-domain workflow cannot safely depend on one
+universal implementer.
 
 The outcome owner ensures that closure happens. Component owners still own their parts.
 
@@ -275,7 +273,7 @@ This does not repeat the full decision work from Chapter 2. The decision may alr
 happens after the risk becomes part of the workflow. If the risk remains active, who keeps it alive in the system's
 memory?
 
-Closure should be defined before the work fragments.
+Closure should be named before the work fragments.
 
 If the team waits until every component has finished to ask what closure means, integration becomes negotiation by
 surprise. Closure for the diagnostic workflow might include agreed command semantics, explicit behavior for old and new
@@ -284,10 +282,10 @@ checks, named residual risks, accepted handoffs, and evidence that the workflow 
 
 That list is not a universal checklist. It is the shape of closure for this outcome.
 
-The evidence matters because closure must be observable. The outcome owner should not declare closure because everyone
+The evidence matters because closure must be observable. The outcome owner should not declare closure because the room
 feels aligned or because the Principal Engineer remembers the intended behavior. Closure needs something observable:
 tests across supported versions, a compatibility table with an owner, a fixture migration record, release gates, a
-support procedure tied to firmware behavior, and an Architecture Ledger (`ARTIFACT-006`) or other discoverable record
+support procedure tied to firmware behavior, and an Architecture Ledger (`ARTIFACT-006`) or another discoverable record
 that points future engineers to the active decisions.
 
 This chapter does not decide how good the evidence is. That belongs to the next chapter. Here, the point is narrower:
@@ -295,8 +293,8 @@ closure without evidence is only a claim.
 
 The Hero Engineer (`FAILURE-004`) is failed ownership architecture.
 
-That failure mode can look noble from the outside. A senior person helps everyone. They remember history. They answer
-questions quickly. They prevent local mistakes. They keep the release moving.
+That failure mode can look useful from the outside. A senior person helps every team, remembers history, answers
+questions quickly, prevents local mistakes, and keeps the release moving.
 
 Sometimes that intervention is necessary in the moment.
 
