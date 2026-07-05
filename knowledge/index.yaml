@@ -288,7 +288,7 @@ entities:
       type: chapter
       name: Ownership Beyond Code
       path: ../book/01-thinking-like-a-principal/04-ownership-beyond-code.md
-      status: draft
+      status: canonical
   adrs:
     - id: ADR-001
       type: adr
