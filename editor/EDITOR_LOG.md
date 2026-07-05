@@ -1330,3 +1330,121 @@ Chronological log of editorial maintenance work.
 - Freeze Review performed: no.
 - Branch merged: no.
 - Next lifecycle stage: separate Chapter 5 Technical Review.
+
+## Phase 8 Chapter 5 Technical Review
+
+- Chapter: Technical Judgment and Evidence.
+- Stable ID: `CHAPTER-005`.
+- Branch: `chapter5`.
+- Reviewed Canon Review baseline full SHA: `a0123fd21c3a37c2878bad830e244cf5936f15d2`.
+- Lifecycle stage: Technical Review.
+- Review scope: embedded-system story model, NOR-flash wording, power-disturbance causality, fault-injection boundaries,
+  recovery and atomicity model, endurance representativeness, production-equivalent configuration and timing,
+  CRC/integrity claims, operational feedback sufficiency, staged rollout credibility, evidence/inference/confidence
+  reasoning, Change Radius and reversibility, Decision Journal, Engineering Principle, Architecture Exercise,
+  chapter-local ADR, timelessness, and safety/guarantee language.
+- Review outcome: Approved with minor changes.
+- System-model result: credible and internally coherent; the industrial controller, external NOR flash, buffered RAM
+  records, batched programming, story-local recovery metadata, reset-time reconstruction, production/debug configuration
+  differences, power disturbances, staged deployment, and support feedback all remain plausible without becoming a
+  universal flash-logging design.
+- Story-causality result: passed; field notes remain weak signals rather than confirmed flash, supply, or recovery root
+  cause.
+- NOR-flash semantics result: passed after minor corrections; wording now avoids implying that one marker universally
+  guarantees atomicity or that a boot scan proves full recovery.
+- Power-disturbance wording result: passed; resets near high-current activity, missing records, and boot behavior remain
+  observations with plausible alternative explanations.
+- CRC and integrity result: passed; CRC remains evidence for bounded record integrity, not proof of completeness,
+  freshness, ordering, atomic commit, or absence of omitted records.
+- Interruption-boundary and fault-injection result: passed after minor corrections; the chapter now describes timing
+  windows, observable device states, externally meaningful transitions, and recovery-metadata updates rather than exact
+  internal flash failure instants.
+- Recovery-model result: passed after minor corrections; the text distinguishes generated, programmed, committed,
+  reconstructed, and operationally observed records closely enough for the chapter's purpose.
+- Production-equivalent timing result: passed after minor corrections; debug/build configuration language now says
+  configuration and instrumentation may change timing or behavior enough to matter to the claim.
+- Board/flash-lot/environment representativeness result: passed after minor corrections; board, lot, voltage, and
+  temperature coverage is tied to relevant production variation rather than treated as automatically sufficient.
+- Weak-signal result: passed; weak signals lower confidence and justify investigation without confirming a defect.
+- Operational-feedback sufficiency result: passed after minor corrections; the manuscript now requires feedback that is
+  independent enough to survive the evaluated failure and includes version/configuration context where support and
+  engineering need correlation.
+- Staged-rollout result: passed after minor corrections; staged rollout remains bounded learning, not validation, and
+  now requires owned review triggers plus a supported stop, disable, rollback, or escalation path.
+- Evidence/inference/confidence result: passed; the reasoning chain from observation to interpretation to inference to
+  confidence to commitment remains explicit and claim-scoped.
+- Change Radius and reversibility result: passed; Change Radius is used approximately, consequence and reversibility
+  affect evidence threshold, and reversibility is not treated as safety.
+- Decision Journal result: passed after minor correction; the review trigger now includes version/configuration context
+  for bounded operational feedback.
+- Engineering Principle result: passed; `LAW-005` remains the canonical anchor and the chapter-local expression is
+  technically bounded.
+- Architecture Exercise result: passed; the exercise remains usable for embedded commitments without becoming a complete
+  test-plan template.
+- Chapter-local ADR result: passed after minor corrections; the ADR preserves the bounded claim, relevant targeted
+  validation, production-equivalent configuration language, operational feedback sufficiency, staged-rollout constraints,
+  costs, and residual uncertainty.
+- Timelessness result: passed; the chapter uses durable embedded concepts and does not depend on vendor, MCU, RTOS,
+  cloud, framework, CI, or release-methodology specifics.
+- Technical corrections made:
+  - changed broad batched-write and recovery-marker wording to story-local programmed batches and recovery metadata used
+    to reconstruct committed log state;
+  - replaced exact-boundary and marker-boundary wording with externally meaningful transitions, timing windows,
+    observable device states, and recovery-metadata updates;
+  - bounded debug/production wording to configuration and instrumentation that may change timing or behavior enough to
+    matter to the claim;
+  - tied board, flash-lot, voltage, and temperature coverage to relevant production variation rather than automatic
+    sufficiency;
+  - strengthened operational-feedback language to require a survival path independent enough for the evaluated failure
+    and version/configuration context for correlation;
+  - strengthened staged-rollout language with owned review triggers and a supported stop, disable, rollback, or
+    escalation path;
+  - updated the Decision Journal review trigger and ADR to match those technical constraints.
+- Unresolved technical issues: none.
+- Canon/editorial concerns deferred: none.
+- Remaining `AUTHOR NOTE` items: none in Chapter 5.
+- Files changed: `book/01-thinking-like-a-principal/05-technical-judgment-and-evidence.md`,
+  `editor/EDITOR_LOG.md`.
+- `knowledge/index.yaml` changed: no.
+- PEAK relationships changed: no; the exact seven Chapter 5 relationships remain unchanged.
+- `editor/CANON.md` changed: no.
+- PEAK concept files changed: no.
+- Frozen Chapters 1-4 changed: no.
+- Chapter 6 started: no.
+- Lifecycle status: `CHAPTER-005` remains `draft`.
+- Freeze Review performed: no.
+- Branch merged: no.
+- Validation commands and results:
+  - `git fetch --all --prune`: passed.
+  - `git pull --ff-only`: passed; branch was already up to date.
+  - `git status --short --branch`: passed during preflight; working tree was clean and branch was `chapter5`.
+  - `git rev-parse HEAD`: passed; pre-review HEAD was
+    `a0123fd21c3a37c2878bad830e244cf5936f15d2`.
+  - `git rev-parse origin/chapter5`: passed; remote matched local pre-review HEAD.
+  - `git rev-parse origin/main`: passed; `origin/main` was
+    `54d6b4e13b6ae8f38619b9b7be40c91b6bbb03c8`.
+  - `git merge-base origin/main HEAD`: passed; merge base matched `origin/main`.
+  - Condensed decorated git log for `origin/main..HEAD`: passed; branch contained Chapter 5 Author Draft, Editorial
+    Review, Canon Review, and no prior Technical Review.
+  - `git diff --name-status origin/main...HEAD`: passed during preflight; branch diff was limited to the expected
+    Chapter 5 manuscript, Chapter 5 canonical brief, `editor/EDITOR_LOG.md`, and `knowledge/index.yaml`.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed with 0 errors.
+  - `npm.cmd run lint:spelling`: passed with 0 issues across 127 files.
+  - `npm.cmd run lint:links`: passed; 127 links scanned successfully.
+  - `vale --config .vale.ini book/01-thinking-like-a-principal/05-technical-judgment-and-evidence.md
+    editor/EDITOR_LOG.md`: passed with 0 errors, 0 warnings, and 0 suggestions.
+  - `python -m mkdocs build --strict`: passed.
+  - `python -m pip check`: passed; no broken requirements found.
+  - `$env:ENABLE_PDF_EXPORT='1'; python -m mkdocs build --config-file mkdocs-pdf.yml`: passed; generated local PDF
+    output was not tracked.
+  - Direct technical review checks: passed for one H1, required H2 sections in canonical order, no empty required
+    section, exactly three Principal's Notebook observations, complete chapter-local ADR sections, no Chapter 5
+    `TODO`/`TBD`/conflict marker/accidental `AUTHOR NOTE`, no duplicate Chapter 5 manuscript under `docs/`, no Chapter
+    6 manuscript, valid YAML, exactly one `CHAPTER-005`, correct Chapter 5 path, `CHAPTER-005` status `draft`, Chapters
+    1-4 status `canonical`, exact seven Chapter 5 relationships, valid relationship targets, supported relationship
+    types, no duplicate edges, no self-edge, no accidental new stable ID, no new PEAK entity, no PEAK status changes, and
+    no tracked generated `site/` or PDF output.
+  - Protected-file diff checks: passed; canonical brief, `knowledge/index.yaml`, `editor/CANON.md`, existing PEAK
+    concept files, Frozen Chapters 1-4, table of contents, and unrelated configuration were unchanged.
+- Next lifecycle stage: Chapter 5 Freeze Review.

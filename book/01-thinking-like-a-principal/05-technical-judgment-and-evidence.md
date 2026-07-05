@@ -10,8 +10,8 @@ The test report was comforting in the way a good number can be comforting.
 
 An industrial controller had gained a new buffered logging path. The device stored diagnostic and process events in an
 external NOR flash. The old path wrote too often, wore blocks unevenly, and sometimes made bursts of events visible as
-small stalls elsewhere in the system. The new design batched records in RAM, committed them in larger writes, and kept a
-compact recovery marker so the device could rebuild the log after reset.
+small stalls elsewhere in the system. The new design batched records in RAM, programmed them in larger batches, and kept
+story-local recovery metadata so the device could reconstruct committed log state after reset.
 
 The change was ordinary in the best sense: it reduced wear, made bursts less intrusive, and promised better evidence
 when the next field issue arrived.
@@ -49,12 +49,12 @@ The Principal Engineer wrote three claims on the board:
 The team agreed that the first claim had evidence behind it.
 
 The second claim was less comfortable. The endurance run had included orderly software resets. It had not interrupted
-erase or program operations at carefully chosen boundaries. It had not repeatedly removed power while a recovery marker
-was being updated. It had not exercised a partly programmed record followed by a boot with marginal supply.
+erase or program operations around critical state transitions. It had not repeatedly removed power while recovery
+metadata was being updated. It had not exercised a partly programmed record followed by a boot with marginal supply.
 
 The third claim was broader still. The test had used one prototype board, one flash lot, nominal temperature, stable lab
-power, and a debug build with slightly different timing from the production configuration. The test path repeated the
-same sequence many times. That made it repeatable, but it did not make the evidence independent.
+power, and a debug build whose timing could differ enough from the production configuration to matter to the claim. The
+test path repeated the same sequence many times. That made it repeatable, but it did not make the evidence independent.
 
 The team did not like where the conversation was going.
 
@@ -89,19 +89,21 @@ power disturbance, and what commitment can we make before that evidence exists?"
 The answer was not to test forever.
 
 The team kept the successful endurance result. It still mattered. They narrowed what it proved. They planned targeted
-power-fault injection around erase, program, record commit, and recovery-marker boundaries. They added production-build
-testing on representative boards and more than one flash lot. They included voltage and temperature conditions that
-matched the product's expected environment instead of the convenience of the lab bench.
+power-fault injection around externally meaningful erase, program, record commit, and recovery-metadata transitions. They
+added production-configuration testing on boards and flash lots chosen to exercise relevant variation. They included
+voltage and temperature conditions that matched the product's expected environment instead of the convenience of the lab
+bench.
 
 They also changed what the device would report. Not every internal detail needed to become telemetry, but incomplete
 recovery had to become observable enough for support and engineering to notice. A quiet boot after a failed recovery
 would make the next field case look better than the system deserved.
 
-The team chose a staged commitment. The new path would ship first to a bounded deployment where operational feedback
-could be watched. The Decision Journal (`ARTIFACT-003`) entry recorded the claim, evidence, confidence, residual
-uncertainty, and review trigger. The release language changed too. It no longer promised that a lab endurance test had
-proved field durability. It stated the narrower property the team had evidence for, and the conditions under which the
-broader claim would be revisited.
+The team chose a staged commitment. The new path would ship first to a bounded deployment with a supported stop or
+disable path, version context, and operational feedback that could survive enough of the failure to be useful. The
+Decision Journal (`ARTIFACT-003`) entry recorded the claim, evidence, confidence, residual uncertainty, and review
+trigger. The release language changed too. It no longer promised that a lab endurance test had proved field durability.
+It stated the narrower property the team had evidence for, and the conditions under which the broader claim would be
+revisited.
 
 No one in the room had become less technical.
 
@@ -154,14 +156,15 @@ ordinary chapter prose, not a new PEAK concept. Its value is practical: it remin
 somewhere, under some conditions, with some blind spots.
 
 In embedded systems, those conditions matter because the product eventually leaves the comfortable part of the lab.
-Supply voltage changes. Temperature changes. Flash lots differ. A debug build may move timing enough to hide or reveal a
-race. A fixture may reset the device cleanly while the field removes power halfway through a write. A test that repeats
-one path many times may provide confidence in that path without providing much confidence in adjacent states.
+Supply voltage changes. Temperature changes. Flash lots differ. Build configuration and instrumentation may move timing
+or behavior enough to hide or reveal a race. A fixture may reset the device cleanly while the field removes power halfway
+through a write. A test that repeats one path many times may provide confidence in that path without providing much
+confidence in adjacent states.
 
 Repetition is useful when it exercises the claim. It is weaker when it repeats the same narrow path and then gets treated
 as independent confirmation. Ten
 thousand clean writes through one sequence may be less valuable for the disputed claim than one carefully designed
-fault-injection run that interrupts the exact commit boundary everyone is assuming will recover.
+fault-injection run that sweeps timing around the externally visible commit transition everyone is assuming will recover.
 
 The goal is not to insult the original test. The goal is to keep it honest.
 
@@ -226,9 +229,10 @@ can produce more comfort without producing more judgment. The better question is
 observation can change the commitment.
 
 For the logger, the important next action was not another long run of the same path. It was targeted power-fault
-injection around erase, program, commit, and recovery boundaries. It was testing with production-equivalent timing. It
-was adding enough operational feedback to make incomplete recovery visible. It was widening hardware and environmental
-conditions where the production claim depended on them.
+injection around erase, program, commit, and recovery transitions using timing windows and observable device states. It
+was testing configurations whose timing and behavior were close enough to production to support the claim. It was adding
+enough operational feedback to make incomplete recovery visible through a path independent enough to survive the failure
+being evaluated. It was widening hardware and environmental conditions where the production claim depended on them.
 
 The cheapest test is not automatically the most useful. The most comprehensive test is not automatically necessary. The
 right next evidence action reduces uncertainty that matters to the next commitment.
@@ -246,8 +250,9 @@ evaporating because they are inconvenient and incomplete.
 Operational feedback is evidence too, but only if the system can observe the thing the team needs to learn.
 
 Field behavior can strengthen a judgment, narrow it, or reopen it. A staged rollout can be a responsible way to learn
-when exposure is bounded and feedback is meaningful. It is not a substitute for validation. If the system cannot detect
-the relevant failure, a staged rollout may only spread uncertainty slowly.
+when exposure is bounded, feedback is meaningful, version and configuration context are present, review triggers are
+owned, and the team has a credible stop, disable, rollback, or escalation path. It is not a substitute for validation. If
+the system cannot detect the relevant failure, a staged rollout may only spread uncertainty slowly.
 
 This is the uncomfortable part of evidence work: sometimes the next technical task is not the feature. It is making the
 result of the feature knowable.
@@ -265,7 +270,7 @@ erase, program, commit, and recovery boundaries is not yet covered.
 Confidence: High for tested lab operation. Low to medium for broad production durability until targeted power-fault and
 representative-condition evidence is collected.
 Review trigger: Revisit before broad rollout, after targeted fault injection, representative-condition testing, and
-bounded operational feedback from staged deployment.
+bounded operational feedback from staged deployment with version/configuration context.
 ```
 
 The record does not make the decision correct. It makes the judgment reviewable.
@@ -346,8 +351,8 @@ the implementation under the tested environment.
 
 The product claim is broader. The team wants the logging path to preserve useful diagnostic records through realistic
 power disturbance and recovery behavior. Current evidence does not yet cover interrupted erase and program operations,
-brownouts near commit boundaries, production-equivalent timing, representative hardware and flash variation, temperature
-conditions, or incomplete recovery visibility.
+brownouts near commit transitions, production-equivalent configuration and timing, representative hardware and flash
+variation, temperature conditions, or incomplete recovery visibility.
 
 Weak field observations exist: occasional missing records after reported power disturbance, rare resets near
 high-current activity, and logs that stop before the event support needs to interpret. These observations do not prove a
@@ -360,12 +365,14 @@ boot if the device does not preserve enough recovery status.
 
 Do not treat the endurance result as sufficient evidence for immediate fleet-wide rollout.
 
-Define the exact durability claim. Run targeted power-fault injection around critical flash-operation boundaries,
-including erase, program, commit, and recovery-marker updates. Use production-equivalent configurations and
-representative boards, flash lots, voltages, and temperatures for the evidence that supports the production claim.
+Define the exact durability claim. Run targeted power-fault injection around critical flash-operation transitions,
+including erase, program, commit, and recovery-metadata updates. Use production-equivalent configurations and boards,
+flash lots, voltages, and temperatures chosen to exercise the variation relevant to the production claim.
 
-Add the minimum useful operational evidence needed to detect incomplete recovery. Begin with a bounded staged rollout.
-Record confidence, residual uncertainty, and review triggers before broad exposure.
+Add the minimum useful operational evidence needed to detect incomplete recovery, including enough persistent recovery
+status and version/configuration context for support and engineering to correlate reports. Begin with a bounded staged
+rollout that has an owned review trigger and a supported stop, disable, rollback, or escalation path. Record confidence,
+residual uncertainty, and review triggers before broad exposure.
 
 ### Consequences
 
