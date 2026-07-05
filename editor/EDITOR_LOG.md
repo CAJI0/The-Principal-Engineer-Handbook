@@ -1652,3 +1652,77 @@ Chronological log of editorial maintenance work.
   - Changed-file verification: `git diff --name-status` showed only `editor/EDITOR_LOG.md`.
 - Changed-file intent for this remediation: only `editor/EDITOR_LOG.md`.
 - Next required stage: Chapter 6 Author Draft, only after author approval.
+
+## Phase 11 Chapter 6 Author Draft
+
+- Chapter: Leaving Systems Better Than You Found Them.
+- Stable ID: `CHAPTER-006`.
+- Branch: `chapter6`.
+- Lifecycle stage: Author Draft.
+- Starting HEAD for this authoring pass: `e603967153986b46bf9b9f307487e62827117c21`.
+- Verified baseline `origin/main`: `749e6239c0561cf510bffc85f500261bdb287b0c`.
+- `origin/main..HEAD` commit count before authoring: 1.
+- Pre-existing branch commit before authoring: `e603967153986b46bf9b9f307487e62827117c21`
+  (`docs: Register Chapter 6 canonical brief`).
+- Squashed preparation state accepted: yes; branch contained the single Chapter 6 canonical-brief registration commit.
+- Manuscript path created:
+  `book/01-thinking-like-a-principal/06-leaving-systems-better-than-you-found-them.md`.
+- Approximate manuscript word count after authoring checks: 3610.
+- Required reader-facing structure present: yes; H1 and required H2 sections match the Chapter 6 brief and template.
+- Opening Quote present: yes; original and unattributed.
+- Story used: One More Board Revision / power-monitor variation.
+- Engineering Principle used: When a change exposes or creates structural cost, include the smallest justified
+  improvement that reduces that cost without displacing the product outcome.
+- Architecture Exercise used: Define a Bounded Stewardship Action.
+- Principal's Notebook observations: exactly 3.
+- Chapter-local ADR present: yes; required Chapter ADR title and Context, Decision, Consequences, and Alternatives
+  Considered sections are present.
+- PEAK relationships supported in manuscript: yes; the draft materially references or illustrates the registered
+  Chapter 6 concepts and laws: `VOCAB-007`, `LAW-004`, `LAW-006`, `VOCAB-001`, `METRIC-001`, `METRIC-003`,
+  `SMELL-002`, `SMELL-005`, `ANTIPATTERN-006`, and `ARTIFACT-003`.
+- New PEAK concepts created: none.
+- `knowledge/index.yaml` changed during Author Draft: no.
+- Existing PEAK concept files changed during Author Draft: no.
+- Canonical brief changed during Author Draft: no.
+- `editor/CANON.md` changed during Author Draft: no.
+- Frozen Chapters 1-5 changed during Author Draft: no.
+- Chapter 7 or Part II manuscript started: no.
+- Canonical manuscript duplicated under `docs/`: no.
+- Validation commands and actual results:
+  - `git fetch --all --prune`: passed during preflight.
+  - `git switch chapter6`: passed during preflight; branch was already tracking `origin/chapter6`.
+  - `git status --short --branch`: passed during preflight; branch was `chapter6` and the working tree was clean.
+  - `git rev-parse HEAD`: passed during preflight and returned
+    `e603967153986b46bf9b9f307487e62827117c21`.
+  - `git rev-parse origin/chapter6`: passed during preflight and returned
+    `e603967153986b46bf9b9f307487e62827117c21`.
+  - `git rev-parse origin/main`: passed during preflight and returned
+    `749e6239c0561cf510bffc85f500261bdb287b0c`.
+  - `git merge-base HEAD origin/main`: passed during preflight and returned
+    `749e6239c0561cf510bffc85f500261bdb287b0c`.
+  - `git rev-list --count origin/main..HEAD`: passed during preflight and returned `1`.
+  - Condensed decorated git log for `origin/main..HEAD`: passed during preflight; showed only the one-line entry
+    `e603967 docs: Register Chapter 6 canonical brief`.
+  - `git diff --name-status origin/main...HEAD`: passed during preflight; branch diff was limited to the Chapter 6
+    canonical brief, `knowledge/index.yaml`, and `editor/EDITOR_LOG.md`.
+  - Direct manuscript checks: passed for exact manuscript path, one H1, required H2 order, no empty required section,
+    exact ADR section structure, exactly three Principal's Notebook observations, required Architecture Exercise final
+    question, required thesis/supporting formulation, Part I / Part II bridge, required PEAK references, no raw URLs,
+    no conflict markers, no `TODO`/`TBD`/`AUTHOR NOTE`, and no banned chapter-local scoring artifacts.
+  - Direct PEAK checks: passed; `CHAPTER-006` entity count was exactly 1; path, title, type, and status matched the
+    canonical brief; Chapters 1-5 remained `canonical`; the outgoing Chapter 6 relationship count was exactly 10; the
+    relationship set exactly matched the approved canonical-brief set; every relationship target existed; no duplicate
+    relationships were present.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed with 0 errors across 130 Markdown files.
+  - Initial targeted Vale run failed on an early hardware-work spelling term; the manuscript text was revised to avoid
+    that term.
+  - `vale --config .vale.ini book/01-thinking-like-a-principal/06-leaving-systems-better-than-you-found-them.md
+    editor/EDITOR_LOG.md`: passed after revision with 0 errors, 0 warnings, and 0 suggestions.
+  - `npm.cmd run lint:spelling`: passed with 0 spelling issues across 129 checked files.
+  - `npm.cmd run lint:links`: passed; 129 links scanned successfully.
+  - `python -m pip check`: passed; no broken requirements found.
+  - `Remove-Item Env:ENABLE_PDF_EXPORT -ErrorAction SilentlyContinue; python -m mkdocs build --strict`: passed.
+- Protected-file comparison result: expected Author Draft changes are limited to the new Chapter 6 manuscript and this
+  editor log entry; previously registered Chapter 6 canonical-brief files remain unchanged by this authoring pass.
+- Next required stage: Editorial Review.
