@@ -293,7 +293,7 @@ entities:
       type: chapter
       name: Technical Judgment and Evidence
       path: ../book/01-thinking-like-a-principal/05-technical-judgment-and-evidence.md
-      status: draft
+      status: canonical
   adrs:
     - id: ADR-001
       type: adr
