@@ -640,3 +640,20 @@ Chronological log of editorial maintenance work.
 - Chapter 3 is Frozen.
 - Future substantive changes require reopening the chapter at the appropriate review stage.
 - Next repository step: begin Chapter 4 only through a separate Draft prompt.
+
+## Phase 3 Chapter 4 Canonical Brief Setup
+
+- Chapter: Ownership Beyond Code.
+- Stable ID: CHAPTER-004.
+- Branch: `chapter4`.
+- Baseline commit: `a29d238d9177a9d3cb583c352ca0a505623cc6c4`.
+- Lifecycle stage: Draft preparation.
+- Chapter 4 preparation started.
+- Canonical brief and exact scope established at `editor/chapter-briefs/CHAPTER-004-ownership-beyond-code.md`.
+- `CHAPTER-004` registered as `draft` in `knowledge/index.yaml`.
+- Reader-facing Draft written: no.
+- Chapter 4 manuscript file created: no.
+- New PEAK concept registered: no.
+- PEAK relationships added: none.
+- Editorial, Canon, Technical, and Freeze Review performed: no.
+- Chapter 1, Chapter 2, and Chapter 3 remain canonical and untouched.

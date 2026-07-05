@@ -284,6 +284,11 @@ entities:
       name: Asking Better Engineering Questions
       path: ../book/01-thinking-like-a-principal/03-asking-better-engineering-questions.md
       status: canonical
+    - id: CHAPTER-004
+      type: chapter
+      name: Ownership Beyond Code
+      path: ../book/01-thinking-like-a-principal/04-ownership-beyond-code.md
+      status: draft
   adrs:
     - id: ADR-001
       type: adr
