@@ -2154,60 +2154,6 @@ Chronological log of editorial maintenance work.
 - Unresolved editorial issues: none.
 - Next stage: Canon Revalidation.
 
-## Phase 22 Chapter 2 Canon Revalidation
-
-- Chapter: Decision-Making Under Constraints.
-- Stable ID: `CHAPTER-002`.
-- Branch: `chapter2-revalidation`.
-- Editorial Revalidation baseline full SHA: `8c5c4ca3caa669eb5f1b913906059cc5de9dcbc5`.
-- Stage: Canon Revalidation.
-- Outcome: Approved.
-- Canonical purpose: passed; Chapter 2 remains focused on constrained commitments that name constraints, evidence,
-  uncertainty, consequences, and reversal cost before commitment.
-- Chapter 1 boundary: passed; the chapter builds on future system cost without redefining the Principal Engineer role
-  or repeating Chapter 1 at length.
-- Chapter 3 boundary: passed; the chapter stops before investigation framing, discriminating questions, root-cause
-  inquiry, and observation-versus-interpretation work.
-- Chapter 4 boundary: passed; the chapter may assign ownership to accepted consequences, but it does not teach outcome
-  ownership, accepted handoffs, closure, or the ownership-beyond-code framework.
-- Chapter 5 boundary: passed; `LAW-005` supports the constrained decision without duplicating evidence-quality
-  dimensions, confidence calibration, weak signals, staged commitments, or experimental design.
-- Chapter 6 boundary: passed; simplicity and unused flexibility support the Chapter 2 decision without turning the
-  chapter into bounded stewardship.
-- Part II boundary: passed; the chapter references `LAW-005`, `LAW-004`, and `LAW-006` without systematically teaching
-  the laws.
-- Exact PEAK relationship results:
-  - `CHAPTER-002 illustrates LAW-005`: supported by the prototype-evidence, confidence, and commitment discussion.
-  - `CHAPTER-002 references ARTIFACT-003`: supported by the compact Decision Journal entry.
-  - `CHAPTER-002 references VOCAB-001`: supported by Change Radius reasoning around diagnostics and recovery.
-  - `CHAPTER-002 references LAW-004`: supported by the preference for a reviewable, testable, explainable update path.
-  - `CHAPTER-002 references LAW-006`: supported by removal of unowned speculative variant hooks.
-- Relationship changes: none.
-- New PEAK concepts: none.
-- Decision Journal result: passed; it remains lightweight, subordinate to the thesis, aligned with `ARTIFACT-003`, and
-  distinct from the chapter-local ADR.
-- Chapter-local ADR result: passed; it records the story-local decision and does not become a handbook-wide canon entry.
-- Completed Part I continuity: passed; Chapter 2 has a distinct role in the six-chapter Part I arc.
-- Unresolved canon issues: none.
-- Manuscript changes: none.
-- PEAK changes: none.
-- Manuscript blob identity: passed; Chapter 2 remained
-  `e78bd7f8468350622ae4b49f6590473818c5894e`.
-- Validation commands and actual results:
-  - `git diff --check`: passed.
-  - `npm.cmd run lint:md`: passed with 0 errors across 130 Markdown files.
-  - `npm.cmd run lint:spelling`: passed with 0 spelling issues across 129 checked files.
-  - `npm.cmd run lint:links`: passed; 129 links scanned successfully.
-  - `vale --config .vale.ini book/01-thinking-like-a-principal/02-decision-making-under-constraints.md editor/EDITOR_LOG.md`:
-    passed with 0 errors, 0 warnings, and 0 suggestions.
-  - `python -m pip check`: passed; no broken requirements found.
-  - `python -m mkdocs build --strict`: passed.
-  - Direct structured PEAK assertions: passed for exactly one `CHAPTER-002`, exact path and canonical status, Chapters
-    1 and 3-6 canonical statuses, exact five Chapter 2 relationships, target existence, supported relationship types,
-    duplicate and self-edge checks, stable entity identity, manuscript Git blob identity, and protected-file scope before
-    this log entry.
-- Next stage: Technical Revalidation.
-
 ## Phase 18 Chapter 1 Canon Revalidation
 
 - Chapter: What Is a Principal Engineer?
@@ -2379,3 +2325,117 @@ Chronological log of editorial maintenance work.
     headings, unresolved marker scan, conflict marker scan, raw URL scan, manuscript-only-under-`book/`, manuscript blob
     identity, exact five PEAK relationships, and protected-file scope before the log entry.
 - Next stage: Canon Revalidation.
+
+## Phase 22 Chapter 2 Canon Revalidation
+
+- Chapter: Decision-Making Under Constraints.
+- Stable ID: `CHAPTER-002`.
+- Branch: `chapter2-revalidation`.
+- Editorial Revalidation baseline full SHA: `8c5c4ca3caa669eb5f1b913906059cc5de9dcbc5`.
+- Stage: Canon Revalidation.
+- Outcome: Approved.
+- Canonical purpose: passed; Chapter 2 remains focused on constrained commitments that name constraints, evidence,
+  uncertainty, consequences, and reversal cost before commitment.
+- Chapter 1 boundary: passed; the chapter builds on future system cost without redefining the Principal Engineer role
+  or repeating Chapter 1 at length.
+- Chapter 3 boundary: passed; the chapter stops before investigation framing, discriminating questions, root-cause
+  inquiry, and observation-versus-interpretation work.
+- Chapter 4 boundary: passed; the chapter may assign ownership to accepted consequences, but it does not teach outcome
+  ownership, accepted handoffs, closure, or the ownership-beyond-code framework.
+- Chapter 5 boundary: passed; `LAW-005` supports the constrained decision without duplicating evidence-quality
+  dimensions, confidence calibration, weak signals, staged commitments, or experimental design.
+- Chapter 6 boundary: passed; simplicity and unused flexibility support the Chapter 2 decision without turning the
+  chapter into bounded stewardship.
+- Part II boundary: passed; the chapter references `LAW-005`, `LAW-004`, and `LAW-006` without systematically teaching
+  the laws.
+- Exact PEAK relationship results:
+  - `CHAPTER-002 illustrates LAW-005`: supported by the prototype-evidence, confidence, and commitment discussion.
+  - `CHAPTER-002 references ARTIFACT-003`: supported by the compact Decision Journal entry.
+  - `CHAPTER-002 references VOCAB-001`: supported by Change Radius reasoning around diagnostics and recovery.
+  - `CHAPTER-002 references LAW-004`: supported by the preference for a reviewable, testable, explainable update path.
+  - `CHAPTER-002 references LAW-006`: supported by removal of unowned speculative variant hooks.
+- Relationship changes: none.
+- New PEAK concepts: none.
+- Decision Journal result: passed; it remains lightweight, subordinate to the thesis, aligned with `ARTIFACT-003`, and
+  distinct from the chapter-local ADR.
+- Chapter-local ADR result: passed; it records the story-local decision and does not become a handbook-wide canon entry.
+- Completed Part I continuity: passed; Chapter 2 has a distinct role in the six-chapter Part I arc.
+- Unresolved canon issues: none.
+- Manuscript changes: none.
+- PEAK changes: none.
+- Manuscript blob identity: passed; Chapter 2 remained
+  `e78bd7f8468350622ae4b49f6590473818c5894e`.
+- Validation commands and actual results:
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed with 0 errors across 130 Markdown files.
+  - `npm.cmd run lint:spelling`: passed with 0 spelling issues across 129 checked files.
+  - `npm.cmd run lint:links`: passed; 129 links scanned successfully.
+  - `vale --config .vale.ini book/01-thinking-like-a-principal/02-decision-making-under-constraints.md editor/EDITOR_LOG.md`:
+    passed with 0 errors, 0 warnings, and 0 suggestions.
+  - `python -m pip check`: passed; no broken requirements found.
+  - `python -m mkdocs build --strict`: passed.
+  - Direct structured PEAK assertions: passed for exactly one `CHAPTER-002`, exact path and canonical status, Chapters
+    1 and 3-6 canonical statuses, exact five Chapter 2 relationships, target existence, supported relationship types,
+    duplicate and self-edge checks, stable entity identity, manuscript Git blob identity, and protected-file scope before
+    this log entry.
+- Next stage: Technical Revalidation.
+
+## Phase 23 Chapter 2 Technical Revalidation
+
+- Chapter: Decision-Making Under Constraints.
+- Stable ID: `CHAPTER-002`.
+- Branch: `chapter2-revalidation`.
+- Canon Revalidation baseline full SHA: `5eba7a1a3f716d100b4e019684c709f88f7d2e74`.
+- Stage: Technical Revalidation.
+- Outcome: Approved.
+- Memory constraint: passed; product image, recovery capability, diagnostics, and speculative hooks credibly compete for
+  constrained memory without tying the chapter to one MCU or memory architecture.
+- Recoverable update path: passed; the chapter remains architecture-neutral, does not prescribe A/B, dual-bank,
+  rollback, delta, compression, or a specific bootloader, and treats recovery as important without making it an absolute
+  guarantee.
+- Complex mechanism evidence: passed; prototype and bench evidence are useful but insufficient for the low-reversibility
+  field commitment described.
+- Qualification: passed; changing the memory part credibly reopens board review, qualification, supply, manufacturing,
+  or test work without claiming every substitution has identical cost.
+- Diagnostics versus recovery: passed; deferred diagnostics carry product and service consequences, while recovery is
+  treated as contextual rather than universally higher priority.
+- Release commitment: passed; the date is a real external commitment, not a physical law, and deadline pressure does
+  not erase risk.
+- Speculative flexibility: passed; unused hooks consume memory, test, review, and release margin, and removal is tied to
+  absent approved variant and absent committed owner.
+- Simplicity: passed; the simpler mechanism is preferred because it is more reviewable, testable, explainable, and
+  evidenced, not because simplicity has moral force.
+- Change Radius: passed; the chapter treats Change Radius as affected product, support, tooling, service, trust, and
+  deployed-device surface rather than changed-file count.
+- Reversibility: passed; reversibility changes the evidence threshold and learning capacity without becoming harmlessness
+  or failure probability.
+- Decision quality: passed; good decisions can have bad outcomes, weak decisions can get lucky, and review triggers let
+  later evidence update the decision.
+- Risk ownership and review triggers: passed; accepted product and service cost has visible ownership, and review
+  triggers are concrete enough to reopen the decision without claiming they enforce themselves.
+- Decision Journal: passed; fields are meaningful, `Confidence: Medium` matches the evidence and uncertainty, and the
+  date is a story-local record rather than a transient external dependency.
+- Exercise: passed; a practicing engineer can distinguish hard constraints, renegotiable commitments, assumptions,
+  evidence, consequence, Change Radius, reversibility, accepted risk, owner, and review trigger.
+- ADR consistency: passed; Story, Discussion, Principle, Exercise, Decision Journal, and ADR describe one coherent
+  constrained decision.
+- Unresolved technical issues: none.
+- Manuscript changes: none.
+- Manuscript blob identity: passed; Chapter 2 remained
+  `e78bd7f8468350622ae4b49f6590473818c5894e`.
+- PEAK changes: none.
+- Validation commands and actual results:
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed with 0 errors across 130 Markdown files.
+  - `npm.cmd run lint:spelling`: passed with 0 spelling issues across 129 checked files.
+  - `npm.cmd run lint:links`: passed; 129 links scanned successfully.
+  - `vale --config .vale.ini book/01-thinking-like-a-principal/02-decision-making-under-constraints.md editor/EDITOR_LOG.md`:
+    passed with 0 errors, 0 warnings, and 0 suggestions.
+  - `python -m pip check`: passed; no broken requirements found.
+  - `python -m mkdocs build --strict`: passed.
+  - Direct technical assertions: passed for memory pressure, update recovery, qualification, diagnostics, release date,
+    speculative flexibility, simplicity, Change Radius, reversibility, Decision Journal confidence, ADR consistency,
+    unsupported guarantee claims, impossible-causality claims, vendor-specific claims, deadline-justifies-risk claims,
+    simple-means-safe claims, always-waste claims, self-enforcing-trigger claims, PEAK identity, and manuscript Git blob
+    identity.
+- Next stage: Freeze Revalidation.
