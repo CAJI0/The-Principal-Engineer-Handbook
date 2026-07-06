@@ -2043,3 +2043,60 @@ Chronological log of editorial maintenance work.
 - Chapter 6 Frozen: yes.
 - Branch merged status: no.
 - Next repository step: open the `chapter6` pull request.
+
+## Phase 16 Chapter 1 Editorial Revalidation
+
+- Chapter: What Is a Principal Engineer?
+- Stable ID: `CHAPTER-001`.
+- Branch: `chapter1-revalidation`.
+- Current `origin/main` full SHA: `51404070540cc1bfeccb023da0e6a4cf8ddd60fb`.
+- Revalidation baseline full SHA: `51404070540cc1bfeccb023da0e6a4cf8ddd60fb`.
+- Original Chapter 1 Freeze baseline: `7825661b612573c5a0ce43ce22df26ecc532e39f`.
+- Stage: Editorial Revalidation.
+- Outcome: Request changes.
+- Reason for revalidation: the original Chapter 1 Freeze Review approved the chapter, but recorded that `npm`, Vale,
+  and MkDocs checks were unavailable in that review environment. The current audit reran the editorial gate with the
+  repository validation tools now available.
+- Editorial areas reviewed: central idea, manufacturing story flow, transition from story to discussion and principle,
+  readability, pacing, repetition, terminology, voice consistency with Chapters 2-6, required chapter architecture,
+  Architecture Exercise, Principal's Notebook, chapter-local ADR, Editor's Commentary, stale draft language, repository
+  workflow language, unresolved author notes, placeholders, and accidental dependence on later Part I chapters.
+- Part I continuity result: passed; Chapter 1 still works as the opening Part I chapter after Chapters 2-6 were added.
+  It introduces Principal Engineering as responsibility for future system cost without absorbing the later detailed
+  treatments of constraints, inquiry, ownership, evidence, or bounded stewardship.
+- Chapter architecture result: passed; the required H2 sections are present exactly once and in order.
+- Principal's Notebook count: passed; exactly three concise observations are present.
+- ADR result: passed; the chapter-local ADR has context, decision, consequences, and alternatives considered.
+- Unresolved editorial issues:
+  - Targeted Vale now reports two Chapter 1 `PrincipalEngineerHandbook.AuthorBoundary` warnings in the frozen manuscript:
+    line 158 column 201 and line 198 column 100.
+  - Because these warnings are inside Chapter 1 and this audit must not edit frozen prose, they require an explicit
+    Editorial Review reopen decision rather than a silent manuscript correction.
+- Manuscript changes: none.
+- Manuscript blob identity result: passed; the manuscript blob remained
+  `8bec1ac7f6a7f0bed674a298865f649ffab0c5d1`.
+- Validation commands and actual results:
+  - `git fetch --all --prune`: passed.
+  - `git switch main`: passed.
+  - `git pull --ff-only`: passed.
+  - Gate 0 preflight: passed; local `main` equaled `origin/main`, the Chapter 6 merge commit was an ancestor of
+    `origin/main`, no local or remote `chapter1-revalidation` branch existed, Chapter 1 existed only under `book/`,
+    `knowledge/index.yaml` parsed successfully, `CHAPTER-001` and Chapters 2-6 were `canonical`, original Chapter 1
+    review history was present, no existing Chapter 1 revalidation records existed, no Part II manuscript was started,
+    and no generated `site/` output was tracked.
+  - `git switch -c chapter1-revalidation origin/main`: passed.
+  - Direct editorial checks: passed for exact H1, required H2 order, nonempty required sections, exactly three
+    Principal's Notebook bullets, complete ADR headings, no unresolved `AUTHOR NOTE`, `TODO`, `TBD`, placeholder, or
+    conflict marker, manuscript-only-under-`book/`, and unchanged manuscript blob.
+  - `git diff --check`: passed.
+  - `npm.cmd ci`: passed; repository JavaScript dependencies installed from `package-lock.json`.
+  - `npm.cmd run lint:md`: passed with 0 errors across 130 Markdown files.
+  - `npm.cmd run lint:spelling`: passed with 0 spelling issues across 129 checked files.
+  - `npm.cmd run lint:links`: passed; 129 links scanned successfully.
+  - `vale --config .vale.ini book/01-thinking-like-a-principal/01-what-is-a-principal-engineer.md`: completed with
+    0 errors, 2 warnings, and 0 suggestions; both warnings were `PrincipalEngineerHandbook.AuthorBoundary` warnings in
+    Chapter 1.
+  - `python -m pip check`: passed; no broken requirements found.
+  - `python -m mkdocs build --strict`: passed.
+- Later revalidation gates run: no.
+- Required reopen stage: Chapter 1 Editorial Review.
