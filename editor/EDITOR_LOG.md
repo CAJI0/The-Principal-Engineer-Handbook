@@ -2222,3 +2222,53 @@ Chronological log of editorial maintenance work.
     identity.
 - Technical issues found: none.
 - Next stage: Freeze Revalidation.
+
+## Phase 20 Chapter 1 Freeze Revalidation
+
+- Chapter: What Is a Principal Engineer?
+- Stable ID: `CHAPTER-001`.
+- Branch: `chapter1-revalidation`.
+- Stage: Freeze Revalidation.
+- Outcome: Approved.
+- Baseline technical revalidation commit: `10258dd7e5231e2b87e2a16dd7d0c9794df20e38`.
+- Current `origin/main` full SHA: `51404070540cc1bfeccb023da0e6a4cf8ddd60fb`.
+- Manuscript blob verified: `92da84beeaa8ca303d0518130646a56a27b6d23c`.
+- Final lifecycle state: `CHAPTER-001` remains frozen and `canonical`.
+- Protected-file scope: passed; branch diff versus `origin/main` is limited to:
+  - `book/01-thinking-like-a-principal/01-what-is-a-principal-engineer.md`.
+  - `editor/EDITOR_LOG.md`.
+- Structure checks:
+  - H1 matches `What Is a Principal Engineer?`.
+  - H2 order is Opening Quote, Story, Discussion, Engineering Principle, Architecture Exercise,
+    Principal's Notebook, ADR, Editor's Commentary.
+  - Principal's Notebook contains exactly 3 bullets.
+  - ADR contains the required chapter ADR title, Context, Decision, Consequences, and Alternatives Considered headings.
+  - Manuscript contains no unresolved author markers, TODO/TBD markers, conflict markers, or raw URLs.
+- Canon and PEAK checks:
+  - `CHAPTER-001` through `CHAPTER-006` remain `canonical`.
+  - `CHAPTER-001` path remains `../book/01-thinking-like-a-principal/01-what-is-a-principal-engineer.md`.
+  - Chapter 1 PEAK relationships remain exactly `CHAPTER-001 references ARTIFACT-001` and
+    `CHAPTER-001 illustrates SMELL-001`.
+  - No generated output is tracked.
+  - No Part II manuscript files exist beyond README placeholders.
+- Validation commands and actual results:
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed with 0 errors across 130 Markdown files.
+  - `npm.cmd run lint:spelling`: passed with 0 spelling issues across 129 checked files.
+  - `npm.cmd run lint:links`: passed; 129 links scanned successfully.
+  - `vale --config .vale.ini book/01-thinking-like-a-principal/01-what-is-a-principal-engineer.md editor/EDITOR_LOG.md`:
+    passed with 0 errors, 0 warnings, and 0 suggestions.
+  - `vale .`: completed with 0 errors, 3 warnings, and 0 suggestions across 130 files; the remaining warnings are
+    outside Chapter 1 and `EDITOR_LOG.md` at `CONTRIBUTING.md:29:30`, `editor/ARCHITECTURE_REVIEW_0.md:49:85`, and
+    `editor/SOURCE_OF_TRUTH.md:19:49`.
+  - `python -m pip check`: passed; no broken requirements found.
+  - `python -m mkdocs build --strict`: passed.
+  - `ENABLE_PDF_EXPORT=1 python -m mkdocs build --config-file mkdocs-pdf.yml`: passed and wrote
+    `site/pdf/the-principal-engineer-handbook.pdf`.
+  - PDF existence check: passed; generated PDF size was 275775 bytes.
+  - Direct freeze assertions: passed for H1, H2 order, notebook bullet count, ADR headings, placeholder scan, conflict
+    marker scan, raw URL scan, Chapter 1-6 canonical statuses, Chapter 1 path, Chapter 1 PEAK relationships, manuscript
+    Git blob identity, PDF existence, absence of tracked `site/` output, absence of Part II manuscript files, and exact
+    branch diff scope.
+- Freeze issues found: none.
+- Next step: open the revalidation pull request before starting Part II.
