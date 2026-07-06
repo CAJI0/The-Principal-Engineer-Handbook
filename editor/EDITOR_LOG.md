@@ -2272,3 +2272,56 @@ Chronological log of editorial maintenance work.
     branch diff scope.
 - Freeze issues found: none.
 - Next step: open the revalidation pull request before starting Part II.
+
+## Phase 21 Chapter 2 Editorial Revalidation
+
+- Chapter: Decision-Making Under Constraints.
+- Stable ID: `CHAPTER-002`.
+- Branch: `chapter2-revalidation`.
+- Current `origin/main` full SHA: `05911cd4ebcfd783ed2c51bf87aef77b3815ed6b`.
+- Revalidation baseline full SHA: `05911cd4ebcfd783ed2c51bf87aef77b3815ed6b`.
+- Original Technical Review baseline: `847db1aec67e93d961512f66e61c908dc342e7c8`.
+- Original Freeze Review outcome: Request changes.
+- Original Freeze Validation Remediation outcome: Approved with minor changes.
+- Original Freeze Review Retry outcome: Approved.
+- Reason for revalidation: Chapter 2 is Frozen and canonical, Chapter 1 post-freeze revalidation is now merged into
+  `main`, and the completed Part I plus current repository tool chain require a fresh read-only audit before Part II.
+- Stage: Editorial Revalidation.
+- Outcome: Approved.
+- Editorial areas reviewed: opening quote, hardware-freeze and release story context, stakeholder credibility, memory,
+  recovery, diagnostics, qualification, schedule, variant-flexibility pressures, meeting sequence, story-to-discussion
+  boundary, central idea, repetition, required chapter architecture, exercise, notebook, chapter-local ADR, editor
+  commentary, stale workflow language, unresolved markers, and completed Part I continuity.
+- Completed Part I continuity: passed; Chapter 2 remains the constrained-commitment chapter between Chapter 1's future
+  system-cost frame and Chapter 3's inquiry-shaping work, without teaching the later ownership, evidence-quality, or
+  stewardship frameworks early.
+- Structure result: passed; the manuscript has exactly one H1 and the required H2 sections once in canonical order.
+- Principal's Notebook count: passed; exactly three concise observations remain.
+- ADR result: passed; the chapter-local ADR has Context, Decision, Consequences, and Alternatives Considered and remains
+  consistent with the story, discussion, principle, exercise, and Decision Journal.
+- Editor's Commentary result: passed; it accurately positions Chapter 2 after Chapter 1 and before Chapter 3.
+- Unresolved editorial issues: none.
+- Manuscript changes: none.
+- Manuscript blob identity: passed; Chapter 2 remained
+  `e78bd7f8468350622ae4b49f6590473818c5894e`.
+- Validation commands and actual results:
+  - Gate 0 preflight: passed; local `main` was clean and equaled `origin/main`, Chapter 1 post-freeze revalidation was
+    merged, no local or remote `chapter2-revalidation` branch existed, Chapter 2 existed only under `book/`,
+    `knowledge/index.yaml` parsed, `CHAPTER-002` was canonical with the expected metadata, Chapters 1 and 3-6 were
+    canonical, original Chapter 2 lifecycle history was present, Phase 21-24 records were absent, no Part II manuscript
+    existed, no tracked generated output existed, and the working tree had no unrelated files.
+  - Shared repository reading: passed; editor policy files, full editor log, PEAK index, Chapter 2 manuscript,
+    Chapters 1 and 3-6, table of contents, Chapter 2 PEAK concept files, and current tool chain configuration were read.
+  - `npm.cmd ci`: passed; dependencies installed from `package-lock.json`.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed with 0 errors across 130 Markdown files.
+  - `npm.cmd run lint:spelling`: passed with 0 spelling issues across 129 checked files.
+  - `npm.cmd run lint:links`: passed; 129 links scanned successfully.
+  - `vale --config .vale.ini book/01-thinking-like-a-principal/02-decision-making-under-constraints.md`: passed with
+    0 errors, 0 warnings, and 0 suggestions.
+  - `python -m pip check`: passed; no broken requirements found.
+  - `python -m mkdocs build --strict`: passed.
+  - Direct editorial checks: passed for exact H1, H2 order, nonempty required sections, notebook bullet count, ADR
+    headings, unresolved marker scan, conflict marker scan, raw URL scan, manuscript-only-under-`book/`, manuscript blob
+    identity, exact five PEAK relationships, and protected-file scope before the log entry.
+- Next stage: Canon Revalidation.
