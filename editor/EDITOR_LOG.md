@@ -1579,3 +1579,467 @@ Chronological log of editorial maintenance work.
 - Future-change rule: future substantive changes to Chapter 5 require reopening the appropriate review stage.
 - Branch merged status: no.
 - Next repository step: prepare and merge a pull request for `chapter5`; do not start Chapter 6 on this branch.
+
+## Phase 10 Chapter 6 Canonical Brief Registration
+
+- Chapter: Leaving Systems Better Than You Found Them.
+- Stable ID: `CHAPTER-006`.
+- Branch: `chapter6`.
+- Lifecycle stage: canonical brief registration / draft preparation.
+- Verified baseline `origin/main`: `749e6239c0561cf510bffc85f500261bdb287b0c`.
+- Registration commit present before this remediation: `1a079b02730d70fb4cc08b62edcaa2c593e0cb56`.
+- Chapter 5 merge ancestry was verified; merge base between `chapter6` and `origin/main` is
+  `749e6239c0561cf510bffc85f500261bdb287b0c`.
+- Chapters 1-5 remain Frozen and canonical.
+- Canonical brief path:
+  `editor/chapter-briefs/CHAPTER-006-leaving-systems-better-than-you-found-them.md`.
+- Reserved manuscript path:
+  `book/01-thinking-like-a-principal/06-leaving-systems-better-than-you-found-them.md`.
+- `CHAPTER-006` status: `draft`.
+- Reader-facing manuscript created: no.
+- Author Draft started: no.
+- Chapter 7 or Part II started: no.
+- Approved central thesis: When a change exposes or creates structural cost, include the smallest justified improvement
+  that reduces that cost without displacing the product outcome.
+- Recommended embedded story direction: a new board revision introduces another power-monitor peripheral; the fast path
+  would add another platform-specific conditional to an overloaded shared module; the bounded stewardship action
+  localizes device-specific behavior, removes one verified obsolete path or unused option, records the decision, and
+  adds only minimal useful diagnostics; the product commitment remains deliverable; no broad rewrite is started.
+- Engineering Principle target: When a change exposes or creates structural cost, include the smallest justified
+  improvement that reduces that cost without displacing the product outcome.
+- Architecture Exercise target: Define a Bounded Stewardship Action.
+- Chapter-local ADR working title: Localize Power-Monitor Variation While Delivering the New Board Revision.
+- Exact PEAK relationships registered:
+  - `CHAPTER-006 references VOCAB-007`.
+  - `CHAPTER-006 illustrates LAW-004`.
+  - `CHAPTER-006 illustrates LAW-006`.
+  - `CHAPTER-006 references VOCAB-001`.
+  - `CHAPTER-006 references METRIC-001`.
+  - `CHAPTER-006 references METRIC-003`.
+  - `CHAPTER-006 illustrates SMELL-002`.
+  - `CHAPTER-006 illustrates SMELL-005`.
+  - `CHAPTER-006 references ANTIPATTERN-006`.
+  - `CHAPTER-006 references ARTIFACT-003`.
+- New PEAK concepts created: none.
+- Existing PEAK concept files changed: no.
+- Existing entity statuses changed: no.
+- `editor/CANON.md` changed: no.
+- Frozen Chapters 1-5 changed: no.
+- Canonical manuscript duplicated under `docs/`: no.
+- Protected files changed during this remediation before the log entry: none.
+- Required repository reading completed: `editor/EDITOR_LOG.md`, `editor/REVIEW_PROCESS.md`,
+  `editor/SOURCE_OF_TRUTH.md`, `knowledge/index.yaml`, and the Chapter 6 canonical brief.
+- Validation commands and actual results:
+  - `git fetch --all --prune`: passed.
+  - `git switch chapter6`: passed; branch was already tracking `origin/chapter6`.
+  - `git status --short --branch`: passed before editing; branch was `chapter6` and the working tree was clean.
+  - `git rev-parse HEAD`: passed and returned `1a079b02730d70fb4cc08b62edcaa2c593e0cb56`.
+  - `git rev-parse origin/chapter6`: passed and returned `1a079b02730d70fb4cc08b62edcaa2c593e0cb56`.
+  - `git rev-parse origin/main`: passed and returned `749e6239c0561cf510bffc85f500261bdb287b0c`.
+  - `git merge-base HEAD origin/main`: passed and returned `749e6239c0561cf510bffc85f500261bdb287b0c`.
+  - Pre-edit `git diff --check`: passed.
+  - YAML parse and direct PEAK checks: passed; `CHAPTER-006` entity count was exactly 1; `CHAPTER-006` had type
+    `chapter`, name `Leaving Systems Better Than You Found Them`, path
+    `../book/01-thinking-like-a-principal/06-leaving-systems-better-than-you-found-them.md`, and status `draft`;
+    Chapters 1-5 remained `canonical`; outgoing Chapter 6 relationship count was exactly 10; the relationship set
+    exactly matched the approved set; every relationship target existed; no duplicate relationships were present; the
+    Chapter 6 manuscript was absent; the Chapter 6 canonical brief existed.
+  - `npm.cmd run lint:md`: passed with 0 errors across 129 Markdown files.
+  - `npm.cmd run lint:spelling`: passed with 0 spelling issues across 128 checked files after this log entry.
+  - Post-edit `git diff --check`: passed.
+  - Post-edit direct PEAK checks: passed.
+  - `vale --config .vale.ini editor\EDITOR_LOG.md`: passed with 0 errors, 0 warnings, and 0 suggestions.
+  - Changed-file verification: `git diff --name-status` showed only `editor/EDITOR_LOG.md`.
+- Changed-file intent for this remediation: only `editor/EDITOR_LOG.md`.
+- Next required stage: Chapter 6 Author Draft, only after author approval.
+
+## Phase 11 Chapter 6 Author Draft
+
+- Chapter: Leaving Systems Better Than You Found Them.
+- Stable ID: `CHAPTER-006`.
+- Branch: `chapter6`.
+- Lifecycle stage: Author Draft.
+- Starting HEAD for this authoring pass: `e603967153986b46bf9b9f307487e62827117c21`.
+- Verified baseline `origin/main`: `749e6239c0561cf510bffc85f500261bdb287b0c`.
+- `origin/main..HEAD` commit count before authoring: 1.
+- Pre-existing branch commit before authoring: `e603967153986b46bf9b9f307487e62827117c21`
+  (`docs: Register Chapter 6 canonical brief`).
+- Squashed preparation state accepted: yes; branch contained the single Chapter 6 canonical-brief registration commit.
+- Manuscript path created:
+  `book/01-thinking-like-a-principal/06-leaving-systems-better-than-you-found-them.md`.
+- Approximate manuscript word count after authoring checks: 3610.
+- Required reader-facing structure present: yes; H1 and required H2 sections match the Chapter 6 brief and template.
+- Opening Quote present: yes; original and unattributed.
+- Story used: One More Board Revision / power-monitor variation.
+- Engineering Principle used: When a change exposes or creates structural cost, include the smallest justified
+  improvement that reduces that cost without displacing the product outcome.
+- Architecture Exercise used: Define a Bounded Stewardship Action.
+- Principal's Notebook observations: exactly 3.
+- Chapter-local ADR present: yes; required Chapter ADR title and Context, Decision, Consequences, and Alternatives
+  Considered sections are present.
+- PEAK relationships supported in manuscript: yes; the draft materially references or illustrates the registered
+  Chapter 6 concepts and laws: `VOCAB-007`, `LAW-004`, `LAW-006`, `VOCAB-001`, `METRIC-001`, `METRIC-003`,
+  `SMELL-002`, `SMELL-005`, `ANTIPATTERN-006`, and `ARTIFACT-003`.
+- New PEAK concepts created: none.
+- `knowledge/index.yaml` changed during Author Draft: no.
+- Existing PEAK concept files changed during Author Draft: no.
+- Canonical brief changed during Author Draft: no.
+- `editor/CANON.md` changed during Author Draft: no.
+- Frozen Chapters 1-5 changed during Author Draft: no.
+- Chapter 7 or Part II manuscript started: no.
+- Canonical manuscript duplicated under `docs/`: no.
+- Validation commands and actual results:
+  - `git fetch --all --prune`: passed during preflight.
+  - `git switch chapter6`: passed during preflight; branch was already tracking `origin/chapter6`.
+  - `git status --short --branch`: passed during preflight; branch was `chapter6` and the working tree was clean.
+  - `git rev-parse HEAD`: passed during preflight and returned
+    `e603967153986b46bf9b9f307487e62827117c21`.
+  - `git rev-parse origin/chapter6`: passed during preflight and returned
+    `e603967153986b46bf9b9f307487e62827117c21`.
+  - `git rev-parse origin/main`: passed during preflight and returned
+    `749e6239c0561cf510bffc85f500261bdb287b0c`.
+  - `git merge-base HEAD origin/main`: passed during preflight and returned
+    `749e6239c0561cf510bffc85f500261bdb287b0c`.
+  - `git rev-list --count origin/main..HEAD`: passed during preflight and returned `1`.
+  - Condensed decorated git log for `origin/main..HEAD`: passed during preflight; showed only the one-line entry
+    `e603967 docs: Register Chapter 6 canonical brief`.
+  - `git diff --name-status origin/main...HEAD`: passed during preflight; branch diff was limited to the Chapter 6
+    canonical brief, `knowledge/index.yaml`, and `editor/EDITOR_LOG.md`.
+  - Direct manuscript checks: passed for exact manuscript path, one H1, required H2 order, no empty required section,
+    exact ADR section structure, exactly three Principal's Notebook observations, required Architecture Exercise final
+    question, required thesis/supporting formulation, Part I / Part II bridge, required PEAK references, no raw URLs,
+    no conflict markers, no `TODO`/`TBD`/`AUTHOR NOTE`, and no banned chapter-local scoring artifacts.
+  - Direct PEAK checks: passed; `CHAPTER-006` entity count was exactly 1; path, title, type, and status matched the
+    canonical brief; Chapters 1-5 remained `canonical`; the outgoing Chapter 6 relationship count was exactly 10; the
+    relationship set exactly matched the approved canonical-brief set; every relationship target existed; no duplicate
+    relationships were present.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed with 0 errors across 130 Markdown files.
+  - Initial targeted Vale run failed on an early hardware-work spelling term; the manuscript text was revised to avoid
+    that term.
+  - `vale --config .vale.ini book/01-thinking-like-a-principal/06-leaving-systems-better-than-you-found-them.md
+    editor/EDITOR_LOG.md`: passed after revision with 0 errors, 0 warnings, and 0 suggestions.
+  - `npm.cmd run lint:spelling`: passed with 0 spelling issues across 129 checked files.
+  - `npm.cmd run lint:links`: passed; 129 links scanned successfully.
+  - `python -m pip check`: passed; no broken requirements found.
+  - `Remove-Item Env:ENABLE_PDF_EXPORT -ErrorAction SilentlyContinue; python -m mkdocs build --strict`: passed.
+- Protected-file comparison result: expected Author Draft changes are limited to the new Chapter 6 manuscript and this
+  editor log entry; previously registered Chapter 6 canonical-brief files remain unchanged by this authoring pass.
+- Next required stage: Editorial Review.
+
+## Phase 12 Chapter 6 Editorial Review
+
+- Chapter: Leaving Systems Better Than You Found Them.
+- Stable ID: `CHAPTER-006`.
+- Branch: `chapter6`.
+- Author Draft baseline full SHA: `de019efc710d4b5d8ff1481f172a9b1fa0b475ea`.
+- Verified baseline `origin/main`: `749e6239c0561cf510bffc85f500261bdb287b0c`.
+- Merge base with `origin/main`: `749e6239c0561cf510bffc85f500261bdb287b0c`.
+- Stage: Editorial Review.
+- Outcome: Approved with minor changes.
+- Editorial issues reviewed: opening quote, story clarity and pacing, concrete power-monitor detail, bounded Principal
+  Engineer intervention, discussion flow, stewardship-versus-cleanup distinction, "when not to refactor" section,
+  stop condition, Engineering Principle prominence, exercise usability, Principal's Notebook brevity, chapter-local
+  ADR compactness, and Editor's Commentary transition.
+- Exact editorial corrections made:
+  - Rewrapped one long story sentence about diagnostic text and configuration flags for readability.
+  - Revised the Architecture Exercise prompts so product validation and stewardship-action validation are distinct, debt
+    left out of scope is explicit, and the decision record or review trigger is discoverable.
+  - Added the missing chapter-brief ADR alternatives for a speculative generic plug-in framework and feature-only
+    delivery with every structural correction deferred.
+  - Tightened one Editor's Commentary line break in the Part II transition.
+- Central thesis preserved: yes.
+- Story and product outcome preserved: yes; the new board revision still ships without another unconditional
+  conditional patch or a broad startup rewrite.
+- Required structure result: passed; one H1 and the eight required H2 sections are present exactly once and in order.
+- Principal's Notebook count: exactly 3.
+- ADR result: passed; required chapter-local ADR title and Context, Decision, Consequences, and Alternatives Considered
+  sections are present, with alternatives aligned to the canonical brief.
+- Editor's Commentary result: passed; it explains the Chapter 5 transition, closes Part I, and preserves later-part
+  boundaries without repository workflow language.
+- All ten PEAK relationships preserved: yes.
+- New PEAK concepts: none.
+- Unresolved author notes: none.
+- Chapters 1-5 unchanged: yes.
+- Canonical brief unchanged: yes.
+- `knowledge/index.yaml` unchanged: yes.
+- Validation commands and actual results:
+  - `git fetch --all --prune`: passed during Gate 0.
+  - `git switch chapter6`: passed; branch was already tracking `origin/chapter6`.
+  - `git pull --ff-only`: passed; branch was already up to date.
+  - `git status --short --branch`: passed before editing; branch was clean and synchronized with `origin/chapter6`.
+  - `git rev-parse HEAD`: passed and returned `de019efc710d4b5d8ff1481f172a9b1fa0b475ea`.
+  - `git rev-parse origin/chapter6`: passed and returned `de019efc710d4b5d8ff1481f172a9b1fa0b475ea`.
+  - `git rev-parse origin/main`: passed and returned `749e6239c0561cf510bffc85f500261bdb287b0c`.
+  - `git merge-base origin/main HEAD`: passed and returned `749e6239c0561cf510bffc85f500261bdb287b0c`.
+  - `git log -1 --format=%s`: passed and returned `docs(chapter-6): add author draft`.
+  - `git diff --name-status origin/main...HEAD`: passed during Gate 0; branch diff was limited to the exact Chapter 6
+    file set.
+  - Direct Gate 0 checks: passed for lifecycle headings Phase 10 and Phase 11, no existing Phase 12-15 records, exact
+    manuscript and canonical brief paths, no duplicate manuscript under `docs/`, valid `knowledge/index.yaml`,
+    `CHAPTER-006` status `draft`, Chapters 1-5 status `canonical`, exact ten Chapter 6 relationships, no Chapter 7 or
+    Part II manuscript, no tracked generated output, no conflict markers, and clean working tree.
+  - Direct editorial checks: passed for exact H1, required H2 order, no empty required section, complete ADR headings,
+    exactly three Principal's Notebook bullets, required PEAK references, no `AUTHOR NOTE`/`TODO`/`TBD`, no raw URL or
+    external citation, exact PEAK entity and relationship state, no protected-file change, and no tracked generated
+    output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed with 0 errors across 130 Markdown files.
+  - `vale --config .vale.ini book/01-thinking-like-a-principal/06-leaving-systems-better-than-you-found-them.md
+    editor/EDITOR_LOG.md`: passed with 0 errors, 0 warnings, and 0 suggestions.
+  - `npm.cmd run lint:spelling`: passed with 0 spelling issues across 129 checked files.
+  - `npm.cmd run lint:links`: passed; 129 links scanned successfully.
+  - `python -m pip check`: passed; no broken requirements found.
+  - `Remove-Item Env:ENABLE_PDF_EXPORT -ErrorAction SilentlyContinue; python -m mkdocs build --strict`: passed.
+- Next stage: Canon Review.
+
+## Phase 13 Chapter 6 Canon Review
+
+- Chapter: Leaving Systems Better Than You Found Them.
+- Stable ID: `CHAPTER-006`.
+- Branch: `chapter6`.
+- Editorial Review baseline full SHA: `a98f566a671c869a51e9c2ec8d3d4b63d1a150c5`.
+- Verified baseline `origin/main`: `749e6239c0561cf510bffc85f500261bdb287b0c`.
+- Merge base with `origin/main`: `749e6239c0561cf510bffc85f500261bdb287b0c`.
+- Stage: Canon Review.
+- Outcome: Approved.
+- Central thesis result: passed; the chapter remains centered on the smallest justified improvement that reduces
+  change-exposed structural cost without displacing the product outcome.
+- Chapter 1 boundary result: passed; it operationalizes responsibility for future system cost without redefining the
+  Principal Engineer role.
+- Chapter 2 boundary result: passed; the product commitment is treated as given, and the chapter does not repeat the
+  constrained decision framework.
+- Chapter 3 boundary result: passed; discoverability helps the next engineer without becoming an inquiry-method chapter.
+- Chapter 4 boundary result: passed; ownership appears only to make the current boundary visible and does not reteach
+  handoff or closure.
+- Chapter 5 boundary result: passed; evidence is used as a guardrail without repeating confidence calibration or weak
+  signal handling.
+- Part II and later-part boundary results: passed; `LAW-004` and `LAW-006` are applied without surveying all laws, and
+  the chapter does not consume Part III boundary-design, Part IV product-line or observability, Part V ritual, or Part
+  VI legacy-refactoring material.
+- Canonical structure result: passed; one H1, required H2 order, exactly three Principal's Notebook bullets, and
+  complete chapter-local ADR are present.
+- Terminology result: passed; stewardship and related phrases remain chapter-local ordinary prose, with no new stable ID.
+- PEAK material-support results:
+  - `CHAPTER-006 references VOCAB-007`: supported by the Architecture Health definition of absorbing necessary change
+    without disproportionate cost.
+  - `CHAPTER-006 illustrates LAW-004`: supported by the simplicity discussion around reviewable boundaries and reduced
+    mental burden.
+  - `CHAPTER-006 illustrates LAW-006`: supported by the unused monitor-selection option and obsolete fallback.
+  - `CHAPTER-006 references VOCAB-001`: supported by the Change Radius discussion around review, test, and ownership
+    surface.
+  - `CHAPTER-006 references METRIC-001`: supported by the approximate, non-numeric Change Radius metric treatment.
+  - `CHAPTER-006 references METRIC-003`: supported by selected implementation visibility, stable failure categories,
+    and Decision Journal discoverability.
+  - `CHAPTER-006 illustrates SMELL-002`: supported by the shared support module accumulating unrelated boot behavior.
+  - `CHAPTER-006 illustrates SMELL-005`: supported by monitor-specific timing and status details leaking into product
+    startup code.
+  - `CHAPTER-006 references ANTIPATTERN-006`: supported by the prototype fallback as a temporary path requiring
+    evidence, owner, and removal conditions.
+  - `CHAPTER-006 references ARTIFACT-003`: supported by the Decision Journal entry recording boundary, evidence, scope,
+    and review triggers.
+- Relationship changes: none.
+- New PEAK concepts: none.
+- Chapter-local language result: passed; no chapter-local phrase is presented as a canonical PEAK entity.
+- Chapter-local ADR result: passed; it is reader-facing, story-local, aligned with the story, principle, and exercise,
+  and does not imply an `editor/decisions/` ADR was created.
+- Part I closure result: passed; the chapter closes the six-chapter Part I sequence and transitions naturally to Part
+  II without claiming the Principal Engineer role is exhaustively defined.
+- Unresolved canon issues: none.
+- `knowledge/index.yaml` unchanged: yes.
+- `editor/CANON.md` unchanged: yes.
+- PEAK concept files unchanged: yes.
+- Frozen Chapters 1-5 unchanged: yes.
+- Manuscript changed during Canon Review: no.
+- Validation commands and actual results:
+  - `git fetch --all --prune`: passed.
+  - Gate preconditions: passed; working tree was clean, local `HEAD` equaled `origin/chapter6`, latest commit subject
+    was `docs(chapter-6): complete editorial review`, Editorial Review outcome was `Approved with minor changes`, and
+    `CHAPTER-006` status remained `draft`.
+  - Direct canon checks: passed for canonical brief alignment, exact Chapter 6 relationship set, all targets existing,
+    supported relationship types, no duplicate edge, no self-edge, no new stable ID, no status change, no accidental
+    capitalized chapter-local PEAK concept, no changed `knowledge/index.yaml`, no changed PEAK concept file, no changed
+    `editor/CANON.md`, no changed Frozen Chapters 1-5, and no manuscript duplicate under `docs/`.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed with 0 errors across 130 Markdown files.
+  - `vale --config .vale.ini book/01-thinking-like-a-principal/06-leaving-systems-better-than-you-found-them.md
+    editor/EDITOR_LOG.md`: passed with 0 errors, 0 warnings, and 0 suggestions.
+  - `npm.cmd run lint:spelling`: passed with 0 spelling issues across 129 checked files.
+  - `npm.cmd run lint:links`: passed; 129 links scanned successfully.
+  - `python -m pip check`: passed; no broken requirements found.
+  - `Remove-Item Env:ENABLE_PDF_EXPORT -ErrorAction SilentlyContinue; python -m mkdocs build --strict`: passed.
+- Next stage: Technical Review.
+
+## Phase 14 Chapter 6 Technical Review
+
+- Chapter: Leaving Systems Better Than You Found Them.
+- Stable ID: `CHAPTER-006`.
+- Branch: `chapter6`.
+- Canon Review baseline full SHA: `0edd60df9c319d121b542c5298f0fb704b55d595`.
+- Verified baseline `origin/main`: `749e6239c0561cf510bffc85f500261bdb287b0c`.
+- Merge base with `origin/main`: `749e6239c0561cf510bffc85f500261bdb287b0c`.
+- Stage: Technical Review.
+- Outcome: Approved with minor changes.
+- Technical areas examined: peripheral replacement credibility, product-level versus platform-level boundary, startup
+  and safety claims, obsolete fallback removal, unused option narrowing, diagnostics, testing model, Utility Gravity,
+  Platform Leakage, Change Radius, Discoverability, Decision Journal, Temporary Solution, non-refactoring guidance, stop
+  condition, exercise applicability, and ADR consistency.
+- Exact corrections applied:
+  - Bounded obsolete fallback removal to supported product and service scope using product support, service,
+    manufacturing, release, configuration, and test evidence.
+  - Clarified that a missing owner is a warning sign, not proof by itself.
+  - Aligned the ADR Decision and fallback alternative with that supported-scope evidence.
+- Peripheral replacement credibility: passed; the chapter credibly describes external power-monitor differences in
+  startup readiness, reset behavior, live versus latched status, status interpretation, error reporting, and diagnostic
+  detail without naming a vendor or claiming interchangeability without validation.
+- Boundary result: passed; product startup owns product-level continue/reject policy, while monitor implementations own
+  timing, reset semantics, status interpretation, and device-specific translation.
+- Startup and safety result: passed; power health remains a product-level interpretation, diagnostics do not replace
+  validation, and timing/status validation remain necessary.
+- Fallback-removal result: passed after correction; removal is bounded to supported product/service scope and supported
+  by product support, service, manufacturing, release, configuration, and test evidence.
+- Unused-option result: passed; `LAW-006` is applied to unsupported flexibility, not to all future options.
+- Diagnostic result: passed; selected monitor implementation and product-level power-health failure reason are useful
+  without leaking raw register semantics or becoming full observability design.
+- Testing result: passed; monitor implementation tests, product startup tests, and manufacturing tests have distinct and
+  credible responsibilities without claiming complete coverage.
+- Utility Gravity and Platform Leakage result: passed; both smells are illustrated by concrete behavior in the shared
+  startup-support module.
+- Change Radius result: passed; the chapter avoids file-count precision and describes reduced review/test surface as a
+  structurally enabled outcome.
+- Discoverability and Decision Journal result: passed; implementation visibility, stable failure categories, boundary,
+  owner, evidence, and review triggers are recorded without treating records as sufficient by themselves.
+- Temporary Solution result: passed; the prototype fallback is treated as a temporary path needing owner, review trigger,
+  and removal condition without becoming a safe-deletion tutorial.
+- Non-refactoring and stop-condition result: passed; insufficient evidence, weak test protection, incident restoration,
+  other-team ownership, and unclear review boundary remain credible reasons not to refactor, and the stop condition does
+  not claim all risk is removed.
+- Exercise result: passed; the exercise distinguishes product outcome, structural cost, supporting evidence, bounded
+  change, unchanged behavior, validation, out-of-scope work, stop condition, and decision record/review trigger.
+- ADR consistency result: passed; ADR context, decision, consequences, and alternatives match the story and avoid
+  implementation guarantees.
+- Unresolved technical issues: none.
+- PEAK graph unchanged: yes.
+- Canonical brief unchanged: yes.
+- Frozen Chapters 1-5 unchanged: yes.
+- Validation commands and actual results:
+  - `git fetch --all --prune`: passed.
+  - Gate preconditions: passed; working tree was clean, local `HEAD` equaled `origin/chapter6`, latest commit subject
+    was `docs(chapter-6): complete canon review`, Canon Review outcome was `Approved`, Editorial Review remained
+    approved, `CHAPTER-006` status remained `draft`, and the PEAK graph remained exact.
+  - Direct technical checks: passed for no unsupported electrical or safety guarantee, no vendor-specific factual claim,
+    no raw register tutorial, no claim that diagnostics replace validation, no claim that the new boundary eliminates
+    future variant cost, no claim that fallback removal is safe outside supported scope, no story/ADR contradiction, no
+    story/exercise contradiction, and exact PEAK graph unchanged.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed with 0 errors across 130 Markdown files.
+  - `vale --config .vale.ini book/01-thinking-like-a-principal/06-leaving-systems-better-than-you-found-them.md
+    editor/EDITOR_LOG.md`: passed with 0 errors, 0 warnings, and 0 suggestions.
+  - `npm.cmd run lint:spelling`: passed with 0 spelling issues across 129 checked files.
+  - `npm.cmd run lint:links`: passed; 129 links scanned successfully.
+  - `python -m pip check`: passed; no broken requirements found.
+  - `Remove-Item Env:ENABLE_PDF_EXPORT -ErrorAction SilentlyContinue; python -m mkdocs build --strict`: passed.
+- Next stage: Freeze Review.
+
+## Phase 15 Chapter 6 Freeze Review
+
+- Chapter: Leaving Systems Better Than You Found Them.
+- Stable ID: `CHAPTER-006`.
+- Branch: `chapter6`.
+- Technical Review baseline full SHA: `b613c698f8e82f2992f51ceb2b5b3e465e59306c`.
+- Technical Review manuscript blob: `568d5a378b9e6cc622a75ff0728e0065751f5a32`.
+- Verified baseline `origin/main`: `749e6239c0561cf510bffc85f500261bdb287b0c`.
+- Merge base with `origin/main`: `749e6239c0561cf510bffc85f500261bdb287b0c`.
+- Stage: Freeze Review.
+- Outcome: Approved.
+- Prior review outcomes:
+  - Editorial Review: Approved with minor changes.
+  - Canon Review: Approved.
+  - Technical Review: Approved with minor changes.
+- One central idea result: passed; the chapter teaches bounded stewardship of the current product commitment by making
+  the next necessary change cheaper, safer, or easier to understand without turning the work into broad cleanup.
+- Distinct chapter role result: passed; Chapter 6 closes Part I by showing how Principal Engineer habits leave a system
+  behind, while Chapters 1-5 retain their separate roles around role definition, constraints, questions, ownership, and
+  evidence.
+- Structure result: passed; the chapter has opening quote, story, discussion, engineering principle, architecture
+  exercise, Principal's Notebook, ADR, and Editor's Commentary sections.
+- Editorial stability result: passed; story, discussion, exercise, ADR, and commentary are coherent and complete.
+- Canon stability result: passed; the manuscript remains aligned with the canonical brief and existing PEAK graph.
+- Technical stability result: passed; the final technical corrections are present, and no unresolved technical issues
+  remain.
+- Story credibility result: passed; the peripheral replacement story remains credible without vendor-specific claims or
+  unsupported safety guarantees.
+- Reader value result: passed; the chapter gives the reader a usable way to distinguish bounded stewardship from
+  speculative refactoring or neglect.
+- Timelessness result: passed; the chapter relies on durable engineering judgment rather than current product, tool, or
+  vendor details.
+- PEAK entity pre-transition: `CHAPTER-006` existed exactly once with status `draft`.
+- PEAK entity final transition: `CHAPTER-006` status changed to `canonical`.
+- Relationship result: passed; the exact ten Chapter 6 relationships were retained:
+  - `CHAPTER-006 references VOCAB-007`.
+  - `CHAPTER-006 illustrates LAW-004`.
+  - `CHAPTER-006 illustrates LAW-006`.
+  - `CHAPTER-006 references VOCAB-001`.
+  - `CHAPTER-006 references METRIC-001`.
+  - `CHAPTER-006 references METRIC-003`.
+  - `CHAPTER-006 illustrates SMELL-002`.
+  - `CHAPTER-006 illustrates SMELL-005`.
+  - `CHAPTER-006 references ANTIPATTERN-006`.
+  - `CHAPTER-006 references ARTIFACT-003`.
+- Relationship changes: none.
+- New PEAK concepts: none.
+- PEAK concept files changed: no.
+- Manuscript changes during Freeze Review: none.
+- Manuscript byte identity result: passed; the manuscript blob remained
+  `568d5a378b9e6cc622a75ff0728e0065751f5a32`.
+- Protected files unchanged: manuscript, canonical brief, `editor/CANON.md`, PEAK concept files, and frozen Chapters
+  1-5 remained unchanged during the freeze transition.
+- Chapter 7 or later-part material started: no.
+- Generated output tracked: no.
+- Duplicate manuscript under `docs/`: no.
+- Unresolved issues: none.
+- Validation blockers: none.
+- Validation commands and actual pre-transition results:
+  - `git fetch --all --prune`: passed.
+  - Gate preconditions: passed; working tree was clean, local `HEAD` equaled `origin/chapter6`, latest commit subject
+    was `docs(chapter-6): complete technical review`, prior reviews were approved, `CHAPTER-006` status remained
+    `draft`, branch diff was limited to the expected Chapter 6 files, and the manuscript blob matched the Technical
+    Review blob.
+  - Direct freeze checks: passed for central idea, distinct role, chapter structure, lifecycle records Phase 10-14,
+    exact PEAK entity, Chapters 1-5 canonical, exact ten relationships, no tracked generated output, no duplicate
+    manuscript, no Chapter 7 start, and manuscript byte identity.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed with 0 errors across 130 Markdown files.
+  - `npm.cmd run lint:spelling`: passed with 0 spelling issues across 129 checked files.
+  - `npm.cmd run lint:links`: passed; 129 links scanned successfully.
+  - `vale --config .vale.ini book/01-thinking-like-a-principal/06-leaving-systems-better-than-you-found-them.md
+    editor/EDITOR_LOG.md`: passed with 0 errors, 0 warnings, and 0 suggestions.
+  - `vale .`: completed with 0 errors, 5 warnings, and 0 suggestions in 130 files; the warnings were existing
+    `PrincipalEngineerHandbook.AuthorBoundary` warnings in `CONTRIBUTING.md`, Chapter 1, `editor/ARCHITECTURE_REVIEW_0.md`,
+    and `editor/SOURCE_OF_TRUTH.md`.
+  - `python -m pip check`: passed; no broken requirements found.
+  - `Remove-Item Env:ENABLE_PDF_EXPORT -ErrorAction SilentlyContinue; python -m mkdocs build --strict`: passed.
+  - `$env:ENABLE_PDF_EXPORT='1'; python -m mkdocs build --config-file mkdocs-pdf.yml`: passed; generated PDF output
+    was not tracked by Git.
+- Validation commands and actual post-transition results:
+  - Direct post-transition freeze checks: passed for changed-file scope, `CHAPTER-006` final status `canonical`,
+    Chapters 1-5 canonical, exact ten relationships, lifecycle records Phase 10-15, no tracked generated output, and
+    manuscript byte identity.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed with 0 errors across 130 Markdown files.
+  - `npm.cmd run lint:spelling`: passed with 0 spelling issues across 129 checked files.
+  - `npm.cmd run lint:links`: passed; 129 links scanned successfully.
+  - `vale --config .vale.ini book/01-thinking-like-a-principal/06-leaving-systems-better-than-you-found-them.md
+    editor/EDITOR_LOG.md`: passed with 0 errors, 0 warnings, and 0 suggestions.
+  - `vale .`: completed with 0 errors, 5 warnings, and 0 suggestions in 130 files; the warnings were existing
+    `PrincipalEngineerHandbook.AuthorBoundary` warnings in `CONTRIBUTING.md`, Chapter 1, `editor/ARCHITECTURE_REVIEW_0.md`,
+    and `editor/SOURCE_OF_TRUTH.md`.
+  - `python -m pip check`: passed; no broken requirements found.
+  - `Remove-Item Env:ENABLE_PDF_EXPORT -ErrorAction SilentlyContinue; python -m mkdocs build --strict`: passed.
+  - `$env:ENABLE_PDF_EXPORT='1'; python -m mkdocs build --config-file mkdocs-pdf.yml`: passed; generated PDF output
+    was not tracked by Git.
+- Pre-transition Chapter 6 status: `draft`.
+- Final Chapter 6 status: `canonical`.
+- Chapter 6 Frozen: yes.
+- Branch merged status: no.
+- Next repository step: open the `chapter6` pull request.
