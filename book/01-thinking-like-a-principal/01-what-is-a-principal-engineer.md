@@ -155,7 +155,7 @@ Some decisions should be documented because their consequences will outlive the 
 
 Some commitments, options, and constraints should be revisited and retired when they no longer buy enough value to justify their cost. The decision record should remain discoverable when it explains the system's history.
 
-The Principal Engineer is not the person who makes every important decision. That would make the system weaker. The Principal Engineer helps build the conditions in which important decisions are made clearly, owned explicitly, and remembered long enough to matter.
+The Principal Engineer is not the person who makes every important decision. That would make the system weaker. The Principal Engineer helps build the conditions in which important decisions have visible reasoning, explicit ownership, and enough durable context to remain understandable.
 
 This is why the role cannot be understood as a career badge. It is a responsibility for the future cost of the system.
 
@@ -195,7 +195,7 @@ The handbook could begin with embedded technology: C, STM32, RTOS APIs, drivers,
 
 Those topics matter, but they are not the first distinction this handbook needs to make.
 
-The opening chapter introduces the Principal Engineer as someone who designs decision systems, not simply software systems. The book needs this foundation before it discusses specific technical tools.
+The opening chapter introduces the Principal Engineer as someone who designs the decision system around the software, not only the software itself. The book needs this foundation before it discusses specific technical tools.
 
 ### Decision
 
