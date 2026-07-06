@@ -2100,3 +2100,56 @@ Chronological log of editorial maintenance work.
   - `python -m mkdocs build --strict`: passed.
 - Later revalidation gates run: no.
 - Required reopen stage: Chapter 1 Editorial Review.
+
+## Phase 17 Chapter 1 Editorial Revalidation Remediation
+
+- Chapter: What Is a Principal Engineer?
+- Stable ID: `CHAPTER-001`.
+- Branch: `chapter1-revalidation`.
+- Phase 16 baseline commit: `df59b09790d451b0cf386e99746f57dd204182ab`.
+- Current `origin/main` full SHA: `51404070540cc1bfeccb023da0e6a4cf8ddd60fb`.
+- Stage: Editorial Revalidation Remediation.
+- Outcome: Approved.
+- Reason for reopen: Phase 16 stopped because targeted Vale reported two
+  `PrincipalEngineerHandbook.AuthorBoundary` warnings inside the frozen Chapter 1 manuscript. This phase reopened
+  Chapter 1 at Editorial Review only to resolve those two lexical findings.
+- Exact Vale findings resolved:
+  - `book/01-thinking-like-a-principal/01-what-is-a-principal-engineer.md:158:201`.
+  - `book/01-thinking-like-a-principal/01-what-is-a-principal-engineer.md:198:100`.
+- Exact wording changes:
+  - At line 158, replaced the prior decision-conditions phrase with "important decisions have visible reasoning,
+    explicit ownership, and enough durable context to remain understandable".
+  - At line 198, replaced the prior decision-system phrase with "designs the decision system around the software, not
+    only the software itself".
+- Central thesis preserved: yes; the chapter still defines Principal Engineering as responsibility for the future cost
+  of the system.
+- Chapter structure preserved: yes; no heading changed, no paragraph moved, and all required sections remain present in
+  order.
+- PEAK relationships preserved: yes; `CHAPTER-001 references ARTIFACT-001` and `CHAPTER-001 illustrates SMELL-001`
+  remain unchanged.
+- Old manuscript blob: `8bec1ac7f6a7f0bed674a298865f649ffab0c5d1`.
+- New manuscript blob: `92da84beeaa8ca303d0518130646a56a27b6d23c`.
+- Targeted Vale result: passed with 0 errors, 0 warnings, and 0 suggestions for Chapter 1.
+- Validation commands and actual results:
+  - Gate 0 preflight: passed; branch, local and remote HEAD, `origin/main`, merge base, latest subject, branch diff,
+    original manuscript blob, Phase 16 Request changes record, canonical statuses, absence of Phase 17-20 records, no
+    Part II manuscript, and no tracked generated output matched the prompt requirements.
+  - Shared-reading checks: passed; the manuscript, Phase 16 entry, original Chapter 1 history, editor policy files,
+    PEAK index, Chapter 1 PEAK concepts, Chapters 2-6, `.vale.ini`, and `AuthorBoundary.yml` were reviewed.
+  - AuthorBoundary rule check: passed; it is an existence rule with tokens `obviously`, `clearly`, `simply`, and
+    `everyone knows`.
+  - Exact-fragment check: passed; both source fragments existed exactly once before replacement.
+  - Editorial scope checks: passed; exactly two approved prose replacements were made, no heading changed, no paragraph
+    moved, no PEAK stable ID changed, no raw URL was added, Chapter 1 still exists only under `book/`, the PEAK graph
+    is unchanged, and Chapters 2-6 are unchanged.
+  - `git diff --check`: passed.
+  - `npm.cmd ci`: passed; repository JavaScript dependencies installed from `package-lock.json`.
+  - `npm.cmd run lint:md`: passed with 0 errors across 130 Markdown files.
+  - `npm.cmd run lint:spelling`: passed with 0 spelling issues across 129 checked files.
+  - `npm.cmd run lint:links`: passed; 129 links scanned successfully.
+  - `vale --config .vale.ini book/01-thinking-like-a-principal/01-what-is-a-principal-engineer.md`: passed with
+    0 errors, 0 warnings, and 0 suggestions.
+  - `python -m pip check`: passed; no broken requirements found.
+  - `python -m mkdocs build --strict`: passed.
+- Unresolved editorial issues: none.
+- Next stage: Canon Revalidation.
