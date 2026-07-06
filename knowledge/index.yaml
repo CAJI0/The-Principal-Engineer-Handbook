@@ -298,7 +298,7 @@ entities:
       type: chapter
       name: Leaving Systems Better Than You Found Them
       path: ../book/01-thinking-like-a-principal/06-leaving-systems-better-than-you-found-them.md
-      status: draft
+      status: canonical
   adrs:
     - id: ADR-001
       type: adr

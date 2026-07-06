@@ -1940,3 +1940,106 @@ Chronological log of editorial maintenance work.
   - `python -m pip check`: passed; no broken requirements found.
   - `Remove-Item Env:ENABLE_PDF_EXPORT -ErrorAction SilentlyContinue; python -m mkdocs build --strict`: passed.
 - Next stage: Freeze Review.
+
+## Phase 15 Chapter 6 Freeze Review
+
+- Chapter: Leaving Systems Better Than You Found Them.
+- Stable ID: `CHAPTER-006`.
+- Branch: `chapter6`.
+- Technical Review baseline full SHA: `b613c698f8e82f2992f51ceb2b5b3e465e59306c`.
+- Technical Review manuscript blob: `568d5a378b9e6cc622a75ff0728e0065751f5a32`.
+- Verified baseline `origin/main`: `749e6239c0561cf510bffc85f500261bdb287b0c`.
+- Merge base with `origin/main`: `749e6239c0561cf510bffc85f500261bdb287b0c`.
+- Stage: Freeze Review.
+- Outcome: Approved.
+- Prior review outcomes:
+  - Editorial Review: Approved with minor changes.
+  - Canon Review: Approved.
+  - Technical Review: Approved with minor changes.
+- One central idea result: passed; the chapter teaches bounded stewardship of the current product commitment by making
+  the next necessary change cheaper, safer, or easier to understand without turning the work into broad cleanup.
+- Distinct chapter role result: passed; Chapter 6 closes Part I by showing how Principal Engineer habits leave a system
+  behind, while Chapters 1-5 retain their separate roles around role definition, constraints, questions, ownership, and
+  evidence.
+- Structure result: passed; the chapter has opening quote, story, discussion, engineering principle, architecture
+  exercise, Principal's Notebook, ADR, and Editor's Commentary sections.
+- Editorial stability result: passed; story, discussion, exercise, ADR, and commentary are coherent and complete.
+- Canon stability result: passed; the manuscript remains aligned with the canonical brief and existing PEAK graph.
+- Technical stability result: passed; the final technical corrections are present, and no unresolved technical issues
+  remain.
+- Story credibility result: passed; the peripheral replacement story remains credible without vendor-specific claims or
+  unsupported safety guarantees.
+- Reader value result: passed; the chapter gives the reader a usable way to distinguish bounded stewardship from
+  speculative refactoring or neglect.
+- Timelessness result: passed; the chapter relies on durable engineering judgment rather than current product, tool, or
+  vendor details.
+- PEAK entity pre-transition: `CHAPTER-006` existed exactly once with status `draft`.
+- PEAK entity final transition: `CHAPTER-006` status changed to `canonical`.
+- Relationship result: passed; the exact ten Chapter 6 relationships were retained:
+  - `CHAPTER-006 references VOCAB-007`.
+  - `CHAPTER-006 illustrates LAW-004`.
+  - `CHAPTER-006 illustrates LAW-006`.
+  - `CHAPTER-006 references VOCAB-001`.
+  - `CHAPTER-006 references METRIC-001`.
+  - `CHAPTER-006 references METRIC-003`.
+  - `CHAPTER-006 illustrates SMELL-002`.
+  - `CHAPTER-006 illustrates SMELL-005`.
+  - `CHAPTER-006 references ANTIPATTERN-006`.
+  - `CHAPTER-006 references ARTIFACT-003`.
+- Relationship changes: none.
+- New PEAK concepts: none.
+- PEAK concept files changed: no.
+- Manuscript changes during Freeze Review: none.
+- Manuscript byte identity result: passed; the manuscript blob remained
+  `568d5a378b9e6cc622a75ff0728e0065751f5a32`.
+- Protected files unchanged: manuscript, canonical brief, `editor/CANON.md`, PEAK concept files, and frozen Chapters
+  1-5 remained unchanged during the freeze transition.
+- Chapter 7 or later-part material started: no.
+- Generated output tracked: no.
+- Duplicate manuscript under `docs/`: no.
+- Unresolved issues: none.
+- Validation blockers: none.
+- Validation commands and actual pre-transition results:
+  - `git fetch --all --prune`: passed.
+  - Gate preconditions: passed; working tree was clean, local `HEAD` equaled `origin/chapter6`, latest commit subject
+    was `docs(chapter-6): complete technical review`, prior reviews were approved, `CHAPTER-006` status remained
+    `draft`, branch diff was limited to the expected Chapter 6 files, and the manuscript blob matched the Technical
+    Review blob.
+  - Direct freeze checks: passed for central idea, distinct role, chapter structure, lifecycle records Phase 10-14,
+    exact PEAK entity, Chapters 1-5 canonical, exact ten relationships, no tracked generated output, no duplicate
+    manuscript, no Chapter 7 start, and manuscript byte identity.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed with 0 errors across 130 Markdown files.
+  - `npm.cmd run lint:spelling`: passed with 0 spelling issues across 129 checked files.
+  - `npm.cmd run lint:links`: passed; 129 links scanned successfully.
+  - `vale --config .vale.ini book/01-thinking-like-a-principal/06-leaving-systems-better-than-you-found-them.md
+    editor/EDITOR_LOG.md`: passed with 0 errors, 0 warnings, and 0 suggestions.
+  - `vale .`: completed with 0 errors, 5 warnings, and 0 suggestions in 130 files; the warnings were existing
+    `PrincipalEngineerHandbook.AuthorBoundary` warnings in `CONTRIBUTING.md`, Chapter 1, `editor/ARCHITECTURE_REVIEW_0.md`,
+    and `editor/SOURCE_OF_TRUTH.md`.
+  - `python -m pip check`: passed; no broken requirements found.
+  - `Remove-Item Env:ENABLE_PDF_EXPORT -ErrorAction SilentlyContinue; python -m mkdocs build --strict`: passed.
+  - `$env:ENABLE_PDF_EXPORT='1'; python -m mkdocs build --config-file mkdocs-pdf.yml`: passed; generated PDF output
+    was not tracked by Git.
+- Validation commands and actual post-transition results:
+  - Direct post-transition freeze checks: passed for changed-file scope, `CHAPTER-006` final status `canonical`,
+    Chapters 1-5 canonical, exact ten relationships, lifecycle records Phase 10-15, no tracked generated output, and
+    manuscript byte identity.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed with 0 errors across 130 Markdown files.
+  - `npm.cmd run lint:spelling`: passed with 0 spelling issues across 129 checked files.
+  - `npm.cmd run lint:links`: passed; 129 links scanned successfully.
+  - `vale --config .vale.ini book/01-thinking-like-a-principal/06-leaving-systems-better-than-you-found-them.md
+    editor/EDITOR_LOG.md`: passed with 0 errors, 0 warnings, and 0 suggestions.
+  - `vale .`: completed with 0 errors, 5 warnings, and 0 suggestions in 130 files; the warnings were existing
+    `PrincipalEngineerHandbook.AuthorBoundary` warnings in `CONTRIBUTING.md`, Chapter 1, `editor/ARCHITECTURE_REVIEW_0.md`,
+    and `editor/SOURCE_OF_TRUTH.md`.
+  - `python -m pip check`: passed; no broken requirements found.
+  - `Remove-Item Env:ENABLE_PDF_EXPORT -ErrorAction SilentlyContinue; python -m mkdocs build --strict`: passed.
+  - `$env:ENABLE_PDF_EXPORT='1'; python -m mkdocs build --config-file mkdocs-pdf.yml`: passed; generated PDF output
+    was not tracked by Git.
+- Pre-transition Chapter 6 status: `draft`.
+- Final Chapter 6 status: `canonical`.
+- Chapter 6 Frozen: yes.
+- Branch merged status: no.
+- Next repository step: open the `chapter6` pull request.
