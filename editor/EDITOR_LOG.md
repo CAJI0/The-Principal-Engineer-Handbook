@@ -1726,3 +1726,69 @@ Chronological log of editorial maintenance work.
 - Protected-file comparison result: expected Author Draft changes are limited to the new Chapter 6 manuscript and this
   editor log entry; previously registered Chapter 6 canonical-brief files remain unchanged by this authoring pass.
 - Next required stage: Editorial Review.
+
+## Phase 12 Chapter 6 Editorial Review
+
+- Chapter: Leaving Systems Better Than You Found Them.
+- Stable ID: `CHAPTER-006`.
+- Branch: `chapter6`.
+- Author Draft baseline full SHA: `de019efc710d4b5d8ff1481f172a9b1fa0b475ea`.
+- Verified baseline `origin/main`: `749e6239c0561cf510bffc85f500261bdb287b0c`.
+- Merge base with `origin/main`: `749e6239c0561cf510bffc85f500261bdb287b0c`.
+- Stage: Editorial Review.
+- Outcome: Approved with minor changes.
+- Editorial issues reviewed: opening quote, story clarity and pacing, concrete power-monitor detail, bounded Principal
+  Engineer intervention, discussion flow, stewardship-versus-cleanup distinction, "when not to refactor" section,
+  stop condition, Engineering Principle prominence, exercise usability, Principal's Notebook brevity, chapter-local
+  ADR compactness, and Editor's Commentary transition.
+- Exact editorial corrections made:
+  - Rewrapped one long story sentence about diagnostic text and configuration flags for readability.
+  - Revised the Architecture Exercise prompts so product validation and stewardship-action validation are distinct, debt
+    left out of scope is explicit, and the decision record or review trigger is discoverable.
+  - Added the missing chapter-brief ADR alternatives for a speculative generic plug-in framework and feature-only
+    delivery with every structural correction deferred.
+  - Tightened one Editor's Commentary line break in the Part II transition.
+- Central thesis preserved: yes.
+- Story and product outcome preserved: yes; the new board revision still ships without another unconditional
+  conditional patch or a broad startup rewrite.
+- Required structure result: passed; one H1 and the eight required H2 sections are present exactly once and in order.
+- Principal's Notebook count: exactly 3.
+- ADR result: passed; required chapter-local ADR title and Context, Decision, Consequences, and Alternatives Considered
+  sections are present, with alternatives aligned to the canonical brief.
+- Editor's Commentary result: passed; it explains the Chapter 5 transition, closes Part I, and preserves later-part
+  boundaries without repository workflow language.
+- All ten PEAK relationships preserved: yes.
+- New PEAK concepts: none.
+- Unresolved author notes: none.
+- Chapters 1-5 unchanged: yes.
+- Canonical brief unchanged: yes.
+- `knowledge/index.yaml` unchanged: yes.
+- Validation commands and actual results:
+  - `git fetch --all --prune`: passed during Gate 0.
+  - `git switch chapter6`: passed; branch was already tracking `origin/chapter6`.
+  - `git pull --ff-only`: passed; branch was already up to date.
+  - `git status --short --branch`: passed before editing; branch was clean and synchronized with `origin/chapter6`.
+  - `git rev-parse HEAD`: passed and returned `de019efc710d4b5d8ff1481f172a9b1fa0b475ea`.
+  - `git rev-parse origin/chapter6`: passed and returned `de019efc710d4b5d8ff1481f172a9b1fa0b475ea`.
+  - `git rev-parse origin/main`: passed and returned `749e6239c0561cf510bffc85f500261bdb287b0c`.
+  - `git merge-base origin/main HEAD`: passed and returned `749e6239c0561cf510bffc85f500261bdb287b0c`.
+  - `git log -1 --format=%s`: passed and returned `docs(chapter-6): add author draft`.
+  - `git diff --name-status origin/main...HEAD`: passed during Gate 0; branch diff was limited to the exact Chapter 6
+    file set.
+  - Direct Gate 0 checks: passed for lifecycle headings Phase 10 and Phase 11, no existing Phase 12-15 records, exact
+    manuscript and canonical brief paths, no duplicate manuscript under `docs/`, valid `knowledge/index.yaml`,
+    `CHAPTER-006` status `draft`, Chapters 1-5 status `canonical`, exact ten Chapter 6 relationships, no Chapter 7 or
+    Part II manuscript, no tracked generated output, no conflict markers, and clean working tree.
+  - Direct editorial checks: passed for exact H1, required H2 order, no empty required section, complete ADR headings,
+    exactly three Principal's Notebook bullets, required PEAK references, no `AUTHOR NOTE`/`TODO`/`TBD`, no raw URL or
+    external citation, exact PEAK entity and relationship state, no protected-file change, and no tracked generated
+    output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed with 0 errors across 130 Markdown files.
+  - `vale --config .vale.ini book/01-thinking-like-a-principal/06-leaving-systems-better-than-you-found-them.md
+    editor/EDITOR_LOG.md`: passed with 0 errors, 0 warnings, and 0 suggestions.
+  - `npm.cmd run lint:spelling`: passed with 0 spelling issues across 129 checked files.
+  - `npm.cmd run lint:links`: passed; 129 links scanned successfully.
+  - `python -m pip check`: passed; no broken requirements found.
+  - `Remove-Item Env:ENABLE_PDF_EXPORT -ErrorAction SilentlyContinue; python -m mkdocs build --strict`: passed.
+- Next stage: Canon Review.

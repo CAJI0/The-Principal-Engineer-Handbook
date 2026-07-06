@@ -36,9 +36,9 @@ first it identified the board revision and ran a few checks before the
 application initialized. Then it learned how to interpret the external power
 monitor. Then it gained retry timing because one early batch came up slowly in a
 cold chamber. Then it gained fallback behavior for a prototype board that could
-not reliably see the monitor during early hardware work. Then it gained diagnostic text,
-configuration flags, and a monitor-selection option that had been added for a
-possible second supplier but never used by a released product.
+not reliably see the monitor during early hardware work. Then it gained
+diagnostic text, configuration flags, and a monitor-selection option that had
+been added for a possible second supplier but never used by a released product.
 
 The module had become a convenient place for anything that happened near boot.
 Board checks lived beside peripheral-specific status interpretation. Product
@@ -340,16 +340,15 @@ Choose a change you are currently making or recently reviewed.
 1. What product outcome must this change deliver?
 2. What part of the system resists the change?
 3. What structural cost does the change expose or create?
-4. Which behavior, ownership boundary, test surface, or diagnostic path would be
-   cheaper for the next related change if improved now?
+4. What evidence shows that cost is real rather than a personal preference?
 5. What is the smallest improvement that directly reduces that cost?
-6. What evidence connects the improvement to the current change?
-7. What would be a locally correct patch that still increases future cost?
-8. What would be an unjustified rewrite?
-9. What obsolete fallback, unused option, or temporary path should be removed or
-   narrowed only if the evidence supports it?
-10. How will the improvement remain reviewable and testable?
-11. Where will the decision or limitation be made discoverable?
+6. How should it affect boundary clarity, Change Radius, Discoverability,
+   ownership, or failure visibility?
+7. What debt remains deliberately out of scope?
+8. What existing behavior must not change?
+9. What validation is needed for the product outcome?
+10. What validation is needed for the stewardship action?
+11. Where will the decision, limitation, or review trigger be made discoverable?
 12. What is your stop condition?
 
 > What is the smallest improvement you can include now that leaves the next
@@ -404,6 +403,15 @@ Rewrite the startup path broadly. This would address more accumulated debt, but
 the current board revision does not provide enough evidence or schedule room to
 justify a platform redesign.
 
+Introduce a generic plug-in framework for possible future monitors. This would
+turn a bounded variation into speculative architecture before the team has
+evidence that multiple active monitor families need that shape.
+
+Deliver only the feature and defer every structural correction. This would
+protect the narrowest schedule story, but it would knowingly preserve the same
+leakage, obsolete fallback, and unsupported option that the change has made
+visible.
+
 Keep the obsolete fallback and unused monitor-selection option. This would avoid
 removal risk, but the available evidence shows they no longer support released
 products and would continue to tax review, test, and diagnosis.
@@ -421,8 +429,8 @@ ladder. Instead, it shows how those habits combine when a real product change
 exposes structural cost.
 
 This closes Part I because the principal-engineer mindset is now complete enough
-to move from posture to laws. Part II can name the forces that make
-systems easier or harder to change without introducing a new PEAK concept here.
+to move from posture to laws. Part II can name the forces that make systems
+easier or harder to change without introducing a new PEAK concept here.
 The concepts carrying this chapter are Architecture Health, Change Radius,
 Discoverability, Utility Gravity, Platform Leakage, Temporary Solution, Decision
 Journal, Simplicity Is a Feature, and Unused Flexibility Is Waste. Later parts
