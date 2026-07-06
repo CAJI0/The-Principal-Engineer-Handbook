@@ -2513,3 +2513,63 @@ Chronological log of editorial maintenance work.
     manuscript Git blob identity, exact branch changed-file set, no tracked generated output, and no Part II manuscript.
 - Unresolved issues: none.
 - Next step: merge this branch, then begin Chapter 7 preparation.
+
+## Phase 25 Chapter 7 Canonical Brief Registration
+
+- Chapter: Every State Has One Owner.
+- Stable ID: `CHAPTER-007`.
+- Branch: `chapter7`.
+- Baseline `origin/main` full SHA: `8b95decf73a2771268c885143564f0bb4c23bd0f`.
+- Stage: Canonical Brief Registration.
+- Outcome: Canonical brief registered for Author Draft preparation.
+- Reader-facing manuscript created: no.
+- Canonical brief path: `editor/chapter-briefs/CHAPTER-007-every-state-has-one-owner.md`.
+- Expected manuscript path reserved but not created:
+  `book/02-the-laws/07-every-state-has-one-owner.md`.
+- Index entity registration:
+  - `id: CHAPTER-007`.
+  - `type: chapter`.
+  - `name: Every State Has One Owner`.
+  - `path: ../book/02-the-laws/07-every-state-has-one-owner.md`.
+  - `status: draft`.
+- Exact Chapter 7 PEAK relationships registered:
+  - `CHAPTER-007 illustrates LAW-001`.
+  - `CHAPTER-007 illustrates SMELL-004`.
+  - `CHAPTER-007 references ANTIPATTERN-003`.
+  - `CHAPTER-007 references ARTIFACT-001`.
+  - `CHAPTER-007 references ARTIFACT-005`.
+  - `CHAPTER-007 references METRIC-003`.
+- New PEAK concepts created: none.
+- Changed files:
+  - `editor/chapter-briefs/CHAPTER-007-every-state-has-one-owner.md`.
+  - `knowledge/index.yaml`.
+  - `editor/EDITOR_LOG.md`.
+- Validation commands and actual results:
+  - `git fetch --all --prune`: passed.
+  - `git status --short`: passed before edits with a clean working tree.
+  - `git switch main`: passed; local `main` was up to date with `origin/main`.
+  - `git pull --ff-only origin main`: passed; already up to date.
+  - `git rev-parse HEAD`: returned `8b95decf73a2771268c885143564f0bb4c23bd0f`.
+  - `git rev-parse origin/main`: returned `8b95decf73a2771268c885143564f0bb4c23bd0f`.
+  - Pre-branch prerequisite checks: passed for Chapters 1-6 canonical status, Chapter 6 manuscript path, Chapter 6
+    review and freeze history, Part II table-of-contents placement, `LAW-001` existence and name, absence of
+    `CHAPTER-007`, absence of the Chapter 7 canonical brief, absence of the Chapter 7 reader-facing manuscript, absence
+    of local and remote `chapter7` branches, absence of tracked `site/` output, supported relationship verbs, and clean
+    working tree.
+  - `git switch -c chapter7 origin/main`: passed.
+  - Branch verification: passed; `chapter7` started at `8b95decf73a2771268c885143564f0bb4c23bd0f` with a clean working
+    tree.
+  - `git diff --check`: passed.
+  - Direct YAML and file-boundary assertions: passed for exactly one `CHAPTER-007`, exact metadata, Chapters 1-6
+    remaining canonical, exact six outgoing Chapter 7 relationships, target existence, duplicate-edge and self-edge
+    checks, canonical brief existence, and reader-facing manuscript absence.
+  - `npm.cmd run lint:md`: passed with 0 errors across 131 Markdown files.
+  - `npm.cmd run lint:spelling`: passed with 0 spelling issues across 130 checked files.
+  - `npm.cmd run lint:links`: passed; 130 links scanned successfully.
+  - `vale --config .vale.ini editor/chapter-briefs/CHAPTER-007-every-state-has-one-owner.md editor/EDITOR_LOG.md`:
+    passed with 0 errors, 0 warnings, and 0 suggestions after wording adjustments for Vale vocabulary.
+  - `python -m pip check`: passed; no broken requirements found.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed; no generated `site/` output is tracked.
+  - Manuscript absence check: passed; `book/02-the-laws/07-every-state-has-one-owner.md` does not exist.
+- Next lifecycle stage: Author Draft after author approval.
