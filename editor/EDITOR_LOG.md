@@ -2153,3 +2153,39 @@ Chronological log of editorial maintenance work.
   - `python -m mkdocs build --strict`: passed.
 - Unresolved editorial issues: none.
 - Next stage: Canon Revalidation.
+
+## Phase 18 Chapter 1 Canon Revalidation
+
+- Chapter: What Is a Principal Engineer?
+- Stable ID: `CHAPTER-001`.
+- Branch: `chapter1-revalidation`.
+- Stage: Canon Revalidation.
+- Outcome: Approved.
+- Baseline remediation commit: `09429eed0948df568c3a24081b68c7b39b9dc3de`.
+- Current `origin/main` full SHA: `51404070540cc1bfeccb023da0e6a4cf8ddd60fb`.
+- Manuscript blob verified: `92da84beeaa8ca303d0518130646a56a27b6d23c`.
+- Canon status: `CHAPTER-001` remains `canonical`.
+- Chapter sequence status: `CHAPTER-001` through `CHAPTER-006` remain `canonical`.
+- PEAK relationship check: passed; Chapter 1 still has exactly these relationships:
+  - `CHAPTER-001 references ARTIFACT-001`.
+  - `CHAPTER-001 illustrates SMELL-001`.
+- Canon consistency checks:
+  - `CHAPTER-001` exists exactly once in `knowledge/index.yaml`.
+  - Title, path, type, and status match the canonical Chapter 1 entry.
+  - Relationship endpoints exist, relationship types are supported, and no duplicate or self-edge relationship was
+    found.
+  - No PEAK stable ID, status, path, or relationship changed during the remediation.
+- Validation commands and actual results:
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed with 0 errors across 130 Markdown files.
+  - `npm.cmd run lint:spelling`: passed with 0 spelling issues across 129 checked files.
+  - `npm.cmd run lint:links`: passed; 129 links scanned successfully.
+  - `vale --config .vale.ini book/01-thinking-like-a-principal/01-what-is-a-principal-engineer.md editor/EDITOR_LOG.md`:
+    passed with 0 errors, 0 warnings, and 0 suggestions.
+  - `python -m pip check`: passed; no broken requirements found.
+  - `python -m mkdocs build --strict`: passed.
+  - Direct structured PEAK assertions: passed for Chapter 1 uniqueness, Chapter 1 metadata, Chapter 1 relationships,
+    Chapter 1-6 canonical statuses, supported relationship types, endpoint existence, duplicate detection, and
+    manuscript Git blob identity.
+- Canon issues found: none.
+- Next stage: Technical Revalidation.
