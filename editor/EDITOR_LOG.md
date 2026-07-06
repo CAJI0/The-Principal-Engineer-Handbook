@@ -1869,3 +1869,74 @@ Chronological log of editorial maintenance work.
   - `python -m pip check`: passed; no broken requirements found.
   - `Remove-Item Env:ENABLE_PDF_EXPORT -ErrorAction SilentlyContinue; python -m mkdocs build --strict`: passed.
 - Next stage: Technical Review.
+
+## Phase 14 Chapter 6 Technical Review
+
+- Chapter: Leaving Systems Better Than You Found Them.
+- Stable ID: `CHAPTER-006`.
+- Branch: `chapter6`.
+- Canon Review baseline full SHA: `0edd60df9c319d121b542c5298f0fb704b55d595`.
+- Verified baseline `origin/main`: `749e6239c0561cf510bffc85f500261bdb287b0c`.
+- Merge base with `origin/main`: `749e6239c0561cf510bffc85f500261bdb287b0c`.
+- Stage: Technical Review.
+- Outcome: Approved with minor changes.
+- Technical areas examined: peripheral replacement credibility, product-level versus platform-level boundary, startup
+  and safety claims, obsolete fallback removal, unused option narrowing, diagnostics, testing model, Utility Gravity,
+  Platform Leakage, Change Radius, Discoverability, Decision Journal, Temporary Solution, non-refactoring guidance, stop
+  condition, exercise applicability, and ADR consistency.
+- Exact corrections applied:
+  - Bounded obsolete fallback removal to supported product and service scope using product support, service,
+    manufacturing, release, configuration, and test evidence.
+  - Clarified that a missing owner is a warning sign, not proof by itself.
+  - Aligned the ADR Decision and fallback alternative with that supported-scope evidence.
+- Peripheral replacement credibility: passed; the chapter credibly describes external power-monitor differences in
+  startup readiness, reset behavior, live versus latched status, status interpretation, error reporting, and diagnostic
+  detail without naming a vendor or claiming interchangeability without validation.
+- Boundary result: passed; product startup owns product-level continue/reject policy, while monitor implementations own
+  timing, reset semantics, status interpretation, and device-specific translation.
+- Startup and safety result: passed; power health remains a product-level interpretation, diagnostics do not replace
+  validation, and timing/status validation remain necessary.
+- Fallback-removal result: passed after correction; removal is bounded to supported product/service scope and supported
+  by product support, service, manufacturing, release, configuration, and test evidence.
+- Unused-option result: passed; `LAW-006` is applied to unsupported flexibility, not to all future options.
+- Diagnostic result: passed; selected monitor implementation and product-level power-health failure reason are useful
+  without leaking raw register semantics or becoming full observability design.
+- Testing result: passed; monitor implementation tests, product startup tests, and manufacturing tests have distinct and
+  credible responsibilities without claiming complete coverage.
+- Utility Gravity and Platform Leakage result: passed; both smells are illustrated by concrete behavior in the shared
+  startup-support module.
+- Change Radius result: passed; the chapter avoids file-count precision and describes reduced review/test surface as a
+  structurally enabled outcome.
+- Discoverability and Decision Journal result: passed; implementation visibility, stable failure categories, boundary,
+  owner, evidence, and review triggers are recorded without treating records as sufficient by themselves.
+- Temporary Solution result: passed; the prototype fallback is treated as a temporary path needing owner, review trigger,
+  and removal condition without becoming a safe-deletion tutorial.
+- Non-refactoring and stop-condition result: passed; insufficient evidence, weak test protection, incident restoration,
+  other-team ownership, and unclear review boundary remain credible reasons not to refactor, and the stop condition does
+  not claim all risk is removed.
+- Exercise result: passed; the exercise distinguishes product outcome, structural cost, supporting evidence, bounded
+  change, unchanged behavior, validation, out-of-scope work, stop condition, and decision record/review trigger.
+- ADR consistency result: passed; ADR context, decision, consequences, and alternatives match the story and avoid
+  implementation guarantees.
+- Unresolved technical issues: none.
+- PEAK graph unchanged: yes.
+- Canonical brief unchanged: yes.
+- Frozen Chapters 1-5 unchanged: yes.
+- Validation commands and actual results:
+  - `git fetch --all --prune`: passed.
+  - Gate preconditions: passed; working tree was clean, local `HEAD` equaled `origin/chapter6`, latest commit subject
+    was `docs(chapter-6): complete canon review`, Canon Review outcome was `Approved`, Editorial Review remained
+    approved, `CHAPTER-006` status remained `draft`, and the PEAK graph remained exact.
+  - Direct technical checks: passed for no unsupported electrical or safety guarantee, no vendor-specific factual claim,
+    no raw register tutorial, no claim that diagnostics replace validation, no claim that the new boundary eliminates
+    future variant cost, no claim that fallback removal is safe outside supported scope, no story/ADR contradiction, no
+    story/exercise contradiction, and exact PEAK graph unchanged.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed with 0 errors across 130 Markdown files.
+  - `vale --config .vale.ini book/01-thinking-like-a-principal/06-leaving-systems-better-than-you-found-them.md
+    editor/EDITOR_LOG.md`: passed with 0 errors, 0 warnings, and 0 suggestions.
+  - `npm.cmd run lint:spelling`: passed with 0 spelling issues across 129 checked files.
+  - `npm.cmd run lint:links`: passed; 129 links scanned successfully.
+  - `python -m pip check`: passed; no broken requirements found.
+  - `Remove-Item Env:ENABLE_PDF_EXPORT -ErrorAction SilentlyContinue; python -m mkdocs build --strict`: passed.
+- Next stage: Freeze Review.

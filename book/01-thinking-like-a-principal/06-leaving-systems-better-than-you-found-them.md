@@ -116,12 +116,14 @@ The startup path asked for a power-health result. It did not know whether a
 particular status bit was live, latched, delayed, or cleared by reset. It did not
 know which retry window belonged to which monitor.
 
-Third, the obsolete flexibility was challenged with evidence. Manufacturing
-records showed that the prototype boards using the fallback were no longer in
-supported service. Release configuration showed that no shipped product selected
-the unused monitor-selection option at runtime. Test coverage showed that the
-fallback path had no current product owner. The team removed the prototype
-fallback and narrowed the unused option to the supported board configurations.
+Third, the obsolete flexibility was challenged with evidence. Product support
+policy, service records, and manufacturing records showed that the prototype
+boards using the fallback were outside the supported product and service scope.
+Release configuration showed that no shipped product selected the unused
+monitor-selection option at runtime. Test evidence covered the supported startup
+paths after removal. The missing owner for the fallback was a warning sign, not
+proof by itself. The team removed the prototype fallback and narrowed the unused
+option to the supported board configurations.
 
 That last part mattered because Unused Flexibility Is Waste (`LAW-006`). The
 fallback and selection option looked generous, but in practice they made every
@@ -379,10 +381,11 @@ Keep product-level boot orchestration in the startup path, but localize
 monitor-specific timing, status interpretation, and reset behavior behind an
 owned platform boundary. Select one supported monitor implementation per board
 configuration. Remove the obsolete prototype fallback and narrow the unused
-monitor-selection option using release, manufacturing, and test evidence. Add
-minimal diagnostics for selected monitor implementation and product-level
-power-health failure reason. Record the boundary, evidence, out-of-scope work,
-and reconsideration triggers in the Decision Journal.
+monitor-selection option using product support, service, manufacturing, release,
+configuration, and test evidence. Add minimal diagnostics for selected monitor
+implementation and product-level power-health failure reason. Record the
+boundary, evidence, out-of-scope work, and reconsideration triggers in the
+Decision Journal.
 
 ### Consequences
 
@@ -413,8 +416,9 @@ leakage, obsolete fallback, and unsupported option that the change has made
 visible.
 
 Keep the obsolete fallback and unused monitor-selection option. This would avoid
-removal risk, but the available evidence shows they no longer support released
-products and would continue to tax review, test, and diagnosis.
+removal risk, but the available evidence shows they no longer support the
+current product or service scope and would continue to tax review, test, and
+diagnosis.
 
 ## Editor's Commentary
 
