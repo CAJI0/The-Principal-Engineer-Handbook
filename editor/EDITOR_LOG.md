@@ -2439,3 +2439,77 @@ Chronological log of editorial maintenance work.
     simple-means-safe claims, always-waste claims, self-enforcing-trigger claims, PEAK identity, and manuscript Git blob
     identity.
 - Next stage: Freeze Revalidation.
+
+## Phase 24 Chapter 2 Freeze Revalidation
+
+- Chapter: Decision-Making Under Constraints.
+- Stable ID: `CHAPTER-002`.
+- Branch: `chapter2-revalidation`.
+- Technical Revalidation baseline full SHA: `8d8a66b9ae7f2cbc342ae83dfdc0cd3bfd1d9576`.
+- Stage: Freeze Revalidation.
+- Outcome: Approved.
+- Reason for revalidation: Chapter 2 was already Frozen and canonical; this gate validated it again against the completed
+  Part I, current PEAK graph, current editorial policy, and current repository validation tools before Part II work.
+- Original Technical Review baseline: `847db1aec67e93d961512f66e61c908dc342e7c8`.
+- Original Freeze Review outcome: Request changes.
+- Original Freeze Validation Remediation outcome: Approved with minor changes.
+- Original Freeze Review Retry outcome: Approved.
+- Current revalidation baseline: `05911cd4ebcfd783ed2c51bf87aef77b3815ed6b`.
+- Phase 21 outcome: Approved.
+- Phase 22 outcome: Approved.
+- Phase 23 outcome: Approved.
+- Central idea: passed; a sound engineering decision makes constraints, evidence, uncertainty, consequences, and reversal
+  cost explicit before commitment.
+- Distinct role: passed; Chapter 2 remains the constrained-commitment chapter and does not become a release-management,
+  evidence-calibration, inquiry-method, ownership, stewardship, Decision Journal, or laws survey chapter.
+- Structure: passed; one H1, required H2 order, exactly three Principal's Notebook bullets, and complete ADR headings.
+- Editorial stability: passed; story, discussion, principle, exercise, notebook, ADR, and commentary remain stable.
+- Canon stability: passed; no PEAK relationship, concept, status, or canon correction is required.
+- Technical stability: passed; memory, recovery, update mechanism, qualification, diagnostics, release commitment,
+  speculative flexibility, simplicity, Change Radius, reversibility, risk ownership, review triggers, Decision Journal,
+  exercise, and ADR checks all passed.
+- Story credibility: passed; the hardware-freeze and release story remains plausible and bounded.
+- Decision Journal integrity: passed; it remains a lightweight record with date, decision, evidence, confidence, and
+  review trigger.
+- ADR integrity: passed; the chapter-local ADR remains consistent with the selected constrained decision.
+- Exact PEAK integrity: passed; Chapter 2 relationships remain exactly:
+  - `CHAPTER-002 illustrates LAW-005`.
+  - `CHAPTER-002 references ARTIFACT-003`.
+  - `CHAPTER-002 references VOCAB-001`.
+  - `CHAPTER-002 references LAW-004`.
+  - `CHAPTER-002 references LAW-006`.
+- Reader value: passed; the chapter gives readers a usable way to name constraints, evidence, uncertainty, consequence,
+  reversal cost, accepted risk, ownership, and review triggers.
+- Timelessness: passed; the chapter does not depend on a specific vendor, MCU, bootloader architecture, update strategy,
+  product, or transient external fact.
+- Manuscript blob identity: passed; Chapter 2 remained
+  `e78bd7f8468350622ae4b49f6590473818c5894e`.
+- Manuscript changes: none.
+- `CHAPTER-002` pre-state: `canonical`.
+- `CHAPTER-002` final state: `canonical`.
+- Chapter 2 remains Frozen: yes.
+- Chapters 1 and 3-6 unchanged: yes.
+- Part II started: no.
+- Complete validations and actual results:
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed with 0 errors across 130 Markdown files.
+  - `npm.cmd run lint:spelling`: passed with 0 spelling issues across 129 checked files.
+  - `npm.cmd run lint:links`: passed; 129 links scanned successfully.
+  - `vale --config .vale.ini book/01-thinking-like-a-principal/02-decision-making-under-constraints.md editor/EDITOR_LOG.md`:
+    passed with 0 errors, 0 warnings, and 0 suggestions.
+  - `vale .`: completed with 0 errors, 0 warnings, and 0 suggestions in 0 files in this Windows environment.
+  - `vale --config .vale.ini .`: completed with 0 errors, 3 warnings, and 0 suggestions across 130 files; the remaining
+    warnings are pre-existing, outside Chapter 2 and `EDITOR_LOG.md`, at `CONTRIBUTING.md:29:30`,
+    `editor/ARCHITECTURE_REVIEW_0.md:49:85`, and `editor/SOURCE_OF_TRUTH.md:19:49`.
+  - `python -m pip check`: passed; no broken requirements found.
+  - `python -m mkdocs build --strict`: passed.
+  - `ENABLE_PDF_EXPORT=1 python -m mkdocs build --config-file mkdocs-pdf.yml`: passed and wrote
+    `site/pdf/the-principal-engineer-handbook.pdf`.
+  - PDF output verification: passed; generated PDF size was 275775 bytes.
+  - Direct freeze assertions: passed for original Chapter 2 history, failed Freeze Review preservation, remediation
+    preservation, Freeze Review Retry approval, Phase 21-23 approvals, H1, H2 order, notebook count, ADR headings,
+    unresolved marker scan, conflict marker scan, raw URL scan, Chapter 2 entity integrity, exact five relationships,
+    target existence, supported statuses, supported relationship types, duplicate and self-edge checks, path resolution,
+    manuscript Git blob identity, exact branch changed-file set, no tracked generated output, and no Part II manuscript.
+- Unresolved issues: none.
+- Next step: merge this branch, then begin Chapter 7 preparation.
