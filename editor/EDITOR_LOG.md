@@ -2631,3 +2631,47 @@ Chronological log of editorial maintenance work.
     were unchanged.
 - Changed-file intent for this authoring pass: only the new Chapter 7 manuscript and this editor log entry.
 - Next required stage: Editorial Review.
+
+## Phase 27 Chapter 7 Editorial Review
+
+- Chapter: Every State Has One Owner.
+- Stable ID: `CHAPTER-007`.
+- Branch: `chapter7`.
+- Stage: Editorial Review.
+- Reviewed Author Draft commit: `cc366a8979a931b26140975af638a0f96453e935`.
+- Manuscript path: `book/02-the-laws/07-every-state-has-one-owner.md`.
+- Canonical brief path: `editor/chapter-briefs/CHAPTER-007-every-state-has-one-owner.md`.
+- Outcome: Approved with minor changes.
+- Editorial areas reviewed: opening quote, operational-mode story, reset and interrupted-service sequence, local log
+  evidence, synchronization-fix proposals, principal-engineer intervention, discussion flow, terminology consistency,
+  repetition, Engineering Principle, Architecture Exercise, Principal's Notebook, ADR, Editor's Commentary, Chapter 4
+  boundary, and later Part II boundaries.
+- Material editorial changes made: reduced one inflated story sentence about logs, made the initial synchronization-fix
+  transition clearer, removed one meta-manuscript sentence from the Discussion, narrowed the API-boundary transition, and
+  tightened one coordination-cost paragraph.
+- Structure result: passed; the manuscript keeps the required H2 order from `editor/CHAPTER_ARCHITECTURE.md`.
+- Principal's Notebook count: passed; exactly three concise observations remain.
+- Story result: passed; the reset sequence remains coherent and distinguishes runtime, persisted, cached, observed, and
+  inferred mode representations.
+- Editorial boundary result: passed; Chapter 4's outcome ownership is not duplicated, and later Part II laws retain their
+  primary material.
+- Canon and PEAK graph changed: no.
+- Validation commands and actual results:
+  - Gate baseline checks: passed; `git status --short` was clean before editing, `HEAD` and `origin/chapter7` were both
+    `cc366a8979a931b26140975af638a0f96453e935`, and the reviewed Author Draft commit was present.
+  - Direct lifecycle assertions: passed for required H2 order, no duplicate H2 sections, exactly three Principal's
+    Notebook observations, no unresolved authoring markers, expected Chapter 7 PEAK IDs only, `CHAPTER-007` registered
+    exactly once as `draft`, Chapters 1-6 remaining `canonical`, and changed files limited to the Chapter 7 manuscript
+    plus this editor log.
+  - `git diff --check`: passed.
+  - Protected-file checks: passed; the canonical brief, `knowledge/index.yaml`, `editor/CANON.md`, and Chapters 1-6
+    were unchanged.
+  - `npm.cmd run lint:md`: passed with 0 errors across 132 Markdown files.
+  - `vale --config .vale.ini book/02-the-laws/07-every-state-has-one-owner.md editor/EDITOR_LOG.md`: passed with 0
+    errors, 0 warnings, and 0 suggestions.
+  - `npm.cmd run lint:spelling`: passed with 0 spelling issues across 131 checked files.
+  - `npm.cmd run lint:links`: passed; 131 links scanned successfully.
+  - `python -m pip check`: passed; no broken requirements found.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed; no generated `site/` output is tracked.
+- Next stage: Canon Review.

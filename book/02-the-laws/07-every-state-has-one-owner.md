@@ -70,7 +70,7 @@ The supervisor requested operation because the outputs looked ready. The
 persistent field restored `Service` again after a later reboot, which made the
 bug appear to come back from storage.
 
-The logs were not lying. They were worse than lying. They were local.
+The logs were not lying. They were local.
 
 One log showed the firmware entering `SafeIdle` after watchdog recovery. Another
 showed the service tool sending `Service`. A fixture log showed a calibration
@@ -79,7 +79,8 @@ ready. Storage showed the last saved mode as `Service`. The team could see what
 each component had done. It could not answer the question that mattered most:
 which component had been allowed to decide the current operational mode?
 
-The first proposed fixes were familiar.
+The first proposed fixes were familiar because they treated mode disagreement as
+a synchronization problem.
 
 Synchronize the mode flags more often. Add a retry when the service application
 sees disagreement. Persist every transition immediately. Add a timestamp and let
@@ -87,10 +88,11 @@ the newest value win. Give every actor a setter but document the order in which
 they should use it. Add another Boolean called `modeValid`. Teach the supervisor
 to infer the mode again when the reported value looks stale.
 
-Those fixes were attractive because they treated the visible symptom:
-disagreement.
+They were attractive because they could be assigned locally. Firmware could
+publish more often. The service tool could retry. Storage could write sooner.
+The supervisor could infer more aggressively.
 
-They did not treat the cause.
+None of those changes named the authority.
 
 The principal engineer asked the team to stop drawing arrows between copies and
 draw a boundary around authority.
@@ -192,10 +194,9 @@ The law does not ban those copies. It asks whether each copy has a declared
 role.
 
 Is this value authoritative, requested, applied, observed, reported,
-last-known, persisted, cached, derived, or inferred? The chapter does not need a
-taxonomy for every project. It needs the distinction because confusion between
-those roles creates bugs that look like timing, communication, or tooling
-problems.
+last-known, persisted, cached, derived, or inferred? A team does not need a
+taxonomy for every value. It needs enough distinction to avoid treating an old
+copy, a desired outcome, and an accepted transition as the same fact.
 
 The service application's cached `Service` mode was useful as a last
 observation. It became dangerous when the tool treated it as current authority.
@@ -239,9 +240,9 @@ record. `ApplyValidatedConfiguration` is different from writing configuration
 bits into several modules. It gives one boundary responsibility for validation
 and resulting state.
 
-This is not the full API-contract argument. Later chapters can discuss
-interface promises in depth. Here, the point is narrower: commands protect state
-authority because they route change through the boundary that owns validity.
+This is not the full API-contract argument. The point here is narrower:
+commands protect state authority because they route change through the boundary
+that owns validity.
 
 Inference is a subtle form of ownership.
 
@@ -347,10 +348,10 @@ from the most convenient setter.
 
 The payoff is practical.
 
-One owner reduces coordination cost because every participant knows which role
-it has. Callers request. The owner decides. Observers observe. Caches remember
-with freshness limits. Persistence stores what it owns. Derived values explain
-their derivation. Recovery chooses authority instead of merging guesses.
+One owner reduces coordination cost because every participant knows its role.
+Callers request. The owner decides. Observers observe. Caches remember with
+freshness limits. Persistence stores what it owns. Derived values explain their
+derivation. Recovery chooses authority instead of merging guesses.
 
 The system may still be complex. It may still be concurrent. It may still be
 distributed. But the question "who decides this state?" has an answer.
