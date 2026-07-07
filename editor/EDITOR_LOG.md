@@ -2805,3 +2805,60 @@ Chronological log of editorial maintenance work.
   - `python -m mkdocs build --strict`: passed.
   - `git ls-files site`: passed; no generated `site/` output is tracked.
 - Next action: Open a Chapter 7 pull request; do not merge in this workflow.
+
+## Phase 31 Chapter 8 Canonical Brief Registration
+
+- Chapter: Every API Is a Promise.
+- Stable ID: `CHAPTER-008`.
+- Branch: `chapter8`.
+- Lifecycle stage: Canonical brief registration.
+- Verified baseline `origin/main`: `0776ab64b48d4e36a9b952964ab5739b9eaf55d2`.
+- Baseline meaning: Chapter 7 merge commit, `Chapter 7: Every State Has One Owner (#9)`.
+- Chapter 7 merge and lifecycle confirmation: passed; Chapter 7 exists, `CHAPTER-007` is registered as `canonical`, and
+  Editorial, Canon, Technical, and Freeze Review entries are present in order.
+- Canonical brief created: `editor/chapter-briefs/CHAPTER-008-every-api-is-a-promise.md`.
+- Reader-facing manuscript created: no.
+- Index registration: `CHAPTER-008` added as `draft` at `book/02-the-laws/08-every-api-is-a-promise.md`.
+- Primary law: `LAW-002` - Every API Is a Promise.
+- Exact outgoing relationships registered:
+  - `CHAPTER-008 illustrates LAW-002`.
+  - `CHAPTER-008 illustrates SMELL-001`.
+  - `CHAPTER-008 references METRIC-004`.
+  - `CHAPTER-008 references ARTIFACT-001`.
+  - `CHAPTER-008 references METRIC-003`.
+  - `CHAPTER-008 references VOCAB-001`.
+- Concepts selected: `LAW-002`, `SMELL-001`, `METRIC-004`, `ARTIFACT-001`, `METRIC-003`, and `VOCAB-001`.
+- Concepts considered but not registered for Chapter 8: `ARTIFACT-002`, `ARTIFACT-005`, `RITUAL-001`, `FAILURE-002`,
+  `LAW-001`, `LAW-003`, `ANTIPATTERN-005`, and `ANTIPATTERN-002`.
+- New PEAK concepts created: none.
+- Changed-file intent: only the Chapter 8 canonical brief, `knowledge/index.yaml`, and this editor log entry.
+- Validation commands and actual results:
+  - `git fetch --all --prune`: passed.
+  - `git status --short`: passed before branch creation with a clean working tree.
+  - `git switch main`: passed; local `main` was already current.
+  - `git pull --ff-only origin main`: passed; already up to date.
+  - `git rev-parse HEAD`: returned `0776ab64b48d4e36a9b952964ab5739b9eaf55d2`.
+  - `git rev-parse origin/main`: returned `0776ab64b48d4e36a9b952964ab5739b9eaf55d2`.
+  - Pre-branch prerequisite checks: passed for clean tree, `HEAD == origin/main`, Chapter 7 merge commit presence,
+    Chapter 7 manuscript presence, Chapter 7 canonical status, Chapter 7 review history, absent `CHAPTER-008`, absent
+    Chapter 8 brief, absent Chapter 8 manuscript, absent local and remote `chapter8` branches, and no tracked `site/`
+    output.
+  - `git switch -c chapter8 origin/main`: passed.
+  - Branch verification: passed; `chapter8` started at `0776ab64b48d4e36a9b952964ab5739b9eaf55d2` with a clean working
+    tree.
+  - Direct YAML and file-boundary assertions: passed for exactly one `CHAPTER-008`, exact metadata, `draft` status,
+    Chapters 1-7 remaining `canonical`, exact six outgoing Chapter 8 relationships, relationship target existence,
+    duplicate-edge and self-edge checks, canonical brief existence, manuscript absence, no new PEAK ID except
+    `CHAPTER-008`, no tracked `site/` output, and changed files limited to expected registration files.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed with 0 errors across 133 Markdown files.
+  - Initial targeted Vale and spelling runs failed on wording not present in the local dictionaries; the brief was
+    revised to use repository-friendly wording such as `retry behavior`, `repeated-call behavior`, and `asynchronous`.
+  - `vale --config .vale.ini editor/chapter-briefs/CHAPTER-008-every-api-is-a-promise.md editor/EDITOR_LOG.md`: passed
+    after revision with 0 errors, 0 warnings, and 0 suggestions.
+  - `npm.cmd run lint:spelling`: passed after revision with 0 spelling issues across 132 checked files.
+  - `npm.cmd run lint:links`: passed; 132 links scanned successfully.
+  - `python -m pip check`: passed; no broken requirements found.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed; no generated `site/` output is tracked.
+- Next lifecycle stage: Author Draft after author approval.

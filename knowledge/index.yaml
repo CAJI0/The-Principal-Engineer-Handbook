@@ -304,6 +304,11 @@ entities:
       name: Every State Has One Owner
       path: ../book/02-the-laws/07-every-state-has-one-owner.md
       status: canonical
+    - id: CHAPTER-008
+      type: chapter
+      name: Every API Is a Promise
+      path: ../book/02-the-laws/08-every-api-is-a-promise.md
+      status: draft
   adrs:
     - id: ADR-001
       type: adr
@@ -474,3 +479,21 @@ relationships:
   - from: CHAPTER-007
     type: references
     to: METRIC-003
+  - from: CHAPTER-008
+    type: illustrates
+    to: LAW-002
+  - from: CHAPTER-008
+    type: illustrates
+    to: SMELL-001
+  - from: CHAPTER-008
+    type: references
+    to: METRIC-004
+  - from: CHAPTER-008
+    type: references
+    to: ARTIFACT-001
+  - from: CHAPTER-008
+    type: references
+    to: METRIC-003
+  - from: CHAPTER-008
+    type: references
+    to: VOCAB-001
