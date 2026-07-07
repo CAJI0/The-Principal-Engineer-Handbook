@@ -303,7 +303,7 @@ entities:
       type: chapter
       name: Every State Has One Owner
       path: ../book/02-the-laws/07-every-state-has-one-owner.md
-      status: draft
+      status: canonical
   adrs:
     - id: ADR-001
       type: adr

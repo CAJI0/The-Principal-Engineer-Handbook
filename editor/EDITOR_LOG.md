@@ -2764,3 +2764,44 @@ Chronological log of editorial maintenance work.
   - `python -m mkdocs build --strict`: passed.
   - `git ls-files site`: passed; no generated `site/` output is tracked.
 - Next stage: Freeze Review.
+
+## Phase 30 Chapter 7 Freeze Review
+
+- Chapter: Every State Has One Owner.
+- Stable ID: `CHAPTER-007`.
+- Branch: `chapter7`.
+- Stage: Freeze Review.
+- Reviewed Technical Review commit: `fb7ca148a2f45fdb2ec898a2ad25500e2db6277d`.
+- Manuscript path: `book/02-the-laws/07-every-state-has-one-owner.md`.
+- Canonical brief path: `editor/chapter-briefs/CHAPTER-007-every-state-has-one-owner.md`.
+- Outcome: Approved.
+- Freeze result: Chapter 7 is canonical-ready and now registered as `canonical` in `knowledge/index.yaml`.
+- Manuscript architecture result: passed; the chapter keeps the required H2 order and complete chapter sections.
+- Principal's Notebook result: passed; exactly three short observations remain.
+- Canon result: passed; the chapter opens Part II by teaching `LAW-001` without creating a new artifact, vocabulary term,
+  law, smell, anti-pattern, metric, ritual, or failure story.
+- PEAK graph result: passed; the registered outgoing Chapter 7 relationships remain unchanged.
+- Boundary result: passed; Chapters 1-6 remain frozen/canonical and unchanged, and later Part II material remains
+  reserved for later chapters.
+- Reader-facing manuscript changed during Freeze Review: no.
+- Canonical brief changed during Freeze Review: no.
+- `knowledge/index.yaml` changed during Freeze Review: yes; `CHAPTER-007` status changed from `draft` to `canonical`.
+- Validation commands and actual results:
+  - Gate baseline checks: passed; `git fetch --all --prune` completed, `git status --short` was clean, and `HEAD` and
+    `origin/chapter7` were both `fb7ca148a2f45fdb2ec898a2ad25500e2db6277d`.
+  - Direct freeze assertions: passed for required H2 order, complete lifecycle log entries for Editorial, Canon,
+    Technical, and Freeze Review, exactly three Principal's Notebook observations, expected Chapter 7 PEAK IDs only,
+    registered Chapter 7 outgoing relationships unchanged, all relationship targets existing, `CHAPTER-007` registered
+    exactly once as `canonical`, and Chapters 1-6 remaining `canonical`.
+  - `git diff --check`: passed.
+  - Protected-file checks: passed; the manuscript, canonical brief, `editor/CANON.md`, existing PEAK concept files, and
+    Chapters 1-6 were unchanged.
+  - `npm.cmd run lint:md`: passed with 0 errors across 132 Markdown files.
+  - `vale --config .vale.ini book/02-the-laws/07-every-state-has-one-owner.md editor/EDITOR_LOG.md`: passed with 0
+    errors, 0 warnings, and 0 suggestions.
+  - `npm.cmd run lint:spelling`: passed with 0 spelling issues across 131 checked files.
+  - `npm.cmd run lint:links`: passed; 131 links scanned successfully.
+  - `python -m pip check`: passed; no broken requirements found.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed; no generated `site/` output is tracked.
+- Next action: Open a Chapter 7 pull request; do not merge in this workflow.
