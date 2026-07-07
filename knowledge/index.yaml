@@ -299,6 +299,11 @@ entities:
       name: Leaving Systems Better Than You Found Them
       path: ../book/01-thinking-like-a-principal/06-leaving-systems-better-than-you-found-them.md
       status: canonical
+    - id: CHAPTER-007
+      type: chapter
+      name: Every State Has One Owner
+      path: ../book/02-the-laws/07-every-state-has-one-owner.md
+      status: canonical
   adrs:
     - id: ADR-001
       type: adr
@@ -451,3 +456,21 @@ relationships:
   - from: CHAPTER-006
     type: references
     to: ARTIFACT-003
+  - from: CHAPTER-007
+    type: illustrates
+    to: LAW-001
+  - from: CHAPTER-007
+    type: illustrates
+    to: SMELL-004
+  - from: CHAPTER-007
+    type: references
+    to: ANTIPATTERN-003
+  - from: CHAPTER-007
+    type: references
+    to: ARTIFACT-001
+  - from: CHAPTER-007
+    type: references
+    to: ARTIFACT-005
+  - from: CHAPTER-007
+    type: references
+    to: METRIC-003
