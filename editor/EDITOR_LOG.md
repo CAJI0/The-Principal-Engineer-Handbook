@@ -2862,3 +2862,61 @@ Chronological log of editorial maintenance work.
   - `python -m mkdocs build --strict`: passed.
   - `git ls-files site`: passed; no generated `site/` output is tracked.
 - Next lifecycle stage: Author Draft after author approval.
+
+## Phase 32 Chapter 8 Author Draft
+
+- Chapter: Every API Is a Promise.
+- Stable ID: `CHAPTER-008`.
+- Branch: `chapter8`.
+- Lifecycle stage: Author Draft.
+- Starting HEAD for this authoring pass: `c2a31ff6e1c2e694e70468d821118d002f65eca7`.
+- Verified baseline `origin/main`: `0776ab64b48d4e36a9b952964ab5739b9eaf55d2`.
+- Canonical brief used: `editor/chapter-briefs/CHAPTER-008-every-api-is-a-promise.md`.
+- Manuscript path created: `book/02-the-laws/08-every-api-is-a-promise.md`.
+- Story used: firmware radio service API `radio_set_channel(uint8_t channel)` whose unchanged signature hid a change
+  from blocking hardware completion to queued request acceptance.
+- Engineering Principle used: Treat every observable boundary as a contract; specify what consumers may rely on,
+  preserve those promises deliberately, and make incompatible change explicit instead of hiding it behind an unchanged
+  interface.
+- Architecture Exercise used: Write the Promise Behind One API.
+- Principal's Notebook observations: exactly 3.
+- Chapter-local ADR present: yes; `Separate Channel-Change Acceptance from Completion`.
+- PEAK concepts used: `LAW-002`, `SMELL-001`, `METRIC-004`, `ARTIFACT-001`, `METRIC-003`, and `VOCAB-001`.
+- New PEAK concepts created: none.
+- PEAK relationships changed during Author Draft: no.
+- `knowledge/index.yaml` changed during Author Draft: no.
+- Canonical brief changed during Author Draft: no.
+- Existing PEAK concept files changed during Author Draft: no.
+- Chapters 1-7 changed during Author Draft: no.
+- Validation commands and actual results:
+  - `git fetch --all --prune`: passed.
+  - `git switch chapter8`: passed; branch was already current.
+  - `git status --short`: passed before editing with a clean working tree.
+  - `git rev-parse HEAD`: returned `c2a31ff6e1c2e694e70468d821118d002f65eca7`.
+  - `git rev-parse origin/chapter8`: returned `c2a31ff6e1c2e694e70468d821118d002f65eca7`.
+  - `git rev-parse origin/main`: returned `0776ab64b48d4e36a9b952964ab5739b9eaf55d2`.
+  - Required preflight checks: passed for clean tree, `HEAD == origin/chapter8`, expected brief-registration commit
+    subject, existing canonical brief, absent reader-facing manuscript, `CHAPTER-008` registered exactly once as
+    `draft`, Chapters 1-7 remaining `canonical`, and no prior Chapter 8 Author Draft or review entry.
+  - Governing-material read: passed for editor governance, source-of-truth policy, PEAK index and registered concepts,
+    table of contents, Chapter 8 canonical brief, Chapter 7, current chapter template, and Author Draft precedent.
+  - Direct manuscript checks: passed for exact manuscript path, one H1, required H2 order, nonempty required sections,
+    exactly three Principal's Notebook observations, no `TODO`/`FIXME`/`AUTHOR NOTE`, no conflict markers, expected
+    Chapter 8 PEAK IDs only, and all registered Chapter 8 PEAK IDs present.
+  - Direct PEAK checks: passed; `CHAPTER-008` remained exactly one `draft` chapter and Chapters 1-7 remained
+    `canonical`.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed with 0 errors across 134 Markdown files.
+  - Initial targeted Vale and spelling runs failed on a bootloader wording; the manuscript text was revised to use
+    `bootloader code`.
+  - `vale --config .vale.ini book/02-the-laws/08-every-api-is-a-promise.md`: passed after revision with 0 errors, 0
+    warnings, and 0 suggestions.
+  - `npm.cmd run lint:spelling`: passed after revision with 0 spelling issues across 133 checked files.
+  - `npm.cmd run lint:links`: passed; 133 links scanned successfully.
+  - `python -m pip check`: passed; no broken requirements found.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed; no generated `site/` output is tracked.
+  - Protected-file checks: passed; the canonical brief, `knowledge/index.yaml`, existing PEAK concept files, and
+    Chapters 1-7 were unchanged.
+- Changed-file intent for this authoring pass: only the new Chapter 8 manuscript and this editor log entry.
+- Next required stage: Editorial Review.
