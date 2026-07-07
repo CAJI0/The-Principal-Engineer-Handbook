@@ -2573,3 +2573,61 @@ Chronological log of editorial maintenance work.
   - `git ls-files site`: passed; no generated `site/` output is tracked.
   - Manuscript absence check: passed; `book/02-the-laws/07-every-state-has-one-owner.md` does not exist.
 - Next lifecycle stage: Author Draft after author approval.
+
+## Phase 26 Chapter 7 Author Draft
+
+- Chapter: Every State Has One Owner.
+- Stable ID: `CHAPTER-007`.
+- Branch: `chapter7`.
+- Lifecycle stage: Author Draft.
+- Starting HEAD for this authoring pass: `8b95a7b41b1e898d9923b0a30dcb2cbfa763b446`.
+- Verified baseline `origin/main`: `8b95decf73a2771268c885143564f0bb4c23bd0f`.
+- Canonical brief used: `editor/chapter-briefs/CHAPTER-007-every-state-has-one-owner.md`.
+- Manuscript path created: `book/02-the-laws/07-every-state-has-one-owner.md`.
+- Story used: industrial embedded controller with competing operational-mode authorities after watchdog reset,
+  interrupted service, reconnect, and fixture retry.
+- Engineering Principle used: For every meaningful state, name one authority that validates its value and controls its
+  transitions; other components may request, observe, cache, persist, replicate, or derive that state, but they must not
+  become competing sources of truth.
+- Architecture Exercise used: Trace One State to One Owner.
+- Principal's Notebook observations: exactly 3.
+- Chapter-local ADR present: yes; `Make the Device Mode State Machine the Sole Authority for Operational Mode`.
+- PEAK concepts used: `LAW-001`, `SMELL-004`, `ANTIPATTERN-003`, `ARTIFACT-001`, `ARTIFACT-005`, and `METRIC-003`.
+- New PEAK concepts created: none.
+- `knowledge/index.yaml` changed during Author Draft: no.
+- Existing PEAK concept files changed during Author Draft: no.
+- Canonical brief changed during Author Draft: no.
+- `editor/CANON.md` changed during Author Draft: no.
+- Frozen Chapters 1-6 changed during Author Draft: no.
+- Validation commands and actual results:
+  - `git fetch --all --prune`: passed.
+  - `git switch chapter7`: passed; branch was already tracking `origin/chapter7`.
+  - `git status --short`: passed before editing with a clean working tree.
+  - `git rev-parse HEAD`: passed and returned `8b95a7b41b1e898d9923b0a30dcb2cbfa763b446`.
+  - `git rev-parse origin/chapter7`: passed and returned `8b95a7b41b1e898d9923b0a30dcb2cbfa763b446`.
+  - `git merge-base HEAD origin/main`: passed and returned `8b95decf73a2771268c885143564f0bb4c23bd0f`.
+  - Required preflight checks: passed for clean tree, `HEAD == origin/chapter7`, required starting commit, existing
+    canonical brief, absent reader-facing manuscript, `CHAPTER-007` registered exactly once as `draft`, Chapters 1-6
+    remaining `canonical`, and no unrelated local files.
+  - Governing-material read: passed for root pointers, editor governance, source-of-truth policy, PEAK index and
+    concept files, table of contents, canonical brief, template, and canonical Chapters 1-6.
+  - Direct manuscript checks: passed for exact manuscript path, one H1, required H2 order, nonempty required sections,
+    exact ADR section structure, exactly three Principal's Notebook observations, no `TODO`/`TBD`/`FIXME`/`AUTHOR NOTE`,
+    no conflict markers, expected PEAK IDs only, and all required Chapter 7 PEAK IDs present.
+  - Direct PEAK checks: passed; `CHAPTER-007` remained exactly one `draft` chapter and Chapters 1-6 remained
+    `canonical`.
+  - `npm.cmd run lint:md`: passed with 0 errors across 132 Markdown files.
+  - Initial targeted Vale run failed on the spelling term `failover`; the manuscript text was revised to use
+    `standby switch` and `controller handoff`.
+  - `vale --config .vale.ini book/02-the-laws/07-every-state-has-one-owner.md editor/EDITOR_LOG.md`: passed after
+    revision with 0 errors, 0 warnings, and 0 suggestions.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:spelling`: passed with 0 spelling issues across 131 checked files.
+  - `npm.cmd run lint:links`: passed; 131 links scanned successfully.
+  - `python -m pip check`: passed; no broken requirements found.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed; no generated `site/` output is tracked.
+  - Protected-file checks: passed; the canonical brief, `knowledge/index.yaml`, `editor/CANON.md`, and Chapters 1-6
+    were unchanged.
+- Changed-file intent for this authoring pass: only the new Chapter 7 manuscript and this editor log entry.
+- Next required stage: Editorial Review.
