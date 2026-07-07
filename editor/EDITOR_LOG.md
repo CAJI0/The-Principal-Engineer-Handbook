@@ -2718,3 +2718,49 @@ Chronological log of editorial maintenance work.
   - `python -m mkdocs build --strict`: passed.
   - `git ls-files site`: passed; no generated `site/` output is tracked.
 - Next stage: Technical Review.
+
+## Phase 29 Chapter 7 Technical Review
+
+- Chapter: Every State Has One Owner.
+- Stable ID: `CHAPTER-007`.
+- Branch: `chapter7`.
+- Stage: Technical Review.
+- Reviewed Canon Review commit: `1b0a51bd0d5e0e342465da41c7491621a31b7ad5`.
+- Manuscript path: `book/02-the-laws/07-every-state-has-one-owner.md`.
+- Outcome: Approved.
+- Technical areas reviewed: watchdog reset behavior, startup recovery, runtime versus persisted operational mode,
+  command acceptance and rejection, raw setters, stale observations, sequence and generation semantics, fixture
+  privilege, supervisor inference, concurrency and serialization, ownership handoff, distributed-protocol caveats,
+  transition logging, invalid-transition tests, and recovery after disagreement.
+- Reset and recovery result: passed; the runtime owner re-establishes authority after watchdog recovery, consults only
+  trusted persisted inputs, rejects commands until invariants hold, and avoids merging stale guesses into truth.
+- Runtime and persistence result: passed; persistence is treated as input, policy, or history rather than current runtime
+  authority.
+- Command semantics result: passed; intent-level commands carry requested outcomes and allow the owner to accept, reject,
+  publish, and explain transitions.
+- Stale-observation result: passed; sequence number, reset generation, version, or transition identity is used where
+  observers need to detect stale values.
+- Privilege and handoff result: passed; fixture privilege is routed through bounded commands, and ownership transfer is
+  scoped, explicit, ordered, and mutually exclusive.
+- Technical overstatement result: passed; the chapter does not claim that one owner means one copy, one thread, one
+  database, no concurrency, no replication, or no distributed authority where a real distributed protocol is required.
+- Manuscript changed during Technical Review: no.
+- Canon and PEAK graph changed: no.
+- Validation commands and actual results:
+  - Gate baseline checks: passed; `git fetch --all --prune` completed, `git status --short` was clean, and `HEAD` and
+    `origin/chapter7` were both `1b0a51bd0d5e0e342465da41c7491621a31b7ad5`.
+  - Direct technical assertions: passed for required technical topics, forbidden overstatements absent, expected Chapter
+    7 PEAK IDs only, registered Chapter 7 outgoing relationships unchanged, `CHAPTER-007` remaining `draft`, and
+    Chapters 1-6 remaining `canonical`.
+  - `git diff --check`: passed.
+  - Protected-file checks: passed; the manuscript, canonical brief, `knowledge/index.yaml`, `editor/CANON.md`, existing
+    PEAK concept files, and Chapters 1-6 were unchanged.
+  - `npm.cmd run lint:md`: passed with 0 errors across 132 Markdown files.
+  - `vale --config .vale.ini book/02-the-laws/07-every-state-has-one-owner.md editor/EDITOR_LOG.md`: passed with 0
+    errors, 0 warnings, and 0 suggestions.
+  - `npm.cmd run lint:spelling`: passed with 0 spelling issues across 131 checked files.
+  - `npm.cmd run lint:links`: passed; 131 links scanned successfully.
+  - `python -m pip check`: passed; no broken requirements found.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed; no generated `site/` output is tracked.
+- Next stage: Freeze Review.
