@@ -2675,3 +2675,46 @@ Chronological log of editorial maintenance work.
   - `python -m mkdocs build --strict`: passed.
   - `git ls-files site`: passed; no generated `site/` output is tracked.
 - Next stage: Canon Review.
+
+## Phase 28 Chapter 7 Canon Review
+
+- Chapter: Every State Has One Owner.
+- Stable ID: `CHAPTER-007`.
+- Branch: `chapter7`.
+- Stage: Canon Review.
+- Reviewed Editorial Review commit: `71c44609febc9e3530e76eb93826ced50417fb47`.
+- Manuscript path: `book/02-the-laws/07-every-state-has-one-owner.md`.
+- Canonical brief path: `editor/chapter-briefs/CHAPTER-007-every-state-has-one-owner.md`.
+- Outcome: Approved.
+- Canon areas reviewed: central thesis, reader transformation, in-scope and out-of-scope boundaries, Chapters 1-6
+  boundaries, later Part II boundaries, embedded-systems story shape, discussion arc, Engineering Principle,
+  Architecture Exercise, chapter-local ADR, Principal's Notebook, PEAK concept map, and exact registered relationships.
+- Canon result: passed; the chapter teaches one scoped authority for valid state values and transitions, not generic
+  organizational ownership, storage location ownership, or a generic single-source-of-truth essay.
+- PEAK relationship result: passed; `LAW-001`, `SMELL-004`, `ANTIPATTERN-003`, `ARTIFACT-001`, `ARTIFACT-005`, and
+  `METRIC-003` are materially present in the manuscript and no optional supporting concept requires registration.
+- Boundary result: passed; Chapter 4's responsibility-for-outcomes argument remains distinct, and Chapters 8-13 retain
+  their primary API, dependency, time, flexibility, simplicity, and evidence material.
+- Canonical brief changed: no.
+- `knowledge/index.yaml` changed: no.
+- Existing PEAK concept files changed: no.
+- Manuscript changed during Canon Review: no.
+- Validation commands and actual results:
+  - Gate baseline checks: passed; `git fetch --all --prune` completed, `git status --short` was clean, and `HEAD` and
+    `origin/chapter7` were both `71c44609febc9e3530e76eb93826ced50417fb47`.
+  - Direct canon assertions: passed for required H2 order, exactly three Principal's Notebook observations, expected
+    Chapter 7 PEAK IDs only, all registered Chapter 7 outgoing relationships matching the canonical brief, all target
+    PEAK concepts existing, `CHAPTER-007` remaining exactly one `draft` chapter entry, and Chapters 1-6 remaining
+    `canonical`.
+  - `git diff --check`: passed.
+  - Protected-file checks: passed; the canonical brief, `knowledge/index.yaml`, `editor/CANON.md`, existing PEAK concept
+    files, and Chapters 1-6 were unchanged.
+  - `npm.cmd run lint:md`: passed with 0 errors across 132 Markdown files.
+  - `vale --config .vale.ini book/02-the-laws/07-every-state-has-one-owner.md editor/EDITOR_LOG.md`: passed with 0
+    errors, 0 warnings, and 0 suggestions.
+  - `npm.cmd run lint:spelling`: passed with 0 spelling issues across 131 checked files.
+  - `npm.cmd run lint:links`: passed; 131 links scanned successfully.
+  - `python -m pip check`: passed; no broken requirements found.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed; no generated `site/` output is tracked.
+- Next stage: Technical Review.
