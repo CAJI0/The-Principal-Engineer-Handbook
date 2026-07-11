@@ -26,11 +26,12 @@ The change looked like an implementation improvement.
 The first failure did not look like an API failure.
 
 A service application reported that the device had moved to channel 17. The
-operator saw the new value and started a diagnostic capture. The capture came
-back empty. The device was still transmitting on the old channel because the
-hardware operation had not completed yet.
+operator saw the displayed new value and started a diagnostic capture. The
+capture came back empty. The device was still transmitting on the old channel
+because the hardware operation had not completed yet.
 
-The UI was not lying. It was reporting what the call had returned.
+The service application was not lying. It was reporting what the call had
+returned.
 
 The second failure came from retry logic. A supervisory task saw a temporary
 radio-unavailable error and retried the call. In the old implementation, a
@@ -97,7 +98,7 @@ They wrote down what consumers had been relying on:
 - what persisted state meant after reset;
 - how a consumer could tell request acceptance from operation completion.
 
-The list changed the conversation.
+That list changed the conversation.
 
 The new implementation did not have to be rejected. Queuing hardware work was a
 reasonable design. The problem was that the team had changed completion
@@ -187,15 +188,15 @@ Does the call still block? Does the system still make the same promise after
 reset? Does a repeated request still have the same effect? Does an old tool see
 the same state the old tool was designed to interpret?
 
-The answer can be "no." APIs are allowed to evolve. The danger is pretending
-that the answer is "yes" because a signature, version field, or packet shape
-survived.
+Sometimes the answer is no. APIs are allowed to evolve. The danger is
+pretending that the answer is yes because a signature, version field, or packet
+shape survived.
 
 Undocumented behavior can still become a contract.
 
-This is uncomfortable because it sounds unfair to the producer. The team may
-say, "We never promised callbacks before return." That may be true in the
-formal documentation. It may not be true in the system.
+This is uncomfortable because it can sound unfair to the producer. The team may
+say, "We never promised callbacks before return." That may be true in the formal
+documentation. It may not be true in the system.
 
 Consumers learn from what the system repeatedly does. They learn from examples,
 tests, sample applications, manufacturing scripts, field tools, support
@@ -241,9 +242,9 @@ the producer and consumers release together, share ownership, have strong test
 coverage, and can roll back together. Many internal APIs do not have those
 conditions. A firmware module may be consumed by production code, diagnostics,
 manufacturing scripts, service tools, automated tests, bootloader code, and
-support procedures. Some of those consumers may release on a different schedule. Some
-may be hard to find. Some may live outside the repository. Some may be difficult
-to update in the field.
+support procedures. Some of those consumers may release on a different
+schedule. Some may be hard to find. Some may live outside the repository. Some
+may be difficult to update in the field.
 
 The cost of change depends on consumers, not on whether the boundary is called
 public.

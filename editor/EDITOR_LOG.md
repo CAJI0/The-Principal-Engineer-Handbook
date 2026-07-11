@@ -2920,3 +2920,47 @@ Chronological log of editorial maintenance work.
     Chapters 1-7 were unchanged.
 - Changed-file intent for this authoring pass: only the new Chapter 8 manuscript and this editor log entry.
 - Next required stage: Editorial Review.
+
+## Phase 33 Chapter 8 Editorial Review
+
+- Chapter: Every API Is a Promise.
+- Stable ID: `CHAPTER-008`.
+- Branch: `chapter8`.
+- Stage: Editorial Review.
+- Reviewed Author Draft commit: `6586435c730f787c24f944911948750a18bb4daa`.
+- Manuscript path: `book/02-the-laws/08-every-api-is-a-promise.md`.
+- Canonical brief path: `editor/chapter-briefs/CHAPTER-008-every-api-is-a-promise.md`.
+- Outcome: Approve with changes.
+- Editorial areas reviewed: opening quote, radio-channel story, synchronous completion versus asynchronous acceptance,
+  unchanged signature versus changed promise, local-fix proposals, principal-engineer intervention, discussion flow,
+  terminology consistency, internal API compatibility cost, compatibility dimensions, Engineering Principle,
+  Architecture Exercise, Principal's Notebook, ADR, Editor's Commentary, Chapter 7 boundary, and later Part II
+  boundaries.
+- Material editorial changes made: clarified that the service application reported the displayed channel value, replaced
+  a UI reference with service-application wording, tightened one story transition, softened a compatibility-evolution
+  sentence, clarified the undocumented-behavior paragraph, and repaired one awkward line break in the internal-API cost
+  discussion.
+- Structure result: passed; the manuscript keeps the required H2 order from `editor/CHAPTER_ARCHITECTURE.md`.
+- Principal's Notebook count: passed; exactly three concise observations remain.
+- Story result: passed; the radio-channel story concretely shows an unchanged `radio_set_channel(uint8_t channel)`
+  signature hiding a change from blocking hardware completion to queued request acceptance.
+- Editorial boundary result: passed; Chapter 7 state ownership is not retold, and later dependency, time, flexibility,
+  simplicity, evidence, boundary-design, release, and migration material remains reserved for later chapters.
+- Canon and PEAK graph changed: no.
+- Validation commands and actual results:
+  - Gate baseline checks: passed; `git fetch --all --prune` completed, `git status --short` was clean, and `HEAD` and
+    `origin/chapter8` were both `6586435c730f787c24f944911948750a18bb4daa`.
+  - Direct editorial assertions: passed for required H2 order, unique mandatory sections, exactly three Principal's
+    Notebook observations, no unresolved authoring markers, expected Chapter 8 PEAK IDs only, `CHAPTER-008` registered
+    exactly once as `draft`, and changed files limited to the Chapter 8 manuscript before this log entry.
+  - `git diff --check`: passed.
+  - `vale --config .vale.ini book/02-the-laws/08-every-api-is-a-promise.md`: passed with 0 errors, 0 warnings, and 0
+    suggestions.
+  - `npm.cmd run lint:md`: passed with 0 errors across 134 Markdown files.
+  - `npm.cmd run lint:spelling`: passed with 0 spelling issues across 133 checked files.
+  - `npm.cmd run lint:links`: passed after rerun outside the sandbox; 133 links scanned successfully. The first sandbox
+    run used an incorrect sandbox working directory and returned 0 glob results.
+  - `python -m pip check`: passed; no broken requirements found.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed; no generated `site/` output is tracked.
+- Next stage: Canon Review.
