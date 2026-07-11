@@ -2676,120 +2676,6 @@ Chronological log of editorial maintenance work.
   - `git ls-files site`: passed; no generated `site/` output is tracked.
 - Next stage: Canon Review.
 
-## Phase 40 Chapter 9 Canon Review
-
-- Chapter: Every Dependency Is a Decision.
-- Stable ID: `CHAPTER-009`.
-- Branch: `chapter9`.
-- Stage: Canon Review.
-- Reviewed Editorial Review commit: `de33b29c20a0ffe6a899350e4fc064cd37601438`.
-- Manuscript path: `book/02-the-laws/09-every-dependency-is-a-decision.md`.
-- Canonical brief path: `editor/chapter-briefs/CHAPTER-009-every-dependency-is-a-decision.md`.
-- Outcome: Approve.
-- Canonical sources checked: `LAW-007`, Chapter 9 canonical brief, Part II table of contents, Chapter 7 and Chapter 8
-  manuscripts and review precedent, `editor/CHAPTER_ARCHITECTURE.md`, `editor/CANON.md`, `editor/REVIEW_PROCESS.md`,
-  `editor/SOURCE_OF_TRUTH.md`, `knowledge/index.yaml`, and all registered Chapter 9 PEAK concept files.
-- Law compliance result: passed; the chapter treats dependency choice as an architectural commitment to behavior,
-  failure modes, lifecycle constraints, ownership boundaries, and replacement cost.
-- Canon-resolution integrity result: passed; `LAW-007` remains the Chapter 9 law, no older law was renumbered, and no
-  new canon decision was made during review.
-- Terminology result: passed; dependency, imported behavior, dependency spread, syntactic isolation, semantic isolation,
-  replacement cost, dependency direction, support horizon, update, replacement, and removal remain ordinary chapter
-  prose and do not imply new PEAK entities.
-- Boundary result: passed; Chapter 7 state ownership and Chapter 8 API-promise material remain boundaries or premises,
-  and Chapter 10 keeps the deeper law about time.
-- PEAK concept and relationship result: passed; `LAW-007`, `SMELL-001`, `VOCAB-001`, `ARTIFACT-001`, and `METRIC-003`
-  are materially present, and the registered outgoing Chapter 9 relationships remain unchanged.
-- Section-architecture result: passed; the manuscript keeps the required H2 order and exactly three Principal's Notebook
-  observations.
-- Corrections made during Canon Review: none.
-- Canonical brief changed: no.
-- `knowledge/index.yaml` changed: no.
-- `LAW-007` law file changed: no.
-- `editor/CANON.md` changed: no.
-- Manuscript changed during Canon Review: no.
-- Validation commands and actual results:
-  - Gate baseline checks: passed; `git status --short` was clean, and `HEAD` and `origin/chapter9` were both
-    `de33b29c20a0ffe6a899350e4fc064cd37601438`.
-  - Direct canon assertions: passed for exact law meaning, dependency definition, syntactic and semantic isolation,
-    replacement cost, lifecycle through removal, Chapter 10 boundary, required H2 order, exactly three Principal's
-    Notebook observations, exact Chapter 9 PEAK relationship set, all relationship targets existing, no duplicate
-    relationships, no self-edge, `CHAPTER-009` remaining `draft`, and `LAW-001` through `LAW-006` retaining their
-    existing IDs and meanings.
-  - `git diff --check`: passed.
-  - Protected-file checks: passed; the canonical brief, `knowledge/index.yaml`, table of contents, `LAW-007`,
-    `editor/CANON.md`, existing PEAK concept files, and Chapters 1-8 were unchanged.
-  - `npm.cmd run lint:md`: passed with 0 errors across 137 Markdown files.
-  - `vale --config .vale.ini book/02-the-laws/09-every-dependency-is-a-decision.md editor/EDITOR_LOG.md`: passed with 0
-    errors, 0 warnings, and 0 suggestions.
-  - `npm.cmd run lint:spelling`: passed with 0 spelling issues across 136 checked files.
-  - `npm.cmd run lint:links`: passed after rerun outside the sandbox; 136 links scanned successfully. The first sandbox
-    run used an incorrect sandbox working directory and returned 0 glob results.
-  - `python -m pip check`: passed; no broken requirements found.
-  - `python -m mkdocs build --strict`: passed.
-  - `git ls-files site`: passed; no generated `site/` output is tracked.
-- Next stage: Technical Review.
-
-## Phase 41 Chapter 9 Technical Review
-
-- Chapter: Every Dependency Is a Decision.
-- Stable ID: `CHAPTER-009`.
-- Branch: `chapter9`.
-- Stage: Technical Review.
-- Reviewed Canon Review commit: `bf5ab66df5d9009e9e4d5d1e7616b0c08c53c76e`.
-- Manuscript path: `book/02-the-laws/09-every-dependency-is-a-decision.md`.
-- Outcome: Approve.
-- Technical domains reviewed: compile-time dependencies, runtime dependencies, hardware dependencies, protocol and
-  format dependencies, tool-chain dependencies, vendor software-kit dependencies, direct and transitive dependencies,
-  wrapper design, syntactic and semantic isolation, callback context, task-context assumptions, memory ownership, error
-  normalization, retry behavior, release cadence, manufacturing calibration, service tooling, version skew, update
-  ownership, support horizon, replacement cost, contract tests, integration tests, observability, exit triggers,
-  dependency direction, failure propagation, and ADR consequences.
-- Direct and transitive dependency result: passed; the chapter treats direct dependencies as visible choices and
-  transitive dependencies as relevant when their behavior leaks into product semantics, tests, timing, storage,
-  threading, reset behavior, release constraints, or support horizon.
-- Syntactic and semantic isolation result: passed; the chapter states that wrappers can hide names and calls but do not
-  automatically isolate callback model, execution context, memory ownership, error meanings, timing, lifecycle, or
-  release process.
-- Failure and lifecycle result: passed; unavailability, latency, retry behavior, version skew, resource exhaustion,
-  support loss, update, deprecation, replacement, and removal are treated as dependency commitments without consuming
-  Chapter 10's deeper time law.
-- Dependency-direction result: passed; the chapter explains that product code should depend on a stable product contract
-  while volatile dependency detail remains behind a bounded integration layer, without becoming a Clean Architecture
-  tutorial.
-- Replacement-cost result: passed; replacement cost is broader than code change and includes migration, tests, tooling,
-  operations, support, shipped compatibility, release coordination, confidence rebuilding, and customer migration risk.
-- Vendor story result: passed; the radio software-kit story is credible in callback model, buffer ownership, compiler
-  support, error and retry semantics, test harness coupling, manufacturing and service coupling, support lifecycle, and
-  replacement steps.
-- ADR result: passed; the chapter-local ADR makes a genuine decision, accepts the dependency deliberately, contains its
-  spread, assigns update ownership, preserves product-owned semantics, and acknowledges remaining risk.
-- Technical overstatement result: passed; the chapter avoids claims that wrappers guarantee replacement, interfaces
-  remove semantic coupling, all transitive dependencies are runtime risks, all dependencies deserve equal governance,
-  internal dependencies are costless, vendor dependencies are inherently bad, build-time dependencies cannot affect
-  runtime behavior, contract tests prove cheap replacement, ADRs remove risk, dependency direction alone solves
-  lifecycle risk, or removal is merely deleting an import.
-- Manuscript changed during Technical Review: no.
-- Canon and PEAK graph changed: no.
-- Validation commands and actual results:
-  - Gate baseline checks: passed; `git status --short` was clean, and `HEAD` and `origin/chapter9` were both
-    `bf5ab66df5d9009e9e4d5d1e7616b0c08c53c76e`.
-  - Direct technical assertions: passed for required technical topics, forbidden overstatements absent, required H2
-    order, exactly three Principal's Notebook observations, exact Chapter 9 relationship set, and `CHAPTER-009`
-    remaining `draft`.
-  - `git diff --check`: passed.
-  - Protected-file checks: passed; the manuscript, canonical brief, `knowledge/index.yaml`, `LAW-007`, existing PEAK
-    concept files, `editor/CANON.md`, table of contents, and Chapters 1-8 were unchanged.
-  - `npm.cmd run lint:md`: passed with 0 errors across 137 Markdown files.
-  - `vale --config .vale.ini book/02-the-laws/09-every-dependency-is-a-decision.md editor/EDITOR_LOG.md`: passed with 0
-    errors, 0 warnings, and 0 suggestions.
-  - `npm.cmd run lint:spelling`: passed with 0 spelling issues across 136 checked files.
-  - `npm.cmd run lint:links`: passed; 136 links scanned successfully.
-  - `python -m pip check`: passed; no broken requirements found.
-  - `python -m mkdocs build --strict`: passed.
-  - `git ls-files site`: passed; no generated `site/` output is tracked.
-- Next stage: Freeze Review.
-
 ## Phase 28 Chapter 7 Canon Review
 
 - Chapter: Every State Has One Owner.
@@ -3411,3 +3297,217 @@ Chronological log of editorial maintenance work.
   - Protected-file checks: passed; the canonical brief, `knowledge/index.yaml`, `LAW-007`, `editor/CANON.md`, the table
     of contents, and Chapters 1-8 were unchanged.
 - Next stage: Canon Review.
+
+## Phase 40 Chapter 9 Canon Review
+
+- Chapter: Every Dependency Is a Decision.
+- Stable ID: `CHAPTER-009`.
+- Branch: `chapter9`.
+- Stage: Canon Review.
+- Reviewed Editorial Review commit: `de33b29c20a0ffe6a899350e4fc064cd37601438`.
+- Manuscript path: `book/02-the-laws/09-every-dependency-is-a-decision.md`.
+- Canonical brief path: `editor/chapter-briefs/CHAPTER-009-every-dependency-is-a-decision.md`.
+- Outcome: Approve.
+- Canonical sources checked: `LAW-007`, Chapter 9 canonical brief, Part II table of contents, Chapter 7 and Chapter 8
+  manuscripts and review precedent, `editor/CHAPTER_ARCHITECTURE.md`, `editor/CANON.md`, `editor/REVIEW_PROCESS.md`,
+  `editor/SOURCE_OF_TRUTH.md`, `knowledge/index.yaml`, and all registered Chapter 9 PEAK concept files.
+- Law compliance result: passed; the chapter treats dependency choice as an architectural commitment to behavior,
+  failure modes, lifecycle constraints, ownership boundaries, and replacement cost.
+- Canon-resolution integrity result: passed; `LAW-007` remains the Chapter 9 law, no older law was renumbered, and no
+  new canon decision was made during review.
+- Terminology result: passed; dependency, imported behavior, dependency spread, syntactic isolation, semantic isolation,
+  replacement cost, dependency direction, support horizon, update, replacement, and removal remain ordinary chapter
+  prose and do not imply new PEAK entities.
+- Boundary result: passed; Chapter 7 state ownership and Chapter 8 API-promise material remain boundaries or premises,
+  and Chapter 10 keeps the deeper law about time.
+- PEAK concept and relationship result: passed; `LAW-007`, `SMELL-001`, `VOCAB-001`, `ARTIFACT-001`, and `METRIC-003`
+  are materially present, and the registered outgoing Chapter 9 relationships remain unchanged.
+- Section-architecture result: passed; the manuscript keeps the required H2 order and exactly three Principal's Notebook
+  observations.
+- Corrections made during Canon Review: none.
+- Canonical brief changed: no.
+- `knowledge/index.yaml` changed: no.
+- `LAW-007` law file changed: no.
+- `editor/CANON.md` changed: no.
+- Manuscript changed during Canon Review: no.
+- Validation commands and actual results:
+  - Gate baseline checks: passed; `git status --short` was clean, and `HEAD` and `origin/chapter9` were both
+    `de33b29c20a0ffe6a899350e4fc064cd37601438`.
+  - Direct canon assertions: passed for exact law meaning, dependency definition, syntactic and semantic isolation,
+    replacement cost, lifecycle through removal, Chapter 10 boundary, required H2 order, exactly three Principal's
+    Notebook observations, exact Chapter 9 PEAK relationship set, all relationship targets existing, no duplicate
+    relationships, no self-edge, `CHAPTER-009` remaining `draft`, and `LAW-001` through `LAW-006` retaining their
+    existing IDs and meanings.
+  - `git diff --check`: passed.
+  - Protected-file checks: passed; the canonical brief, `knowledge/index.yaml`, table of contents, `LAW-007`,
+    `editor/CANON.md`, existing PEAK concept files, and Chapters 1-8 were unchanged.
+  - `npm.cmd run lint:md`: passed with 0 errors across 137 Markdown files.
+  - `vale --config .vale.ini book/02-the-laws/09-every-dependency-is-a-decision.md editor/EDITOR_LOG.md`: passed with 0
+    errors, 0 warnings, and 0 suggestions.
+  - `npm.cmd run lint:spelling`: passed with 0 spelling issues across 136 checked files.
+  - `npm.cmd run lint:links`: passed after rerun outside the sandbox; 136 links scanned successfully. The first sandbox
+    run used an incorrect sandbox working directory and returned 0 glob results.
+  - `python -m pip check`: passed; no broken requirements found.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed; no generated `site/` output is tracked.
+- Next stage: Technical Review.
+
+## Phase 41 Chapter 9 Technical Review
+
+- Chapter: Every Dependency Is a Decision.
+- Stable ID: `CHAPTER-009`.
+- Branch: `chapter9`.
+- Stage: Technical Review.
+- Reviewed Canon Review commit: `bf5ab66df5d9009e9e4d5d1e7616b0c08c53c76e`.
+- Manuscript path: `book/02-the-laws/09-every-dependency-is-a-decision.md`.
+- Outcome: Approve.
+- Technical domains reviewed: compile-time dependencies, runtime dependencies, hardware dependencies, protocol and
+  format dependencies, tool-chain dependencies, vendor software-kit dependencies, direct and transitive dependencies,
+  wrapper design, syntactic and semantic isolation, callback context, task-context assumptions, memory ownership, error
+  normalization, retry behavior, release cadence, manufacturing calibration, service tooling, version skew, update
+  ownership, support horizon, replacement cost, contract tests, integration tests, observability, exit triggers,
+  dependency direction, failure propagation, and ADR consequences.
+- Direct and transitive dependency result: passed; the chapter treats direct dependencies as visible choices and
+  transitive dependencies as relevant when their behavior leaks into product semantics, tests, timing, storage,
+  threading, reset behavior, release constraints, or support horizon.
+- Syntactic and semantic isolation result: passed; the chapter states that wrappers can hide names and calls but do not
+  automatically isolate callback model, execution context, memory ownership, error meanings, timing, lifecycle, or
+  release process.
+- Failure and lifecycle result: passed; unavailability, latency, retry behavior, version skew, resource exhaustion,
+  support loss, update, deprecation, replacement, and removal are treated as dependency commitments without consuming
+  Chapter 10's deeper time law.
+- Dependency-direction result: passed; the chapter explains that product code should depend on a stable product contract
+  while volatile dependency detail remains behind a bounded integration layer, without becoming a Clean Architecture
+  tutorial.
+- Replacement-cost result: passed; replacement cost is broader than code change and includes migration, tests, tooling,
+  operations, support, shipped compatibility, release coordination, confidence rebuilding, and customer migration risk.
+- Vendor story result: passed; the radio software-kit story is credible in callback model, buffer ownership, compiler
+  support, error and retry semantics, test harness coupling, manufacturing and service coupling, support lifecycle, and
+  replacement steps.
+- ADR result: passed; the chapter-local ADR makes a genuine decision, accepts the dependency deliberately, contains its
+  spread, assigns update ownership, preserves product-owned semantics, and acknowledges remaining risk.
+- Technical overstatement result: passed; the chapter avoids claims that wrappers guarantee replacement, interfaces
+  remove semantic coupling, all transitive dependencies are runtime risks, all dependencies deserve equal governance,
+  internal dependencies are costless, vendor dependencies are inherently bad, build-time dependencies cannot affect
+  runtime behavior, contract tests prove cheap replacement, ADRs remove risk, dependency direction alone solves
+  lifecycle risk, or removal is merely deleting an import.
+- Manuscript changed during Technical Review: no.
+- Canon and PEAK graph changed: no.
+- Validation commands and actual results:
+  - Gate baseline checks: passed; `git status --short` was clean, and `HEAD` and `origin/chapter9` were both
+    `bf5ab66df5d9009e9e4d5d1e7616b0c08c53c76e`.
+  - Direct technical assertions: passed for required technical topics, forbidden overstatements absent, required H2
+    order, exactly three Principal's Notebook observations, exact Chapter 9 relationship set, and `CHAPTER-009`
+    remaining `draft`.
+  - `git diff --check`: passed.
+  - Protected-file checks: passed; the manuscript, canonical brief, `knowledge/index.yaml`, `LAW-007`, existing PEAK
+    concept files, `editor/CANON.md`, table of contents, and Chapters 1-8 were unchanged.
+  - `npm.cmd run lint:md`: passed with 0 errors across 137 Markdown files.
+  - `vale --config .vale.ini book/02-the-laws/09-every-dependency-is-a-decision.md editor/EDITOR_LOG.md`: passed with 0
+    errors, 0 warnings, and 0 suggestions.
+  - `npm.cmd run lint:spelling`: passed with 0 spelling issues across 136 checked files.
+  - `npm.cmd run lint:links`: passed; 136 links scanned successfully.
+  - `python -m pip check`: passed; no broken requirements found.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed; no generated `site/` output is tracked.
+- Next stage: Freeze Review.
+
+## Phase 42 Chapter 9 Freeze Review
+
+- Date: 2026-07-11
+- Chapter: 9, "Every Dependency Is a Decision"
+- Chapter ID: `CHAPTER-009`
+- Branch: `chapter9`
+- Stage: Freeze Review
+- Reviewed Technical Review commit: `9844b93dea9ce5b092c9f4549ac994ccdf16b915`
+- Prior review commits:
+  - Editorial Review: `de33b29c20a0ffe6a899350e4fc064cd37601438`
+  - Canon Review: `bf5ab66df5d9009e9e4d5d1e7616b0c08c53c76e`
+  - Technical Review: `9844b93dea9ce5b092c9f4549ac994ccdf16b915`
+- Manuscript path: `book/02-the-laws/09-every-dependency-is-a-decision.md`
+- Canonical brief path: `editor/chapter-briefs/CHAPTER-009-every-dependency-is-a-decision.md`
+- Primary law: `LAW-007`, "Every Dependency Is a Decision"
+- Outcome: Approve
+
+Freeze result:
+
+- Chapter 9 is canonical-ready and is now registered as `canonical` in `knowledge/index.yaml`.
+- `LAW-007` remains `draft`; this follows the Chapter 8 freeze precedent where the chapter status changes without
+  changing the associated law status.
+- Reader-facing manuscript changed during Freeze Review: no.
+- Canonical brief changed during Freeze Review: no.
+- New PEAK concepts or relationships introduced during Freeze Review: none.
+- Files changed during Freeze Review: `editor/EDITOR_LOG.md`, `knowledge/index.yaml`.
+
+Lifecycle result:
+
+- Passed. Chapter 9 has separate Editorial, Canon, Technical, and Freeze Review entries in lifecycle order.
+- Editorial Review commit `de33b29c20a0ffe6a899350e4fc064cd37601438`, Canon Review commit
+  `bf5ab66df5d9009e9e4d5d1e7616b0c08c53c76e`, and Technical Review commit
+  `9844b93dea9ce5b092c9f4549ac994ccdf16b915` are ancestors of the freeze baseline.
+- Lifecycle-log ordering repair: Phase 40 and 41 Chapter 9 entries were moved from an earlier accidental insertion point
+  into the correct sequence after Phase 39; no review content, outcome, SHA, manuscript, PEAK graph, or status was
+  changed by that repair.
+
+Manuscript architecture result:
+
+- Passed. Chapter 9 retains the required H2 sequence: Opening Quote, Story, Discussion, Engineering Principle,
+  Architecture Exercise, Principal's Notebook, ADR, Editor's Commentary.
+- Principal's Notebook contains exactly three observations.
+- No unresolved TODO, FIXME, AUTHOR NOTE, or placeholder markers were found.
+
+Canon result:
+
+- Passed. Chapter 9 teaches `LAW-007` without changing the law text, renumbering law IDs, or creating a new canon
+  relationship.
+- Existing relationship set remains unchanged:
+  - `CHAPTER-009 illustrates LAW-007`
+  - `CHAPTER-009 illustrates SMELL-001`
+  - `CHAPTER-009 references VOCAB-001`
+  - `CHAPTER-009 references ARTIFACT-001`
+  - `CHAPTER-009 references METRIC-003`
+
+Technical result:
+
+- Passed. The dependency narrative remains concrete, reviewable, and consistent with the dependency ownership burden in
+  the canonical brief.
+- The text preserves dependency lifecycle concerns, owner-facing outcomes, replacement cost, and safe retry semantics
+  without drifting into new Part II canon.
+
+PEAK graph result:
+
+- Passed. `CHAPTER-009` appears exactly once and is now `canonical`.
+- `LAW-007` appears exactly once and remains `draft`.
+- Chapters 1 through 8 remain canonical.
+- `LAW-001` through `LAW-006` names are retained.
+- No duplicate relationships, self-edges, or missing relationship targets were found.
+
+Boundary result:
+
+- Passed. Chapters 1 through 8, Chapter 10, the Chapter 9 canonical brief, the `LAW-007` law file, `CANON.md`, and
+  `TOC.md` were not changed.
+
+Validation:
+
+- Gate baseline checks passed.
+- Direct freeze readiness assertions passed for lifecycle order, prior review commit ancestry, manuscript H2 order,
+  three notebook observations, unresolved marker absence, unchanged Chapter 9 relationships, existing relationship
+  targets, single `CHAPTER-009`, and canonical Chapters 1 through 8.
+- Direct final status assertions passed for `CHAPTER-009` canonical, `LAW-007` draft, and unchanged `LAW-001` through
+  `LAW-006` names.
+- Protected-file checks passed for the manuscript, canonical brief, `LAW-007`, `CANON.md`, `TOC.md`, Chapters 1 through
+  8, and Chapter 9 relationships.
+- `git diff --check` passed.
+- `npm.cmd run lint:md` passed.
+- `vale --config .vale.ini book/02-the-laws/09-every-dependency-is-a-decision.md editor/EDITOR_LOG.md` passed.
+- `npm.cmd run lint:spelling` passed.
+- `npm.cmd run lint:links` passed.
+- `python -m pip check` passed.
+- `python -m mkdocs build --strict` passed.
+- `git ls-files site` returned no tracked site output.
+
+Pull request readiness:
+
+- Chapter 9 is ready for a pull request after the freeze commit is pushed.
+- Recommended PR title: `Chapter 9: Every Dependency Is a Decision`
+- Do not merge as part of this gate.

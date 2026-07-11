@@ -318,7 +318,7 @@ entities:
       type: chapter
       name: Every Dependency Is a Decision
       path: ../book/02-the-laws/09-every-dependency-is-a-decision.md
-      status: draft
+      status: canonical
   adrs:
     - id: ADR-001
       type: adr
