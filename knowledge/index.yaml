@@ -84,6 +84,11 @@ entities:
       name: Unused Flexibility Is Waste
       path: laws/unused-flexibility-is-waste.md
       status: draft
+    - id: LAW-007
+      type: law
+      name: Every Dependency Is a Decision
+      path: laws/every-dependency-is-a-decision.md
+      status: draft
   principles: []
   maxims: []
   artifacts:
@@ -309,6 +314,11 @@ entities:
       name: Every API Is a Promise
       path: ../book/02-the-laws/08-every-api-is-a-promise.md
       status: canonical
+    - id: CHAPTER-009
+      type: chapter
+      name: Every Dependency Is a Decision
+      path: ../book/02-the-laws/09-every-dependency-is-a-decision.md
+      status: draft
   adrs:
     - id: ADR-001
       type: adr
@@ -497,3 +507,18 @@ relationships:
   - from: CHAPTER-008
     type: references
     to: VOCAB-001
+  - from: CHAPTER-009
+    type: illustrates
+    to: LAW-007
+  - from: CHAPTER-009
+    type: illustrates
+    to: SMELL-001
+  - from: CHAPTER-009
+    type: references
+    to: VOCAB-001
+  - from: CHAPTER-009
+    type: references
+    to: ARTIFACT-001
+  - from: CHAPTER-009
+    type: references
+    to: METRIC-003

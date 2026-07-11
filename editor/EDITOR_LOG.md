@@ -3115,3 +3115,61 @@ Chronological log of editorial maintenance work.
   - `git ls-files site`: passed; no generated `site/` output is tracked.
 - PR readiness: Chapter 8 is ready for pull request after this Freeze commit is pushed.
 - Next action: Open a Chapter 8 pull request; do not merge in this workflow.
+
+## Phase 37 Chapter 9 Canon Resolution and Canonical Brief Registration
+
+- Chapter: Every Dependency Is a Decision.
+- Stable ID: `CHAPTER-009`.
+- Branch: `chapter9`.
+- Stage: Canon Resolution and Canonical Brief Registration.
+- Baseline verified: `origin/main` at `e2fd0ce68338fb12df13d563d601a1f1495a19d0`.
+- Chapter 8 merge confirmation: `origin/main` includes `Chapter 8: Every API Is a Promise (#10)` at
+  `e2fd0ce68338fb12df13d563d601a1f1495a19d0`; `CHAPTER-008` remains `canonical`.
+- Canon mismatch state: confirmed. `book/TOC.md` and `editor/ARCHITECTURE_VISION.md` reserve "Every Dependency Is a
+  Decision", while the prior PEAK registry and canon list had no dedicated dependency law.
+- Canon Resolution decision: approve a new stable law for the missing concept.
+- Exact law mapping: `CHAPTER-009` illustrates `LAW-007` - Every Dependency Is a Decision.
+- New law entity created: yes; `knowledge/laws/every-dependency-is-a-decision.md`.
+- Existing law ID result: passed; no existing law ID was changed or renumbered. `LAW-003` remains Time Is a Dependency,
+  `LAW-004` remains Simplicity Is a Feature, `LAW-005` remains Evidence Before Confidence, and `LAW-006` remains
+  Unused Flexibility Is Waste.
+- Editorial ADR created: no. The existing source-of-truth process is sufficient for this missing concept registration.
+- Author approval required before registration: no. The prompt requested this canon-resolution gate and supplied the
+  semantic test; the next author-facing step is Author Draft.
+- Canonical brief path: `editor/chapter-briefs/CHAPTER-009-every-dependency-is-a-decision.md`.
+- Intended manuscript path: `book/02-the-laws/09-every-dependency-is-a-decision.md`.
+- Manuscript created during this gate: no.
+- Chapter 9 registry status: `draft`.
+- Exact outgoing relationships registered:
+  - `CHAPTER-009 illustrates LAW-007`
+  - `CHAPTER-009 illustrates SMELL-001`
+  - `CHAPTER-009 references VOCAB-001`
+  - `CHAPTER-009 references ARTIFACT-001`
+  - `CHAPTER-009 references METRIC-003`
+- Changed files during this gate:
+  - `editor/CANON.md`
+  - `editor/EDITOR_LOG.md`
+  - `editor/chapter-briefs/CHAPTER-009-every-dependency-is-a-decision.md`
+  - `knowledge/index.yaml`
+  - `knowledge/laws/README.md`
+  - `knowledge/laws/every-dependency-is-a-decision.md`
+- Boundary result: Chapters 1-8 were not edited, and no Chapter 9 reader-facing manuscript was created.
+- Validation commands and actual results:
+  - Gate baseline checks: passed; `git fetch --all --prune` completed before the gate, `git status --short` was clean,
+    `HEAD` matched `origin/main`, and `origin/main` was `e2fd0ce68338fb12df13d563d601a1f1495a19d0`.
+  - Direct canon-resolution assertions: passed for confirmed TOC or architecture-vision mismatch, no preexisting
+    `LAW-007`, no preexisting `CHAPTER-009`, no local or remote `chapter9` branch, and no Chapter 9 manuscript.
+  - Direct YAML assertions: passed for exactly one `LAW-007`, exactly one `CHAPTER-009`, exact `CHAPTER-009` outgoing
+    relationships, no duplicate relationships, all relationship targets existing, `CHAPTER-001` through `CHAPTER-008`
+    remaining `canonical`, and `LAW-003` through `LAW-006` retaining their existing IDs and names.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed with 0 errors across 136 Markdown files.
+  - `vale --config .vale.ini editor/chapter-briefs/CHAPTER-009-every-dependency-is-a-decision.md
+    knowledge/laws/every-dependency-is-a-decision.md editor/CANON.md knowledge/laws/README.md editor/EDITOR_LOG.md`:
+    passed with 0 errors, 0 warnings, and 0 suggestions.
+  - `npm.cmd run lint:spelling`: passed with 0 spelling issues across 135 checked files.
+  - `npm.cmd run lint:links`: passed; 135 links scanned successfully.
+  - `python -m pip check`: passed; no broken requirements found.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed; no generated `site/` output is tracked.
+- Next stage: Author Draft after approval.
