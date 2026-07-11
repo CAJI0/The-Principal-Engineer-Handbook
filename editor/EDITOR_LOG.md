@@ -3511,3 +3511,100 @@ Pull request readiness:
 - Chapter 9 is ready for a pull request after the freeze commit is pushed.
 - Recommended PR title: `Chapter 9: Every Dependency Is a Decision`
 - Do not merge as part of this gate.
+
+## Phase 43 Chapter 10 Canonical Brief Registration
+
+- Chapter: Time Is a Dependency.
+- Stable ID: `CHAPTER-010`.
+- Branch: `chapter10`.
+- Stage: Canonical Brief Registration.
+- Verified baseline `origin/main`: `845755ab99988317229946c93f419cc79d4315a0`.
+- PR #11 squash commit: `845755ab99988317229946c93f419cc79d4315a0`.
+- Chapter 9 feature-branch Freeze commit used for tree-equivalence check:
+  `cd3556768e9dbcad17f5cb75e59fe77479ada969`.
+- Primary law: `LAW-003` - Time Is a Dependency.
+- Outcome: Approve.
+- Canonical brief path: `editor/chapter-briefs/CHAPTER-010-time-is-a-dependency.md`.
+- Expected manuscript path: `book/02-the-laws/10-time-is-a-dependency.md`.
+- Reader-facing manuscript created: no.
+- Index registration: `CHAPTER-010` added as `draft` with path
+  `../book/02-the-laws/10-time-is-a-dependency.md`.
+- Exact outgoing relationship set:
+  - `CHAPTER-010 illustrates LAW-003`
+  - `CHAPTER-010 illustrates SMELL-004`
+  - `CHAPTER-010 illustrates SMELL-001`
+  - `CHAPTER-010 references ARTIFACT-005`
+  - `CHAPTER-010 references ARTIFACT-001`
+  - `CHAPTER-010 references METRIC-003`
+- Concepts selected: `LAW-003`, `SMELL-004`, `SMELL-001`, `ARTIFACT-005`, `ARTIFACT-001`, and `METRIC-003`.
+- Concepts considered but not registered as outgoing Chapter 10 relationships: `RITUAL-001`, `VOCAB-001`, `FAILURE-002`,
+  `LAW-001`, `LAW-002`, `LAW-007`, `METRIC-004`, and `ARTIFACT-003`.
+- New PEAK concept created: no.
+- Law ID changed or renumbered: no.
+- `LAW-003` law file changed: no.
+- `LAW-007` law file or mapping changed: no.
+- Chapters 1-9 changed: no.
+- Changed files:
+  - `editor/chapter-briefs/CHAPTER-010-time-is-a-dependency.md`
+  - `editor/EDITOR_LOG.md`
+  - `knowledge/index.yaml`
+- Baseline validation already run:
+  - `git fetch --all --prune`: passed.
+  - `git status --short`: passed with a clean working tree before editing.
+  - `git switch main`: passed.
+  - `git pull --ff-only origin main`: passed; already up to date.
+  - `git rev-parse HEAD`: returned `845755ab99988317229946c93f419cc79d4315a0`.
+  - `git rev-parse origin/main`: returned `845755ab99988317229946c93f419cc79d4315a0`.
+  - `git log` with one-line decoration over the latest 15 commits: confirmed
+    `845755a Chapter 9: Every Dependency Is a Decision (#11)` at
+    `HEAD`, `origin/main`, and `origin/HEAD`.
+  - `git merge-base --is-ancestor 845755ab99988317229946c93f419cc79d4315a0 origin/main`: passed.
+  - `git show --no-patch --format=fuller 845755ab99988317229946c93f419cc79d4315a0`: confirmed PR #11 squash commit
+    subject and included Chapter 9 lifecycle commits in the message.
+  - `git rev-list --parents -n 1 845755ab99988317229946c93f419cc79d4315a0`: confirmed one-parent squash topology with
+    parent `e2fd0ce68338fb12df13d563d601a1f1495a19d0`.
+  - `git diff --exit-code cd3556768e9dbcad17f5cb75e59fe77479ada969
+    845755ab99988317229946c93f419cc79d4315a0 -- [Chapter 9 lifecycle paths]`: passed; final Chapter 9 file trees are
+    equivalent for the checked paths.
+  - `git branch --list chapter10`: passed; no local branch existed before creation.
+  - `git branch -r --list origin/chapter10`: passed; no remote branch existed before creation.
+  - `git ls-files site`: passed; no tracked `site/` output.
+  - Direct YAML baseline assertions: passed for Chapters 1-9 canonical, exact `LAW-003`, exact `LAW-007`, absent
+    `CHAPTER-010`, and Chapter 9 relationship mapping.
+  - Direct Chapter 9 lifecycle assertions: passed for Phase 39, 40, 41, and 42 in order.
+- Branch creation:
+  - `git switch -c chapter10 origin/main`: passed.
+  - `git branch --show-current`: returned `chapter10`.
+  - `git rev-parse HEAD`: returned `845755ab99988317229946c93f419cc79d4315a0`.
+  - `git status --short`: passed with a clean working tree after branch creation.
+- Governing-material read: passed for repository governance, source-of-truth policy, PEAK index and concept files,
+  current Part II chapter architecture, Chapter 7 through Chapter 9 briefs and manuscripts, canonical Chapters 1-9, all
+  PEAK law files, `LAW-003`, likely supporting PEAK concepts, recent Chapter 9 registration and Freeze precedent, and
+  current validation commands. The prompt's `book/TOC.md` path does not exist; the repository table of contents was read
+  from `book/00-front-matter/table-of-contents.md`.
+- Pre-log validation already run:
+  - Direct Chapter 10 YAML assertions: passed for exact `CHAPTER-010` metadata, Chapters 1-9 remaining canonical,
+    exact `LAW-003`, and exact proposed Chapter 10 relationships.
+  - Direct brief assertions: passed for brief existence, manuscript absence, required metadata, and no unresolved
+    authoring markers.
+  - `git diff --check`: passed.
+  - `vale --config .vale.ini editor/chapter-briefs/CHAPTER-010-time-is-a-dependency.md`: passed after wording cleanup
+    with 0 errors, 0 warnings, and 0 suggestions.
+  - `npm.cmd run lint:md`: passed with 0 errors across 138 Markdown files.
+- Final validation completed after this log entry:
+  - Direct Chapter 10 PEAK assertions: passed for exact `CHAPTER-010` metadata, Chapters 1-9 remaining canonical,
+    exact `LAW-003`, and exact Chapter 10 relationship set.
+  - Changed-file and brief-boundary assertions: passed for expected changed files only, brief existence, manuscript
+    absence, and no unresolved authoring markers.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed with 0 errors across 138 Markdown files.
+  - `vale --config .vale.ini editor/chapter-briefs/CHAPTER-010-time-is-a-dependency.md editor/EDITOR_LOG.md`: passed
+    with 0 errors, 0 warnings, and 0 suggestions.
+  - `npm.cmd run lint:spelling`: passed with 0 spelling issues across 137 checked files after replacing a command-word
+    spelling issue in this log entry.
+  - `npm.cmd run lint:links`: passed; 137 links scanned successfully.
+  - `python -m pip check`: passed; no broken requirements found.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed; no generated `site/` output is tracked.
+- Next required lifecycle stage: Author Draft after author approval.
+- Do not merge as part of this gate.
