@@ -308,7 +308,7 @@ entities:
       type: chapter
       name: Every API Is a Promise
       path: ../book/02-the-laws/08-every-api-is-a-promise.md
-      status: draft
+      status: canonical
   adrs:
     - id: ADR-001
       type: adr

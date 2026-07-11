@@ -3061,3 +3061,57 @@ Chronological log of editorial maintenance work.
   - `python -m mkdocs build --strict`: passed.
   - `git ls-files site`: passed; no generated `site/` output is tracked.
 - Next stage: Freeze Review.
+
+## Phase 36 Chapter 8 Freeze Review
+
+- Chapter: Every API Is a Promise.
+- Stable ID: `CHAPTER-008`.
+- Branch: `chapter8`.
+- Stage: Freeze Review.
+- Reviewed Technical Review commit: `ddfab710e646573d820984d6ee3afa8abee5dfe8`.
+- Prior review commits:
+  - Editorial Review: `ff1da43be2f0261a8abdd2c3d2d9d4b01ac2f70d`.
+  - Canon Review: `d14a5be6bca051c837e9bedd3a075197645f21ae`.
+  - Technical Review: `ddfab710e646573d820984d6ee3afa8abee5dfe8`.
+- Manuscript path: `book/02-the-laws/08-every-api-is-a-promise.md`.
+- Canonical brief path: `editor/chapter-briefs/CHAPTER-008-every-api-is-a-promise.md`.
+- Outcome: Approve.
+- Freeze result: Chapter 8 is canonical-ready and now registered as `canonical` in `knowledge/index.yaml`.
+- Lifecycle-history result: passed; Editorial, Canon, and Technical Review entries exist in order, each outcome permits
+  Freeze, no gate was skipped, and all prior review commits are ancestors of `HEAD`.
+- Manuscript architecture result: passed; the chapter keeps the required H2 order and complete chapter sections.
+- Principal's Notebook result: passed; exactly three short observations remain.
+- Canon result: passed; the chapter teaches `LAW-002` without creating a new artifact, vocabulary term, law, smell,
+  anti-pattern, metric, ritual, or failure story.
+- Technical result: passed; asynchronous request acceptance, completion, errors, retry behavior, ownership and lifetime,
+  persistence, compatibility, migration, and ADR consequences remain technically credible.
+- PEAK graph result: passed; the registered outgoing Chapter 8 relationships remain unchanged and all targets exist.
+- Boundary result: passed; Chapters 1-7 remain canonical and unchanged, and later Part II material remains reserved for
+  later chapters.
+- Reader-facing manuscript changed during Freeze Review: no.
+- Canonical brief changed during Freeze Review: no.
+- `knowledge/index.yaml` changed during Freeze Review: yes; `CHAPTER-008` status changed from `draft` to `canonical`.
+- New PEAK concepts or relationships created during Freeze Review: none.
+- Exact changed files during Freeze Review: `editor/EDITOR_LOG.md` and `knowledge/index.yaml`.
+- Validation commands and actual results:
+  - Gate baseline checks: passed; `git fetch --all --prune` completed, `git status --short` was clean, and `HEAD` and
+    `origin/chapter8` were both `ddfab710e646573d820984d6ee3afa8abee5dfe8`.
+  - Direct freeze readiness assertions: passed for lifecycle order, progression-permitting outcomes, prior review
+    commits being ancestors of `HEAD`, required H2 order, exactly three Principal's Notebook observations, no unresolved
+    markers, registered Chapter 8 outgoing relationships unchanged, all target PEAK concepts existing, `CHAPTER-008`
+    registered exactly once, and Chapters 1-7 remaining `canonical`.
+  - Direct final status assertions: passed; `CHAPTER-008` is now exactly one `canonical` chapter entry and Chapters 1-7
+    remain `canonical`.
+  - `git diff --check`: passed.
+  - Protected-file checks: passed; the manuscript, canonical brief, `LAW-002`, existing PEAK concept files, Chapters
+    1-7, and registered PEAK relationships were unchanged.
+  - `npm.cmd run lint:md`: passed with 0 errors across 134 Markdown files.
+  - `vale --config .vale.ini book/02-the-laws/08-every-api-is-a-promise.md editor/EDITOR_LOG.md`: passed with 0
+    errors, 0 warnings, and 0 suggestions.
+  - `npm.cmd run lint:spelling`: passed with 0 spelling issues across 133 checked files.
+  - `npm.cmd run lint:links`: passed; 133 links scanned successfully.
+  - `python -m pip check`: passed; no broken requirements found.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed; no generated `site/` output is tracked.
+- PR readiness: Chapter 8 is ready for pull request after this Freeze commit is pushed.
+- Next action: Open a Chapter 8 pull request; do not merge in this workflow.
