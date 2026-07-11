@@ -323,7 +323,7 @@ entities:
       type: chapter
       name: Time Is a Dependency
       path: ../book/02-the-laws/10-time-is-a-dependency.md
-      status: draft
+      status: canonical
   adrs:
     - id: ADR-001
       type: adr

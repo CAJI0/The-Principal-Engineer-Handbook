@@ -3837,3 +3837,96 @@ Pull request readiness:
   - `python -m mkdocs build --strict`: passed.
   - `git ls-files site`: passed; no generated `site/` output is tracked.
 - Next required lifecycle stage: Freeze Review after this gate is committed and pushed.
+
+## Phase 48 Chapter 10 Freeze Review
+
+- Chapter: Time Is a Dependency.
+- Stable ID: `CHAPTER-010`.
+- Branch: `chapter10`.
+- Stage: Freeze Review.
+- Reviewed Technical Review SHA: `2d0ab999bc414417d792c1de35d04ef9272bf13a`.
+- Prior review commits:
+  - Editorial Review: `175628111df579eb9a5a80e4a3cc5c7498de4cbc`
+  - Canon Review: `c15e79910e5b07826240f6468230c68dd8f5bab9`
+  - Technical Review: `2d0ab999bc414417d792c1de35d04ef9272bf13a`
+- Manuscript path: `book/02-the-laws/10-time-is-a-dependency.md`.
+- Canonical brief path: `editor/chapter-briefs/CHAPTER-010-time-is-a-dependency.md`.
+- Primary law: `LAW-003` - Time Is a Dependency.
+- Outcome: Approve.
+
+Freeze result:
+
+- Chapter 10 is canonical-ready and is now registered as `canonical` in `knowledge/index.yaml`.
+- `LAW-003` remains `draft`; this follows recent Freeze precedent where the chapter status changes without changing the
+  associated law status.
+- Reader-facing manuscript changed during Freeze Review: no.
+- Canonical brief changed during Freeze Review: no.
+- New PEAK concepts or relationships introduced during Freeze Review: none.
+- Files changed during Freeze Review: `editor/EDITOR_LOG.md`, `knowledge/index.yaml`.
+
+Lifecycle result:
+
+- Passed. Chapter 10 has separate Editorial, Canon, Technical, and Freeze Review entries in lifecycle order.
+- Editorial Review commit `175628111df579eb9a5a80e4a3cc5c7498de4cbc`, Canon Review commit
+  `c15e79910e5b07826240f6468230c68dd8f5bab9`, and Technical Review commit
+  `2d0ab999bc414417d792c1de35d04ef9272bf13a` are ancestors of the freeze baseline.
+- All prior review outcomes permit Freeze.
+
+Manuscript architecture result:
+
+- Passed. Chapter 10 retains the required H2 sequence: Opening Quote, Story, Discussion, Engineering Principle,
+  Architecture Exercise, Principal's Notebook, ADR, Editor's Commentary.
+- Principal's Notebook contains exactly three observations.
+- No unresolved TODO, FIXME, AUTHOR NOTE, placeholder, or TBD markers were found.
+
+Canon, technical, and PEAK result:
+
+- Passed. Chapter 10 teaches `LAW-003` without changing the law text, renumbering law IDs, or creating a new canon
+  relationship.
+- The manuscript remains technically credible for wall-clock versus monotonic time, reset, persistence, timeout state,
+  late completion, retry safety, freshness, ordering, periodic work, clock correction, drift, wrap, diagnostics, and
+  controlled-time tests.
+- Existing relationship set remains unchanged:
+  - `CHAPTER-010 illustrates LAW-003`
+  - `CHAPTER-010 illustrates SMELL-004`
+  - `CHAPTER-010 illustrates SMELL-001`
+  - `CHAPTER-010 references ARTIFACT-005`
+  - `CHAPTER-010 references ARTIFACT-001`
+  - `CHAPTER-010 references METRIC-003`
+- `CHAPTER-010` appears exactly once and is now `canonical`.
+- `LAW-003` appears exactly once and remains `draft`.
+- Chapters 1 through 9 remain canonical.
+- No duplicate relationships, self-edges, missing relationship targets, new PEAK entities, or new PEAK relationships were
+  found.
+
+Boundary result:
+
+- Passed. Chapters 1 through 9, the Chapter 10 canonical brief, the `LAW-003` law file, `CANON.md`, and table of
+  contents were not changed.
+- No Part II architecture, later law, or later-part playbook boundary was consumed.
+
+Validation:
+
+- Gate baseline checks passed for clean tree, matching local and remote tips, lifecycle entry order, prior review commit
+  ancestry, and prior outcomes permitting Freeze.
+- Direct freeze readiness assertions passed for manuscript H2 order, three notebook observations, unresolved marker
+  absence, exact Chapter 10 relationship set, existing relationship targets, single `CHAPTER-010`, canonical Chapters 1
+  through 9, and unchanged `LAW-003`.
+- Direct final status assertions passed for `CHAPTER-010` canonical and `LAW-003` draft.
+- Protected-file checks passed for the manuscript, canonical brief, `LAW-003`, `CANON.md`, table of contents, Chapters 1
+  through 9, and Chapter 10 relationships.
+- `git diff --check`: passed.
+- `npm.cmd run lint:md`: passed.
+- `vale --config .vale.ini editor/EDITOR_LOG.md knowledge/index.yaml`: passed with 0 errors, 0 warnings, and 0
+  suggestions.
+- `npm.cmd run lint:spelling`: passed with 0 spelling issues across 138 checked files.
+- `npm.cmd run lint:links`: passed; 138 links scanned successfully.
+- `python -m pip check`: passed; no broken requirements found.
+- `python -m mkdocs build --strict`: passed.
+- `git ls-files site`: passed; no generated `site/` output is tracked.
+
+Pull request readiness:
+
+- Chapter 10 is ready for a pull request after the freeze commit is pushed.
+- Recommended PR title: `Chapter 10: Time Is a Dependency`
+- Do not merge as part of this gate.
