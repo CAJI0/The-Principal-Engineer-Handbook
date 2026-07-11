@@ -3680,3 +3680,49 @@ Pull request readiness:
 - Next required lifecycle stage: Editorial Review after author approval.
 - Do not perform Editorial Review, Canon Review, Technical Review, Freeze Review, PR creation, or merge as part of this
   phase.
+
+## Phase 45 Chapter 10 Editorial Review
+
+- Chapter: Time Is a Dependency.
+- Stable ID: `CHAPTER-010`.
+- Branch: `chapter10`.
+- Stage: Editorial Review.
+- Reviewed SHA: `fc8931691897aeeceb16ea85579fb38664d5d3be`.
+- Manuscript path: `book/02-the-laws/10-time-is-a-dependency.md`.
+- Canonical brief path: `editor/chapter-briefs/CHAPTER-010-time-is-a-dependency.md`.
+- Primary law: `LAW-003` - Time Is a Dependency.
+- Outcome: Approve with changes.
+- Material editorial changes:
+  - clarified that the draft's generic `now()` helper hid which kind of time each caller meant;
+  - clarified the timeout incident by naming how a runtime wait became a wall-clock timestamp;
+  - tightened one story transition and one exercise introduction;
+  - preserved the law statement, central thesis, chapter architecture, PEAK references, and chapter boundaries.
+- Section-order result: passed. The manuscript keeps the required H2 sequence: Opening Quote, Story, Discussion,
+  Engineering Principle, Architecture Exercise, Principal's Notebook, ADR, Editor's Commentary.
+- Principal's Notebook result: passed with exactly three short observations.
+- Boundary findings:
+  - Chapter 7 state-ownership material is referenced only as a boundary concern for validity, timeout state, and
+    freshness state.
+  - Chapter 8 API-promise material is referenced only where temporal behavior becomes observable.
+  - Chapter 9 dependency framing remains a premise; Chapter 10 owns temporal dependency.
+  - Later Part II laws and later-part playbooks were not consumed.
+- Canon and graph result: unchanged. `CHAPTER-010` remains `draft`; `LAW-003`, the canonical brief, `knowledge/index.yaml`,
+  `CANON.md`, table of contents, Chapters 1-9, and the registered Chapter 10 relationship set were not changed.
+- Changed files:
+  - `book/02-the-laws/10-time-is-a-dependency.md`
+  - `editor/EDITOR_LOG.md`
+- Validation completed for this gate:
+  - Direct manuscript assertions: passed for exact H2 order, mandatory sections once, exactly three Principal's Notebook
+    observations, unresolved marker absence, and no unexpected PEAK IDs.
+  - Direct protected-file assertions: passed for unchanged canonical brief, `LAW-003`, `knowledge/index.yaml`,
+    `CANON.md`, and table of contents before log entry.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed with 0 errors across 139 Markdown files.
+  - `vale --config .vale.ini book/02-the-laws/10-time-is-a-dependency.md`: passed with 0 errors, 0 warnings, and 0
+    suggestions.
+  - `npm.cmd run lint:spelling`: passed with 0 spelling issues across 138 checked files.
+  - `npm.cmd run lint:links`: passed; 138 links scanned successfully.
+  - `python -m pip check`: passed; no broken requirements found.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed; no generated `site/` output is tracked.
+- Next required lifecycle stage: Canon Review after this gate is committed and pushed.

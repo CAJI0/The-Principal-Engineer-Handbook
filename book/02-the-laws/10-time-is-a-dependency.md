@@ -6,7 +6,7 @@
 
 ## Story
 
-The controller had three kinds of time before anyone admitted it had one timing model.
+The controller had three kinds of time before anyone admitted the design had one timing model.
 
 It had an RTC that stored UTC. It had a monotonic hardware timer that started when the controller booted. It had a
 network sync path that corrected wall-clock time after the device found connectivity. The design also had ordinary
@@ -23,9 +23,10 @@ So the platform team exposed a simple helper.
 
 `now()`.
 
-It returned the current UTC timestamp when the RTC had a value. During early boot it returned the last persisted RTC
+It returned the current UTC timestamp when the RTC looked usable. During early boot it returned the last persisted RTC
 value until synchronization completed. The monotonic timer was available elsewhere, but most code did not ask for it.
-`now()` was easy, and it fit every call site well enough at first.
+`now()` was easy, and it fit every call site well enough at first because callers did not have to say which kind of time
+they meant.
 
 The first failures did not look related.
 
@@ -35,10 +36,10 @@ have been too old. The command carried a timestamp, the controller subtracted it
 The timestamp was not fresh. It only happened to be close to the controller's stale wall clock.
 
 Another unit extended a communication timeout across the same kind of restart. The timeout had been calculated as
-"expire at `now() + 30 seconds`" and persisted with the operation state. After reboot, the stale RTC made the deadline
-appear farther away than it really was. In a later test, the opposite happened: network sync corrected the clock
-backward while an operation was waiting, and the timeout did not expire when the engineer expected. A different build
-corrected forward and expired immediately.
+"expire at `now() + 30 seconds`" and persisted with the operation state, so a runtime wait had become a wall-clock
+timestamp. After reboot, the stale RTC made the deadline appear farther away than it really was. In a later test, the
+opposite happened: network sync corrected the clock backward while an operation was waiting, and the timeout did not
+expire when the engineer expected. A different build corrected forward and expired immediately.
 
 Records became hard to trust.
 
@@ -119,7 +120,7 @@ used wall-clock rules only after wall-clock validity was established, or it used
 was absent. The system recorded a boot generation in diagnostics so engineers could distinguish one runtime timeline
 from another.
 
-The test harness changed last, and that is when the team learned the most.
+The test harness changed after the model changed, and that is when the team learned the most.
 
 Tests could now start with invalid wall-clock time, advance monotonic time, jump wall clock forward, jump it backward,
 simulate drift, wrap a counter, reboot with persisted records, synchronize late, and complete an operation after timeout.
@@ -149,7 +150,7 @@ Every consequential use of time imports assumptions about clock source, accuracy
 ordering, persistence, reset behavior, validity, and failure. Those assumptions are dependencies and must be designed
 explicitly.
 
-The trap is that the same value can look usable for several meanings.
+The trap is that the same number can look usable for several meanings.
 
 A wall-clock timestamp can tell a human when a record was written. It cannot, by itself, prove elapsed duration. It
 cannot prove causal order between devices whose clocks disagree. It cannot prove freshness unless the freshness rule
@@ -273,7 +274,7 @@ diagnostics, or product promises. The ADR does not need to invent a new artifact
 meaning are being used, what alternatives were rejected, what failure behavior is accepted, and what evidence proves the
 choice.
 
-Time is a dependency because systems do not depend on numbers. They depend on what those numbers mean.
+Time is a dependency because systems do not depend on numbers alone. They depend on what those numbers mean.
 
 Make the meaning explicit.
 
@@ -302,10 +303,8 @@ reviewable before they become field behavior.
 
 ### Trace One Temporal Decision
 
-Choose one consequential use of time in a system you know.
-
-It may be a command freshness check, retry interval, timeout, periodic job, expiration rule, stored timestamp, lease,
-watchdog, UI display, diagnostic event, or cleanup process.
+Choose one consequential use of time in a system you know: a command freshness check, retry interval, timeout, periodic
+job, expiration rule, stored timestamp, lease, watchdog, UI display, diagnostic event, or cleanup process.
 
 Write short answers to these prompts:
 
