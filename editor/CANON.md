@@ -31,6 +31,7 @@ IDs are never reused.
 - `LAW-004` - Simplicity Is a Feature
 - `LAW-005` - Evidence Before Confidence
 - `LAW-006` - Unused Flexibility Is Waste
+- `LAW-007` - Every Dependency Is a Decision
 
 ## Maxims
 

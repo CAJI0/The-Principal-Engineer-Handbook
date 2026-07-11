@@ -9,6 +9,7 @@ Each concept file must include YAML front matter with `id`, `type`, `status`, an
 Relationships are maintained in `../index.yaml`.
 
 - [Every State Has One Owner](every-state-has-one-owner.md)
+- [Every Dependency Is a Decision](every-dependency-is-a-decision.md)
 - [Evidence Before Confidence](evidence-before-confidence.md)
 - [Unused Flexibility Is Waste](unused-flexibility-is-waste.md)
 - [Simplicity Is a Feature](simplicity-is-a-feature.md)
