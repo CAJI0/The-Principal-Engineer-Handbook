@@ -3608,3 +3608,75 @@ Pull request readiness:
   - `git ls-files site`: passed; no generated `site/` output is tracked.
 - Next required lifecycle stage: Author Draft after author approval.
 - Do not merge as part of this gate.
+
+## Phase 44 Chapter 10 Author Draft
+
+- Chapter: Time Is a Dependency.
+- Stable ID: `CHAPTER-010`.
+- Branch: `chapter10`.
+- Stage: Author Draft.
+- Author Draft baseline: `ceb0b3ce08c384716d36e32895236851a074ee06`.
+- Baseline relationship to `origin/main`: `origin/main` is an ancestor of `chapter10`.
+- Manuscript path: `book/02-the-laws/10-time-is-a-dependency.md`.
+- Canonical brief path: `editor/chapter-briefs/CHAPTER-010-time-is-a-dependency.md`.
+- Primary law: `LAW-003` - Time Is a Dependency.
+- Lifecycle status after this phase: reader-facing draft exists; `CHAPTER-010` remains `draft`.
+- Outcome: Author Draft added.
+- Reader-facing manuscript created: yes.
+- Canonical brief changed during Author Draft: no.
+- `LAW-003` law file changed during Author Draft: no.
+- `knowledge/index.yaml` changed during Author Draft: no.
+- `CANON.md` changed during Author Draft: no.
+- Table of contents changed during Author Draft: no.
+- Chapters 1-9 changed during Author Draft: no.
+- Generated output committed: no.
+- Exact outgoing relationship set preserved:
+  - `CHAPTER-010 illustrates LAW-003`
+  - `CHAPTER-010 illustrates SMELL-004`
+  - `CHAPTER-010 illustrates SMELL-001`
+  - `CHAPTER-010 references ARTIFACT-005`
+  - `CHAPTER-010 references ARTIFACT-001`
+  - `CHAPTER-010 references METRIC-003`
+- PEAK concepts used in the manuscript: `LAW-003`, `SMELL-004`, `SMELL-001`, `ARTIFACT-005`, `ARTIFACT-001`, and
+  `METRIC-003`.
+- New PEAK concept created or implied as canon: no.
+- Story shape: embedded controller with RTC UTC, monotonic hardware timer, network synchronization, persisted records,
+  command freshness checks, communication timeouts, periodic cleanup, retry scheduling, diagnostics, and local UI
+  display, failing after reboot with invalid or stale RTC time followed by wall-clock correction.
+- Principal Engineer move: recasts the incident from a clock bug as incompatible temporal semantics hidden behind one
+  generic `now()` API.
+- Engineering Principle: name the clock and temporal meaning behind every consequential use of time.
+- Architecture Exercise: `Trace One Temporal Decision`.
+- Chapter ADR: `Separate Monotonic Runtime Timing from Wall-Clock Time`.
+- Changed files:
+  - `book/02-the-laws/10-time-is-a-dependency.md`
+  - `editor/EDITOR_LOG.md`
+- Pre-log validation already run:
+  - Direct manuscript structure assertions: passed for exact H2 order, exactly three Principal's Notebook observations,
+    and no unresolved authoring markers.
+  - `npm.cmd run lint:md`: passed with 0 errors across 139 Markdown files.
+  - `vale --config .vale.ini book/02-the-laws/10-time-is-a-dependency.md`: passed with 0 errors, 0 warnings, and 0
+    suggestions.
+  - `npm.cmd run lint:spelling`: passed with 0 spelling issues across 138 checked files.
+  - `npm.cmd run lint:links`: passed; 138 links scanned successfully.
+  - `python -m pip check`: passed; no broken requirements found.
+- Final validation completed after this log entry:
+  - Direct Chapter 10 structure assertions: passed for exact H2 order, exactly three Principal's Notebook observations,
+    and no unresolved authoring markers.
+  - Direct Chapter 10 PEAK assertions: passed for exact `CHAPTER-010` metadata, exact `LAW-003` metadata, exact Chapter
+    10 relationship set, and Chapters 1-9 remaining canonical.
+  - Protected-file assertions: passed for unchanged canonical brief, unchanged `LAW-003`, unchanged `knowledge/index.yaml`,
+    unchanged `CANON.md`, unchanged table of contents, and unchanged Chapters 1-9.
+  - Changed-file assertions: passed for expected changed files only.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed with 0 errors across 139 Markdown files.
+  - `vale --config .vale.ini book/02-the-laws/10-time-is-a-dependency.md editor/EDITOR_LOG.md`: passed with 0 errors,
+    0 warnings, and 0 suggestions.
+  - `npm.cmd run lint:spelling`: passed with 0 spelling issues across 138 checked files.
+  - `npm.cmd run lint:links`: passed; 138 links scanned successfully.
+  - `python -m pip check`: passed; no broken requirements found.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed; no generated `site/` output is tracked.
+- Next required lifecycle stage: Editorial Review after author approval.
+- Do not perform Editorial Review, Canon Review, Technical Review, Freeze Review, PR creation, or merge as part of this
+  phase.
