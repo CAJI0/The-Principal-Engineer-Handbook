@@ -3511,3 +3511,422 @@ Pull request readiness:
 - Chapter 9 is ready for a pull request after the freeze commit is pushed.
 - Recommended PR title: `Chapter 9: Every Dependency Is a Decision`
 - Do not merge as part of this gate.
+
+## Phase 43 Chapter 10 Canonical Brief Registration
+
+- Chapter: Time Is a Dependency.
+- Stable ID: `CHAPTER-010`.
+- Branch: `chapter10`.
+- Stage: Canonical Brief Registration.
+- Verified baseline `origin/main`: `845755ab99988317229946c93f419cc79d4315a0`.
+- PR #11 squash commit: `845755ab99988317229946c93f419cc79d4315a0`.
+- Chapter 9 feature-branch Freeze commit used for tree-equivalence check:
+  `cd3556768e9dbcad17f5cb75e59fe77479ada969`.
+- Primary law: `LAW-003` - Time Is a Dependency.
+- Outcome: Approve.
+- Canonical brief path: `editor/chapter-briefs/CHAPTER-010-time-is-a-dependency.md`.
+- Expected manuscript path: `book/02-the-laws/10-time-is-a-dependency.md`.
+- Reader-facing manuscript created: no.
+- Index registration: `CHAPTER-010` added as `draft` with path
+  `../book/02-the-laws/10-time-is-a-dependency.md`.
+- Exact outgoing relationship set:
+  - `CHAPTER-010 illustrates LAW-003`
+  - `CHAPTER-010 illustrates SMELL-004`
+  - `CHAPTER-010 illustrates SMELL-001`
+  - `CHAPTER-010 references ARTIFACT-005`
+  - `CHAPTER-010 references ARTIFACT-001`
+  - `CHAPTER-010 references METRIC-003`
+- Concepts selected: `LAW-003`, `SMELL-004`, `SMELL-001`, `ARTIFACT-005`, `ARTIFACT-001`, and `METRIC-003`.
+- Concepts considered but not registered as outgoing Chapter 10 relationships: `RITUAL-001`, `VOCAB-001`, `FAILURE-002`,
+  `LAW-001`, `LAW-002`, `LAW-007`, `METRIC-004`, and `ARTIFACT-003`.
+- New PEAK concept created: no.
+- Law ID changed or renumbered: no.
+- `LAW-003` law file changed: no.
+- `LAW-007` law file or mapping changed: no.
+- Chapters 1-9 changed: no.
+- Changed files:
+  - `editor/chapter-briefs/CHAPTER-010-time-is-a-dependency.md`
+  - `editor/EDITOR_LOG.md`
+  - `knowledge/index.yaml`
+- Baseline validation already run:
+  - `git fetch --all --prune`: passed.
+  - `git status --short`: passed with a clean working tree before editing.
+  - `git switch main`: passed.
+  - `git pull --ff-only origin main`: passed; already up to date.
+  - `git rev-parse HEAD`: returned `845755ab99988317229946c93f419cc79d4315a0`.
+  - `git rev-parse origin/main`: returned `845755ab99988317229946c93f419cc79d4315a0`.
+  - `git log` with one-line decoration over the latest 15 commits: confirmed
+    `845755a Chapter 9: Every Dependency Is a Decision (#11)` at
+    `HEAD`, `origin/main`, and `origin/HEAD`.
+  - `git merge-base --is-ancestor 845755ab99988317229946c93f419cc79d4315a0 origin/main`: passed.
+  - `git show --no-patch --format=fuller 845755ab99988317229946c93f419cc79d4315a0`: confirmed PR #11 squash commit
+    subject and included Chapter 9 lifecycle commits in the message.
+  - `git rev-list --parents -n 1 845755ab99988317229946c93f419cc79d4315a0`: confirmed one-parent squash topology with
+    parent `e2fd0ce68338fb12df13d563d601a1f1495a19d0`.
+  - `git diff --exit-code cd3556768e9dbcad17f5cb75e59fe77479ada969
+    845755ab99988317229946c93f419cc79d4315a0 -- [Chapter 9 lifecycle paths]`: passed; final Chapter 9 file trees are
+    equivalent for the checked paths.
+  - `git branch --list chapter10`: passed; no local branch existed before creation.
+  - `git branch -r --list origin/chapter10`: passed; no remote branch existed before creation.
+  - `git ls-files site`: passed; no tracked `site/` output.
+  - Direct YAML baseline assertions: passed for Chapters 1-9 canonical, exact `LAW-003`, exact `LAW-007`, absent
+    `CHAPTER-010`, and Chapter 9 relationship mapping.
+  - Direct Chapter 9 lifecycle assertions: passed for Phase 39, 40, 41, and 42 in order.
+- Branch creation:
+  - `git switch -c chapter10 origin/main`: passed.
+  - `git branch --show-current`: returned `chapter10`.
+  - `git rev-parse HEAD`: returned `845755ab99988317229946c93f419cc79d4315a0`.
+  - `git status --short`: passed with a clean working tree after branch creation.
+- Governing-material read: passed for repository governance, source-of-truth policy, PEAK index and concept files,
+  current Part II chapter architecture, Chapter 7 through Chapter 9 briefs and manuscripts, canonical Chapters 1-9, all
+  PEAK law files, `LAW-003`, likely supporting PEAK concepts, recent Chapter 9 registration and Freeze precedent, and
+  current validation commands. The prompt's `book/TOC.md` path does not exist; the repository table of contents was read
+  from `book/00-front-matter/table-of-contents.md`.
+- Pre-log validation already run:
+  - Direct Chapter 10 YAML assertions: passed for exact `CHAPTER-010` metadata, Chapters 1-9 remaining canonical,
+    exact `LAW-003`, and exact proposed Chapter 10 relationships.
+  - Direct brief assertions: passed for brief existence, manuscript absence, required metadata, and no unresolved
+    authoring markers.
+  - `git diff --check`: passed.
+  - `vale --config .vale.ini editor/chapter-briefs/CHAPTER-010-time-is-a-dependency.md`: passed after wording cleanup
+    with 0 errors, 0 warnings, and 0 suggestions.
+  - `npm.cmd run lint:md`: passed with 0 errors across 138 Markdown files.
+- Final validation completed after this log entry:
+  - Direct Chapter 10 PEAK assertions: passed for exact `CHAPTER-010` metadata, Chapters 1-9 remaining canonical,
+    exact `LAW-003`, and exact Chapter 10 relationship set.
+  - Changed-file and brief-boundary assertions: passed for expected changed files only, brief existence, manuscript
+    absence, and no unresolved authoring markers.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed with 0 errors across 138 Markdown files.
+  - `vale --config .vale.ini editor/chapter-briefs/CHAPTER-010-time-is-a-dependency.md editor/EDITOR_LOG.md`: passed
+    with 0 errors, 0 warnings, and 0 suggestions.
+  - `npm.cmd run lint:spelling`: passed with 0 spelling issues across 137 checked files after replacing a command-word
+    spelling issue in this log entry.
+  - `npm.cmd run lint:links`: passed; 137 links scanned successfully.
+  - `python -m pip check`: passed; no broken requirements found.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed; no generated `site/` output is tracked.
+- Next required lifecycle stage: Author Draft after author approval.
+- Do not merge as part of this gate.
+
+## Phase 44 Chapter 10 Author Draft
+
+- Chapter: Time Is a Dependency.
+- Stable ID: `CHAPTER-010`.
+- Branch: `chapter10`.
+- Stage: Author Draft.
+- Author Draft baseline: `ceb0b3ce08c384716d36e32895236851a074ee06`.
+- Baseline relationship to `origin/main`: `origin/main` is an ancestor of `chapter10`.
+- Manuscript path: `book/02-the-laws/10-time-is-a-dependency.md`.
+- Canonical brief path: `editor/chapter-briefs/CHAPTER-010-time-is-a-dependency.md`.
+- Primary law: `LAW-003` - Time Is a Dependency.
+- Lifecycle status after this phase: reader-facing draft exists; `CHAPTER-010` remains `draft`.
+- Outcome: Author Draft added.
+- Reader-facing manuscript created: yes.
+- Canonical brief changed during Author Draft: no.
+- `LAW-003` law file changed during Author Draft: no.
+- `knowledge/index.yaml` changed during Author Draft: no.
+- `CANON.md` changed during Author Draft: no.
+- Table of contents changed during Author Draft: no.
+- Chapters 1-9 changed during Author Draft: no.
+- Generated output committed: no.
+- Exact outgoing relationship set preserved:
+  - `CHAPTER-010 illustrates LAW-003`
+  - `CHAPTER-010 illustrates SMELL-004`
+  - `CHAPTER-010 illustrates SMELL-001`
+  - `CHAPTER-010 references ARTIFACT-005`
+  - `CHAPTER-010 references ARTIFACT-001`
+  - `CHAPTER-010 references METRIC-003`
+- PEAK concepts used in the manuscript: `LAW-003`, `SMELL-004`, `SMELL-001`, `ARTIFACT-005`, `ARTIFACT-001`, and
+  `METRIC-003`.
+- New PEAK concept created or implied as canon: no.
+- Story shape: embedded controller with RTC UTC, monotonic hardware timer, network synchronization, persisted records,
+  command freshness checks, communication timeouts, periodic cleanup, retry scheduling, diagnostics, and local UI
+  display, failing after reboot with invalid or stale RTC time followed by wall-clock correction.
+- Principal Engineer move: recasts the incident from a clock bug as incompatible temporal semantics hidden behind one
+  generic `now()` API.
+- Engineering Principle: name the clock and temporal meaning behind every consequential use of time.
+- Architecture Exercise: `Trace One Temporal Decision`.
+- Chapter ADR: `Separate Monotonic Runtime Timing from Wall-Clock Time`.
+- Changed files:
+  - `book/02-the-laws/10-time-is-a-dependency.md`
+  - `editor/EDITOR_LOG.md`
+- Pre-log validation already run:
+  - Direct manuscript structure assertions: passed for exact H2 order, exactly three Principal's Notebook observations,
+    and no unresolved authoring markers.
+  - `npm.cmd run lint:md`: passed with 0 errors across 139 Markdown files.
+  - `vale --config .vale.ini book/02-the-laws/10-time-is-a-dependency.md`: passed with 0 errors, 0 warnings, and 0
+    suggestions.
+  - `npm.cmd run lint:spelling`: passed with 0 spelling issues across 138 checked files.
+  - `npm.cmd run lint:links`: passed; 138 links scanned successfully.
+  - `python -m pip check`: passed; no broken requirements found.
+- Final validation completed after this log entry:
+  - Direct Chapter 10 structure assertions: passed for exact H2 order, exactly three Principal's Notebook observations,
+    and no unresolved authoring markers.
+  - Direct Chapter 10 PEAK assertions: passed for exact `CHAPTER-010` metadata, exact `LAW-003` metadata, exact Chapter
+    10 relationship set, and Chapters 1-9 remaining canonical.
+  - Protected-file assertions: passed for unchanged canonical brief, unchanged `LAW-003`, unchanged `knowledge/index.yaml`,
+    unchanged `CANON.md`, unchanged table of contents, and unchanged Chapters 1-9.
+  - Changed-file assertions: passed for expected changed files only.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed with 0 errors across 139 Markdown files.
+  - `vale --config .vale.ini book/02-the-laws/10-time-is-a-dependency.md editor/EDITOR_LOG.md`: passed with 0 errors,
+    0 warnings, and 0 suggestions.
+  - `npm.cmd run lint:spelling`: passed with 0 spelling issues across 138 checked files.
+  - `npm.cmd run lint:links`: passed; 138 links scanned successfully.
+  - `python -m pip check`: passed; no broken requirements found.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed; no generated `site/` output is tracked.
+- Next required lifecycle stage: Editorial Review after author approval.
+- Do not perform Editorial Review, Canon Review, Technical Review, Freeze Review, PR creation, or merge as part of this
+  phase.
+
+## Phase 45 Chapter 10 Editorial Review
+
+- Chapter: Time Is a Dependency.
+- Stable ID: `CHAPTER-010`.
+- Branch: `chapter10`.
+- Stage: Editorial Review.
+- Reviewed SHA: `fc8931691897aeeceb16ea85579fb38664d5d3be`.
+- Manuscript path: `book/02-the-laws/10-time-is-a-dependency.md`.
+- Canonical brief path: `editor/chapter-briefs/CHAPTER-010-time-is-a-dependency.md`.
+- Primary law: `LAW-003` - Time Is a Dependency.
+- Outcome: Approve with changes.
+- Material editorial changes:
+  - clarified that the draft's generic `now()` helper hid which kind of time each caller meant;
+  - clarified the timeout incident by naming how a runtime wait became a wall-clock timestamp;
+  - tightened one story transition and one exercise introduction;
+  - preserved the law statement, central thesis, chapter architecture, PEAK references, and chapter boundaries.
+- Section-order result: passed. The manuscript keeps the required H2 sequence: Opening Quote, Story, Discussion,
+  Engineering Principle, Architecture Exercise, Principal's Notebook, ADR, Editor's Commentary.
+- Principal's Notebook result: passed with exactly three short observations.
+- Boundary findings:
+  - Chapter 7 state-ownership material is referenced only as a boundary concern for validity, timeout state, and
+    freshness state.
+  - Chapter 8 API-promise material is referenced only where temporal behavior becomes observable.
+  - Chapter 9 dependency framing remains a premise; Chapter 10 owns temporal dependency.
+  - Later Part II laws and later-part playbooks were not consumed.
+- Canon and graph result: unchanged. `CHAPTER-010` remains `draft`; `LAW-003`, the canonical brief, `knowledge/index.yaml`,
+  `CANON.md`, table of contents, Chapters 1-9, and the registered Chapter 10 relationship set were not changed.
+- Changed files:
+  - `book/02-the-laws/10-time-is-a-dependency.md`
+  - `editor/EDITOR_LOG.md`
+- Validation completed for this gate:
+  - Direct manuscript assertions: passed for exact H2 order, mandatory sections once, exactly three Principal's Notebook
+    observations, unresolved marker absence, and no unexpected PEAK IDs.
+  - Direct protected-file assertions: passed for unchanged canonical brief, `LAW-003`, `knowledge/index.yaml`,
+    `CANON.md`, and table of contents before log entry.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed with 0 errors across 139 Markdown files.
+  - `vale --config .vale.ini book/02-the-laws/10-time-is-a-dependency.md`: passed with 0 errors, 0 warnings, and 0
+    suggestions.
+  - `npm.cmd run lint:spelling`: passed with 0 spelling issues across 138 checked files.
+  - `npm.cmd run lint:links`: passed; 138 links scanned successfully.
+  - `python -m pip check`: passed; no broken requirements found.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed; no generated `site/` output is tracked.
+- Next required lifecycle stage: Canon Review after this gate is committed and pushed.
+
+## Phase 46 Chapter 10 Canon Review
+
+- Chapter: Time Is a Dependency.
+- Stable ID: `CHAPTER-010`.
+- Branch: `chapter10`.
+- Stage: Canon Review.
+- Reviewed Editorial Review SHA: `175628111df579eb9a5a80e4a3cc5c7498de4cbc`.
+- Manuscript path: `book/02-the-laws/10-time-is-a-dependency.md`.
+- Canonical brief path: `editor/chapter-briefs/CHAPTER-010-time-is-a-dependency.md`.
+- Primary law: `LAW-003` - Time Is a Dependency.
+- Outcome: Approve.
+- Sources checked: repository governance, current Chapter 10 canonical brief, `LAW-003`, PEAK index, registered PEAK
+  concepts, Chapter 10 manuscript, Chapter 7 through Chapter 9 boundary chapters, later Part II boundaries, and recent
+  Chapter 9 review precedent.
+- `LAW-003` compliance: passed. The manuscript preserves the exact law statement and teaches time as an architectural
+  dependency, not as a date or timer programming guide.
+- Terminology findings: passed for wall-clock time, monotonic time, duration, timestamp, deadline, timeout, ordering,
+  freshness, reset, synchronization, correction, drift, wrap, and validity.
+- Boundary findings:
+  - Chapter 7 state ownership is not retold.
+  - Chapter 8 API promises are not retold.
+  - Chapter 9 dependency selection is not retold.
+  - Chapters 11-13 and later-part playbooks remain unconsumed.
+- PEAK and architecture checks:
+  - Chapter architecture remains exact.
+  - Principal's Notebook contains exactly three short observations.
+  - Manuscript uses only approved PEAK IDs for this chapter.
+  - Registered Chapter 10 relationship set remains exact.
+  - All relationship targets exist.
+  - No duplicate relationship, self-edge, new PEAK ID, new PEAK concept, or new PEAK relationship was introduced.
+- Corrections: none. Canon Review required no manuscript change.
+- Canon and graph result: unchanged. `CHAPTER-010` remains `draft`; `LAW-003`, the canonical brief, `knowledge/index.yaml`,
+  `CANON.md`, table of contents, Chapters 1-9, and the registered Chapter 10 relationship set were not changed.
+- Changed files:
+  - `editor/EDITOR_LOG.md`
+- Validation completed for this gate:
+  - Direct canon manuscript assertions: passed for exact law statement, central thesis, approved supporting formulation,
+    required PEAK references, and no unexpected PEAK IDs.
+  - Direct PEAK graph assertions: passed for unique `CHAPTER-010`, `CHAPTER-010` remaining `draft`, unique `LAW-003`,
+    exact Chapter 10 relationship set, existing relationship targets, and no self-edge.
+  - Direct structure assertions: passed for exact H2 order, mandatory sections once, exactly three Principal's Notebook
+    observations, and unresolved marker absence.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed with 0 errors across 139 Markdown files.
+  - `vale --config .vale.ini book/02-the-laws/10-time-is-a-dependency.md editor/EDITOR_LOG.md`: passed with 0 errors,
+    0 warnings, and 0 suggestions.
+  - `npm.cmd run lint:spelling`: passed with 0 spelling issues across 138 checked files.
+  - `npm.cmd run lint:links`: passed; 138 links scanned successfully.
+  - `python -m pip check`: passed; no broken requirements found.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed; no generated `site/` output is tracked.
+- Next required lifecycle stage: Technical Review after this gate is committed and pushed.
+
+## Phase 47 Chapter 10 Technical Review
+
+- Chapter: Time Is a Dependency.
+- Stable ID: `CHAPTER-010`.
+- Branch: `chapter10`.
+- Stage: Technical Review.
+- Reviewed Canon Review SHA: `c15e79910e5b07826240f6468230c68dd8f5bab9`.
+- Manuscript path: `book/02-the-laws/10-time-is-a-dependency.md`.
+- Canonical brief path: `editor/chapter-briefs/CHAPTER-010-time-is-a-dependency.md`.
+- Primary law: `LAW-003` - Time Is a Dependency.
+- Outcome: Approve.
+- Domains checked: wall-clock time, monotonic time, RTC validity, monotonic reset and wrap, duration and timestamp
+  arithmetic, deadlines, timeouts, expiry state, late completion, retry safety, freshness, event ordering, persisted
+  timestamps, boot generations, synchronization, forward and backward correction, drift, multi-device disagreement,
+  fixed-rate and delay-after-completion scheduling, jitter, missed periods, backlog, skipped or merged periods, watchdog
+  windows, UTC persistence, UI-local conversion, diagnostics, controlled-time tests, and ADR alternatives.
+- Corrections: none. Technical Review required no manuscript change.
+- Wall-clock and monotonic findings: passed. The manuscript distinguishes calendar meaning from elapsed runtime
+  measurement without claiming either clock solves every temporal problem.
+- Timeout and late-completion findings: passed. Timeouts are treated as state decisions, and late completion and retry
+  safety are explicitly addressed.
+- Reset and persistence findings: passed. The manuscript handles invalid or stale RTC startup, reboot, persisted
+  timestamps, boot-generation diagnostics, and non-durable monotonic values.
+- Correction, drift, and wrap findings: passed. The manuscript covers forward and backward correction, drift, wrap,
+  and clock-domain disagreement without implying synchronization removes uncertainty.
+- Freshness and ordering findings: passed. Freshness is separated from timestamp existence, and ordering can be handled
+  without trustworthy shared wall-clock time.
+- Periodic-work findings: passed. The manuscript distinguishes fixed-rate scheduling, delay-after-completion scheduling,
+  missed periods, backlog, skipped periods, and merged periods at the level needed for the law.
+- Testing and diagnostics findings: passed. Controlled-time tests cover jumps, drift, reset, wrap, invalid startup time,
+  late synchronization, missed periods, and completion after timeout; diagnostics expose source, domain, validity,
+  correction, uncertainty, and runtime generation where useful.
+- ADR assessment: passed. The chapter ADR makes a real technical decision, rejects shallow alternatives, and records
+  benefits and costs without becoming a timer tutorial.
+- Misleading technical absolutes: none found. The manuscript does not imply that monotonic time never resets or wraps,
+  wall clock is always wrong, UTC solves elapsed measurement, RTC validity proves freshness, timestamps prove causality,
+  precision equals accuracy, synchronization removes uncertainty, timeout proves operation failure, retry is
+  automatically safe, longer timeout is always safer, missed periods must always be replayed, or a normally advancing
+  test clock is sufficient.
+- Canon and graph result: unchanged. `CHAPTER-010` remains `draft`; `LAW-003`, the canonical brief, `knowledge/index.yaml`,
+  `CANON.md`, table of contents, Chapters 1-9, and the registered Chapter 10 relationship set were not changed.
+- Changed files:
+  - `editor/EDITOR_LOG.md`
+- Validation completed for this gate:
+  - Direct technical manuscript assertions: passed for required wall-clock/monotonic, timeout, late-completion,
+    freshness, periodic-work, testing, diagnostics, and ADR coverage; forbidden technical absolutes were absent.
+  - Direct PEAK status assertions: passed for `CHAPTER-010` remaining `draft` and exact Chapter 10 relationship count.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed with 0 errors across 139 Markdown files.
+  - `vale --config .vale.ini book/02-the-laws/10-time-is-a-dependency.md editor/EDITOR_LOG.md`: passed with 0 errors,
+    0 warnings, and 0 suggestions.
+  - `npm.cmd run lint:spelling`: passed with 0 spelling issues across 138 checked files.
+  - `npm.cmd run lint:links`: passed; 138 links scanned successfully.
+  - `python -m pip check`: passed; no broken requirements found.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed; no generated `site/` output is tracked.
+- Next required lifecycle stage: Freeze Review after this gate is committed and pushed.
+
+## Phase 48 Chapter 10 Freeze Review
+
+- Chapter: Time Is a Dependency.
+- Stable ID: `CHAPTER-010`.
+- Branch: `chapter10`.
+- Stage: Freeze Review.
+- Reviewed Technical Review SHA: `2d0ab999bc414417d792c1de35d04ef9272bf13a`.
+- Prior review commits:
+  - Editorial Review: `175628111df579eb9a5a80e4a3cc5c7498de4cbc`
+  - Canon Review: `c15e79910e5b07826240f6468230c68dd8f5bab9`
+  - Technical Review: `2d0ab999bc414417d792c1de35d04ef9272bf13a`
+- Manuscript path: `book/02-the-laws/10-time-is-a-dependency.md`.
+- Canonical brief path: `editor/chapter-briefs/CHAPTER-010-time-is-a-dependency.md`.
+- Primary law: `LAW-003` - Time Is a Dependency.
+- Outcome: Approve.
+
+Freeze result:
+
+- Chapter 10 is canonical-ready and is now registered as `canonical` in `knowledge/index.yaml`.
+- `LAW-003` remains `draft`; this follows recent Freeze precedent where the chapter status changes without changing the
+  associated law status.
+- Reader-facing manuscript changed during Freeze Review: no.
+- Canonical brief changed during Freeze Review: no.
+- New PEAK concepts or relationships introduced during Freeze Review: none.
+- Files changed during Freeze Review: `editor/EDITOR_LOG.md`, `knowledge/index.yaml`.
+
+Lifecycle result:
+
+- Passed. Chapter 10 has separate Editorial, Canon, Technical, and Freeze Review entries in lifecycle order.
+- Editorial Review commit `175628111df579eb9a5a80e4a3cc5c7498de4cbc`, Canon Review commit
+  `c15e79910e5b07826240f6468230c68dd8f5bab9`, and Technical Review commit
+  `2d0ab999bc414417d792c1de35d04ef9272bf13a` are ancestors of the freeze baseline.
+- All prior review outcomes permit Freeze.
+
+Manuscript architecture result:
+
+- Passed. Chapter 10 retains the required H2 sequence: Opening Quote, Story, Discussion, Engineering Principle,
+  Architecture Exercise, Principal's Notebook, ADR, Editor's Commentary.
+- Principal's Notebook contains exactly three observations.
+- No unresolved TODO, FIXME, AUTHOR NOTE, placeholder, or TBD markers were found.
+
+Canon, technical, and PEAK result:
+
+- Passed. Chapter 10 teaches `LAW-003` without changing the law text, renumbering law IDs, or creating a new canon
+  relationship.
+- The manuscript remains technically credible for wall-clock versus monotonic time, reset, persistence, timeout state,
+  late completion, retry safety, freshness, ordering, periodic work, clock correction, drift, wrap, diagnostics, and
+  controlled-time tests.
+- Existing relationship set remains unchanged:
+  - `CHAPTER-010 illustrates LAW-003`
+  - `CHAPTER-010 illustrates SMELL-004`
+  - `CHAPTER-010 illustrates SMELL-001`
+  - `CHAPTER-010 references ARTIFACT-005`
+  - `CHAPTER-010 references ARTIFACT-001`
+  - `CHAPTER-010 references METRIC-003`
+- `CHAPTER-010` appears exactly once and is now `canonical`.
+- `LAW-003` appears exactly once and remains `draft`.
+- Chapters 1 through 9 remain canonical.
+- No duplicate relationships, self-edges, missing relationship targets, new PEAK entities, or new PEAK relationships were
+  found.
+
+Boundary result:
+
+- Passed. Chapters 1 through 9, the Chapter 10 canonical brief, the `LAW-003` law file, `CANON.md`, and table of
+  contents were not changed.
+- No Part II architecture, later law, or later-part playbook boundary was consumed.
+
+Validation:
+
+- Gate baseline checks passed for clean tree, matching local and remote tips, lifecycle entry order, prior review commit
+  ancestry, and prior outcomes permitting Freeze.
+- Direct freeze readiness assertions passed for manuscript H2 order, three notebook observations, unresolved marker
+  absence, exact Chapter 10 relationship set, existing relationship targets, single `CHAPTER-010`, canonical Chapters 1
+  through 9, and unchanged `LAW-003`.
+- Direct final status assertions passed for `CHAPTER-010` canonical and `LAW-003` draft.
+- Protected-file checks passed for the manuscript, canonical brief, `LAW-003`, `CANON.md`, table of contents, Chapters 1
+  through 9, and Chapter 10 relationships.
+- `git diff --check`: passed.
+- `npm.cmd run lint:md`: passed.
+- `vale --config .vale.ini editor/EDITOR_LOG.md knowledge/index.yaml`: passed with 0 errors, 0 warnings, and 0
+  suggestions.
+- `npm.cmd run lint:spelling`: passed with 0 spelling issues across 138 checked files.
+- `npm.cmd run lint:links`: passed; 138 links scanned successfully.
+- `python -m pip check`: passed; no broken requirements found.
+- `python -m mkdocs build --strict`: passed.
+- `git ls-files site`: passed; no generated `site/` output is tracked.
+
+Pull request readiness:
+
+- Chapter 10 is ready for a pull request after the freeze commit is pushed.
+- Recommended PR title: `Chapter 10: Time Is a Dependency`
+- Do not merge as part of this gate.

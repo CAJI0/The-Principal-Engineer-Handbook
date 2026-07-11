@@ -319,6 +319,11 @@ entities:
       name: Every Dependency Is a Decision
       path: ../book/02-the-laws/09-every-dependency-is-a-decision.md
       status: canonical
+    - id: CHAPTER-010
+      type: chapter
+      name: Time Is a Dependency
+      path: ../book/02-the-laws/10-time-is-a-dependency.md
+      status: canonical
   adrs:
     - id: ADR-001
       type: adr
@@ -520,5 +525,23 @@ relationships:
     type: references
     to: ARTIFACT-001
   - from: CHAPTER-009
+    type: references
+    to: METRIC-003
+  - from: CHAPTER-010
+    type: illustrates
+    to: LAW-003
+  - from: CHAPTER-010
+    type: illustrates
+    to: SMELL-004
+  - from: CHAPTER-010
+    type: illustrates
+    to: SMELL-001
+  - from: CHAPTER-010
+    type: references
+    to: ARTIFACT-005
+  - from: CHAPTER-010
+    type: references
+    to: ARTIFACT-001
+  - from: CHAPTER-010
     type: references
     to: METRIC-003
