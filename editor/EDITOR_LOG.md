@@ -2964,3 +2964,53 @@ Chronological log of editorial maintenance work.
   - `python -m mkdocs build --strict`: passed.
   - `git ls-files site`: passed; no generated `site/` output is tracked.
 - Next stage: Canon Review.
+
+## Phase 34 Chapter 8 Canon Review
+
+- Chapter: Every API Is a Promise.
+- Stable ID: `CHAPTER-008`.
+- Branch: `chapter8`.
+- Stage: Canon Review.
+- Reviewed Editorial Review commit: `ff1da43be2f0261a8abdd2c3d2d9d4b01ac2f70d`.
+- Manuscript path: `book/02-the-laws/08-every-api-is-a-promise.md`.
+- Canonical brief path: `editor/chapter-briefs/CHAPTER-008-every-api-is-a-promise.md`.
+- Outcome: Approve.
+- Canonical sources checked: `LAW-002`, Chapter 8 canonical brief, Part II table of contents, Chapter 7 manuscript and
+  review precedent, `editor/CHAPTER_ARCHITECTURE.md`, `editor/CANON.md`, `editor/REVIEW_PROCESS.md`,
+  `editor/SOURCE_OF_TRUTH.md`, `knowledge/index.yaml`, and all registered Chapter 8 PEAK concept files.
+- Law compliance result: passed; the chapter treats APIs as observable behavioral promises and preserves the distinction
+  between interface shape, implementation detail, and behavior consumers may rely on.
+- Terminology result: passed; intentional contract, accidental contract, implementation detail, undefined behavior,
+  unsupported behavior, deprecated behavior, errors, compatibility dimensions, migration, and implementation freedom are
+  present as ordinary chapter prose without implying a new PEAK concept.
+- Boundary result: passed; Chapter 7's state-owner material remains a premise rather than a retold thesis, and later
+  dependency, time, flexibility, simplicity, evidence, boundary-design, release, and migration chapters retain their
+  primary material.
+- PEAK concept and relationship result: passed; `LAW-002`, `SMELL-001`, `METRIC-004`, `ARTIFACT-001`, `METRIC-003`, and
+  `VOCAB-001` are materially present, and the registered outgoing Chapter 8 relationships remain unchanged.
+- Section-architecture result: passed; the manuscript keeps the required H2 order and exactly three Principal's Notebook
+  observations.
+- Corrections made during Canon Review: none.
+- Canonical brief changed: no.
+- `knowledge/index.yaml` changed: no.
+- Existing PEAK concept files changed: no.
+- Manuscript changed during Canon Review: no.
+- Validation commands and actual results:
+  - Gate baseline checks: passed; `git fetch --all --prune` completed, `git status --short` was clean, and `HEAD` and
+    `origin/chapter8` were both `ff1da43be2f0261a8abdd2c3d2d9d4b01ac2f70d`.
+  - Direct canon assertions: passed for required law and terminology coverage, required H2 order, exactly three
+    Principal's Notebook observations, expected Chapter 8 PEAK IDs only, `LAW-002` existing exactly once, all registered
+    Chapter 8 outgoing relationships matching the canonical brief, all target PEAK concepts existing, `CHAPTER-008`
+    remaining exactly one `draft` chapter entry, and Chapters 1-7 remaining `canonical`.
+  - `git diff --check`: passed.
+  - Protected-file checks: passed; the canonical brief, `knowledge/index.yaml`, table of contents, `LAW-002`, existing
+    PEAK concept files, and Chapters 1-7 were unchanged.
+  - `npm.cmd run lint:md`: passed with 0 errors across 134 Markdown files.
+  - `vale --config .vale.ini book/02-the-laws/08-every-api-is-a-promise.md editor/EDITOR_LOG.md`: passed with 0
+    errors, 0 warnings, and 0 suggestions.
+  - `npm.cmd run lint:spelling`: passed with 0 spelling issues across 133 checked files.
+  - `npm.cmd run lint:links`: passed; 133 links scanned successfully.
+  - `python -m pip check`: passed; no broken requirements found.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed; no generated `site/` output is tracked.
+- Next stage: Technical Review.
