@@ -3250,3 +3250,50 @@ Chronological log of editorial maintenance work.
     the table of contents, and Chapters 1-8 were unchanged.
 - Changed-file intent for this authoring pass: only the new Chapter 9 manuscript and this editor log entry.
 - Next required stage: Editorial Review.
+
+## Phase 39 Chapter 9 Editorial Review
+
+- Chapter: Every Dependency Is a Decision.
+- Stable ID: `CHAPTER-009`.
+- Branch: `chapter9`.
+- Stage: Editorial Review.
+- Reviewed Author Draft commit: `b0e9e1f33f722c6dcfea657206c20d10ae60a3ab`.
+- Manuscript path: `book/02-the-laws/09-every-dependency-is-a-decision.md`.
+- Canonical brief path: `editor/chapter-briefs/CHAPTER-009-every-dependency-is-a-decision.md`.
+- Primary law: `LAW-007` - Every Dependency Is a Decision.
+- Outcome: Approve with changes.
+- Editorial areas reviewed: opening quote, vendor radio software-kit story, reasonableness of the original dependency
+  choice, dependency spread, syntactic versus semantic isolation, direct and transitive dependency explanation,
+  replacement-cost discussion, imported behavior, imported failure, lifecycle through removal, proportional practice,
+  balanced tradeoff, failure-mode specificity, Principal Engineer role, exercise, Principal's Notebook, ADR, Chapter 8
+  API boundary, and Chapter 10 time boundary.
+- Material editorial changes made: clarified the compiler-version wording in the story, tightened the product-owned
+  outcome sentence around radio availability and permanent failure, and made the canonical law statement read as its own
+  sentence.
+- Structure result: passed; the manuscript keeps the required H2 order from `editor/CHAPTER_ARCHITECTURE.md`.
+- Principal's Notebook count: passed; exactly three concise observations remain.
+- Story result: passed; the vendor radio software-kit choice is reasonable, dependency spread is concrete, and the
+  Principal Engineer changes the work from swapping a library to naming and containing commitments.
+- Boundary result: passed; Chapter 8 API promises are not retaught, and Chapter 10 retains deep temporal analysis.
+- Canon and PEAK graph changed: no.
+- `CHAPTER-009` status changed during Editorial Review: no; it remains `draft`.
+- Registered Chapter 9 relationship set changed during Editorial Review: no.
+- Validation commands and actual results:
+  - Gate baseline checks: passed; `git fetch --all --prune` completed, `git status --short` was clean, and `HEAD` and
+    `origin/chapter9` were both `b0e9e1f33f722c6dcfea657206c20d10ae60a3ab`.
+  - Direct editorial assertions: passed for required H2 order, unique mandatory sections, exactly three Principal's
+    Notebook observations, no unresolved authoring markers, expected Chapter 9 PEAK IDs only, exact `CHAPTER-009`
+    relationship set, `CHAPTER-009` remaining `draft`, and changed files limited to the Chapter 9 manuscript before this
+    log entry.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed with 0 errors across 137 Markdown files.
+  - `vale --config .vale.ini book/02-the-laws/09-every-dependency-is-a-decision.md`: passed with 0 errors, 0 warnings,
+    and 0 suggestions.
+  - `npm.cmd run lint:spelling`: passed with 0 spelling issues across 136 checked files.
+  - `npm.cmd run lint:links`: passed; 136 links scanned successfully.
+  - `python -m pip check`: passed; no broken requirements found.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed; no generated `site/` output is tracked.
+  - Protected-file checks: passed; the canonical brief, `knowledge/index.yaml`, `LAW-007`, `editor/CANON.md`, the table
+    of contents, and Chapters 1-8 were unchanged.
+- Next stage: Canon Review.

@@ -18,7 +18,7 @@ The vendor provided a software kit for the radio.
 It supported the selected hardware. It had example initialization code. It handled protocol details the team did not
 want to rediscover. It came with a test application that had already moved packets on the evaluation board. The vendor
 also had errata notes that looked painful but useful: timing around wake, a recommended retry sequence after channel
-loss, and a narrow compiler range the kit had been validated against.
+loss, and a narrow compiler version range the kit had been validated against.
 
 Using it was not foolish.
 
@@ -99,9 +99,9 @@ The diagram looked less like a driver boundary and more like a product decision.
 The team changed the work from "swap the library" to "name and contain the commitments."
 
 They kept the vendor kit. The new part still solved a real hardware and schedule problem. But the product boundary
-changed. The integration layer now promised product-owned behavior: radio ready, send accepted, send completed, receive
-available, unavailable, safe to retry, not supported, and failed. Vendor errors were translated into those categories before
-they left the integration layer. Callback context was normalized so product consumers did not depend on where the vendor
+changed. The integration layer now named product-owned outcomes: radio ready, send accepted, send completed, receive
+available, radio unavailable, safe to retry, unsupported, and permanently failed. Vendor errors were translated into
+those categories before they left the integration layer. Callback context was normalized so product consumers did not depend on where the vendor
 called from. Buffer ownership was defined in product terms. Tests were rewritten around the product contract instead of
 vendor behavior. The fixture waited for product-level calibration readiness, not a vendor event name. Service tooling
 displayed product meanings and kept the vendor detail only as diagnostic context. The compiler and kit version became
@@ -128,7 +128,7 @@ file format, a build image, a compiler, a release tool, a production fixture, a 
 internal platform owned by another team. If the system relies on it and cannot change it freely, the decision carries
 architectural cost.
 
-The law statement is simple: Every dependency commits the system to behavior, failure modes, lifecycle constraints, ownership boundaries, and replacement cost.
+The law statement is simple. Every dependency commits the system to behavior, failure modes, lifecycle constraints, ownership boundaries, and replacement cost.
 
 This does not mean dependencies are bad. The radio software kit was useful. It reduced schedule risk, brought hardware
 knowledge the team did not have, and helped the product reach its first release. Many good engineering decisions depend
