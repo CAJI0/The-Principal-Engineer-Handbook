@@ -3930,3 +3930,100 @@ Pull request readiness:
 - Chapter 10 is ready for a pull request after the freeze commit is pushed.
 - Recommended PR title: `Chapter 10: Time Is a Dependency`
 - Do not merge as part of this gate.
+
+## Phase 49 Chapter 11 Canonical Brief Registration
+
+- Chapter: Unused Flexibility Is Waste.
+- Stable ID: `CHAPTER-011`.
+- Branch: `chapter11`.
+- Stage: Canonical Brief Registration.
+- Verified baseline `origin/main`: `96aeb1a6f2dca7d0cd3639a2298d3ba4ae05e4a6`.
+- PR #12 squash commit: `96aeb1a6f2dca7d0cd3639a2298d3ba4ae05e4a6`.
+- Chapter 10 feature-branch Freeze commit used for tree-equivalence check:
+  `e088cb9db2a3d4c1e774bc9c4793ced363505e15`.
+- Primary law: `LAW-006` - Unused Flexibility Is Waste.
+- Outcome: Approve.
+- Canonical brief path: `editor/chapter-briefs/CHAPTER-011-unused-flexibility-is-waste.md`.
+- Expected manuscript path: `book/02-the-laws/11-unused-flexibility-is-waste.md`.
+- Reader-facing manuscript created: no.
+- Index registration: `CHAPTER-011` added as `draft` with path
+  `../book/02-the-laws/11-unused-flexibility-is-waste.md`.
+- Exact outgoing relationship set:
+  - `CHAPTER-011 illustrates LAW-006`
+  - `CHAPTER-011 illustrates SMELL-003`
+  - `CHAPTER-011 illustrates SMELL-005`
+  - `CHAPTER-011 references ANTIPATTERN-006`
+  - `CHAPTER-011 references VOCAB-001`
+  - `CHAPTER-011 references METRIC-001`
+  - `CHAPTER-011 references METRIC-003`
+  - `CHAPTER-011 references ARTIFACT-001`
+  - `CHAPTER-011 references ARTIFACT-003`
+- Concepts selected: `LAW-006`, `SMELL-003`, `SMELL-005`, `ANTIPATTERN-006`, `VOCAB-001`, `METRIC-001`,
+  `METRIC-003`, `ARTIFACT-001`, and `ARTIFACT-003`.
+- Concepts considered but not registered as outgoing Chapter 11 relationships: `VOCAB-005`, `RITUAL-003`, `LAW-004`,
+  `LAW-005`, `FAILURE-001`, `SMELL-002`, and `SMELL-001`.
+- New PEAK concept created: no.
+- Law ID changed or renumbered: no.
+- `LAW-006` law file changed: no.
+- Chapters 1-10 changed: no.
+- Changed files:
+  - `editor/chapter-briefs/CHAPTER-011-unused-flexibility-is-waste.md`
+  - `editor/EDITOR_LOG.md`
+  - `knowledge/index.yaml`
+- Baseline validation already run:
+  - `git fetch --all --prune`: passed.
+  - `git status --short`: passed with a clean working tree before editing.
+  - `git switch main`: passed; `main` was already checked out and up to date with `origin/main`.
+  - `git pull --ff-only origin main`: passed; already up to date.
+  - `git rev-parse HEAD`: returned `96aeb1a6f2dca7d0cd3639a2298d3ba4ae05e4a6`.
+  - `git rev-parse origin/main`: returned `96aeb1a6f2dca7d0cd3639a2298d3ba4ae05e4a6`.
+  - `git show --no-patch --format=fuller 96aeb1a6f2dca7d0cd3639a2298d3ba4ae05e4a6`: confirmed PR #12 squash
+    commit subject and included Chapter 10 lifecycle commits in the message.
+  - `git rev-list --parents -n 1 96aeb1a6f2dca7d0cd3639a2298d3ba4ae05e4a6`: confirmed one-parent squash topology with
+    parent `845755ab99988317229946c93f419cc79d4315a0`.
+  - `git diff --exit-code e088cb9db2a3d4c1e774bc9c4793ced363505e15
+    96aeb1a6f2dca7d0cd3639a2298d3ba4ae05e4a6 -- [Chapter 10 lifecycle paths]`: passed; final Chapter 10 file trees
+    are equivalent for the checked paths.
+  - `git branch --list chapter11`: passed; no local branch existed before creation.
+  - `git branch -r --list origin/chapter10 origin/chapter11`: passed; no remote Chapter 10 or Chapter 11 feature branch
+    existed.
+  - `git ls-files site`: passed; no tracked `site/` output.
+  - Direct YAML baseline assertions: passed for Chapters 1-10 canonical, exact `LAW-003`, exact `LAW-006`, absent
+    `CHAPTER-011`, and absent Chapter 11 manuscript and brief paths.
+  - Direct Chapter 10 lifecycle assertions: passed for Phase 45, 46, 47, and 48 in order.
+- Branch creation:
+  - `git switch -c chapter11 origin/main`: passed.
+  - `git branch --show-current`: returned `chapter11`.
+  - `git rev-parse HEAD`: returned `96aeb1a6f2dca7d0cd3639a2298d3ba4ae05e4a6`.
+  - `git status --short`: passed with a clean working tree after branch creation.
+- Governing-material read: passed for repository governance, source-of-truth policy, current Part II chapter
+  architecture, PEAK index and selected concept files, Chapter 7 through Chapter 10 canonical briefs, Chapter 7 through
+  Chapter 10 manuscript architecture, all relevant PEAK laws and supporting concepts, recent Chapter 10 registration and
+  Freeze precedent, and current validation commands. The prompt's `book/TOC.md` path does not exist; the repository
+  table of contents was read from `book/00-front-matter/table-of-contents.md`.
+- Pre-log validation already run:
+  - Direct Chapter 11 YAML assertions: passed for exact `CHAPTER-011` metadata, Chapters 1-10 remaining canonical,
+    absent Chapter 11 manuscript, and exact proposed Chapter 11 relationships.
+  - Direct brief assertions: passed for brief existence, manuscript absence, required metadata, and no unresolved
+    authoring markers.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed with 0 errors across 140 Markdown files.
+  - `vale --config .vale.ini editor/chapter-briefs/CHAPTER-011-unused-flexibility-is-waste.md`: passed with 0 errors, 0
+    warnings, and 0 suggestions after wording cleanup.
+- Final validation completed after this log entry:
+  - Direct Chapter 11 PEAK assertions: passed for exact `CHAPTER-011` metadata, Chapters 1-10 remaining canonical,
+    exact `LAW-006` metadata, absent Chapter 11 manuscript, and exact Chapter 11 relationship set.
+  - Changed-file and brief-boundary assertions: passed for expected changed files only, brief existence, manuscript
+    absence, and no unresolved authoring markers.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed with 0 errors across 140 Markdown files.
+  - `vale --config .vale.ini editor/chapter-briefs/CHAPTER-011-unused-flexibility-is-waste.md editor/EDITOR_LOG.md`:
+    passed with 0 errors, 0 warnings, and 0 suggestions.
+  - `npm.cmd run lint:spelling`: passed with 0 spelling issues across 139 checked files.
+  - `npm.cmd run lint:links`: passed; 139 links scanned successfully.
+  - `python -m pip check`: passed; no broken requirements found.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed; no generated `site/` output is tracked.
+- Next required lifecycle stage: Author Draft after author approval.
+- Do not perform Author Draft, Editorial Review, Canon Review, Technical Review, Freeze Review, PR creation, or merge as
+  part of this phase.
