@@ -2730,6 +2730,66 @@ Chronological log of editorial maintenance work.
   - `git ls-files site`: passed; no generated `site/` output is tracked.
 - Next stage: Technical Review.
 
+## Phase 41 Chapter 9 Technical Review
+
+- Chapter: Every Dependency Is a Decision.
+- Stable ID: `CHAPTER-009`.
+- Branch: `chapter9`.
+- Stage: Technical Review.
+- Reviewed Canon Review commit: `bf5ab66df5d9009e9e4d5d1e7616b0c08c53c76e`.
+- Manuscript path: `book/02-the-laws/09-every-dependency-is-a-decision.md`.
+- Outcome: Approve.
+- Technical domains reviewed: compile-time dependencies, runtime dependencies, hardware dependencies, protocol and
+  format dependencies, tool-chain dependencies, vendor software-kit dependencies, direct and transitive dependencies,
+  wrapper design, syntactic and semantic isolation, callback context, task-context assumptions, memory ownership, error
+  normalization, retry behavior, release cadence, manufacturing calibration, service tooling, version skew, update
+  ownership, support horizon, replacement cost, contract tests, integration tests, observability, exit triggers,
+  dependency direction, failure propagation, and ADR consequences.
+- Direct and transitive dependency result: passed; the chapter treats direct dependencies as visible choices and
+  transitive dependencies as relevant when their behavior leaks into product semantics, tests, timing, storage,
+  threading, reset behavior, release constraints, or support horizon.
+- Syntactic and semantic isolation result: passed; the chapter states that wrappers can hide names and calls but do not
+  automatically isolate callback model, execution context, memory ownership, error meanings, timing, lifecycle, or
+  release process.
+- Failure and lifecycle result: passed; unavailability, latency, retry behavior, version skew, resource exhaustion,
+  support loss, update, deprecation, replacement, and removal are treated as dependency commitments without consuming
+  Chapter 10's deeper time law.
+- Dependency-direction result: passed; the chapter explains that product code should depend on a stable product contract
+  while volatile dependency detail remains behind a bounded integration layer, without becoming a Clean Architecture
+  tutorial.
+- Replacement-cost result: passed; replacement cost is broader than code change and includes migration, tests, tooling,
+  operations, support, shipped compatibility, release coordination, confidence rebuilding, and customer migration risk.
+- Vendor story result: passed; the radio software-kit story is credible in callback model, buffer ownership, compiler
+  support, error and retry semantics, test harness coupling, manufacturing and service coupling, support lifecycle, and
+  replacement steps.
+- ADR result: passed; the chapter-local ADR makes a genuine decision, accepts the dependency deliberately, contains its
+  spread, assigns update ownership, preserves product-owned semantics, and acknowledges remaining risk.
+- Technical overstatement result: passed; the chapter avoids claims that wrappers guarantee replacement, interfaces
+  remove semantic coupling, all transitive dependencies are runtime risks, all dependencies deserve equal governance,
+  internal dependencies are costless, vendor dependencies are inherently bad, build-time dependencies cannot affect
+  runtime behavior, contract tests prove cheap replacement, ADRs remove risk, dependency direction alone solves
+  lifecycle risk, or removal is merely deleting an import.
+- Manuscript changed during Technical Review: no.
+- Canon and PEAK graph changed: no.
+- Validation commands and actual results:
+  - Gate baseline checks: passed; `git status --short` was clean, and `HEAD` and `origin/chapter9` were both
+    `bf5ab66df5d9009e9e4d5d1e7616b0c08c53c76e`.
+  - Direct technical assertions: passed for required technical topics, forbidden overstatements absent, required H2
+    order, exactly three Principal's Notebook observations, exact Chapter 9 relationship set, and `CHAPTER-009`
+    remaining `draft`.
+  - `git diff --check`: passed.
+  - Protected-file checks: passed; the manuscript, canonical brief, `knowledge/index.yaml`, `LAW-007`, existing PEAK
+    concept files, `editor/CANON.md`, table of contents, and Chapters 1-8 were unchanged.
+  - `npm.cmd run lint:md`: passed with 0 errors across 137 Markdown files.
+  - `vale --config .vale.ini book/02-the-laws/09-every-dependency-is-a-decision.md editor/EDITOR_LOG.md`: passed with 0
+    errors, 0 warnings, and 0 suggestions.
+  - `npm.cmd run lint:spelling`: passed with 0 spelling issues across 136 checked files.
+  - `npm.cmd run lint:links`: passed; 136 links scanned successfully.
+  - `python -m pip check`: passed; no broken requirements found.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed; no generated `site/` output is tracked.
+- Next stage: Freeze Review.
+
 ## Phase 28 Chapter 7 Canon Review
 
 - Chapter: Every State Has One Owner.
