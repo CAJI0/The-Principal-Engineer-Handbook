@@ -3014,3 +3014,50 @@ Chronological log of editorial maintenance work.
   - `python -m mkdocs build --strict`: passed.
   - `git ls-files site`: passed; no generated `site/` output is tracked.
 - Next stage: Technical Review.
+
+## Phase 35 Chapter 8 Technical Review
+
+- Chapter: Every API Is a Promise.
+- Stable ID: `CHAPTER-008`.
+- Branch: `chapter8`.
+- Stage: Technical Review.
+- Reviewed Canon Review commit: `d14a5be6bca051c837e9bedd3a075197645f21ae`.
+- Manuscript path: `book/02-the-laws/08-every-api-is-a-promise.md`.
+- Outcome: Approve.
+- Technical domains reviewed: C API semantics, synchronous completion versus asynchronous request acceptance, callback
+  and event context, task and ISR expectations, blocking behavior, repeated calls, retries, duplicate requests, partial
+  success, error classification, persistence and reset behavior, ownership and lifetime, compatibility dimensions,
+  versioning, deprecation, adapters, tests, service consumers, manufacturing consumers, and ADR consequences.
+- Asynchronous and completion result: passed; the chapter distinguishes request acceptance from hardware completion without
+  implying that asynchronous APIs are always better or that blocking APIs are always wrong.
+- Error and retry result: passed; invalid input, rejected request, queued request, unavailable radio, failed application,
+  retry behavior, duplicate requests, and repeated-call behavior are treated as part of the API promise.
+- Compatibility result: passed; source, binary, wire, behavioral, data, and operational compatibility are distinguished,
+  and the chapter does not imply that unchanged signatures, version numbers, additive changes, documentation, adapters,
+  or tests alone guarantee compatibility.
+- Ownership and lifetime result: passed; callback data, request data, persisted channel state, last requested channel,
+  last applied channel, supported execution context, and reset interpretation are named as reviewable contract concerns.
+- Migration and ADR result: passed; the story-local ADR makes a genuine decision, acknowledges migration work and adapter
+  retirement cost, and preserves implementation freedom by making the promise explicit.
+- Technical overstatement result: passed; the chapter avoids claims that internal APIs are free to change, all retries
+  are safe, all repeated calls are idempotent, every timeout has the same meaning, or deprecation can remain indefinitely.
+- Manuscript changed during Technical Review: no.
+- Canon and PEAK graph changed: no.
+- Validation commands and actual results:
+  - Gate baseline checks: passed; `git fetch --all --prune` completed, `git status --short` was clean, and `HEAD` and
+    `origin/chapter8` were both `d14a5be6bca051c837e9bedd3a075197645f21ae`.
+  - Direct technical assertions: passed for required technical topics, forbidden overstatements absent, required H2
+    order, exactly three Principal's Notebook observations, expected Chapter 8 PEAK IDs only, and `CHAPTER-008`
+    remaining `draft`.
+  - `git diff --check`: passed.
+  - Protected-file checks: passed; the manuscript, canonical brief, `knowledge/index.yaml`, existing PEAK concept files,
+    and Chapters 1-7 were unchanged.
+  - `npm.cmd run lint:md`: passed with 0 errors across 134 Markdown files.
+  - `vale --config .vale.ini book/02-the-laws/08-every-api-is-a-promise.md editor/EDITOR_LOG.md`: passed with 0
+    errors, 0 warnings, and 0 suggestions.
+  - `npm.cmd run lint:spelling`: passed with 0 spelling issues across 133 checked files.
+  - `npm.cmd run lint:links`: passed; 133 links scanned successfully.
+  - `python -m pip check`: passed; no broken requirements found.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed; no generated `site/` output is tracked.
+- Next stage: Freeze Review.
