@@ -4027,3 +4027,84 @@ Pull request readiness:
 - Next required lifecycle stage: Author Draft after author approval.
 - Do not perform Author Draft, Editorial Review, Canon Review, Technical Review, Freeze Review, PR creation, or merge as
   part of this phase.
+
+## Phase 50 Chapter 11 Author Draft
+
+- Chapter: Unused Flexibility Is Waste.
+- Stable ID: `CHAPTER-011`.
+- Branch: `chapter11`.
+- Stage: Author Draft.
+- Author Draft baseline: `042398b0202c973606b459a1f98fdf2aecb4f972`.
+- Baseline relationship to `origin/main`: `origin/main` is an ancestor of `chapter11`.
+- Manuscript path: `book/02-the-laws/11-unused-flexibility-is-waste.md`.
+- Canonical brief path: `editor/chapter-briefs/CHAPTER-011-unused-flexibility-is-waste.md`.
+- Primary law: `LAW-006` - Unused Flexibility Is Waste.
+- Lifecycle status after this phase: reader-facing draft exists; `CHAPTER-011` remains `draft`.
+- Outcome: Author Draft added.
+- Reader-facing manuscript created: yes.
+- Canonical brief changed during Author Draft: no.
+- `LAW-006` law file changed during Author Draft: no.
+- `knowledge/index.yaml` changed during Author Draft: no.
+- `CANON.md` changed during Author Draft: no.
+- Table of contents changed during Author Draft: no.
+- Chapters 1-10 changed during Author Draft: no.
+- Generated output committed: no.
+- Exact outgoing relationship set preserved:
+  - `CHAPTER-011 illustrates LAW-006`
+  - `CHAPTER-011 illustrates SMELL-003`
+  - `CHAPTER-011 illustrates SMELL-005`
+  - `CHAPTER-011 references ANTIPATTERN-006`
+  - `CHAPTER-011 references VOCAB-001`
+  - `CHAPTER-011 references METRIC-001`
+  - `CHAPTER-011 references METRIC-003`
+  - `CHAPTER-011 references ARTIFACT-001`
+  - `CHAPTER-011 references ARTIFACT-003`
+- PEAK concepts used in the manuscript: `LAW-006`, `SMELL-003`, `SMELL-005`, `ANTIPATTERN-006`, `VOCAB-001`,
+  `METRIC-001`, `METRIC-003`, `ARTIFACT-001`, and `ARTIFACT-003`.
+- New PEAK concept created or implied as canon: no.
+- Story shape: embedded radio or communication service overbuilt for future products, with dormant transports, runtime
+  modes, build flags, prototype compatibility behavior, test-only configuration, and unsupported combinations making a
+  narrow field defect in the shipped transport harder to diagnose and review.
+- Principal Engineer move: recasts the subsystem from a flexible service to unowned options charging rent.
+- Engineering Principle: keep flexibility only when it protects real uncertainty or supports an owned variation;
+  otherwise remove the option and preserve only the smallest seam justified by evidence.
+- Architecture Exercise: `Audit One Flexibility Point`.
+- Chapter ADR: `Remove Unsupported Runtime Modes and Preserve One Transport Seam`.
+- Boundary result: Chapter 12's broader simplicity argument is preserved; Chapter 13's evidence-quality argument is
+  preserved; no product-line, platform-governance, Deletion Day, framework-design, or legacy-deletion playbook was
+  introduced.
+- Changed files:
+  - `book/02-the-laws/11-unused-flexibility-is-waste.md`
+  - `editor/EDITOR_LOG.md`
+- Pre-log validation already run:
+  - Direct manuscript assertions: passed for exact H2 order, mandatory sections once, exactly three Principal's Notebook
+    observations, unresolved marker absence, exact law statement, registered PEAK concept coverage, Chapter 12 and
+    Chapter 13 boundary mentions, and `CHAPTER-011` remaining `draft`.
+  - Direct protected-file assertions: passed for unchanged canonical brief, `knowledge/index.yaml`, `LAW-006`,
+    `CANON.md`, and table of contents before log entry.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed with 0 errors across 141 Markdown files.
+  - `vale --config .vale.ini book/02-the-laws/11-unused-flexibility-is-waste.md`: passed with 0 errors, 0 warnings, and
+    0 suggestions after wording cleanup.
+- Final validation completed after this log entry:
+  - Direct manuscript assertions: passed for exact H2 order, mandatory sections once, exactly three Principal's Notebook
+    observations, unresolved marker absence, exact law statement, registered PEAK concept coverage, Chapter 12 and
+    Chapter 13 boundary mentions, and `CHAPTER-011` remaining `draft`.
+  - Direct PEAK graph assertions: passed for exact Chapter 11 relationship set and `CHAPTER-011` remaining `draft`.
+  - Direct protected-file assertions: passed for unchanged canonical brief, `knowledge/index.yaml`, `LAW-006`,
+    `CANON.md`, and table of contents.
+  - Changed-file assertions: passed for expected changed files only. `git status --short` showed only the new manuscript
+    and this log entry; `git diff --name-only` showed only tracked log changes before staging because the new manuscript
+    had not been added to the index yet.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed with 0 errors across 141 Markdown files.
+  - `vale --config .vale.ini book/02-the-laws/11-unused-flexibility-is-waste.md editor/EDITOR_LOG.md`: passed with 0
+    errors, 0 warnings, and 0 suggestions.
+  - `npm.cmd run lint:spelling`: passed with 0 spelling issues across 140 checked files.
+  - `npm.cmd run lint:links`: passed; 140 links scanned successfully.
+  - `python -m pip check`: passed; no broken requirements found.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed; no generated `site/` output is tracked.
+- Next required lifecycle stage: Editorial Review after this gate is committed and pushed.
+- Do not perform Editorial Review, Canon Review, Technical Review, Freeze Review, PR creation, or merge as part of this
+  phase.
