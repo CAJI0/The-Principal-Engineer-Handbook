@@ -2805,3 +2805,313 @@ Chronological log of editorial maintenance work.
   - `python -m mkdocs build --strict`: passed.
   - `git ls-files site`: passed; no generated `site/` output is tracked.
 - Next action: Open a Chapter 7 pull request; do not merge in this workflow.
+
+## Phase 31 Chapter 8 Canonical Brief Registration
+
+- Chapter: Every API Is a Promise.
+- Stable ID: `CHAPTER-008`.
+- Branch: `chapter8`.
+- Lifecycle stage: Canonical brief registration.
+- Verified baseline `origin/main`: `0776ab64b48d4e36a9b952964ab5739b9eaf55d2`.
+- Baseline meaning: Chapter 7 merge commit, `Chapter 7: Every State Has One Owner (#9)`.
+- Chapter 7 merge and lifecycle confirmation: passed; Chapter 7 exists, `CHAPTER-007` is registered as `canonical`, and
+  Editorial, Canon, Technical, and Freeze Review entries are present in order.
+- Canonical brief created: `editor/chapter-briefs/CHAPTER-008-every-api-is-a-promise.md`.
+- Reader-facing manuscript created: no.
+- Index registration: `CHAPTER-008` added as `draft` at `book/02-the-laws/08-every-api-is-a-promise.md`.
+- Primary law: `LAW-002` - Every API Is a Promise.
+- Exact outgoing relationships registered:
+  - `CHAPTER-008 illustrates LAW-002`.
+  - `CHAPTER-008 illustrates SMELL-001`.
+  - `CHAPTER-008 references METRIC-004`.
+  - `CHAPTER-008 references ARTIFACT-001`.
+  - `CHAPTER-008 references METRIC-003`.
+  - `CHAPTER-008 references VOCAB-001`.
+- Concepts selected: `LAW-002`, `SMELL-001`, `METRIC-004`, `ARTIFACT-001`, `METRIC-003`, and `VOCAB-001`.
+- Concepts considered but not registered for Chapter 8: `ARTIFACT-002`, `ARTIFACT-005`, `RITUAL-001`, `FAILURE-002`,
+  `LAW-001`, `LAW-003`, `ANTIPATTERN-005`, and `ANTIPATTERN-002`.
+- New PEAK concepts created: none.
+- Changed-file intent: only the Chapter 8 canonical brief, `knowledge/index.yaml`, and this editor log entry.
+- Validation commands and actual results:
+  - `git fetch --all --prune`: passed.
+  - `git status --short`: passed before branch creation with a clean working tree.
+  - `git switch main`: passed; local `main` was already current.
+  - `git pull --ff-only origin main`: passed; already up to date.
+  - `git rev-parse HEAD`: returned `0776ab64b48d4e36a9b952964ab5739b9eaf55d2`.
+  - `git rev-parse origin/main`: returned `0776ab64b48d4e36a9b952964ab5739b9eaf55d2`.
+  - Pre-branch prerequisite checks: passed for clean tree, `HEAD == origin/main`, Chapter 7 merge commit presence,
+    Chapter 7 manuscript presence, Chapter 7 canonical status, Chapter 7 review history, absent `CHAPTER-008`, absent
+    Chapter 8 brief, absent Chapter 8 manuscript, absent local and remote `chapter8` branches, and no tracked `site/`
+    output.
+  - `git switch -c chapter8 origin/main`: passed.
+  - Branch verification: passed; `chapter8` started at `0776ab64b48d4e36a9b952964ab5739b9eaf55d2` with a clean working
+    tree.
+  - Direct YAML and file-boundary assertions: passed for exactly one `CHAPTER-008`, exact metadata, `draft` status,
+    Chapters 1-7 remaining `canonical`, exact six outgoing Chapter 8 relationships, relationship target existence,
+    duplicate-edge and self-edge checks, canonical brief existence, manuscript absence, no new PEAK ID except
+    `CHAPTER-008`, no tracked `site/` output, and changed files limited to expected registration files.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed with 0 errors across 133 Markdown files.
+  - Initial targeted Vale and spelling runs failed on wording not present in the local dictionaries; the brief was
+    revised to use repository-friendly wording such as `retry behavior`, `repeated-call behavior`, and `asynchronous`.
+  - `vale --config .vale.ini editor/chapter-briefs/CHAPTER-008-every-api-is-a-promise.md editor/EDITOR_LOG.md`: passed
+    after revision with 0 errors, 0 warnings, and 0 suggestions.
+  - `npm.cmd run lint:spelling`: passed after revision with 0 spelling issues across 132 checked files.
+  - `npm.cmd run lint:links`: passed; 132 links scanned successfully.
+  - `python -m pip check`: passed; no broken requirements found.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed; no generated `site/` output is tracked.
+- Next lifecycle stage: Author Draft after author approval.
+
+## Phase 32 Chapter 8 Author Draft
+
+- Chapter: Every API Is a Promise.
+- Stable ID: `CHAPTER-008`.
+- Branch: `chapter8`.
+- Lifecycle stage: Author Draft.
+- Starting HEAD for this authoring pass: `c2a31ff6e1c2e694e70468d821118d002f65eca7`.
+- Verified baseline `origin/main`: `0776ab64b48d4e36a9b952964ab5739b9eaf55d2`.
+- Canonical brief used: `editor/chapter-briefs/CHAPTER-008-every-api-is-a-promise.md`.
+- Manuscript path created: `book/02-the-laws/08-every-api-is-a-promise.md`.
+- Story used: firmware radio service API `radio_set_channel(uint8_t channel)` whose unchanged signature hid a change
+  from blocking hardware completion to queued request acceptance.
+- Engineering Principle used: Treat every observable boundary as a contract; specify what consumers may rely on,
+  preserve those promises deliberately, and make incompatible change explicit instead of hiding it behind an unchanged
+  interface.
+- Architecture Exercise used: Write the Promise Behind One API.
+- Principal's Notebook observations: exactly 3.
+- Chapter-local ADR present: yes; `Separate Channel-Change Acceptance from Completion`.
+- PEAK concepts used: `LAW-002`, `SMELL-001`, `METRIC-004`, `ARTIFACT-001`, `METRIC-003`, and `VOCAB-001`.
+- New PEAK concepts created: none.
+- PEAK relationships changed during Author Draft: no.
+- `knowledge/index.yaml` changed during Author Draft: no.
+- Canonical brief changed during Author Draft: no.
+- Existing PEAK concept files changed during Author Draft: no.
+- Chapters 1-7 changed during Author Draft: no.
+- Validation commands and actual results:
+  - `git fetch --all --prune`: passed.
+  - `git switch chapter8`: passed; branch was already current.
+  - `git status --short`: passed before editing with a clean working tree.
+  - `git rev-parse HEAD`: returned `c2a31ff6e1c2e694e70468d821118d002f65eca7`.
+  - `git rev-parse origin/chapter8`: returned `c2a31ff6e1c2e694e70468d821118d002f65eca7`.
+  - `git rev-parse origin/main`: returned `0776ab64b48d4e36a9b952964ab5739b9eaf55d2`.
+  - Required preflight checks: passed for clean tree, `HEAD == origin/chapter8`, expected brief-registration commit
+    subject, existing canonical brief, absent reader-facing manuscript, `CHAPTER-008` registered exactly once as
+    `draft`, Chapters 1-7 remaining `canonical`, and no prior Chapter 8 Author Draft or review entry.
+  - Governing-material read: passed for editor governance, source-of-truth policy, PEAK index and registered concepts,
+    table of contents, Chapter 8 canonical brief, Chapter 7, current chapter template, and Author Draft precedent.
+  - Direct manuscript checks: passed for exact manuscript path, one H1, required H2 order, nonempty required sections,
+    exactly three Principal's Notebook observations, no `TODO`/`FIXME`/`AUTHOR NOTE`, no conflict markers, expected
+    Chapter 8 PEAK IDs only, and all registered Chapter 8 PEAK IDs present.
+  - Direct PEAK checks: passed; `CHAPTER-008` remained exactly one `draft` chapter and Chapters 1-7 remained
+    `canonical`.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed with 0 errors across 134 Markdown files.
+  - Initial targeted Vale and spelling runs failed on a bootloader wording; the manuscript text was revised to use
+    `bootloader code`.
+  - `vale --config .vale.ini book/02-the-laws/08-every-api-is-a-promise.md`: passed after revision with 0 errors, 0
+    warnings, and 0 suggestions.
+  - `npm.cmd run lint:spelling`: passed after revision with 0 spelling issues across 133 checked files.
+  - `npm.cmd run lint:links`: passed; 133 links scanned successfully.
+  - `python -m pip check`: passed; no broken requirements found.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed; no generated `site/` output is tracked.
+  - Protected-file checks: passed; the canonical brief, `knowledge/index.yaml`, existing PEAK concept files, and
+    Chapters 1-7 were unchanged.
+- Changed-file intent for this authoring pass: only the new Chapter 8 manuscript and this editor log entry.
+- Next required stage: Editorial Review.
+
+## Phase 33 Chapter 8 Editorial Review
+
+- Chapter: Every API Is a Promise.
+- Stable ID: `CHAPTER-008`.
+- Branch: `chapter8`.
+- Stage: Editorial Review.
+- Reviewed Author Draft commit: `6586435c730f787c24f944911948750a18bb4daa`.
+- Manuscript path: `book/02-the-laws/08-every-api-is-a-promise.md`.
+- Canonical brief path: `editor/chapter-briefs/CHAPTER-008-every-api-is-a-promise.md`.
+- Outcome: Approve with changes.
+- Editorial areas reviewed: opening quote, radio-channel story, synchronous completion versus asynchronous acceptance,
+  unchanged signature versus changed promise, local-fix proposals, principal-engineer intervention, discussion flow,
+  terminology consistency, internal API compatibility cost, compatibility dimensions, Engineering Principle,
+  Architecture Exercise, Principal's Notebook, ADR, Editor's Commentary, Chapter 7 boundary, and later Part II
+  boundaries.
+- Material editorial changes made: clarified that the service application reported the displayed channel value, replaced
+  a UI reference with service-application wording, tightened one story transition, softened a compatibility-evolution
+  sentence, clarified the undocumented-behavior paragraph, and repaired one awkward line break in the internal-API cost
+  discussion.
+- Structure result: passed; the manuscript keeps the required H2 order from `editor/CHAPTER_ARCHITECTURE.md`.
+- Principal's Notebook count: passed; exactly three concise observations remain.
+- Story result: passed; the radio-channel story concretely shows an unchanged `radio_set_channel(uint8_t channel)`
+  signature hiding a change from blocking hardware completion to queued request acceptance.
+- Editorial boundary result: passed; Chapter 7 state ownership is not retold, and later dependency, time, flexibility,
+  simplicity, evidence, boundary-design, release, and migration material remains reserved for later chapters.
+- Canon and PEAK graph changed: no.
+- Validation commands and actual results:
+  - Gate baseline checks: passed; `git fetch --all --prune` completed, `git status --short` was clean, and `HEAD` and
+    `origin/chapter8` were both `6586435c730f787c24f944911948750a18bb4daa`.
+  - Direct editorial assertions: passed for required H2 order, unique mandatory sections, exactly three Principal's
+    Notebook observations, no unresolved authoring markers, expected Chapter 8 PEAK IDs only, `CHAPTER-008` registered
+    exactly once as `draft`, and changed files limited to the Chapter 8 manuscript before this log entry.
+  - `git diff --check`: passed.
+  - `vale --config .vale.ini book/02-the-laws/08-every-api-is-a-promise.md`: passed with 0 errors, 0 warnings, and 0
+    suggestions.
+  - `npm.cmd run lint:md`: passed with 0 errors across 134 Markdown files.
+  - `npm.cmd run lint:spelling`: passed with 0 spelling issues across 133 checked files.
+  - `npm.cmd run lint:links`: passed after rerun outside the sandbox; 133 links scanned successfully. The first sandbox
+    run used an incorrect sandbox working directory and returned 0 glob results.
+  - `python -m pip check`: passed; no broken requirements found.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed; no generated `site/` output is tracked.
+- Next stage: Canon Review.
+
+## Phase 34 Chapter 8 Canon Review
+
+- Chapter: Every API Is a Promise.
+- Stable ID: `CHAPTER-008`.
+- Branch: `chapter8`.
+- Stage: Canon Review.
+- Reviewed Editorial Review commit: `ff1da43be2f0261a8abdd2c3d2d9d4b01ac2f70d`.
+- Manuscript path: `book/02-the-laws/08-every-api-is-a-promise.md`.
+- Canonical brief path: `editor/chapter-briefs/CHAPTER-008-every-api-is-a-promise.md`.
+- Outcome: Approve.
+- Canonical sources checked: `LAW-002`, Chapter 8 canonical brief, Part II table of contents, Chapter 7 manuscript and
+  review precedent, `editor/CHAPTER_ARCHITECTURE.md`, `editor/CANON.md`, `editor/REVIEW_PROCESS.md`,
+  `editor/SOURCE_OF_TRUTH.md`, `knowledge/index.yaml`, and all registered Chapter 8 PEAK concept files.
+- Law compliance result: passed; the chapter treats APIs as observable behavioral promises and preserves the distinction
+  between interface shape, implementation detail, and behavior consumers may rely on.
+- Terminology result: passed; intentional contract, accidental contract, implementation detail, undefined behavior,
+  unsupported behavior, deprecated behavior, errors, compatibility dimensions, migration, and implementation freedom are
+  present as ordinary chapter prose without implying a new PEAK concept.
+- Boundary result: passed; Chapter 7's state-owner material remains a premise rather than a retold thesis, and later
+  dependency, time, flexibility, simplicity, evidence, boundary-design, release, and migration chapters retain their
+  primary material.
+- PEAK concept and relationship result: passed; `LAW-002`, `SMELL-001`, `METRIC-004`, `ARTIFACT-001`, `METRIC-003`, and
+  `VOCAB-001` are materially present, and the registered outgoing Chapter 8 relationships remain unchanged.
+- Section-architecture result: passed; the manuscript keeps the required H2 order and exactly three Principal's Notebook
+  observations.
+- Corrections made during Canon Review: none.
+- Canonical brief changed: no.
+- `knowledge/index.yaml` changed: no.
+- Existing PEAK concept files changed: no.
+- Manuscript changed during Canon Review: no.
+- Validation commands and actual results:
+  - Gate baseline checks: passed; `git fetch --all --prune` completed, `git status --short` was clean, and `HEAD` and
+    `origin/chapter8` were both `ff1da43be2f0261a8abdd2c3d2d9d4b01ac2f70d`.
+  - Direct canon assertions: passed for required law and terminology coverage, required H2 order, exactly three
+    Principal's Notebook observations, expected Chapter 8 PEAK IDs only, `LAW-002` existing exactly once, all registered
+    Chapter 8 outgoing relationships matching the canonical brief, all target PEAK concepts existing, `CHAPTER-008`
+    remaining exactly one `draft` chapter entry, and Chapters 1-7 remaining `canonical`.
+  - `git diff --check`: passed.
+  - Protected-file checks: passed; the canonical brief, `knowledge/index.yaml`, table of contents, `LAW-002`, existing
+    PEAK concept files, and Chapters 1-7 were unchanged.
+  - `npm.cmd run lint:md`: passed with 0 errors across 134 Markdown files.
+  - `vale --config .vale.ini book/02-the-laws/08-every-api-is-a-promise.md editor/EDITOR_LOG.md`: passed with 0
+    errors, 0 warnings, and 0 suggestions.
+  - `npm.cmd run lint:spelling`: passed with 0 spelling issues across 133 checked files.
+  - `npm.cmd run lint:links`: passed; 133 links scanned successfully.
+  - `python -m pip check`: passed; no broken requirements found.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed; no generated `site/` output is tracked.
+- Next stage: Technical Review.
+
+## Phase 35 Chapter 8 Technical Review
+
+- Chapter: Every API Is a Promise.
+- Stable ID: `CHAPTER-008`.
+- Branch: `chapter8`.
+- Stage: Technical Review.
+- Reviewed Canon Review commit: `d14a5be6bca051c837e9bedd3a075197645f21ae`.
+- Manuscript path: `book/02-the-laws/08-every-api-is-a-promise.md`.
+- Outcome: Approve.
+- Technical domains reviewed: C API semantics, synchronous completion versus asynchronous request acceptance, callback
+  and event context, task and ISR expectations, blocking behavior, repeated calls, retries, duplicate requests, partial
+  success, error classification, persistence and reset behavior, ownership and lifetime, compatibility dimensions,
+  versioning, deprecation, adapters, tests, service consumers, manufacturing consumers, and ADR consequences.
+- Asynchronous and completion result: passed; the chapter distinguishes request acceptance from hardware completion without
+  implying that asynchronous APIs are always better or that blocking APIs are always wrong.
+- Error and retry result: passed; invalid input, rejected request, queued request, unavailable radio, failed application,
+  retry behavior, duplicate requests, and repeated-call behavior are treated as part of the API promise.
+- Compatibility result: passed; source, binary, wire, behavioral, data, and operational compatibility are distinguished,
+  and the chapter does not imply that unchanged signatures, version numbers, additive changes, documentation, adapters,
+  or tests alone guarantee compatibility.
+- Ownership and lifetime result: passed; callback data, request data, persisted channel state, last requested channel,
+  last applied channel, supported execution context, and reset interpretation are named as reviewable contract concerns.
+- Migration and ADR result: passed; the story-local ADR makes a genuine decision, acknowledges migration work and adapter
+  retirement cost, and preserves implementation freedom by making the promise explicit.
+- Technical overstatement result: passed; the chapter avoids claims that internal APIs are free to change, all retries
+  are safe, all repeated calls are idempotent, every timeout has the same meaning, or deprecation can remain indefinitely.
+- Manuscript changed during Technical Review: no.
+- Canon and PEAK graph changed: no.
+- Validation commands and actual results:
+  - Gate baseline checks: passed; `git fetch --all --prune` completed, `git status --short` was clean, and `HEAD` and
+    `origin/chapter8` were both `d14a5be6bca051c837e9bedd3a075197645f21ae`.
+  - Direct technical assertions: passed for required technical topics, forbidden overstatements absent, required H2
+    order, exactly three Principal's Notebook observations, expected Chapter 8 PEAK IDs only, and `CHAPTER-008`
+    remaining `draft`.
+  - `git diff --check`: passed.
+  - Protected-file checks: passed; the manuscript, canonical brief, `knowledge/index.yaml`, existing PEAK concept files,
+    and Chapters 1-7 were unchanged.
+  - `npm.cmd run lint:md`: passed with 0 errors across 134 Markdown files.
+  - `vale --config .vale.ini book/02-the-laws/08-every-api-is-a-promise.md editor/EDITOR_LOG.md`: passed with 0
+    errors, 0 warnings, and 0 suggestions.
+  - `npm.cmd run lint:spelling`: passed with 0 spelling issues across 133 checked files.
+  - `npm.cmd run lint:links`: passed; 133 links scanned successfully.
+  - `python -m pip check`: passed; no broken requirements found.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed; no generated `site/` output is tracked.
+- Next stage: Freeze Review.
+
+## Phase 36 Chapter 8 Freeze Review
+
+- Chapter: Every API Is a Promise.
+- Stable ID: `CHAPTER-008`.
+- Branch: `chapter8`.
+- Stage: Freeze Review.
+- Reviewed Technical Review commit: `ddfab710e646573d820984d6ee3afa8abee5dfe8`.
+- Prior review commits:
+  - Editorial Review: `ff1da43be2f0261a8abdd2c3d2d9d4b01ac2f70d`.
+  - Canon Review: `d14a5be6bca051c837e9bedd3a075197645f21ae`.
+  - Technical Review: `ddfab710e646573d820984d6ee3afa8abee5dfe8`.
+- Manuscript path: `book/02-the-laws/08-every-api-is-a-promise.md`.
+- Canonical brief path: `editor/chapter-briefs/CHAPTER-008-every-api-is-a-promise.md`.
+- Outcome: Approve.
+- Freeze result: Chapter 8 is canonical-ready and now registered as `canonical` in `knowledge/index.yaml`.
+- Lifecycle-history result: passed; Editorial, Canon, and Technical Review entries exist in order, each outcome permits
+  Freeze, no gate was skipped, and all prior review commits are ancestors of `HEAD`.
+- Manuscript architecture result: passed; the chapter keeps the required H2 order and complete chapter sections.
+- Principal's Notebook result: passed; exactly three short observations remain.
+- Canon result: passed; the chapter teaches `LAW-002` without creating a new artifact, vocabulary term, law, smell,
+  anti-pattern, metric, ritual, or failure story.
+- Technical result: passed; asynchronous request acceptance, completion, errors, retry behavior, ownership and lifetime,
+  persistence, compatibility, migration, and ADR consequences remain technically credible.
+- PEAK graph result: passed; the registered outgoing Chapter 8 relationships remain unchanged and all targets exist.
+- Boundary result: passed; Chapters 1-7 remain canonical and unchanged, and later Part II material remains reserved for
+  later chapters.
+- Reader-facing manuscript changed during Freeze Review: no.
+- Canonical brief changed during Freeze Review: no.
+- `knowledge/index.yaml` changed during Freeze Review: yes; `CHAPTER-008` status changed from `draft` to `canonical`.
+- New PEAK concepts or relationships created during Freeze Review: none.
+- Exact changed files during Freeze Review: `editor/EDITOR_LOG.md` and `knowledge/index.yaml`.
+- Validation commands and actual results:
+  - Gate baseline checks: passed; `git fetch --all --prune` completed, `git status --short` was clean, and `HEAD` and
+    `origin/chapter8` were both `ddfab710e646573d820984d6ee3afa8abee5dfe8`.
+  - Direct freeze readiness assertions: passed for lifecycle order, progression-permitting outcomes, prior review
+    commits being ancestors of `HEAD`, required H2 order, exactly three Principal's Notebook observations, no unresolved
+    markers, registered Chapter 8 outgoing relationships unchanged, all target PEAK concepts existing, `CHAPTER-008`
+    registered exactly once, and Chapters 1-7 remaining `canonical`.
+  - Direct final status assertions: passed; `CHAPTER-008` is now exactly one `canonical` chapter entry and Chapters 1-7
+    remain `canonical`.
+  - `git diff --check`: passed.
+  - Protected-file checks: passed; the manuscript, canonical brief, `LAW-002`, existing PEAK concept files, Chapters
+    1-7, and registered PEAK relationships were unchanged.
+  - `npm.cmd run lint:md`: passed with 0 errors across 134 Markdown files.
+  - `vale --config .vale.ini book/02-the-laws/08-every-api-is-a-promise.md editor/EDITOR_LOG.md`: passed with 0
+    errors, 0 warnings, and 0 suggestions.
+  - `npm.cmd run lint:spelling`: passed with 0 spelling issues across 133 checked files.
+  - `npm.cmd run lint:links`: passed; 133 links scanned successfully.
+  - `python -m pip check`: passed; no broken requirements found.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed; no generated `site/` output is tracked.
+- PR readiness: Chapter 8 is ready for pull request after this Freeze commit is pushed.
+- Next action: Open a Chapter 8 pull request; do not merge in this workflow.
