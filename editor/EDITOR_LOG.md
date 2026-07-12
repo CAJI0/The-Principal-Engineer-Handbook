@@ -4762,3 +4762,75 @@ Pull request readiness:
   - `git ls-files site`: passed; no generated `site/` output is tracked.
 - Next required lifecycle stage: Technical Review after this gate is committed and pushed.
 - Do not perform Technical Review, Freeze Review, PR creation, or merge as part of this phase.
+
+## Phase 59 Chapter 12 Technical Review
+
+- Chapter: Simplicity Is a Feature.
+- Stable ID: `CHAPTER-012`.
+- Branch: `chapter12`.
+- Stage: Technical Review.
+- Technical Review baseline: `eb5afd4985e54d7512b1772827684afc3cc0fb2a`.
+- Manuscript path: `book/02-the-laws/12-simplicity-is-a-feature.md`.
+- Canonical brief path: `editor/chapter-briefs/CHAPTER-012-simplicity-is-a-feature.md`.
+- Primary law: `LAW-004` - Simplicity Is a Feature.
+- Outcome: Approve with changes.
+- Reader-facing manuscript changed during Technical Review: yes.
+- Canonical brief changed during Technical Review: no.
+- `LAW-004` law file changed during Technical Review: no.
+- `knowledge/index.yaml` changed during Technical Review: no.
+- `CANON.md` changed during Technical Review: no.
+- Table of contents changed during Technical Review: no.
+- Chapters 1-11 changed during Technical Review: no.
+- PEAK relationship set changed during Technical Review: no.
+- New PEAK concept created or implied as canon: no.
+- Technical domains reviewed: command acceptance and rejection, calibration state, state ownership, validation, deferred
+  hardware completion, asynchronous callbacks, callback ordering, event routing, global context flags, manager layers,
+  utility helpers, pass-through adapters, platform wrappers, product vocabulary, platform vocabulary, hidden coupling,
+  test design, diagnostics, error handling, rejection versus failure, timeout versus late completion, recovery behavior,
+  migration from multiple entry paths, bounded removal of accidental layers, and ADR alternatives and consequences.
+- Material technical correction:
+  - added explicit timeout wording so completion timeout remains distinct from deferred completion, late completion,
+    cancellation, recovery, and unknown outcome.
+- Ownership and control-flow result: passed. The chapter keeps one explicit product-owned acceptance decision without
+  implying one giant module, one function, or direct hardware execution by the product owner.
+- Asynchronous-completion result: passed. Deferred hardware completion and callback/event mechanisms remain valid behind a
+  bounded integration edge; simplification does not erase asynchronous behavior.
+- Error and recovery result: passed. Invalid input, calibration rejection, hardware start failure, deferred completion,
+  completion timeout, late completion, cancellation, recovery required, and unknown outcome remain distinct.
+- Test and diagnostics result: passed. Tests are aligned with product behavior while mocks remain acceptable for bounded
+  dependencies; diagnostics explain command, relevant state, decision owner, acceptance result, hardware start, deferred
+  completion, failure, and recovery without requiring every internal hop to be logged.
+- Change Radius result: passed. The chapter treats Change Radius as affected behavior, ownership, tests, diagnostics,
+  tools, support, and recovery surface, not as proof that one-file changes are always correct.
+- Migration result: passed. Entry paths migrate incrementally, temporary coexistence is allowed, and pass-through layers
+  are removed only where evidence shows they no longer transform behavior or protect a boundary.
+- ADR result: passed. The ADR records a scoped routing decision with alternatives, costs, migration, and
+  over-centralization risk.
+- Changed files:
+  - `book/02-the-laws/12-simplicity-is-a-feature.md`
+  - `editor/EDITOR_LOG.md`
+- Pre-log validation already run:
+  - Gate baseline checks passed for clean tree, `HEAD` matching `origin/chapter12`, current commit subject
+    `docs(chapter-12): complete canon review`, and Editorial and Canon Review commit ancestry.
+  - Direct technical assertions: passed for completion timeout, late completion, cancellation, unknown outcome, deferred
+    hardware completion, asynchronous completion, bounded integration edge, and absence of misleading technical
+    absolutes.
+  - `git diff --check`: passed.
+  - `vale --config .vale.ini book/02-the-laws/12-simplicity-is-a-feature.md`: passed with 0 errors, 0 warnings, and 0
+    suggestions.
+- Final validation completed after this log entry:
+  - Direct final technical and PEAK assertions: passed for exact section order, three notebook observations, unresolved
+    marker absence, no misleading technical absolutes, no new PEAK ID, exact registered Chapter 12 relationship set,
+    `CHAPTER-012` remaining `draft`, unchanged canonical brief, unchanged `LAW-004`, unchanged PEAK index, unchanged
+    `CANON.md`, unchanged table of contents, unchanged Chapters 1-11, expected changed files only, and no tracked `site/`
+    output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini book/02-the-laws/12-simplicity-is-a-feature.md editor/EDITOR_LOG.md`: passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed; no generated `site/` output is tracked.
+- Next required lifecycle stage: Freeze Review after this gate is committed and pushed.
+- Do not perform Freeze Review, PR creation, or merge as part of this phase.

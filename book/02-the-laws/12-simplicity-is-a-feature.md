@@ -152,9 +152,10 @@ The new shape was not a rewrite.
 
 The team defined one explicit acceptance boundary owned by the product state owner. The boundary used product language:
 command accepted, rejected because calibration is active, invalid input, hardware execution started, hardware execution
-failed, completion deferred, late completion, recovery required, and unknown outcome. The UI, service, manufacturing, and
-fallback entry paths migrated toward that boundary. The platform wrapper stayed behind a bounded integration edge. It
-translated hardware execution and completion; it did not decide whether calibration made the product command unsafe.
+failed, completion deferred, completion timed out, late completion, recovery required, and unknown outcome. The UI,
+service, manufacturing, and fallback entry paths migrated toward that boundary. The platform wrapper stayed behind a
+bounded integration edge. It translated hardware execution and completion; it did not decide whether calibration made the
+product command unsafe.
 
 The ordinary path became visible again.
 
@@ -166,9 +167,9 @@ separate.
 The exceptional paths stayed distinct.
 
 Rejected because calibration is active was not the same as invalid input. Hardware execution failed was not the same as
-hardware completion deferred. A late completion was not the same as cancellation. Recovery required was not the same as
-unknown outcome. The team did not erase essential hardware and recovery behavior in the name of simplicity. It removed
-accidental concepts around the decision.
+hardware completion deferred. A timeout waiting for completion was not the same as a late completion. A late completion
+was not the same as cancellation. Recovery required was not the same as unknown outcome. The team did not erase
+essential hardware and recovery behavior in the name of simplicity. It removed accidental concepts around the decision.
 
 Tests changed in the same direction.
 
@@ -448,8 +449,8 @@ deferred, and recovery depends on whether execution already started.
 Assign command acceptance to the product state owner that owns calibration state and command validity.
 
 Define one product-level command vocabulary: invalid input, accepted, rejected because calibration is active, hardware
-execution started, hardware execution failed, completion deferred, late completion, recovery required, cancellation, and
-unknown outcome. Use that vocabulary at entry paths, tests, and diagnostics.
+execution started, hardware execution failed, completion deferred, completion timed out, late completion, recovery
+required, cancellation, and unknown outcome. Use that vocabulary at entry paths, tests, and diagnostics.
 
 Create one explicit acceptance boundary. UI, service, manufacturing, and fallback paths request command acceptance
 through that boundary instead of duplicating product policy. Keep hardware calls behind one bounded integration edge. The
