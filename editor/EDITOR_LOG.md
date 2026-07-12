@@ -5309,3 +5309,87 @@ Pull request readiness:
   - `git ls-files site`: passed; no generated `site/` output is tracked.
 - Next lifecycle stage: Freeze Review after this Technical Review commit is committed and pushed.
 - Do not perform Freeze Review, PR creation, or merge as part of this phase.
+
+## Phase 66 Chapter 13 Freeze Review
+
+- Chapter: Evidence Before Confidence.
+- Stable ID: `CHAPTER-013`.
+- Branch: `chapter13`.
+- Stage: Freeze Review.
+- Reviewed Technical Review commit: `f77b46385246832a4f7918763446e0e89102d301`.
+- Prior review commits:
+  - Editorial Review: `1cfa5f02840d8c2ca37add782096679326c0bf34`.
+  - Canon Review: `558e3a76c85de4db754631a469545c1cfe6d1422`.
+  - Technical Review: `f77b46385246832a4f7918763446e0e89102d301`.
+- Manuscript path: `book/02-the-laws/13-evidence-before-confidence.md`.
+- Canonical brief path: `editor/chapter-briefs/CHAPTER-013-evidence-before-confidence.md`.
+- Primary law: `LAW-005` - Evidence Before Confidence.
+- Part position: final chapter of Part II - The Laws.
+- Outcome: Approved.
+- Manuscript changed during Freeze Review: no.
+- Canonical brief changed during Freeze Review: no.
+- Status transition:
+  - `CHAPTER-013`: `draft` -> `canonical`.
+  - `LAW-005`: remains `draft`.
+- `LAW-005` law file changed during Freeze Review: no.
+- Chapter 5 changed during Freeze Review: no.
+- Chapters 1-12 changed during Freeze Review: no.
+- Table of contents changed during Freeze Review: no.
+- `CANON.md` changed during Freeze Review: no.
+- PEAK concepts or relationships changed during Freeze Review: no.
+- New PEAK concept created or implied as canon: no.
+- Freeze finding: Chapter 13 is canonical-ready as the final Part II law chapter. It keeps confidence attached to a
+  current claim, evidence envelope, residual uncertainty, owner, and review trigger, and it hands Part II forward to Part
+  III without teaching the later playbooks.
+- Prior review outcomes:
+  - Editorial Review: Approved with editorial changes.
+  - Canon Review: Approved.
+  - Technical Review: Approved.
+- Chapter architecture result: passed. The manuscript preserves the required section order: Opening Quote, Story,
+  Discussion, Engineering Principle, Architecture Exercise, Principal's Notebook, ADR, Editor's Commentary.
+- Principal's Notebook result: passed. The notebook contains exactly three short observations.
+- Canon result: passed. The chapter illustrates `LAW-005`, materially uses the registered supporting concepts, and does
+  not create a new PEAK concept, artifact, ritual, metric, smell, anti-pattern, or failure story.
+- Technical result: passed. The timing-margin story remains credible for embedded and long-lived systems, with careful
+  treatment of build context, instrumentation effects, retries, timeouts, weak signals, observability, targeted
+  revalidation, and bounded exposure.
+- Chapter 5 distinction: passed.
+- Chapter 10 boundary: passed.
+- Part II completion status: passed. `CHAPTER-007` through `CHAPTER-013` are canonical in `knowledge/index.yaml`, and
+  Part II is ready for pull request review after this Freeze Review commit is pushed.
+- Registered relationship set preserved:
+  - `CHAPTER-013` illustrates `LAW-005`.
+  - `CHAPTER-013` illustrates `FAILURE-003`.
+  - `CHAPTER-013` references `VOCAB-002`.
+  - `CHAPTER-013` references `ARTIFACT-007`.
+  - `CHAPTER-013` references `VOCAB-003`.
+  - `CHAPTER-013` references `ARTIFACT-003`.
+  - `CHAPTER-013` references `ARTIFACT-001`.
+  - `CHAPTER-013` references `RITUAL-001`.
+  - `CHAPTER-013` references `VOCAB-001`.
+  - `CHAPTER-013` references `METRIC-001`.
+  - `CHAPTER-013` references `VOCAB-007`.
+  - `CHAPTER-013` references `METRIC-005`.
+- Changed files:
+  - `editor/EDITOR_LOG.md`
+  - `knowledge/index.yaml`
+- Final validation completed after this log entry:
+  - Direct Freeze Review assertions: passed for clean baseline, `HEAD` matching `origin/chapter13` before review,
+    reviewed SHA matching the Technical Review commit, prior review commits being ancestors of `HEAD`, prior review
+    outcomes permitting Freeze, expected changed files only, exact section order, unique required sections, exactly three
+    Principal's Notebook observations, unresolved marker absence, exact law statement, no new PEAK ID, `CHAPTER-013`
+    status changed to `canonical`, `LAW-005` remaining `draft`, exact registered relationship set, unchanged manuscript,
+    unchanged canonical brief, unchanged `LAW-005`, unchanged Chapter 5, unchanged Chapters 1-12, unchanged table of
+    contents, unchanged `CANON.md`, Part II chapters 7-13 canonical, phase-order continuity through Phase 66, and no
+    tracked `site/` output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini editor/EDITOR_LOG.md knowledge/index.yaml`: passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed; no generated `site/` output is tracked.
+- Pull request readiness: ready after this Freeze Review commit is pushed.
+- Recommended pull request title: `Chapter 13: Evidence Before Confidence`.
+- Do not merge as part of this phase.

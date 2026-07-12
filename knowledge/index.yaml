@@ -338,7 +338,7 @@ entities:
       type: chapter
       name: Evidence Before Confidence
       path: ../book/02-the-laws/13-evidence-before-confidence.md
-      status: draft
+      status: canonical
   adrs:
     - id: ADR-001
       type: adr
