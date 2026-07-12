@@ -4412,3 +4412,113 @@ Pull request readiness:
 - Chapter 11 is ready for a pull request after the freeze commit is pushed.
 - Recommended PR title: `Chapter 11: Unused Flexibility Is Waste`
 - Do not merge as part of this gate.
+
+## Phase 55 Chapter 12 Canonical Brief Registration
+
+- Chapter: Simplicity Is a Feature.
+- Stable ID: `CHAPTER-012`.
+- Branch: `chapter12`.
+- Stage: Canonical Brief Registration.
+- Verified baseline `origin/main`: `e00d5351488799949a873e605d6256b4e1e64940`.
+- PR #13 squash commit: `e00d5351488799949a873e605d6256b4e1e64940`.
+- Chapter 11 feature-branch Freeze commit used for tree-equivalence check:
+  `9dfc705946e452dbfb373a351593e8a866e43576`.
+- Primary law: `LAW-004` - Simplicity Is a Feature.
+- Outcome: Approve.
+- Canonical brief path: `editor/chapter-briefs/CHAPTER-012-simplicity-is-a-feature.md`.
+- Expected manuscript path: `book/02-the-laws/12-simplicity-is-a-feature.md`.
+- Reader-facing manuscript created: no.
+- Index registration: `CHAPTER-012` added as `draft` with path
+  `../book/02-the-laws/12-simplicity-is-a-feature.md`.
+- Exact outgoing relationship set:
+  - `CHAPTER-012 illustrates LAW-004`
+  - `CHAPTER-012 illustrates SMELL-002`
+  - `CHAPTER-012 illustrates ANTIPATTERN-004`
+  - `CHAPTER-012 references SMELL-001`
+  - `CHAPTER-012 references SMELL-005`
+  - `CHAPTER-012 references ANTIPATTERN-005`
+  - `CHAPTER-012 references VOCAB-001`
+  - `CHAPTER-012 references VOCAB-007`
+  - `CHAPTER-012 references METRIC-001`
+  - `CHAPTER-012 references METRIC-003`
+  - `CHAPTER-012 references METRIC-005`
+  - `CHAPTER-012 references ARTIFACT-001`
+- Concepts selected: `LAW-004`, `SMELL-002`, `ANTIPATTERN-004`, `SMELL-001`, `SMELL-005`,
+  `ANTIPATTERN-005`, `VOCAB-001`, `VOCAB-007`, `METRIC-001`, `METRIC-003`, `METRIC-005`, and
+  `ARTIFACT-001`.
+- Concepts considered but not registered as outgoing Chapter 12 relationships: `LAW-006`, `LAW-005`, `LAW-001`,
+  `LAW-002`, `LAW-003`, `LAW-007`, `SMELL-004`, `SMELL-006`, `SMELL-003`, `ANTIPATTERN-001`,
+  `ANTIPATTERN-002`, `ANTIPATTERN-003`, `ANTIPATTERN-006`, `VOCAB-009`, `ARTIFACT-003`, `ARTIFACT-006`,
+  `RITUAL-003`, `RITUAL-004`, and `FAILURE-001`.
+- Explicit Chapter 11 boundary: Chapter 11 owns unused options, unsupported modes, dormant paths, combinatorial
+  variation, and evidence for retained flexibility; Chapter 12 owns simplicity as visible behavior, direct decision
+  paths, bounded concepts, safer change, easier operation, and clearer recovery.
+- New PEAK concept created: no.
+- Law ID changed or renumbered: no.
+- `LAW-004` law file changed: no.
+- Chapters 1-11 changed: no.
+- Changed files:
+  - `editor/chapter-briefs/CHAPTER-012-simplicity-is-a-feature.md`
+  - `editor/EDITOR_LOG.md`
+  - `knowledge/index.yaml`
+- Baseline validation already run:
+  - `git fetch --all --prune`: passed.
+  - `git status --short`: passed with a clean working tree before editing.
+  - `git switch main`: passed; `main` was already checked out and up to date with `origin/main`.
+  - `git pull --ff-only origin main`: passed; already up to date.
+  - `git rev-parse HEAD`: returned `e00d5351488799949a873e605d6256b4e1e64940`.
+  - `git rev-parse origin/main`: returned `e00d5351488799949a873e605d6256b4e1e64940`.
+  - `git log` for the latest 20 decorated one-line commits: confirmed `Chapter 11: Unused Flexibility Is Waste (#13)` at
+    `origin/main`.
+  - `git merge-base --is-ancestor e00d5351488799949a873e605d6256b4e1e64940 origin/main`: passed.
+  - `git show --no-patch --format=fuller e00d5351488799949a873e605d6256b4e1e64940`: confirmed PR #13 squash
+    commit subject and included Chapter 11 lifecycle commits in the message.
+  - `git rev-list --parents -n 1 e00d5351488799949a873e605d6256b4e1e64940`: confirmed one-parent squash topology
+    with parent `96aeb1a6f2dca7d0cd3639a2298d3ba4ae05e4a6`.
+  - `git diff --exit-code 9dfc705946e452dbfb373a351593e8a866e43576
+    e00d5351488799949a873e605d6256b4e1e64940 -- [Chapter 11 lifecycle paths]`: passed; final Chapter 11 file trees
+    are equivalent for the checked paths.
+  - `git branch --list chapter12`: passed; no local branch existed before creation.
+  - `git branch -r --list origin/chapter12`: passed; no remote branch existed before creation.
+  - `git ls-files site`: passed; no tracked `site/` output.
+  - Direct baseline assertions: passed for Chapters 1-11 canonical, exact `LAW-004`, exact `LAW-006`, absent
+    `CHAPTER-012`, absent Chapter 12 manuscript and brief paths, and ordered Chapter 11 Editorial, Canon, Technical, and
+    Freeze entries.
+- Branch creation:
+  - `git switch -c chapter12 origin/main`: passed.
+  - `git branch --show-current`: returned `chapter12`.
+  - `git rev-parse HEAD`: returned `e00d5351488799949a873e605d6256b4e1e64940`.
+  - `git status --short`: passed with a clean working tree after branch creation.
+- Governing-material read: passed for repository governance, source-of-truth policy, review policy, current chapter
+  architecture, table of contents, PEAK index, all PEAK law files, selected supporting concept files, current validation
+  commands, Chapter 11 brief-registration and Freeze precedent, canonical brief architecture, and canonical chapter
+  boundary signals across Chapters 1-11.
+- Pre-log validation already run:
+  - Direct Chapter 12 assertions: passed for brief existence, manuscript absence, exact `CHAPTER-012` metadata, Chapters
+    1-11 remaining canonical, exact `LAW-004` metadata and statement, exact Chapter 12 relationship set, existing
+    relationship targets, no duplicate Chapter 12 relationship, no self-edge, no unresolved markers in the brief, explicit
+    Chapter 11 and Chapter 13 boundaries, and expected pre-log status only.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed with 0 errors across 142 Markdown files.
+  - `vale --config .vale.ini editor/chapter-briefs/CHAPTER-012-simplicity-is-a-feature.md knowledge/index.yaml`: passed
+    with 0 errors, 0 warnings, and 0 suggestions after wording cleanup.
+- Final validation completed after this log entry:
+  - Direct Chapter 12 PEAK assertions: passed for brief existence, manuscript absence, single `CHAPTER-012`, exact
+    `CHAPTER-012` metadata, Chapters 1-11 remaining canonical, single `LAW-004`, exact `LAW-004` metadata and statement,
+    exact Chapter 12 relationship set, existing relationship targets, no duplicate Chapter 12 relationship, and no
+    self-edge.
+  - Changed-file and brief-boundary assertions: passed for expected changed files only, no unresolved markers in the
+    brief, unchanged `LAW-004`, unchanged `LAW-006`, unchanged `CANON.md`, unchanged table of contents, and no Chapter
+    12 manuscript.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed with 0 errors across 142 Markdown files.
+  - `vale --config .vale.ini editor/chapter-briefs/CHAPTER-012-simplicity-is-a-feature.md editor/EDITOR_LOG.md
+    knowledge/index.yaml`: passed with 0 errors, 0 warnings, and 0 suggestions.
+  - `npm.cmd run lint:spelling`: passed with 0 spelling issues across 141 checked files after log wording cleanup.
+  - `npm.cmd run lint:links`: passed; 141 links scanned successfully.
+  - `python -m pip check`: passed; no broken requirements found.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed; no generated `site/` output is tracked.
+- Next required lifecycle stage: Author Draft after author approval.
+- Do not perform Author Draft, Editorial Review, Canon Review, Technical Review, Freeze Review, PR creation, or merge as
+  part of this phase.
