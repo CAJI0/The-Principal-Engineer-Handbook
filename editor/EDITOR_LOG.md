@@ -4177,3 +4177,73 @@ Pull request readiness:
   - `git ls-files site`: passed; no generated `site/` output is tracked.
 - Next required lifecycle stage: Canon Review after this gate is committed and pushed.
 - Do not perform Canon Review, Technical Review, Freeze Review, PR creation, or merge as part of this phase.
+
+## Phase 52 Chapter 11 Canon Review
+
+- Chapter: Unused Flexibility Is Waste.
+- Stable ID: `CHAPTER-011`.
+- Branch: `chapter11`.
+- Stage: Canon Review.
+- Canon Review baseline: `8be8241bd3395e07680ea6ec536e58cace71de7b`.
+- Manuscript path: `book/02-the-laws/11-unused-flexibility-is-waste.md`.
+- Canonical brief path: `editor/chapter-briefs/CHAPTER-011-unused-flexibility-is-waste.md`.
+- Primary law: `LAW-006` - Unused Flexibility Is Waste.
+- Outcome: Approve.
+- Reader-facing manuscript changed during Canon Review: no.
+- Canonical brief changed during Canon Review: no.
+- `LAW-006` law file changed during Canon Review: no.
+- `knowledge/index.yaml` changed during Canon Review: no.
+- `CANON.md` changed during Canon Review: no.
+- Table of contents changed during Canon Review: no.
+- Chapters 1-10 changed during Canon Review: no.
+- PEAK relationship set changed during Canon Review: no.
+- New PEAK concept created or implied as canon: no.
+- Canon areas reviewed: law statement, canonical brief alignment, Part II boundaries, Chapter 7 through Chapter 10
+  boundary preservation, later Chapter 12 and Chapter 13 boundaries, PEAK concept coverage, outgoing relationship set,
+  target existence, duplicate-edge absence, self-edge absence, and chapter-local ADR scope.
+- Canonical result: passed. Chapter 11 teaches `LAW-006` without changing the law text, renumbering law IDs, creating a
+  new artifact, or registering new PEAK concepts.
+- Boundary result: passed. The chapter remains narrower than Chapter 12's broader simplicity argument and Chapter 13's
+  evidence-quality argument; it does not consume product-line, platform-governance, Deletion Day, framework-design, or
+  legacy-deletion playbook material.
+- Exact outgoing relationship set preserved:
+  - `CHAPTER-011 illustrates LAW-006`
+  - `CHAPTER-011 illustrates SMELL-003`
+  - `CHAPTER-011 illustrates SMELL-005`
+  - `CHAPTER-011 references ANTIPATTERN-006`
+  - `CHAPTER-011 references VOCAB-001`
+  - `CHAPTER-011 references METRIC-001`
+  - `CHAPTER-011 references METRIC-003`
+  - `CHAPTER-011 references ARTIFACT-001`
+  - `CHAPTER-011 references ARTIFACT-003`
+- Changed files:
+  - `editor/EDITOR_LOG.md`
+- Pre-log validation already run:
+  - Gate baseline checks passed for clean tree, `HEAD` matching `origin/chapter11`, current commit subject
+    `docs(chapter-11): complete editorial review`, and Author Draft baseline ancestry.
+  - Direct canon assertions: passed for exact `LAW-006` statement, brief-aligned concepts, required canon themes,
+    exact Chapter 11 relationship set, existing relationship targets, no duplicate Chapter 11 relationship, no
+    self-edge, `CHAPTER-011` remaining `draft`, and Chapters 1-10 remaining canonical.
+  - Boundary assertions: passed for no promoted boundary sections such as option ledger, variant map, seam catalog,
+    flexibility budget, or Deletion Day.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed with 0 errors across 141 Markdown files.
+  - `vale --config .vale.ini book/02-the-laws/11-unused-flexibility-is-waste.md
+    editor/chapter-briefs/CHAPTER-011-unused-flexibility-is-waste.md knowledge/index.yaml`: passed with 0 errors, 0
+    warnings, and 0 suggestions.
+- Final validation completed after this log entry:
+  - Direct canon and PEAK assertions: passed for exact `LAW-006` statement, brief-aligned concepts, exact Chapter 11
+    relationship set, existing relationship targets, duplicate-edge absence, self-edge absence, `CHAPTER-011` remaining
+    `draft`, and Chapters 1-10 remaining canonical.
+  - Direct changed-file and protected-file assertions: passed for log-only changes and unchanged manuscript, canonical
+    brief, `knowledge/index.yaml`, `LAW-006`, `CANON.md`, and table of contents.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed with 0 errors across 141 Markdown files.
+  - `vale --config .vale.ini editor/EDITOR_LOG.md`: passed with 0 errors, 0 warnings, and 0 suggestions.
+  - `npm.cmd run lint:spelling`: passed with 0 spelling issues across 140 checked files.
+  - `npm.cmd run lint:links`: passed; 140 links scanned successfully.
+  - `python -m pip check`: passed; no broken requirements found.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed; no generated `site/` output is tracked.
+- Next required lifecycle stage: Technical Review after this gate is committed and pushed.
+- Do not perform Technical Review, Freeze Review, PR creation, or merge as part of this phase.
