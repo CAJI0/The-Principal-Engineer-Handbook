@@ -5008,3 +5008,71 @@ Pull request readiness:
 - Next lifecycle stage: Author Draft after author approval.
 - Do not create the reader-facing manuscript, perform review phases, freeze Chapter 13, open a pull request, merge, or
   alter Part II architecture as part of this phase.
+
+## Phase 62 Chapter 13 Author Draft
+
+- Chapter: Evidence Before Confidence.
+- Stable ID: `CHAPTER-013`.
+- Branch: `chapter13`.
+- Stage: Author Draft.
+- Author Draft baseline: `5ee15216be62c88911c403a012b59eed69de1118`.
+- Manuscript path: `book/02-the-laws/13-evidence-before-confidence.md`.
+- Canonical brief path: `editor/chapter-briefs/CHAPTER-013-evidence-before-confidence.md`.
+- Primary law: `LAW-005` - Evidence Before Confidence.
+- Part position: final chapter of Part II - The Laws.
+- Outcome: Author Draft created.
+- Canonical brief changed during Author Draft: no.
+- `knowledge/index.yaml` changed during Author Draft: no.
+- `LAW-005` law file changed during Author Draft: no.
+- Chapter 5 changed during Author Draft: no.
+- Chapters 1-12 changed during Author Draft: no.
+- Table of contents changed during Author Draft: no.
+- `CANON.md` changed during Author Draft: no.
+- PEAK concepts or relationships changed during Author Draft: no.
+- New PEAK concept created or implied as canon: no.
+- Reader-facing manuscript created: yes.
+- Editorial, Canon, Technical, or Freeze Review performed: no.
+- Chapter 5 distinction: Chapter 5 owns evidence-bounded judgment for a current commitment; Chapter 13 owns whether the
+  evidence still supports the architecture claim the system continues to carry across versions, variants, environments,
+  evidence provenance, weak signals, counter-evidence, ownership, and review triggers.
+- Chapter 5 duplication guardrail: passed. The Author Draft does not reuse Chapter 5's buffered flash-logging story,
+  exercise, ADR, discussion arc, or notebook observations.
+- Chapter 10 boundary: passed. The timing-margin story uses timing evidence, but does not reteach temporal semantics.
+- Part II final-chapter role: passed. The draft synthesizes prior laws through evidence questions without registering
+  graph edges to those laws or summarizing each chapter.
+- Part III transition: passed. The draft points to Part III practices as the place where decisions become visible,
+  reviewable, and durable without teaching those playbooks.
+- Registered relationship set preserved:
+  - `CHAPTER-013` illustrates `LAW-005`.
+  - `CHAPTER-013` illustrates `FAILURE-003`.
+  - `CHAPTER-013` references `VOCAB-002`.
+  - `CHAPTER-013` references `ARTIFACT-007`.
+  - `CHAPTER-013` references `VOCAB-003`.
+  - `CHAPTER-013` references `ARTIFACT-003`.
+  - `CHAPTER-013` references `ARTIFACT-001`.
+  - `CHAPTER-013` references `RITUAL-001`.
+  - `CHAPTER-013` references `VOCAB-001`.
+  - `CHAPTER-013` references `METRIC-001`.
+  - `CHAPTER-013` references `VOCAB-007`.
+  - `CHAPTER-013` references `METRIC-005`.
+- Changed files:
+  - `book/02-the-laws/13-evidence-before-confidence.md`
+  - `editor/EDITOR_LOG.md`
+- Final validation completed after this log entry:
+  - Direct Author Draft assertions: passed for exact section order, unique required sections, exactly three Principal's
+    Notebook observations, unresolved marker absence, exact law statement, required thesis and principle, material use of
+    all registered PEAK concepts, no new PEAK ID, `CHAPTER-013` remaining `draft`, exact registered relationship set,
+    unchanged canonical brief, unchanged PEAK index, unchanged `LAW-005`, unchanged Chapter 5, unchanged Chapters 1-12,
+    unchanged table of contents, unchanged `CANON.md`, manuscript present, expected changed files only, Chapter 5
+    duplication guardrails, Chapter 10 boundary, Part II capstone, Part III transition, and no tracked `site/` output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini book/02-the-laws/13-evidence-before-confidence.md editor/EDITOR_LOG.md`: passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed; no generated `site/` output is tracked.
+- Next lifecycle stage: Editorial Review after this Author Draft commit is committed and pushed.
+- Do not perform Editorial Review, Canon Review, Technical Review, Freeze Review, PR creation, or merge as part of this
+  phase.
