@@ -329,6 +329,11 @@ entities:
       name: Unused Flexibility Is Waste
       path: ../book/02-the-laws/11-unused-flexibility-is-waste.md
       status: canonical
+    - id: CHAPTER-012
+      type: chapter
+      name: Simplicity Is a Feature
+      path: ../book/02-the-laws/12-simplicity-is-a-feature.md
+      status: canonical
   adrs:
     - id: ADR-001
       type: adr
@@ -577,3 +582,39 @@ relationships:
   - from: CHAPTER-011
     type: references
     to: ARTIFACT-003
+  - from: CHAPTER-012
+    type: illustrates
+    to: LAW-004
+  - from: CHAPTER-012
+    type: illustrates
+    to: SMELL-002
+  - from: CHAPTER-012
+    type: illustrates
+    to: ANTIPATTERN-004
+  - from: CHAPTER-012
+    type: references
+    to: SMELL-001
+  - from: CHAPTER-012
+    type: references
+    to: SMELL-005
+  - from: CHAPTER-012
+    type: references
+    to: ANTIPATTERN-005
+  - from: CHAPTER-012
+    type: references
+    to: VOCAB-001
+  - from: CHAPTER-012
+    type: references
+    to: VOCAB-007
+  - from: CHAPTER-012
+    type: references
+    to: METRIC-001
+  - from: CHAPTER-012
+    type: references
+    to: METRIC-003
+  - from: CHAPTER-012
+    type: references
+    to: METRIC-005
+  - from: CHAPTER-012
+    type: references
+    to: ARTIFACT-001
