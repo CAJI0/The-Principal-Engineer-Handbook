@@ -107,10 +107,10 @@ the command path.
 
 That claim was larger than the original evidence.
 
-The team recovered the evidence provenance: prototype board revision, peripheral firmware revision, compiler version,
-optimization level, RTOS workload, bench supply, room temperature, traffic pattern, instrumentation method, run count,
-and measured latency range. Some details were in the ADR. Some were in an old test report. Some were in a notebook. Some
-had to be reconstructed from the build archive.
+The team recovered the evidence provenance. The record needed the prototype board revision, peripheral firmware
+revision, compiler version, optimization level, RTOS workload, bench supply, room temperature, traffic pattern,
+instrumentation method, run count, and measured latency range. Some details were in the ADR, some in an old test report,
+some in a notebook, and some in the build archive.
 
 The team did not discard the old evidence.
 
@@ -120,9 +120,8 @@ still helped identify which part of the path had once been measured. It gave the
 The team also stopped pretending that the old evidence transferred automatically.
 
 The new compiler, workload, logging, interrupt source, peripheral firmware, board revision, power state, product variant,
-cold environment, and broader exposure were not all equally material. The team sorted them. Some changes could be
-argued harmless for the claim. Some needed a small confirmation. Some directly touched the timing path or the ability to
-observe it.
+cold environment, and broader exposure were not all equally material. The team sorted them. Some changes looked harmless
+for the claim. Some needed a small confirmation. Some directly touched the timing path or the ability to observe it.
 
 The weak signals went into a Weak Signal Register (`ARTIFACT-007`). The entries did not say "timing margin defect
 confirmed." They said where each observation appeared, which products and versions were involved, what confidence the

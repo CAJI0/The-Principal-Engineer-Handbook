@@ -5076,3 +5076,76 @@ Pull request readiness:
 - Next lifecycle stage: Editorial Review after this Author Draft commit is committed and pushed.
 - Do not perform Editorial Review, Canon Review, Technical Review, Freeze Review, PR creation, or merge as part of this
   phase.
+
+## Phase 63 Chapter 13 Editorial Review
+
+- Chapter: Evidence Before Confidence.
+- Stable ID: `CHAPTER-013`.
+- Branch: `chapter13`.
+- Stage: Editorial Review.
+- Reviewed Author Draft commit: `c41276ef7693c5a83e4b765975c924560de62306`.
+- Parent canonical brief commit: `5ee15216be62c88911c403a012b59eed69de1118`.
+- Manuscript path: `book/02-the-laws/13-evidence-before-confidence.md`.
+- Canonical brief path: `editor/chapter-briefs/CHAPTER-013-evidence-before-confidence.md`.
+- Primary law: `LAW-005` - Evidence Before Confidence.
+- Part position: final chapter of Part II - The Laws.
+- Outcome: Approved with editorial changes.
+- Canonical brief changed during Editorial Review: no.
+- `knowledge/index.yaml` changed during Editorial Review: no.
+- `LAW-005` law file changed during Editorial Review: no.
+- Chapter 5 changed during Editorial Review: no.
+- Chapters 1-12 changed during Editorial Review: no.
+- Table of contents changed during Editorial Review: no.
+- `CANON.md` changed during Editorial Review: no.
+- PEAK concepts or relationships changed during Editorial Review: no.
+- New PEAK concept created or implied as canon: no.
+- Material editorial changes:
+  - Tightened the evidence provenance recovery paragraph so the record being reconstructed is clearer.
+  - Rephrased one materiality sentence so the changed-condition sorting reads as engineering judgment rather than
+    argument posture.
+- Chapter architecture result: passed. The manuscript preserves the required section order: Opening Quote, Story,
+  Discussion, Engineering Principle, Architecture Exercise, Principal's Notebook, ADR, Editor's Commentary.
+- Principal's Notebook result: passed. The notebook contains exactly three short observations.
+- Chapter 5 distinction: passed. Chapter 5 owns forming evidence-bounded judgment for a current commitment; Chapter 13
+  owns whether evidence still supports the architecture claim the system continues to carry across versions, variants,
+  environments, evidence provenance, weak signals, counter-evidence, ownership, and review triggers.
+- Chapter 10 boundary: passed. The timing-margin story remains about evidence lifecycle and confidence transfer, not a
+  reteaching of temporal semantics.
+- Part II final-chapter role: passed. The chapter closes Part II by making the laws answerable to current evidence
+  without becoming a chapter-by-chapter summary.
+- Part III transition: passed. The chapter points toward later practices for durable decisions without teaching those
+  playbooks.
+- Registered relationship set preserved:
+  - `CHAPTER-013` illustrates `LAW-005`.
+  - `CHAPTER-013` illustrates `FAILURE-003`.
+  - `CHAPTER-013` references `VOCAB-002`.
+  - `CHAPTER-013` references `ARTIFACT-007`.
+  - `CHAPTER-013` references `VOCAB-003`.
+  - `CHAPTER-013` references `ARTIFACT-003`.
+  - `CHAPTER-013` references `ARTIFACT-001`.
+  - `CHAPTER-013` references `RITUAL-001`.
+  - `CHAPTER-013` references `VOCAB-001`.
+  - `CHAPTER-013` references `METRIC-001`.
+  - `CHAPTER-013` references `VOCAB-007`.
+  - `CHAPTER-013` references `METRIC-005`.
+- Changed files:
+  - `book/02-the-laws/13-evidence-before-confidence.md`
+  - `editor/EDITOR_LOG.md`
+- Final validation completed after this log entry:
+  - Direct Editorial Review assertions: passed for clean baseline, `HEAD` matching `origin/chapter13` before review,
+    reviewed SHA matching the required Author Draft commit, exact section order, unique required sections, exactly three
+    Principal's Notebook observations, unresolved marker absence, exact law statement, no new PEAK ID, `CHAPTER-013`
+    remaining `draft`, exact registered relationship set, unchanged canonical brief, unchanged PEAK index, unchanged
+    `LAW-005`, unchanged Chapter 5, unchanged Chapters 1-12, unchanged table of contents, unchanged `CANON.md`, expected
+    changed files only, Chapter 5 duplication guardrails, Chapter 10 boundary, Part II capstone, Part III transition,
+    phase-order continuity, and no tracked `site/` output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini book/02-the-laws/13-evidence-before-confidence.md editor/EDITOR_LOG.md`: passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed; no generated `site/` output is tracked.
+- Next lifecycle stage: Canon Review after this Editorial Review commit is committed and pushed.
+- Do not perform Canon Review, Technical Review, Freeze Review, PR creation, or merge as part of this phase.
