@@ -339,6 +339,11 @@ entities:
       name: Evidence Before Confidence
       path: ../book/02-the-laws/13-evidence-before-confidence.md
       status: canonical
+    - id: CHAPTER-014
+      type: chapter
+      name: Drawing Boundaries That Survive Change
+      path: ../book/03-architecture-playbook/14-drawing-boundaries-that-survive-change.md
+      status: canonical
   adrs:
     - id: ADR-001
       type: adr
@@ -659,3 +664,39 @@ relationships:
   - from: CHAPTER-013
     type: references
     to: METRIC-005
+  - from: CHAPTER-014
+    type: illustrates
+    to: SMELL-005
+  - from: CHAPTER-014
+    type: illustrates
+    to: ANTIPATTERN-002
+  - from: CHAPTER-014
+    type: references
+    to: LAW-001
+  - from: CHAPTER-014
+    type: references
+    to: LAW-002
+  - from: CHAPTER-014
+    type: references
+    to: LAW-007
+  - from: CHAPTER-014
+    type: references
+    to: SMELL-001
+  - from: CHAPTER-014
+    type: references
+    to: SMELL-004
+  - from: CHAPTER-014
+    type: references
+    to: ANTIPATTERN-004
+  - from: CHAPTER-014
+    type: references
+    to: ANTIPATTERN-001
+  - from: CHAPTER-014
+    type: references
+    to: VOCAB-001
+  - from: CHAPTER-014
+    type: references
+    to: METRIC-001
+  - from: CHAPTER-014
+    type: references
+    to: ARTIFACT-001
