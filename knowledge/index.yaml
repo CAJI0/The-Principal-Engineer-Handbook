@@ -343,7 +343,7 @@ entities:
       type: chapter
       name: Drawing Boundaries That Survive Change
       path: ../book/03-architecture-playbook/14-drawing-boundaries-that-survive-change.md
-      status: draft
+      status: canonical
   adrs:
     - id: ADR-001
       type: adr
