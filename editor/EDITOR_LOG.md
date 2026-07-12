@@ -5236,6 +5236,107 @@ Pull request readiness:
 - Next lifecycle stage: Technical Review after this Canon Review commit is committed and pushed.
 - Do not perform Technical Review, Freeze Review, PR creation, or merge as part of this phase.
 
+## Phase 71 Chapter 14 Technical Review
+
+- Chapter: Drawing Boundaries That Survive Change.
+- Stable ID: `CHAPTER-014`.
+- Branch: `chapter14`.
+- Stage: Technical Review.
+- Reviewed Canon Review commit: `a892f512b9c0d0f7475f5e381dc926860363875a`.
+- Manuscript path: `book/03-architecture-playbook/14-drawing-boundaries-that-survive-change.md`.
+- Canonical brief path: `editor/chapter-briefs/CHAPTER-014-drawing-boundaries-that-survive-change.md`.
+- Primary concept: none by canonical decision.
+- Part position: first chapter of Part III - Architecture Playbook.
+- Outcome: Approved.
+- Manuscript changed during Technical Review: no.
+- Canonical brief changed during Technical Review: no.
+- `knowledge/index.yaml` changed during Technical Review: no.
+- `editor/CHAPTER_ARCHITECTURE.md` changed during Technical Review: no.
+- Part III README changed during Technical Review: no.
+- Chapters 1-13 changed during Technical Review: no.
+- Table of contents changed during Technical Review: no.
+- `CANON.md` changed during Technical Review: no.
+- PEAK concepts or relationships changed during Technical Review: no.
+- New PEAK concept created or implied as canon: no.
+- Technical domains checked: radio and peripheral integration, vendor callbacks, RTOS tasks and event bits, direct calls,
+  callbacks, asynchronous completion, queues, messages, socket and transport structures, product commands and outcomes,
+  state ownership, caches, snapshots, error translation, lifecycle, retry ownership, recovery ownership, compile-time
+  dependency, runtime call direction, control inversion, shared mutable structures, back channels, conditional
+  compilation, adapter migration, contract tests, adapter tests, diagnostics, embedded boundary cost, and Change Radius
+  as an approximate affected-surface measure.
+- Material corrections during Technical Review: none.
+- Product authority assessment: passed. Product radio control state has one authority; callbacks and adapters report
+  observations or completion and do not mutate product truth outside that owner. UI projections, persistence, diagnostics,
+  and service-tool views are treated as observations or records, not competing authority.
+- Product contract assessment: passed. The contract can express product commands, accepted states, outcomes, lifecycle,
+  completion, failure categories, retry ownership, and recovery handoff without promising false vendor equivalence.
+- Dependency-direction assessment: passed. The manuscript distinguishes source-level knowledge, compile-time dependency,
+  runtime calls, callbacks, event flow, data flow, and authority. Platform-to-product runtime invocation does not become
+  product dependence on vendor vocabulary.
+- Translation assessment: passed. Translation covers identifiers, status, lifecycle, completion, errors, recovery,
+  diagnostics, and unsupported behavior. Meaningful vendor differences are not collapsed merely to preserve one weak
+  interface.
+- Asynchronous-completion assessment: passed. The chapter preserves callbacks, queues, and deferred completion as
+  credible mechanisms and does not imply that simplification requires synchronous execution.
+- Error, retry, and recovery ownership assessment: passed. Mechanism retry, product retry, transient congestion, failed
+  start, deferred completion, product-visible failure, recovery transition, and unknown outcomes remain distinct enough
+  for Chapter 14's boundary scope without consuming Chapter 16.
+- Back channel assessment: passed. Direct HAL calls, service commands, debug access, test hooks, hidden subscriptions,
+  shared configuration, and persistence fields are treated proportionately. Platform access may remain in bring-up,
+  adapter tests, or named diagnostics when it is not product behavior.
+- Boundary-cost assessment: passed. The chapter acknowledges translation code, adapter tests, migration, copies, latency,
+  synchronization, diagnostic mapping, temporary coexistence, and in-process cost without implying distributed-system
+  machinery is required.
+- Migration assessment: passed. Migration is one product path at a time, preserves behavior, allows temporary
+  coexistence, removes bypasses after consumers move, and avoids a heroic rewrite.
+- Test and diagnostics assessment: passed. Product contract tests, adapter tests, and integrated behavior tests are
+  distinguished. Diagnostics separate product decision, product outcome, adapter operation, vendor detail, and
+  integration failure without requiring every internal hop to be logged.
+- Change Radius use assessment: passed. Change Radius is used as an approximate affected-surface signal for boundary
+  truthfulness, not as proof of correctness or as Chapter 15's full method.
+- Misleading technical absolute guardrails: passed. The chapter does not claim dependency direction equals call
+  direction, interfaces remove coupling, callbacks are inherently wrong, events are inherently decoupled, direct calls
+  are inherently tightly coupled, asynchronous messaging removes dependencies, process separation guarantees a boundary,
+  renamed vendor status values create product vocabulary, one generic error preserves all meaning, adapters hide every
+  hardware constraint, product logic can ignore timing or hardware behavior, a second implementation proves an
+  abstraction, unit tests alone prove a boundary, smaller Change Radius proves correctness, every boundary needs
+  serialization, direct platform access is always forbidden, conditional compilation is always wrong, snapshots are
+  always Hidden State, one owner means one giant module, one product contract must be the weakest common shape of all
+  vendors, or migration requires a rewrite.
+- Registered relationship set preserved:
+  - `CHAPTER-014` illustrates `SMELL-005`.
+  - `CHAPTER-014` illustrates `ANTIPATTERN-002`.
+  - `CHAPTER-014` references `LAW-001`.
+  - `CHAPTER-014` references `LAW-002`.
+  - `CHAPTER-014` references `LAW-007`.
+  - `CHAPTER-014` references `SMELL-001`.
+  - `CHAPTER-014` references `SMELL-004`.
+  - `CHAPTER-014` references `ANTIPATTERN-004`.
+  - `CHAPTER-014` references `ANTIPATTERN-001`.
+  - `CHAPTER-014` references `VOCAB-001`.
+  - `CHAPTER-014` references `METRIC-001`.
+  - `CHAPTER-014` references `ARTIFACT-001`.
+- Changed files:
+  - `editor/EDITOR_LOG.md`
+- Final validation completed after this log entry:
+  - Direct Technical Review assertions: passed for clean baseline, `HEAD` matching `origin/chapter14` before review,
+    reviewed SHA matching the Canon Review commit, expected changed files only, exact section order, unique required
+    sections, exactly three Principal's Notebook observations, unresolved marker absence, required boundary definition,
+    no misleading technical absolutes, no new PEAK ID, no primary concept introduced, `CHAPTER-014` remaining `draft`,
+    exact registered relationship set, unchanged manuscript, unchanged canonical brief, unchanged PEAK index, unchanged
+    `editor/CHAPTER_ARCHITECTURE.md`, unchanged Part III README, unchanged Chapters 1-13, unchanged table of contents,
+    unchanged `CANON.md`, and no tracked `site/` output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini book/03-architecture-playbook/14-drawing-boundaries-that-survive-change.md editor/EDITOR_LOG.md`: passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed; no generated `site/` output is tracked.
+- Next lifecycle stage: Freeze Review after this Technical Review commit is committed and pushed.
+- Do not perform Freeze Review, PR creation, or merge as part of this phase.
+
 ## Phase 63 Chapter 13 Editorial Review
 
 - Chapter: Evidence Before Confidence.
