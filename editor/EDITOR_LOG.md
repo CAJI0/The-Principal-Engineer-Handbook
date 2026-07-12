@@ -5149,3 +5149,80 @@ Pull request readiness:
   - `git ls-files site`: passed; no generated `site/` output is tracked.
 - Next lifecycle stage: Canon Review after this Editorial Review commit is committed and pushed.
 - Do not perform Canon Review, Technical Review, Freeze Review, PR creation, or merge as part of this phase.
+
+## Phase 64 Chapter 13 Canon Review
+
+- Chapter: Evidence Before Confidence.
+- Stable ID: `CHAPTER-013`.
+- Branch: `chapter13`.
+- Stage: Canon Review.
+- Reviewed Editorial Review commit: `1cfa5f02840d8c2ca37add782096679326c0bf34`.
+- Manuscript path: `book/02-the-laws/13-evidence-before-confidence.md`.
+- Canonical brief path: `editor/chapter-briefs/CHAPTER-013-evidence-before-confidence.md`.
+- Primary law: `LAW-005` - Evidence Before Confidence.
+- Exact law statement: "Confidence should follow evidence, not replace it."
+- Part position: final chapter of Part II - The Laws.
+- Outcome: Approved.
+- Manuscript changed during Canon Review: no.
+- Canonical brief changed during Canon Review: no.
+- `knowledge/index.yaml` changed during Canon Review: no.
+- `LAW-005` law file changed during Canon Review: no.
+- Chapter 5 changed during Canon Review: no.
+- Chapters 1-12 changed during Canon Review: no.
+- Table of contents changed during Canon Review: no.
+- `CANON.md` changed during Canon Review: no.
+- PEAK concepts or relationships changed during Canon Review: no.
+- New PEAK concept created or implied as canon: no.
+- Canonical finding: Chapter 13 materially illustrates `LAW-005` by keeping confidence conditional on evidence that
+  still supports the active architecture claim.
+- Claim/evidence/confidence/commitment result: passed. The chapter distinguishes the claim being carried, the evidence
+  supporting it, the confidence justified by that evidence, the residual uncertainty, and the bounded commitment that can
+  proceed while revalidation catches up.
+- Evidence provenance and transfer result: passed. The chapter keeps provenance, evidence transfer, valid historical
+  evidence, and changed evidence conditions explicit without creating a new PEAK artifact.
+- Weak signal and counter-evidence result: passed. Weak signals lower confidence before proof exists, while
+  counter-evidence narrows or contradicts a claim without being overstated.
+- Absence-of-failure result: passed. The chapter qualifies field silence through observability limits and does not treat
+  missing logs as proof of safety.
+- Revalidation and ownership result: passed. Revalidation is targeted to material changed assumptions, and the active
+  claim, evidence record, confidence, residual uncertainty, owner, and review trigger remain reviewable.
+- Chapter 5 distinction: passed. The chapter does not duplicate Chapter 5's buffered flash-logging story, exercise, ADR,
+  discussion arc, or notebook observations.
+- Chapter 10 boundary: passed. Timing material remains in service of evidence lifecycle and confidence transfer.
+- Part II capstone: passed. The chapter closes the laws by asking what evidence keeps their claims current rather than
+  summarizing each law as ceremony.
+- Part III transition: passed. The chapter hands off to later practice chapters without teaching boundary, review, ADR,
+  RFC, or freeze playbooks.
+- Registered relationship set preserved:
+  - `CHAPTER-013` illustrates `LAW-005`.
+  - `CHAPTER-013` illustrates `FAILURE-003`.
+  - `CHAPTER-013` references `VOCAB-002`.
+  - `CHAPTER-013` references `ARTIFACT-007`.
+  - `CHAPTER-013` references `VOCAB-003`.
+  - `CHAPTER-013` references `ARTIFACT-003`.
+  - `CHAPTER-013` references `ARTIFACT-001`.
+  - `CHAPTER-013` references `RITUAL-001`.
+  - `CHAPTER-013` references `VOCAB-001`.
+  - `CHAPTER-013` references `METRIC-001`.
+  - `CHAPTER-013` references `VOCAB-007`.
+  - `CHAPTER-013` references `METRIC-005`.
+- Changed files:
+  - `editor/EDITOR_LOG.md`
+- Final validation completed after this log entry:
+  - Direct Canon Review assertions: passed for clean baseline, `HEAD` matching `origin/chapter13` before review, reviewed
+    SHA matching the Editorial Review commit, expected changed files only, exact section order, unique required sections,
+    exactly three Principal's Notebook observations, unresolved marker absence, exact law statement, material use of all
+    registered PEAK concepts, no new PEAK ID, `CHAPTER-013` remaining `draft`, exact registered relationship set,
+    unchanged manuscript, unchanged canonical brief, unchanged PEAK index, unchanged `LAW-005`, unchanged Chapter 5,
+    unchanged Chapters 1-12, unchanged table of contents, unchanged `CANON.md`, Chapter 5 duplication guardrails,
+    Chapter 10 boundary, Part II capstone, Part III transition, phase-order continuity, and no tracked `site/` output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini editor/EDITOR_LOG.md`: passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed; no generated `site/` output is tracked.
+- Next lifecycle stage: Technical Review after this Canon Review commit is committed and pushed.
+- Do not perform Technical Review, Freeze Review, PR creation, or merge as part of this phase.
