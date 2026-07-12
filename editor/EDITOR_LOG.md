@@ -5932,3 +5932,129 @@ Pull request readiness:
 - Next lifecycle stage: Editorial Review after this Author Draft commit is committed and pushed.
 - Do not perform Editorial Review, Canon Review, Technical Review, Freeze Review, PR creation, or merge as part of this
   phase.
+
+## Phase 73 Chapter 15 Canonical Brief Registration
+
+- Chapter: Managing Change Radius.
+- Stable ID: `CHAPTER-015`.
+- Branch: `chapter15`.
+- Stage: Canonical Brief Registration.
+- Verified baseline `origin/main`: `346f5801c1326e836b81ce6d92e7564d9c946f94`.
+- Chapter 14 PR and squash-merge verification:
+  - Chapter 14 PR: `#16`.
+  - Squash commit: `346f5801c1326e836b81ce6d92e7564d9c946f94`.
+  - Squash commit subject: `Chapter 14: Drawing Boundaries That Survive Change (#16)`.
+  - Squash commit parent: `b478e3d5a01977ffb2676c9b309c9f700ba78a80`.
+  - Final Chapter 14 feature Freeze commit, still resolvable: `f80988fb40cfeecd4685d9082a3b2d32bfd3f351`.
+  - Final-tree equivalence: passed for Chapter 14 manuscript, editor log, canonical brief, and PEAK index between the
+    feature Freeze commit and the PR #16 squash commit.
+- Part III baseline verification:
+  - `CHAPTER-001` through `CHAPTER-014` are canonical in `knowledge/index.yaml`.
+  - `CHAPTER-014` is the first Part III chapter and records Editorial, Canon, Technical, and Freeze Review entries in
+    order.
+  - The table of contents places `Managing Change Radius` immediately after `Drawing Boundaries That Survive Change`.
+  - `VOCAB-001` - Change Radius exists exactly once.
+  - `METRIC-001` - Change Radius exists exactly once.
+  - Neither Change Radius concept changed during the Chapter 14 Freeze or squash merge.
+- Canonical predecessor: `CHAPTER-014` - Drawing Boundaries That Survive Change.
+- Part position: second chapter of Part III - Architecture Playbook.
+- Manuscript path: `book/03-architecture-playbook/15-managing-change-radius.md`.
+- Canonical brief path: `editor/chapter-briefs/CHAPTER-015-managing-change-radius.md`.
+- Outcome: Approved for canonical brief registration.
+- Primary-concept resolution: no primary PEAK concept is assigned. Chapter 15 is a practice chapter, and current
+  repository convention does not require a primary concept for practice chapters.
+- Central Change Radius result:
+  - `VOCAB-001` supplies the semantic definition of Change Radius.
+  - `METRIC-001` supplies the approximate affected-surface measurement posture.
+  - The paired concepts are central without adding a new registry field or new PEAK concept.
+- Reader-facing manuscript created: no.
+- Author Draft performed: no.
+- Editorial, Canon, Technical, or Freeze Review performed: no.
+- Part III README changed: no.
+- `editor/CHAPTER_ARCHITECTURE.md` changed: no.
+- Chapters 1-14 changed: no.
+- Table of contents changed: no.
+- Existing PEAK concept, law, artifact, ritual, metric, smell, anti-pattern, failure story, or vocabulary ID changed: no.
+- New PEAK concept created: no.
+- Chapter 15 index registration:
+  - `CHAPTER-015` registered as a `draft` chapter named `Managing Change Radius`.
+  - Path registered as `../book/03-architecture-playbook/15-managing-change-radius.md`.
+- Selected PEAK concepts:
+  - `VOCAB-001` - Change Radius.
+  - `METRIC-001` - Change Radius.
+  - `LAW-001` - Every State Has One Owner.
+  - `LAW-002` - Every API Is a Promise.
+  - `LAW-003` - Time Is a Dependency.
+  - `LAW-005` - Evidence Before Confidence.
+  - `LAW-007` - Every Dependency Is a Decision.
+  - `SMELL-001` - Silent Coupling.
+  - `SMELL-004` - Hidden State.
+  - `SMELL-005` - Platform Leakage.
+  - `ANTIPATTERN-003` - Global Configuration.
+  - `ANTIPATTERN-006` - Temporary Solution.
+  - `ARTIFACT-001` - ADR.
+  - `ARTIFACT-003` - Decision Journal.
+- Concepts considered but rejected from the registered relationship set:
+  - `SMELL-002` - Utility Gravity: related to accumulated helpers, but not central to the Change Radius method.
+  - `SMELL-003` - Boolean Explosion: relevant when flags expand radius, but Chapter 11 owns option combinations.
+  - `SMELL-006` - Event Explosion: relevant to event-heavy systems, but events are one affected surface.
+  - `ANTIPATTERN-001` - God Module: relevant when broad modules expand radius, but not central enough for an edge.
+  - `ANTIPATTERN-004` - Manager Mania: relevant when managers hide ownership, but Chapter 14 already carries that
+    boundary failure.
+  - `VOCAB-007` and `METRIC-005` - Architecture Health: Change Radius contributes to health, but Chapter 15 should not
+    become a health-review chapter.
+  - `METRIC-003` - Discoverability and `METRIC-004` - API Stability: useful signals, but not central relationship
+    targets for this practice chapter.
+  - `ARTIFACT-002` - RFC, `ARTIFACT-005` - Event Catalog, `ARTIFACT-006` - Architecture Ledger, `RITUAL-001` -
+    Architecture Review, and `RITUAL-004` - Architecture Health Review: later chapters own the full review and artifact
+    practices.
+  - `FAILURE-001`, `FAILURE-002`, `FAILURE-003`, and `FAILURE-005`: related stories, but the selected Chapter 15 story
+    is a calibration-record radius story rather than an existing failure-story edge.
+- Exact registered outgoing relationships:
+  - `CHAPTER-015` illustrates `VOCAB-001`.
+  - `CHAPTER-015` illustrates `METRIC-001`.
+  - `CHAPTER-015` references `LAW-001`.
+  - `CHAPTER-015` references `LAW-002`.
+  - `CHAPTER-015` references `LAW-003`.
+  - `CHAPTER-015` references `LAW-005`.
+  - `CHAPTER-015` references `LAW-007`.
+  - `CHAPTER-015` references `SMELL-001`.
+  - `CHAPTER-015` references `SMELL-004`.
+  - `CHAPTER-015` references `SMELL-005`.
+  - `CHAPTER-015` references `ANTIPATTERN-003`.
+  - `CHAPTER-015` references `ANTIPATTERN-006`.
+  - `CHAPTER-015` references `ARTIFACT-001`.
+  - `CHAPTER-015` references `ARTIFACT-003`.
+- Canonical boundaries:
+  - Chapter 14 owns boundary placement and integrity; Chapter 15 owns the full Change Radius method.
+  - Chapter 16 owns failure and recovery design.
+  - Chapter 17 owns ADR/RFC practice.
+  - Chapter 18 owns Architecture Review.
+  - Chapter 19 owns Architecture Freeze.
+  - Later parts retain product-line architecture, manufacturing and field workflows, observability implementation,
+    release discipline, organizational rituals, and legacy recovery.
+- Changed files:
+  - `editor/chapter-briefs/CHAPTER-015-managing-change-radius.md`
+  - `editor/EDITOR_LOG.md`
+  - `knowledge/index.yaml`
+- Final validation completed after this log entry:
+  - Direct canonical-brief registration assertions: passed for clean baseline, `HEAD` matching verified `origin/main`
+    before branch creation, local branch `chapter15` starting from verified `origin/main`, Chapter 14 PR #16 squash
+    merge, final-tree equivalence with the Chapter 14 feature Freeze commit, no pre-existing Chapter 15 branch, brief,
+    manuscript, or index entry, exact expected changed files, `CHAPTER-015` existence exactly once, exact registered
+    metadata, `draft` status, Chapters 1-14 remaining canonical, Part III README unchanged, table of contents unchanged,
+    `editor/CHAPTER_ARCHITECTURE.md` unchanged, manuscript absent, exact Chapter 15 relationship set, existing
+    relationship targets, valid relationship verbs, no duplicate or self-referential Chapter 15 relationship, no new PEAK
+    ID, no speculative primary concept, Chapter 14 boundary explicit, Chapters 16-19 out of scope, no unresolved markers
+    in the brief, no false-precision scoring system, and no tracked `site/` output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini editor/chapter-briefs/CHAPTER-015-managing-change-radius.md editor/EDITOR_LOG.md knowledge/index.yaml`: passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed; no generated `site/` output is tracked.
+- Next lifecycle stage: Author Draft after author approval.
+- Do not create the reader-facing manuscript, edit the Part III README, perform review phases, freeze Chapter 15, open a
+  pull request, merge, or alter Part III architecture as part of this phase.
