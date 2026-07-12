@@ -4834,3 +4834,71 @@ Pull request readiness:
   - `git ls-files site`: passed; no generated `site/` output is tracked.
 - Next required lifecycle stage: Freeze Review after this gate is committed and pushed.
 - Do not perform Freeze Review, PR creation, or merge as part of this phase.
+
+## Phase 60 Chapter 12 Freeze Review
+
+- Chapter: Simplicity Is a Feature.
+- Stable ID: `CHAPTER-012`.
+- Branch: `chapter12`.
+- Stage: Freeze Review.
+- Freeze Review baseline: `d975870f9500e53ef34eb9ad26161b0072f4f625`.
+- Prior review commits:
+  - Editorial Review: `4ac94b7daf4da974509d451749c2a351fdbd9747`.
+  - Canon Review: `eb5afd4985e54d7512b1772827684afc3cc0fb2a`.
+  - Technical Review: `d975870f9500e53ef34eb9ad26161b0072f4f625`.
+- Manuscript path: `book/02-the-laws/12-simplicity-is-a-feature.md`.
+- Canonical brief path: `editor/chapter-briefs/CHAPTER-012-simplicity-is-a-feature.md`.
+- Primary law: `LAW-004` - Simplicity Is a Feature.
+- Outcome: Approve.
+- Reader-facing manuscript changed during Freeze Review: no.
+- Canonical brief changed during Freeze Review: no.
+- `LAW-004` law file changed during Freeze Review: no.
+- `knowledge/index.yaml` changed during Freeze Review: yes; `CHAPTER-012` status advanced from `draft` to `canonical`.
+- `LAW-004` registry status after Freeze Review: `draft`.
+- `CANON.md` changed during Freeze Review: no.
+- Table of contents changed during Freeze Review: no.
+- Chapters 1-11 changed during Freeze Review: no.
+- PEAK relationship set changed during Freeze Review: no.
+- New PEAK concept created or implied as canon: no.
+- Lifecycle result: passed. Editorial Review, Canon Review, and Technical Review were completed, committed, pushed, and
+  confirmed as ancestors before Freeze Review began.
+- Freeze scope result: passed. Freeze changed only the editor log and `CHAPTER-012` registry status.
+- Canonical status result: passed. `CHAPTER-012` is canonical after Freeze Review; the associated `LAW-004` law concept
+  remains draft.
+- Manuscript structure result: passed. The chapter keeps the expected section sequence: Opening Quote, Story, Discussion,
+  Engineering Principle, Architecture Exercise, Principal's Notebook, ADR, and Editor's Commentary.
+- Notebook result: passed. Principal's Notebook contains exactly three observations.
+- PEAK relationship result: passed. The registered Chapter 12 relationship set remains exact:
+  - `CHAPTER-012` illustrates `LAW-004`.
+  - `CHAPTER-012` illustrates `SMELL-002`.
+  - `CHAPTER-012` illustrates `ANTIPATTERN-004`.
+  - `CHAPTER-012` references `SMELL-001`.
+  - `CHAPTER-012` references `SMELL-005`.
+  - `CHAPTER-012` references `ANTIPATTERN-005`.
+  - `CHAPTER-012` references `VOCAB-001`.
+  - `CHAPTER-012` references `VOCAB-007`.
+  - `CHAPTER-012` references `METRIC-001`.
+  - `CHAPTER-012` references `METRIC-003`.
+  - `CHAPTER-012` references `METRIC-005`.
+  - `CHAPTER-012` references `ARTIFACT-001`.
+- Changed files:
+  - `editor/EDITOR_LOG.md`
+  - `knowledge/index.yaml`
+- Final validation completed after this log entry:
+  - Direct freeze assertions: passed for clean baseline, local branch matching `origin/chapter12`, prior review commit
+    ancestry, expected changed files only, manuscript unchanged, canonical brief unchanged, `LAW-004` unchanged, `CANON.md`
+    unchanged, table of contents unchanged, Chapters 1-11 unchanged, exact section order, three notebook observations,
+    unresolved marker absence, exact registered Chapter 12 relationship set, no duplicate or self-referential Chapter 12
+    relationship, valid relationship targets, `CHAPTER-012` status `canonical`, `LAW-004` status `draft`, ordered Phase
+    57-60 entries, and no tracked `site/` output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini editor/EDITOR_LOG.md knowledge/index.yaml`: passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed; no generated `site/` output is tracked.
+- Pull request readiness: ready after this Freeze Review commit is pushed.
+- Recommended pull request title: `Chapter 12: Simplicity Is a Feature`.
+- Do not merge as part of this phase.

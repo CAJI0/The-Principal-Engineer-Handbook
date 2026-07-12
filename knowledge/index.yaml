@@ -333,7 +333,7 @@ entities:
       type: chapter
       name: Simplicity Is a Feature
       path: ../book/02-the-laws/12-simplicity-is-a-feature.md
-      status: draft
+      status: canonical
   adrs:
     - id: ADR-001
       type: adr
