@@ -324,6 +324,11 @@ entities:
       name: Time Is a Dependency
       path: ../book/02-the-laws/10-time-is-a-dependency.md
       status: canonical
+    - id: CHAPTER-011
+      type: chapter
+      name: Unused Flexibility Is Waste
+      path: ../book/02-the-laws/11-unused-flexibility-is-waste.md
+      status: canonical
   adrs:
     - id: ADR-001
       type: adr
@@ -545,3 +550,30 @@ relationships:
   - from: CHAPTER-010
     type: references
     to: METRIC-003
+  - from: CHAPTER-011
+    type: illustrates
+    to: LAW-006
+  - from: CHAPTER-011
+    type: illustrates
+    to: SMELL-003
+  - from: CHAPTER-011
+    type: illustrates
+    to: SMELL-005
+  - from: CHAPTER-011
+    type: references
+    to: ANTIPATTERN-006
+  - from: CHAPTER-011
+    type: references
+    to: VOCAB-001
+  - from: CHAPTER-011
+    type: references
+    to: METRIC-001
+  - from: CHAPTER-011
+    type: references
+    to: METRIC-003
+  - from: CHAPTER-011
+    type: references
+    to: ARTIFACT-001
+  - from: CHAPTER-011
+    type: references
+    to: ARTIFACT-003
