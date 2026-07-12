@@ -4682,3 +4682,83 @@ Pull request readiness:
   - `git ls-files site`: passed; no generated `site/` output is tracked.
 - Next required lifecycle stage: Canon Review after this gate is committed and pushed.
 - Do not perform Canon Review, Technical Review, Freeze Review, PR creation, or merge as part of this phase.
+
+## Phase 58 Chapter 12 Canon Review
+
+- Chapter: Simplicity Is a Feature.
+- Stable ID: `CHAPTER-012`.
+- Branch: `chapter12`.
+- Stage: Canon Review.
+- Canon Review baseline: `4ac94b7daf4da974509d451749c2a351fdbd9747`.
+- Manuscript path: `book/02-the-laws/12-simplicity-is-a-feature.md`.
+- Canonical brief path: `editor/chapter-briefs/CHAPTER-012-simplicity-is-a-feature.md`.
+- Primary law: `LAW-004` - Simplicity Is a Feature.
+- Outcome: Approve.
+- Reader-facing manuscript changed during Canon Review: no.
+- Canonical brief changed during Canon Review: no.
+- `LAW-004` law file changed during Canon Review: no.
+- `knowledge/index.yaml` changed during Canon Review: no.
+- `CANON.md` changed during Canon Review: no.
+- Table of contents changed during Canon Review: no.
+- Chapters 1-11 changed during Canon Review: no.
+- PEAK relationship set changed during Canon Review: no.
+- New PEAK concept created or implied as canon: no.
+- Canonical sources checked: Chapter 12 canonical brief, `LAW-004` law file, Part II table of contents position,
+  `editor/CANON.md`, `editor/CHAPTER_ARCHITECTURE.md`, `editor/REVIEW_PROCESS.md`, `knowledge/index.yaml`, all
+  registered Chapter 12 PEAK concept files, and canonical Chapters 6 through 11 boundary signals.
+- `LAW-004` compliance: passed. The chapter teaches simplicity as a product capability that makes future change safer,
+  not as a line-count, layer-count, style, familiarity, or anti-abstraction rule.
+- Semantic distinctions: passed for simple versus easy, simple versus simplistic, explicit versus concise, essential
+  versus accidental complexity, local versus system-level simplicity, and proportionate abstraction.
+- Chapter architecture result: passed for exact section order and exactly three Principal's Notebook observations.
+- Story, exercise, and ADR result: passed. The manuscript implements the command-path story, `Explain One Behavior End
+  to End` exercise, and scoped ADR for collapsing command routing into one product-owned decision path.
+- Boundary result:
+  - Chapter 11 boundary preserved; no outgoing `CHAPTER-012` relationship to `LAW-006` exists and the chapter does not
+    become an unused-options audit.
+  - Chapter 13 boundary preserved; tests, diagnostics, Change Radius, and ability to explain behavior are used as
+    simplicity signals without teaching confidence calibration or proof standards.
+  - No Part III boundary playbook, Architecture Health Review, Deletion Day, product-configuration, manufacturing,
+    observability, legacy-refactoring, or framework-design playbook was introduced.
+- PEAK result:
+  - All registered supporting concepts are materially present: Utility Gravity, Manager Mania, Silent Coupling, Platform
+    Leakage, Callback Hell, Change Radius, Discoverability, Architecture Health, and ADR.
+  - Exact registered relationship set preserved:
+    - `CHAPTER-012 illustrates LAW-004`
+    - `CHAPTER-012 illustrates SMELL-002`
+    - `CHAPTER-012 illustrates ANTIPATTERN-004`
+    - `CHAPTER-012 references SMELL-001`
+    - `CHAPTER-012 references SMELL-005`
+    - `CHAPTER-012 references ANTIPATTERN-005`
+    - `CHAPTER-012 references VOCAB-001`
+    - `CHAPTER-012 references VOCAB-007`
+    - `CHAPTER-012 references METRIC-001`
+    - `CHAPTER-012 references METRIC-003`
+    - `CHAPTER-012 references METRIC-005`
+    - `CHAPTER-012 references ARTIFACT-001`
+  - Relationship targets exist; no duplicate, unexpected, or self-edge was found.
+- Corrections during Canon Review: none.
+- Changed files:
+  - `editor/EDITOR_LOG.md`
+- Pre-log validation already run:
+  - Gate baseline checks passed for clean tree, `HEAD` matching `origin/chapter12`, current commit subject
+    `docs(chapter-12): complete editorial review`, and Author Draft baseline ancestry.
+  - Direct canon assertions: passed for exact `LAW-004` statement, brief-aligned semantic distinctions, exact Chapter 12
+    relationship set, target existence, absence of `LAW-006` outgoing relationship, no unexpected PEAK IDs,
+    `CHAPTER-012` remaining `draft`, exact section order, three notebook observations, unresolved marker absence, and
+    unchanged canonical brief, `LAW-004`, PEAK index, `CANON.md`, and table of contents.
+- Final validation completed after this log entry:
+  - Direct final canon and PEAK assertions: passed for exact `LAW-004` statement, exact Chapter 12 relationship set,
+    relationship target existence, duplicate-edge absence, self-edge absence, no unexpected PEAK IDs, `CHAPTER-012`
+    remaining `draft`, exact section order, exactly three notebook observations, unresolved marker absence, Chapter 11
+    boundary preservation, Chapter 13 boundary preservation, expected changed files only, and no tracked `site/` output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini editor/EDITOR_LOG.md`: passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed; no generated `site/` output is tracked.
+- Next required lifecycle stage: Technical Review after this gate is committed and pushed.
+- Do not perform Technical Review, Freeze Review, PR creation, or merge as part of this phase.
