@@ -4902,3 +4902,109 @@ Pull request readiness:
 - Pull request readiness: ready after this Freeze Review commit is pushed.
 - Recommended pull request title: `Chapter 12: Simplicity Is a Feature`.
 - Do not merge as part of this phase.
+
+## Phase 61 Chapter 13 Canonical Brief Registration
+
+- Chapter: Evidence Before Confidence.
+- Stable ID: `CHAPTER-013`.
+- Branch: `chapter13`.
+- Stage: Canonical Brief Registration.
+- Verified baseline `origin/main`: `5aaa875a39f0423f170ee59b88dc4bcc82cbb0eb`.
+- Chapter 12 PR and squash-merge verification:
+  - Chapter 12 PR: `#14`.
+  - Squash commit: `5aaa875a39f0423f170ee59b88dc4bcc82cbb0eb`.
+  - Squash commit subject: `Chapter 12: Simplicity Is a Feature (#14)`.
+  - Squash commit parent: `e00d5351488799949a873e605d6256b4e1e64940`.
+  - Final Chapter 12 feature Freeze commit, still resolvable: `d9d3bcc78b12d56353e4e96259d15d992860f385`.
+  - Final-tree equivalence: passed for Chapter 12 manuscript, editor log, canonical brief, PEAK index, and `LAW-004`
+    law file between the feature Freeze commit and the PR #14 squash commit.
+- Canonical predecessor: `CHAPTER-012` - Simplicity Is a Feature.
+- Part position: final chapter of Part II - The Laws.
+- Manuscript path: `book/02-the-laws/13-evidence-before-confidence.md`.
+- Canonical brief path: `editor/chapter-briefs/CHAPTER-013-evidence-before-confidence.md`.
+- Primary law: `LAW-005` - Evidence Before Confidence.
+- Exact law statement: "Confidence should follow evidence, not replace it."
+- Outcome: Approved for canonical brief registration.
+- Reader-facing manuscript created: no.
+- Author Draft performed: no.
+- Editorial, Canon, Technical, or Freeze Review performed: no.
+- `LAW-005` law file changed: no.
+- Chapter 5 changed: no.
+- Chapters 1-12 changed: no.
+- Table of contents changed: no.
+- `CANON.md` changed: no.
+- Law IDs changed or renumbered: no.
+- New PEAK concept created: no.
+- Chapter 5 distinction:
+  - Chapter 5 owns forming evidence-bounded technical judgment for a current commitment.
+  - Chapter 13 owns the lifecycle of architecture confidence after the original decision, including evidence provenance,
+    evidence transfer, confidence freshness, weak signals, counter-evidence, revalidation ownership, and review triggers.
+  - Chapter 13 must not reuse Chapter 5's buffered flash-logging story, exercise, ADR, discussion arc, or notebook
+    observations.
+- Part II final-chapter role: passed. The brief closes Part II by showing that the laws are not self-validating and that
+  each architecture claim requires current, traceable evidence without becoming a chapter-by-chapter summary.
+- Part III transition: passed. The brief points toward Part III practices as the place where decisions become durable
+  without teaching those playbooks.
+- Index registration:
+  - `CHAPTER-013` registered as a `draft` chapter named `Evidence Before Confidence`.
+  - Path registered as `../book/02-the-laws/13-evidence-before-confidence.md`.
+- Selected PEAK concepts:
+  - `LAW-005` - Evidence Before Confidence.
+  - `VOCAB-002` - Weak Signal.
+  - `ARTIFACT-007` - Weak Signal Register.
+  - `VOCAB-003` - Decision Journal.
+  - `ARTIFACT-003` - Decision Journal.
+  - `ARTIFACT-001` - ADR.
+  - `RITUAL-001` - Architecture Review.
+  - `VOCAB-001` - Change Radius.
+  - `METRIC-001` - Change Radius.
+  - `VOCAB-007` - Architecture Health.
+  - `METRIC-005` - Architecture Health.
+  - `FAILURE-003` - The Successful Prototype.
+- Concepts considered but rejected from the registered relationship set:
+  - `LAW-001`, `LAW-002`, `LAW-003`, `LAW-004`, `LAW-006`, and `LAW-007`: used as Part II boundaries and evidence
+    questions, not automatic graph edges.
+  - `METRIC-003` - Discoverability: relevant to evidence records, but selected artifacts carry the record-keeping need
+    more directly.
+  - `ARTIFACT-006` - Architecture Ledger: useful for large systems, but not required by the chapter's central claim.
+  - `RITUAL-004` - Architecture Health Review: relevant to later practice, but the chapter should not teach the full
+    health-review ritual.
+  - `FAILURE-005` - The Release We Should Have Delayed: relevant to release pressure, but the selected story is about
+    confidence transfer from a successful prototype.
+- Exact registered outgoing relationships:
+  - `CHAPTER-013` illustrates `LAW-005`.
+  - `CHAPTER-013` illustrates `FAILURE-003`.
+  - `CHAPTER-013` references `VOCAB-002`.
+  - `CHAPTER-013` references `ARTIFACT-007`.
+  - `CHAPTER-013` references `VOCAB-003`.
+  - `CHAPTER-013` references `ARTIFACT-003`.
+  - `CHAPTER-013` references `ARTIFACT-001`.
+  - `CHAPTER-013` references `RITUAL-001`.
+  - `CHAPTER-013` references `VOCAB-001`.
+  - `CHAPTER-013` references `METRIC-001`.
+  - `CHAPTER-013` references `VOCAB-007`.
+  - `CHAPTER-013` references `METRIC-005`.
+- Changed files:
+  - `editor/chapter-briefs/CHAPTER-013-evidence-before-confidence.md`
+  - `editor/EDITOR_LOG.md`
+  - `knowledge/index.yaml`
+- Final validation completed after this log entry:
+  - Direct baseline and registration assertions: passed for clean baseline, `HEAD` matching `origin/main` before branch
+    creation, local branch `chapter13` starting from verified `origin/main`, Chapter 12 PR #14 squash merge, final-tree
+    equivalence with the Chapter 12 feature Freeze commit, no pre-existing Chapter 13 branch, brief, manuscript, or index
+    entry, exact expected changed files, `CHAPTER-013` existence exactly once, exact registered metadata, `draft` status,
+    Chapters 1-12 remaining canonical, `LAW-005` exact title and statement, exact Chapter 13 relationship set, existing
+    relationship targets, no duplicate or self-referential Chapter 13 relationship, no new PEAK ID, canonical brief
+    present, manuscript absent, Chapter 5 distinction present, Chapter 5 flash-logging story not reused, Chapter 10 timing
+    material kept out of scope, Part II capstone present, Part III transition present, and no tracked `site/` output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini editor/chapter-briefs/CHAPTER-013-evidence-before-confidence.md editor/EDITOR_LOG.md knowledge/index.yaml`: passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed; no generated `site/` output is tracked.
+- Next lifecycle stage: Author Draft after author approval.
+- Do not create the reader-facing manuscript, perform review phases, freeze Chapter 13, open a pull request, merge, or
+  alter Part II architecture as part of this phase.

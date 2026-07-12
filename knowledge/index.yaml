@@ -334,6 +334,11 @@ entities:
       name: Simplicity Is a Feature
       path: ../book/02-the-laws/12-simplicity-is-a-feature.md
       status: canonical
+    - id: CHAPTER-013
+      type: chapter
+      name: Evidence Before Confidence
+      path: ../book/02-the-laws/13-evidence-before-confidence.md
+      status: draft
   adrs:
     - id: ADR-001
       type: adr
@@ -618,3 +623,39 @@ relationships:
   - from: CHAPTER-012
     type: references
     to: ARTIFACT-001
+  - from: CHAPTER-013
+    type: illustrates
+    to: LAW-005
+  - from: CHAPTER-013
+    type: illustrates
+    to: FAILURE-003
+  - from: CHAPTER-013
+    type: references
+    to: VOCAB-002
+  - from: CHAPTER-013
+    type: references
+    to: ARTIFACT-007
+  - from: CHAPTER-013
+    type: references
+    to: VOCAB-003
+  - from: CHAPTER-013
+    type: references
+    to: ARTIFACT-003
+  - from: CHAPTER-013
+    type: references
+    to: ARTIFACT-001
+  - from: CHAPTER-013
+    type: references
+    to: RITUAL-001
+  - from: CHAPTER-013
+    type: references
+    to: VOCAB-001
+  - from: CHAPTER-013
+    type: references
+    to: METRIC-001
+  - from: CHAPTER-013
+    type: references
+    to: VOCAB-007
+  - from: CHAPTER-013
+    type: references
+    to: METRIC-005
