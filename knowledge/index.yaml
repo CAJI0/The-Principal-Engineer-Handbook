@@ -328,7 +328,7 @@ entities:
       type: chapter
       name: Unused Flexibility Is Waste
       path: ../book/02-the-laws/11-unused-flexibility-is-waste.md
-      status: draft
+      status: canonical
   adrs:
     - id: ADR-001
       type: adr
