@@ -5151,6 +5151,91 @@ Pull request readiness:
 - Next lifecycle stage: Canon Review after this Editorial Review commit is committed and pushed.
 - Do not perform Canon Review, Technical Review, Freeze Review, PR creation, or merge as part of this phase.
 
+## Phase 70 Chapter 14 Canon Review
+
+- Chapter: Drawing Boundaries That Survive Change.
+- Stable ID: `CHAPTER-014`.
+- Branch: `chapter14`.
+- Stage: Canon Review.
+- Reviewed Editorial Review commit: `556f42e5aa83451defbfed0445daa647b41af015`.
+- Manuscript path: `book/03-architecture-playbook/14-drawing-boundaries-that-survive-change.md`.
+- Canonical brief path: `editor/chapter-briefs/CHAPTER-014-drawing-boundaries-that-survive-change.md`.
+- Primary concept: none by canonical decision.
+- Part position: first chapter of Part III - Architecture Playbook.
+- Outcome: Approved.
+- Manuscript changed during Canon Review: no.
+- Canonical brief changed during Canon Review: no.
+- `knowledge/index.yaml` changed during Canon Review: no.
+- `editor/CHAPTER_ARCHITECTURE.md` changed during Canon Review: no.
+- Part III README changed during Canon Review: no.
+- Chapters 1-13 changed during Canon Review: no.
+- Table of contents changed during Canon Review: no.
+- `CANON.md` changed during Canon Review: no.
+- PEAK concepts or relationships changed during Canon Review: no.
+- New PEAK concept created or implied as canon: no.
+- Canonical sources checked: repository README, book bible, style guide, architecture vision, canon, chapter
+  architecture, review process, source-of-truth policy, knowledge model, roadmap, open questions, editor log, editorial
+  ADRs, PEAK index, Part III README, table of contents, Chapter 14 canonical brief, Chapter 14 manuscript, all registered
+  Chapter 14 PEAK concept files, canonical Chapters 1-13, and Chapter 13 review and Freeze precedent.
+- Part III opening-role result: passed. Chapter 14 begins Part III by turning the Part II laws into boundary placement
+  practice and does not alter Part III ordering or placeholder material.
+- No-primary resolution result: passed. The manuscript and log keep Chapter 14 as a practice chapter with no primary
+  PEAK concept.
+- Boundary-definition result: passed. The manuscript defines an architecture boundary as an intentional separation of
+  responsibility, authority, and knowledge.
+- Boundary distinction result: passed. The manuscript distinguishes boundary from module, interface, layer, process,
+  task, library, service, and deployment shape.
+- Authority finding: passed. Product-owned radio control state is the single authority; callbacks, caches, projections,
+  persistence, diagnostics, and service views are not competing truth.
+- Vocabulary finding: passed. Product vocabulary remains on the product side, while vendor status, RTOS bits, packet
+  shapes, socket details, service commands, and driver errors are translated at the edge.
+- Dependency-direction finding: passed. The manuscript distinguishes runtime callbacks, queues, messages, and data flow
+  from source-level and design-level dependency knowledge.
+- Translation finding: passed. Translation preserves meaning across identifiers, status, lifecycle, completion, errors,
+  recovery, diagnostics, and unsupported behavior; it is not merely renaming.
+- Back channel finding: passed. Direct platform calls, service commands, test hooks, hidden subscriptions, and persistence
+  fields are treated as evidence of false boundaries when they bypass the product contract.
+- Earlier-chapter boundary findings:
+  - Chapter 7: passed. State authority is used as an input to boundary placement without reteaching the state law.
+  - Chapter 8: passed. API promises inform the boundary contract without becoming an API compatibility chapter.
+  - Chapter 9: passed. Dependency commitment and imported assumptions are contained without repeating the dependency
+    chapter.
+  - Chapter 12: passed. Boundary cost and proportionality use simplicity without retelling the simplicity chapter.
+  - Chapter 13: passed. Evidence and Change Radius signals are used without teaching revalidation.
+- Chapters 15-19 boundary findings:
+  - Chapter 15: passed. Change Radius remains a signal, not the full method.
+  - Chapter 16: passed. Failure and recovery terms are scoped to boundary contract meaning.
+  - Chapter 17: passed. The chapter-local ADR is used without teaching ADR/RFC practice.
+  - Chapter 18: passed. Reviewability is named without teaching Architecture Review.
+  - Chapter 19: passed. Durability is scoped to expected change without teaching Architecture Freeze.
+- PEAK concept and relationship checks: passed. Platform Leakage, HAL Everywhere, state ownership, API promises,
+  dependency decisions, Silent Coupling, Hidden State, Manager Mania, God Module, Change Radius, and ADR are materially
+  present, and the registered relationship set remains exact.
+- Section-architecture result: passed. The manuscript preserves the required section order: Opening Quote, Story,
+  Discussion, Engineering Principle, Architecture Exercise, Principal's Notebook, ADR, Editor's Commentary.
+- Corrections made during Canon Review: none.
+- Changed files:
+  - `editor/EDITOR_LOG.md`
+- Final validation completed after this log entry:
+  - Direct Canon Review assertions: passed for clean baseline, `HEAD` matching `origin/chapter14` before review,
+    reviewed SHA matching the Editorial Review commit, expected changed files only, exact section order, unique required
+    sections, exactly three Principal's Notebook observations, unresolved marker absence, required boundary definition,
+    no new PEAK ID, no primary concept introduced, `CHAPTER-014` remaining `draft`, exact registered relationship set,
+    existing relationship targets, no duplicate or self-edge, unchanged manuscript, unchanged canonical brief, unchanged
+    PEAK index, unchanged `editor/CHAPTER_ARCHITECTURE.md`, unchanged Part III README, unchanged Chapters 1-13,
+    unchanged table of contents, unchanged `CANON.md`, earlier-chapter boundaries, Chapters 15-19 boundaries, and no
+    tracked `site/` output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini book/03-architecture-playbook/14-drawing-boundaries-that-survive-change.md editor/EDITOR_LOG.md`: passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed; no generated `site/` output is tracked.
+- Next lifecycle stage: Technical Review after this Canon Review commit is committed and pushed.
+- Do not perform Technical Review, Freeze Review, PR creation, or merge as part of this phase.
+
 ## Phase 63 Chapter 13 Editorial Review
 
 - Chapter: Evidence Before Confidence.
