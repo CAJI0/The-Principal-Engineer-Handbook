@@ -31,16 +31,18 @@ The team added a global service locator so command code did not have to thread d
 manager modules so the UI, service, manufacturing, and recovery paths had a common place to call. It added generic
 command objects so commands could move through queues and callbacks. It added callback registries so the hardware layer
 could report completion without blocking. It added event forwarding so the service tool and logs could hear about the
-same operation. It added platform wrappers so product code did not include hardware headers. It added configuration-driven
-routing so one command family could be steered without rebuilding. It added utility helpers for command names, diagnostic
-labels, and retry decisions. It added pass-through adapters because some callers still expected the old shape. It added
-fallback paths and a shared context object because recovery needed to know what had happened earlier.
+same operation.
+
+The path kept collecting reasonable pieces. Platform wrappers kept product code away from hardware headers.
+Configuration-driven routing let one command family be steered without rebuilding. Utility helpers normalized command
+names, diagnostic labels, and retry decisions. Pass-through adapters protected callers that still expected the old
+shape. Fallback paths and a shared context object helped recovery know what had happened earlier.
 
 Each addition solved a local problem.
 
 The code still looked organized in a diagram. There were boxes for managers, adapters, command objects, routers,
 platform wrappers, and utilities. No box looked absurd. Most methods were short. Several classes had only one obvious
-job. The reviewers could say, with some confidence, that each local piece was tidy.
+job. Reviewers could still say, with some confidence, that each local piece was tidy.
 
 Then a field issue required a small change.
 
@@ -53,14 +55,14 @@ for already-started hardware work unchanged.
 
 It sounded like a one-condition patch.
 
-The first engineer opened the UI command manager and found a calibration flag, but the flag was not authoritative. It
-was a display hint cached from the last event. The service path entered through a different manager and used a utility
-helper to decide whether a command could be sent onward. Manufacturing bypassed that helper because the line needed
-privileged calibration access. The fallback path passed through a generic command object whose fields used platform
-names rather than product names. The callback registry could report a hardware completion after the command manager had
-already returned. The event forwarding path updated diagnostics after the utility helper had accepted the command. A
-global context flag recorded whether recovery was in progress, but one adapter read it before configuration routing and
-another read it after.
+The engineer assigned the patch opened the UI command manager and found a calibration flag, but the flag was not
+authoritative. It was a display hint cached from the last event. The service path entered through a different manager
+and used a utility helper to decide whether a command could be sent onward. Manufacturing bypassed that helper because
+the line needed privileged calibration access. The fallback path passed through a generic command object whose fields
+used platform names rather than product names. The callback registry could report a hardware completion after the command
+manager had already returned. The event forwarding path updated diagnostics after the utility helper had accepted the
+command. A global context flag recorded whether recovery was in progress, but one adapter read it before configuration
+routing and another read it after.
 
 The acceptance decision depended on UI state, configuration, manager state, callback order, a global context flag, a
 utility helper, a platform wrapper, deferred hardware completion, and logging side effects.
@@ -80,7 +82,7 @@ tool tests checked that a diagnostic string appeared. Those tests proved that la
 They did not prove the product behavior: a command is rejected while calibration is active, hardware is not started, the
 diagnostic explains the reason, and recovery for already-started work remains intact.
 
-The logs were just as local.
+The logs had the same problem.
 
 They showed "UI command received," "manager accepted," "route selected," "callback registered," "platform request
 started," "event forwarded," and "diagnostic emitted." During the field issue, support did not need a list of
