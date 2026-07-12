@@ -14,10 +14,10 @@ response, retry safely, report diagnostics, and recover after reset. That was al
 
 The team also knew the product line might grow.
 
-There might be a lower-cost board. There might be a long-range transport. There might be a service-only mode for
-manufacturing. There might be a second radio module if the first supplier became risky. There might be a product that
-needed a different packet framing rule. None of those possibilities was absurd. Hardware teams really do change parts.
-Customers really do ask for variants. Supply chains really do turn an ordinary dependency into a release problem.
+A lower-cost board was plausible. So was a long-range transport, a manufacturing service mode, a second radio module if
+the first supplier became risky, or a product that needed a different packet-framing rule. None of those possibilities
+was absurd. Hardware teams really do change parts. Customers really do ask for variants. Supply chains really do turn an
+ordinary dependency into a release problem.
 
 So the team preserved options.
 
@@ -91,7 +91,7 @@ The team's first responses were understandable.
 Each proposal reduced discomfort in one place while preserving the basic problem. The system still contained more
 options than the product owned.
 
-The Principal Engineer asked for a list that did not use the word flexible.
+The Principal Engineer asked the team to make a list without using the word flexible.
 
 The team wrote down every runtime mode, backend, build flag, fallback path, service-tool compatibility behavior,
 test-only switch, dormant implementation, and board-specific branch. Beside each item they wrote who used it, which
@@ -377,7 +377,7 @@ End with one decision:
 - defer;
 - remove;
 - preserve only the seam;
-- create a dated review trigger.
+- create a review trigger with a date or condition.
 
 Do not create a new artifact to manage this exercise. Use the records the system already has.
 

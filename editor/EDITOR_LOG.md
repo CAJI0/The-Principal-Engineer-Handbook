@@ -4108,3 +4108,72 @@ Pull request readiness:
 - Next required lifecycle stage: Editorial Review after this gate is committed and pushed.
 - Do not perform Editorial Review, Canon Review, Technical Review, Freeze Review, PR creation, or merge as part of this
   phase.
+
+## Phase 51 Chapter 11 Editorial Review
+
+- Chapter: Unused Flexibility Is Waste.
+- Stable ID: `CHAPTER-011`.
+- Branch: `chapter11`.
+- Stage: Editorial Review.
+- Editorial Review baseline: `91e1b09beb26ebd68177ca0868b503e2fc1577f5`.
+- Manuscript path: `book/02-the-laws/11-unused-flexibility-is-waste.md`.
+- Canonical brief path: `editor/chapter-briefs/CHAPTER-011-unused-flexibility-is-waste.md`.
+- Primary law: `LAW-006` - Unused Flexibility Is Waste.
+- Outcome: Approve with changes.
+- Reader-facing manuscript changed during Editorial Review: yes.
+- Canonical brief changed during Editorial Review: no.
+- `LAW-006` law file changed during Editorial Review: no.
+- `knowledge/index.yaml` changed during Editorial Review: no.
+- `CANON.md` changed during Editorial Review: no.
+- Table of contents changed during Editorial Review: no.
+- Chapters 1-10 changed during Editorial Review: no.
+- PEAK relationship set changed during Editorial Review: no.
+- New PEAK concept created or implied as canon: no.
+- Editorial changes:
+  - Tightened the early speculative-product paragraph while preserving the same product-line uncertainty.
+  - Clarified the Principal Engineer's list-making move without changing its meaning.
+  - Reworded the exercise decision from a merely dated trigger to a review trigger with a date or condition.
+- Exact outgoing relationship set preserved:
+  - `CHAPTER-011 illustrates LAW-006`
+  - `CHAPTER-011 illustrates SMELL-003`
+  - `CHAPTER-011 illustrates SMELL-005`
+  - `CHAPTER-011 references ANTIPATTERN-006`
+  - `CHAPTER-011 references VOCAB-001`
+  - `CHAPTER-011 references METRIC-001`
+  - `CHAPTER-011 references METRIC-003`
+  - `CHAPTER-011 references ARTIFACT-001`
+  - `CHAPTER-011 references ARTIFACT-003`
+- Boundary result: passed. Chapter 12 and Chapter 13 boundaries remain explicit; no product-line, platform-governance,
+  Deletion Day, framework-design, or legacy-deletion playbook was introduced.
+- Changed files:
+  - `book/02-the-laws/11-unused-flexibility-is-waste.md`
+  - `editor/EDITOR_LOG.md`
+- Pre-log validation already run:
+  - Gate baseline checks passed for clean tree, `HEAD` matching `origin/chapter11`, and current commit subject
+    `docs(chapter-11): add author draft`.
+  - Direct manuscript assertions: passed for exact H2 order, exactly three Principal's Notebook observations,
+    unresolved marker absence, exact `LAW-006` statement, expected PEAK ID coverage, `CHAPTER-011` remaining `draft`,
+    exact Chapter 11 relationship set, and Chapters 1-10 remaining canonical.
+  - Changed-file assertions: passed for manuscript-only changes before this log entry.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed with 0 errors across 141 Markdown files.
+  - `vale --config .vale.ini book/02-the-laws/11-unused-flexibility-is-waste.md`: passed with 0 errors, 0 warnings, and
+    0 suggestions.
+- Final validation completed after this log entry:
+  - Direct manuscript assertions: passed for exact H2 order, exactly three Principal's Notebook observations,
+    unresolved marker absence, exact `LAW-006` statement, and expected PEAK ID coverage.
+  - Direct protected-file and PEAK graph assertions: passed for `CHAPTER-011` remaining `draft`, `LAW-006` remaining
+    `draft`, exact Chapter 11 relationship set, Chapters 1-10 remaining canonical, and unchanged canonical brief,
+    `knowledge/index.yaml`, `LAW-006`, `CANON.md`, and table of contents.
+  - Changed-file assertions: passed for expected changed files only.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed with 0 errors across 141 Markdown files.
+  - `vale --config .vale.ini book/02-the-laws/11-unused-flexibility-is-waste.md editor/EDITOR_LOG.md`: passed with 0
+    errors, 0 warnings, and 0 suggestions.
+  - `npm.cmd run lint:spelling`: passed with 0 spelling issues across 140 checked files.
+  - `npm.cmd run lint:links`: passed; 140 links scanned successfully.
+  - `python -m pip check`: passed; no broken requirements found.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed; no generated `site/` output is tracked.
+- Next required lifecycle stage: Canon Review after this gate is committed and pushed.
+- Do not perform Canon Review, Technical Review, Freeze Review, PR creation, or merge as part of this phase.
