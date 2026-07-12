@@ -5516,3 +5516,71 @@ Pull request readiness:
 - Next lifecycle stage: Author Draft after author approval.
 - Do not create the reader-facing manuscript, edit the Part III README, perform review phases, freeze Chapter 14, open a
   pull request, merge, or alter Part III architecture as part of this phase.
+
+## Phase 68 Chapter 14 Author Draft
+
+- Chapter: Drawing Boundaries That Survive Change.
+- Stable ID: `CHAPTER-014`.
+- Branch: `chapter14`.
+- Stage: Author Draft.
+- Author Draft baseline: `2a26555a7ba23a87ee95225d43f7c0ce89607483`.
+- Verified baseline `origin/main`: `b478e3d5a01977ffb2676c9b309c9f700ba78a80`.
+- Manuscript path: `book/03-architecture-playbook/14-drawing-boundaries-that-survive-change.md`.
+- Canonical brief path: `editor/chapter-briefs/CHAPTER-014-drawing-boundaries-that-survive-change.md`.
+- Primary-concept resolution: no primary PEAK concept is assigned. Chapter 14 is a Part III practice chapter, and the
+  registered outgoing relationships carry the selected concept coverage.
+- Part position: first chapter of Part III - Architecture Playbook.
+- Outcome: Author Draft created.
+- Canonical brief changed during Author Draft: no.
+- `knowledge/index.yaml` changed during Author Draft: no.
+- `editor/CHAPTER_ARCHITECTURE.md` changed during Author Draft: no.
+- Part III README changed during Author Draft: no.
+- Chapters 1-13 changed during Author Draft: no.
+- Table of contents changed during Author Draft: no.
+- `CANON.md` changed during Author Draft: no.
+- PEAK concepts or relationships changed during Author Draft: no.
+- New PEAK concept created or implied as canon: no.
+- Reader-facing manuscript created: yes.
+- Editorial, Canon, Technical, or Freeze Review performed: no.
+- Part III opening role: passed. The draft moves from Part II laws into boundary-placement practice without expanding
+  the Part III README or changing chapter architecture.
+- Boundary-story guardrail: passed. The story uses `The Radio Driver That Was Everywhere` and keeps the focus on
+  product authority, vocabulary, dependency direction, translation, and boundary integrity.
+- Forward-boundary guardrails: passed. Chapter 15 retains the full Change Radius method; Chapter 16 retains full failure
+  and recovery design; Chapter 17 retains ADR/RFC practice; Chapter 18 retains Architecture Review; Chapter 19 retains
+  Architecture Freeze.
+- Registered relationship set preserved:
+  - `CHAPTER-014` illustrates `SMELL-005`.
+  - `CHAPTER-014` illustrates `ANTIPATTERN-002`.
+  - `CHAPTER-014` references `LAW-001`.
+  - `CHAPTER-014` references `LAW-002`.
+  - `CHAPTER-014` references `LAW-007`.
+  - `CHAPTER-014` references `SMELL-001`.
+  - `CHAPTER-014` references `SMELL-004`.
+  - `CHAPTER-014` references `ANTIPATTERN-004`.
+  - `CHAPTER-014` references `ANTIPATTERN-001`.
+  - `CHAPTER-014` references `VOCAB-001`.
+  - `CHAPTER-014` references `METRIC-001`.
+  - `CHAPTER-014` references `ARTIFACT-001`.
+- Changed files:
+  - `book/03-architecture-playbook/14-drawing-boundaries-that-survive-change.md`
+  - `editor/EDITOR_LOG.md`
+- Final validation completed after this log entry:
+  - Direct Author Draft assertions: passed for exact section order, unique required sections, exactly three Principal's
+    Notebook observations, unresolved marker absence, required boundary definition, required story shape, material use of
+    all registered PEAK concepts, no new PEAK ID, `CHAPTER-014` remaining `draft`, exact registered relationship set,
+    unchanged canonical brief, unchanged PEAK index, unchanged `editor/CHAPTER_ARCHITECTURE.md`, unchanged Part III
+    README, unchanged Chapters 1-13, unchanged table of contents, unchanged `CANON.md`, expected changed files only,
+    no generic Clean Architecture, SOLID, dependency-injection, layer-count, or framework tutorial drift, forward
+    boundaries with Chapters 15-19, and no tracked `site/` output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini book/03-architecture-playbook/14-drawing-boundaries-that-survive-change.md editor/EDITOR_LOG.md`: passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed; no generated `site/` output is tracked.
+- Next lifecycle stage: Editorial Review after this Author Draft commit is committed and pushed.
+- Do not perform Editorial Review, Canon Review, Technical Review, Freeze Review, PR creation, or merge as part of this
+  phase.
