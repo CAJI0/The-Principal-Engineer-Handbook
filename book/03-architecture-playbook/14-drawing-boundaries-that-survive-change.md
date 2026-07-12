@@ -120,7 +120,7 @@ The Principal Engineer recast the work:
 
 > Which product decision must remain stable, which integration details vary, and where should translation occur?
 
-The answer was not "radio."
+The answer was not the word "radio."
 
 "Radio" was a device category. It was not yet a boundary.
 
@@ -128,7 +128,7 @@ The stable product decision was the controller's radio control behavior: when th
 which product commands may be sent, what completion means, how retries affect product promises, what recovery may
 change, and what diagnostics support needs in order to explain product behavior.
 
-That decision needed product vocabulary.
+Before it needed another wrapper, that decision needed product vocabulary.
 
 The product did not need to know "vendor state 7." It needed to know whether the link was unavailable, ready to send,
 waiting for completion, temporarily congested, failed with a retry scheduled, failed with product-visible loss, or in a
@@ -214,8 +214,9 @@ An architecture boundary is an intentional separation of responsibility, authori
 
 That definition is stricter than "there is a module here." It is stricter than "there is an interface here." It is
 stricter than "the code is in another process." A module organizes code. An interface exposes a surface. A layer orders
-dependencies. A task or process changes runtime execution. A boundary decides what knowledge may cross, who owns the
-decision, and which reasons to change are allowed to travel together.
+dependencies. A task or process changes runtime execution. A library packages code. A service or deployment boundary
+changes operating shape. A boundary decides what knowledge may cross, who owns the decision, and which reasons to
+change are allowed to travel together.
 
 Those structures can implement a boundary. They do not prove one exists.
 
@@ -315,14 +316,14 @@ ownership, cost, or reversibility. Chapter 17 owns the deeper practice of choosi
 ADRs and RFCs. Here, the ADR is useful because it forces the boundary decision to state context, decision,
 consequences, and alternatives.
 
-Architecture Review and Architecture Freeze will come later. Chapter 18 owns review practice.
+Architecture Review and Architecture Freeze will come later. Chapter 18 owns Architecture Review.
 
 Chapter 19 owns Architecture Freeze.
 
 Chapter 14 gives those later practices something concrete to inspect: where authority lives, what vocabulary crosses,
 which dependencies are contained, which back channels remain, and what change the boundary is expected to survive.
 
-This is how Part III begins.
+That is why Part III begins here.
 
 Part II named the laws. Boundaries are where those laws become operational. State ownership needs a place where
 authority lives. API promises need a contract surface that contains the right knowledge. Dependency decisions need

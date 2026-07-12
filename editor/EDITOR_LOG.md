@@ -5077,6 +5077,80 @@ Pull request readiness:
 - Do not perform Editorial Review, Canon Review, Technical Review, Freeze Review, PR creation, or merge as part of this
   phase.
 
+## Phase 69 Chapter 14 Editorial Review
+
+- Chapter: Drawing Boundaries That Survive Change.
+- Stable ID: `CHAPTER-014`.
+- Branch: `chapter14`.
+- Stage: Editorial Review.
+- Reviewed Author Draft commit: `975882736fe582bf8e18d29b1c805c687983dd9f`.
+- Parent canonical brief commit: `2a26555a7ba23a87ee95225d43f7c0ce89607483`.
+- Manuscript path: `book/03-architecture-playbook/14-drawing-boundaries-that-survive-change.md`.
+- Canonical brief path: `editor/chapter-briefs/CHAPTER-014-drawing-boundaries-that-survive-change.md`.
+- Primary concept: none by canonical decision.
+- Part position: first chapter of Part III - Architecture Playbook.
+- Outcome: Approved with editorial changes.
+- Canonical brief changed during Editorial Review: no.
+- `knowledge/index.yaml` changed during Editorial Review: no.
+- `editor/CHAPTER_ARCHITECTURE.md` changed during Editorial Review: no.
+- Part III README changed during Editorial Review: no.
+- Chapters 1-13 changed during Editorial Review: no.
+- Table of contents changed during Editorial Review: no.
+- `CANON.md` changed during Editorial Review: no.
+- PEAK concepts or relationships changed during Editorial Review: no.
+- New PEAK concept created or implied as canon: no.
+- Material editorial changes:
+  - Smoothed the story transition from the radio category to the product-owned boundary decision.
+  - Clarified that product vocabulary is needed before another wrapper can improve the boundary.
+  - Expanded the boundary distinction to include library, service, and deployment shape without changing the chapter's
+    canon.
+  - Tightened the later-chapter handoff so Chapters 18 and 19 are named directly and Part III begins more cleanly.
+- Chapter architecture result: passed. The manuscript preserves the required section order: Opening Quote, Story,
+  Discussion, Engineering Principle, Architecture Exercise, Principal's Notebook, ADR, Editor's Commentary.
+- Principal's Notebook result: passed. The notebook contains exactly three short observations.
+- Part III opening-role result: passed. The chapter opens Part III by turning the Part II laws into boundary-placement
+  practice without summarizing the law chapters or expanding the Part III README.
+- Forward-boundary results:
+  - Chapter 15: passed. Change Radius is used as evidence; the full method remains out of scope.
+  - Chapter 16: passed. Failure, retry, completion, and recovery meanings appear only as boundary contract concerns.
+  - Chapter 17: passed. The ADR is chapter-local and does not become an ADR/RFC tutorial.
+  - Chapter 18: passed. Reviewability is named, but Architecture Review practice remains later.
+  - Chapter 19: passed. Durability and persistence are discussed without teaching Architecture Freeze.
+- Registered relationship set preserved:
+  - `CHAPTER-014` illustrates `SMELL-005`.
+  - `CHAPTER-014` illustrates `ANTIPATTERN-002`.
+  - `CHAPTER-014` references `LAW-001`.
+  - `CHAPTER-014` references `LAW-002`.
+  - `CHAPTER-014` references `LAW-007`.
+  - `CHAPTER-014` references `SMELL-001`.
+  - `CHAPTER-014` references `SMELL-004`.
+  - `CHAPTER-014` references `ANTIPATTERN-004`.
+  - `CHAPTER-014` references `ANTIPATTERN-001`.
+  - `CHAPTER-014` references `VOCAB-001`.
+  - `CHAPTER-014` references `METRIC-001`.
+  - `CHAPTER-014` references `ARTIFACT-001`.
+- Changed files:
+  - `book/03-architecture-playbook/14-drawing-boundaries-that-survive-change.md`
+  - `editor/EDITOR_LOG.md`
+- Final validation completed after this log entry:
+  - Direct Editorial Review assertions: passed for clean baseline, `HEAD` matching `origin/chapter14` before review,
+    reviewed SHA matching the Author Draft commit, expected changed files only, exact section order, unique required
+    sections, exactly three Principal's Notebook observations, unresolved marker absence, required boundary definition,
+    no new PEAK ID, no primary concept introduced, `CHAPTER-014` remaining `draft`, exact registered relationship set,
+    unchanged canonical brief, unchanged PEAK index, unchanged `editor/CHAPTER_ARCHITECTURE.md`, unchanged Part III
+    README, unchanged Chapters 1-13, unchanged table of contents, unchanged `CANON.md`, Part III opening role, forward
+    boundaries with Chapters 15-19, and no tracked `site/` output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini book/03-architecture-playbook/14-drawing-boundaries-that-survive-change.md editor/EDITOR_LOG.md`: passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed; no generated `site/` output is tracked.
+- Next lifecycle stage: Canon Review after this Editorial Review commit is committed and pushed.
+- Do not perform Canon Review, Technical Review, Freeze Review, PR creation, or merge as part of this phase.
+
 ## Phase 63 Chapter 13 Editorial Review
 
 - Chapter: Evidence Before Confidence.
