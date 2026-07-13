@@ -6793,3 +6793,99 @@ Pull request readiness:
   - `git ls-files site`: passed; no generated `site/` output is tracked.
 - Next lifecycle stage: Technical Review after this Canon Review commit is committed and pushed.
 - Do not perform Technical Review, Freeze Review, PR creation, or merge as part of this phase.
+
+## Phase 83 Chapter 16 Technical Review
+
+- Chapter: Designing for Failure and Recovery.
+- Stable ID: `CHAPTER-016`.
+- Branch: `chapter16`.
+- Stage: Technical Review.
+- Reviewed Canon Review commit: `4465c0937b97f81bcd5e113b177628a3e144f567`.
+- Manuscript path: `book/03-architecture-playbook/16-designing-for-failure-and-recovery.md`.
+- Canonical brief path: `editor/chapter-briefs/CHAPTER-016-designing-for-failure-and-recovery.md`.
+- Primary concept: none by canonical decision for Part III practice chapters.
+- Central PEAK anchor: `FAILURE-002` - One Lost Packet.
+- Part position: third chapter of Part III - Architecture Playbook.
+- Outcome: Approved with technical changes.
+- Canonical brief changed during Technical Review: no.
+- `knowledge/index.yaml` changed during Technical Review: no.
+- Existing PEAK concept files changed during Technical Review: no.
+- `editor/CHAPTER_ARCHITECTURE.md` changed during Technical Review: no.
+- Part III README changed during Technical Review: no.
+- Chapters 1-15 changed during Technical Review: no.
+- Table of contents changed during Technical Review: no.
+- `editor/CANON.md` changed during Technical Review: no.
+- PEAK concepts or relationships changed during Technical Review: no.
+- New PEAK concept created or implied as canon: no.
+- Technical domains checked: update request acceptance, execution start, staging and durable progress, acknowledgment
+  loss, delayed and reordered messages, stable operation identifiers, duplicate detection, repeat-safe command behavior,
+  late completion, partial completion, reset, restart, reconnect, power loss, state authority, coordinator/device/service
+  tool roles, event and callback order, retry ownership, bounded retry, reduced behavior, escalation, diagnostics, and
+  failure injection.
+- Material corrections during Technical Review:
+  - Added power interruption during a staged write to the evidence/test discussion.
+  - Changed the exercise prompt from restart-only survival to power-loss-or-restart survival.
+  - Clarified in the ADR consequences that device operation state must support recovery queries after restart or power
+    loss during staging, and that tests cover power interruption during staging.
+- Operation-model assessment: passed. The manuscript distinguishes request, acceptance, execution start, progress,
+  durable progress, completion, acknowledgment, product-state transition, and user-visible result.
+- Unknown-outcome assessment: passed. Timeout leaves a bounded set of possible outcomes rather than a false binary
+  failure result.
+- State-authority assessment: passed. The device owner determines authoritative update state; gateway, dashboard, logs,
+  events, and service tool provide evidence rather than competing truth.
+- Retry and repeat-safety assessment: passed. Product retry is owned by the recovery flow and constrained by operation
+  status, durable record, reconciliation, and duplicate handling rather than request IDs alone.
+- Partial-completion assessment: passed. The manuscript acknowledges effects before final confirmation and does not
+  promise universal rollback.
+- Restart and power-loss assessment: passed. The manuscript now explicitly asks what survives power loss or restart and
+  tests interruption during staged write.
+- Degraded-behavior assessment: passed. Reduced behavior is read-only or blocked when it depends on unknown update
+  state, with manual intervention or escalation as a designed bound.
+- Event and callback assessment: passed. Event meanings, producers, consumers, ordering assumptions, and failure
+  behavior remain coherent; callback order is not treated as stable truth.
+- Diagnostics assessment: passed. Architecture-level evidence distinguishes accepted, applying, completed, rejected,
+  late, duplicate/repeated observation, partial/unknown state, and unresolved escalation without requiring sensitive
+  payload logging.
+- Test assessment: passed. The chapter covers lost acknowledgment, delay, repeated command, restart, power interruption,
+  service-tool disconnect, late completion, and event/order ambiguity without requiring every test for every product.
+- Misleading technical absolute guardrails: passed. The manuscript does not imply that timeout cancels remote work, a
+  missing acknowledgment proves non-execution, a unique ID alone guarantees repeat safety, duplicate suppression solves
+  partial completion, reset returns every component to one known state, retries guarantee progress, callback order is
+  stable, durable progress is automatically atomic, compensation is rollback, logs prove recovery, or progress events
+  alone establish authoritative state.
+- Registered relationship set preserved:
+  - `CHAPTER-016` illustrates `FAILURE-002`.
+  - `CHAPTER-016` references `LAW-001`.
+  - `CHAPTER-016` references `LAW-002`.
+  - `CHAPTER-016` references `LAW-003`.
+  - `CHAPTER-016` references `LAW-005`.
+  - `CHAPTER-016` references `LAW-007`.
+  - `CHAPTER-016` references `SMELL-001`.
+  - `CHAPTER-016` references `SMELL-004`.
+  - `CHAPTER-016` references `SMELL-006`.
+  - `CHAPTER-016` references `ANTIPATTERN-005`.
+  - `CHAPTER-016` references `ANTIPATTERN-006`.
+  - `CHAPTER-016` references `ARTIFACT-001`.
+  - `CHAPTER-016` references `ARTIFACT-003`.
+  - `CHAPTER-016` references `ARTIFACT-005`.
+- Changed files:
+  - `book/03-architecture-playbook/16-designing-for-failure-and-recovery.md`
+  - `editor/EDITOR_LOG.md`
+- Final validation completed after this log entry:
+  - Direct Technical Review assertions: passed for clean baseline, `HEAD` matching `origin/chapter16` before review,
+    reviewed SHA matching the Canon Review commit, expected changed files only, exact section order, unique required
+    sections, exactly three Principal's Notebook observations, unresolved marker absence, no misleading technical
+    absolutes, no new PEAK ID, no primary concept introduced, `CHAPTER-016` remaining `draft`, exact registered
+    relationship set, unchanged canonical brief, unchanged PEAK index, unchanged existing PEAK concept files, unchanged
+    `editor/CHAPTER_ARCHITECTURE.md`, unchanged Part III README, unchanged Chapters 1-15, unchanged table of contents,
+    unchanged `editor/CANON.md`, and no tracked `site/` output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini book/03-architecture-playbook/16-designing-for-failure-and-recovery.md editor/EDITOR_LOG.md`: passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed; no generated `site/` output is tracked.
+- Next lifecycle stage: Freeze Review after this Technical Review commit is committed and pushed.
+- Do not perform Freeze Review, PR creation, or merge as part of this phase.

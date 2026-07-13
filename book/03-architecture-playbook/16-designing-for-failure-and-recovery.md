@@ -244,8 +244,8 @@ The fifth recovery question is evidence.
 
 `LAW-005` says confidence follows evidence. Recovery cannot depend on confidence that no one has earned. The team needed
 tests that dropped acknowledgments, delayed completions, repeated commands, restarted the gateway, restarted the device,
-and disconnected the service tool. Not because tests make failure impossible, but because tests expose which claims the
-architecture can actually support.
+interrupted power during a staged write, and disconnected the service tool. Not because tests make failure impossible,
+but because tests expose which claims the architecture can actually support.
 
 Evidence also belongs in the decision record.
 
@@ -373,7 +373,7 @@ Write the operation name at the top of the page. Then answer the following:
 - What can be duplicated?
 - What can be lost?
 - What can be reordered?
-- What state survives a restart?
+- What state survives power loss or restart?
 - What state is reconstructed from events?
 - What does retry mean before acceptance?
 - What does retry mean after acceptance?
@@ -457,8 +457,9 @@ The update path gains an explicit recovery model instead of relying on timeout i
 accurate status when the system is uncertain. The gateway remains a transport and observation surface, not the owner of
 the operation outcome.
 
-The device must persist enough operation state to answer recovery queries after restart. Tests must cover dropped
-acknowledgments, delayed completion, repeated commands, gateway restart, device restart, and service-tool disconnect.
+The device must persist enough operation state to answer recovery queries after restart or power loss during a staged
+write. Tests must cover dropped acknowledgments, delayed completion, repeated commands, gateway restart, device restart,
+power interruption during staging, and service-tool disconnect.
 
 The design adds some protocol complexity, but it removes a more dangerous ambiguity: treating an unobserved response as a
 failed operation.
