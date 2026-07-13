@@ -6210,3 +6210,81 @@ Pull request readiness:
   - `git ls-files site`: passed; no generated `site/` output is tracked.
 - Next lifecycle stage: Canon Review after this Editorial Review commit is committed and pushed.
 - Do not perform Canon Review, Technical Review, Freeze Review, PR creation, or merge as part of this phase.
+
+## Phase 76 Chapter 15 Canon Review
+
+- Chapter: Managing Change Radius.
+- Stable ID: `CHAPTER-015`.
+- Branch: `chapter15`.
+- Stage: Canon Review.
+- Reviewed Editorial Review commit: `96e7850b645a425961810939f1ee323a369720f9`.
+- Manuscript path: `book/03-architecture-playbook/15-managing-change-radius.md`.
+- Canonical brief path: `editor/chapter-briefs/CHAPTER-015-managing-change-radius.md`.
+- Primary concept: none by canonical decision.
+- Central concepts: `VOCAB-001` - Change Radius and `METRIC-001` - Change Radius.
+- Part position: second chapter of Part III - Architecture Playbook.
+- Outcome: Approved.
+- Manuscript changed during Canon Review: no.
+- Canonical brief changed during Canon Review: no.
+- `knowledge/index.yaml` changed during Canon Review: no.
+- `VOCAB-001` changed during Canon Review: no.
+- `METRIC-001` changed during Canon Review: no.
+- `editor/CHAPTER_ARCHITECTURE.md` changed during Canon Review: no.
+- Part III README changed during Canon Review: no.
+- Chapters 1-14 changed during Canon Review: no.
+- Table of contents changed during Canon Review: no.
+- `CANON.md` changed during Canon Review: no.
+- PEAK concepts or relationships changed during Canon Review: no.
+- New PEAK concept created or implied as canon: no.
+- Canonical sources checked: repository README, book bible, style guide, architecture vision, canon, chapter
+  architecture, review process, source-of-truth policy, knowledge model, roadmap, open questions, editor log, editorial
+  ADRs, PEAK index, Part III README, table of contents, Chapter 15 canonical brief, Chapter 15 manuscript, `VOCAB-001`,
+  `METRIC-001`, all registered Chapter 15 PEAK concept files, canonical Chapters 1-14, and Chapter 14 review and Freeze
+  precedent.
+- No-primary resolution result: passed. Chapter 15 remains a Part III practice chapter carried by an exact relationship
+  set rather than by a primary PEAK concept.
+- `VOCAB-001` compliance: passed. The manuscript uses the repository definition of Change Radius as the amount of system
+  surface that must change, be reviewed, or be retested when one decision changes.
+- `METRIC-001` compliance: passed. The manuscript treats Change Radius as approximate affected-surface comparison and
+  does not introduce a formula, universal score, threshold, maturity level, or radius budget.
+- Required-versus-accidental-radius result: passed. Required radius is treated as coherent product-decision spread, while
+  accidental radius is caused by leaked or duplicated knowledge and is the containment target.
+- Uncertainty result: passed. Unknown and residual radius affect commitment, sequencing, observation, ownership, and
+  review triggers without stopping all work by default.
+- Mapping-versus-management result: passed. The manuscript makes mapping lead to containment, sequencing, compatibility,
+  evidence, and residual-uncertainty decisions.
+- Chapter 14 boundary findings: passed. Chapter 14 owns boundary placement and integrity; Chapter 15 uses boundaries as
+  inputs to Change Radius mapping and does not repeat the boundary story.
+- Chapters 16-19 boundary findings:
+  - Chapter 16: passed. Rollback, recovery, and observation appear as affected surfaces, not as full failure/recovery
+    design.
+  - Chapter 17: passed. The chapter-local ADR and Decision Journal use do not become ADR/RFC practice.
+  - Chapter 18: passed. The chapter identifies review surface without teaching Architecture Review.
+  - Chapter 19: passed. The chapter records residual radius and uncertainty without defining Freeze policy.
+- PEAK relationship checks: passed. Change Radius vocabulary and metric, state ownership, API promises, time, evidence,
+  dependencies, Silent Coupling, Hidden State, Platform Leakage, Global Configuration, Temporary Solution, ADR, and
+  Decision Journal are materially present, and the registered relationship set remains exact.
+- Section-architecture result: passed. The manuscript preserves the required section order: Opening Quote, Story,
+  Discussion, Engineering Principle, Architecture Exercise, Principal's Notebook, ADR, Editor's Commentary.
+- Corrections made during Canon Review: none.
+- Changed files:
+  - `editor/EDITOR_LOG.md`
+- Final validation completed after this log entry:
+  - Direct Canon Review assertions: passed for clean baseline, `HEAD` matching `origin/chapter15` before review,
+    reviewed SHA matching the Editorial Review commit, expected changed files only, exact section order, unique required
+    sections, exactly three Principal's Notebook observations, unresolved marker absence, required Change Radius
+    definition, no new PEAK ID, no primary concept introduced, `CHAPTER-015` remaining `draft`, exact registered
+    relationship set, existing relationship targets, no duplicate, unexpected, or self-edge, unchanged manuscript,
+    unchanged canonical brief, unchanged PEAK index, unchanged `VOCAB-001`, unchanged `METRIC-001`, unchanged
+    `editor/CHAPTER_ARCHITECTURE.md`, unchanged Part III README, unchanged Chapters 1-14, unchanged table of contents,
+    unchanged `CANON.md`, Chapter 14 boundary, Chapters 16-19 boundaries, and no tracked `site/` output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini book/03-architecture-playbook/15-managing-change-radius.md editor/EDITOR_LOG.md`: passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed; no generated `site/` output is tracked.
+- Next lifecycle stage: Technical Review after this Canon Review commit is committed and pushed.
+- Do not perform Technical Review, Freeze Review, PR creation, or merge as part of this phase.
