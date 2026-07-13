@@ -71,18 +71,18 @@ Requested -> Accepted -> Applying -> Completed
 
 Then she crossed it out.
 
-"This is not enough. These are happy-path words with one sad arrow missing."
+"This is not enough. These are happy-path words with the recovery branch missing."
 
 She drew the same line again and added the states the system had already experienced:
 
 ```text
 Requested
-Accepted but not observed
+Accepted but not observed by the caller
 Applying
 Completed but reported late
 Rejected because another operation owns the device
 Unknown to the service tool
-Known by the device
+Known by the device owner
 ```
 
 The room got quieter.
@@ -174,7 +174,7 @@ a database. It is harder when the state is an operation outcome. In the story, t
 view, the gateway wanted to own the command log, and the dashboard wanted to own the latest event. None of those surfaces
 owned the update outcome. The device did.
 
-Once that ownership was named, the design became less mystical.
+Once that ownership was named, the design became less ambiguous.
 
 The gateway could say, "I transported a command, or I did not observe a response." The service tool could say, "The user
 requested an update, and my current view is unknown." The dashboard could say, "I have observed these events." The device
