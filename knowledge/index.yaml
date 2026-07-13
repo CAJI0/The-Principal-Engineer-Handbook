@@ -349,6 +349,11 @@ entities:
       name: Managing Change Radius
       path: ../book/03-architecture-playbook/15-managing-change-radius.md
       status: canonical
+    - id: CHAPTER-016
+      type: chapter
+      name: Designing for Failure and Recovery
+      path: ../book/03-architecture-playbook/16-designing-for-failure-and-recovery.md
+      status: canonical
   adrs:
     - id: ADR-001
       type: adr
@@ -747,3 +752,45 @@ relationships:
   - from: CHAPTER-015
     type: references
     to: ARTIFACT-003
+  - from: CHAPTER-016
+    type: illustrates
+    to: FAILURE-002
+  - from: CHAPTER-016
+    type: references
+    to: LAW-001
+  - from: CHAPTER-016
+    type: references
+    to: LAW-002
+  - from: CHAPTER-016
+    type: references
+    to: LAW-003
+  - from: CHAPTER-016
+    type: references
+    to: LAW-005
+  - from: CHAPTER-016
+    type: references
+    to: LAW-007
+  - from: CHAPTER-016
+    type: references
+    to: SMELL-001
+  - from: CHAPTER-016
+    type: references
+    to: SMELL-004
+  - from: CHAPTER-016
+    type: references
+    to: SMELL-006
+  - from: CHAPTER-016
+    type: references
+    to: ANTIPATTERN-005
+  - from: CHAPTER-016
+    type: references
+    to: ANTIPATTERN-006
+  - from: CHAPTER-016
+    type: references
+    to: ARTIFACT-001
+  - from: CHAPTER-016
+    type: references
+    to: ARTIFACT-003
+  - from: CHAPTER-016
+    type: references
+    to: ARTIFACT-005

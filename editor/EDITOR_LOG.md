@@ -6479,3 +6479,502 @@ Pull request readiness:
 - Pull request readiness: ready after this Freeze Review commit is pushed.
 - Recommended pull request title: `Chapter 15: Managing Change Radius`.
 - Do not merge as part of this phase.
+
+## Phase 79 Chapter 16 Canonical Brief Registration
+
+- Chapter: Designing for Failure and Recovery.
+- Stable ID: `CHAPTER-016`.
+- Branch: `chapter16`.
+- Stage: Canonical Brief Registration.
+- Verified baseline `origin/main`: `e1160e0ee78f87424983b94e80eb29e5ecd4058d`.
+- Baseline evidence: PR #17 squash commit, `Chapter 15: Managing Change Radius (#17)`.
+- Chapter 15 feature Freeze commit checked for tree equivalence:
+  `c90da497d5c8cc2ea4222222a1df049310650422`.
+- Canonical predecessor: `CHAPTER-015` - Managing Change Radius.
+- Part position: third chapter of Part III - Architecture Playbook.
+- Manuscript path reserved: `book/03-architecture-playbook/16-designing-for-failure-and-recovery.md`.
+- Canonical brief path: `editor/chapter-briefs/CHAPTER-016-designing-for-failure-and-recovery.md`.
+- Outcome: Approved for canonical brief registration.
+- Reader-facing manuscript created: no.
+- Author Draft performed: no.
+- Reviews performed: no.
+- Freeze performed: no.
+- Pull request created: no.
+- Merge performed: no.
+- `CHAPTER-001` through `CHAPTER-015` are registered as `canonical`.
+- Chapter 15 Editorial, Canon, Technical, and Freeze Review entries are present in order.
+- Table of contents places `Designing for Failure and Recovery` after Chapter 15.
+- Primary concept: none by canonical decision for Part III practice chapters.
+- Central PEAK anchor: `FAILURE-002` - One Lost Packet.
+- New PEAK concept created or implied as canon: no.
+- `book/03-architecture-playbook/README.md` changed: no.
+- `editor/CHAPTER_ARCHITECTURE.md` changed: no.
+- `book/00-front-matter/table-of-contents.md` changed: no.
+- `editor/CANON.md` changed: no.
+- Chapters 1-15 changed: no.
+- Existing PEAK concept files changed: no.
+- Chapter 16 boundary decisions:
+  - Chapter 10 retains temporal dependency; Chapter 16 uses timeouts and late completion only as recovery inputs.
+  - Chapter 14 retains boundary placement; Chapter 16 uses boundary outcomes and recovery authority.
+  - Chapter 15 retains Change Radius; Chapter 16 may mention affected surfaces without teaching the method.
+  - Chapter 17 retains ADR/RFC practice; Chapter 16 uses one chapter-local ADR only.
+  - Chapter 18 retains Architecture Review.
+  - Chapter 19 retains Architecture Freeze.
+- Registered relationship set:
+  - `CHAPTER-016` illustrates `FAILURE-002`.
+  - `CHAPTER-016` references `LAW-001`.
+  - `CHAPTER-016` references `LAW-002`.
+  - `CHAPTER-016` references `LAW-003`.
+  - `CHAPTER-016` references `LAW-005`.
+  - `CHAPTER-016` references `LAW-007`.
+  - `CHAPTER-016` references `SMELL-001`.
+  - `CHAPTER-016` references `SMELL-004`.
+  - `CHAPTER-016` references `SMELL-006`.
+  - `CHAPTER-016` references `ANTIPATTERN-005`.
+  - `CHAPTER-016` references `ANTIPATTERN-006`.
+  - `CHAPTER-016` references `ARTIFACT-001`.
+  - `CHAPTER-016` references `ARTIFACT-003`.
+  - `CHAPTER-016` references `ARTIFACT-005`.
+- Inspected but not registered as Chapter 16 edges: `VOCAB-002`, `ARTIFACT-007`, `RITUAL-001`, `VOCAB-001`, and
+  `METRIC-001`.
+- Changed files:
+  - `editor/chapter-briefs/CHAPTER-016-designing-for-failure-and-recovery.md`
+  - `editor/EDITOR_LOG.md`
+  - `knowledge/index.yaml`
+- Final validation completed after this log entry:
+  - Direct Chapter 16 registration assertions: passed for clean baseline lineage, expected changed files only,
+    `CHAPTER-016` draft registration, existing targets, exact outgoing relationship set, no duplicate/self-edge, no
+    new PEAK concept file, no reader-facing manuscript, unchanged Part III README, unchanged chapter architecture,
+    unchanged table of contents, unchanged canon, unchanged Chapters 1-15, and no tracked `site/` output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini editor/chapter-briefs/CHAPTER-016-designing-for-failure-and-recovery.md editor/EDITOR_LOG.md knowledge/index.yaml`: passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed; no generated `site/` output is tracked.
+- Next lifecycle stage: Author Draft after author approval.
+- Do not perform Author Draft, Editorial Review, Canon Review, Technical Review, Freeze Review, PR creation, or merge as
+  part of this phase.
+
+## Phase 80 Chapter 16 Author Draft
+
+- Chapter: Designing for Failure and Recovery.
+- Stable ID: `CHAPTER-016`.
+- Branch: `chapter16`.
+- Stage: Author Draft.
+- Starting baseline commit: `c46e5e036669efe433a9a5b8a87ee634bb14c9e0`.
+- Baseline evidence: `docs(chapter-16): register canonical brief`.
+- Verified `origin/main`: `e1160e0ee78f87424983b94e80eb29e5ecd4058d`.
+- Canonical predecessor: `CHAPTER-015` - Managing Change Radius.
+- Part position: third chapter of Part III - Architecture Playbook.
+- Manuscript path created: `book/03-architecture-playbook/16-designing-for-failure-and-recovery.md`.
+- Canonical brief path preserved: `editor/chapter-briefs/CHAPTER-016-designing-for-failure-and-recovery.md`.
+- Primary concept: none by canonical decision for Part III practice chapters.
+- Central PEAK anchor preserved: `FAILURE-002` - One Lost Packet.
+- New PEAK concept created or implied as canon: no.
+- Reader-facing manuscript created: yes.
+- Editorial Review performed: no.
+- Canon Review performed: no.
+- Technical Review performed: no.
+- Freeze Review performed: no.
+- Pull request created: no.
+- Merge performed: no.
+- `CHAPTER-001` through `CHAPTER-015` remain canonical and unchanged.
+- `CHAPTER-016` remains registered as `draft`.
+- `book/03-architecture-playbook/README.md` changed: no.
+- `editor/CHAPTER_ARCHITECTURE.md` changed: no.
+- `book/00-front-matter/table-of-contents.md` changed: no.
+- `editor/CANON.md` changed: no.
+- Existing PEAK concept files changed: no.
+- Chapter 16 boundary decisions preserved:
+  - Chapter 10 retains temporal dependency; Chapter 16 uses timeouts and late completion only as recovery inputs.
+  - Chapter 14 retains boundary placement; Chapter 16 uses boundary outcomes and recovery authority.
+  - Chapter 15 retains Change Radius; Chapter 16 mentions affected surfaces without teaching the method.
+  - Chapter 17 retains ADR/RFC practice; Chapter 16 uses one chapter-local ADR only.
+  - Chapter 18 retains Architecture Review.
+  - Chapter 19 retains Architecture Freeze.
+- Registered relationship set preserved:
+  - `CHAPTER-016` illustrates `FAILURE-002`.
+  - `CHAPTER-016` references `LAW-001`.
+  - `CHAPTER-016` references `LAW-002`.
+  - `CHAPTER-016` references `LAW-003`.
+  - `CHAPTER-016` references `LAW-005`.
+  - `CHAPTER-016` references `LAW-007`.
+  - `CHAPTER-016` references `SMELL-001`.
+  - `CHAPTER-016` references `SMELL-004`.
+  - `CHAPTER-016` references `SMELL-006`.
+  - `CHAPTER-016` references `ANTIPATTERN-005`.
+  - `CHAPTER-016` references `ANTIPATTERN-006`.
+  - `CHAPTER-016` references `ARTIFACT-001`.
+  - `CHAPTER-016` references `ARTIFACT-003`.
+  - `CHAPTER-016` references `ARTIFACT-005`.
+- Changed files:
+  - `book/03-architecture-playbook/16-designing-for-failure-and-recovery.md`
+  - `editor/EDITOR_LOG.md`
+- Final validation completed after this log entry:
+  - Direct Chapter 16 Author Draft assertions: passed for expected changed files only, manuscript existence, exact
+    required heading order, exactly three Principal's Notebook bullets, absence of unresolved drafting markers,
+    required PEAK IDs in manuscript, no unexpected PEAK IDs in manuscript, unchanged canonical brief, unchanged
+    `knowledge/index.yaml`, unchanged Part III README, unchanged chapter architecture, unchanged table of contents,
+    unchanged canon, unchanged Chapters 1-15, unchanged existing PEAK concept files, preserved `CHAPTER-016` draft
+    status, preserved relationship set, phase-order continuity through Phase 80, and no tracked `site/` output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini book/03-architecture-playbook/16-designing-for-failure-and-recovery.md editor/EDITOR_LOG.md`: passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed; no generated `site/` output is tracked.
+- Next lifecycle stage: Editorial Review after author approval.
+- Do not perform Editorial Review, Canon Review, Technical Review, Freeze Review, PR creation, or merge as part of this
+  phase.
+
+## Phase 81 Chapter 16 Editorial Review
+
+- Chapter: Designing for Failure and Recovery.
+- Stable ID: `CHAPTER-016`.
+- Branch: `chapter16`.
+- Stage: Editorial Review.
+- Reviewed Author Draft commit: `a84a908269aad6655b28d999821320cb9130f7c2`.
+- Parent canonical brief commit: `c46e5e036669efe433a9a5b8a87ee634bb14c9e0`.
+- Manuscript path: `book/03-architecture-playbook/16-designing-for-failure-and-recovery.md`.
+- Canonical brief path: `editor/chapter-briefs/CHAPTER-016-designing-for-failure-and-recovery.md`.
+- Primary concept: none by canonical decision for Part III practice chapters.
+- Central PEAK anchor: `FAILURE-002` - One Lost Packet.
+- Part position: third chapter of Part III - Architecture Playbook.
+- Outcome: Approved with editorial changes.
+- Canonical brief changed during Editorial Review: no.
+- `knowledge/index.yaml` changed during Editorial Review: no.
+- Existing PEAK concept files changed during Editorial Review: no.
+- `editor/CHAPTER_ARCHITECTURE.md` changed during Editorial Review: no.
+- Part III README changed during Editorial Review: no.
+- Chapters 1-15 changed during Editorial Review: no.
+- Table of contents changed during Editorial Review: no.
+- `editor/CANON.md` changed during Editorial Review: no.
+- New PEAK concept created or implied as canon: no.
+- Material editorial changes:
+  - Replaced the informal "sad arrow" phrasing with clearer recovery-branch language.
+  - Clarified that the accepted-but-not-observed state is caller-facing.
+  - Clarified that the device owner, not every device-adjacent surface, owns the known update state.
+  - Tightened an ownership transition from "less mystical" to "less ambiguous."
+- Required editorial findings:
+  - The lost-acknowledgment update story is concrete and plausible.
+  - Timeout is not treated as proof of failure.
+  - Local and remote beliefs diverge credibly through service tool, gateway, dashboard, and device observations.
+  - The Principal Engineer recasts packet loss as undefined operation outcome and recovery state.
+  - Acceptance, start, completion, late completion, duplicate/repeated observation, rejected retry, and unknown outcome
+    are understandable.
+  - State authority and retry ownership are explicit.
+  - Repeat safety, duplicate handling, bounded recovery, reduced behavior, and escalation are honest.
+  - Event Catalog is materially used, and Event Explosion and Callback Hell are applied without attacking events or
+    callbacks.
+  - The Engineering Principle is concise, the exercise is actionable, the ADR makes a real recovery decision, and the
+    Editor's Commentary advances Part III.
+- Section-order result: passed. The manuscript preserves the required section order: Opening Quote, Story, Discussion,
+  Engineering Principle, Architecture Exercise, Principal's Notebook, ADR, Editor's Commentary.
+- Principal's Notebook result: passed. The notebook contains exactly three short observations.
+- Chapter 10 boundary result: passed. Chapter 10 retains temporal dependency; Chapter 16 uses timeout and late
+  completion as recovery inputs.
+- Chapters 14-15 boundary result: passed. Chapter 14 retains boundary placement; Chapter 15 retains Change Radius;
+  Chapter 16 uses boundaries and affected surfaces only to locate recovery ownership.
+- Chapters 17-19 boundary result: passed. Chapter 17 retains ADR/RFC practice; Chapter 18 retains Architecture Review;
+  Chapter 19 retains Architecture Freeze.
+- Registered relationship set preserved:
+  - `CHAPTER-016` illustrates `FAILURE-002`.
+  - `CHAPTER-016` references `LAW-001`.
+  - `CHAPTER-016` references `LAW-002`.
+  - `CHAPTER-016` references `LAW-003`.
+  - `CHAPTER-016` references `LAW-005`.
+  - `CHAPTER-016` references `LAW-007`.
+  - `CHAPTER-016` references `SMELL-001`.
+  - `CHAPTER-016` references `SMELL-004`.
+  - `CHAPTER-016` references `SMELL-006`.
+  - `CHAPTER-016` references `ANTIPATTERN-005`.
+  - `CHAPTER-016` references `ANTIPATTERN-006`.
+  - `CHAPTER-016` references `ARTIFACT-001`.
+  - `CHAPTER-016` references `ARTIFACT-003`.
+  - `CHAPTER-016` references `ARTIFACT-005`.
+- Changed files:
+  - `book/03-architecture-playbook/16-designing-for-failure-and-recovery.md`
+  - `editor/EDITOR_LOG.md`
+- Final validation completed after this log entry:
+  - Direct Editorial Review assertions: passed for clean baseline, `HEAD` matching `origin/chapter16` before review,
+    reviewed SHA matching the Author Draft commit, expected changed files only, exact section order, unique required
+    sections, exactly three Principal's Notebook observations, unresolved marker absence, preserved thesis and
+    principle, no new PEAK ID, no primary concept introduced, `CHAPTER-016` remaining `draft`, exact registered
+    relationship set, unchanged canonical brief, unchanged PEAK index, unchanged existing PEAK concept files, unchanged
+    `editor/CHAPTER_ARCHITECTURE.md`, unchanged Part III README, unchanged Chapters 1-15, unchanged table of contents,
+    unchanged `editor/CANON.md`, Chapter 10 boundary, Chapters 14-15 boundary, Chapters 17-19 boundary, and no tracked
+    `site/` output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini book/03-architecture-playbook/16-designing-for-failure-and-recovery.md editor/EDITOR_LOG.md`: passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed; no generated `site/` output is tracked.
+- Next lifecycle stage: Canon Review after this Editorial Review commit is committed and pushed.
+- Do not perform Canon Review, Technical Review, Freeze Review, PR creation, or merge as part of this phase.
+
+## Phase 82 Chapter 16 Canon Review
+
+- Chapter: Designing for Failure and Recovery.
+- Stable ID: `CHAPTER-016`.
+- Branch: `chapter16`.
+- Stage: Canon Review.
+- Reviewed Editorial Review commit: `99c43b4da89c36cec6ff8142698aab3428d9fe6e`.
+- Manuscript path: `book/03-architecture-playbook/16-designing-for-failure-and-recovery.md`.
+- Canonical brief path: `editor/chapter-briefs/CHAPTER-016-designing-for-failure-and-recovery.md`.
+- Primary concept: none by canonical decision for Part III practice chapters.
+- Central PEAK anchor: `FAILURE-002` - One Lost Packet.
+- Part position: third chapter of Part III - Architecture Playbook.
+- Outcome: Approved.
+- Manuscript changed during Canon Review: no.
+- Canonical brief changed during Canon Review: no.
+- `knowledge/index.yaml` changed during Canon Review: no.
+- Existing PEAK concept files changed during Canon Review: no.
+- `editor/CHAPTER_ARCHITECTURE.md` changed during Canon Review: no.
+- Part III README changed during Canon Review: no.
+- Chapters 1-15 changed during Canon Review: no.
+- Table of contents changed during Canon Review: no.
+- `editor/CANON.md` changed during Canon Review: no.
+- New PEAK concept created or implied as canon: no.
+- Canonical sources checked: repository README, book bible, style guide, architecture vision, canon, chapter
+  architecture, review process, source-of-truth policy, knowledge model, roadmap, open questions, editor log, editorial
+  ADRs, PEAK index, Part III README, table of contents, Chapter 16 canonical brief, Chapter 16 manuscript,
+  `FAILURE-002`, all registered Chapter 16 PEAK concept files, canonical Chapters 1-15, and Chapter 15 review and
+  Freeze precedent.
+- No-primary resolution result: passed. Chapter 16 remains a Part III practice chapter carried by an exact relationship
+  set rather than by a primary PEAK concept.
+- `FAILURE-002` result: passed. One Lost Packet remains the central story anchor and is not promoted into a primary
+  concept.
+- Operation-outcome result: passed. The manuscript treats failure as an architecture state question and distinguishes
+  request, acceptance, execution, acknowledgment, completion, persistence, product-visible result, and unknown outcome.
+- Unknown-outcome result: passed. Timeout is treated as expired waiting policy, not proof that remote work did not
+  execute.
+- Ownership and retry result: passed. The device owner is authoritative for update outcome; gateway, dashboard, logs,
+  events, and service tool provide evidence; product retry is constrained by status query, reconciliation, and duplicate
+  handling.
+- Recovery-to-known-state result: passed. The chapter preserves recovery toward a known state, not necessarily the old
+  state, and includes bounded reduced behavior and escalation.
+- Chapter 10 boundary result: passed. Chapter 10 retains clocks, deadlines, timeout semantics, freshness, ordering,
+  reset, and synchronization; Chapter 16 owns outcome and recovery after temporal uncertainty appears.
+- Chapters 14-15 boundary result: passed. Chapter 14 retains boundary placement and vocabulary; Chapter 15 retains
+  Change Radius mapping and sequencing; Chapter 16 uses those boundaries only to locate recovery ownership.
+- Chapters 17-19 boundary result: passed. Chapter 17 retains ADR/RFC practice; Chapter 18 retains Architecture Review;
+  Chapter 19 retains Architecture Freeze.
+- PEAK relationship findings: passed. Every registered target is materially present, all targets exist, and the exact
+  outgoing relationship set remains unchanged.
+- Section-architecture result: passed. The manuscript preserves the required section order: Opening Quote, Story,
+  Discussion, Engineering Principle, Architecture Exercise, Principal's Notebook, ADR, Editor's Commentary.
+- Corrections made during Canon Review: none.
+- Changed files:
+  - `editor/EDITOR_LOG.md`
+- Final validation completed after this log entry:
+  - Direct Canon Review assertions: passed for clean baseline, `HEAD` matching `origin/chapter16` before review,
+    reviewed SHA matching the Editorial Review commit, expected changed files only, exact section order, unique required
+    sections, exactly three Principal's Notebook observations, unresolved marker absence, no new PEAK ID, no primary
+    concept introduced, `CHAPTER-016` remaining `draft`, exact registered relationship set, existing relationship
+    targets, no duplicate, unexpected, or self-edge, unchanged manuscript, unchanged canonical brief, unchanged PEAK
+    index, unchanged existing PEAK concept files, unchanged `editor/CHAPTER_ARCHITECTURE.md`, unchanged Part III README,
+    unchanged Chapters 1-15, unchanged table of contents, unchanged `editor/CANON.md`, Chapter 10 boundary, Chapters
+    14-15 boundary, Chapters 17-19 boundary, and no tracked `site/` output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini book/03-architecture-playbook/16-designing-for-failure-and-recovery.md editor/EDITOR_LOG.md`: passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed; no generated `site/` output is tracked.
+- Next lifecycle stage: Technical Review after this Canon Review commit is committed and pushed.
+- Do not perform Technical Review, Freeze Review, PR creation, or merge as part of this phase.
+
+## Phase 83 Chapter 16 Technical Review
+
+- Chapter: Designing for Failure and Recovery.
+- Stable ID: `CHAPTER-016`.
+- Branch: `chapter16`.
+- Stage: Technical Review.
+- Reviewed Canon Review commit: `4465c0937b97f81bcd5e113b177628a3e144f567`.
+- Manuscript path: `book/03-architecture-playbook/16-designing-for-failure-and-recovery.md`.
+- Canonical brief path: `editor/chapter-briefs/CHAPTER-016-designing-for-failure-and-recovery.md`.
+- Primary concept: none by canonical decision for Part III practice chapters.
+- Central PEAK anchor: `FAILURE-002` - One Lost Packet.
+- Part position: third chapter of Part III - Architecture Playbook.
+- Outcome: Approved with technical changes.
+- Canonical brief changed during Technical Review: no.
+- `knowledge/index.yaml` changed during Technical Review: no.
+- Existing PEAK concept files changed during Technical Review: no.
+- `editor/CHAPTER_ARCHITECTURE.md` changed during Technical Review: no.
+- Part III README changed during Technical Review: no.
+- Chapters 1-15 changed during Technical Review: no.
+- Table of contents changed during Technical Review: no.
+- `editor/CANON.md` changed during Technical Review: no.
+- PEAK concepts or relationships changed during Technical Review: no.
+- New PEAK concept created or implied as canon: no.
+- Technical domains checked: update request acceptance, execution start, staging and durable progress, acknowledgment
+  loss, delayed and reordered messages, stable operation identifiers, duplicate detection, repeat-safe command behavior,
+  late completion, partial completion, reset, restart, reconnect, power loss, state authority, coordinator/device/service
+  tool roles, event and callback order, retry ownership, bounded retry, reduced behavior, escalation, diagnostics, and
+  failure injection.
+- Material corrections during Technical Review:
+  - Added power interruption during a staged write to the evidence/test discussion.
+  - Changed the exercise prompt from restart-only survival to power-loss-or-restart survival.
+  - Clarified in the ADR consequences that device operation state must support recovery queries after restart or power
+    loss during staging, and that tests cover power interruption during staging.
+- Operation-model assessment: passed. The manuscript distinguishes request, acceptance, execution start, progress,
+  durable progress, completion, acknowledgment, product-state transition, and user-visible result.
+- Unknown-outcome assessment: passed. Timeout leaves a bounded set of possible outcomes rather than a false binary
+  failure result.
+- State-authority assessment: passed. The device owner determines authoritative update state; gateway, dashboard, logs,
+  events, and service tool provide evidence rather than competing truth.
+- Retry and repeat-safety assessment: passed. Product retry is owned by the recovery flow and constrained by operation
+  status, durable record, reconciliation, and duplicate handling rather than request IDs alone.
+- Partial-completion assessment: passed. The manuscript acknowledges effects before final confirmation and does not
+  promise universal rollback.
+- Restart and power-loss assessment: passed. The manuscript now explicitly asks what survives power loss or restart and
+  tests interruption during staged write.
+- Degraded-behavior assessment: passed. Reduced behavior is read-only or blocked when it depends on unknown update
+  state, with manual intervention or escalation as a designed bound.
+- Event and callback assessment: passed. Event meanings, producers, consumers, ordering assumptions, and failure
+  behavior remain coherent; callback order is not treated as stable truth.
+- Diagnostics assessment: passed. Architecture-level evidence distinguishes accepted, applying, completed, rejected,
+  late, duplicate/repeated observation, partial/unknown state, and unresolved escalation without requiring sensitive
+  payload logging.
+- Test assessment: passed. The chapter covers lost acknowledgment, delay, repeated command, restart, power interruption,
+  service-tool disconnect, late completion, and event/order ambiguity without requiring every test for every product.
+- Misleading technical absolute guardrails: passed. The manuscript does not imply that timeout cancels remote work, a
+  missing acknowledgment proves non-execution, a unique ID alone guarantees repeat safety, duplicate suppression solves
+  partial completion, reset returns every component to one known state, retries guarantee progress, callback order is
+  stable, durable progress is automatically atomic, compensation is rollback, logs prove recovery, or progress events
+  alone establish authoritative state.
+- Registered relationship set preserved:
+  - `CHAPTER-016` illustrates `FAILURE-002`.
+  - `CHAPTER-016` references `LAW-001`.
+  - `CHAPTER-016` references `LAW-002`.
+  - `CHAPTER-016` references `LAW-003`.
+  - `CHAPTER-016` references `LAW-005`.
+  - `CHAPTER-016` references `LAW-007`.
+  - `CHAPTER-016` references `SMELL-001`.
+  - `CHAPTER-016` references `SMELL-004`.
+  - `CHAPTER-016` references `SMELL-006`.
+  - `CHAPTER-016` references `ANTIPATTERN-005`.
+  - `CHAPTER-016` references `ANTIPATTERN-006`.
+  - `CHAPTER-016` references `ARTIFACT-001`.
+  - `CHAPTER-016` references `ARTIFACT-003`.
+  - `CHAPTER-016` references `ARTIFACT-005`.
+- Changed files:
+  - `book/03-architecture-playbook/16-designing-for-failure-and-recovery.md`
+  - `editor/EDITOR_LOG.md`
+- Final validation completed after this log entry:
+  - Direct Technical Review assertions: passed for clean baseline, `HEAD` matching `origin/chapter16` before review,
+    reviewed SHA matching the Canon Review commit, expected changed files only, exact section order, unique required
+    sections, exactly three Principal's Notebook observations, unresolved marker absence, no misleading technical
+    absolutes, no new PEAK ID, no primary concept introduced, `CHAPTER-016` remaining `draft`, exact registered
+    relationship set, unchanged canonical brief, unchanged PEAK index, unchanged existing PEAK concept files, unchanged
+    `editor/CHAPTER_ARCHITECTURE.md`, unchanged Part III README, unchanged Chapters 1-15, unchanged table of contents,
+    unchanged `editor/CANON.md`, and no tracked `site/` output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini book/03-architecture-playbook/16-designing-for-failure-and-recovery.md editor/EDITOR_LOG.md`: passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed; no generated `site/` output is tracked.
+- Next lifecycle stage: Freeze Review after this Technical Review commit is committed and pushed.
+- Do not perform Freeze Review, PR creation, or merge as part of this phase.
+
+## Phase 84 Chapter 16 Freeze Review
+
+- Chapter: Designing for Failure and Recovery.
+- Stable ID: `CHAPTER-016`.
+- Branch: `chapter16`.
+- Stage: Freeze Review.
+- Reviewed Technical Review commit: `0942a8107d2a8a189391eeb7100e0640486f9fcf`.
+- Prior review commits:
+  - Editorial Review: `99c43b4da89c36cec6ff8142698aab3428d9fe6e`.
+  - Canon Review: `4465c0937b97f81bcd5e113b177628a3e144f567`.
+  - Technical Review: `0942a8107d2a8a189391eeb7100e0640486f9fcf`.
+- Manuscript path: `book/03-architecture-playbook/16-designing-for-failure-and-recovery.md`.
+- Canonical brief path: `editor/chapter-briefs/CHAPTER-016-designing-for-failure-and-recovery.md`.
+- Primary concept: none by canonical decision for Part III practice chapters.
+- Central PEAK anchor: `FAILURE-002` - One Lost Packet.
+- Part position: third chapter of Part III - Architecture Playbook.
+- Outcome: Approved.
+- Manuscript changed during Freeze Review: no.
+- Canonical brief changed during Freeze Review: no.
+- Status transition:
+  - `CHAPTER-016`: `draft` -> `canonical`.
+- Existing PEAK concept files changed during Freeze Review: no.
+- `editor/CHAPTER_ARCHITECTURE.md` changed during Freeze Review: no.
+- Part III README changed during Freeze Review: no.
+- Chapters 1-15 changed during Freeze Review: no.
+- Table of contents changed during Freeze Review: no.
+- `editor/CANON.md` changed during Freeze Review: no.
+- PEAK concepts or relationships changed during Freeze Review: no.
+- New PEAK concept created or implied as canon: no.
+- Prior review outcomes:
+  - Editorial Review: Approved with editorial changes.
+  - Canon Review: Approved.
+  - Technical Review: Approved with technical changes.
+- Freeze finding: Chapter 16 is canonical-ready as the third Part III practice chapter. It teaches recovery design after
+  Chapter 14 boundary placement and Chapter 15 Change Radius without consuming Chapters 17-19.
+- Section-order result: passed. The manuscript preserves the required section order: Opening Quote, Story, Discussion,
+  Engineering Principle, Architecture Exercise, Principal's Notebook, ADR, Editor's Commentary.
+- Principal's Notebook result: passed. The notebook contains exactly three short observations.
+- Chapter 10 boundary result: passed. Chapter 10 retains temporal dependency; Chapter 16 owns outcome and recovery after
+  temporal uncertainty appears.
+- Chapters 14-15 boundary result: passed. Chapter 14 retains boundary placement; Chapter 15 retains Change Radius;
+  Chapter 16 owns failure and recovery design.
+- Chapters 17-19 boundary result: passed. Chapter 17 retains ADR/RFC practice; Chapter 18 retains Architecture Review;
+  Chapter 19 retains Architecture Freeze.
+- Canon and graph integrity: passed. Chapter 16 has no primary concept, creates no new concept, adds no relationship,
+  and preserves the exact registered relationship set.
+- Technical readiness: passed. The final manuscript credibly treats lost acknowledgment, unknown outcome, durable
+  operation state, late completion, duplicate/repeated observation, retry ownership, partial completion, restart and
+  power loss, reduced behavior, Event Catalog use, callback ordering, diagnostics, and failure tests.
+- Registered relationship set preserved:
+  - `CHAPTER-016` illustrates `FAILURE-002`.
+  - `CHAPTER-016` references `LAW-001`.
+  - `CHAPTER-016` references `LAW-002`.
+  - `CHAPTER-016` references `LAW-003`.
+  - `CHAPTER-016` references `LAW-005`.
+  - `CHAPTER-016` references `LAW-007`.
+  - `CHAPTER-016` references `SMELL-001`.
+  - `CHAPTER-016` references `SMELL-004`.
+  - `CHAPTER-016` references `SMELL-006`.
+  - `CHAPTER-016` references `ANTIPATTERN-005`.
+  - `CHAPTER-016` references `ANTIPATTERN-006`.
+  - `CHAPTER-016` references `ARTIFACT-001`.
+  - `CHAPTER-016` references `ARTIFACT-003`.
+  - `CHAPTER-016` references `ARTIFACT-005`.
+- Changed files:
+  - `editor/EDITOR_LOG.md`
+  - `knowledge/index.yaml`
+- Final validation completed after this log entry:
+  - Direct Freeze Review assertions: passed for clean baseline, `HEAD` matching `origin/chapter16` before review,
+    reviewed SHA matching the Technical Review commit, prior review commits being ancestors of `HEAD`, prior review
+    outcomes permitting Freeze, expected changed files only, exact section order, unique required sections, exactly
+    three Principal's Notebook observations, unresolved marker absence, no new PEAK ID, primary concept remaining
+    absent, `CHAPTER-016` status changed to `canonical`, exact registered relationship set, existing relationship
+    targets, no duplicate, unexpected, or self-edge, unchanged manuscript, unchanged canonical brief, unchanged PEAK
+    concept files, unchanged `editor/CHAPTER_ARCHITECTURE.md`, unchanged Part III README, unchanged Chapters 1-15,
+    unchanged table of contents, unchanged `editor/CANON.md`, four gate entries in order, correct reviewed commits, and
+    no tracked `site/` output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini editor/EDITOR_LOG.md knowledge/index.yaml`: passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed; no generated `site/` output is tracked.
+- Pull request readiness: ready after this Freeze Review commit is pushed.
+- Recommended pull request title: `Chapter 16: Designing for Failure and Recovery`.
+- Do not merge as part of this phase.
