@@ -34,15 +34,16 @@ remain compatible with records that do not have it."
 That sentence changed the plan.
 
 The direct radius was still small: the persistent record definition, the firmware reader, the calibration writer, and a
-few tests. The indirect radius was larger. The service tool displayed the old record and treated a missing value as
-"unknown device." A host application cached the exported record for support cases. A packaging step included sample
-records used by field diagnostics. A factory dashboard grouped failures by calibration result. None of those paths were
-part of the initial source diff.
+few tests. The indirect radius was larger. The service tool displayed the old record and treated an unrecognized record
+version as "unknown device." A host application cached the exported record for support cases. A packaging step included
+sample records used by field diagnostics. A factory dashboard grouped failures by calibration result. None of those
+paths were part of the initial source diff.
 
 The latent radius was more interesting. A recovery image copied the calibration record during firmware update without
-understanding its contents. A product variant used the same storage page but ignored calibration range. The system test
-fixtures contained binary records with padding that matched the old layout. A supplier test bench had a script copied
-from an earlier manufacturing station. The team could not prove that every external consumer had been found.
+understanding its contents. It treated the record as bytes, not as an application schema. A product variant used the same
+storage page but ignored calibration range. The system test fixtures contained binary records with padding that matched
+the old layout. A supplier test bench had a script copied from an earlier manufacturing station. The team could not
+prove that every external consumer had been found.
 
 At first, several tempting plans appeared.
 
@@ -69,9 +70,10 @@ existed in copies, caches, exported records, and recovery flows. That was Hidden
 
 The plan changed from "edit a structure" to "sequence a product decision."
 
-First, the team named one authoritative schema and version for the calibration record. That satisfied the state
-ownership question from Every State Has One Owner (`LAW-001`): the firmware team owned the persisted meaning, and the
-manufacturing and service tools consumed that meaning through a documented representation.
+First, the team named one authoritative product meaning and one versioned persistent representation for the calibration
+record. That satisfied the state ownership question from Every State Has One Owner (`LAW-001`): the firmware team owned
+the persisted meaning, and the manufacturing and service tools consumed that meaning through documented serialized and
+export representations rather than through a shared in-memory layout.
 
 Second, they made the contract explicit. Every API Is a Promise (`LAW-002`) applied even though no public web endpoint
 was involved. The record format, export file, service-tool view, and diagnostic message were all contracts to someone.
@@ -104,10 +106,11 @@ review, migration planning, old-version compatibility, factory validation, servi
 observation, support procedure updates, and new evidence. Another change may edit many files mechanically while keeping
 the semantic radius narrow.
 
-The cost and risk of a change are determined by the system surfaces that must move, not by the number of edited files.
-The surfaces may include behavior, state, contracts, dependencies, timing, tests, tools, releases, owners, and evidence.
-Not every change crosses every surface. The point is to notice which ones matter before implementation has already
-made the architecture choice for you.
+The cost and risk of a change are determined by the system surfaces that must move, be reviewed, be retested, be
+migrated, remain compatible, or be observed because one decision changes - not by the number of edited files. The
+surfaces may include behavior, state, contracts, dependencies, timing, tests, tools, releases, owners, and evidence. Not
+every change crosses every surface. The point is to notice which ones matter before implementation has already made the
+architecture choice for you.
 
 ### Map the Decision
 
@@ -330,8 +333,9 @@ in the main repository.
 
 #### Decision
 
-We will introduce a versioned calibration record with one authoritative schema owned by firmware and documented for
-manufacturing and service-tool consumers.
+We will introduce a versioned calibration record with one authoritative product meaning owned by firmware. The
+persistent record, service export, and tool-facing views will be documented representations of that meaning, not shared
+C structure layouts.
 
 Firmware will read old and new records before any tool writes the new version. The manufacturing station and service
 tool will be updated and verified before the factory transition. The migration will preserve valid old calibration
