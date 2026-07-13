@@ -6058,3 +6058,74 @@ Pull request readiness:
 - Next lifecycle stage: Author Draft after author approval.
 - Do not create the reader-facing manuscript, edit the Part III README, perform review phases, freeze Chapter 15, open a
   pull request, merge, or alter Part III architecture as part of this phase.
+
+## Phase 74 Chapter 15 Author Draft
+
+- Chapter: Managing Change Radius.
+- Stable ID: `CHAPTER-015`.
+- Branch: `chapter15`.
+- Stage: Author Draft.
+- Author Draft baseline: `830e09efd0947a4688f19a4d3d6dc80c83dbc440`.
+- Verified baseline `origin/main`: `346f5801c1326e836b81ce6d92e7564d9c946f94`.
+- Manuscript path: `book/03-architecture-playbook/15-managing-change-radius.md`.
+- Canonical brief path: `editor/chapter-briefs/CHAPTER-015-managing-change-radius.md`.
+- Primary-concept resolution: no primary PEAK concept is assigned. Chapter 15 is a Part III practice chapter, and the
+  registered outgoing relationships carry the selected Change Radius concept coverage.
+- Central concepts: `VOCAB-001` - Change Radius and `METRIC-001` - Change Radius.
+- Part position: second chapter of Part III - Architecture Playbook.
+- Outcome: Author Draft created.
+- Canonical brief changed during Author Draft: no.
+- `knowledge/index.yaml` changed during Author Draft: no.
+- `editor/CHAPTER_ARCHITECTURE.md` changed during Author Draft: no.
+- Part III README changed during Author Draft: no.
+- Chapters 1-14 changed during Author Draft: no.
+- Table of contents changed during Author Draft: no.
+- `CANON.md` changed during Author Draft: no.
+- PEAK concepts or relationships changed during Author Draft: no.
+- New PEAK concept created or implied as canon: no.
+- Reader-facing manuscript created: yes.
+- Editorial, Canon, Technical, or Freeze Review performed: no.
+- Part III role: passed. The draft advances from Chapter 14 boundary placement into the full Change Radius method
+  without expanding the Part III README or changing chapter architecture.
+- Boundary guardrails: passed. Chapter 14 remains responsible for boundary placement and integrity. Chapter 15 owns
+  mapping affected surface, required and accidental radius, uncertainty, containment, sequencing, review, retest,
+  migration, compatibility, and release-observation surfaces.
+- Forward-boundary guardrails: passed. Chapter 16 retains full failure and recovery design; Chapter 17 retains ADR/RFC
+  practice; Chapter 18 retains Architecture Review; Chapter 19 retains Architecture Freeze.
+- Registered relationship set preserved:
+  - `CHAPTER-015` illustrates `VOCAB-001`.
+  - `CHAPTER-015` illustrates `METRIC-001`.
+  - `CHAPTER-015` references `LAW-001`.
+  - `CHAPTER-015` references `LAW-002`.
+  - `CHAPTER-015` references `LAW-003`.
+  - `CHAPTER-015` references `LAW-005`.
+  - `CHAPTER-015` references `LAW-007`.
+  - `CHAPTER-015` references `SMELL-001`.
+  - `CHAPTER-015` references `SMELL-004`.
+  - `CHAPTER-015` references `SMELL-005`.
+  - `CHAPTER-015` references `ANTIPATTERN-003`.
+  - `CHAPTER-015` references `ANTIPATTERN-006`.
+  - `CHAPTER-015` references `ARTIFACT-001`.
+  - `CHAPTER-015` references `ARTIFACT-003`.
+- Changed files:
+  - `book/03-architecture-playbook/15-managing-change-radius.md`
+  - `editor/EDITOR_LOG.md`
+- Final validation completed after this log entry:
+  - Direct Author Draft assertions: passed for exact section order, unique required sections, exactly three Principal's
+    Notebook observations, unresolved marker absence, required Change Radius definition, required principle, calibration
+    record story shape, material use of all registered PEAK concepts, no new PEAK ID, `CHAPTER-015` remaining `draft`,
+    exact registered relationship set, unchanged canonical brief, unchanged PEAK index, unchanged
+    `editor/CHAPTER_ARCHITECTURE.md`, unchanged Part III README, unchanged Chapters 1-14, unchanged table of contents,
+    unchanged `CANON.md`, expected changed files only, Chapter 14 boundary preserved, Chapters 16-19 boundaries
+    preserved, no false precision framework, and no tracked `site/` output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini book/03-architecture-playbook/15-managing-change-radius.md editor/EDITOR_LOG.md`: passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed; no generated `site/` output is tracked.
+- Next lifecycle stage: Editorial Review after this Author Draft commit is committed and pushed.
+- Do not perform Editorial Review, Canon Review, Technical Review, Freeze Review, PR creation, or merge as part of this
+  phase.
