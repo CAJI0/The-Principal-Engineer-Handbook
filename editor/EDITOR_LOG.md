@@ -6479,3 +6479,81 @@ Pull request readiness:
 - Pull request readiness: ready after this Freeze Review commit is pushed.
 - Recommended pull request title: `Chapter 15: Managing Change Radius`.
 - Do not merge as part of this phase.
+
+## Phase 79 Chapter 16 Canonical Brief Registration
+
+- Chapter: Designing for Failure and Recovery.
+- Stable ID: `CHAPTER-016`.
+- Branch: `chapter16`.
+- Stage: Canonical Brief Registration.
+- Verified baseline `origin/main`: `e1160e0ee78f87424983b94e80eb29e5ecd4058d`.
+- Baseline evidence: PR #17 squash commit, `Chapter 15: Managing Change Radius (#17)`.
+- Chapter 15 feature Freeze commit checked for tree equivalence:
+  `c90da497d5c8cc2ea4222222a1df049310650422`.
+- Canonical predecessor: `CHAPTER-015` - Managing Change Radius.
+- Part position: third chapter of Part III - Architecture Playbook.
+- Manuscript path reserved: `book/03-architecture-playbook/16-designing-for-failure-and-recovery.md`.
+- Canonical brief path: `editor/chapter-briefs/CHAPTER-016-designing-for-failure-and-recovery.md`.
+- Outcome: Approved for canonical brief registration.
+- Reader-facing manuscript created: no.
+- Author Draft performed: no.
+- Reviews performed: no.
+- Freeze performed: no.
+- Pull request created: no.
+- Merge performed: no.
+- `CHAPTER-001` through `CHAPTER-015` are registered as `canonical`.
+- Chapter 15 Editorial, Canon, Technical, and Freeze Review entries are present in order.
+- Table of contents places `Designing for Failure and Recovery` after Chapter 15.
+- Primary concept: none by canonical decision for Part III practice chapters.
+- Central PEAK anchor: `FAILURE-002` - One Lost Packet.
+- New PEAK concept created or implied as canon: no.
+- `book/03-architecture-playbook/README.md` changed: no.
+- `editor/CHAPTER_ARCHITECTURE.md` changed: no.
+- `book/00-front-matter/table-of-contents.md` changed: no.
+- `editor/CANON.md` changed: no.
+- Chapters 1-15 changed: no.
+- Existing PEAK concept files changed: no.
+- Chapter 16 boundary decisions:
+  - Chapter 10 retains temporal dependency; Chapter 16 uses timeouts and late completion only as recovery inputs.
+  - Chapter 14 retains boundary placement; Chapter 16 uses boundary outcomes and recovery authority.
+  - Chapter 15 retains Change Radius; Chapter 16 may mention affected surfaces without teaching the method.
+  - Chapter 17 retains ADR/RFC practice; Chapter 16 uses one chapter-local ADR only.
+  - Chapter 18 retains Architecture Review.
+  - Chapter 19 retains Architecture Freeze.
+- Registered relationship set:
+  - `CHAPTER-016` illustrates `FAILURE-002`.
+  - `CHAPTER-016` references `LAW-001`.
+  - `CHAPTER-016` references `LAW-002`.
+  - `CHAPTER-016` references `LAW-003`.
+  - `CHAPTER-016` references `LAW-005`.
+  - `CHAPTER-016` references `LAW-007`.
+  - `CHAPTER-016` references `SMELL-001`.
+  - `CHAPTER-016` references `SMELL-004`.
+  - `CHAPTER-016` references `SMELL-006`.
+  - `CHAPTER-016` references `ANTIPATTERN-005`.
+  - `CHAPTER-016` references `ANTIPATTERN-006`.
+  - `CHAPTER-016` references `ARTIFACT-001`.
+  - `CHAPTER-016` references `ARTIFACT-003`.
+  - `CHAPTER-016` references `ARTIFACT-005`.
+- Inspected but not registered as Chapter 16 edges: `VOCAB-002`, `ARTIFACT-007`, `RITUAL-001`, `VOCAB-001`, and
+  `METRIC-001`.
+- Changed files:
+  - `editor/chapter-briefs/CHAPTER-016-designing-for-failure-and-recovery.md`
+  - `editor/EDITOR_LOG.md`
+  - `knowledge/index.yaml`
+- Final validation completed after this log entry:
+  - Direct Chapter 16 registration assertions: passed for clean baseline lineage, expected changed files only,
+    `CHAPTER-016` draft registration, existing targets, exact outgoing relationship set, no duplicate/self-edge, no
+    new PEAK concept file, no reader-facing manuscript, unchanged Part III README, unchanged chapter architecture,
+    unchanged table of contents, unchanged canon, unchanged Chapters 1-15, and no tracked `site/` output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini editor/chapter-briefs/CHAPTER-016-designing-for-failure-and-recovery.md editor/EDITOR_LOG.md knowledge/index.yaml`: passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed; no generated `site/` output is tracked.
+- Next lifecycle stage: Author Draft after author approval.
+- Do not perform Author Draft, Editorial Review, Canon Review, Technical Review, Freeze Review, PR creation, or merge as
+  part of this phase.
