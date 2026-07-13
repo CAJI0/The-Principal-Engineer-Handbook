@@ -37,7 +37,7 @@ headings. It had a status. It even had alternatives.
 
 It was not careless.
 
-It was too late.
+It was too late to be the first review artifact.
 
 Implementation had already begun. Firmware had a branch with a packet layout. The gateway had a parser behind a feature
 flag. The service tool had a draft screen. Manufacturing had not reviewed the profile load path. Support had not seen the
@@ -132,7 +132,7 @@ service tool would display product-level rejection reasons, not raw firmware err
 same profile format that field service used. Old firmware would reject new profiles cleanly. Those statements had looked
 like background detail in the ADR. In the RFC, they became reviewable claims.
 
-At the next RFC Friday, the team did not try to get applause.
+At the next RFC Friday, the team did not try to collect signatures.
 
 They walked through open questions.
 
@@ -155,7 +155,7 @@ Release compatibility across a mixed fleet affected manufacturing, field support
 customer rollout. The team scheduled an Architecture Review for that specific risk. The RFC did not become the review
 ritual. It carried the proposal and the open question into the right review.
 
-After review, the decision was accepted.
+After the compatibility question closed, the decision was accepted.
 
 Then the ADR became useful.
 
@@ -198,7 +198,7 @@ context to understand the system without reconstructing the original conversatio
 The distinction is not ceremonial.
 
 If the team writes an ADR while the real choice is still open, reviewers may treat a proposal as a decision. If the team
-renames an after-the-fact ADR as an RFC, review may look open while the implementation has already made rejection
+renames an after-the-fact ADR as an RFC, review may appear open while the implementation has already made rejection
 economically fake. If the team keeps an RFC open after the decision happened elsewhere, the comment thread becomes a
 shadow record. If the team never writes the ADR after a useful RFC, the accepted decision disappears into the review
 conversation.
@@ -233,11 +233,11 @@ This does not make small choices unimportant. It means the record should be prop
 Timing matters as much as weight.
 
 Too early, and the document becomes speculative architecture fiction. The proposal is vague. Alternatives are not real.
-Evidence is absent. Reviewers argue with a cloud rather than a decision.
+Evidence is absent. Reviewers argue with guesses rather than a decision.
 
 Too late, and the document becomes a defense. Implementation has hardened the path. Alternatives have disappeared. The
 team remembers only the reasons that support the current code. The RFC becomes approval theater. The ADR becomes a story
-written by the winning branch.
+written by the current branch.
 
 Write enough before commitment to improve the decision. Record enough at commitment to preserve why it was made.
 
@@ -549,6 +549,6 @@ The chapter does not teach documentation style, repository layout, or process co
 habit: choose the artifact that matches decision state, consequence, uncertainty, ownership, and lifetime.
 
 The boundary with the next chapters is intentional. Chapter 18 will teach how to review architecture before it hardens.
-Chapter 19 will teach how to freeze architecture without freezing learning. Chapter 17 stops earlier and later than both:
-it keeps proposals reviewable while they can still change, and it keeps accepted decisions discoverable after they
-matter.
+Chapter 19 will teach how to freeze architecture without freezing learning. Chapter 17 stays with the artifacts on both
+sides of those practices: it keeps proposals reviewable while they can still change, and it keeps accepted decisions
+discoverable after they matter.

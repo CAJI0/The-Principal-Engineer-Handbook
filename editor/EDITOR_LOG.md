@@ -7110,3 +7110,57 @@ Pull request readiness:
 - Next lifecycle stage: Editorial Review after this Author Draft commit is committed and pushed.
 - Do not perform Editorial Review, Canon Review, Technical Review, Freeze Review, PR creation, or merge as part of this
   phase.
+
+## Phase 87 Chapter 17 Editorial Review
+
+- Chapter: Using ADRs and RFCs Well.
+- Stable ID: `CHAPTER-017`.
+- Branch: `chapter17`.
+- Stage: Editorial Review.
+- Reviewed Author Draft commit: `fabaecc788780cf4d46988c5649509528e951b4a`.
+- Manuscript path: `book/03-architecture-playbook/17-using-adrs-and-rfcs-well.md`.
+- Canonical brief path: `editor/chapter-briefs/CHAPTER-017-using-adrs-and-rfcs-well.md`.
+- Part position: fourth chapter of Part III - Architecture Playbook.
+- Primary concept: none by canonical decision for Part III practice chapters.
+- Central paired PEAK artifacts:
+  - `ARTIFACT-001` - ADR.
+  - `ARTIFACT-002` - RFC.
+- Outcome: Approve with changes.
+- Material editorial changes:
+  - clarified that the original ADR was too late as the first review artifact, not careless or inherently invalid;
+  - tightened RFC Friday wording away from approval theater;
+  - clarified the transition from compatibility review closure to accepted decision;
+  - replaced vague or colloquial phrasing in the timing discussion;
+  - sharpened the Editor's Commentary boundary with Chapters 18 and 19.
+- Section-order result: passed. The manuscript preserves the required section order: Opening Quote, Story, Discussion,
+  Engineering Principle, Architecture Exercise, Principal's Notebook, ADR, Editor's Commentary.
+- Principal's Notebook result: exactly three short observations.
+- Proposal-versus-decision result: passed. The manuscript keeps RFC and ADR moments distinct and keeps artifact choice
+  tied to decision state, consequence, uncertainty, ownership, and lifetime.
+- Chapter 18 boundary result: passed. The manuscript uses Architecture Review only as an escalation boundary and does not
+  teach the full Architecture Review ritual.
+- Chapter 19 boundary result: passed. The manuscript states that ADR acceptance is not Architecture Freeze and does not
+  teach freeze, exception, or revalidation policy.
+- Changed files:
+  - `book/03-architecture-playbook/17-using-adrs-and-rfcs-well.md`
+  - `editor/EDITOR_LOG.md`
+- Unchanged files confirmed: canonical brief, `knowledge/index.yaml`, PEAK concept files, `editor/CHAPTER_ARCHITECTURE.md`,
+  Part III README, table of contents, `editor/CANON.md`, and Chapters 1-16.
+- Final validation completed after this log entry:
+  - Direct Editorial Review assertions: passed for clean baseline, `HEAD` matching `origin/chapter17` before review,
+    reviewed SHA matching the Author Draft commit, expected changed files only, exact section order, unique required
+    sections, exactly three Principal's Notebook observations, unresolved marker absence, `CHAPTER-017` remaining
+    `draft`, no primary concept introduced, exact registered relationship set preserved, no new PEAK ID, unchanged
+    canonical brief, unchanged `knowledge/index.yaml`, unchanged PEAK concept files, unchanged
+    `editor/CHAPTER_ARCHITECTURE.md`, unchanged Part III README, unchanged table of contents, unchanged Chapters 1-16,
+    Chapter 18 and Chapter 19 boundaries, and no tracked `site/` output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini book/03-architecture-playbook/17-using-adrs-and-rfcs-well.md editor/EDITOR_LOG.md`: passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed; no generated `site/` output is tracked.
+- Next lifecycle stage: Canon Review after this Editorial Review commit is committed and pushed.
+- Do not perform Canon Review, Technical Review, Freeze Review, PR creation, or merge as part of this phase.
