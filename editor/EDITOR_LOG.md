@@ -6978,3 +6978,71 @@ Pull request readiness:
 - Pull request readiness: ready after this Freeze Review commit is pushed.
 - Recommended pull request title: `Chapter 16: Designing for Failure and Recovery`.
 - Do not merge as part of this phase.
+
+## Phase 85 Chapter 17 Canonical Brief Registration
+
+- Chapter: Using ADRs and RFCs Well.
+- Stable ID: `CHAPTER-017`.
+- Branch: `chapter17`.
+- Stage: Canonical Brief Registration.
+- Verified baseline `origin/main`: `5f6e41751acf8bf184048a754254946bdae917a4`.
+- Baseline evidence: PR #18 squash commit, `Chapter 16: Designing for Failure and Recovery (#18)`.
+- Chapter 16 feature Freeze commit checked for tree equivalence:
+  `1bfb6d540e85344dc568413e7c6cfda75189ca77`.
+- Manuscript path reserved: `book/03-architecture-playbook/17-using-adrs-and-rfcs-well.md`.
+- Canonical brief path: `editor/chapter-briefs/CHAPTER-017-using-adrs-and-rfcs-well.md`.
+- Reader-facing manuscript created: no.
+- Primary concept: none by canonical decision for Part III practice chapters.
+- Central PEAK artifacts:
+  - `ARTIFACT-001` - ADR.
+  - `ARTIFACT-002` - RFC.
+- Part position: fourth chapter of Part III - Architecture Playbook.
+- Canonical predecessor: `CHAPTER-016` - Designing for Failure and Recovery.
+- Outcome: Approved for canonical brief registration.
+- Status registered:
+  - `CHAPTER-017`: new `draft` chapter entry.
+- Existing canonical chapters changed: none. `CHAPTER-001` through `CHAPTER-016` remain `canonical`.
+- Reader-facing manuscript changed: no.
+- Part III README changed: no.
+- Table of contents changed: no.
+- `editor/CHAPTER_ARCHITECTURE.md` changed: no.
+- Existing PEAK concept files changed: no.
+- New PEAK concept created or implied as canon: no.
+- Canonical purpose: prepare Chapter 17 to teach how Principal Engineers choose, write, review, maintain, supersede, and
+  retire ADRs and RFCs so proposals are reviewable before commitment and decisions remain discoverable afterward.
+- Part III boundary result: passed. Chapter 17 follows boundary placement, Change Radius, and failure/recovery design
+  while retaining Chapter 18 for Architecture Review and Chapter 19 for Architecture Freeze.
+- Selected PEAK relationship set:
+  - `CHAPTER-017` illustrates `ARTIFACT-001`.
+  - `CHAPTER-017` illustrates `ARTIFACT-002`.
+  - `CHAPTER-017` references `ARTIFACT-003`.
+  - `CHAPTER-017` references `ARTIFACT-006`.
+  - `CHAPTER-017` references `LAW-005`.
+  - `CHAPTER-017` references `RITUAL-001`.
+  - `CHAPTER-017` references `RITUAL-006`.
+  - `CHAPTER-017` references `METRIC-003`.
+- Concepts inspected but not registered as outgoing Chapter 17 relationships: `VOCAB-003`, `LAW-002`, `LAW-007`,
+  `SMELL-001`, `ANTIPATTERN-006`, `VOCAB-001`, `METRIC-001`, `VOCAB-007`, `METRIC-005`, and `RITUAL-004`.
+- Changed files:
+  - `editor/chapter-briefs/CHAPTER-017-using-adrs-and-rfcs-well.md`
+  - `editor/EDITOR_LOG.md`
+  - `knowledge/index.yaml`
+- Final validation completed after this log entry:
+  - Direct Canonical Brief Registration assertions: passed for clean baseline, `HEAD` matching `origin/main` before
+    branch creation, PR #18 squash merge baseline, Chapter 16 Freeze commit tree equivalence for checked lifecycle
+    files, expected changed files only, no reader-facing Chapter 17 manuscript, new Chapter 17 canonical brief, exact
+    `CHAPTER-017` draft registration, existing relationship targets, exact outgoing relationship set, no duplicate,
+    unexpected, or self-edge, unchanged Part III README, unchanged table of contents, unchanged
+    `editor/CHAPTER_ARCHITECTURE.md`, unchanged existing PEAK concept files, unchanged Chapters 1-16, `CHAPTER-001`
+    through `CHAPTER-016` remaining canonical, and no tracked `site/` output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini editor/chapter-briefs/CHAPTER-017-using-adrs-and-rfcs-well.md editor/EDITOR_LOG.md knowledge/index.yaml`: passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed; no generated `site/` output is tracked.
+- Next lifecycle stage: Author Draft after this Canonical Brief Registration commit is committed and pushed.
+- Do not create the reader-facing manuscript, run Editorial Review, run Canon Review, run Technical Review, run Freeze
+  Review, create a pull request, or merge as part of this phase.

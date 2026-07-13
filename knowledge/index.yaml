@@ -354,6 +354,11 @@ entities:
       name: Designing for Failure and Recovery
       path: ../book/03-architecture-playbook/16-designing-for-failure-and-recovery.md
       status: canonical
+    - id: CHAPTER-017
+      type: chapter
+      name: Using ADRs and RFCs Well
+      path: ../book/03-architecture-playbook/17-using-adrs-and-rfcs-well.md
+      status: draft
   adrs:
     - id: ADR-001
       type: adr
@@ -794,3 +799,27 @@ relationships:
   - from: CHAPTER-016
     type: references
     to: ARTIFACT-005
+  - from: CHAPTER-017
+    type: illustrates
+    to: ARTIFACT-001
+  - from: CHAPTER-017
+    type: illustrates
+    to: ARTIFACT-002
+  - from: CHAPTER-017
+    type: references
+    to: ARTIFACT-003
+  - from: CHAPTER-017
+    type: references
+    to: ARTIFACT-006
+  - from: CHAPTER-017
+    type: references
+    to: LAW-005
+  - from: CHAPTER-017
+    type: references
+    to: RITUAL-001
+  - from: CHAPTER-017
+    type: references
+    to: RITUAL-006
+  - from: CHAPTER-017
+    type: references
+    to: METRIC-003
