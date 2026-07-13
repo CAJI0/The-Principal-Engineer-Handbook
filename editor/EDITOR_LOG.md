@@ -7293,3 +7293,58 @@ Pull request readiness:
   - `git ls-files site`: passed; no generated `site/` output is tracked.
 - Next lifecycle stage: Freeze Review after this Technical Review commit is committed and pushed.
 - Do not perform Freeze Review, PR creation, or merge as part of this phase.
+
+## Phase 90 Chapter 17 Freeze Review
+
+- Chapter: Using ADRs and RFCs Well.
+- Stable ID: `CHAPTER-017`.
+- Branch: `chapter17`.
+- Stage: Freeze Review.
+- Reviewed Technical Review commit: `66f2b09c4b113c2620916d0e7ab6409813152de6`.
+- Prior review commits:
+  - Editorial Review: `fe2fdc95d37a1ea0d5bc0a2c3c97e9655e8fc7e3`.
+  - Canon Review: `b571983d0e872c87af185ff6f01e4478a6045669`.
+  - Technical Review: `66f2b09c4b113c2620916d0e7ab6409813152de6`.
+- Manuscript path: `book/03-architecture-playbook/17-using-adrs-and-rfcs-well.md`.
+- Canonical brief path preserved: `editor/chapter-briefs/CHAPTER-017-using-adrs-and-rfcs-well.md`.
+- Part position: fourth chapter of Part III - Architecture Playbook.
+- Primary concept: none by canonical decision for Part III practice chapters.
+- Central paired PEAK artifacts:
+  - `ARTIFACT-001` - ADR.
+  - `ARTIFACT-002` - RFC.
+- Outcome: Approve.
+- Status transition: `CHAPTER-017` moved from `draft` to `canonical` in `knowledge/index.yaml`.
+- Freeze scope result: passed. Editorial, Canon, and Technical Review entries are present in order, each was committed
+  and pushed before the next gate began, and the Freeze Review started from the pushed Technical Review commit.
+- Manuscript freeze result: passed. The manuscript keeps the required chapter order: Opening Quote, Story, Discussion,
+  Engineering Principle, Architecture Exercise, Principal's Notebook, ADR, Editor's Commentary.
+- Canon freeze result: passed. Chapter 17 remains a no-primary Part III practice chapter centered on ADR and RFC,
+  materially illustrates `ARTIFACT-001` and `ARTIFACT-002`, and materially references `ARTIFACT-003`,
+  `ARTIFACT-006`, `LAW-005`, `RITUAL-001`, `RITUAL-006`, and `METRIC-003`.
+- Boundary freeze result: passed. Chapter 17 does not take over Chapter 18's Architecture Review ritual or Chapter 19's
+  Architecture Freeze and revalidation policy.
+- Technical freeze result: passed. Firmware, gateway, service-tool, manufacturing, support, release, compatibility,
+  evidence, ownership, closure, supersession, and discoverability concerns remain credible and proportionate.
+- Changed files:
+  - `editor/EDITOR_LOG.md`
+  - `knowledge/index.yaml`
+- Final validation completed after this log entry:
+  - Direct Freeze Review assertions: passed for clean baseline, `HEAD` matching `origin/chapter17` before review,
+    reviewed SHA matching the Technical Review commit, prior review commits present and ancestor-ordered, expected
+    changed files only, exact section order, required sections unique, unresolved marker absence, `CHAPTER-017`
+    canonical status, no primary concept introduced, exact registered relationship set preserved, existing relationship
+    targets, no duplicate, unexpected, or self-edge, no new PEAK ID, unchanged manuscript, unchanged canonical brief,
+    unchanged PEAK concept files, unchanged `editor/CHAPTER_ARCHITECTURE.md`, unchanged Part III README, unchanged table
+    of contents, unchanged `editor/CANON.md`, unchanged Chapters 1-16, Chapter 18 and Chapter 19 boundaries, and no
+    tracked `site/` output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini book/03-architecture-playbook/17-using-adrs-and-rfcs-well.md editor/EDITOR_LOG.md`: passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed; no generated `site/` output is tracked.
+- PR readiness: Chapter 17 is ready for a pull request after this Freeze Review commit is committed and pushed.
+- Recommended pull request title: Chapter 17: Using ADRs and RFCs Well.
+- Do not create the pull request or merge as part of this phase.

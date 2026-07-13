@@ -358,7 +358,7 @@ entities:
       type: chapter
       name: Using ADRs and RFCs Well
       path: ../book/03-architecture-playbook/17-using-adrs-and-rfcs-well.md
-      status: draft
+      status: canonical
   adrs:
     - id: ADR-001
       type: adr
