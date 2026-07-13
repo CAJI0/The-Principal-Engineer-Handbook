@@ -348,7 +348,7 @@ entities:
       type: chapter
       name: Managing Change Radius
       path: ../book/03-architecture-playbook/15-managing-change-radius.md
-      status: draft
+      status: canonical
   adrs:
     - id: ADR-001
       type: adr

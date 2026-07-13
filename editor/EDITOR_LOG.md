@@ -6389,3 +6389,93 @@ Pull request readiness:
   - `git ls-files site`: passed; no generated `site/` output is tracked.
 - Next lifecycle stage: Freeze Review after this Technical Review commit is committed and pushed.
 - Do not perform Freeze Review, PR creation, or merge as part of this phase.
+
+## Phase 78 Chapter 15 Freeze Review
+
+- Chapter: Managing Change Radius.
+- Stable ID: `CHAPTER-015`.
+- Branch: `chapter15`.
+- Stage: Freeze Review.
+- Reviewed Technical Review commit: `00a5e2a1c0bb8084736421905af895ae3279c5cc`.
+- Prior review commits:
+  - Editorial Review: `96e7850b645a425961810939f1ee323a369720f9`.
+  - Canon Review: `72483c560c03546ba0f192292f332d0c4eaab29a`.
+  - Technical Review: `00a5e2a1c0bb8084736421905af895ae3279c5cc`.
+- Manuscript path: `book/03-architecture-playbook/15-managing-change-radius.md`.
+- Canonical brief path: `editor/chapter-briefs/CHAPTER-015-managing-change-radius.md`.
+- Primary concept: none by canonical decision.
+- Central concepts: `VOCAB-001` - Change Radius and `METRIC-001` - Change Radius.
+- Part position: second chapter of Part III - Architecture Playbook.
+- Outcome: Approved.
+- Manuscript changed during Freeze Review: no.
+- Canonical brief changed during Freeze Review: no.
+- Status transition:
+  - `CHAPTER-015`: `draft` -> `canonical`.
+- `VOCAB-001` changed during Freeze Review: no.
+- `METRIC-001` changed during Freeze Review: no.
+- `editor/CHAPTER_ARCHITECTURE.md` changed during Freeze Review: no.
+- Part III README changed during Freeze Review: no.
+- Chapters 1-14 changed during Freeze Review: no.
+- Table of contents changed during Freeze Review: no.
+- `CANON.md` changed during Freeze Review: no.
+- PEAK concepts or relationships changed during Freeze Review: no.
+- New PEAK concept created or implied as canon: no.
+- Freeze finding: Chapter 15 is canonical-ready as the second Part III practice chapter. It teaches the full Change
+  Radius method after Chapter 14 boundary placement and before the later Part III chapters on failure, artifacts, review,
+  and freeze.
+- Prior review outcomes:
+  - Editorial Review: Approved with editorial changes.
+  - Canon Review: Approved.
+  - Technical Review: Approved.
+- Section-order result: passed. The manuscript preserves the required section order: Opening Quote, Story, Discussion,
+  Engineering Principle, Architecture Exercise, Principal's Notebook, ADR, Editor's Commentary.
+- Principal's Notebook result: passed. The notebook contains exactly three short observations.
+- Chapter 14 boundary result: passed. Chapter 14 remains the boundary-placement chapter; Chapter 15 owns mapping and
+  managing affected surface.
+- Chapters 16-19 boundary result: passed. Chapter 16 retains failure and recovery design; Chapter 17 retains ADR/RFC
+  practice; Chapter 18 retains Architecture Review; Chapter 19 retains Architecture Freeze.
+- Canon and PEAK integrity: passed. Chapter 15 has no primary concept, creates no new concept, adds no relationship,
+  and preserves the exact registered relationship set.
+- Technical readiness: passed. The calibration-record story credibly treats persistent records, record versions,
+  serialized representation, alignment and padding, firmware compatibility, boot support, manufacturing and service
+  tools, product variants, upgrade and downgrade behavior, defaults, test fixtures, diagnostics, temporary
+  compatibility, unknown consumers, and approximate Change Radius.
+- Registered relationship set preserved:
+  - `CHAPTER-015` illustrates `VOCAB-001`.
+  - `CHAPTER-015` illustrates `METRIC-001`.
+  - `CHAPTER-015` references `LAW-001`.
+  - `CHAPTER-015` references `LAW-002`.
+  - `CHAPTER-015` references `LAW-003`.
+  - `CHAPTER-015` references `LAW-005`.
+  - `CHAPTER-015` references `LAW-007`.
+  - `CHAPTER-015` references `SMELL-001`.
+  - `CHAPTER-015` references `SMELL-004`.
+  - `CHAPTER-015` references `SMELL-005`.
+  - `CHAPTER-015` references `ANTIPATTERN-003`.
+  - `CHAPTER-015` references `ANTIPATTERN-006`.
+  - `CHAPTER-015` references `ARTIFACT-001`.
+  - `CHAPTER-015` references `ARTIFACT-003`.
+- Changed files:
+  - `editor/EDITOR_LOG.md`
+  - `knowledge/index.yaml`
+- Final validation completed after this log entry:
+  - Direct Freeze Review assertions: passed for clean baseline, `HEAD` matching `origin/chapter15` before review,
+    reviewed SHA matching the Technical Review commit, prior review commits being ancestors of `HEAD`, prior review
+    outcomes permitting Freeze, expected changed files only, exact section order, unique required sections, exactly
+    three Principal's Notebook observations, unresolved marker absence, required Change Radius definition, no new PEAK
+    ID, primary concept remaining absent, `CHAPTER-015` status changed to `canonical`, exact registered relationship
+    set, existing relationship targets, no duplicate, unexpected, or self-edge, unchanged manuscript, unchanged canonical
+    brief, unchanged `VOCAB-001`, unchanged `METRIC-001`, unchanged `editor/CHAPTER_ARCHITECTURE.md`, unchanged Part III
+    README, unchanged Chapters 1-14, unchanged table of contents, unchanged `CANON.md`, unchanged PEAK concept files,
+    phase-order continuity through Phase 78, and no tracked `site/` output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini editor/EDITOR_LOG.md knowledge/index.yaml`: passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed; no generated `site/` output is tracked.
+- Pull request readiness: ready after this Freeze Review commit is pushed.
+- Recommended pull request title: `Chapter 15: Managing Change Radius`.
+- Do not merge as part of this phase.
