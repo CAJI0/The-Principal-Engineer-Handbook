@@ -6288,3 +6288,104 @@ Pull request readiness:
   - `git ls-files site`: passed; no generated `site/` output is tracked.
 - Next lifecycle stage: Technical Review after this Canon Review commit is committed and pushed.
 - Do not perform Technical Review, Freeze Review, PR creation, or merge as part of this phase.
+
+## Phase 77 Chapter 15 Technical Review
+
+- Chapter: Managing Change Radius.
+- Stable ID: `CHAPTER-015`.
+- Branch: `chapter15`.
+- Stage: Technical Review.
+- Reviewed Canon Review commit: `72483c560c03546ba0f192292f332d0c4eaab29a`.
+- Manuscript path: `book/03-architecture-playbook/15-managing-change-radius.md`.
+- Canonical brief path: `editor/chapter-briefs/CHAPTER-015-managing-change-radius.md`.
+- Primary concept: none by canonical decision.
+- Central concepts: `VOCAB-001` - Change Radius and `METRIC-001` - Change Radius.
+- Part position: second chapter of Part III - Architecture Playbook.
+- Outcome: Approved.
+- Manuscript changed during Technical Review: no.
+- Canonical brief changed during Technical Review: no.
+- `knowledge/index.yaml` changed during Technical Review: no.
+- `VOCAB-001` changed during Technical Review: no.
+- `METRIC-001` changed during Technical Review: no.
+- `editor/CHAPTER_ARCHITECTURE.md` changed during Technical Review: no.
+- Part III README changed during Technical Review: no.
+- Chapters 1-14 changed during Technical Review: no.
+- Table of contents changed during Technical Review: no.
+- `CANON.md` changed during Technical Review: no.
+- PEAK concepts or relationships changed during Technical Review: no.
+- New PEAK concept created or implied as canon: no.
+- Technical domains checked: persistent calibration/configuration records, record versions, serialized representation,
+  binary layout, alignment and padding, firmware compatibility, boot support, manufacturing and calibration stations,
+  service tools, host exports, product and hardware variants, old and new firmware coexistence, upgrade behavior,
+  downgrade behavior, rollback awareness, defaults, test fixtures, hardware-in-the-loop and system tests, diagnostics,
+  temporary compatibility, unknown external consumers, approximate measurement, and Change Radius sequencing.
+- Material corrections during Technical Review: none.
+- Authoritative-meaning assessment: passed. The manuscript distinguishes product meaning from persistent, exported,
+  tool-facing, and in-memory representations, and does not require every consumer to share a C layout.
+- Schema/version assessment: passed. Record versioning identifies interpretation but does not replace migration logic,
+  compatibility policy, validation, diagnostics, downgrade decisions, or owner responsibility.
+- Upgrade/downgrade assessment: passed. The manuscript treats old reader/new writer sequencing, new reader/old record
+  compatibility, preserved valid field calibration, downgrade documentation, release artifacts, and rollback awareness
+  without turning Chapter 15 into failure/recovery design.
+- Manufacturing/service-tool assessment: passed. Manufacturing stations, calibration tooling, service tools, host
+  exports, support workflows, and supplier scripts are treated as real consumers even when outside the firmware
+  repository.
+- Boot support assessment: passed. The recovery image copies the record as bytes and is not implied to understand the
+  application schema; boot support remains an affected compatibility surface rather than a schema authority.
+- Defaults assessment: passed. Reset-to-default behavior is rejected as a migration strategy when valid field calibration
+  exists.
+- Temporary-compatibility assessment: passed. The old-record compatibility path has bounded scope, owner, discovery or
+  retirement trigger, diagnostics, and no implication of permanent dual paths.
+- Unknown-consumer assessment: passed. Unknown external consumers affect commitment, observation, sequencing, and
+  review triggers without making progress impossible.
+- Test assessment: passed. Representation tests, migration tests, system tests, manufacturing station tests, service
+  tool compatibility tests, test fixtures, and hardware-in-the-loop/system tests are distinguished enough for this
+  chapter's scope.
+- Diagnostics assessment: passed. Diagnostics identify record version and migration outcome and preserve unsupported or
+  unrecognized representation as a reviewable product/support signal without requiring every field to be logged.
+- Approximate-metric assessment: passed. Change Radius remains a comparative affected-surface signal and is not treated
+  as a score or proof of correctness.
+- Misleading technical absolute guardrails: passed. The manuscript does not claim that appending a structure field is
+  automatically compatible, a C structure layout safely changes persistent or wire representation, alignment and padding
+  are stable across targets, versioning solves migration, old firmware can ignore every new field, rollback is safe
+  because upgrade succeeded, reset-to-default is acceptable by default, a compatibility flag has one stable meaning,
+  one repository's tests cover external tools, no source edit means no review or retest, code search finds all
+  consumers, smaller diff means lower release risk, larger radius proves bad architecture, narrow radius proves
+  correctness, all radius can be known before implementation, or passing regression tests proves unknown consumers do
+  not exist.
+- Registered relationship set preserved:
+  - `CHAPTER-015` illustrates `VOCAB-001`.
+  - `CHAPTER-015` illustrates `METRIC-001`.
+  - `CHAPTER-015` references `LAW-001`.
+  - `CHAPTER-015` references `LAW-002`.
+  - `CHAPTER-015` references `LAW-003`.
+  - `CHAPTER-015` references `LAW-005`.
+  - `CHAPTER-015` references `LAW-007`.
+  - `CHAPTER-015` references `SMELL-001`.
+  - `CHAPTER-015` references `SMELL-004`.
+  - `CHAPTER-015` references `SMELL-005`.
+  - `CHAPTER-015` references `ANTIPATTERN-003`.
+  - `CHAPTER-015` references `ANTIPATTERN-006`.
+  - `CHAPTER-015` references `ARTIFACT-001`.
+  - `CHAPTER-015` references `ARTIFACT-003`.
+- Changed files:
+  - `editor/EDITOR_LOG.md`
+- Final validation completed after this log entry:
+  - Direct Technical Review assertions: passed for clean baseline, `HEAD` matching `origin/chapter15` before review,
+    reviewed SHA matching the Canon Review commit, expected changed files only, exact section order, unique required
+    sections, exactly three Principal's Notebook observations, unresolved marker absence, required Change Radius
+    definition, no misleading technical absolutes, no new PEAK ID, no primary concept introduced, `CHAPTER-015`
+    remaining `draft`, exact registered relationship set, unchanged manuscript, unchanged canonical brief, unchanged
+    PEAK index, unchanged `VOCAB-001`, unchanged `METRIC-001`, unchanged `editor/CHAPTER_ARCHITECTURE.md`, unchanged
+    Part III README, unchanged Chapters 1-14, unchanged table of contents, unchanged `CANON.md`, and no tracked `site/`
+    output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini book/03-architecture-playbook/15-managing-change-radius.md editor/EDITOR_LOG.md`: passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed; no generated `site/` output is tracked.
+- Next lifecycle stage: Freeze Review after this Technical Review commit is committed and pushed.
+- Do not perform Freeze Review, PR creation, or merge as part of this phase.
