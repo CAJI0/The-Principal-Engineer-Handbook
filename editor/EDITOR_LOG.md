@@ -6889,3 +6889,92 @@ Pull request readiness:
   - `git ls-files site`: passed; no generated `site/` output is tracked.
 - Next lifecycle stage: Freeze Review after this Technical Review commit is committed and pushed.
 - Do not perform Freeze Review, PR creation, or merge as part of this phase.
+
+## Phase 84 Chapter 16 Freeze Review
+
+- Chapter: Designing for Failure and Recovery.
+- Stable ID: `CHAPTER-016`.
+- Branch: `chapter16`.
+- Stage: Freeze Review.
+- Reviewed Technical Review commit: `0942a8107d2a8a189391eeb7100e0640486f9fcf`.
+- Prior review commits:
+  - Editorial Review: `99c43b4da89c36cec6ff8142698aab3428d9fe6e`.
+  - Canon Review: `4465c0937b97f81bcd5e113b177628a3e144f567`.
+  - Technical Review: `0942a8107d2a8a189391eeb7100e0640486f9fcf`.
+- Manuscript path: `book/03-architecture-playbook/16-designing-for-failure-and-recovery.md`.
+- Canonical brief path: `editor/chapter-briefs/CHAPTER-016-designing-for-failure-and-recovery.md`.
+- Primary concept: none by canonical decision for Part III practice chapters.
+- Central PEAK anchor: `FAILURE-002` - One Lost Packet.
+- Part position: third chapter of Part III - Architecture Playbook.
+- Outcome: Approved.
+- Manuscript changed during Freeze Review: no.
+- Canonical brief changed during Freeze Review: no.
+- Status transition:
+  - `CHAPTER-016`: `draft` -> `canonical`.
+- Existing PEAK concept files changed during Freeze Review: no.
+- `editor/CHAPTER_ARCHITECTURE.md` changed during Freeze Review: no.
+- Part III README changed during Freeze Review: no.
+- Chapters 1-15 changed during Freeze Review: no.
+- Table of contents changed during Freeze Review: no.
+- `editor/CANON.md` changed during Freeze Review: no.
+- PEAK concepts or relationships changed during Freeze Review: no.
+- New PEAK concept created or implied as canon: no.
+- Prior review outcomes:
+  - Editorial Review: Approved with editorial changes.
+  - Canon Review: Approved.
+  - Technical Review: Approved with technical changes.
+- Freeze finding: Chapter 16 is canonical-ready as the third Part III practice chapter. It teaches recovery design after
+  Chapter 14 boundary placement and Chapter 15 Change Radius without consuming Chapters 17-19.
+- Section-order result: passed. The manuscript preserves the required section order: Opening Quote, Story, Discussion,
+  Engineering Principle, Architecture Exercise, Principal's Notebook, ADR, Editor's Commentary.
+- Principal's Notebook result: passed. The notebook contains exactly three short observations.
+- Chapter 10 boundary result: passed. Chapter 10 retains temporal dependency; Chapter 16 owns outcome and recovery after
+  temporal uncertainty appears.
+- Chapters 14-15 boundary result: passed. Chapter 14 retains boundary placement; Chapter 15 retains Change Radius;
+  Chapter 16 owns failure and recovery design.
+- Chapters 17-19 boundary result: passed. Chapter 17 retains ADR/RFC practice; Chapter 18 retains Architecture Review;
+  Chapter 19 retains Architecture Freeze.
+- Canon and graph integrity: passed. Chapter 16 has no primary concept, creates no new concept, adds no relationship,
+  and preserves the exact registered relationship set.
+- Technical readiness: passed. The final manuscript credibly treats lost acknowledgment, unknown outcome, durable
+  operation state, late completion, duplicate/repeated observation, retry ownership, partial completion, restart and
+  power loss, reduced behavior, Event Catalog use, callback ordering, diagnostics, and failure tests.
+- Registered relationship set preserved:
+  - `CHAPTER-016` illustrates `FAILURE-002`.
+  - `CHAPTER-016` references `LAW-001`.
+  - `CHAPTER-016` references `LAW-002`.
+  - `CHAPTER-016` references `LAW-003`.
+  - `CHAPTER-016` references `LAW-005`.
+  - `CHAPTER-016` references `LAW-007`.
+  - `CHAPTER-016` references `SMELL-001`.
+  - `CHAPTER-016` references `SMELL-004`.
+  - `CHAPTER-016` references `SMELL-006`.
+  - `CHAPTER-016` references `ANTIPATTERN-005`.
+  - `CHAPTER-016` references `ANTIPATTERN-006`.
+  - `CHAPTER-016` references `ARTIFACT-001`.
+  - `CHAPTER-016` references `ARTIFACT-003`.
+  - `CHAPTER-016` references `ARTIFACT-005`.
+- Changed files:
+  - `editor/EDITOR_LOG.md`
+  - `knowledge/index.yaml`
+- Final validation completed after this log entry:
+  - Direct Freeze Review assertions: passed for clean baseline, `HEAD` matching `origin/chapter16` before review,
+    reviewed SHA matching the Technical Review commit, prior review commits being ancestors of `HEAD`, prior review
+    outcomes permitting Freeze, expected changed files only, exact section order, unique required sections, exactly
+    three Principal's Notebook observations, unresolved marker absence, no new PEAK ID, primary concept remaining
+    absent, `CHAPTER-016` status changed to `canonical`, exact registered relationship set, existing relationship
+    targets, no duplicate, unexpected, or self-edge, unchanged manuscript, unchanged canonical brief, unchanged PEAK
+    concept files, unchanged `editor/CHAPTER_ARCHITECTURE.md`, unchanged Part III README, unchanged Chapters 1-15,
+    unchanged table of contents, unchanged `editor/CANON.md`, four gate entries in order, correct reviewed commits, and
+    no tracked `site/` output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini editor/EDITOR_LOG.md knowledge/index.yaml`: passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed; no generated `site/` output is tracked.
+- Pull request readiness: ready after this Freeze Review commit is pushed.
+- Recommended pull request title: `Chapter 16: Designing for Failure and Recovery`.
+- Do not merge as part of this phase.

@@ -353,7 +353,7 @@ entities:
       type: chapter
       name: Designing for Failure and Recovery
       path: ../book/03-architecture-playbook/16-designing-for-failure-and-recovery.md
-      status: draft
+      status: canonical
   adrs:
     - id: ADR-001
       type: adr
