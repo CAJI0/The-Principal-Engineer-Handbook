@@ -344,6 +344,11 @@ entities:
       name: Drawing Boundaries That Survive Change
       path: ../book/03-architecture-playbook/14-drawing-boundaries-that-survive-change.md
       status: canonical
+    - id: CHAPTER-015
+      type: chapter
+      name: Managing Change Radius
+      path: ../book/03-architecture-playbook/15-managing-change-radius.md
+      status: canonical
   adrs:
     - id: ADR-001
       type: adr
@@ -700,3 +705,45 @@ relationships:
   - from: CHAPTER-014
     type: references
     to: ARTIFACT-001
+  - from: CHAPTER-015
+    type: illustrates
+    to: VOCAB-001
+  - from: CHAPTER-015
+    type: illustrates
+    to: METRIC-001
+  - from: CHAPTER-015
+    type: references
+    to: LAW-001
+  - from: CHAPTER-015
+    type: references
+    to: LAW-002
+  - from: CHAPTER-015
+    type: references
+    to: LAW-003
+  - from: CHAPTER-015
+    type: references
+    to: LAW-005
+  - from: CHAPTER-015
+    type: references
+    to: LAW-007
+  - from: CHAPTER-015
+    type: references
+    to: SMELL-001
+  - from: CHAPTER-015
+    type: references
+    to: SMELL-004
+  - from: CHAPTER-015
+    type: references
+    to: SMELL-005
+  - from: CHAPTER-015
+    type: references
+    to: ANTIPATTERN-003
+  - from: CHAPTER-015
+    type: references
+    to: ANTIPATTERN-006
+  - from: CHAPTER-015
+    type: references
+    to: ARTIFACT-001
+  - from: CHAPTER-015
+    type: references
+    to: ARTIFACT-003

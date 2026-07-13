@@ -5932,3 +5932,550 @@ Pull request readiness:
 - Next lifecycle stage: Editorial Review after this Author Draft commit is committed and pushed.
 - Do not perform Editorial Review, Canon Review, Technical Review, Freeze Review, PR creation, or merge as part of this
   phase.
+
+## Phase 73 Chapter 15 Canonical Brief Registration
+
+- Chapter: Managing Change Radius.
+- Stable ID: `CHAPTER-015`.
+- Branch: `chapter15`.
+- Stage: Canonical Brief Registration.
+- Verified baseline `origin/main`: `346f5801c1326e836b81ce6d92e7564d9c946f94`.
+- Chapter 14 PR and squash-merge verification:
+  - Chapter 14 PR: `#16`.
+  - Squash commit: `346f5801c1326e836b81ce6d92e7564d9c946f94`.
+  - Squash commit subject: `Chapter 14: Drawing Boundaries That Survive Change (#16)`.
+  - Squash commit parent: `b478e3d5a01977ffb2676c9b309c9f700ba78a80`.
+  - Final Chapter 14 feature Freeze commit, still resolvable: `f80988fb40cfeecd4685d9082a3b2d32bfd3f351`.
+  - Final-tree equivalence: passed for Chapter 14 manuscript, editor log, canonical brief, and PEAK index between the
+    feature Freeze commit and the PR #16 squash commit.
+- Part III baseline verification:
+  - `CHAPTER-001` through `CHAPTER-014` are canonical in `knowledge/index.yaml`.
+  - `CHAPTER-014` is the first Part III chapter and records Editorial, Canon, Technical, and Freeze Review entries in
+    order.
+  - The table of contents places `Managing Change Radius` immediately after `Drawing Boundaries That Survive Change`.
+  - `VOCAB-001` - Change Radius exists exactly once.
+  - `METRIC-001` - Change Radius exists exactly once.
+  - Neither Change Radius concept changed during the Chapter 14 Freeze or squash merge.
+- Canonical predecessor: `CHAPTER-014` - Drawing Boundaries That Survive Change.
+- Part position: second chapter of Part III - Architecture Playbook.
+- Manuscript path: `book/03-architecture-playbook/15-managing-change-radius.md`.
+- Canonical brief path: `editor/chapter-briefs/CHAPTER-015-managing-change-radius.md`.
+- Outcome: Approved for canonical brief registration.
+- Primary-concept resolution: no primary PEAK concept is assigned. Chapter 15 is a practice chapter, and current
+  repository convention does not require a primary concept for practice chapters.
+- Central Change Radius result:
+  - `VOCAB-001` supplies the semantic definition of Change Radius.
+  - `METRIC-001` supplies the approximate affected-surface measurement posture.
+  - The paired concepts are central without adding a new registry field or new PEAK concept.
+- Reader-facing manuscript created: no.
+- Author Draft performed: no.
+- Editorial, Canon, Technical, or Freeze Review performed: no.
+- Part III README changed: no.
+- `editor/CHAPTER_ARCHITECTURE.md` changed: no.
+- Chapters 1-14 changed: no.
+- Table of contents changed: no.
+- Existing PEAK concept, law, artifact, ritual, metric, smell, anti-pattern, failure story, or vocabulary ID changed: no.
+- New PEAK concept created: no.
+- Chapter 15 index registration:
+  - `CHAPTER-015` registered as a `draft` chapter named `Managing Change Radius`.
+  - Path registered as `../book/03-architecture-playbook/15-managing-change-radius.md`.
+- Selected PEAK concepts:
+  - `VOCAB-001` - Change Radius.
+  - `METRIC-001` - Change Radius.
+  - `LAW-001` - Every State Has One Owner.
+  - `LAW-002` - Every API Is a Promise.
+  - `LAW-003` - Time Is a Dependency.
+  - `LAW-005` - Evidence Before Confidence.
+  - `LAW-007` - Every Dependency Is a Decision.
+  - `SMELL-001` - Silent Coupling.
+  - `SMELL-004` - Hidden State.
+  - `SMELL-005` - Platform Leakage.
+  - `ANTIPATTERN-003` - Global Configuration.
+  - `ANTIPATTERN-006` - Temporary Solution.
+  - `ARTIFACT-001` - ADR.
+  - `ARTIFACT-003` - Decision Journal.
+- Concepts considered but rejected from the registered relationship set:
+  - `SMELL-002` - Utility Gravity: related to accumulated helpers, but not central to the Change Radius method.
+  - `SMELL-003` - Boolean Explosion: relevant when flags expand radius, but Chapter 11 owns option combinations.
+  - `SMELL-006` - Event Explosion: relevant to event-heavy systems, but events are one affected surface.
+  - `ANTIPATTERN-001` - God Module: relevant when broad modules expand radius, but not central enough for an edge.
+  - `ANTIPATTERN-004` - Manager Mania: relevant when managers hide ownership, but Chapter 14 already carries that
+    boundary failure.
+  - `VOCAB-007` and `METRIC-005` - Architecture Health: Change Radius contributes to health, but Chapter 15 should not
+    become a health-review chapter.
+  - `METRIC-003` - Discoverability and `METRIC-004` - API Stability: useful signals, but not central relationship
+    targets for this practice chapter.
+  - `ARTIFACT-002` - RFC, `ARTIFACT-005` - Event Catalog, `ARTIFACT-006` - Architecture Ledger, `RITUAL-001` -
+    Architecture Review, and `RITUAL-004` - Architecture Health Review: later chapters own the full review and artifact
+    practices.
+  - `FAILURE-001`, `FAILURE-002`, `FAILURE-003`, and `FAILURE-005`: related stories, but the selected Chapter 15 story
+    is a calibration-record radius story rather than an existing failure-story edge.
+- Exact registered outgoing relationships:
+  - `CHAPTER-015` illustrates `VOCAB-001`.
+  - `CHAPTER-015` illustrates `METRIC-001`.
+  - `CHAPTER-015` references `LAW-001`.
+  - `CHAPTER-015` references `LAW-002`.
+  - `CHAPTER-015` references `LAW-003`.
+  - `CHAPTER-015` references `LAW-005`.
+  - `CHAPTER-015` references `LAW-007`.
+  - `CHAPTER-015` references `SMELL-001`.
+  - `CHAPTER-015` references `SMELL-004`.
+  - `CHAPTER-015` references `SMELL-005`.
+  - `CHAPTER-015` references `ANTIPATTERN-003`.
+  - `CHAPTER-015` references `ANTIPATTERN-006`.
+  - `CHAPTER-015` references `ARTIFACT-001`.
+  - `CHAPTER-015` references `ARTIFACT-003`.
+- Canonical boundaries:
+  - Chapter 14 owns boundary placement and integrity; Chapter 15 owns the full Change Radius method.
+  - Chapter 16 owns failure and recovery design.
+  - Chapter 17 owns ADR/RFC practice.
+  - Chapter 18 owns Architecture Review.
+  - Chapter 19 owns Architecture Freeze.
+  - Later parts retain product-line architecture, manufacturing and field workflows, observability implementation,
+    release discipline, organizational rituals, and legacy recovery.
+- Changed files:
+  - `editor/chapter-briefs/CHAPTER-015-managing-change-radius.md`
+  - `editor/EDITOR_LOG.md`
+  - `knowledge/index.yaml`
+- Final validation completed after this log entry:
+  - Direct canonical-brief registration assertions: passed for clean baseline, `HEAD` matching verified `origin/main`
+    before branch creation, local branch `chapter15` starting from verified `origin/main`, Chapter 14 PR #16 squash
+    merge, final-tree equivalence with the Chapter 14 feature Freeze commit, no pre-existing Chapter 15 branch, brief,
+    manuscript, or index entry, exact expected changed files, `CHAPTER-015` existence exactly once, exact registered
+    metadata, `draft` status, Chapters 1-14 remaining canonical, Part III README unchanged, table of contents unchanged,
+    `editor/CHAPTER_ARCHITECTURE.md` unchanged, manuscript absent, exact Chapter 15 relationship set, existing
+    relationship targets, valid relationship verbs, no duplicate or self-referential Chapter 15 relationship, no new PEAK
+    ID, no speculative primary concept, Chapter 14 boundary explicit, Chapters 16-19 out of scope, no unresolved markers
+    in the brief, no false-precision scoring system, and no tracked `site/` output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini editor/chapter-briefs/CHAPTER-015-managing-change-radius.md editor/EDITOR_LOG.md knowledge/index.yaml`: passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed; no generated `site/` output is tracked.
+- Next lifecycle stage: Author Draft after author approval.
+- Do not create the reader-facing manuscript, edit the Part III README, perform review phases, freeze Chapter 15, open a
+  pull request, merge, or alter Part III architecture as part of this phase.
+
+## Phase 74 Chapter 15 Author Draft
+
+- Chapter: Managing Change Radius.
+- Stable ID: `CHAPTER-015`.
+- Branch: `chapter15`.
+- Stage: Author Draft.
+- Author Draft baseline: `830e09efd0947a4688f19a4d3d6dc80c83dbc440`.
+- Verified baseline `origin/main`: `346f5801c1326e836b81ce6d92e7564d9c946f94`.
+- Manuscript path: `book/03-architecture-playbook/15-managing-change-radius.md`.
+- Canonical brief path: `editor/chapter-briefs/CHAPTER-015-managing-change-radius.md`.
+- Primary-concept resolution: no primary PEAK concept is assigned. Chapter 15 is a Part III practice chapter, and the
+  registered outgoing relationships carry the selected Change Radius concept coverage.
+- Central concepts: `VOCAB-001` - Change Radius and `METRIC-001` - Change Radius.
+- Part position: second chapter of Part III - Architecture Playbook.
+- Outcome: Author Draft created.
+- Canonical brief changed during Author Draft: no.
+- `knowledge/index.yaml` changed during Author Draft: no.
+- `editor/CHAPTER_ARCHITECTURE.md` changed during Author Draft: no.
+- Part III README changed during Author Draft: no.
+- Chapters 1-14 changed during Author Draft: no.
+- Table of contents changed during Author Draft: no.
+- `CANON.md` changed during Author Draft: no.
+- PEAK concepts or relationships changed during Author Draft: no.
+- New PEAK concept created or implied as canon: no.
+- Reader-facing manuscript created: yes.
+- Editorial, Canon, Technical, or Freeze Review performed: no.
+- Part III role: passed. The draft advances from Chapter 14 boundary placement into the full Change Radius method
+  without expanding the Part III README or changing chapter architecture.
+- Boundary guardrails: passed. Chapter 14 remains responsible for boundary placement and integrity. Chapter 15 owns
+  mapping affected surface, required and accidental radius, uncertainty, containment, sequencing, review, retest,
+  migration, compatibility, and release-observation surfaces.
+- Forward-boundary guardrails: passed. Chapter 16 retains full failure and recovery design; Chapter 17 retains ADR/RFC
+  practice; Chapter 18 retains Architecture Review; Chapter 19 retains Architecture Freeze.
+- Registered relationship set preserved:
+  - `CHAPTER-015` illustrates `VOCAB-001`.
+  - `CHAPTER-015` illustrates `METRIC-001`.
+  - `CHAPTER-015` references `LAW-001`.
+  - `CHAPTER-015` references `LAW-002`.
+  - `CHAPTER-015` references `LAW-003`.
+  - `CHAPTER-015` references `LAW-005`.
+  - `CHAPTER-015` references `LAW-007`.
+  - `CHAPTER-015` references `SMELL-001`.
+  - `CHAPTER-015` references `SMELL-004`.
+  - `CHAPTER-015` references `SMELL-005`.
+  - `CHAPTER-015` references `ANTIPATTERN-003`.
+  - `CHAPTER-015` references `ANTIPATTERN-006`.
+  - `CHAPTER-015` references `ARTIFACT-001`.
+  - `CHAPTER-015` references `ARTIFACT-003`.
+- Changed files:
+  - `book/03-architecture-playbook/15-managing-change-radius.md`
+  - `editor/EDITOR_LOG.md`
+- Final validation completed after this log entry:
+  - Direct Author Draft assertions: passed for exact section order, unique required sections, exactly three Principal's
+    Notebook observations, unresolved marker absence, required Change Radius definition, required principle, calibration
+    record story shape, material use of all registered PEAK concepts, no new PEAK ID, `CHAPTER-015` remaining `draft`,
+    exact registered relationship set, unchanged canonical brief, unchanged PEAK index, unchanged
+    `editor/CHAPTER_ARCHITECTURE.md`, unchanged Part III README, unchanged Chapters 1-14, unchanged table of contents,
+    unchanged `CANON.md`, expected changed files only, Chapter 14 boundary preserved, Chapters 16-19 boundaries
+    preserved, no false precision framework, and no tracked `site/` output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini book/03-architecture-playbook/15-managing-change-radius.md editor/EDITOR_LOG.md`: passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed; no generated `site/` output is tracked.
+- Next lifecycle stage: Editorial Review after this Author Draft commit is committed and pushed.
+- Do not perform Editorial Review, Canon Review, Technical Review, Freeze Review, PR creation, or merge as part of this
+  phase.
+
+## Phase 75 Chapter 15 Editorial Review
+
+- Chapter: Managing Change Radius.
+- Stable ID: `CHAPTER-015`.
+- Branch: `chapter15`.
+- Stage: Editorial Review.
+- Reviewed Author Draft commit: `d8b6279249d9c9d06e9aa05e9c06188e205adcb0`.
+- Parent canonical brief commit: `830e09efd0947a4688f19a4d3d6dc80c83dbc440`.
+- Manuscript path: `book/03-architecture-playbook/15-managing-change-radius.md`.
+- Canonical brief path: `editor/chapter-briefs/CHAPTER-015-managing-change-radius.md`.
+- Primary concept: none by canonical decision.
+- Central concepts: `VOCAB-001` - Change Radius and `METRIC-001` - Change Radius.
+- Part position: second chapter of Part III - Architecture Playbook.
+- Outcome: Approved with editorial changes.
+- Canonical brief changed during Editorial Review: no.
+- `knowledge/index.yaml` changed during Editorial Review: no.
+- `VOCAB-001` changed during Editorial Review: no.
+- `METRIC-001` changed during Editorial Review: no.
+- `editor/CHAPTER_ARCHITECTURE.md` changed during Editorial Review: no.
+- Part III README changed during Editorial Review: no.
+- Chapters 1-14 changed during Editorial Review: no.
+- Table of contents changed during Editorial Review: no.
+- `CANON.md` changed during Editorial Review: no.
+- PEAK concepts or relationships changed during Editorial Review: no.
+- New PEAK concept created or implied as canon: no.
+- Material editorial changes:
+  - Clarified the story's indirect radius by changing an ambiguous missing-field service-tool behavior into an
+    unrecognized-record-version behavior.
+  - Clarified that the recovery image copies bytes and does not interpret the application schema.
+  - Tightened the state-ownership passage so product meaning, persistent representation, serialized/export
+    representations, and in-memory layout are distinct.
+  - Restored the full cost-and-risk thesis in the Discussion using change, review, retest, migration, compatibility,
+    and observation surfaces.
+  - Clarified the ADR decision so tools consume documented representations rather than a shared C structure layout.
+- Section-order result: passed. The manuscript preserves the required section order: Opening Quote, Story, Discussion,
+  Engineering Principle, Architecture Exercise, Principal's Notebook, ADR, Editor's Commentary.
+- Principal's Notebook result: passed. The notebook contains exactly three short observations.
+- Chapter 14 boundary result: passed. Chapter 14 remains the boundary-placement chapter; Chapter 15 treats those
+  boundaries as inputs to Change Radius mapping.
+- Chapters 16-19 boundary result: passed. Chapter 16 retains failure and recovery design; Chapter 17 retains ADR/RFC
+  practice; Chapter 18 retains Architecture Review; Chapter 19 retains Architecture Freeze.
+- False-precision result: passed. The chapter uses approximate affected-surface comparison and does not introduce a
+  score, formula, threshold, maturity level, or radius budget.
+- Registered relationship set preserved:
+  - `CHAPTER-015` illustrates `VOCAB-001`.
+  - `CHAPTER-015` illustrates `METRIC-001`.
+  - `CHAPTER-015` references `LAW-001`.
+  - `CHAPTER-015` references `LAW-002`.
+  - `CHAPTER-015` references `LAW-003`.
+  - `CHAPTER-015` references `LAW-005`.
+  - `CHAPTER-015` references `LAW-007`.
+  - `CHAPTER-015` references `SMELL-001`.
+  - `CHAPTER-015` references `SMELL-004`.
+  - `CHAPTER-015` references `SMELL-005`.
+  - `CHAPTER-015` references `ANTIPATTERN-003`.
+  - `CHAPTER-015` references `ANTIPATTERN-006`.
+  - `CHAPTER-015` references `ARTIFACT-001`.
+  - `CHAPTER-015` references `ARTIFACT-003`.
+- Changed files:
+  - `book/03-architecture-playbook/15-managing-change-radius.md`
+  - `editor/EDITOR_LOG.md`
+- Final validation completed after this log entry:
+  - Direct Editorial Review assertions: passed for clean baseline, `HEAD` matching `origin/chapter15` before review,
+    reviewed SHA matching the Author Draft commit, expected changed files only, exact section order, unique required
+    sections, exactly three Principal's Notebook observations, unresolved marker absence, required Change Radius
+    definition, preserved thesis and principle, no new PEAK ID, no primary concept introduced, `CHAPTER-015` remaining
+    `draft`, exact registered relationship set, unchanged canonical brief, unchanged PEAK index, unchanged
+    `VOCAB-001`, unchanged `METRIC-001`, unchanged `editor/CHAPTER_ARCHITECTURE.md`, unchanged Part III README,
+    unchanged Chapters 1-14, unchanged table of contents, unchanged `CANON.md`, Chapter 14 boundary, Chapters 16-19
+    boundaries, false-precision guardrails, and no tracked `site/` output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini book/03-architecture-playbook/15-managing-change-radius.md editor/EDITOR_LOG.md`: passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed; no generated `site/` output is tracked.
+- Next lifecycle stage: Canon Review after this Editorial Review commit is committed and pushed.
+- Do not perform Canon Review, Technical Review, Freeze Review, PR creation, or merge as part of this phase.
+
+## Phase 76 Chapter 15 Canon Review
+
+- Chapter: Managing Change Radius.
+- Stable ID: `CHAPTER-015`.
+- Branch: `chapter15`.
+- Stage: Canon Review.
+- Reviewed Editorial Review commit: `96e7850b645a425961810939f1ee323a369720f9`.
+- Manuscript path: `book/03-architecture-playbook/15-managing-change-radius.md`.
+- Canonical brief path: `editor/chapter-briefs/CHAPTER-015-managing-change-radius.md`.
+- Primary concept: none by canonical decision.
+- Central concepts: `VOCAB-001` - Change Radius and `METRIC-001` - Change Radius.
+- Part position: second chapter of Part III - Architecture Playbook.
+- Outcome: Approved.
+- Manuscript changed during Canon Review: no.
+- Canonical brief changed during Canon Review: no.
+- `knowledge/index.yaml` changed during Canon Review: no.
+- `VOCAB-001` changed during Canon Review: no.
+- `METRIC-001` changed during Canon Review: no.
+- `editor/CHAPTER_ARCHITECTURE.md` changed during Canon Review: no.
+- Part III README changed during Canon Review: no.
+- Chapters 1-14 changed during Canon Review: no.
+- Table of contents changed during Canon Review: no.
+- `CANON.md` changed during Canon Review: no.
+- PEAK concepts or relationships changed during Canon Review: no.
+- New PEAK concept created or implied as canon: no.
+- Canonical sources checked: repository README, book bible, style guide, architecture vision, canon, chapter
+  architecture, review process, source-of-truth policy, knowledge model, roadmap, open questions, editor log, editorial
+  ADRs, PEAK index, Part III README, table of contents, Chapter 15 canonical brief, Chapter 15 manuscript, `VOCAB-001`,
+  `METRIC-001`, all registered Chapter 15 PEAK concept files, canonical Chapters 1-14, and Chapter 14 review and Freeze
+  precedent.
+- No-primary resolution result: passed. Chapter 15 remains a Part III practice chapter carried by an exact relationship
+  set rather than by a primary PEAK concept.
+- `VOCAB-001` compliance: passed. The manuscript uses the repository definition of Change Radius as the amount of system
+  surface that must change, be reviewed, or be retested when one decision changes.
+- `METRIC-001` compliance: passed. The manuscript treats Change Radius as approximate affected-surface comparison and
+  does not introduce a formula, universal score, threshold, maturity level, or radius budget.
+- Required-versus-accidental-radius result: passed. Required radius is treated as coherent product-decision spread, while
+  accidental radius is caused by leaked or duplicated knowledge and is the containment target.
+- Uncertainty result: passed. Unknown and residual radius affect commitment, sequencing, observation, ownership, and
+  review triggers without stopping all work by default.
+- Mapping-versus-management result: passed. The manuscript makes mapping lead to containment, sequencing, compatibility,
+  evidence, and residual-uncertainty decisions.
+- Chapter 14 boundary findings: passed. Chapter 14 owns boundary placement and integrity; Chapter 15 uses boundaries as
+  inputs to Change Radius mapping and does not repeat the boundary story.
+- Chapters 16-19 boundary findings:
+  - Chapter 16: passed. Rollback, recovery, and observation appear as affected surfaces, not as full failure/recovery
+    design.
+  - Chapter 17: passed. The chapter-local ADR and Decision Journal use do not become ADR/RFC practice.
+  - Chapter 18: passed. The chapter identifies review surface without teaching Architecture Review.
+  - Chapter 19: passed. The chapter records residual radius and uncertainty without defining Freeze policy.
+- PEAK relationship checks: passed. Change Radius vocabulary and metric, state ownership, API promises, time, evidence,
+  dependencies, Silent Coupling, Hidden State, Platform Leakage, Global Configuration, Temporary Solution, ADR, and
+  Decision Journal are materially present, and the registered relationship set remains exact.
+- Section-architecture result: passed. The manuscript preserves the required section order: Opening Quote, Story,
+  Discussion, Engineering Principle, Architecture Exercise, Principal's Notebook, ADR, Editor's Commentary.
+- Corrections made during Canon Review: none.
+- Changed files:
+  - `editor/EDITOR_LOG.md`
+- Final validation completed after this log entry:
+  - Direct Canon Review assertions: passed for clean baseline, `HEAD` matching `origin/chapter15` before review,
+    reviewed SHA matching the Editorial Review commit, expected changed files only, exact section order, unique required
+    sections, exactly three Principal's Notebook observations, unresolved marker absence, required Change Radius
+    definition, no new PEAK ID, no primary concept introduced, `CHAPTER-015` remaining `draft`, exact registered
+    relationship set, existing relationship targets, no duplicate, unexpected, or self-edge, unchanged manuscript,
+    unchanged canonical brief, unchanged PEAK index, unchanged `VOCAB-001`, unchanged `METRIC-001`, unchanged
+    `editor/CHAPTER_ARCHITECTURE.md`, unchanged Part III README, unchanged Chapters 1-14, unchanged table of contents,
+    unchanged `CANON.md`, Chapter 14 boundary, Chapters 16-19 boundaries, and no tracked `site/` output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini book/03-architecture-playbook/15-managing-change-radius.md editor/EDITOR_LOG.md`: passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed; no generated `site/` output is tracked.
+- Next lifecycle stage: Technical Review after this Canon Review commit is committed and pushed.
+- Do not perform Technical Review, Freeze Review, PR creation, or merge as part of this phase.
+
+## Phase 77 Chapter 15 Technical Review
+
+- Chapter: Managing Change Radius.
+- Stable ID: `CHAPTER-015`.
+- Branch: `chapter15`.
+- Stage: Technical Review.
+- Reviewed Canon Review commit: `72483c560c03546ba0f192292f332d0c4eaab29a`.
+- Manuscript path: `book/03-architecture-playbook/15-managing-change-radius.md`.
+- Canonical brief path: `editor/chapter-briefs/CHAPTER-015-managing-change-radius.md`.
+- Primary concept: none by canonical decision.
+- Central concepts: `VOCAB-001` - Change Radius and `METRIC-001` - Change Radius.
+- Part position: second chapter of Part III - Architecture Playbook.
+- Outcome: Approved.
+- Manuscript changed during Technical Review: no.
+- Canonical brief changed during Technical Review: no.
+- `knowledge/index.yaml` changed during Technical Review: no.
+- `VOCAB-001` changed during Technical Review: no.
+- `METRIC-001` changed during Technical Review: no.
+- `editor/CHAPTER_ARCHITECTURE.md` changed during Technical Review: no.
+- Part III README changed during Technical Review: no.
+- Chapters 1-14 changed during Technical Review: no.
+- Table of contents changed during Technical Review: no.
+- `CANON.md` changed during Technical Review: no.
+- PEAK concepts or relationships changed during Technical Review: no.
+- New PEAK concept created or implied as canon: no.
+- Technical domains checked: persistent calibration/configuration records, record versions, serialized representation,
+  binary layout, alignment and padding, firmware compatibility, boot support, manufacturing and calibration stations,
+  service tools, host exports, product and hardware variants, old and new firmware coexistence, upgrade behavior,
+  downgrade behavior, rollback awareness, defaults, test fixtures, hardware-in-the-loop and system tests, diagnostics,
+  temporary compatibility, unknown external consumers, approximate measurement, and Change Radius sequencing.
+- Material corrections during Technical Review: none.
+- Authoritative-meaning assessment: passed. The manuscript distinguishes product meaning from persistent, exported,
+  tool-facing, and in-memory representations, and does not require every consumer to share a C layout.
+- Schema/version assessment: passed. Record versioning identifies interpretation but does not replace migration logic,
+  compatibility policy, validation, diagnostics, downgrade decisions, or owner responsibility.
+- Upgrade/downgrade assessment: passed. The manuscript treats old reader/new writer sequencing, new reader/old record
+  compatibility, preserved valid field calibration, downgrade documentation, release artifacts, and rollback awareness
+  without turning Chapter 15 into failure/recovery design.
+- Manufacturing/service-tool assessment: passed. Manufacturing stations, calibration tooling, service tools, host
+  exports, support workflows, and supplier scripts are treated as real consumers even when outside the firmware
+  repository.
+- Boot support assessment: passed. The recovery image copies the record as bytes and is not implied to understand the
+  application schema; boot support remains an affected compatibility surface rather than a schema authority.
+- Defaults assessment: passed. Reset-to-default behavior is rejected as a migration strategy when valid field calibration
+  exists.
+- Temporary-compatibility assessment: passed. The old-record compatibility path has bounded scope, owner, discovery or
+  retirement trigger, diagnostics, and no implication of permanent dual paths.
+- Unknown-consumer assessment: passed. Unknown external consumers affect commitment, observation, sequencing, and
+  review triggers without making progress impossible.
+- Test assessment: passed. Representation tests, migration tests, system tests, manufacturing station tests, service
+  tool compatibility tests, test fixtures, and hardware-in-the-loop/system tests are distinguished enough for this
+  chapter's scope.
+- Diagnostics assessment: passed. Diagnostics identify record version and migration outcome and preserve unsupported or
+  unrecognized representation as a reviewable product/support signal without requiring every field to be logged.
+- Approximate-metric assessment: passed. Change Radius remains a comparative affected-surface signal and is not treated
+  as a score or proof of correctness.
+- Misleading technical absolute guardrails: passed. The manuscript does not claim that appending a structure field is
+  automatically compatible, a C structure layout safely changes persistent or wire representation, alignment and padding
+  are stable across targets, versioning solves migration, old firmware can ignore every new field, rollback is safe
+  because upgrade succeeded, reset-to-default is acceptable by default, a compatibility flag has one stable meaning,
+  one repository's tests cover external tools, no source edit means no review or retest, code search finds all
+  consumers, smaller diff means lower release risk, larger radius proves bad architecture, narrow radius proves
+  correctness, all radius can be known before implementation, or passing regression tests proves unknown consumers do
+  not exist.
+- Registered relationship set preserved:
+  - `CHAPTER-015` illustrates `VOCAB-001`.
+  - `CHAPTER-015` illustrates `METRIC-001`.
+  - `CHAPTER-015` references `LAW-001`.
+  - `CHAPTER-015` references `LAW-002`.
+  - `CHAPTER-015` references `LAW-003`.
+  - `CHAPTER-015` references `LAW-005`.
+  - `CHAPTER-015` references `LAW-007`.
+  - `CHAPTER-015` references `SMELL-001`.
+  - `CHAPTER-015` references `SMELL-004`.
+  - `CHAPTER-015` references `SMELL-005`.
+  - `CHAPTER-015` references `ANTIPATTERN-003`.
+  - `CHAPTER-015` references `ANTIPATTERN-006`.
+  - `CHAPTER-015` references `ARTIFACT-001`.
+  - `CHAPTER-015` references `ARTIFACT-003`.
+- Changed files:
+  - `editor/EDITOR_LOG.md`
+- Final validation completed after this log entry:
+  - Direct Technical Review assertions: passed for clean baseline, `HEAD` matching `origin/chapter15` before review,
+    reviewed SHA matching the Canon Review commit, expected changed files only, exact section order, unique required
+    sections, exactly three Principal's Notebook observations, unresolved marker absence, required Change Radius
+    definition, no misleading technical absolutes, no new PEAK ID, no primary concept introduced, `CHAPTER-015`
+    remaining `draft`, exact registered relationship set, unchanged manuscript, unchanged canonical brief, unchanged
+    PEAK index, unchanged `VOCAB-001`, unchanged `METRIC-001`, unchanged `editor/CHAPTER_ARCHITECTURE.md`, unchanged
+    Part III README, unchanged Chapters 1-14, unchanged table of contents, unchanged `CANON.md`, and no tracked `site/`
+    output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini book/03-architecture-playbook/15-managing-change-radius.md editor/EDITOR_LOG.md`: passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed; no generated `site/` output is tracked.
+- Next lifecycle stage: Freeze Review after this Technical Review commit is committed and pushed.
+- Do not perform Freeze Review, PR creation, or merge as part of this phase.
+
+## Phase 78 Chapter 15 Freeze Review
+
+- Chapter: Managing Change Radius.
+- Stable ID: `CHAPTER-015`.
+- Branch: `chapter15`.
+- Stage: Freeze Review.
+- Reviewed Technical Review commit: `00a5e2a1c0bb8084736421905af895ae3279c5cc`.
+- Prior review commits:
+  - Editorial Review: `96e7850b645a425961810939f1ee323a369720f9`.
+  - Canon Review: `72483c560c03546ba0f192292f332d0c4eaab29a`.
+  - Technical Review: `00a5e2a1c0bb8084736421905af895ae3279c5cc`.
+- Manuscript path: `book/03-architecture-playbook/15-managing-change-radius.md`.
+- Canonical brief path: `editor/chapter-briefs/CHAPTER-015-managing-change-radius.md`.
+- Primary concept: none by canonical decision.
+- Central concepts: `VOCAB-001` - Change Radius and `METRIC-001` - Change Radius.
+- Part position: second chapter of Part III - Architecture Playbook.
+- Outcome: Approved.
+- Manuscript changed during Freeze Review: no.
+- Canonical brief changed during Freeze Review: no.
+- Status transition:
+  - `CHAPTER-015`: `draft` -> `canonical`.
+- `VOCAB-001` changed during Freeze Review: no.
+- `METRIC-001` changed during Freeze Review: no.
+- `editor/CHAPTER_ARCHITECTURE.md` changed during Freeze Review: no.
+- Part III README changed during Freeze Review: no.
+- Chapters 1-14 changed during Freeze Review: no.
+- Table of contents changed during Freeze Review: no.
+- `CANON.md` changed during Freeze Review: no.
+- PEAK concepts or relationships changed during Freeze Review: no.
+- New PEAK concept created or implied as canon: no.
+- Freeze finding: Chapter 15 is canonical-ready as the second Part III practice chapter. It teaches the full Change
+  Radius method after Chapter 14 boundary placement and before the later Part III chapters on failure, artifacts, review,
+  and freeze.
+- Prior review outcomes:
+  - Editorial Review: Approved with editorial changes.
+  - Canon Review: Approved.
+  - Technical Review: Approved.
+- Section-order result: passed. The manuscript preserves the required section order: Opening Quote, Story, Discussion,
+  Engineering Principle, Architecture Exercise, Principal's Notebook, ADR, Editor's Commentary.
+- Principal's Notebook result: passed. The notebook contains exactly three short observations.
+- Chapter 14 boundary result: passed. Chapter 14 remains the boundary-placement chapter; Chapter 15 owns mapping and
+  managing affected surface.
+- Chapters 16-19 boundary result: passed. Chapter 16 retains failure and recovery design; Chapter 17 retains ADR/RFC
+  practice; Chapter 18 retains Architecture Review; Chapter 19 retains Architecture Freeze.
+- Canon and PEAK integrity: passed. Chapter 15 has no primary concept, creates no new concept, adds no relationship,
+  and preserves the exact registered relationship set.
+- Technical readiness: passed. The calibration-record story credibly treats persistent records, record versions,
+  serialized representation, alignment and padding, firmware compatibility, boot support, manufacturing and service
+  tools, product variants, upgrade and downgrade behavior, defaults, test fixtures, diagnostics, temporary
+  compatibility, unknown consumers, and approximate Change Radius.
+- Registered relationship set preserved:
+  - `CHAPTER-015` illustrates `VOCAB-001`.
+  - `CHAPTER-015` illustrates `METRIC-001`.
+  - `CHAPTER-015` references `LAW-001`.
+  - `CHAPTER-015` references `LAW-002`.
+  - `CHAPTER-015` references `LAW-003`.
+  - `CHAPTER-015` references `LAW-005`.
+  - `CHAPTER-015` references `LAW-007`.
+  - `CHAPTER-015` references `SMELL-001`.
+  - `CHAPTER-015` references `SMELL-004`.
+  - `CHAPTER-015` references `SMELL-005`.
+  - `CHAPTER-015` references `ANTIPATTERN-003`.
+  - `CHAPTER-015` references `ANTIPATTERN-006`.
+  - `CHAPTER-015` references `ARTIFACT-001`.
+  - `CHAPTER-015` references `ARTIFACT-003`.
+- Changed files:
+  - `editor/EDITOR_LOG.md`
+  - `knowledge/index.yaml`
+- Final validation completed after this log entry:
+  - Direct Freeze Review assertions: passed for clean baseline, `HEAD` matching `origin/chapter15` before review,
+    reviewed SHA matching the Technical Review commit, prior review commits being ancestors of `HEAD`, prior review
+    outcomes permitting Freeze, expected changed files only, exact section order, unique required sections, exactly
+    three Principal's Notebook observations, unresolved marker absence, required Change Radius definition, no new PEAK
+    ID, primary concept remaining absent, `CHAPTER-015` status changed to `canonical`, exact registered relationship
+    set, existing relationship targets, no duplicate, unexpected, or self-edge, unchanged manuscript, unchanged canonical
+    brief, unchanged `VOCAB-001`, unchanged `METRIC-001`, unchanged `editor/CHAPTER_ARCHITECTURE.md`, unchanged Part III
+    README, unchanged Chapters 1-14, unchanged table of contents, unchanged `CANON.md`, unchanged PEAK concept files,
+    phase-order continuity through Phase 78, and no tracked `site/` output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini editor/EDITOR_LOG.md knowledge/index.yaml`: passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed; no generated `site/` output is tracked.
+- Pull request readiness: ready after this Freeze Review commit is pushed.
+- Recommended pull request title: `Chapter 15: Managing Change Radius`.
+- Do not merge as part of this phase.
