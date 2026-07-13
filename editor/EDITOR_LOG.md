@@ -7230,3 +7230,66 @@ Pull request readiness:
   - `git ls-files site`: passed; no generated `site/` output is tracked.
 - Next lifecycle stage: Technical Review after this Canon Review commit is committed and pushed.
 - Do not perform Technical Review, Freeze Review, PR creation, or merge as part of this phase.
+
+## Phase 89 Chapter 17 Technical Review
+
+- Chapter: Using ADRs and RFCs Well.
+- Stable ID: `CHAPTER-017`.
+- Branch: `chapter17`.
+- Stage: Technical Review.
+- Reviewed Canon Review commit: `b571983d0e872c87af185ff6f01e4478a6045669`.
+- Manuscript path: `book/03-architecture-playbook/17-using-adrs-and-rfcs-well.md`.
+- Canonical brief path preserved: `editor/chapter-briefs/CHAPTER-017-using-adrs-and-rfcs-well.md`.
+- Part position: fourth chapter of Part III - Architecture Playbook.
+- Primary concept: none by canonical decision for Part III practice chapters.
+- Central paired PEAK artifacts:
+  - `ARTIFACT-001` - ADR.
+  - `ARTIFACT-002` - RFC.
+- Outcome: Approve.
+- Technical domains checked: firmware, gateway and host behavior, service tools, manufacturing tests, product variants,
+  configuration-update protocol, compatibility, test evidence, field support, release consequences, proposal timing,
+  prototype evidence, cross-boundary review, implementation before closure, status, decision ownership, artifact
+  linking, supersession, and discoverability.
+- Material corrections during Technical Review: none.
+- Decision-state assessment: passed. The manuscript distinguishes open proposal, evidence gathering, accepted decision,
+  smaller reversible judgment, superseded decision, and retired decision as chapter-local states.
+- ADR assessment: passed. The chapter-local ADR records status, context, accepted decision, consequences, alternatives,
+  owner, links, and revisit trigger without redefining the global ADR template.
+- RFC assessment: passed. The RFC remains a proposal-review artifact while alternatives are meaningfully open and names
+  scope, non-goals, proposal, risks, open questions, affected reviewers, and evidence.
+- Evidence assessment: passed. Prototype results, compatibility tests, field support cases, manufacturing proof, release
+  constraints, assumptions, and accepted risk are not conflated.
+- Ownership assessment: passed. Proposal owner, decision owner, required reviewers, implementation owners, release owner,
+  and future maintenance owner are not treated as one role by default.
+- Closure assessment: passed. Review comments resolve into explicit outcomes, evidence requests, splits, deferrals, or
+  Architecture Review escalation rather than becoming the durable decision.
+- Supersession assessment: passed. Old records are preserved and linked to successors instead of silently rewritten or
+  deleted.
+- Linkage and discoverability assessment: passed. A future engineer can reach the governing record from affected
+  behavior, tests, release work, support diagnostics, owner, or Architecture Ledger entry without duplicating rationale
+  everywhere.
+- Embedded-system credibility assessment: passed. Firmware, gateway, service-tool, manufacturing, test, support,
+  release, and compatibility concerns are realistic and proportionate; the chapter does not become a protocol design or
+  compatibility tutorial.
+- Chapter 18 boundary result: passed. RFC Friday and artifact-level review do not replace the full Architecture Review
+  ritual.
+- Changed files:
+  - `editor/EDITOR_LOG.md`
+- Final validation completed after this log entry:
+  - Direct Technical Review assertions: passed for clean baseline, `HEAD` matching `origin/chapter17` before review,
+    reviewed SHA matching the Canon Review commit, expected changed files only, exact section order, unique required
+    sections, exactly three Principal's Notebook observations, unresolved marker absence, no misleading technical
+    absolutes, `CHAPTER-017` remaining `draft`, no primary concept introduced, exact registered relationship set
+    preserved, no new PEAK ID, unchanged canonical brief, unchanged `knowledge/index.yaml`, unchanged PEAK concept files,
+    unchanged `editor/CHAPTER_ARCHITECTURE.md`, unchanged Part III README, unchanged table of contents, unchanged
+    `editor/CANON.md`, unchanged Chapters 1-16, Chapter 18 and Chapter 19 boundaries, and no tracked `site/` output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini book/03-architecture-playbook/17-using-adrs-and-rfcs-well.md editor/EDITOR_LOG.md`: passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed; no generated `site/` output is tracked.
+- Next lifecycle stage: Freeze Review after this Technical Review commit is committed and pushed.
+- Do not perform Freeze Review, PR creation, or merge as part of this phase.
