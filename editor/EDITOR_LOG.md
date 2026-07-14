@@ -8196,3 +8196,87 @@ Pull request readiness:
   - `git ls-files site`: passed with no tracked `site/` output.
 - Next lifecycle stage: Author Draft after this Canonical Brief Registration commit is committed and pushed.
 - Do not create the manuscript, perform review gates, create a pull request, or merge as part of this phase.
+
+## Phase 104 Chapter 20 Author Draft
+
+- Chapter: From Prototype to Product.
+- Stable ID: `CHAPTER-020`.
+- Branch: `chapter20`.
+- Stage: Author Draft.
+- Starting canonical-brief registration commit: `97320c67c51a08bba598b91edf138848308a9e7d`.
+- Manuscript path: `book/04-building-a-product/20-from-prototype-to-product.md`.
+- Canonical brief path preserved:
+  `editor/chapter-briefs/CHAPTER-020-from-prototype-to-product.md`.
+- Part position: first chapter of Part IV - Building a Product.
+- Primary concept: none.
+- Central anchor: `FAILURE-003` - The Successful Prototype.
+- Outcome: Author Draft manuscript created from the registered canonical brief.
+- Registered relationship set preserved:
+  - `CHAPTER-020 illustrates FAILURE-003`
+  - `CHAPTER-020 references ANTIPATTERN-006`
+  - `CHAPTER-020 references LAW-004`
+  - `CHAPTER-020 references LAW-006`
+  - `CHAPTER-020 references LAW-005`
+  - `CHAPTER-020 references VOCAB-001`
+  - `CHAPTER-020 references METRIC-001`
+  - `CHAPTER-020 references ARTIFACT-001`
+  - `CHAPTER-020 references ARTIFACT-003`
+  - `CHAPTER-020 references RITUAL-001`
+  - `CHAPTER-020 references METRIC-003`
+  - `CHAPTER-020 references LAW-001`
+  - `CHAPTER-020 references LAW-002`
+  - `CHAPTER-020 references LAW-007`
+- Draft scope result: passed. The manuscript teaches the move from a successful embedded prototype to product
+  architecture by exposing assumptions, preserving useful simplicity, replacing or expiring shortcuts, assigning owners,
+  and naming minimum manufacturing, service, update, recovery, diagnostic, variant, release, and support readiness
+  without becoming a later Part IV playbook.
+- Required narrative premise included: The Demo That Became the Product, covering one known board revision, manual
+  calibration, hard-coded configuration, debug service tool, vendor example driver, lab-only update path, direct hardware
+  state access, ad-hoc manufacturing script, developer-only diagnostics, second board revision, manufacturing
+  repeatability, field diagnosis, variants, update recovery, release packaging, temporary bypass, and unclear
+  assumptions.
+- Required chapter topics included: prototype versus product, `productization` gap, assumption classification, temporary
+  shortcuts, owner and expiration, preserved simplicity, unused flexibility risk, evidence gaps, product contracts,
+  implementation details, residual risk with review trigger, Change Radius, ADRs, Decision Journal entries, Architecture
+  Review, Discoverability, state ownership, API promises, and dependency decisions.
+- Boundary checks: Chapter 21 manufacturing and field reality, Chapter 22 configuration and variants, Chapter 23
+  observability, Chapter 24 release discipline and upgrade paths, and Chapter 25 reference project remain future scope;
+  Part III practices are applied without being repeated.
+- Required section order used exactly:
+  1. Opening Quote
+  2. Story
+  3. Discussion
+  4. Engineering Principle
+  5. Architecture Exercise
+  6. Principal's Notebook
+  7. ADR
+  8. Editor's Commentary
+- Principal's Notebook contains exactly three short observations and no explanations.
+- No-new-concept result: passed. No primary concept, PEAK concept, PEAK ID, relationship, relationship verb, metric,
+  artifact, ritual, anti-pattern, failure story, vocabulary concept, or prototype-to-product ledger was introduced.
+- Unchanged files confirmed: canonical brief, `knowledge/index.yaml`, PEAK concept files,
+  `editor/CHAPTER_ARCHITECTURE.md`, Part IV README, table of contents, `editor/CANON.md`, and Chapters 1-19.
+- Files changed in this phase:
+  - `book/04-building-a-product/20-from-prototype-to-product.md`
+  - `editor/EDITOR_LOG.md`
+- Final validation completed after this log entry:
+  - Direct Author Draft assertions: passed for clean baseline, `HEAD` matching `origin/chapter20` before drafting,
+    starting SHA matching the Canonical Brief Registration commit, expected changed files only, exact section order,
+    required sections unique, exactly three Principal's Notebook observations, unresolved marker absence, `CHAPTER-020`
+    remaining `draft`, canonical brief unchanged, `knowledge/index.yaml` unchanged, exact relationship set preserved, no
+    primary concept introduced, no new PEAK ID, unchanged Part IV README, unchanged `editor/CHAPTER_ARCHITECTURE.md`,
+    unchanged `editor/CANON.md`, unchanged table of contents, unchanged Chapters 1-19, unchanged PEAK concept files,
+    material coverage for every registered concept, later Part IV boundaries, earlier-part boundaries,
+    forbidden-frame checks, and no tracked `site/` output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini book/04-building-a-product/20-from-prototype-to-product.md editor/EDITOR_LOG.md`:
+    passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed with no tracked `site/` output.
+- Next lifecycle stage: Editorial Review after this Author Draft commit is committed and pushed.
+- Do not perform Editorial Review, Canon Review, Technical Review, Freeze Review, PR creation, or merge as part of this
+  phase.
