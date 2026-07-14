@@ -359,6 +359,11 @@ entities:
       name: Using ADRs and RFCs Well
       path: ../book/03-architecture-playbook/17-using-adrs-and-rfcs-well.md
       status: canonical
+    - id: CHAPTER-018
+      type: chapter
+      name: Reviewing Architecture Before It Hardens
+      path: ../book/03-architecture-playbook/18-reviewing-architecture-before-it-hardens.md
+      status: canonical
   adrs:
     - id: ADR-001
       type: adr
@@ -821,5 +826,44 @@ relationships:
     type: references
     to: RITUAL-006
   - from: CHAPTER-017
+    type: references
+    to: METRIC-003
+  - from: CHAPTER-018
+    type: illustrates
+    to: RITUAL-001
+  - from: CHAPTER-018
+    type: references
+    to: ARTIFACT-001
+  - from: CHAPTER-018
+    type: references
+    to: ARTIFACT-002
+  - from: CHAPTER-018
+    type: references
+    to: ARTIFACT-003
+  - from: CHAPTER-018
+    type: references
+    to: ARTIFACT-006
+  - from: CHAPTER-018
+    type: references
+    to: RITUAL-006
+  - from: CHAPTER-018
+    type: references
+    to: LAW-001
+  - from: CHAPTER-018
+    type: references
+    to: LAW-002
+  - from: CHAPTER-018
+    type: references
+    to: LAW-005
+  - from: CHAPTER-018
+    type: references
+    to: LAW-007
+  - from: CHAPTER-018
+    type: references
+    to: VOCAB-001
+  - from: CHAPTER-018
+    type: references
+    to: METRIC-001
+  - from: CHAPTER-018
     type: references
     to: METRIC-003
