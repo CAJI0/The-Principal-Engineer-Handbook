@@ -7348,3 +7348,74 @@ Pull request readiness:
 - PR readiness: Chapter 17 is ready for a pull request after this Freeze Review commit is committed and pushed.
 - Recommended pull request title: Chapter 17: Using ADRs and RFCs Well.
 - Do not create the pull request or merge as part of this phase.
+
+## Phase 91 Chapter 18 Canonical Brief Registration
+
+- Chapter: Reviewing Architecture Before It Hardens.
+- Stable ID: `CHAPTER-018`.
+- Branch: `chapter18`.
+- Stage: Canonical Brief Registration.
+- Verified baseline `origin/main`: `be9bf64b776b935bb5d94f240a91156a1b2e59f4`.
+- Baseline evidence: PR #19 squash commit, `Chapter 17: Using ADRs and RFCs Well (#19)`.
+- Chapter 17 feature Freeze commit checked for tree equivalence:
+  `b72aba4d196c04fda1e4c2c728ffda60a3927ea9`.
+- PR #19 verification: passed. The squash commit exists, is an ancestor of current `origin/main`, has
+  `5f6e41751acf8bf184048a754254946bdae917a4` as its parent, and preserves the checked final Chapter 17 lifecycle files
+  from the feature Freeze commit.
+- Part position: fifth chapter of Part III - Architecture Playbook.
+- Canonical predecessor: `CHAPTER-017` - Using ADRs and RFCs Well.
+- Outcome: Approve canonical brief registration.
+- Primary concept: none. Chapter 18 is a Part III practice chapter carried by a relationship set rather than by a primary
+  PEAK concept.
+- Central practice: `RITUAL-001` - Architecture Review.
+- Reader-facing manuscript created: no.
+- Canonical brief path:
+  `editor/chapter-briefs/CHAPTER-018-reviewing-architecture-before-it-hardens.md`.
+- Index registration: `CHAPTER-018` added to `knowledge/index.yaml` as `draft`.
+- Exact outgoing relationships registered:
+  - `CHAPTER-018 illustrates RITUAL-001`.
+  - `CHAPTER-018 references ARTIFACT-001`.
+  - `CHAPTER-018 references ARTIFACT-002`.
+  - `CHAPTER-018 references ARTIFACT-003`.
+  - `CHAPTER-018 references ARTIFACT-006`.
+  - `CHAPTER-018 references RITUAL-006`.
+  - `CHAPTER-018 references LAW-001`.
+  - `CHAPTER-018 references LAW-002`.
+  - `CHAPTER-018 references LAW-005`.
+  - `CHAPTER-018 references LAW-007`.
+  - `CHAPTER-018 references VOCAB-001`.
+  - `CHAPTER-018 references METRIC-001`.
+  - `CHAPTER-018 references METRIC-003`.
+- Selected concept result: passed. Architecture Review is the central practice; ADR, RFC, Decision Journal, Architecture
+  Ledger, RFC Friday, state ownership, API promises, evidence, dependency decisions, Change Radius, and Discoverability
+  are material support for review before hardening.
+- Rejected concept result: passed. Review Gate, Architecture Review Board, Review Packet, Review Readiness, Review Debt,
+  Architecture Approval, Decision Readiness, Challenge Map, Review Charter, and Architectural Risk Review remain
+  unregistered chapter-local terms at most. Architecture Freeze and Architecture Health Review stay with later chapters
+  and parts.
+- Chapter 17 boundary: passed. Chapter 18 uses ADRs and RFCs as review inputs and outputs without taking over artifact
+  choice, content, status, closure, supersession, or discoverability.
+- Chapter 19 boundary: passed. Chapter 18 may decide a decision is not ready for the next hardening step, but it does
+  not teach Architecture Freeze, exception handling, revalidation, or post-Freeze change control.
+- Changed files:
+  - `editor/chapter-briefs/CHAPTER-018-reviewing-architecture-before-it-hardens.md`
+  - `editor/EDITOR_LOG.md`
+  - `knowledge/index.yaml`
+- Final validation completed after this log entry:
+  - Direct registration assertions: passed for clean baseline, `HEAD` matching `origin/main` before branch creation,
+    PR #19 squash verification, no prior Chapter 18 branch, no pre-existing Chapter 18 brief or manuscript, `CHAPTER-018`
+    present exactly once as `draft`, Chapters 1-17 remaining `canonical`, exact registered relationship set, all targets
+    existing once, no duplicate, unexpected, or self-edge, no primary concept introduced, no new PEAK ID, manuscript
+    absent, unchanged Part III README, unchanged `editor/CHAPTER_ARCHITECTURE.md`, unchanged table of contents,
+    unchanged existing concepts, expected changed files only, Chapter 17 and Chapter 19 boundaries, and no tracked
+    `site/` output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini editor/chapter-briefs/CHAPTER-018-reviewing-architecture-before-it-hardens.md editor/EDITOR_LOG.md`: passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed; no generated `site/` output is tracked.
+- Next lifecycle stage: Author Draft after author approval.
+- Do not create the manuscript, perform review phases, open a pull request, or merge as part of this phase.
