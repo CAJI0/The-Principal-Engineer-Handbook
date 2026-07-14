@@ -373,7 +373,7 @@ entities:
       type: chapter
       name: From Prototype to Product
       path: ../book/04-building-a-product/20-from-prototype-to-product.md
-      status: draft
+      status: canonical
   adrs:
     - id: ADR-001
       type: adr
