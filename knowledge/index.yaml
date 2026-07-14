@@ -369,6 +369,11 @@ entities:
       name: Freezing Architecture Without Freezing Learning
       path: ../book/03-architecture-playbook/19-freezing-architecture-without-freezing-learning.md
       status: canonical
+    - id: CHAPTER-020
+      type: chapter
+      name: From Prototype to Product
+      path: ../book/04-building-a-product/20-from-prototype-to-product.md
+      status: canonical
   adrs:
     - id: ADR-001
       type: adr
@@ -914,3 +919,45 @@ relationships:
   - from: CHAPTER-019
     type: references
     to: METRIC-003
+  - from: CHAPTER-020
+    type: illustrates
+    to: FAILURE-003
+  - from: CHAPTER-020
+    type: references
+    to: ANTIPATTERN-006
+  - from: CHAPTER-020
+    type: references
+    to: LAW-004
+  - from: CHAPTER-020
+    type: references
+    to: LAW-006
+  - from: CHAPTER-020
+    type: references
+    to: LAW-005
+  - from: CHAPTER-020
+    type: references
+    to: VOCAB-001
+  - from: CHAPTER-020
+    type: references
+    to: METRIC-001
+  - from: CHAPTER-020
+    type: references
+    to: ARTIFACT-001
+  - from: CHAPTER-020
+    type: references
+    to: ARTIFACT-003
+  - from: CHAPTER-020
+    type: references
+    to: RITUAL-001
+  - from: CHAPTER-020
+    type: references
+    to: METRIC-003
+  - from: CHAPTER-020
+    type: references
+    to: LAW-001
+  - from: CHAPTER-020
+    type: references
+    to: LAW-002
+  - from: CHAPTER-020
+    type: references
+    to: LAW-007

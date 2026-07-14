@@ -7821,6 +7821,258 @@ Pull request readiness:
 - Do not perform Editorial Review, Canon Review, Technical Review, Freeze Review, PR creation, or merge as part of this
   phase.
 
+## Phase 105 Chapter 20 Editorial Review
+
+- Chapter: From Prototype to Product.
+- Stable ID: `CHAPTER-020`.
+- Branch: `chapter20`.
+- Stage: Editorial Review.
+- Reviewed Author Draft commit: `a47c26f72a07f5648850fd99869bcd5eb648068a`.
+- Manuscript path: `book/04-building-a-product/20-from-prototype-to-product.md`.
+- Canonical brief path preserved:
+  `editor/chapter-briefs/CHAPTER-020-from-prototype-to-product.md`.
+- Part position: first chapter of Part IV - Building a Product.
+- Primary concept: none.
+- Central anchor: `FAILURE-003` - The Successful Prototype.
+- Outcome: Approve.
+- Material editorial changes: tightened the opening story setup, combined a two-line pacing beat around the Principal
+  Engineer's replacement question, and clarified that the prototype-to-product gap is chapter-local language rather than a
+  new metric.
+- Story and argument result: passed. The manuscript uses The Demo That Became the Product, treats the prototype as
+  valuable evidence, shows schedule pressure turning it into the product baseline, and moves the reader from shipping
+  speed to assumption classification, ownership, evidence gaps, and product action.
+- Prototype/product distinction result: passed. The chapter distinguishes prototype evidence from product promises
+  without moralizing about prototypes or implying that production requires a rewrite.
+- Productization-gap result: passed. The gap is clear, chapter-local, and explicitly not a PEAK metric or vocabulary
+  addition.
+- Assumption-classification result: passed. Product contract, implementation detail, temporary shortcut, evidence gap,
+  residual risk, and removed shortcut are understandable without becoming a rigid universal taxonomy.
+- Temporary-solution result: passed. Shortcuts require owner, expiration, decision, accepted risk, or removal.
+- Simplicity/flexibility result: passed. The manuscript preserves simple product behavior while rejecting speculative
+  flexibility for imagined future variants.
+- Later Part IV boundary result: passed. Manufacturing and field reality, configuration and variants, observability,
+  release discipline, and the reference project are named as product realities without teaching Chapters 21-25 early.
+- Earlier-parts boundary result: passed. Part III practices are used as foundation without repeating Chapters 15, 17,
+  18, or 19.
+- Section-architecture result: passed. The manuscript preserves the required order: Opening Quote, Story, Discussion,
+  Engineering Principle, Architecture Exercise, Principal's Notebook, ADR, Editor's Commentary.
+- Principal's Notebook result: exactly three short observations.
+- Chapter-local ADR result: passed. The ADR makes a real architecture-process decision about making the prototype
+  configuration path product-ready before release baseline.
+- Changed files:
+  - `book/04-building-a-product/20-from-prototype-to-product.md`
+  - `editor/EDITOR_LOG.md`
+- Final validation completed after this log entry:
+  - Direct Editorial Review assertions: passed for expected changed files only, exact section order, required sections
+    unique, exactly three Principal's Notebook observations, unresolved marker absence, `CHAPTER-020` remaining `draft`,
+    canonical brief unchanged, `knowledge/index.yaml` unchanged, exact relationship set preserved, unchanged PEAK
+    concept files, unchanged `editor/CHAPTER_ARCHITECTURE.md`, unchanged Part IV README, unchanged table of contents,
+    unchanged `editor/CANON.md`, and no tracked `site` output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini book/04-building-a-product/20-from-prototype-to-product.md editor/EDITOR_LOG.md`:
+    passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed with no tracked `site/` output.
+- Next lifecycle stage: Canon Review after this Editorial Review commit is committed and pushed.
+- Do not perform Canon Review, Technical Review, Freeze Review, PR creation, or merge as part of this phase.
+
+## Phase 106 Chapter 20 Canon Review
+
+- Chapter: From Prototype to Product.
+- Stable ID: `CHAPTER-020`.
+- Branch: `chapter20`.
+- Stage: Canon Review.
+- Reviewed Editorial Review commit: `3841cd73126bf8be96f79b469d129734ed529304`.
+- Manuscript path: `book/04-building-a-product/20-from-prototype-to-product.md`.
+- Canonical brief path preserved:
+  `editor/chapter-briefs/CHAPTER-020-from-prototype-to-product.md`.
+- Part position: first chapter of Part IV - Building a Product.
+- Primary concept: none.
+- Central anchor: `FAILURE-003` - The Successful Prototype.
+- Outcome: Approve.
+- Canonical sources checked: Chapter 20 canonical brief, `knowledge/index.yaml`, registered PEAK concept files, required
+  chapter architecture, table of contents, Part IV README, and Chapter 19 review/freeze precedent.
+- No-primary result: passed. The manuscript introduces no primary concept and does not add a primary-concept field or
+  replacement anchor.
+- Successful Prototype result: passed. The chapter materially illustrates `FAILURE-003` by showing a successful
+  prototype becoming product architecture before its assumptions have owners, evidence, and product obligations.
+- Prototype/product result: passed. Prototype success is treated as valuable evidence, not product readiness, and the
+  manuscript distinguishes prototype and product without moralizing.
+- Productization-gap result: passed. The gap remains chapter-local language and is explicitly not a new PEAK metric or
+  vocabulary concept.
+- Assumption-classification result: passed. The manuscript classifies assumptions as product contracts, implementation
+  details, temporary shortcuts, evidence gaps, residual risks, or removed shortcuts without creating a universal
+  taxonomy.
+- Simplicity/flexibility result: passed. `LAW-004` preserves useful simplicity, and `LAW-006` prevents speculative
+  flexibility for imagined future variants.
+- Temporary-solution result: passed. `ANTIPATTERN-006` is material through shortcuts that require an owner, expiration,
+  removal, accepted risk, or explicit decision.
+- Evidence and Change Radius result: passed. `LAW-005`, `VOCAB-001`, and `METRIC-001` are used to separate prototype
+  evidence from product evidence and to expose affected product surfaces.
+- Artifact and discoverability result: passed. `ARTIFACT-001`, `ARTIFACT-003`, `RITUAL-001`, and `METRIC-003` are used
+  as proportionate records and review/discoverability support without repeating Chapter 17 or Chapter 18 mechanics.
+- State/API/Dependency result: passed. `LAW-001`, `LAW-002`, and `LAW-007` are materially present through configuration
+  state ownership, service-tool and debug interface promises, and vendor/tool/script dependencies.
+- Later Part IV boundary result: passed. Chapter 21 manufacturing and field reality, Chapter 22 configuration and
+  variants, Chapter 23 observability, Chapter 24 release discipline, and Chapter 25 reference project remain future
+  scope.
+- Earlier-parts boundary result: passed. Earlier chapters are applied as constraints and lenses without repeating Part
+  III.
+- Relationship findings: passed. Every registered Chapter 20 relationship target is materially present, all targets
+  exist, and the exact outgoing relationship set is unchanged.
+- Section-architecture result: passed. The manuscript preserves the required order: Opening Quote, Story, Discussion,
+  Engineering Principle, Architecture Exercise, Principal's Notebook, ADR, Editor's Commentary.
+- Corrections made during Canon Review: none.
+- Changed files:
+  - `editor/EDITOR_LOG.md`
+- Final validation completed after this log entry:
+  - Direct Canon Review assertions: passed for clean baseline, reviewed SHA matching the Editorial Review commit,
+    expected changed files only, unchanged manuscript, exact section order, exactly three Principal's Notebook
+    observations, `CHAPTER-020` remaining `draft`, no primary concept introduced, exact relationship set preserved,
+    material concept coverage, unchanged canonical brief, unchanged `knowledge/index.yaml`, unchanged PEAK concept
+    files, unchanged `editor/CHAPTER_ARCHITECTURE.md`, unchanged Part IV README, unchanged table of contents,
+    unchanged `editor/CANON.md`, and no tracked `site` output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini book/04-building-a-product/20-from-prototype-to-product.md editor/EDITOR_LOG.md`:
+    passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed with no tracked `site/` output.
+- Next lifecycle stage: Technical Review after this Canon Review commit is committed and pushed.
+- Do not perform Technical Review, Freeze Review, PR creation, or merge as part of this phase.
+
+## Phase 107 Chapter 20 Technical Review
+
+- Chapter: From Prototype to Product.
+- Stable ID: `CHAPTER-020`.
+- Branch: `chapter20`.
+- Stage: Technical Review.
+- Reviewed Canon Review commit: `3ca211d32c9088041def787c71b6b3aabbc6739b`.
+- Manuscript path: `book/04-building-a-product/20-from-prototype-to-product.md`.
+- Canonical brief path preserved:
+  `editor/chapter-briefs/CHAPTER-020-from-prototype-to-product.md`.
+- Part position: first chapter of Part IV - Building a Product.
+- Primary concept: none.
+- Central anchor: `FAILURE-003` - The Successful Prototype.
+- Outcome: Approve.
+- Technical domains checked: prototype firmware and hardware assumptions; known board revision and second board
+  revision; manual calibration; hard-coded configuration; service-tool diagnostics; vendor example driver dependency;
+  lab-only update path; direct hardware state access; ad-hoc manufacturing script; developer-only diagnostics; board,
+  lot, and component variability; field diagnosis; configuration variants; update and recovery assumptions; release
+  packaging; temporary bypass; product baseline decisions; ownership and supportability.
+- Material corrections during Technical Review: none.
+- Prototype credibility assessment: passed. Prototype shortcuts are realistic, proportionate, and not caricatured; the
+  demo is valuable evidence without proving product readiness.
+- Board and calibration assessment: passed. Known board revision, second board revision, sensor lot, analog front-end
+  variation, manual calibration, and repeatability concerns are credible.
+- Manufacturing repeatability assessment: passed. Station fixture and script assumptions are realistic and named without
+  becoming Chapter 21.
+- Service and diagnostic assessment: passed. Debug service tool, product-level rejection reasons, raw hardware state,
+  field diagnosis, and support visibility are credible.
+- Update and recovery assessment: passed. Lab-only update and recoverable product update gap are credible without
+  becoming Chapter 16 or Chapter 24.
+- Variants and release assessment: passed. Customer path, sensor option, configuration variant, release packaging, and
+  pilot constraints are credible without becoming Chapter 22 or Chapter 24.
+- Dependency assessment: passed. Vendor example driver is treated as a dependency decision with named surface and review
+  trigger, not automatic failure.
+- Assumption and action assessment: passed. Categories lead to owner, evidence, action, expiration, removal, or review
+  trigger rather than a generic checklist.
+- Boundary assessment: passed. Chapter 20 does not become manufacturing process, field-service playbook, observability
+  chapter, release process, configuration and variants chapter, product-management chapter, QA handbook, or generic
+  checklist.
+- Unchanged files confirmed: canonical brief, `knowledge/index.yaml`, PEAK concept files,
+  `editor/CHAPTER_ARCHITECTURE.md`, Part IV README, table of contents, `editor/CANON.md`, and Chapters 1-19.
+- Changed files:
+  - `editor/EDITOR_LOG.md`
+- Final validation completed after this log entry:
+  - Direct Technical Review assertions: passed.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini book/04-building-a-product/20-from-prototype-to-product.md editor/EDITOR_LOG.md`: passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed with no tracked `site/` output.
+- Next lifecycle stage: Freeze Review after this Technical Review commit is committed and pushed.
+- Do not perform Freeze Review, PR creation, or merge as part of this phase.
+
+## Phase 108 Chapter 20 Freeze Review
+
+- Chapter: From Prototype to Product.
+- Stable ID: `CHAPTER-020`.
+- Branch: `chapter20`.
+- Stage: Freeze Review.
+- Reviewed Technical Review commit: `51d2e93a540d555be29d95f542fe5fdc496eef72`.
+- Prior review commits confirmed in history:
+  - Editorial Review: `3841cd73126bf8be96f79b469d129734ed529304`.
+  - Canon Review: `3ca211d32c9088041def787c71b6b3aabbc6739b`.
+  - Technical Review: `51d2e93a540d555be29d95f542fe5fdc496eef72`.
+- Manuscript path: `book/04-building-a-product/20-from-prototype-to-product.md`.
+- Canonical brief path preserved:
+  `editor/chapter-briefs/CHAPTER-020-from-prototype-to-product.md`.
+- Part position: first chapter of Part IV - Building a Product.
+- Primary concept: none.
+- Central anchor: `FAILURE-003` - The Successful Prototype.
+- Outcome: Approve.
+- Status transition: `CHAPTER-020` moved from `draft` to `canonical` in `knowledge/index.yaml`.
+- Freeze scope result: passed. Freeze changed only the chapter status and this log entry; no manuscript, canonical brief,
+  PEAK concept, chapter architecture, Part IV README, table of contents, or prior chapter content changed.
+- Prior review ancestry result: passed. Editorial, Canon, and Technical Review commits are ancestors of the Freeze
+  baseline.
+- Manuscript freeze result: passed. The final manuscript keeps the required section order: Opening Quote, Story,
+  Discussion, Engineering Principle, Architecture Exercise, Principal's Notebook, ADR, Editor's Commentary.
+- Principal's Notebook result: exactly three short observations.
+- Canon freeze result: passed. Chapter 20 has no primary concept, remains anchored on `FAILURE-003`, and preserves the
+  exact registered relationship set.
+- Registered relationship set preserved:
+  - `CHAPTER-020 illustrates FAILURE-003`
+  - `CHAPTER-020 references ANTIPATTERN-006`
+  - `CHAPTER-020 references LAW-004`
+  - `CHAPTER-020 references LAW-006`
+  - `CHAPTER-020 references LAW-005`
+  - `CHAPTER-020 references VOCAB-001`
+  - `CHAPTER-020 references METRIC-001`
+  - `CHAPTER-020 references ARTIFACT-001`
+  - `CHAPTER-020 references ARTIFACT-003`
+  - `CHAPTER-020 references RITUAL-001`
+  - `CHAPTER-020 references METRIC-003`
+  - `CHAPTER-020 references LAW-001`
+  - `CHAPTER-020 references LAW-002`
+  - `CHAPTER-020 references LAW-007`
+- Later Part IV boundary result: passed. Chapter 21 manufacturing and field reality, Chapter 22 configuration and
+  variants, Chapter 23 observability, Chapter 24 release discipline and upgrade paths, and Chapter 25 reference project
+  remain future scope.
+- Earlier-parts boundary result: passed. Part III practices are applied as constraints without repeating the
+  architecture playbook.
+- Technical readiness result: passed. The embedded scenario remains credible across board variation, calibration,
+  manufacturing repeatability, service diagnostics, update and recovery, variants, dependencies, and release packaging.
+- Part IV opening result: passed. Chapter 20 establishes the Part IV move from prototype success to product architecture
+  without becoming the downstream product-building chapters.
+- Changed files:
+  - `editor/EDITOR_LOG.md`
+  - `knowledge/index.yaml`
+- Final validation completed after this log entry:
+  - Direct Freeze Review assertions: passed.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini book/04-building-a-product/20-from-prototype-to-product.md editor/EDITOR_LOG.md`: passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed with no tracked `site/` output.
+- Pull request readiness: ready for PR after this Freeze Review commit is committed and pushed.
+- Recommended PR title: Chapter 20: From Prototype to Product.
+- Do not create a pull request or merge as part of this phase.
+
 ## Phase 99 Chapter 19 Editorial Review
 
 - Chapter: Freezing Architecture Without Freezing Learning.
@@ -8094,3 +8346,189 @@ Pull request readiness:
 - PR readiness: Chapter 19 is ready for a pull request after this Freeze Review commit is committed and pushed.
 - Recommended pull request title: Chapter 19: Freezing Architecture Without Freezing Learning.
 - Do not create the pull request or merge as part of this phase.
+
+## Phase 103 Chapter 20 Canonical Brief Registration
+
+- Chapter: From Prototype to Product.
+- Stable ID: `CHAPTER-020`.
+- Branch: `chapter20`.
+- Stage: Canonical Brief Registration.
+- Verified baseline `origin/main`: `c06c0143bc86c446815900e94508230414b0ff24`.
+- Baseline evidence: PR #21 squash commit, `Chapter 19: Freezing Architecture Without Freezing Learning (#21)`.
+- PR #21 feature lifecycle evidence:
+  - Canonical Brief: `9b942acffb6eccae5a16cb026e6e56e0754b70dd`.
+  - Author Draft: `6835320`.
+  - Editorial Review: `545a78b`.
+  - Canon Review: `d048685`.
+  - Technical Review: `b6a10a6`.
+  - Freeze Review: `130e23d`.
+  - Squash merge: `c06c0143bc86c446815900e94508230414b0ff24`.
+- Squash verification result: passed. The squash commit is an ancestor of current `origin/main`, has parent
+  `63351df957acb62236ef5ff229cfed10718d4d0b`, and the checked Chapter 19 lifecycle files are tree-equivalent to the
+  Chapter 19 Freeze Review commit `130e23d`.
+- Part position: first chapter of Part IV - Building a Product.
+- Canonical predecessor: `CHAPTER-019` - Freezing Architecture Without Freezing Learning.
+- Outcome: Approve canonical brief registration.
+- Reader-facing manuscript created: no.
+- Manuscript path remains absent: `book/04-building-a-product/20-from-prototype-to-product.md`.
+- Canonical brief path created:
+  `editor/chapter-briefs/CHAPTER-020-from-prototype-to-product.md`.
+- Index registration: `CHAPTER-020` added to `knowledge/index.yaml` as `draft`.
+- Primary concept: none. Chapter 20 opens Part IV and follows the current no-primary practice-chapter convention.
+- Central anchor: `FAILURE-003` - The Successful Prototype.
+- Canonical scope: prototype success is treated as evidence rather than product readiness; the chapter distinguishes
+  prototype from product, defines the prototype-to-product gap, exposes hidden assumptions, classifies shortcuts, assigns
+  owners, preserves simplicity that survives product reality, and names minimum manufacturing, service, update,
+  recovery, diagnostic, variant, release, and support readiness without teaching later playbooks.
+- Selected PEAK concepts:
+  - `FAILURE-003` - The Successful Prototype.
+  - `ANTIPATTERN-006` - Temporary Solution.
+  - `LAW-004` - Simplicity Is a Feature.
+  - `LAW-006` - Unused Flexibility Is Waste.
+  - `LAW-005` - Evidence Before Confidence.
+  - `VOCAB-001` - Change Radius.
+  - `METRIC-001` - Change Radius.
+  - `ARTIFACT-001` - ADR.
+  - `ARTIFACT-003` - Decision Journal.
+  - `RITUAL-001` - Architecture Review.
+  - `METRIC-003` - Discoverability.
+  - `LAW-001` - Every State Has One Owner.
+  - `LAW-002` - Every API Is a Promise.
+  - `LAW-007` - Every Dependency Is a Decision.
+- Rejected PEAK concepts:
+  - `ARTIFACT-002` - RFC: related, but not needed for this chapter-local decision.
+  - `ARTIFACT-004` - Mistake Ledger: useful after failure, but Chapter 20 acts before retrospective learning.
+  - `RITUAL-002` and `VOCAB-006` - Architecture Freeze: Chapter 19 owns freeze semantics.
+  - `VOCAB-007`, `METRIC-005`, and `RITUAL-004` - Architecture Health: later health review is out of scope.
+- Exact outgoing relationships registered:
+  - `CHAPTER-020 illustrates FAILURE-003`.
+  - `CHAPTER-020 references ANTIPATTERN-006`.
+  - `CHAPTER-020 references LAW-004`.
+  - `CHAPTER-020 references LAW-006`.
+  - `CHAPTER-020 references LAW-005`.
+  - `CHAPTER-020 references VOCAB-001`.
+  - `CHAPTER-020 references METRIC-001`.
+  - `CHAPTER-020 references ARTIFACT-001`.
+  - `CHAPTER-020 references ARTIFACT-003`.
+  - `CHAPTER-020 references RITUAL-001`.
+  - `CHAPTER-020 references METRIC-003`.
+  - `CHAPTER-020 references LAW-001`.
+  - `CHAPTER-020 references LAW-002`.
+  - `CHAPTER-020 references LAW-007`.
+- New PEAK concept result: no new PEAK law, maxim, artifact, ritual, metric, smell, anti-pattern, failure story,
+  vocabulary concept, ID, relationship verb, or primary-concept field was added.
+- Later Part IV boundaries:
+  - Chapter 21 owns manufacturing and field reality details.
+  - Chapter 22 owns configuration, variants, and product lines.
+  - Chapter 23 owns observability in embedded systems.
+  - Chapter 24 owns release discipline and upgrade paths.
+  - Chapter 25 owns the reference project walkthrough.
+- Earlier-parts boundary: Chapter 20 uses Chapters 5, 6, 11, 12, 13, 14, 15, 16, 17, 18, and 19 as constraints and
+  support without repeating the Part III architecture playbook.
+- Required reader-facing chapter architecture preserved for the future manuscript: Opening Quote, Story, Discussion,
+  Engineering Principle, Architecture Exercise, Principal's Notebook, ADR, Editor's Commentary.
+- Changed files:
+  - `editor/chapter-briefs/CHAPTER-020-from-prototype-to-product.md`
+  - `editor/EDITOR_LOG.md`
+  - `knowledge/index.yaml`
+- Final validation completed after this log entry:
+  - Direct canonical-brief assertions: passed for branch, baseline, expected changed files only, brief existence,
+    manuscript absence, `CHAPTER-020` draft registration, Chapters 1-19 remaining canonical, exact Chapter 20
+    relationship set, existing relationship targets, no duplicate or self-edge, no new PEAK ID, unchanged PEAK concept
+    files, unchanged `book/04-building-a-product/README.md`, unchanged `editor/CHAPTER_ARCHITECTURE.md`, unchanged
+    table of contents, unchanged existing chapters, and no tracked `site` output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini editor/chapter-briefs/CHAPTER-020-from-prototype-to-product.md editor/EDITOR_LOG.md`:
+    passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed with no tracked `site/` output.
+- Next lifecycle stage: Author Draft after this Canonical Brief Registration commit is committed and pushed.
+- Do not create the manuscript, perform review gates, create a pull request, or merge as part of this phase.
+
+## Phase 104 Chapter 20 Author Draft
+
+- Chapter: From Prototype to Product.
+- Stable ID: `CHAPTER-020`.
+- Branch: `chapter20`.
+- Stage: Author Draft.
+- Starting canonical-brief registration commit: `97320c67c51a08bba598b91edf138848308a9e7d`.
+- Manuscript path: `book/04-building-a-product/20-from-prototype-to-product.md`.
+- Canonical brief path preserved:
+  `editor/chapter-briefs/CHAPTER-020-from-prototype-to-product.md`.
+- Part position: first chapter of Part IV - Building a Product.
+- Primary concept: none.
+- Central anchor: `FAILURE-003` - The Successful Prototype.
+- Outcome: Author Draft manuscript created from the registered canonical brief.
+- Registered relationship set preserved:
+  - `CHAPTER-020 illustrates FAILURE-003`
+  - `CHAPTER-020 references ANTIPATTERN-006`
+  - `CHAPTER-020 references LAW-004`
+  - `CHAPTER-020 references LAW-006`
+  - `CHAPTER-020 references LAW-005`
+  - `CHAPTER-020 references VOCAB-001`
+  - `CHAPTER-020 references METRIC-001`
+  - `CHAPTER-020 references ARTIFACT-001`
+  - `CHAPTER-020 references ARTIFACT-003`
+  - `CHAPTER-020 references RITUAL-001`
+  - `CHAPTER-020 references METRIC-003`
+  - `CHAPTER-020 references LAW-001`
+  - `CHAPTER-020 references LAW-002`
+  - `CHAPTER-020 references LAW-007`
+- Draft scope result: passed. The manuscript teaches the move from a successful embedded prototype to product
+  architecture by exposing assumptions, preserving useful simplicity, replacing or expiring shortcuts, assigning owners,
+  and naming minimum manufacturing, service, update, recovery, diagnostic, variant, release, and support readiness
+  without becoming a later Part IV playbook.
+- Required narrative premise included: The Demo That Became the Product, covering one known board revision, manual
+  calibration, hard-coded configuration, debug service tool, vendor example driver, lab-only update path, direct hardware
+  state access, ad-hoc manufacturing script, developer-only diagnostics, second board revision, manufacturing
+  repeatability, field diagnosis, variants, update recovery, release packaging, temporary bypass, and unclear
+  assumptions.
+- Required chapter topics included: prototype versus product, `productization` gap, assumption classification, temporary
+  shortcuts, owner and expiration, preserved simplicity, unused flexibility risk, evidence gaps, product contracts,
+  implementation details, residual risk with review trigger, Change Radius, ADRs, Decision Journal entries, Architecture
+  Review, Discoverability, state ownership, API promises, and dependency decisions.
+- Boundary checks: Chapter 21 manufacturing and field reality, Chapter 22 configuration and variants, Chapter 23
+  observability, Chapter 24 release discipline and upgrade paths, and Chapter 25 reference project remain future scope;
+  Part III practices are applied without being repeated.
+- Required section order used exactly:
+  1. Opening Quote
+  2. Story
+  3. Discussion
+  4. Engineering Principle
+  5. Architecture Exercise
+  6. Principal's Notebook
+  7. ADR
+  8. Editor's Commentary
+- Principal's Notebook contains exactly three short observations and no explanations.
+- No-new-concept result: passed. No primary concept, PEAK concept, PEAK ID, relationship, relationship verb, metric,
+  artifact, ritual, anti-pattern, failure story, vocabulary concept, or prototype-to-product ledger was introduced.
+- Unchanged files confirmed: canonical brief, `knowledge/index.yaml`, PEAK concept files,
+  `editor/CHAPTER_ARCHITECTURE.md`, Part IV README, table of contents, `editor/CANON.md`, and Chapters 1-19.
+- Files changed in this phase:
+  - `book/04-building-a-product/20-from-prototype-to-product.md`
+  - `editor/EDITOR_LOG.md`
+- Final validation completed after this log entry:
+  - Direct Author Draft assertions: passed for clean baseline, `HEAD` matching `origin/chapter20` before drafting,
+    starting SHA matching the Canonical Brief Registration commit, expected changed files only, exact section order,
+    required sections unique, exactly three Principal's Notebook observations, unresolved marker absence, `CHAPTER-020`
+    remaining `draft`, canonical brief unchanged, `knowledge/index.yaml` unchanged, exact relationship set preserved, no
+    primary concept introduced, no new PEAK ID, unchanged Part IV README, unchanged `editor/CHAPTER_ARCHITECTURE.md`,
+    unchanged `editor/CANON.md`, unchanged table of contents, unchanged Chapters 1-19, unchanged PEAK concept files,
+    material coverage for every registered concept, later Part IV boundaries, earlier-part boundaries,
+    forbidden-frame checks, and no tracked `site/` output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini book/04-building-a-product/20-from-prototype-to-product.md editor/EDITOR_LOG.md`:
+    passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed with no tracked `site/` output.
+- Next lifecycle stage: Editorial Review after this Author Draft commit is committed and pushed.
+- Do not perform Editorial Review, Canon Review, Technical Review, Freeze Review, PR creation, or merge as part of this
+  phase.
