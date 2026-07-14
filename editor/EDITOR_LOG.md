@@ -7210,6 +7210,48 @@ Pull request readiness:
 - Next lifecycle stage: Technical Review after this Canon Review commit is committed and pushed.
 - Do not perform Technical Review, Freeze Review, PR creation, or merge as part of this phase.
 
+## Phase 95 Chapter 18 Technical Review
+
+- Chapter: Reviewing Architecture Before It Hardens.
+- Stable ID: `CHAPTER-018`.
+- Branch: `chapter18`.
+- Stage: Technical Review.
+- Reviewed Canon Review commit: `d7f1a144958908623bb30bb3966f460e644c67b0`.
+- Manuscript path: `book/03-architecture-playbook/18-reviewing-architecture-before-it-hardens.md`.
+- Canonical brief path preserved: `editor/chapter-briefs/CHAPTER-018-reviewing-architecture-before-it-hardens.md`.
+- Part position: fifth chapter of Part III - Architecture Playbook.
+- Primary concept: none by canonical decision for Part III practice chapters.
+- Central practice: `RITUAL-001` - Architecture Review.
+- Outcome: Approve.
+- Technical domains checked: firmware, gateway and host behavior, service tool behavior, manufacturing and test fixtures, support diagnostics, release planning, configuration update protocol, validation authority, old gateway and old firmware compatibility evidence, rollback cost, release coupling, Change Radius, failure and recovery semantics, decision ownership, review roles, accepted risk, follow-up ownership, and RFC/ADR/Decision Journal/Architecture Ledger updates.
+- Material corrections during Technical Review: none.
+- Hardening assessment: passed. The manuscript realistically shows code, tests, gateway adapter work, service-tool UI, manufacturing fixture work, release planning, compatibility promises, rollback cost, and organizational commitments making rejection expensive.
+- Review-subject assessment: passed. The review subject is one concrete configuration update protocol and ownership decision, not the whole project or a slide deck.
+- Participant assessment: passed. Firmware, gateway, service tool, manufacturing, test, support, release, and future maintenance owners are proportionate to affected surface; the chapter does not imply that more reviewers automatically improve architecture.
+- Evidence assessment: passed. Prototype parsing, compatibility tests, service-tool translation, fixture behavior, release constraints, support diagnostics, assumptions, missing evidence, accepted risks, blockers, and follow-up evidence are not conflated.
+- Change Radius assessment: passed. Change Radius is approximate affected surface used to identify participants and evidence, not a score or precision metric.
+- Compatibility and rollback assessment: passed. Old gateway forwarding, old firmware rejection, service-tool message promises, manufacturing package handling, rollback effort, and release coupling are plausible embedded product concerns.
+- Failure and recovery assessment: passed. Accepted, rejected, partially applied, and interrupted profile states are reviewed as architecture implications without turning Chapter 18 into Chapter 16.
+- Outcome and ownership assessment: passed. The review produces actionable, owned outcomes and does not transfer decision ownership to reviewers, consensus, a facilitator, code review, signatures, or a standing board.
+- Record-update assessment: passed. RFC, ADR, Decision Journal, and Architecture Ledger updates are credible closure paths and do not duplicate Chapter 17 artifact mechanics.
+- Guardrail assessment: passed. The manuscript does not imply Architecture Review is approval, missing evidence always blocks progress, every disagreement escalates, every architecture decision needs a meeting, senior reviewers are automatically right, signed review means architecture is safe, late reviews are always worthless, or meeting notes preserve the decision.
+- Chapter 17 boundary result: passed. Record updates are used as outputs of technical review closure without repeating ADR/RFC practice.
+- Chapter 19 boundary result: passed. Freeze, exceptions, and revalidation remain future scope.
+- Changed files:
+  - `editor/EDITOR_LOG.md`
+- Final validation completed after this log entry:
+  - Direct Technical Review assertions: passed for clean baseline, `HEAD` matching `origin/chapter18` before review, reviewed SHA matching the Canon Review commit, expected changed files only, exact section order, unique required sections, exactly three Principal's Notebook observations, unresolved marker absence, no misleading technical absolutes, `CHAPTER-018` remaining `draft`, no primary concept introduced, exact registered relationship set preserved, no new PEAK ID, unchanged manuscript, unchanged canonical brief, unchanged `knowledge/index.yaml`, unchanged PEAK concept files, unchanged `editor/CHAPTER_ARCHITECTURE.md`, unchanged Part III README, unchanged table of contents, unchanged `editor/CANON.md`, unchanged Chapters 1-17, Chapter 17 and Chapter 19 boundaries, and no tracked `site` output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini book/03-architecture-playbook/18-reviewing-architecture-before-it-hardens.md editor/EDITOR_LOG.md`: passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed; no generated `site/` output is tracked.
+- Next lifecycle stage: Freeze Review after this Technical Review commit is committed and pushed.
+- Do not perform Freeze Review, PR creation, or merge as part of this phase.
+
 ## Phase 88 Chapter 17 Canon Review
 
 - Chapter: Using ADRs and RFCs Well.
