@@ -7416,6 +7416,63 @@ Pull request readiness:
   - `npm.cmd run lint:links`: passed.
   - `python -m pip check`: passed.
   - `python -m mkdocs build --strict`: passed.
-  - `git ls-files site`: passed; no generated `site/` output is tracked.
+- `git ls-files site`: passed; no generated `site/` output is tracked.
 - Next lifecycle stage: Author Draft after author approval.
 - Do not create the manuscript, perform review phases, open a pull request, or merge as part of this phase.
+
+## Phase 92 Chapter 18 Author Draft
+
+- Chapter: Reviewing Architecture Before It Hardens.
+- Stable ID: `CHAPTER-018`.
+- Branch: `chapter18`.
+- Stage: Author Draft.
+- Starting canonical-brief registration commit: `f64400bba5de68308ec229382b145258b706f4b3`.
+- Manuscript path: `book/03-architecture-playbook/18-reviewing-architecture-before-it-hardens.md`.
+- Canonical brief path: `editor/chapter-briefs/CHAPTER-018-reviewing-architecture-before-it-hardens.md`.
+- Part position: fifth chapter in Part III, after Chapter 17 and before Chapter 19.
+- Primary concept: none; no new PEAK concept introduced.
+- Central practice: `RITUAL-001` - Architecture Review.
+- Outcome: Author Draft manuscript created from the registered canonical brief.
+- Registered relationship set preserved:
+  - `CHAPTER-018 illustrates RITUAL-001`
+  - `CHAPTER-018 references ARTIFACT-001`
+  - `CHAPTER-018 references ARTIFACT-002`
+  - `CHAPTER-018 references ARTIFACT-003`
+  - `CHAPTER-018 references ARTIFACT-006`
+  - `CHAPTER-018 references RITUAL-006`
+  - `CHAPTER-018 references LAW-001`
+  - `CHAPTER-018 references LAW-002`
+  - `CHAPTER-018 references LAW-005`
+  - `CHAPTER-018 references LAW-007`
+  - `CHAPTER-018 references VOCAB-001`
+  - `CHAPTER-018 references METRIC-001`
+  - `CHAPTER-018 references METRIC-003`
+- Draft scope result: passed. The manuscript teaches Architecture Review before hardening as structured challenge, not approval theater, committee governance, meeting facilitation, release gating, or code review.
+- Required narrative premise included: the review that could only approve, covering firmware, gateway, service tooling, manufacturing/test fixtures, support diagnostics, compatibility, release planning, RFC/ADR inputs, early implementation hardening, missing authority/evidence/failure-recovery/rollback ownership, and the Principal Engineer's new framing question.
+- Required chapter topics included: hardening, review subject, inputs, participants and roles, examination lenses, evidence and disagreement, outcomes and closure, review theater, and links to ADR, RFC, Decision Journal, Architecture Ledger, and RFC Friday.
+- Boundary checks: Chapter 17 artifact choice/status/closure/discoverability was referenced without reteaching it; Chapter 19 freeze/revalidation policy was named as future scope without being taught early.
+- Required section order used exactly:
+  1. Opening Quote
+  2. Story
+  3. Discussion
+  4. Engineering Principle
+  5. Architecture Exercise
+  6. Principal's Notebook
+  7. ADR
+  8. Editor's Commentary
+- Principal's Notebook contains exactly three short observations and no explanations.
+- Files changed in this phase:
+  - `book/03-architecture-playbook/18-reviewing-architecture-before-it-hardens.md`
+  - `editor/EDITOR_LOG.md`
+- Final validation completed after this log entry:
+  - Direct Author Draft assertions: passed for baseline, expected files only, exact section order, unique required sections, exactly three Principal's Notebook observations, no TODO/FIXME/TK/AUTHOR NOTE/placeholders, `CHAPTER-018` draft status, canonical brief unchanged, `knowledge/index.yaml` unchanged, exact relationship set preserved, no primary concept, no new PEAK ID, unchanged Part III README, unchanged `editor/CHAPTER_ARCHITECTURE.md`, unchanged canon/TOC/Chapters 1-17, no tracked `site/`, concept coverage, Chapter 17/19 boundaries, and forbidden-frame checks.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini book/03-architecture-playbook/18-reviewing-architecture-before-it-hardens.md editor/EDITOR_LOG.md`: passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed with no tracked `site/` output.
+- Next lifecycle stage: Editorial Review after this Author Draft commit is committed and pushed.
+- Do not perform Editorial Review, Canon Review, Technical Review, Freeze Review, PR creation, or merge as part of this phase.
