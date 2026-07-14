@@ -7476,3 +7476,48 @@ Pull request readiness:
   - `git ls-files site`: passed with no tracked `site/` output.
 - Next lifecycle stage: Editorial Review after this Author Draft commit is committed and pushed.
 - Do not perform Editorial Review, Canon Review, Technical Review, Freeze Review, PR creation, or merge as part of this phase.
+
+## Phase 93 Chapter 18 Editorial Review
+
+- Chapter: Reviewing Architecture Before It Hardens.
+- Stable ID: `CHAPTER-018`.
+- Branch: `chapter18`.
+- Stage: Editorial Review.
+- Reviewed Author Draft commit: `3a059e3c32e237db227d45db76c534e94bbd182b`.
+- Manuscript path: `book/03-architecture-playbook/18-reviewing-architecture-before-it-hardens.md`.
+- Canonical brief path preserved: `editor/chapter-briefs/CHAPTER-018-reviewing-architecture-before-it-hardens.md`.
+- Part position: fifth chapter of Part III - Architecture Playbook.
+- Primary concept: none by canonical decision for Part III practice chapters.
+- Central practice: `RITUAL-001` - Architecture Review.
+- Outcome: Approve with changes.
+- Material editorial changes:
+  - made the story title, The Review That Could Only Approve, explicit in the opening scene;
+  - clarified that the late review was a timing and review-subject failure rather than laziness;
+  - sharpened the warning that adding more people to a vague review does not fix the review subject;
+  - clarified that missing evidence can produce partial continuation, evidence requests, or owned waiting rather than a single undifferentiated blocker;
+  - strengthened comment-closure language so review closes into owned changes, evidence requests, accepted risks, deferrals, escalations, or record updates.
+- Section-order result: passed. The manuscript preserves the required section order: Opening Quote, Story, Discussion,
+  Engineering Principle, Architecture Exercise, Principal's Notebook, ADR, Editor's Commentary.
+- Principal's Notebook result: exactly three short observations.
+- Review-before-hardening result: passed. The chapter preserves the thesis that Architecture Review is useful when it challenges a consequential decision before code, tests, tools, release plans, and organizational commitments make alternatives economically fake.
+- Timing result: passed. Too-early, useful, and too-late review timing remain distinct.
+- Roles result: passed. The manuscript distinguishes decision owner, proposal owner, reviewers, facilitator, and follow-up owners without shifting accountability to the review.
+- Outcomes result: passed. Review outcomes remain broader than approve or reject and close into decisions, evidence requests, accepted risks, revised proposals, or record updates.
+- Chapter 17 boundary result: passed. The chapter uses ADRs, RFCs, Decision Journal entries, and Architecture Ledger entries as review inputs and outputs without reteaching artifact choice, status, supersession, or discoverability mechanics.
+- Chapter 19 boundary result: passed. The chapter names freeze as later scope without teaching Architecture Freeze, exceptions, revalidation, or post-Freeze change control.
+- Changed files:
+  - `book/03-architecture-playbook/18-reviewing-architecture-before-it-hardens.md`
+  - `editor/EDITOR_LOG.md`
+- Unchanged files confirmed: canonical brief, `knowledge/index.yaml`, PEAK concept files, `editor/CHAPTER_ARCHITECTURE.md`, Part III README, table of contents, `editor/CANON.md`, and Chapters 1-17.
+- Final validation completed after this log entry:
+  - Direct Editorial Review assertions: passed for clean baseline, `HEAD` matching `origin/chapter18` before review, reviewed SHA matching the Author Draft commit, expected changed files only, exact section order, unique required sections, exactly three Principal's Notebook observations, unresolved marker absence, `CHAPTER-018` remaining `draft`, no primary concept introduced, exact registered relationship set preserved, no new PEAK ID, unchanged canonical brief, unchanged `knowledge/index.yaml`, unchanged PEAK concept files, unchanged `editor/CHAPTER_ARCHITECTURE.md`, unchanged Part III README, unchanged table of contents, unchanged `editor/CANON.md`, unchanged Chapters 1-17, Chapter 17 and Chapter 19 boundaries, and no tracked `site/` output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini book/03-architecture-playbook/18-reviewing-architecture-before-it-hardens.md editor/EDITOR_LOG.md`: passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed; no generated `site/` output is tracked.
+- Next lifecycle stage: Canon Review after this Editorial Review commit is committed and pushed.
+- Do not perform Canon Review, Technical Review, Freeze Review, PR creation, or merge as part of this phase.

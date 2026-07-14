@@ -6,7 +6,9 @@
 
 ## Story
 
-The review had a calendar invite, a deck, and an answer.
+The team later called it The Review That Could Only Approve.
+
+It had a calendar invite, a deck, and an answer.
 
 The team was changing the configuration update path for a long-lived embedded product. Profiles were no longer simple key and value files. New variants needed schema versions, product-level validation rules, rejection reasons, and compatibility behavior across device firmware, a gateway, a service tool, manufacturing fixtures, and field support.
 
@@ -16,7 +18,7 @@ Nobody thought they were skipping review.
 
 The firmware branch compiled. It accepted the new profile envelope and rejected a small set of invalid payloads. The gateway adapter forwarded the new envelope behind a feature flag. A service-tool screen showed profile status and a draft rejection message. Manufacturing had started changing the fixture so station profiles used the same package. Tests had begun to encode the device-owned validation boundary. Release planning assumed the new path would land before the next field-service rehearsal.
 
-The Architecture Review was scheduled after all of that because the team wanted something concrete to show.
+The Architecture Review was scheduled after all of that because the team wanted something concrete to show. That was not laziness. It was the first sign that review timing and review subject had already drifted apart.
 
 The first slides were tidy. The decision appeared to be: approve the versioned configuration protocol.
 
@@ -40,7 +42,7 @@ That sounded responsible. The concerns would not disappear. Owners could be assi
 
 Another response was to add more reviewers next time.
 
-That was also tempting. The team had missed manufacturing and support early. More invitations might have surfaced the issue sooner. But the problem was not only attendance. The review subject had been vague. "Approve the protocol" hid several decisions with different owners, evidence, and hardening points.
+That was also tempting. The team had missed manufacturing and support early. More invitations might have surfaced the issue sooner. But the problem was not only attendance. The review subject had been vague. "Approve the protocol" hid several decisions with different owners, evidence, and hardening points. More people in a vague review would still be reacting to the wrong object.
 
 Someone suggested extending the meeting.
 
@@ -66,11 +68,11 @@ The decision owner was the product architecture owner. The proposal owner remain
 
 The Change Radius (`VOCAB-001` and `METRIC-001`) changed the participant list. The decision touched code, tests, fixture scripts, release notes, support diagnostics, compatibility rehearsal, and the Architecture Ledger. That made the review bigger than firmware, but still smaller than the whole project.
 
-The evidence split into three groups.
+The evidence split into three groups, which kept missing data from becoming a single undifferentiated blocker.
 
 One group was strong enough: the device could parse and reject the new envelope in the happy path. Another group was missing but obtainable: old gateway forwarding behavior, old firmware rejection behavior, service-tool translation, and fixture package handling. The third group was not a blocker if owned explicitly: station-only metadata could remain outside the payload for this release, with a Decision Journal entry and review trigger.
 
-The review outcome was not "approved."
+The review outcome was not "approved," and it was not "blocked."
 
 It was:
 
@@ -149,13 +151,13 @@ Good review outcomes are broader than approve or reject.
 
 A review can proceed as proposed. It can proceed with explicit changes. It can narrow scope. It can split one decision into several. It can request evidence. It can ask for an experiment. It can change ownership. It can revise a boundary or contract. It can defer. It can reject. It can escalate unresolved risk. It can record accepted risk. It can update an RFC, ADR, Decision Journal, or Architecture Ledger (`ARTIFACT-006`).
 
-A review that changes the decision before the next hardening point has succeeded. A review that finds missing evidence early has succeeded. A review that narrows the decision so the team can move safely has succeeded. "Approved" is only one possible outcome.
+A review that changes the decision before the next hardening point has succeeded. A review that finds missing evidence early has succeeded. A review that narrows the decision so the team can move safely has succeeded. A review that names which work can continue and which work must wait has also succeeded. "Approved" is only one possible outcome.
 
 Comments are not closure.
 
 A comment thread can improve a proposal. It can reveal risks, missing evidence, and better alternatives. It cannot be the final architecture record by itself. Comments should close into accepted changes, rejected concerns with reason, evidence requests, split decisions, deferrals, accepted risks, escalation, or record updates.
 
-A concern without an owner becomes decoration. A risk without accepted ownership becomes background noise. A comment thread without a final decision record becomes a shadow architecture.
+A concern without an owner becomes decoration. A risk without accepted ownership becomes background noise. A comment thread without a final decision record becomes a shadow architecture. Closure is the moment when review stops being conversation and becomes an owned change, evidence request, accepted risk, deferral, escalation, or record update.
 
 This is where Chapter 18 differs from Chapter 17.
 
