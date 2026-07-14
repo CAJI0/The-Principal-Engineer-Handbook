@@ -8073,6 +8073,114 @@ Pull request readiness:
 - Recommended PR title: Chapter 20: From Prototype to Product.
 - Do not create a pull request or merge as part of this phase.
 
+## Phase 109 Chapter 21 Canonical Brief Registration
+
+- Chapter: Designing for Manufacturing and Field Reality.
+- Stable ID: `CHAPTER-021`.
+- Branch: `chapter21`.
+- Stage: Canonical Brief Registration.
+- Verified baseline `origin/main`: `c0c3bf50d869e3fcb58c7930ffd7da71c6589c2a`.
+- Baseline evidence: PR #22 squash commit, `Chapter 20: From Prototype to Product (#22)`.
+- PR #22 feature lifecycle evidence:
+  - Canonical Brief: `97320c6`.
+  - Author Draft: `a47c26f`.
+  - Editorial Review: `3841cd7`.
+  - Canon Review: `3ca211d`.
+  - Technical Review: `51d2e93`.
+  - Freeze Review: `525c15f42b6583533aab0eb9ebd8138d57053244`.
+  - Squash merge: `c0c3bf50d869e3fcb58c7930ffd7da71c6589c2a`.
+- Squash verification result: passed. The squash commit is an ancestor of current `origin/main`, has parent
+  `c06c0143bc86c446815900e94508230414b0ff24`, and the checked Chapter 20 lifecycle files are tree-equivalent to the
+  Chapter 20 Freeze Review commit `525c15f42b6583533aab0eb9ebd8138d57053244`.
+- Part position: second chapter of Part IV - Building a Product.
+- Canonical predecessor: `CHAPTER-020` - From Prototype to Product.
+- Outcome: Approve canonical brief registration.
+- Reader-facing manuscript created: no.
+- Manuscript path remains absent:
+  `book/04-building-a-product/21-designing-for-manufacturing-and-field-reality.md`.
+- Canonical brief path created:
+  `editor/chapter-briefs/CHAPTER-021-designing-for-manufacturing-and-field-reality.md`.
+- Index registration: `CHAPTER-021` added to `knowledge/index.yaml` as `draft`.
+- Primary concept: none. Chapter 21 follows the current no-primary chapter convention and is carried by a material
+  relationship set.
+- Central manufacturing and field reality result: manufacturing reality and field reality are chapter-local design-input
+  frames, not new PEAK concepts.
+- Canonical scope: manufacturing and field reality are treated as architecture constraints; the chapter covers
+  repeatability, variation, calibration, identity, traceability, fixture and service interfaces, support-safe diagnostics,
+  update and recovery outside the lab, ownership, evidence, and discoverability without becoming a manufacturing
+  handbook, field-service manual, observability chapter, release process, or fixture-design guide.
+- Selected PEAK concepts:
+  - `LAW-001` - Every State Has One Owner.
+  - `LAW-002` - Every API Is a Promise.
+  - `LAW-005` - Evidence Before Confidence.
+  - `LAW-007` - Every Dependency Is a Decision.
+  - `VOCAB-001` - Change Radius.
+  - `METRIC-001` - Change Radius.
+  - `METRIC-003` - Discoverability.
+  - `ARTIFACT-001` - ADR.
+  - `ARTIFACT-003` - Decision Journal.
+  - `ARTIFACT-004` - Mistake Ledger.
+  - `RITUAL-001` - Architecture Review.
+  - `RITUAL-002` - Architecture Freeze.
+  - `ANTIPATTERN-006` - Temporary Solution.
+  - `SMELL-004` - Hidden State.
+  - `SMELL-001` - Silent Coupling.
+  - `SMELL-005` - Platform Leakage.
+  - `ANTIPATTERN-002` - HAL Everywhere.
+  - `ANTIPATTERN-003` - Global Configuration.
+- Rejected PEAK concepts:
+  - `FAILURE-003` - The Successful Prototype: predecessor context owned by Chapter 20 rather than the Chapter 21 anchor.
+  - `FAILURE-005` - The Release We Should Have Delayed: relevant pressure, but Chapter 24 owns release discipline.
+  - `LAW-004` - Simplicity Is a Feature: useful boundary language, but not the primary Chapter 21 architecture pressure.
+  - `LAW-006` - Unused Flexibility Is Waste: relevant to variants, but Chapter 22 owns variants and product lines.
+- Exact outgoing relationships registered:
+  - `CHAPTER-021 references LAW-001`.
+  - `CHAPTER-021 references LAW-002`.
+  - `CHAPTER-021 references LAW-005`.
+  - `CHAPTER-021 references LAW-007`.
+  - `CHAPTER-021 references VOCAB-001`.
+  - `CHAPTER-021 references METRIC-001`.
+  - `CHAPTER-021 references METRIC-003`.
+  - `CHAPTER-021 references ARTIFACT-001`.
+  - `CHAPTER-021 references ARTIFACT-003`.
+  - `CHAPTER-021 references ARTIFACT-004`.
+  - `CHAPTER-021 references RITUAL-001`.
+  - `CHAPTER-021 references RITUAL-002`.
+  - `CHAPTER-021 references ANTIPATTERN-006`.
+  - `CHAPTER-021 references SMELL-004`.
+  - `CHAPTER-021 references SMELL-001`.
+  - `CHAPTER-021 references SMELL-005`.
+  - `CHAPTER-021 references ANTIPATTERN-002`.
+  - `CHAPTER-021 references ANTIPATTERN-003`.
+- New PEAK concept result: no new PEAK law, maxim, artifact, ritual, metric, smell, anti-pattern, failure story,
+  vocabulary concept, ID, relationship verb, or primary-concept field was added.
+- Later Part IV boundaries:
+  - Chapter 22 owns configuration, variants, and product lines.
+  - Chapter 23 owns observability in embedded systems.
+  - Chapter 24 owns release discipline and upgrade paths.
+  - Chapter 25 owns the reference project walkthrough.
+- Earlier-parts boundary: Chapter 21 uses Chapters 5, 7, 8, 9, 13, 14, 15, 16, 17, 18, 19, and 20 as constraints and
+  support without repeating the Part III architecture playbook or Chapter 20's prototype-to-product transition.
+- Required reader-facing chapter architecture preserved for the future manuscript: Opening Quote, Story, Discussion,
+  Engineering Principle, Architecture Exercise, Principal's Notebook, ADR, Editor's Commentary.
+- Changed files:
+  - `editor/chapter-briefs/CHAPTER-021-designing-for-manufacturing-and-field-reality.md`
+  - `editor/EDITOR_LOG.md`
+  - `knowledge/index.yaml`
+- Final validation completed after this log entry:
+  - Direct canonical-brief assertions: passed.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini editor/chapter-briefs/CHAPTER-021-designing-for-manufacturing-and-field-reality.md editor/EDITOR_LOG.md`:
+    passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed with no tracked `site/` output.
+- Next lifecycle stage: Author Draft after this Canonical Brief Registration commit is committed and pushed.
+- Do not create the manuscript, perform review gates, create a pull request, or merge as part of this phase.
+
 ## Phase 99 Chapter 19 Editorial Review
 
 - Chapter: Freezing Architecture Without Freezing Learning.
