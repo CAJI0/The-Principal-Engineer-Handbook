@@ -7820,3 +7820,62 @@ Pull request readiness:
 - Next lifecycle stage: Editorial Review after this Author Draft commit is committed and pushed.
 - Do not perform Editorial Review, Canon Review, Technical Review, Freeze Review, PR creation, or merge as part of this
   phase.
+
+## Phase 99 Chapter 19 Editorial Review
+
+- Chapter: Freezing Architecture Without Freezing Learning.
+- Stable ID: `CHAPTER-019`.
+- Branch: `chapter19`.
+- Stage: Editorial Review.
+- Reviewed Author Draft commit: `68353201053ff2632417beea8208cc977a6a7986`.
+- Manuscript path: `book/03-architecture-playbook/19-freezing-architecture-without-freezing-learning.md`.
+- Canonical brief path preserved:
+  `editor/chapter-briefs/CHAPTER-019-freezing-architecture-without-freezing-learning.md`.
+- Part position: sixth and final chapter of Part III - Architecture Playbook.
+- Primary concept: none by current Part III practice-chapter convention.
+- Central practice: `RITUAL-002` - Architecture Freeze.
+- Central vocabulary support: `VOCAB-006` - Architecture Freeze.
+- Outcome: Approved with minor changes.
+- Material editorial changes:
+  - made the story title, The Freeze That Froze the Wrong Thing, explicit in the opening scene;
+  - clarified that the team's need for stability was real before showing why the freeze wording was vague;
+  - refined the service-tool ambiguity so the issue reads as a mental-model error rather than carelessness;
+  - sharpened the distinction between Architecture Freeze and code, feature, branch, or release freezes;
+  - softened artifact-container language so the chapter emphasizes decision discipline rather than a canonical container.
+- Section-order result: passed. The manuscript preserves the required order: Opening Quote, Story, Discussion,
+  Engineering Principle, Architecture Exercise, Principal's Notebook, ADR, Editor's Commentary.
+- Principal's Notebook result: exactly three short observations.
+- Architecture Freeze distinction result: passed. Architecture Freeze remains temporary stabilization of named
+  architectural decisions, not code freeze, feature freeze, branch freeze, release freeze, approval, or management
+  sign-off.
+- Named-decision result: passed. The story and discussion freeze the configuration protocol boundary, service-tool
+  product-message promise, persistent profile format version, and migration path rather than a vague architecture area.
+- Exception and learning result: passed. Exceptions remain owned, evidence-driven, recorded paths; validation, QA,
+  manufacturing, support, field feedback, diagnostics, and compatibility testing remain active learning channels.
+- Chapter 18 boundary result: passed. Architecture Review is referenced as predecessor practice without reteaching the
+  review ritual, review participants, review comments, or review outcomes.
+- Later-part boundary result: passed. The chapter does not become release governance, QA process, manufacturing
+  playbook, field-service process, incident ritual, Architecture Health Review, Architecture Court, or Part IV content.
+- Unchanged files confirmed: canonical brief, `knowledge/index.yaml`, PEAK concept files,
+  `editor/CHAPTER_ARCHITECTURE.md`, Part III README, table of contents, `editor/CANON.md`, and Chapters 1-18.
+- Changed files:
+  - `book/03-architecture-playbook/19-freezing-architecture-without-freezing-learning.md`
+  - `editor/EDITOR_LOG.md`
+- Final validation completed after this log entry:
+  - Direct Editorial Review assertions: passed for clean baseline, reviewed SHA matching the Author Draft commit,
+    expected changed files only, exact section order, required sections unique, exactly three Principal's Notebook
+    observations, unresolved marker absence, `CHAPTER-019` remaining `draft`, no primary concept introduced, exact
+    relationship set preserved, no new PEAK ID, unchanged canonical brief, unchanged `knowledge/index.yaml`, unchanged
+    PEAK concept files, unchanged `editor/CHAPTER_ARCHITECTURE.md`, unchanged Part III README, unchanged table of
+    contents, unchanged `editor/CANON.md`, unchanged Chapters 1-18, Chapter 18 and later-part boundaries, and no
+    tracked `site/` output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini book/03-architecture-playbook/19-freezing-architecture-without-freezing-learning.md editor/EDITOR_LOG.md`: passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed with no tracked `site/` output.
+- Next lifecycle stage: Canon Review after this Editorial Review commit is committed and pushed.
+- Do not perform Canon Review, Technical Review, Freeze Review, PR creation, or merge as part of this phase.

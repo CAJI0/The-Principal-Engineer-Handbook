@@ -6,7 +6,9 @@
 
 ## Story
 
-The team called it a freeze because that sounded safer than what it was.
+The team later called it The Freeze That Froze the Wrong Thing.
+
+At the time, they called it a freeze because that sounded safer than what it was.
 
 The product was close to release validation. It was the same long-lived embedded system the team had been carrying
 through the last few architecture decisions: device firmware, a gateway, a service tool, manufacturing fixtures, QA
@@ -33,7 +35,7 @@ The release owner said the sentence everyone expected:
 
 > The architecture is frozen.
 
-No one objected. Everyone wanted stability. The firmware team wanted the protocol to stop moving so tests would mean
+No one objected. Everyone wanted stability, and the need was real. The firmware team wanted the protocol to stop moving so tests would mean
 something. The gateway team wanted to stop changing adapters. Manufacturing needed station scripts to settle. QA needed
 the validation matrix to stop reshaping itself. Support needed stable diagnostic wording before training began. Release
 needed to know whether the product was converging.
@@ -43,7 +45,8 @@ The sentence felt responsible.
 It was also too vague to be architecture.
 
 Firmware interpreted the freeze as no protocol changes. The gateway team interpreted it as no API changes to the gateway
-adapter. The service-tool team kept changing validation logic because the UI was not "architecture." Manufacturing
+adapter. The service-tool team kept changing validation logic because the UI did not feel like architecture.
+Manufacturing
 treated a fixture compatibility fix as allowed because station work had always been outside firmware scope. Support found
 a field recovery issue and assumed the freeze blocked changing the recovery wording. QA found evidence that one old
 gateway release did not forward a profile variant the way the RFC assumed, and nobody knew whether that evidence was a
@@ -176,7 +179,8 @@ high-risk phase.
 
 That distinction is the whole chapter.
 
-It is not code freeze, feature freeze, branch freeze, or release freeze.
+It is not code freeze, feature freeze, branch freeze, or release freeze. Those freezes may matter, but they stabilize
+different objects.
 
 Many teams reach for a freeze at the right moment and describe it in the wrong language. They are near validation, field
 trial, integration rehearsal, manufacturing transition, or release hardening. Architectural churn has become expensive.
@@ -185,7 +189,7 @@ chasing structural movement. The instinct is sound.
 
 The danger is the phrase "architecture is frozen."
 
-Architecture is too large a thing to freeze with one sentence. If the team does not name the decision, people will
+Architecture is too large a thing to freeze with one sentence. If the team does not name the frozen decision, people will
 freeze different surfaces. Firmware freezes protocol bytes. Gateway freezes adapter signatures. Service tooling keeps
 changing semantics because it feels like UI. Manufacturing treats fixture behavior as local. QA treats evidence as a
 threat. Support treats field findings as post-release work. Release treats all movement as risk.
@@ -290,7 +294,7 @@ protocol boundary and still decide it is not ready to freeze. Or it may review a
 narrow part of it for validation. The freeze must name its own scope, owner, allowed movement, exception path, evidence
 threshold, and exit criteria.
 
-The artifacts from Chapter 17 keep the freeze discoverable.
+The records from Chapter 17 keep the freeze discoverable.
 
 An RFC (`ARTIFACT-002`) may carry the proposal and review outcome into the freeze. An ADR (`ARTIFACT-001`) may record
 the accepted frozen decision when it has long-lived architectural cost. A Decision Journal (`ARTIFACT-003`) may capture
@@ -304,7 +308,7 @@ it affects. Otherwise the freeze becomes oral history with release pressure atta
 This does not require a new artifact.
 
 The chapter does not need a Freeze Contract, Exception Ledger, Change Permit, Freeze Board, or universal checklist. A
-team may use a local table, a ticket, an ADR section, an RFC update, or a ledger row. The canonical point is the
+team may use a local table, a ticket, an ADR section, an RFC update, or a ledger row. The point is the
 decision discipline, not the container.
 
 Exit criteria are what keep a freeze from becoming architecture by neglect.
