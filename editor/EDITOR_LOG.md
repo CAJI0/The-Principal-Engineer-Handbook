@@ -7948,6 +7948,62 @@ Pull request readiness:
 - Next lifecycle stage: Technical Review after this Canon Review commit is committed and pushed.
 - Do not perform Technical Review, Freeze Review, PR creation, or merge as part of this phase.
 
+## Phase 107 Chapter 20 Technical Review
+
+- Chapter: From Prototype to Product.
+- Stable ID: `CHAPTER-020`.
+- Branch: `chapter20`.
+- Stage: Technical Review.
+- Reviewed Canon Review commit: `3ca211d32c9088041def787c71b6b3aabbc6739b`.
+- Manuscript path: `book/04-building-a-product/20-from-prototype-to-product.md`.
+- Canonical brief path preserved:
+  `editor/chapter-briefs/CHAPTER-020-from-prototype-to-product.md`.
+- Part position: first chapter of Part IV - Building a Product.
+- Primary concept: none.
+- Central anchor: `FAILURE-003` - The Successful Prototype.
+- Outcome: Approve.
+- Technical domains checked: prototype firmware and hardware assumptions; known board revision and second board
+  revision; manual calibration; hard-coded configuration; service-tool diagnostics; vendor example driver dependency;
+  lab-only update path; direct hardware state access; ad-hoc manufacturing script; developer-only diagnostics; board,
+  lot, and component variability; field diagnosis; configuration variants; update and recovery assumptions; release
+  packaging; temporary bypass; product baseline decisions; ownership and supportability.
+- Material corrections during Technical Review: none.
+- Prototype credibility assessment: passed. Prototype shortcuts are realistic, proportionate, and not caricatured; the
+  demo is valuable evidence without proving product readiness.
+- Board and calibration assessment: passed. Known board revision, second board revision, sensor lot, analog front-end
+  variation, manual calibration, and repeatability concerns are credible.
+- Manufacturing repeatability assessment: passed. Station fixture and script assumptions are realistic and named without
+  becoming Chapter 21.
+- Service and diagnostic assessment: passed. Debug service tool, product-level rejection reasons, raw hardware state,
+  field diagnosis, and support visibility are credible.
+- Update and recovery assessment: passed. Lab-only update and recoverable product update gap are credible without
+  becoming Chapter 16 or Chapter 24.
+- Variants and release assessment: passed. Customer path, sensor option, configuration variant, release packaging, and
+  pilot constraints are credible without becoming Chapter 22 or Chapter 24.
+- Dependency assessment: passed. Vendor example driver is treated as a dependency decision with named surface and review
+  trigger, not automatic failure.
+- Assumption and action assessment: passed. Categories lead to owner, evidence, action, expiration, removal, or review
+  trigger rather than a generic checklist.
+- Boundary assessment: passed. Chapter 20 does not become manufacturing process, field-service playbook, observability
+  chapter, release process, configuration and variants chapter, product-management chapter, QA handbook, or generic
+  checklist.
+- Unchanged files confirmed: canonical brief, `knowledge/index.yaml`, PEAK concept files,
+  `editor/CHAPTER_ARCHITECTURE.md`, Part IV README, table of contents, `editor/CANON.md`, and Chapters 1-19.
+- Changed files:
+  - `editor/EDITOR_LOG.md`
+- Final validation completed after this log entry:
+  - Direct Technical Review assertions: passed.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini book/04-building-a-product/20-from-prototype-to-product.md editor/EDITOR_LOG.md`: passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed with no tracked `site/` output.
+- Next lifecycle stage: Freeze Review after this Technical Review commit is committed and pushed.
+- Do not perform Freeze Review, PR creation, or merge as part of this phase.
+
 ## Phase 99 Chapter 19 Editorial Review
 
 - Chapter: Freezing Architecture Without Freezing Learning.
