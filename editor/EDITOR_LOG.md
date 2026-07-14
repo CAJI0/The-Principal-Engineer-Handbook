@@ -7821,6 +7821,65 @@ Pull request readiness:
 - Do not perform Editorial Review, Canon Review, Technical Review, Freeze Review, PR creation, or merge as part of this
   phase.
 
+## Phase 105 Chapter 20 Editorial Review
+
+- Chapter: From Prototype to Product.
+- Stable ID: `CHAPTER-020`.
+- Branch: `chapter20`.
+- Stage: Editorial Review.
+- Reviewed Author Draft commit: `a47c26f72a07f5648850fd99869bcd5eb648068a`.
+- Manuscript path: `book/04-building-a-product/20-from-prototype-to-product.md`.
+- Canonical brief path preserved:
+  `editor/chapter-briefs/CHAPTER-020-from-prototype-to-product.md`.
+- Part position: first chapter of Part IV - Building a Product.
+- Primary concept: none.
+- Central anchor: `FAILURE-003` - The Successful Prototype.
+- Outcome: Approve.
+- Material editorial changes: tightened the opening story setup, combined a two-line pacing beat around the Principal
+  Engineer's replacement question, and clarified that the prototype-to-product gap is chapter-local language rather than a
+  new metric.
+- Story and argument result: passed. The manuscript uses The Demo That Became the Product, treats the prototype as
+  valuable evidence, shows schedule pressure turning it into the product baseline, and moves the reader from shipping
+  speed to assumption classification, ownership, evidence gaps, and product action.
+- Prototype/product distinction result: passed. The chapter distinguishes prototype evidence from product promises
+  without moralizing about prototypes or implying that production requires a rewrite.
+- Productization-gap result: passed. The gap is clear, chapter-local, and explicitly not a PEAK metric or vocabulary
+  addition.
+- Assumption-classification result: passed. Product contract, implementation detail, temporary shortcut, evidence gap,
+  residual risk, and removed shortcut are understandable without becoming a rigid universal taxonomy.
+- Temporary-solution result: passed. Shortcuts require owner, expiration, decision, accepted risk, or removal.
+- Simplicity/flexibility result: passed. The manuscript preserves simple product behavior while rejecting speculative
+  flexibility for imagined future variants.
+- Later Part IV boundary result: passed. Manufacturing and field reality, configuration and variants, observability,
+  release discipline, and the reference project are named as product realities without teaching Chapters 21-25 early.
+- Earlier-parts boundary result: passed. Part III practices are used as foundation without repeating Chapters 15, 17,
+  18, or 19.
+- Section-architecture result: passed. The manuscript preserves the required order: Opening Quote, Story, Discussion,
+  Engineering Principle, Architecture Exercise, Principal's Notebook, ADR, Editor's Commentary.
+- Principal's Notebook result: exactly three short observations.
+- Chapter-local ADR result: passed. The ADR makes a real architecture-process decision about making the prototype
+  configuration path product-ready before release baseline.
+- Changed files:
+  - `book/04-building-a-product/20-from-prototype-to-product.md`
+  - `editor/EDITOR_LOG.md`
+- Final validation completed after this log entry:
+  - Direct Editorial Review assertions: passed for expected changed files only, exact section order, required sections
+    unique, exactly three Principal's Notebook observations, unresolved marker absence, `CHAPTER-020` remaining `draft`,
+    canonical brief unchanged, `knowledge/index.yaml` unchanged, exact relationship set preserved, unchanged PEAK
+    concept files, unchanged `editor/CHAPTER_ARCHITECTURE.md`, unchanged Part IV README, unchanged table of contents,
+    unchanged `editor/CANON.md`, and no tracked `site` output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini book/04-building-a-product/20-from-prototype-to-product.md editor/EDITOR_LOG.md`:
+    passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed with no tracked `site/` output.
+- Next lifecycle stage: Canon Review after this Editorial Review commit is committed and pushed.
+- Do not perform Canon Review, Technical Review, Freeze Review, PR creation, or merge as part of this phase.
+
 ## Phase 99 Chapter 19 Editorial Review
 
 - Chapter: Freezing Architecture Without Freezing Learning.

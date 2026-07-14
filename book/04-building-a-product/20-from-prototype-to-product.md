@@ -12,8 +12,8 @@ At first, that was true.
 
 The product was an embedded controller for a field device that had been awkward to configure, slow to diagnose, and
 expensive to service. The customer wanted a working demonstration before committing to a wider program. The team had
-six weeks, one hardware spin, a vendor driver package, a bench fixture, and a sponsor who wanted to see the device move
-from command to response without another architecture meeting.
+six weeks, one hardware spin, a vendor driver package, a bench fixture, and a sponsor who wanted to see the device
+respond to a command without another architecture meeting.
 
 The prototype did exactly what a good prototype should do.
 
@@ -106,9 +106,8 @@ The Principal Engineer wrote a different question:
 > Which prototype assumptions must be promoted, replaced, owned, tested, or intentionally accepted before this becomes
 > the product?
 
-The question did not slow the room because it was abstract.
-
-It slowed the room because everyone could name an assumption.
+The question did not slow the room because it was abstract. It slowed the room because everyone could name an
+assumption.
 
 The firmware lead named the hard-coded configuration. The hardware owner named the board revision and sensor lot. The
 manufacturing engineer named the manual calibration step. The service-tool owner named the debug tool. Support named
@@ -232,8 +231,8 @@ The distance between those two worlds is the `productization` gap: the distance 
 assumptions and the product's required operating reality.
 
 The gap is not a new metric. Change Radius already gives the team the useful question: how much system surface must
-change, be reviewed, or be retested when one decision changes? The prototype-to-product gap is a chapter-local way of
-noticing where prototype assumptions will create that surface.
+change, be reviewed, or be retested when one decision changes? The prototype-to-product gap is chapter-local language
+for noticing where prototype assumptions will create that surface.
 
 Manual setup becomes production configuration. A lab fixture becomes manufacturing process. A debug log becomes field
 diagnostic need. One customer path becomes a variant matrix. A direct dependency becomes a support obligation. A
