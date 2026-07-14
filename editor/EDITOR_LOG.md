@@ -7651,3 +7651,90 @@ Pull request readiness:
 - PR readiness: Chapter 18 is ready for a pull request after this Freeze Review commit is committed and pushed.
 - Recommended pull request title: Chapter 18: Reviewing Architecture Before It Hardens.
 - Do not create the pull request or merge as part of this phase.
+
+## Phase 97 Chapter 19 Canonical Brief Registration
+
+- Chapter: Freezing Architecture Without Freezing Learning.
+- Stable ID: `CHAPTER-019`.
+- Branch: `chapter19`.
+- Stage: Canonical Brief Registration.
+- Verified baseline `origin/main`: `63351df957acb62236ef5ff229cfed10718d4d0b`.
+- Baseline evidence: PR #20 squash commit, `Chapter 18: Reviewing Architecture Before It Hardens (#20)`.
+- Squash verification result: passed. Commit `63351df957acb62236ef5ff229cfed10718d4d0b` exists, is an ancestor of
+  `origin/main`, and has parent `be9bf64b776b935bb5d94f240a91156a1b2e59f4`.
+- Chapter 18 final-file verification result: passed. The checked Chapter 18 lifecycle files in squash commit
+  `63351df957acb62236ef5ff229cfed10718d4d0b` match the Chapter 18 Freeze commit
+  `a28ec554b8b57e6bbc727b1f7b757127ce267275`.
+- Canonical predecessor: `CHAPTER-018` - Reviewing Architecture Before It Hardens.
+- Part position: sixth and final chapter of Part III - Architecture Playbook.
+- Primary concept: none by current Part III practice-chapter convention.
+- Central practice: `RITUAL-002` - Architecture Freeze.
+- Outcome: Approved canonical brief registration.
+- Reader-facing draft created: no.
+- Canonical brief created:
+  `editor/chapter-briefs/CHAPTER-019-freezing-architecture-without-freezing-learning.md`.
+- Index registration: `CHAPTER-019` added to `knowledge/index.yaml` with status `draft` and expected manuscript path
+  `../book/03-architecture-playbook/19-freezing-architecture-without-freezing-learning.md`.
+- Registered relationship set:
+  - `CHAPTER-019 illustrates RITUAL-002`
+  - `CHAPTER-019 references VOCAB-006`
+  - `CHAPTER-019 references RITUAL-001`
+  - `CHAPTER-019 references ARTIFACT-001`
+  - `CHAPTER-019 references ARTIFACT-002`
+  - `CHAPTER-019 references ARTIFACT-003`
+  - `CHAPTER-019 references ARTIFACT-006`
+  - `CHAPTER-019 references LAW-001`
+  - `CHAPTER-019 references LAW-002`
+  - `CHAPTER-019 references LAW-005`
+  - `CHAPTER-019 references LAW-007`
+  - `CHAPTER-019 references VOCAB-001`
+  - `CHAPTER-019 references METRIC-001`
+  - `CHAPTER-019 references METRIC-003`
+- Selected concept result: `RITUAL-002`, `VOCAB-006`, `RITUAL-001`, `ARTIFACT-001`, `ARTIFACT-002`,
+  `ARTIFACT-003`, `ARTIFACT-006`, `LAW-001`, `LAW-002`, `LAW-005`, `LAW-007`, `VOCAB-001`, `METRIC-001`, and
+  `METRIC-003` are materially selected.
+- Rejected concept result: `VOCAB-007`, `METRIC-005`, `RITUAL-004`, `RITUAL-005`, `RITUAL-006`, `SMELL-001`,
+  `SMELL-004`, `SMELL-005`, `ANTIPATTERN-006`, and `FAILURE-005` were inspected and not selected for outgoing
+  Chapter 19 relationships.
+- No-new-concept result: passed. No Freeze Contract, Exception Ledger, Learning Window, Architecture Lock, Change
+  Permit, Stability Budget, Freeze Board, Freeze Checklist, Freeze Gate, Freeze Scope Register, Revalidation Ticket,
+  PEAK ID, concept file, or new relationship verb was added.
+- Canonical scope result: the brief defines Architecture Freeze as temporary stabilization of named architectural
+  decisions during a high-risk phase, with explicit scope, owner, allowed movement, exception path, evidence threshold,
+  learning channels, exit criteria, and revalidation.
+- Named-decision result: passed. The brief rejects vague freeze subjects and requires frozen decisions such as protocol
+  boundary, data ownership, recovery authority, persistent format, compatibility promise, migration path, dependency
+  assumption, or field-compatibility behavior.
+- Learning result: passed. The brief preserves validation, compatibility testing, diagnostics, support observations,
+  manufacturing findings, field feedback, security findings, performance evidence, and operability evidence during
+  freeze.
+- Chapter 18 boundary result: passed. Chapter 18 owns Architecture Review before hardening; Chapter 19 owns controlled
+  stability after selected decisions require freeze. Review approval does not automatically create a freeze.
+- Earlier-chapter boundary result: passed. Chapters 15, 16, and 17 remain the owners of Change Radius, failure and
+  recovery design, and ADR/RFC artifact mechanics.
+- Later-part boundary result: passed. Release governance, manufacturing playbooks, field service process, incident
+  rituals, Architecture Health Review operation, Architecture Court operation, and legacy recovery remain future scope.
+- Reader-facing architecture preserved: Opening Quote, Story, Discussion, Engineering Principle, Architecture Exercise,
+  Principal's Notebook, ADR, and Editor's Commentary.
+- Changed files:
+  - `editor/chapter-briefs/CHAPTER-019-freezing-architecture-without-freezing-learning.md`
+  - `editor/EDITOR_LOG.md`
+  - `knowledge/index.yaml`
+- Final validation completed after this log entry:
+  - Direct Canonical Brief assertions: passed for clean baseline, `HEAD` matching `origin/main` before branch creation,
+    verified PR #20 squash baseline, expected changed files only, `CHAPTER-019` draft status, Chapters 1-18 remaining
+    canonical, exact registered relationship set, existing relationship targets, no duplicate or self-edge, no new PEAK
+    ID, manuscript absence, unchanged Part III README, unchanged `editor/CHAPTER_ARCHITECTURE.md`, unchanged table of
+    contents, unchanged Chapters 1-18, unchanged PEAK concept files, Chapter 18 boundary, later-part boundaries, and no
+    tracked `site/` output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini editor/chapter-briefs/CHAPTER-019-freezing-architecture-without-freezing-learning.md editor/EDITOR_LOG.md`: passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed; no generated `site/` output is tracked.
+- Next lifecycle stage: Author Draft after this Canonical Brief Registration commit is committed and pushed.
+- Do not create the manuscript, perform review, mark Chapter 19 canonical, create a pull request, or merge as part of
+  this phase.

@@ -364,6 +364,11 @@ entities:
       name: Reviewing Architecture Before It Hardens
       path: ../book/03-architecture-playbook/18-reviewing-architecture-before-it-hardens.md
       status: canonical
+    - id: CHAPTER-019
+      type: chapter
+      name: Freezing Architecture Without Freezing Learning
+      path: ../book/03-architecture-playbook/19-freezing-architecture-without-freezing-learning.md
+      status: draft
   adrs:
     - id: ADR-001
       type: adr
@@ -865,5 +870,47 @@ relationships:
     type: references
     to: METRIC-001
   - from: CHAPTER-018
+    type: references
+    to: METRIC-003
+  - from: CHAPTER-019
+    type: illustrates
+    to: RITUAL-002
+  - from: CHAPTER-019
+    type: references
+    to: VOCAB-006
+  - from: CHAPTER-019
+    type: references
+    to: RITUAL-001
+  - from: CHAPTER-019
+    type: references
+    to: ARTIFACT-001
+  - from: CHAPTER-019
+    type: references
+    to: ARTIFACT-002
+  - from: CHAPTER-019
+    type: references
+    to: ARTIFACT-003
+  - from: CHAPTER-019
+    type: references
+    to: ARTIFACT-006
+  - from: CHAPTER-019
+    type: references
+    to: LAW-001
+  - from: CHAPTER-019
+    type: references
+    to: LAW-002
+  - from: CHAPTER-019
+    type: references
+    to: LAW-005
+  - from: CHAPTER-019
+    type: references
+    to: LAW-007
+  - from: CHAPTER-019
+    type: references
+    to: VOCAB-001
+  - from: CHAPTER-019
+    type: references
+    to: METRIC-001
+  - from: CHAPTER-019
     type: references
     to: METRIC-003
