@@ -35,10 +35,10 @@ The release owner said the sentence everyone expected:
 
 > The architecture is frozen.
 
-No one objected. Everyone wanted stability, and the need was real. The firmware team wanted the protocol to stop moving so tests would mean
-something. The gateway team wanted to stop changing adapters. Manufacturing needed station scripts to settle. QA needed
-the validation matrix to stop reshaping itself. Support needed stable diagnostic wording before training began. Release
-needed to know whether the product was converging.
+No one objected. Everyone wanted stability, and the need was real. The firmware team wanted the protocol to stop moving
+so tests would mean something. The gateway team wanted to stop changing adapters. Manufacturing needed station scripts
+to settle. QA needed the validation matrix to stop reshaping itself. Support needed stable diagnostic wording before
+training began. Release needed to know whether the product was converging.
 
 The sentence felt responsible.
 
@@ -46,11 +46,10 @@ It was also too vague to be architecture.
 
 Firmware interpreted the freeze as no protocol changes. The gateway team interpreted it as no API changes to the gateway
 adapter. The service-tool team kept changing validation logic because the UI did not feel like architecture.
-Manufacturing
-treated a fixture compatibility fix as allowed because station work had always been outside firmware scope. Support found
-a field recovery issue and assumed the freeze blocked changing the recovery wording. QA found evidence that one old
-gateway release did not forward a profile variant the way the RFC assumed, and nobody knew whether that evidence was a
-bug, an exception, a release blocker, or a reason to reopen the decision.
+Manufacturing treated a fixture compatibility fix as allowed because station work had always been outside firmware
+scope. Support found a field recovery issue and assumed the freeze blocked changing the recovery wording. QA found
+evidence that one old gateway release did not forward a profile variant the way the RFC assumed, and nobody knew whether
+that evidence was a bug, an exception, a release blocker, or a reason to reopen the decision.
 
 The same freeze had six meanings.
 
