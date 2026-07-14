@@ -7165,6 +7165,51 @@ Pull request readiness:
 - Next lifecycle stage: Canon Review after this Editorial Review commit is committed and pushed.
 - Do not perform Canon Review, Technical Review, Freeze Review, PR creation, or merge as part of this phase.
 
+## Phase 94 Chapter 18 Canon Review
+
+- Chapter: Reviewing Architecture Before It Hardens.
+- Stable ID: `CHAPTER-018`.
+- Branch: `chapter18`.
+- Stage: Canon Review.
+- Reviewed Editorial Review commit: `3598a8b4c34b2884be7c49f01be728b38c0d23da`.
+- Manuscript path: `book/03-architecture-playbook/18-reviewing-architecture-before-it-hardens.md`.
+- Canonical brief path preserved: `editor/chapter-briefs/CHAPTER-018-reviewing-architecture-before-it-hardens.md`.
+- Part position: fifth chapter of Part III - Architecture Playbook.
+- Primary concept: none by canonical decision for Part III practice chapters.
+- Central practice: `RITUAL-001` - Architecture Review.
+- Outcome: Approve.
+- Canonical sources checked: repository README, book bible, style guide, architecture vision, canon, chapter architecture, review process, source-of-truth policy, knowledge model, roadmap, open questions, editor log, editorial ADRs, PEAK index, Part III README, table of contents, Chapter 18 canonical brief, Chapter 18 manuscript, registered Chapter 18 PEAK concept files, canonical Chapters 1-17, and Chapter 17 review and Freeze precedent.
+- No-primary result: passed. Chapter 18 remains a Part III practice chapter carried by the exact relationship set rather than by a primary PEAK concept.
+- Architecture Review result: passed. The manuscript treats `RITUAL-001` as structured challenge before hardening, not approval, governance-board operation, meeting facilitation, release gating, or code review.
+- Review-before-hardening result: passed. Hardening is defined through code, tests, data formats, tools, release plans, staffing, customer commitments, compatibility promises, rollback cost, and economics of alternatives.
+- Ownership and participant findings: passed. Review subject, decision owner, proposal owner, affected owners, reviewers, facilitator, and follow-up owners are distinct and selected by affected architecture rather than hierarchy.
+- Evidence and disagreement findings: passed. Evidence, assumptions, preferences, product constraints, operational constraints, unresolved uncertainty, accepted risk, blockers, and disagreement are separated and converted into review material.
+- Outcome and closure findings: passed. Comments close into accepted changes, rejected concerns with reason, evidence requests, split decisions, deferrals, accepted risks, escalation, or record updates.
+- ADR/RFC/Decision Journal/Architecture Ledger result: passed. The artifacts are used as inputs and outputs of review without duplicating Chapter 17 artifact mechanics.
+- RFC Friday result: passed. `RITUAL-006` feeds review and does not replace Architecture Review for broad Change Radius or unresolved cross-boundary risk.
+- Change Radius result: passed. `VOCAB-001` and `METRIC-001` are used to scope affected surface and participants without becoming a fake-precision score.
+- Discoverability result: passed. `METRIC-003` appears through durable record updates that make the decision, owner, and contract findable.
+- Chapter 17 boundary result: passed. Chapter 18 does not reteach ADR/RFC artifact choice, status, closure, supersession, or discoverability mechanics.
+- Chapter 19 boundary result: passed. Chapter 18 does not teach Architecture Freeze, exception handling, revalidation, or post-Freeze change control.
+- Relationship findings: passed. Every registered Chapter 18 target is materially present, all targets exist, and the exact outgoing relationship set is unchanged.
+- Section-architecture result: passed. The manuscript preserves the required section order: Opening Quote, Story, Discussion, Engineering Principle, Architecture Exercise, Principal's Notebook, ADR, Editor's Commentary.
+- Corrections made during Canon Review: restored the canonical-brief phrase that alternatives become economically fake when hardening makes rejection possible in language but not in practice.
+- Changed files:
+  - `book/03-architecture-playbook/18-reviewing-architecture-before-it-hardens.md`
+  - `editor/EDITOR_LOG.md`
+- Final validation completed after this log entry:
+  - Direct Canon Review assertions: passed for clean baseline, `HEAD` matching `origin/chapter18` before review, reviewed SHA matching the Editorial Review commit, expected changed files only, exact section order, unique required sections, exactly three Principal's Notebook observations, unresolved marker absence, `CHAPTER-018` remaining `draft`, no primary concept introduced, exact registered relationship set preserved, existing relationship targets, no duplicate, unexpected, or self-edge, no new PEAK ID, canonical thesis wording restored, unchanged canonical brief, unchanged `knowledge/index.yaml`, unchanged PEAK concept files, unchanged `editor/CHAPTER_ARCHITECTURE.md`, unchanged Part III README, unchanged table of contents, unchanged `editor/CANON.md`, unchanged Chapters 1-17, Chapter 17 and Chapter 19 boundaries, and no tracked `site` output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini book/03-architecture-playbook/18-reviewing-architecture-before-it-hardens.md editor/EDITOR_LOG.md`: passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed; no generated `site/` output is tracked.
+- Next lifecycle stage: Technical Review after this Canon Review commit is committed and pushed.
+- Do not perform Technical Review, Freeze Review, PR creation, or merge as part of this phase.
+
 ## Phase 88 Chapter 17 Canon Review
 
 - Chapter: Using ADRs and RFCs Well.

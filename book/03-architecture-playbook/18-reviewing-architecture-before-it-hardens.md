@@ -95,7 +95,7 @@ Architecture Review is not approval after implementation. It is a structured cha
 
 That timing matters more than the meeting format.
 
-A decision hardens when the system begins to depend on it. Code depends on it. Tests encode it. Data formats and protocols implement it. Tools assume it. Release plans use it. Teams staff around it. Customer commitments reflect it. Compatibility promises appear in support material. Rollback becomes costly. Alternatives still exist in language, but not in economics.
+A decision hardens when the system begins to depend on it. Code depends on it. Tests encode it. Data formats and protocols implement it. Tools assume it. Release plans use it. Teams staff around it. Customer commitments reflect it. Compatibility promises appear in support material. Rollback becomes costly. Alternatives still exist in language, but they have become economically fake.
 
 The review in the story happened late enough to reveal the trap. The team had done responsible Chapter 17 work. It had an RFC. It had an ADR draft. It had reviewers. The problem was that implementation had started turning one proposal into several system facts before Architecture Review (`RITUAL-001`) challenged the decision.
 
