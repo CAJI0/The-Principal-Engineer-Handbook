@@ -363,7 +363,7 @@ entities:
       type: chapter
       name: Reviewing Architecture Before It Hardens
       path: ../book/03-architecture-playbook/18-reviewing-architecture-before-it-hardens.md
-      status: draft
+      status: canonical
   adrs:
     - id: ADR-001
       type: adr
