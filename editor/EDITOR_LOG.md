@@ -8313,6 +8313,66 @@ Pull request readiness:
 - Next lifecycle stage: Canon Review after this Editorial Review commit is committed and pushed.
 - Do not perform Canon Review, Technical Review, Freeze Review, PR creation, or merge as part of this phase.
 
+## Phase 112 Chapter 21 Canon Review
+
+- Chapter: Designing for Manufacturing and Field Reality.
+- Stable ID: `CHAPTER-021`.
+- Branch: `chapter21`.
+- Stage: Canon Review.
+- Reviewed Editorial Review commit: `7ec2b1b146fef91204ccc3bcd25e1993a1111cf0`.
+- Manuscript path: `book/04-building-a-product/21-designing-for-manufacturing-and-field-reality.md`.
+- Canonical brief path preserved:
+  `editor/chapter-briefs/CHAPTER-021-designing-for-manufacturing-and-field-reality.md`.
+- Part position: second chapter of Part IV - Building a Product.
+- Primary concept: none.
+- Central anchor: none; manufacturing reality and field reality remain chapter-local frames.
+- Outcome: Approve.
+- Canonical sources checked: Chapter 21 canonical brief, `knowledge/index.yaml`, registered PEAK concept files, required
+  chapter architecture, table of contents, Part IV README, Chapter 20 review/freeze precedent, and Chapters 18-19
+  review/freeze foundations.
+- No-primary result: passed. The manuscript introduces no primary concept, no central anchor, and no replacement
+  chapter practice.
+- Manufacturing and field frame result: passed. Manufacturing reality and field reality are chapter-local frames, not
+  new PEAK concepts, and they are applied as product architecture pressure rather than process ownership.
+- State/API/dependency result: passed. The chapter materially applies `LAW-001`, `LAW-002`, and `LAW-007` through
+  calibration state, identity and provisioning lifecycle, fixture and service-tool contracts, recovery promises,
+  substitute sensors, board revisions, station scripts, labels, service laptops, and update loaders.
+- Evidence and discoverability result: passed. `LAW-005`, `METRIC-003`, ADRs, Decision Journal entries, and Mistake
+  Ledger entries are used to keep manufacturing and field assumptions findable and evidence-based.
+- Change Radius result: passed. `VOCAB-001` and `METRIC-001` appear through broad manufacturing and support surfaces,
+  especially the rejected broad manufacturing mode.
+- Smell and anti-pattern result: passed. Hidden State, Silent Coupling, Platform Leakage, HAL Everywhere, Global
+  Configuration, and Temporary Solution are used as registered concepts and remain bounded to the chapter's scenario.
+- Ritual result: passed. Architecture Review and Architecture Freeze are used as supporting practices without repeating
+  Chapters 18 and 19.
+- Later Part IV boundary result: passed. Configuration and variants, embedded observability, release discipline and
+  upgrade paths, and the reference project remain future scope for Chapters 22-25.
+- Earlier-parts boundary result: passed. Chapters 1-20 remain canonical context and constraints, with Chapter 20 used
+  only as immediate predecessor setup.
+- Relationship findings: passed. Every registered Chapter 21 relationship target is materially present, all targets
+  exist, and the exact outgoing relationship set is unchanged.
+- Corrections made during Canon Review: none.
+- Changed files:
+  - `editor/EDITOR_LOG.md`
+- Final validation completed after this log entry:
+  - Direct Canon Review assertions: passed for clean baseline, reviewed SHA matching the Editorial Review commit,
+    expected changed files only, unchanged manuscript, exact section order, exactly three Principal's Notebook
+    observations, `CHAPTER-021` remaining `draft`, no primary concept introduced, exact relationship set preserved,
+    material concept coverage, unchanged canonical brief, unchanged `knowledge/index.yaml`, unchanged PEAK concept
+    files, unchanged `editor/CHAPTER_ARCHITECTURE.md`, unchanged Part IV README, unchanged table of contents,
+    unchanged `editor/CANON.md`, unchanged Chapters 1-20, and no tracked `site` output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini book/04-building-a-product/21-designing-for-manufacturing-and-field-reality.md editor/EDITOR_LOG.md`:
+    passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed with no tracked `site/` output.
+- Next lifecycle stage: Technical Review after this Canon Review commit is committed and pushed.
+- Do not perform Technical Review, Freeze Review, PR creation, or merge as part of this phase.
+
 ## Phase 99 Chapter 19 Editorial Review
 
 - Chapter: Freezing Architecture Without Freezing Learning.
