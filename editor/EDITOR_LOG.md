@@ -8433,6 +8433,84 @@ Pull request readiness:
 - Next lifecycle stage: Freeze Review after this Technical Review commit is committed and pushed.
 - Do not perform Freeze Review, PR creation, or merge as part of this phase.
 
+## Phase 114 Chapter 21 Freeze Review
+
+- Chapter: Designing for Manufacturing and Field Reality.
+- Stable ID: `CHAPTER-021`.
+- Branch: `chapter21`.
+- Stage: Freeze Review.
+- Reviewed Technical Review commit: `d77dea816ff7c0ae76e229f4aea55c88359494c7`.
+- Prior review commits confirmed in history:
+  - Editorial Review: `7ec2b1b146fef91204ccc3bcd25e1993a1111cf0`.
+  - Canon Review: `326e7d109f2caab5691cfa2b367e7a30c65e16f6`.
+  - Technical Review: `d77dea816ff7c0ae76e229f4aea55c88359494c7`.
+- Manuscript path: `book/04-building-a-product/21-designing-for-manufacturing-and-field-reality.md`.
+- Canonical brief path preserved:
+  `editor/chapter-briefs/CHAPTER-021-designing-for-manufacturing-and-field-reality.md`.
+- Part position: second chapter of Part IV - Building a Product.
+- Primary concept: none.
+- Central anchor: none; manufacturing reality and field reality remain chapter-local frames.
+- Outcome: Approve.
+- Status transition: `CHAPTER-021` moved from `draft` to `canonical` in `knowledge/index.yaml`.
+- Freeze scope result: passed. Freeze changed only the chapter status and this log entry; no manuscript, canonical brief,
+  PEAK concept, chapter architecture, Part IV README, table of contents, or prior chapter content changed.
+- Prior review ancestry result: passed. Editorial, Canon, and Technical Review commits are ancestors of the Freeze
+  baseline.
+- Manuscript freeze result: passed. The final manuscript keeps the required section order: Opening Quote, Story,
+  Discussion, Engineering Principle, Architecture Exercise, Principal's Notebook, ADR, Editor's Commentary.
+- Principal's Notebook result: exactly three short observations.
+- Canon freeze result: passed. Chapter 21 has no primary concept, no central anchor, no new PEAK concept, and preserves
+  the exact registered relationship set.
+- Registered relationship set preserved:
+  - `CHAPTER-021 references LAW-001`
+  - `CHAPTER-021 references LAW-002`
+  - `CHAPTER-021 references LAW-005`
+  - `CHAPTER-021 references LAW-007`
+  - `CHAPTER-021 references VOCAB-001`
+  - `CHAPTER-021 references METRIC-001`
+  - `CHAPTER-021 references METRIC-003`
+  - `CHAPTER-021 references ARTIFACT-001`
+  - `CHAPTER-021 references ARTIFACT-003`
+  - `CHAPTER-021 references ARTIFACT-004`
+  - `CHAPTER-021 references RITUAL-001`
+  - `CHAPTER-021 references RITUAL-002`
+  - `CHAPTER-021 references ANTIPATTERN-006`
+  - `CHAPTER-021 references SMELL-004`
+  - `CHAPTER-021 references SMELL-001`
+  - `CHAPTER-021 references SMELL-005`
+  - `CHAPTER-021 references ANTIPATTERN-002`
+  - `CHAPTER-021 references ANTIPATTERN-003`
+- Later Part IV boundary result: passed. Chapter 22 configuration and variants, Chapter 23 embedded observability,
+  Chapter 24 release discipline and upgrade paths, and Chapter 25 reference project remain future scope.
+- Earlier-parts boundary result: passed. Chapters 1-20 remain canonical and unchanged.
+- Technical readiness result: passed. The embedded scenario remains credible across calibration, identity,
+  provisioning, fixture access, board revision, substitute sensors, service diagnostics, update recovery, field logs,
+  traceability, and support handoff.
+- Part IV sequence result: passed. Chapter 21 follows Chapter 20's prototype-to-product transition by making
+  manufacturing and field assumptions explicit without writing the downstream Part IV chapters early.
+- Changed files:
+  - `editor/EDITOR_LOG.md`
+  - `knowledge/index.yaml`
+- Final validation completed after this log entry:
+  - Direct Freeze Review assertions: passed for clean baseline, reviewed SHA matching the Technical Review commit,
+    expected changed files only, unchanged manuscript, exact section order, exactly three Principal's Notebook
+    observations, `CHAPTER-021` status `canonical`, no primary concept introduced, exact relationship set preserved,
+    unchanged canonical brief, unchanged PEAK concept files, unchanged `editor/CHAPTER_ARCHITECTURE.md`, unchanged Part
+    IV README, unchanged table of contents, unchanged `editor/CANON.md`, unchanged Chapters 1-20, prior review ancestry
+    intact, and no tracked `site` output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini book/04-building-a-product/21-designing-for-manufacturing-and-field-reality.md editor/EDITOR_LOG.md`:
+    passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed with no tracked `site/` output.
+- Pull request readiness: ready for PR after this Freeze Review commit is committed and pushed.
+- Recommended PR title: Chapter 21: Designing for Manufacturing and Field Reality.
+- Do not create a pull request or merge as part of this phase.
+
 ## Phase 99 Chapter 19 Editorial Review
 
 - Chapter: Freezing Architecture Without Freezing Learning.

@@ -378,7 +378,7 @@ entities:
       type: chapter
       name: Designing for Manufacturing and Field Reality
       path: ../book/04-building-a-product/21-designing-for-manufacturing-and-field-reality.md
-      status: draft
+      status: canonical
   adrs:
     - id: ADR-001
       type: adr
