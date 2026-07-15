@@ -46,12 +46,13 @@ firmware could handle all three cases if an engineer knew which case was present
 validated the result manually. The product itself did not know. It had no owned model of manufacturing-visible
 calibration state.
 
-The serial numbers were worse. Device identity was assigned in a spreadsheet after the unit passed electrical test. The
+Device identity and provisioning were worse. Identity was assigned in a spreadsheet after the unit passed electrical
+test, while provisioning depended on a station script that wrote values the product did not explicitly model. The
 service tool could read the identity if it had already been written, but there was no product contract that said when
-identity became valid, who owned it, or what should happen if a unit left the line without it. The spreadsheet had become
-a state owner. The station script had become another. The firmware had a third partial opinion because it cached the
-identity after first boot. The warehouse labels had a fourth. When support later asked whether a returned unit had been
-built with the substitute sensor, nobody could answer from the product record alone.
+identity became valid, who owned it, or what should happen if a unit left the line without it. The spreadsheet had
+become a state owner. The station script had become another. The firmware had a third partial opinion because it cached
+the identity after first boot. The warehouse labels had a fourth. When support later asked whether a returned unit had
+been built with the substitute sensor, nobody could answer from the product record alone.
 
 The team had seen this shape before, but in smaller forms. Every State Has One Owner (`LAW-001`) had already taught
 them that meaningful state must have one clear owner. In the lab, device identity, calibration status, fixture result,
@@ -119,11 +120,12 @@ owned it, how it was validated, what surfaces could write it, and what evidence 
 
 Second, she named the assumptions the lab had hidden.
 
-Calibration assumed developer judgment. Identity assumed the spreadsheet was always correct. Fixture access assumed the
-debug connector was available after enclosure assembly. Board revision handling assumed an engineer knew the revision
-before choosing timing and offset. Service diagnosis assumed support could translate firmware states. Update recovery
-assumed a developer laptop. Field evidence assumed the device would stay alive long enough for someone to pull logs.
-Component substitution assumed equivalent electrical behavior meant equivalent product behavior.
+Calibration assumed developer judgment. Identity and provisioning assumed the spreadsheet and station script were
+always correct. Fixture access assumed the debug connector was available after enclosure assembly. Board revision
+handling assumed an engineer knew the revision before choosing timing and offset. Service diagnosis assumed support
+could translate firmware states. Update recovery assumed a developer laptop. Field evidence assumed the device would
+stay alive long enough for someone to pull logs. Component substitution assumed equivalent electrical behavior meant
+equivalent product behavior.
 
 Third, she asked for owners.
 
@@ -195,7 +197,7 @@ room when the architecture was designed.
 
 ## Discussion
 
-Manufacturing reality and field reality are not late-stage inconvenience. They are design inputs.
+Manufacturing reality and field reality are not late-stage cleanup. They are design inputs.
 
 A team can build a product that is clean in the lab and still incomplete as architecture. The lab supplies unusual
 advantages: knowledgeable engineers, direct access to boards, private tools, flexible timing, forgiving setup, and
@@ -226,10 +228,10 @@ Calibration is a common example. The dangerous question is not "Can the unit be 
 system promise about it?" Without that answer, calibration becomes Hidden State (`SMELL-004`). The unit behaves
 differently after a sequence that no product model explains.
 
-Identity and traceability create similar pressure. A serial number is not only a label. It connects hardware revision,
-component lot, firmware version, configuration, calibration, field history, and support action. If identity is assigned
-by spreadsheet, label printer, station script, and firmware cache without one product contract, the product has Silent
-Coupling (`SMELL-001`) between surfaces that must change together but are reviewed separately.
+Identity, provisioning, and traceability create similar pressure. A serial number is not only a label. It connects
+hardware revision, component lot, firmware version, configuration, calibration, field history, and support action. If
+identity is assigned by spreadsheet, label printer, station script, and firmware cache without one product contract, the
+product has Silent Coupling (`SMELL-001`) between surfaces that must change together but are reviewed separately.
 
 Fixture access is also architecture when the product relies on it. A debug connector hidden inside the enclosure is not
 a manufacturing detail if calibration, identity, or recovery depends on it after assembly. The architecture does not
@@ -373,9 +375,9 @@ Make calibration ownership explicit in the product architecture. The firmware-ow
 status, version, source, validation result, and enough evidence for manufacturing and support to understand whether the
 unit is usable.
 
-Provide a manufacturing-safe calibration and setup path. The line fixture may request calibration, submit measurements,
-and receive product-level pass or fail reasons through a defined API promise. It may not create a separate hidden state
-model.
+Provide a manufacturing-safe calibration and provisioning path. The line fixture may request calibration, submit
+measurements, provision required identity or setup values through the product contract, and receive product-level pass
+or fail reasons through a defined API promise. It may not create a separate hidden state model.
 
 Define a minimum service-visible diagnostic vocabulary. The service tool will map internal states to support-safe
 reasons that distinguish configuration, hardware, firmware, environment, update, and calibration causes.
