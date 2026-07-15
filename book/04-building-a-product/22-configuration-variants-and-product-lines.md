@@ -99,6 +99,10 @@ For one package, "remote control supported" meant service-tool button visible, f
 capable, recovery compatible, and support trained. For another, it meant only that sales had checked a box and the tool
 could display the button. The same phrase had two meanings.
 
+The tests had passed examples, not the product line. They covered the standard package, one regional package, and one
+happy-path update. They did not cover the combinations that customers, manufacturing, service tooling, release packaging,
+and support had started treating as possible.
+
 The team was not careless.
 
 It was overloaded by unclassified differences.
@@ -113,7 +117,8 @@ Mara, the principal engineer, wrote the team's first question underneath it:
 
 Then she crossed out only two words:
 
-> Is this a supported variant, a configuration value, an implementation detail, or an unsupported combination?
+> Is this a supported variant, a configuration value, an implementation detail, a temporary exception, or an unsupported
+> combination?
 
 That did not make the work smaller.
 
@@ -230,6 +235,8 @@ That was the architectural win.
 ## Discussion
 
 Configuration and variants become dangerous when the team uses them to avoid naming product decisions.
+
+The thesis is simple: Configuration is owned product state. A supported variant is a product promise.
 
 A configuration value is not just a value. It is state. It affects behavior, and therefore it needs an owner. It needs a
 scope. It needs a default. It needs validation. It needs a migration path. It needs a source of truth. It needs a
@@ -377,7 +384,7 @@ explicit enough to test, and discoverable enough to support.
 
 Ask a focused set of questions:
 
-- Is this difference configuration, a variant, an implementation detail, or unsupported?
+- Is this difference configuration, a supported variant, an implementation detail, a temporary exception, or unsupported?
 - Who owns this value or variation point?
 - Who may change it?
 - What is the default?

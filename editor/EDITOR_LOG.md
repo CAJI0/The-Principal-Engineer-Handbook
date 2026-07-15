@@ -8722,6 +8722,74 @@ Pull request readiness:
 - Do not perform Editorial Review, Canon Review, Technical Review, Freeze Review, PR creation, or merge as part of this
   phase.
 
+## Phase 117 Chapter 22 Editorial Review
+
+- Chapter: Configuration, Variants, and Product Lines.
+- Stable ID: `CHAPTER-022`.
+- Branch: `chapter22`.
+- Stage: Editorial Review.
+- Reviewed Author Draft commit: `ec022b26361ac21ab924eb4212411328d12d4cae`.
+- Canonical-brief parent commit: `bafdcd3b3917a0c78b497e6fde90d076465527c0`.
+- Manuscript path: `book/04-building-a-product/22-configuration-variants-and-product-lines.md`.
+- Canonical brief path preserved:
+  `editor/chapter-briefs/CHAPTER-022-configuration-variants-and-product-lines.md`.
+- Part position: third chapter of Part IV - Building a Product.
+- Primary concept: none.
+- Central anchor/practice: none registered; configuration, variant, product line, supported combination, and unsupported
+  combination remain chapter-local terms.
+- Outcome: Approve with minor changes.
+- Material editorial changes: made the preserved thesis explicit in the Discussion, made the Principal Engineer's
+  classification question include temporary exceptions explicitly, aligned the Engineering Principle question with
+  supported variants and temporary exceptions, and made inadequate product-line test coverage visible in the story
+  instead of only in the Discussion.
+- Story and argument result: passed. The manuscript uses The Variant That Was Just a Flag, treats the first two
+  variants as locally reasonable, and lets the third package request expose accumulated ambiguity rather than caricatured
+  negligence.
+- Configuration-as-state result: passed. Configuration values are treated as owned state with owner, default,
+  validation, migration, source of truth, and support meaning.
+- Variant-as-promise result: passed. Supported variants are product promises across behavior, compatibility,
+  manufacturing, service tooling, release packaging, update, recovery, diagnostics, and support.
+- Product-line-boundary result: passed. Shared core, variation points, supported combinations, and unsupported
+  combinations are explicit and proportional.
+- Symptom coverage result: passed. The story includes unsupported combinations, API behavior changes, manufacturing
+  mismatch, service-tool mismatch, update default mismatch, invisible variant state, customer exception hardening,
+  cross-variant behavior changes, and inadequate test coverage.
+- Product-line simplicity result: passed. Flags, defines, build variants, field overrides, and spreadsheets are treated
+  as mechanisms whose promises need owners, not as villains.
+- Records/review/freeze result: passed. ADRs, RFCs, Decision Journal entries, Architecture Ledger rows, Architecture
+  Review, and Architecture Freeze are used proportionately.
+- Later Part IV boundary result: passed. Chapter 23 observability, Chapter 24 release discipline and upgrade paths, and
+  Chapter 25 reference project walkthrough are previewed only lightly and not written early.
+- Earlier-parts boundary result: passed. Chapters 7-19, 20, and 21 are applied as context without being retaught.
+- Section-architecture result: passed. The manuscript preserves the required order: Opening Quote, Story, Discussion,
+  Engineering Principle, Architecture Exercise, Principal's Notebook, ADR, Editor's Commentary.
+- Principal's Notebook result: exactly three short observations.
+- Chapter-local ADR result: passed. The ADR makes a real architecture decision about defining supported variant
+  boundaries before adding the third product package.
+- Unchanged files confirmed: canonical brief, `knowledge/index.yaml`, PEAK concept files,
+  `editor/CHAPTER_ARCHITECTURE.md`, Part IV README, table of contents, `editor/CANON.md`, and Chapters 1-21.
+- Changed files:
+  - `book/04-building-a-product/22-configuration-variants-and-product-lines.md`
+  - `editor/EDITOR_LOG.md`
+- Final validation completed after this log entry:
+  - Direct Editorial Review assertions: passed for clean baseline, reviewed SHA matching the Author Draft commit,
+    expected changed files only, exact section order, required sections unique, exactly three Principal's Notebook
+    observations, unresolved marker absence, `CHAPTER-022` remaining `draft`, no primary concept introduced, canonical
+    brief unchanged, `knowledge/index.yaml` unchanged, exact relationship set preserved, unchanged PEAK concept files,
+    unchanged `editor/CHAPTER_ARCHITECTURE.md`, unchanged Part IV README, unchanged table of contents, unchanged
+    `editor/CANON.md`, unchanged Chapters 1-21, material Editorial Review coverage, and no tracked `site` output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini book/04-building-a-product/22-configuration-variants-and-product-lines.md editor/EDITOR_LOG.md`:
+    passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed with no tracked `site/` output.
+- Next lifecycle stage: Canon Review after this Editorial Review commit is committed and pushed.
+- Do not perform Canon Review, Technical Review, Freeze Review, PR creation, or merge as part of this phase.
+
 ## Phase 99 Chapter 19 Editorial Review
 
 - Chapter: Freezing Architecture Without Freezing Learning.
