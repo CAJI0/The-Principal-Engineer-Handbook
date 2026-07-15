@@ -8373,6 +8373,66 @@ Pull request readiness:
 - Next lifecycle stage: Technical Review after this Canon Review commit is committed and pushed.
 - Do not perform Technical Review, Freeze Review, PR creation, or merge as part of this phase.
 
+## Phase 113 Chapter 21 Technical Review
+
+- Chapter: Designing for Manufacturing and Field Reality.
+- Stable ID: `CHAPTER-021`.
+- Branch: `chapter21`.
+- Stage: Technical Review.
+- Reviewed Canon Review commit: `326e7d109f2caab5691cfa2b367e7a30c65e16f6`.
+- Manuscript path: `book/04-building-a-product/21-designing-for-manufacturing-and-field-reality.md`.
+- Canonical brief path preserved:
+  `editor/chapter-briefs/CHAPTER-021-designing-for-manufacturing-and-field-reality.md`.
+- Part position: second chapter of Part IV - Building a Product.
+- Primary concept: none.
+- Central anchor: none; manufacturing reality and field reality remain chapter-local frames.
+- Outcome: Approve.
+- Technical domains checked: embedded controller pilot build; pump and pressure-sensor behavior; board revisions;
+  substitute sensor lots; calibration timing and offset curves; fixture access after enclosure assembly; device
+  identity, provisioning, labels, and traceability; station scripts and spreadsheet state; service-tool diagnostics;
+  raw firmware states; update recovery after reset; field logs; power and wiring variation; manufacturing line timing;
+  support handoff; Architecture Review and Architecture Freeze use before pilot manufacturing.
+- Material corrections during Technical Review: none.
+- Manufacturing credibility assessment: passed. Calibration time, line-side instruction sheets, enclosure access,
+  station scripts, board revision timing, substitute sensor curves, identity assignment, provisioning, labels, and
+  traceability are realistic embedded-product pressures.
+- Field credibility assessment: passed. Noisy wiring, edge power budget, raw internal states, support-safe diagnosis,
+  update recovery, field evidence loss, and developer-only recovery tools are credible without becoming a field-service
+  playbook.
+- Ownership and contract assessment: passed. The chapter correctly distinguishes process ownership from product
+  architecture obligations for state ownership, API promises, validation surfaces, and evidence.
+- Recovery and diagnostics assessment: passed. Recovery requires the intended support or field path, not private
+  engineering equipment, and diagnostics distinguish support-safe product reasons from internal implementation states.
+- Dependency assessment: passed. Fixtures, scripts, alternate sensors, labels, service laptops, update loaders, and
+  board-revision encoding are treated as dependencies when the product architecture relies on them.
+- Anti-pattern assessment: passed. Broad manufacturing mode is rejected as Global Configuration; platform leakage and
+  HAL Everywhere are avoided by product-level capability and reason surfaces.
+- Boundary assessment: passed. Chapter 21 does not become a manufacturing process guide, QA handbook, fixture-design
+  guide, field-service manual, observability chapter, release-discipline chapter, compliance chapter, product-management
+  chapter, or generic checklist.
+- Unchanged files confirmed: manuscript, canonical brief, `knowledge/index.yaml`, PEAK concept files,
+  `editor/CHAPTER_ARCHITECTURE.md`, Part IV README, table of contents, `editor/CANON.md`, and Chapters 1-20.
+- Changed files:
+  - `editor/EDITOR_LOG.md`
+- Final validation completed after this log entry:
+  - Direct Technical Review assertions: passed for clean baseline, reviewed SHA matching the Canon Review commit,
+    expected changed files only, unchanged manuscript, exact section order, exactly three Principal's Notebook
+    observations, `CHAPTER-021` remaining `draft`, no primary concept introduced, exact relationship set preserved,
+    material technical coverage, unchanged canonical brief, unchanged `knowledge/index.yaml`, unchanged PEAK concept
+    files, unchanged `editor/CHAPTER_ARCHITECTURE.md`, unchanged Part IV README, unchanged table of contents,
+    unchanged `editor/CANON.md`, unchanged Chapters 1-20, and no tracked `site` output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini book/04-building-a-product/21-designing-for-manufacturing-and-field-reality.md editor/EDITOR_LOG.md`:
+    passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed with no tracked `site/` output.
+- Next lifecycle stage: Freeze Review after this Technical Review commit is committed and pushed.
+- Do not perform Freeze Review, PR creation, or merge as part of this phase.
+
 ## Phase 99 Chapter 19 Editorial Review
 
 - Chapter: Freezing Architecture Without Freezing Learning.
