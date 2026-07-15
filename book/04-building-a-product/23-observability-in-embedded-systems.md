@@ -6,6 +6,8 @@
 
 ## Story
 
+### The Device That Could Not Explain Itself
+
 The field trial was supposed to prove that the product could leave the lab.
 
 The device was no longer a successful prototype. It had a manufacturing identity, a supported firmware image, a small
@@ -125,10 +127,16 @@ action, or a dependency review.
 
 The Event Catalog (`ARTIFACT-005`) is the central artifact for this chapter because it turns diagnostic ambition into an
 owned product surface. A good event entry is not a clever log message. It records the owner, name, trigger, payload,
-severity, retention, reset behavior, support visibility, privacy and security constraints, and the decision the event
-supports. It gives Architecture Review (`RITUAL-001`) something concrete to inspect before the product accumulates
-diagnostic promises no one owns. It also gives Architecture Freeze (`RITUAL-002`) a way to say which diagnostic
-commitments must be preserved while a release or field trial is stabilized.
+severity, retention, reset behavior, support visibility, privacy and security constraints, versioning, deprecation, and
+the decision the event supports. It gives Architecture Review (`RITUAL-001`) something concrete to inspect before the
+product accumulates diagnostic promises no one owns. It also gives Architecture Freeze (`RITUAL-002`) a way to say
+which diagnostic commitments must be preserved while a release or field trial is stabilized.
+
+Those commitments still live inside embedded constraints. RAM, flash, CPU time, power budget, radio bandwidth, service
+access, privacy, security, and flash wear all shape what the product can preserve. A small retained ring buffer, a few
+compact counters, a boot counter, a reset snapshot, or a bounded fault or crash snapshot may be stronger evidence than a
+large debug stream that disappears at reset or drains the battery. The point is not to make every log durable. The point
+is to decide which context is worth its cost because it changes a field decision.
 
 The opposing smell is Event Explosion (`SMELL-006`). Event Explosion happens when the product emits many events but few
 decisions become easier. It often starts from a good instinct. A team has been blind once, so it decides never to be
@@ -231,6 +239,8 @@ Context:
 - The current service surface can collapse many failure domains into one generic message.
 - Manufacturing identity, firmware version, configuration version, variant state, reset context, and update state are
   useful only if they are preserved and visible where field decisions are made.
+- RAM, flash, CPU, power, flash wear, bandwidth, privacy, and security limit how much evidence can be retained or
+  exposed.
 - Adding every possible log line would create Event Explosion rather than useful evidence.
 
 Decision:
@@ -249,6 +259,8 @@ Consequences:
 - Support can make bounded decisions without requiring developer tools for every field issue.
 - Engineering can triage update and recovery failures from retained product evidence instead of reconstructed guesses.
 - Diagnostic events become part of the product API and require ownership, review, tests, and compatibility care.
+- Event versions and deprecation rules must be treated as support promises when tools, tests, or procedures depend on
+  event meaning.
 - The team must reject noisy events that do not support a decision.
 - Storage, power, privacy, security, and service-tool constraints must be designed with the diagnostic surface.
 

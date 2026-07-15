@@ -9234,6 +9234,81 @@ Pull request readiness:
 - Do not perform Editorial Review, Canon Review, Technical Review, Freeze Review, PR creation, or merge as part of this
   phase.
 
+## Phase 123 Chapter 23 Editorial Review
+
+- Chapter: Observability in Embedded Systems.
+- Stable ID: `CHAPTER-023`.
+- Branch: `chapter23`.
+- Stage: Editorial Review.
+- Reviewed Author Draft commit: `a0b581fd70af8bee5bdfc686263f1e345909484e`.
+- Canonical-brief parent commit: `e7263b04257e2043e530e04074000fbb5a46cfd5`.
+- Manuscript path: `book/04-building-a-product/23-observability-in-embedded-systems.md`.
+- Canonical brief path preserved:
+  `editor/chapter-briefs/CHAPTER-023-observability-in-embedded-systems.md`.
+- Part position: fourth chapter of Part IV - Building a Product.
+- Primary concept: none.
+- Central illustrated concepts: `ARTIFACT-005` - Event Catalog; `SMELL-006` - Event Explosion.
+- Outcome: Approve with minor changes.
+- Material editorial changes: added the story title The Device That Could Not Explain Itself, made resource constraints
+  explicit in the Discussion, added event versioning and deprecation to the Event Catalog discussion, and made the ADR
+  consequences state that event versions and deprecation rules become support promises.
+- Story and argument result: passed. The manuscript centers an intermittent post-update reporting failure in a field
+  trial and keeps the chapter thesis on decision-oriented observability under constraint.
+- Required symptom coverage result: passed. The story includes generic communication failure, missing field logs,
+  overwritten reset reason, invisible configuration version, invisible variant state, lost update state, ambiguous error
+  code, manufacturing identity disconnected from diagnostics, and field diagnosis without a debugger.
+- Principal Engineer intervention result: passed. The manuscript changes the team question from adding more logs to
+  identifying the decisions and evidence the device must preserve.
+- Developer-debug-log versus product-diagnostic result: passed. Developer logs remain lab-oriented while product
+  diagnostics are treated as support-safe product promises.
+- Decision-oriented observability result: passed. Observability remains defined by decisions, evidence, ownership, and
+  bounded retained context rather than log volume.
+- Event Catalog result: passed. Event Catalog material includes owner, name, trigger, payload, severity, retention, reset
+  behavior, support visibility, privacy/security constraints, versioning, deprecation, and supported decision without
+  becoming a template tutorial.
+- Event Explosion result: passed. Event Explosion is treated as unowned noise, support-promise risk, storage and power
+  cost, privacy risk, and discoverability loss without exaggerating that events are inherently bad.
+- Embedded constraints result: passed. RAM, flash, CPU, power, flash wear, bandwidth, service access, unreliable time,
+  partial histories, privacy, and security are explicit and proportionate.
+- Time and causality result: passed. The chapter uses sequence, boot counters, monotonic ticks, install attempts, update
+  phases, and reset snapshots without becoming a timekeeping implementation guide.
+- Architecture Exercise result: passed. The exercise remains actionable and ends with exactly one decision, one owned
+  event or diagnostic, one retained context requirement, and one validation action.
+- Chapter-local ADR result: passed. The ADR makes a real story-local decision about decision-oriented field events for
+  update and recovery failures rather than merely saying to add logging.
+- Editor's Commentary result: passed. The commentary follows Chapter 22 and previews Chapter 24 lightly without writing
+  release discipline or upgrade paths early.
+- Later Part IV boundary result: passed. Chapter 24 release discipline and upgrade paths and Chapter 25 reference project
+  walkthrough remain future scope.
+- Earlier-parts boundary result: passed. Chapters 7, 8, 9, 10, 13, 15, 16, 17, 20, 21, and 22 are applied as context
+  without being retaught.
+- Section-architecture result: passed. The manuscript preserves the required order: Opening Quote, Story, Discussion,
+  Engineering Principle, Architecture Exercise, Principal's Notebook, ADR, Editor's Commentary.
+- Principal's Notebook result: exactly three short observations.
+- Unchanged files confirmed: canonical brief, `knowledge/index.yaml`, PEAK concept files,
+  `editor/CHAPTER_ARCHITECTURE.md`, Part IV README, table of contents, `editor/CANON.md`, and Chapters 1-22.
+- Changed files:
+  - `book/04-building-a-product/23-observability-in-embedded-systems.md`
+  - `editor/EDITOR_LOG.md`
+- Final validation completed after this log entry:
+  - Direct Editorial Review assertions: passed for clean baseline, reviewed SHA matching the Author Draft commit,
+    expected changed files only, exact section order, required sections unique, exactly three Principal's Notebook
+    observations, unresolved marker absence, `CHAPTER-023` remaining `draft`, no primary concept introduced, canonical
+    brief unchanged, `knowledge/index.yaml` unchanged, exact relationship set preserved, unchanged PEAK concept files,
+    unchanged `editor/CHAPTER_ARCHITECTURE.md`, unchanged Part IV README, unchanged table of contents, unchanged
+    `editor/CANON.md`, unchanged Chapters 1-22, material Editorial Review coverage, and no tracked `site` output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini book/04-building-a-product/23-observability-in-embedded-systems.md editor/EDITOR_LOG.md`:
+    passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed with no tracked `site/` output.
+- Next lifecycle stage: Canon Review after this Editorial Review commit is committed and pushed.
+- Do not perform Canon Review, Technical Review, Freeze Review, PR creation, or merge as part of this phase.
+
 ## Phase 99 Chapter 19 Editorial Review
 
 - Chapter: Freezing Architecture Without Freezing Learning.
