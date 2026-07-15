@@ -8181,6 +8181,75 @@ Pull request readiness:
 - Next lifecycle stage: Author Draft after this Canonical Brief Registration commit is committed and pushed.
 - Do not create the manuscript, perform review gates, create a pull request, or merge as part of this phase.
 
+## Phase 110 Chapter 21 Author Draft
+
+- Chapter: Designing for Manufacturing and Field Reality.
+- Stable ID: `CHAPTER-021`.
+- Branch: `chapter21`.
+- Stage: Author Draft.
+- Author Draft baseline: `ba936e058619d702058bc4fb011750ff289359d8`.
+- Manuscript path: `book/04-building-a-product/21-designing-for-manufacturing-and-field-reality.md`.
+- Canonical brief path preserved:
+  `editor/chapter-briefs/CHAPTER-021-designing-for-manufacturing-and-field-reality.md`.
+- Part position: second chapter of Part IV - Building a Product.
+- Primary concept: none.
+- Central anchor/practice: none registered; manufacturing reality and field reality remain chapter-local design-input
+  frames.
+- Outcome: Author Draft manuscript created from the registered canonical brief.
+- Registered relationship set preserved:
+  - `CHAPTER-021 references LAW-001`.
+  - `CHAPTER-021 references LAW-002`.
+  - `CHAPTER-021 references LAW-005`.
+  - `CHAPTER-021 references LAW-007`.
+  - `CHAPTER-021 references VOCAB-001`.
+  - `CHAPTER-021 references METRIC-001`.
+  - `CHAPTER-021 references METRIC-003`.
+  - `CHAPTER-021 references ARTIFACT-001`.
+  - `CHAPTER-021 references ARTIFACT-003`.
+  - `CHAPTER-021 references ARTIFACT-004`.
+  - `CHAPTER-021 references RITUAL-001`.
+  - `CHAPTER-021 references RITUAL-002`.
+  - `CHAPTER-021 references ANTIPATTERN-006`.
+  - `CHAPTER-021 references SMELL-004`.
+  - `CHAPTER-021 references SMELL-001`.
+  - `CHAPTER-021 references SMELL-005`.
+  - `CHAPTER-021 references ANTIPATTERN-002`.
+  - `CHAPTER-021 references ANTIPATTERN-003`.
+- Draft scope result: passed. The manuscript covers manufacturing and field reality as architecture constraints:
+  repeatability, variation, calibration, identity, traceability, fixture and service interfaces, support-safe diagnosis,
+  update and recovery outside the lab, ownership, evidence, and discoverability.
+- Required narrative premise included: The Product That Only Worked in Engineering.
+- Required story symptoms included: line-speed calibration failure, board-revision timing and sensor offset variation,
+  fixture access blocked by enclosure, spreadsheet-assigned identity, raw developer states in the service tool,
+  developer-laptop update recovery, field logs lost on reset, component substitution behavior change, support ambiguity,
+  and manufacturing workarounds becoming product behavior.
+- Boundary checks: Chapter 20 predecessor only; Chapters 22-25 future scope preserved; earlier parts used as constraints
+  without reteaching their full practices.
+- Required section order used exactly: Opening Quote, Story, Discussion, Engineering Principle, Architecture Exercise,
+  Principal's Notebook, ADR, Editor's Commentary.
+- Principal's Notebook contains exactly three short observations and no explanations.
+- No-new-concept result: passed. No PEAK law, maxim, artifact, ritual, metric, smell, anti-pattern, failure story,
+  vocabulary concept, ID, relationship verb, or primary-concept field was added.
+- Unchanged files confirmed: canonical brief, `knowledge/index.yaml`, PEAK concept files,
+  `editor/CHAPTER_ARCHITECTURE.md`, Part IV README, table of contents, `editor/CANON.md`, and Chapters 1-20.
+- Files changed in this phase:
+  - `book/04-building-a-product/21-designing-for-manufacturing-and-field-reality.md`
+  - `editor/EDITOR_LOG.md`
+- Final validation completed after this log entry:
+  - Direct Author Draft assertions: passed.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini book/04-building-a-product/21-designing-for-manufacturing-and-field-reality.md editor/EDITOR_LOG.md`:
+    passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed with no tracked `site/` output.
+- Next lifecycle stage: Editorial Review after this Author Draft commit is committed and pushed.
+- Do not perform Editorial Review, Canon Review, Technical Review, Freeze Review, PR creation, or merge as part of this
+  phase.
+
 ## Phase 99 Chapter 19 Editorial Review
 
 - Chapter: Freezing Architecture Without Freezing Learning.
