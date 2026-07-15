@@ -9135,6 +9135,105 @@ Pull request readiness:
 - Next lifecycle stage: Author Draft after this Canonical Brief Registration commit is committed and pushed.
 - Do not create the manuscript, perform review gates, create a pull request, or merge as part of this phase.
 
+## Phase 122 Chapter 23 Author Draft
+
+- Chapter: Observability in Embedded Systems.
+- Stable ID: `CHAPTER-023`.
+- Branch: `chapter23`.
+- Stage: Author Draft.
+- Starting canonical-brief registration commit: `e7263b04257e2043e530e04074000fbb5a46cfd5`.
+- Manuscript path: `book/04-building-a-product/23-observability-in-embedded-systems.md`.
+- Canonical brief path preserved:
+  `editor/chapter-briefs/CHAPTER-023-observability-in-embedded-systems.md`.
+- Part position: fourth chapter of Part IV - Building a Product.
+- Primary concept: none.
+- Illustrated concepts: `ARTIFACT-005` - Event Catalog; `SMELL-006` - Event Explosion.
+- Outcome: Author Draft manuscript created from the registered canonical brief.
+- Registered relationship set preserved:
+  - `CHAPTER-023 illustrates ARTIFACT-005`
+  - `CHAPTER-023 illustrates SMELL-006`
+  - `CHAPTER-023 references LAW-001`
+  - `CHAPTER-023 references LAW-002`
+  - `CHAPTER-023 references LAW-003`
+  - `CHAPTER-023 references LAW-005`
+  - `CHAPTER-023 references LAW-007`
+  - `CHAPTER-023 references VOCAB-001`
+  - `CHAPTER-023 references METRIC-001`
+  - `CHAPTER-023 references METRIC-003`
+  - `CHAPTER-023 references ARTIFACT-001`
+  - `CHAPTER-023 references ARTIFACT-003`
+  - `CHAPTER-023 references ARTIFACT-004`
+  - `CHAPTER-023 references ARTIFACT-007`
+  - `CHAPTER-023 references VOCAB-002`
+  - `CHAPTER-023 references RITUAL-001`
+  - `CHAPTER-023 references RITUAL-002`
+  - `CHAPTER-023 references SMELL-004`
+  - `CHAPTER-023 references SMELL-001`
+  - `CHAPTER-023 references SMELL-005`
+  - `CHAPTER-023 references ANTIPATTERN-002`
+  - `CHAPTER-023 references ANTIPATTERN-003`
+  - `CHAPTER-023 references ANTIPATTERN-005`
+  - `CHAPTER-023 references ANTIPATTERN-006`
+  - `CHAPTER-023 references FAILURE-002`
+- Draft scope result: passed. The manuscript teaches decision-oriented field evidence for embedded products by
+  separating developer debug logs from product diagnostics, naming owned events, preserving reset, update, recovery,
+  configuration, variant, identity, time, sequence, and boundary context, and making support-visible evidence useful
+  without becoming a logging tutorial, cloud telemetry guide, monitoring platform chapter, or incident-response chapter.
+- Required narrative premise included: The Device That Could Not Explain Itself, covering devices that intermittently
+  stop reporting after an update, generic service-tool failure, debug-only logs, overwritten reset reason, invisible
+  configuration version, unreported variant state, lost update state after reboot, collapsed failure domains,
+  manufacturing identity disconnected from diagnostics, and a Principal Engineer changing the question from more logs to
+  decision-ready evidence.
+- Required chapter topics included: support and engineering decisions, state transitions, boundary failures, owned events,
+  developer logs versus product diagnostics, reset and recovery context, variant/configuration/version/identity exposure,
+  failure-domain distinction, service visibility without developer tools, Event Catalog, Event Explosion, Mistake Ledger,
+  weak signals, Architecture Review, Architecture Freeze, Change Radius, Discoverability, ADRs, Decision Journal entries,
+  and One Lost Packet.
+- Boundary checks: Chapter 20 prototype-to-product readiness, Chapter 21 manufacturing and field reality, and Chapter 22
+  configuration and variants are used as established product context without being retaught; Chapter 24 release
+  discipline and upgrade paths and Chapter 25 reference project walkthrough remain future scope; earlier PEAK laws and
+  Part III practices are applied without repeating their chapters.
+- Required section order used exactly:
+  1. Opening Quote
+  2. Story
+  3. Discussion
+  4. Engineering Principle
+  5. Architecture Exercise
+  6. Principal's Notebook
+  7. ADR
+  8. Editor's Commentary
+- Principal's Notebook contains exactly three short observations and no explanations.
+- No-new-concept result: passed. Observability, product event, diagnostic surface, support evidence, reset snapshot,
+  crash snapshot, and field diagnostic remain chapter-local prose terms only; no primary concept, PEAK concept, PEAK ID,
+  relationship, relationship verb, metric, artifact, ritual, smell, anti-pattern, failure story, vocabulary concept, or
+  registry field was introduced.
+- Unchanged files confirmed: canonical brief, `knowledge/index.yaml`, PEAK concept files,
+  `editor/CHAPTER_ARCHITECTURE.md`, Part IV README, table of contents, `editor/CANON.md`, and Chapters 1-22.
+- Files changed in this phase:
+  - `book/04-building-a-product/23-observability-in-embedded-systems.md`
+  - `editor/EDITOR_LOG.md`
+- Final validation completed after this log entry:
+  - Direct Author Draft assertions: passed for clean baseline, `HEAD` matching `origin/chapter23` before drafting,
+    starting SHA matching the Canonical Brief Registration commit, expected changed files only, exact section order,
+    required sections unique, exactly three Principal's Notebook observations, unresolved marker absence, `CHAPTER-023`
+    remaining `draft`, canonical brief unchanged, `knowledge/index.yaml` unchanged, exact relationship set preserved, no
+    primary concept introduced, no new PEAK ID, unchanged Part IV README, unchanged `editor/CHAPTER_ARCHITECTURE.md`,
+    unchanged `editor/CANON.md`, unchanged table of contents, unchanged Chapters 1-22, unchanged PEAK concept files,
+    material coverage for every registered concept, Chapter 24 and Chapter 25 boundaries, earlier-part boundaries,
+    forbidden-frame checks, and no tracked `site/` output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini book/04-building-a-product/23-observability-in-embedded-systems.md editor/EDITOR_LOG.md`:
+    passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed with no tracked `site/` output.
+- Next lifecycle stage: Editorial Review after this Author Draft commit is committed and pushed.
+- Do not perform Editorial Review, Canon Review, Technical Review, Freeze Review, PR creation, or merge as part of this
+  phase.
+
 ## Phase 99 Chapter 19 Editorial Review
 
 - Chapter: Freezing Architecture Without Freezing Learning.
