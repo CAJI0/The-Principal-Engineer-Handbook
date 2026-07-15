@@ -8856,6 +8856,76 @@ Pull request readiness:
 - Next lifecycle stage: Technical Review after this Canon Review commit is committed and pushed.
 - Do not perform Technical Review, Freeze Review, PR creation, or merge as part of this phase.
 
+## Phase 119 Chapter 22 Technical Review
+
+- Chapter: Configuration, Variants, and Product Lines.
+- Stable ID: `CHAPTER-022`.
+- Branch: `chapter22`.
+- Stage: Technical Review.
+- Reviewed Canon Review commit: `759eb31e46610a1b2fd39e26d84915e3b24e16e2`.
+- Manuscript path: `book/04-building-a-product/22-configuration-variants-and-product-lines.md`.
+- Canonical brief path preserved:
+  `editor/chapter-briefs/CHAPTER-022-configuration-variants-and-product-lines.md`.
+- Part position: third chapter of Part IV - Building a Product.
+- Primary concept: none.
+- Central anchor/practice: none registered.
+- Outcome: Approve.
+- Technical domains checked: runtime configuration, compile-time flags, build variants, hardware revisions, product
+  packages, customer-specific protocol behavior, regional behavior, licensed capabilities, manufacturing configuration,
+  service-tool behavior, debug flags, field overrides, update and recovery compatibility, default values, validation,
+  migration, source of truth, supported and unsupported combinations, variant test coverage, release packaging
+  interaction, field diagnosis, supportability, and dependency impact of hardware modules, protocols, tools, and
+  libraries.
+- Material corrections during Technical Review: none.
+- Runtime/build/configuration assessment: passed. Runtime configuration, field overrides, compile-time defines, and build
+  profiles are treated as mechanisms that need owners, validation, migration, and product meaning when they affect
+  promises.
+- Variant/package assessment: passed. Hardware revision, cheaper radio module, regional package, licensed remote control,
+  customer timeout, and third product package pressure are credible embedded product-line concerns.
+- Hardware/module/dependency assessment: passed. Radio module capability, memory profile, radio stack behavior,
+  protocol timeout, recovery path, and service-tool behavior are presented as dependency decisions with product-line
+  consequences.
+- Service-tool/diagnostic assessment: passed. The service-tool hidden option, visible button mismatch, unsupported
+  operation message, diagnostic vocabulary, and support reproduction problem are plausible without turning the chapter
+  into the observability chapter.
+- Update/recovery assessment: passed. Update default mismatch, package-specific recovery access, service-link versus
+  local-cable recovery, and release packaging interaction are credible consequences of variant promises without writing
+  Chapter 24 early.
+- Default/validation/migration/source-of-truth assessment: passed. Defaults, validation, migration, storage or source of
+  truth, and support meaning are distinct concerns and not conflated.
+- Supported/unsupported combination assessment: passed. Supported combinations are promises to build, test, release,
+  diagnose, and support; unsupported combinations are explicit architecture boundaries, not accidental failures.
+- Test/release/support assessment: passed. The chapter names inadequate example-only test coverage, variant coverage,
+  release packaging interaction, support horizon, field diagnosis, and discoverability without becoming a test-matrix or
+  release-process tutorial.
+- Guardrail assessment: passed. The manuscript does not imply configuration, compile-time flags, feature flags, customer
+  exceptions, debug options, build variants, or spreadsheets are inherently wrong; it requires owners, evidence, and
+  boundaries when they become product promises.
+- Boundary assessment: passed. Observability and release discipline are deferred to Chapters 23 and 24; the reference
+  project remains Chapter 25 scope.
+- Unchanged files confirmed: manuscript, canonical brief, `knowledge/index.yaml`, PEAK concept files,
+  `editor/CHAPTER_ARCHITECTURE.md`, Part IV README, table of contents, `editor/CANON.md`, and Chapters 1-21.
+- Changed files:
+  - `editor/EDITOR_LOG.md`
+- Final validation completed after this log entry:
+  - Direct Technical Review assertions: passed for clean baseline, reviewed SHA matching the Canon Review commit,
+    expected changed files only, unchanged manuscript, exact section order, exactly three Principal's Notebook
+    observations, `CHAPTER-022` remaining `draft`, no primary concept introduced, exact relationship set preserved,
+    material technical coverage, unchanged canonical brief, unchanged `knowledge/index.yaml`, unchanged PEAK concept
+    files, unchanged `editor/CHAPTER_ARCHITECTURE.md`, unchanged Part IV README, unchanged table of contents, unchanged
+    `editor/CANON.md`, unchanged Chapters 1-21, guardrail checks, and no tracked `site` output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini book/04-building-a-product/22-configuration-variants-and-product-lines.md editor/EDITOR_LOG.md`:
+    passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed with no tracked `site/` output.
+- Next lifecycle stage: Freeze Review after this Technical Review commit is committed and pushed.
+- Do not perform Freeze Review, PR creation, or merge as part of this phase.
+
 ## Phase 99 Chapter 19 Editorial Review
 
 - Chapter: Freezing Architecture Without Freezing Learning.
