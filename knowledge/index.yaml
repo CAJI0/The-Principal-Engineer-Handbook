@@ -383,7 +383,7 @@ entities:
       type: chapter
       name: Configuration, Variants, and Product Lines
       path: ../book/04-building-a-product/22-configuration-variants-and-product-lines.md
-      status: draft
+      status: canonical
   adrs:
     - id: ADR-001
       type: adr

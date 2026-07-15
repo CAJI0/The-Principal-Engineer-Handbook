@@ -8926,6 +8926,90 @@ Pull request readiness:
 - Next lifecycle stage: Freeze Review after this Technical Review commit is committed and pushed.
 - Do not perform Freeze Review, PR creation, or merge as part of this phase.
 
+## Phase 120 Chapter 22 Freeze Review
+
+- Chapter: Configuration, Variants, and Product Lines.
+- Stable ID: `CHAPTER-022`.
+- Branch: `chapter22`.
+- Stage: Freeze Review.
+- Reviewed Technical Review commit: `d023ed5433df5bb1f4ac6a64b51b350e71537b09`.
+- Prior review commits confirmed in history:
+  - Editorial Review: `620c016f2d94bd058c5590e71b8b0db08fcc8714`.
+  - Canon Review: `759eb31e46610a1b2fd39e26d84915e3b24e16e2`.
+  - Technical Review: `d023ed5433df5bb1f4ac6a64b51b350e71537b09`.
+- Manuscript path: `book/04-building-a-product/22-configuration-variants-and-product-lines.md`.
+- Canonical brief path preserved:
+  `editor/chapter-briefs/CHAPTER-022-configuration-variants-and-product-lines.md`.
+- Part position: third chapter of Part IV - Building a Product.
+- Primary concept: none.
+- Central anchor/practice: none registered; configuration, variant, product line, supported combination, and unsupported
+  combination remain chapter-local terms.
+- Outcome: Approve.
+- Status transition: `CHAPTER-022` moved from `draft` to `canonical` in `knowledge/index.yaml`.
+- Freeze scope result: passed. Freeze changed only the chapter status and this log entry; no manuscript, canonical
+  brief, PEAK concept, chapter architecture, Part IV README, table of contents, or prior chapter content changed.
+- Prior review ancestry result: passed. Editorial, Canon, and Technical Review commits are ancestors of the Freeze
+  baseline.
+- Manuscript freeze result: passed. The final manuscript keeps the required section order: Opening Quote, Story,
+  Discussion, Engineering Principle, Architecture Exercise, Principal's Notebook, ADR, Editor's Commentary.
+- Principal's Notebook result: exactly three short observations.
+- Canon freeze result: passed. Chapter 22 has no primary concept, no central anchor, no new PEAK concept, and preserves
+  the exact registered relationship set.
+- Registered relationship set preserved:
+  - `CHAPTER-022 references LAW-001`
+  - `CHAPTER-022 references LAW-002`
+  - `CHAPTER-022 references LAW-004`
+  - `CHAPTER-022 references LAW-005`
+  - `CHAPTER-022 references LAW-006`
+  - `CHAPTER-022 references LAW-007`
+  - `CHAPTER-022 references VOCAB-001`
+  - `CHAPTER-022 references METRIC-001`
+  - `CHAPTER-022 references METRIC-003`
+  - `CHAPTER-022 references ARTIFACT-001`
+  - `CHAPTER-022 references ARTIFACT-002`
+  - `CHAPTER-022 references ARTIFACT-003`
+  - `CHAPTER-022 references ARTIFACT-006`
+  - `CHAPTER-022 references RITUAL-001`
+  - `CHAPTER-022 references RITUAL-002`
+  - `CHAPTER-022 references SMELL-004`
+  - `CHAPTER-022 references SMELL-001`
+  - `CHAPTER-022 references SMELL-005`
+  - `CHAPTER-022 references ANTIPATTERN-003`
+  - `CHAPTER-022 references ANTIPATTERN-006`
+  - `CHAPTER-022 references ANTIPATTERN-002`
+- Later Part IV boundary result: passed. Chapter 23 observability, Chapter 24 release discipline and upgrade paths, and
+  Chapter 25 reference project walkthrough remain future scope.
+- Earlier-parts boundary result: passed. Chapters 1-21 remain canonical and unchanged.
+- Technical readiness result: passed. The embedded scenario remains credible across runtime configuration, build
+  variants, hardware revisions, product packages, customer-specific timing, regional behavior, licensed capabilities,
+  manufacturing and service-tool behavior, debug flags, field overrides, update and recovery compatibility, supported
+  combinations, unsupported combinations, release packaging interaction, and supportability.
+- Part IV sequence result: passed. Chapter 22 follows Chapter 21 by making product differences explicit as owned state,
+  variant promises, and product-line boundaries without writing observability, release, or reference-project chapters
+  early.
+- Changed files:
+  - `editor/EDITOR_LOG.md`
+  - `knowledge/index.yaml`
+- Final validation completed after this log entry:
+  - Direct Freeze Review assertions: passed for clean baseline, reviewed SHA matching the Technical Review commit, prior
+    review ancestry intact, expected changed files only, unchanged manuscript, exact section order, exactly three
+    Principal's Notebook observations, `CHAPTER-022` status `canonical`, no primary concept introduced, chapter-local
+    terms not registered as PEAK concepts, exact relationship set preserved, unchanged canonical brief, unchanged PEAK
+    concept files, unchanged `editor/CHAPTER_ARCHITECTURE.md`, unchanged Part IV README, unchanged table of contents,
+    unchanged `editor/CANON.md`, unchanged Chapters 1-21, and no tracked `site` output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini book/04-building-a-product/22-configuration-variants-and-product-lines.md editor/EDITOR_LOG.md`:
+    passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed with no tracked `site/` output.
+- Pull request readiness: ready for PR after this Freeze Review commit is committed and pushed.
+- Recommended PR title: Chapter 22: Configuration, Variants, and Product Lines.
+- Do not create a pull request or merge as part of this phase.
+
 ## Phase 99 Chapter 19 Editorial Review
 
 - Chapter: Freezing Architecture Without Freezing Learning.
