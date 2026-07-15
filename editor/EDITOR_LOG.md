@@ -8631,6 +8631,97 @@ Pull request readiness:
 - Next lifecycle stage: Author Draft after this Canonical Brief Registration commit is committed and pushed.
 - Do not create the manuscript, perform review gates, create a pull request, or merge as part of this phase.
 
+## Phase 116 Chapter 22 Author Draft
+
+- Chapter: Configuration, Variants, and Product Lines.
+- Stable ID: `CHAPTER-022`.
+- Branch: `chapter22`.
+- Stage: Author Draft.
+- Starting canonical-brief registration commit: `bafdcd3b3917a0c78b497e6fde90d076465527c0`.
+- Manuscript path: `book/04-building-a-product/22-configuration-variants-and-product-lines.md`.
+- Canonical brief path preserved:
+  `editor/chapter-briefs/CHAPTER-022-configuration-variants-and-product-lines.md`.
+- Part position: third chapter of Part IV - Building a Product.
+- Primary concept: none.
+- Central anchor/practice: none registered.
+- Outcome: Author Draft manuscript created from the registered canonical brief.
+- Registered relationship set preserved:
+  - `CHAPTER-022 references LAW-001`
+  - `CHAPTER-022 references LAW-002`
+  - `CHAPTER-022 references LAW-004`
+  - `CHAPTER-022 references LAW-005`
+  - `CHAPTER-022 references LAW-006`
+  - `CHAPTER-022 references LAW-007`
+  - `CHAPTER-022 references VOCAB-001`
+  - `CHAPTER-022 references METRIC-001`
+  - `CHAPTER-022 references METRIC-003`
+  - `CHAPTER-022 references ARTIFACT-001`
+  - `CHAPTER-022 references ARTIFACT-002`
+  - `CHAPTER-022 references ARTIFACT-003`
+  - `CHAPTER-022 references ARTIFACT-006`
+  - `CHAPTER-022 references RITUAL-001`
+  - `CHAPTER-022 references RITUAL-002`
+  - `CHAPTER-022 references SMELL-004`
+  - `CHAPTER-022 references SMELL-001`
+  - `CHAPTER-022 references SMELL-005`
+  - `CHAPTER-022 references ANTIPATTERN-003`
+  - `CHAPTER-022 references ANTIPATTERN-006`
+  - `CHAPTER-022 references ANTIPATTERN-002`
+- Draft scope result: passed. The manuscript teaches configuration as owned product state, supported variants as
+  product promises, and product-line boundaries as explicit shared-core, variation-point, supported-combination, and
+  unsupported-combination decisions.
+- Required narrative premise included: The Variant That Was Just a Flag, covering hardware revision flag, region
+  behavior flag, licensed feature flag, customer-specific protocol timeout, manufacturing-mode flag, service-tool hidden
+  option, debug flag left in production, build define for a cheaper module, field override stored in a configuration
+  file, and recovery behavior depending on variant.
+- Required chapter topics included: configuration ownership, variant promises, shared core, variation points, defaults,
+  validation, migration, source of truth, support meaning, supported combinations, unsupported combinations, good and bad
+  variation, Global Configuration, Hidden State, Silent Coupling, Platform Leakage, HAL Everywhere, Temporary Solution,
+  Change Radius, ADR, RFC, Decision Journal, Architecture Ledger, Architecture Review, Architecture Freeze, and
+  Discoverability.
+- Boundary checks: Chapter 20 prototype-to-product transition, Chapter 21 manufacturing and field reality, Chapter 23
+  observability, Chapter 24 release discipline and upgrade paths, and Chapter 25 reference project remain future scope;
+  earlier laws and Part III practices are applied without being repeated.
+- Required section order used exactly:
+  1. Opening Quote
+  2. Story
+  3. Discussion
+  4. Engineering Principle
+  5. Architecture Exercise
+  6. Principal's Notebook
+  7. ADR
+  8. Editor's Commentary
+- Principal's Notebook contains exactly three short observations and no explanations.
+- No-new-concept result: passed. No primary concept, PEAK concept, PEAK ID, relationship, relationship verb, metric,
+  artifact, ritual, smell, anti-pattern, failure story, vocabulary concept, variant matrix, product package concept, SKU
+  concept, feature-flag concept, or configuration-debt concept was introduced.
+- Unchanged files confirmed: canonical brief, `knowledge/index.yaml`, PEAK concept files,
+  `editor/CHAPTER_ARCHITECTURE.md`, Part IV README, table of contents, `editor/CANON.md`, and Chapters 1-21.
+- Files changed in this phase:
+  - `book/04-building-a-product/22-configuration-variants-and-product-lines.md`
+  - `editor/EDITOR_LOG.md`
+- Final validation completed after this log entry:
+  - Direct Author Draft assertions: passed for clean baseline, `HEAD` matching `origin/chapter22` before drafting,
+    starting SHA matching the Canonical Brief Registration commit, expected changed files only, exact section order,
+    required sections unique, exactly three Principal's Notebook observations, unresolved marker absence, `CHAPTER-022`
+    remaining `draft`, canonical brief unchanged, `knowledge/index.yaml` unchanged, exact relationship set preserved, no
+    primary concept introduced, no new PEAK ID, unchanged Part IV README, unchanged `editor/CHAPTER_ARCHITECTURE.md`,
+    unchanged `editor/CANON.md`, unchanged table of contents, unchanged Chapters 1-21, unchanged PEAK concept files,
+    material coverage for every registered concept, later Part IV boundaries, earlier-part boundaries, forbidden-frame
+    checks, and no tracked `site` output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini book/04-building-a-product/22-configuration-variants-and-product-lines.md editor/EDITOR_LOG.md`:
+    passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed with no tracked `site/` output.
+- Next lifecycle stage: Editorial Review after this Author Draft commit is committed and pushed.
+- Do not perform Editorial Review, Canon Review, Technical Review, Freeze Review, PR creation, or merge as part of this
+  phase.
+
 ## Phase 99 Chapter 19 Editorial Review
 
 - Chapter: Freezing Architecture Without Freezing Learning.
