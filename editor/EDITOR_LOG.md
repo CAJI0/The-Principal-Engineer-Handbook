@@ -8790,6 +8790,72 @@ Pull request readiness:
 - Next lifecycle stage: Canon Review after this Editorial Review commit is committed and pushed.
 - Do not perform Canon Review, Technical Review, Freeze Review, PR creation, or merge as part of this phase.
 
+## Phase 118 Chapter 22 Canon Review
+
+- Chapter: Configuration, Variants, and Product Lines.
+- Stable ID: `CHAPTER-022`.
+- Branch: `chapter22`.
+- Stage: Canon Review.
+- Reviewed Editorial Review commit: `620c016f2d94bd058c5590e71b8b0db08fcc8714`.
+- Manuscript path: `book/04-building-a-product/22-configuration-variants-and-product-lines.md`.
+- Canonical brief path preserved:
+  `editor/chapter-briefs/CHAPTER-022-configuration-variants-and-product-lines.md`.
+- Part position: third chapter of Part IV - Building a Product.
+- Primary concept: none.
+- Central anchor/practice: none registered.
+- Outcome: Approve.
+- Canonical sources checked: Chapter 22 canonical brief, `knowledge/index.yaml`, registered PEAK concept files,
+  required chapter architecture, table of contents, Part IV README, Chapters 20-21 Part IV context, and Chapters 7-19
+  law/playbook foundations.
+- No-primary result: passed. The manuscript introduces no primary concept, no central anchor, and no replacement
+  chapter practice.
+- Chapter-local-term result: passed. Configuration, variant, product line, supported combination, unsupported
+  combination, feature flag, SKU, variant matrix, and configuration debt remain prose terms, not PEAK concepts.
+- Configuration ownership result: passed. Configuration is treated as owned product state with owner, scope, default,
+  validation, migration, source of truth, and support meaning.
+- Variant promise result: passed. A supported variant is treated as a product promise across behavior, compatibility,
+  manufacturing, service tooling, release packaging, update, recovery, diagnostics, and support.
+- Product-line boundary result: passed. Shared core, variation points, supported combinations, and unsupported
+  combinations are named and used as architecture boundaries.
+- Defaults/validation/migration/source-of-truth result: passed. The manuscript distinguishes these concerns and does not
+  collapse them into one configuration mechanism.
+- Simplicity/flexibility/evidence result: passed. Simplicity, unused flexibility, and evidence constrain which variation
+  becomes supported without moralizing against configuration.
+- Record/review/freeze result: passed. ADR, RFC, Decision Journal, Architecture Ledger, Architecture Review, and
+  Architecture Freeze appear as proportionate support practices, not new chapter subjects.
+- Smell/anti-pattern result: passed. Hidden State, Silent Coupling, Platform Leakage, HAL Everywhere, Global
+  Configuration, and Temporary Solution are used materially and remain bounded to the Chapter 22 scenario.
+- Part IV boundary result: passed. Chapter 22 mentions diagnostics, release packaging, update compatibility, recovery,
+  and support only as consequences of configuration and variant promises; Chapters 23, 24, and 25 remain future scope.
+- Earlier-parts boundary result: passed. Earlier laws and Part III practices are applied without being repeated.
+- Relationship findings: passed. Every registered Chapter 22 relationship target is materially present, all targets
+  exist, and the exact outgoing relationship set is unchanged.
+- Section-architecture result: passed. The manuscript preserves the required order: Opening Quote, Story, Discussion,
+  Engineering Principle, Architecture Exercise, Principal's Notebook, ADR, Editor's Commentary.
+- Principal's Notebook result: exactly three short observations.
+- Corrections made during Canon Review: none.
+- Changed files:
+  - `editor/EDITOR_LOG.md`
+- Final validation completed after this log entry:
+  - Direct Canon Review assertions: passed for clean baseline, reviewed SHA matching the Editorial Review commit,
+    expected changed files only, unchanged manuscript, exact section order, exactly three Principal's Notebook
+    observations, `CHAPTER-022` remaining `draft`, no primary concept introduced, chapter-local terms not registered as
+    PEAK concepts, exact relationship set preserved, material concept coverage, unchanged canonical brief, unchanged
+    `knowledge/index.yaml`, unchanged PEAK concept files, unchanged `editor/CHAPTER_ARCHITECTURE.md`, unchanged Part IV
+    README, unchanged table of contents, unchanged `editor/CANON.md`, unchanged Chapters 1-21, and no tracked `site`
+    output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini book/04-building-a-product/22-configuration-variants-and-product-lines.md editor/EDITOR_LOG.md`:
+    passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed with no tracked `site/` output.
+- Next lifecycle stage: Technical Review after this Canon Review commit is committed and pushed.
+- Do not perform Technical Review, Freeze Review, PR creation, or merge as part of this phase.
+
 ## Phase 99 Chapter 19 Editorial Review
 
 - Chapter: Freezing Architecture Without Freezing Learning.
