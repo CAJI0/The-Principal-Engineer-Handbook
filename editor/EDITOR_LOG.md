@@ -8511,6 +8511,126 @@ Pull request readiness:
 - Recommended PR title: Chapter 21: Designing for Manufacturing and Field Reality.
 - Do not create a pull request or merge as part of this phase.
 
+## Phase 115 Chapter 22 Canonical Brief Registration
+
+- Chapter: Configuration, Variants, and Product Lines.
+- Stable ID: `CHAPTER-022`.
+- Branch: `chapter22`.
+- Stage: Canonical Brief Registration.
+- Verified baseline `origin/main`: `4176829b64f5d920349fe27cb05cfaf654c8d306`.
+- Baseline evidence: PR #23 squash commit, `Chapter 21: Designing for Manufacturing and Field Reality (#23)`.
+- PR #23 feature lifecycle evidence:
+  - Canonical Brief: `ba936e0`.
+  - Author Draft: `ea02c47`.
+  - Editorial Review: `7ec2b1b`.
+  - Canon Review: `326e7d1`.
+  - Technical Review: `d77dea8`.
+  - Freeze Review: `7551641be74b13c97a5360174043d49004f0c3f4`.
+  - Squash merge: `4176829b64f5d920349fe27cb05cfaf654c8d306`.
+- Squash verification result: passed. The squash commit is an ancestor of current `origin/main`, has parent
+  `c0c3bf50d869e3fcb58c7930ffd7da71c6589c2a`, and the checked Chapter 21 lifecycle files are tree-equivalent to the
+  Chapter 21 Freeze Review commit `7551641be74b13c97a5360174043d49004f0c3f4`.
+- Part position: third chapter of Part IV - Building a Product.
+- Canonical predecessor: `CHAPTER-021` - Designing for Manufacturing and Field Reality.
+- Outcome: Approve canonical brief registration.
+- Reader-facing manuscript created: no.
+- Manuscript path remains absent: `book/04-building-a-product/22-configuration-variants-and-product-lines.md`.
+- Canonical brief path created:
+  `editor/chapter-briefs/CHAPTER-022-configuration-variants-and-product-lines.md`.
+- Index registration: `CHAPTER-022` added to `knowledge/index.yaml` as `draft`.
+- Primary concept: none. Chapter 22 follows the current no-primary Part IV practice and is carried by a material
+  relationship set.
+- Central configuration/variant/product-line result: configuration is treated as owned state, supported variants are
+  treated as product promises, and product-line boundaries define shared core, variation points, supported combinations,
+  and unsupported combinations without creating new PEAK concepts.
+- Canonical scope: configuration ownership, variant promises, product-line boundaries, defaults, validation, migration,
+  source of truth, supported and unsupported combinations, shared core, variation points, Change Radius, discoverability,
+  and proportionate records or review for product-line decisions.
+- Selected PEAK concepts:
+  - `LAW-001` - Every State Has One Owner.
+  - `LAW-002` - Every API Is a Promise.
+  - `LAW-004` - Simplicity Is a Feature.
+  - `LAW-005` - Evidence Before Confidence.
+  - `LAW-006` - Unused Flexibility Is Waste.
+  - `LAW-007` - Every Dependency Is a Decision.
+  - `VOCAB-001` - Change Radius.
+  - `METRIC-001` - Change Radius.
+  - `METRIC-003` - Discoverability.
+  - `ARTIFACT-001` - ADR.
+  - `ARTIFACT-002` - RFC.
+  - `ARTIFACT-003` - Decision Journal.
+  - `ARTIFACT-006` - Architecture Ledger.
+  - `RITUAL-001` - Architecture Review.
+  - `RITUAL-002` - Architecture Freeze.
+  - `SMELL-004` - Hidden State.
+  - `SMELL-001` - Silent Coupling.
+  - `SMELL-005` - Platform Leakage.
+  - `ANTIPATTERN-003` - Global Configuration.
+  - `ANTIPATTERN-006` - Temporary Solution.
+  - `ANTIPATTERN-002` - HAL Everywhere.
+- Rejected PEAK concepts:
+  - `FAILURE-003` - The Successful Prototype: predecessor context from Chapter 20, not the Chapter 22 anchor.
+  - `FAILURE-005` - The Release We Should Have Delayed: related to late release pressure, but Chapter 24 owns release.
+  - `LAW-003` - Time Is a Dependency: relevant to migration windows but not material enough for a Chapter 22 edge.
+  - `ARTIFACT-004` - Mistake Ledger: useful after variant failures but not the chapter's main action.
+  - `VOCAB-006` - Architecture Freeze: related through `RITUAL-002`, but the vocabulary edge is unnecessary.
+  - `METRIC-004` - API Stability: covered sufficiently by API promises, Change Radius, and Discoverability.
+- Exact outgoing relationships registered:
+  - `CHAPTER-022 references LAW-001`.
+  - `CHAPTER-022 references LAW-002`.
+  - `CHAPTER-022 references LAW-004`.
+  - `CHAPTER-022 references LAW-005`.
+  - `CHAPTER-022 references LAW-006`.
+  - `CHAPTER-022 references LAW-007`.
+  - `CHAPTER-022 references VOCAB-001`.
+  - `CHAPTER-022 references METRIC-001`.
+  - `CHAPTER-022 references METRIC-003`.
+  - `CHAPTER-022 references ARTIFACT-001`.
+  - `CHAPTER-022 references ARTIFACT-002`.
+  - `CHAPTER-022 references ARTIFACT-003`.
+  - `CHAPTER-022 references ARTIFACT-006`.
+  - `CHAPTER-022 references RITUAL-001`.
+  - `CHAPTER-022 references RITUAL-002`.
+  - `CHAPTER-022 references SMELL-004`.
+  - `CHAPTER-022 references SMELL-001`.
+  - `CHAPTER-022 references SMELL-005`.
+  - `CHAPTER-022 references ANTIPATTERN-003`.
+  - `CHAPTER-022 references ANTIPATTERN-006`.
+  - `CHAPTER-022 references ANTIPATTERN-002`.
+- New PEAK concept result: no new PEAK law, maxim, artifact, ritual, metric, smell, anti-pattern, failure story,
+  vocabulary concept, ID, relationship verb, or primary-concept field was added.
+- Later Part IV boundaries:
+  - Chapter 23 owns observability in embedded systems.
+  - Chapter 24 owns release discipline and upgrade paths.
+  - Chapter 25 owns the reference project walkthrough.
+- Earlier-parts boundary: Chapter 22 uses Chapters 7, 8, 9, 10, 11, 12, 13, 14, 15, 17, 18, 19, 20, and 21 as
+  constraints and support without repeating earlier law, review, freeze, prototype-to-product, manufacturing, or field
+  chapters.
+- Required reader-facing chapter architecture preserved for the future manuscript: Opening Quote, Story, Discussion,
+  Engineering Principle, Architecture Exercise, Principal's Notebook, ADR, Editor's Commentary.
+- Changed files:
+  - `editor/chapter-briefs/CHAPTER-022-configuration-variants-and-product-lines.md`
+  - `editor/EDITOR_LOG.md`
+  - `knowledge/index.yaml`
+- Final validation completed after this log entry:
+  - Direct canonical-brief assertions: passed for branch, baseline, expected changed files only, brief existence,
+    manuscript absence, `CHAPTER-022` draft registration, Chapters 1-21 remaining canonical, exact Chapter 22
+    relationship set, existing relationship targets, valid relationship verb, no duplicate or self-edge, no new PEAK ID,
+    unchanged PEAK concept files, unchanged `book/04-building-a-product/README.md`, unchanged
+    `editor/CHAPTER_ARCHITECTURE.md`, unchanged table of contents, unchanged existing chapters, later Part IV
+    boundaries, and no tracked `site` output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini editor/chapter-briefs/CHAPTER-022-configuration-variants-and-product-lines.md editor/EDITOR_LOG.md`:
+    passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed with no tracked `site/` output.
+- Next lifecycle stage: Author Draft after this Canonical Brief Registration commit is committed and pushed.
+- Do not create the manuscript, perform review gates, create a pull request, or merge as part of this phase.
+
 ## Phase 99 Chapter 19 Editorial Review
 
 - Chapter: Freezing Architecture Without Freezing Learning.
