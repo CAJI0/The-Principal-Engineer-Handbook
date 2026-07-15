@@ -9383,6 +9383,78 @@ Pull request readiness:
 - Next lifecycle stage: Technical Review after this Canon Review commit is committed and pushed.
 - Do not perform Technical Review, Freeze Review, PR creation, or merge as part of this phase.
 
+## Phase 125 Chapter 23 Technical Review
+
+- Chapter: Observability in Embedded Systems.
+- Stable ID: `CHAPTER-023`.
+- Branch: `chapter23`.
+- Stage: Technical Review.
+- Reviewed Canon Review commit: `7b859aa6f7b54e6525fa230379c3756579d768df`.
+- Manuscript path: `book/04-building-a-product/23-observability-in-embedded-systems.md`.
+- Canonical brief path preserved:
+  `editor/chapter-briefs/CHAPTER-023-observability-in-embedded-systems.md`.
+- Part position: fourth chapter of Part IV - Building a Product.
+- Primary concept: none.
+- Central illustrated concepts: `ARTIFACT-005` - Event Catalog; `SMELL-006` - Event Explosion.
+- Outcome: Approve with minor changes.
+- Technical domains checked: RAM, flash, CPU, power, flash wear, retained context, ring buffers, compact logs, reset
+  context, fault and crash snapshots, boot counters, sequence numbers, monotonic time, unreliable wall-clock time,
+  partial logs, power loss, firmware, service-tool, gateway, cloud, version, configuration, variant, identity, update,
+  recovery, transport, radio, network, dependency, support-safe meaning, privacy, security, event versioning,
+  deprecation, and field diagnosis without a debugger.
+- Material corrections during Technical Review: added a bounded sentence clarifying that remote telemetry, dashboards, or
+  cloud services may help but cannot be required for field evidence when connectivity, access, or backend interpretation
+  is part of the failure.
+- Constrained-resource assessment: passed. The chapter treats retained evidence as bounded by RAM, flash, CPU, power,
+  radio bandwidth, service access, privacy, security, and flash wear.
+- Reset/fault/retention assessment: passed. Reset snapshots, retained ring buffers, compact counters, boot counters,
+  bounded fault or crash snapshots, partial histories, and retained update/recovery context are technically plausible and
+  do not imply storing everything.
+- Time/sequence assessment: passed. Sequence numbers, boot counters, monotonic ticks, install attempts, update phases,
+  and reset context are used accurately for devices without reliable wall-clock time.
+- Update/recovery assessment: passed. Intermittent post-update reporting failure, lost update state after reboot,
+  recovery state, first post-update report, and update/recovery diagnostics are credible without writing Chapter 24.
+- Version/configuration/variant/identity assessment: passed. Firmware version, configuration version, variant identity,
+  manufacturing identity, hardware revision, supported variant, and active context are treated as field evidence with
+  owners and support meaning.
+- Transport/radio/network/service-tool assessment: passed. Radio, network, gateway, firmware, configuration,
+  dependency, power, service-tool, dashboard, and cloud boundaries are separated enough to make diagnostic decisions
+  credible without requiring a specific telemetry stack.
+- Privacy/security/support-safe assessment: passed. The diagnostic surface is support-safe, bounded by privacy and
+  security constraints, and distinct from developer debug logs or user-facing UX design.
+- Event catalog/versioning assessment: passed. Event ownership, trigger, payload, severity, retention, reset behavior,
+  support visibility, privacy/security sensitivity, validation, versioning, deprecation, and supported decision are
+  proportionate and reviewable.
+- Guardrail assessment: passed. The manuscript does not imply more logs automatically improve observability, every module
+  should emit events freely, cloud telemetry is required, error codes are useless, all logs must survive reset, all
+  diagnostics must be user-visible, every event needs an ADR, observability replaces testing/failure design/release
+  discipline/support training, verbose debug builds are product observability, or observability means storing everything.
+- Boundary assessment: passed. Chapter 24 release discipline and upgrade paths and Chapter 25 reference project remain
+  future scope; earlier chapters are used as constraints rather than repeated.
+- Unchanged files confirmed: canonical brief, `knowledge/index.yaml`, PEAK concept files,
+  `editor/CHAPTER_ARCHITECTURE.md`, Part IV README, table of contents, `editor/CANON.md`, and Chapters 1-22.
+- Changed files:
+  - `book/04-building-a-product/23-observability-in-embedded-systems.md`
+  - `editor/EDITOR_LOG.md`
+- Final validation completed after this log entry:
+  - Direct Technical Review assertions: passed for clean baseline, reviewed SHA matching the Canon Review commit,
+    expected changed files only, exact section order, exactly three Principal's Notebook observations, `CHAPTER-023`
+    remaining `draft`, no primary concept introduced, exact relationship set preserved, material technical coverage,
+    unchanged canonical brief, unchanged `knowledge/index.yaml`, unchanged PEAK concept files, unchanged
+    `editor/CHAPTER_ARCHITECTURE.md`, unchanged Part IV README, unchanged table of contents, unchanged `editor/CANON.md`,
+    unchanged Chapters 1-22, guardrail checks, and no tracked `site` output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini book/04-building-a-product/23-observability-in-embedded-systems.md editor/EDITOR_LOG.md`:
+    passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed with no tracked `site/` output.
+- Next lifecycle stage: Freeze Review after this Technical Review commit is committed and pushed.
+- Do not perform Freeze Review, PR creation, or merge as part of this phase.
+
 ## Phase 99 Chapter 19 Editorial Review
 
 - Chapter: Freezing Architecture Without Freezing Learning.

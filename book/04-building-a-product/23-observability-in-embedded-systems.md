@@ -123,7 +123,9 @@ The same is true of external systems. Every Dependency Is a Decision (`LAW-007`)
 radio coverage, vendor drivers, network policy, manufacturing data, and configuration delivery all participate in one
 field symptom. Observability should not hide those dependencies behind one error. It should make the boundary outcome
 plain enough to decide whether the product needs a firmware fix, a gateway fix, a configuration correction, a service
-action, or a dependency review.
+action, or a dependency review. Remote telemetry, dashboards, or cloud services may help, but the product should still
+preserve enough local and service-visible evidence for cases where connectivity, access, or backend interpretation is
+part of the failure.
 
 The Event Catalog (`ARTIFACT-005`) is the central artifact for this chapter because it turns diagnostic ambition into an
 owned product surface. A good event entry is not a clever log message. It records the owner, name, trigger, payload,
@@ -134,9 +136,9 @@ which diagnostic commitments must be preserved while a release or field trial is
 
 Those commitments still live inside embedded constraints. RAM, flash, CPU time, power budget, radio bandwidth, service
 access, privacy, security, and flash wear all shape what the product can preserve. A small retained ring buffer, a few
-compact counters, a boot counter, a reset snapshot, or a bounded fault or crash snapshot may be stronger evidence than a
-large debug stream that disappears at reset or drains the battery. The point is not to make every log durable. The point
-is to decide which context is worth its cost because it changes a field decision.
+compact counters, a boot counter, a reset snapshot, a partial history, or a bounded fault or crash snapshot may be
+stronger evidence than a large debug stream that disappears at reset or drains the battery. The point is not to make
+every log durable. The point is to decide which context is worth its cost because it changes a field decision.
 
 The opposing smell is Event Explosion (`SMELL-006`). Event Explosion happens when the product emits many events but few
 decisions become easier. It often starts from a good instinct. A team has been blind once, so it decides never to be
