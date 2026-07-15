@@ -379,6 +379,11 @@ entities:
       name: Designing for Manufacturing and Field Reality
       path: ../book/04-building-a-product/21-designing-for-manufacturing-and-field-reality.md
       status: canonical
+    - id: CHAPTER-022
+      type: chapter
+      name: Configuration, Variants, and Product Lines
+      path: ../book/04-building-a-product/22-configuration-variants-and-product-lines.md
+      status: canonical
   adrs:
     - id: ADR-001
       type: adr
@@ -1020,3 +1025,66 @@ relationships:
   - from: CHAPTER-021
     type: references
     to: ANTIPATTERN-003
+  - from: CHAPTER-022
+    type: references
+    to: LAW-001
+  - from: CHAPTER-022
+    type: references
+    to: LAW-002
+  - from: CHAPTER-022
+    type: references
+    to: LAW-004
+  - from: CHAPTER-022
+    type: references
+    to: LAW-005
+  - from: CHAPTER-022
+    type: references
+    to: LAW-006
+  - from: CHAPTER-022
+    type: references
+    to: LAW-007
+  - from: CHAPTER-022
+    type: references
+    to: VOCAB-001
+  - from: CHAPTER-022
+    type: references
+    to: METRIC-001
+  - from: CHAPTER-022
+    type: references
+    to: METRIC-003
+  - from: CHAPTER-022
+    type: references
+    to: ARTIFACT-001
+  - from: CHAPTER-022
+    type: references
+    to: ARTIFACT-002
+  - from: CHAPTER-022
+    type: references
+    to: ARTIFACT-003
+  - from: CHAPTER-022
+    type: references
+    to: ARTIFACT-006
+  - from: CHAPTER-022
+    type: references
+    to: RITUAL-001
+  - from: CHAPTER-022
+    type: references
+    to: RITUAL-002
+  - from: CHAPTER-022
+    type: references
+    to: SMELL-004
+  - from: CHAPTER-022
+    type: references
+    to: SMELL-001
+  - from: CHAPTER-022
+    type: references
+    to: SMELL-005
+  - from: CHAPTER-022
+    type: references
+    to: ANTIPATTERN-003
+  - from: CHAPTER-022
+    type: references
+    to: ANTIPATTERN-006
+  - from: CHAPTER-022
+    type: references
+    to: ANTIPATTERN-002
