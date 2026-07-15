@@ -388,7 +388,7 @@ entities:
       type: chapter
       name: Observability in Embedded Systems
       path: ../book/04-building-a-product/23-observability-in-embedded-systems.md
-      status: draft
+      status: canonical
   adrs:
     - id: ADR-001
       type: adr
