@@ -9672,6 +9672,105 @@ Pull request readiness:
 - Next lifecycle stage: Author Draft after author approval.
 - Do not create a pull request, merge, or start the Author Draft as part of this phase.
 
+## Phase 128 Chapter 24 Author Draft
+
+- Chapter: Release Discipline and Upgrade Paths.
+- Stable ID: `CHAPTER-024`.
+- Branch: `chapter24`.
+- Stage: Author Draft.
+- Starting canonical-brief registration commit: `d964095fa6efcdf8f122ec1df164d80fb215bfbe`.
+- Manuscript path: `book/04-building-a-product/24-release-discipline-and-upgrade-paths.md`.
+- Canonical brief path preserved:
+  `editor/chapter-briefs/CHAPTER-024-release-discipline-and-upgrade-paths.md`.
+- Part position: fifth chapter of Part IV - Building a Product.
+- Primary concept: none.
+- Central illustrated concepts: `FAILURE-005` - The Release We Should Have Delayed; `RITUAL-002` - Architecture
+  Freeze.
+- Outcome: Author Draft manuscript created from the registered canonical brief.
+- Registered relationship set preserved:
+  - `CHAPTER-024 illustrates FAILURE-005`
+  - `CHAPTER-024 illustrates RITUAL-002`
+  - `CHAPTER-024 references VOCAB-006`
+  - `CHAPTER-024 references RITUAL-001`
+  - `CHAPTER-024 references LAW-001`
+  - `CHAPTER-024 references LAW-002`
+  - `CHAPTER-024 references LAW-003`
+  - `CHAPTER-024 references LAW-005`
+  - `CHAPTER-024 references LAW-007`
+  - `CHAPTER-024 references VOCAB-001`
+  - `CHAPTER-024 references METRIC-001`
+  - `CHAPTER-024 references METRIC-003`
+  - `CHAPTER-024 references METRIC-004`
+  - `CHAPTER-024 references ARTIFACT-001`
+  - `CHAPTER-024 references ARTIFACT-002`
+  - `CHAPTER-024 references ARTIFACT-003`
+  - `CHAPTER-024 references ARTIFACT-004`
+  - `CHAPTER-024 references ARTIFACT-005`
+  - `CHAPTER-024 references ARTIFACT-006`
+  - `CHAPTER-024 references ANTIPATTERN-006`
+  - `CHAPTER-024 references SMELL-004`
+  - `CHAPTER-024 references SMELL-001`
+  - `CHAPTER-024 references SMELL-005`
+  - `CHAPTER-024 references SMELL-006`
+  - `CHAPTER-024 references ANTIPATTERN-002`
+  - `CHAPTER-024 references ANTIPATTERN-003`
+  - `CHAPTER-024 references ANTIPATTERN-005`
+  - `CHAPTER-024 references FAILURE-002`
+- Draft scope result: passed. The manuscript teaches release discipline and upgrade paths as architecture obligations
+  after prototype-to-product work, manufacturing and field contracts, variants, and observability are in place. It moves the reader
+  from "Did the new image pass?" to "Which upgrade paths are we promising, and what must remain true before, during, and
+  after the upgrade?"
+- Required narrative premise included: The Upgrade That Worked Only Once, covering multiple older field versions,
+  hardware-revision-specific migration, deprecated customer option, unclear service-tool compatibility, unsafe rollback
+  for migrated configuration, ambiguous calibration ownership, identity loss in one recovery path, support-unsafe
+  failure evidence, feature-only release notes, example testing instead of path testing, and a late release-critical
+  change.
+- Required chapter topics included: release discipline, upgrade path, release criteria, compatibility promises,
+  supported variants and configurations, version identity, artifact integrity, migration, rollback, retry, recovery,
+  forward-fix, field diagnostics readiness, support readiness, known risk decisions, release notes as discoverable
+  support evidence, Architecture Review, Architecture Freeze, ADR, RFC, Decision Journal, Architecture Ledger, Event
+  Catalog, and Mistake Ledger.
+- Boundary checks: Chapter 20 prototype-to-product transition, Chapter 21 manufacturing and field reality, Chapter 22
+  configuration/variants/product lines, Chapter 23 observability, and Chapter 25 reference project walkthrough remain
+  distinct; earlier chapters are used as constraints without being retaught.
+- Required section order used exactly:
+  1. Opening Quote
+  2. Story
+  3. Discussion
+  4. Engineering Principle
+  5. Architecture Exercise
+  6. Principal's Notebook
+  7. ADR
+  8. Editor's Commentary
+- Principal's Notebook contains exactly three short observations and no explanations.
+- No-new-concept result: passed. No primary concept, PEAK concept, PEAK ID, relationship, relationship verb, metric,
+  artifact, ritual, anti-pattern, failure story, vocabulary concept, or release/upgrade artifact was introduced.
+- Unchanged files confirmed: canonical brief, `knowledge/index.yaml`, PEAK concept files,
+  `editor/CHAPTER_ARCHITECTURE.md`, Part IV README, table of contents, `editor/CANON.md`, and Chapters 1-23.
+- Files changed in this phase:
+  - `book/04-building-a-product/24-release-discipline-and-upgrade-paths.md`
+  - `editor/EDITOR_LOG.md`
+- Validation completed after this log entry:
+  - Direct Author Draft assertions: passed for clean baseline, `HEAD` matching `origin/chapter24` before drafting, starting SHA
+    matching the Canonical Brief Registration commit, expected changed files only, exact section order, required
+    sections unique, exactly three Principal's Notebook observations, unresolved marker absence, `CHAPTER-024` remaining
+    `draft`, canonical brief unchanged, `knowledge/index.yaml` unchanged, exact relationship set preserved, no primary
+    concept introduced, no new PEAK ID, unchanged Part IV README, unchanged `editor/CHAPTER_ARCHITECTURE.md`, unchanged
+    `editor/CANON.md`, unchanged table of contents, unchanged Chapters 1-23, unchanged PEAK concept files, material
+    coverage for every registered concept, Chapter 25 boundary, forbidden-frame checks, and no tracked `site` output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini book/04-building-a-product/24-release-discipline-and-upgrade-paths.md editor/EDITOR_LOG.md`:
+    passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed with no tracked `site/` output.
+- Next lifecycle stage: Editorial Review after this Author Draft commit is committed and pushed.
+- Do not perform Editorial Review, Canon Review, Technical Review, Freeze Review, PR creation, or merge as part of this
+  phase.
+
 ## Phase 99 Chapter 19 Editorial Review
 
 - Chapter: Freezing Architecture Without Freezing Learning.
