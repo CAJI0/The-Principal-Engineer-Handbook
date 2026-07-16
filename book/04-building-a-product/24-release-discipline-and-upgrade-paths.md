@@ -267,8 +267,10 @@ valid. Field-data compatibility asks whether data recorded before the release st
 means. Configuration compatibility asks whether old schemas migrate or reject safely. Variant compatibility asks whether
 supported packages still carry the same promises. Diagnostic compatibility asks whether event meanings remain
 support-safe and discoverable. Update-package compatibility asks whether package metadata, signing, source-version
-rules, target-version rules, and dependency assumptions match the devices that will receive the package. Support horizon
-names how long the product promises to keep those paths alive.
+rules, target-version rules, and dependency assumptions match the devices that will receive the package. A version
+matrix is useful only when it records the migration contract: which source states may move, which target states they may
+reach, which state must survive, and which unsupported paths must be rejected. Upgrade compatibility is the sum of
+those path promises. Support horizon names how long the product promises to keep those paths alive.
 
 Version numbers can help readers navigate those promises. They cannot replace the promises.
 
@@ -485,10 +487,11 @@ Chapter 24 follows Chapter 23 by turning observable product evidence into suppor
 Chapter 23 asked what the device can explain when it fails away from engineering. Chapter 24 asks which release and
 upgrade promises that evidence must support before the product changes in the field.
 
-The chapter deliberately keeps release discipline, upgrade path, rollback, retry, forward-fix, release evidence,
-support horizon, and release notes as chapter-local terms. It introduces no primary PEAK concept. The PEAK weight sits
-on The Release We Should Have Delayed (`FAILURE-005`) and Architecture Freeze (`RITUAL-002`), supported by the
-temporary, scoped meaning of Architecture Freeze (`VOCAB-006`).
+The chapter deliberately keeps release discipline, upgrade path, rollback, retry, forward-fix, firmware image, release
+candidate, version matrix, migration contract, upgrade compatibility, support horizon, release gate, release notes, and
+release evidence as chapter-local terms. It introduces no primary PEAK concept. The PEAK weight sits on The Release We
+Should Have Delayed (`FAILURE-005`) and Architecture Freeze (`RITUAL-002`), supported by the temporary, scoped meaning
+of Architecture Freeze (`VOCAB-006`).
 
 The earlier chapters are constraints, not material to repeat. Release-critical state needs owners. Released behavior and
 diagnostics become API promises. Update tooling and service tools are dependency decisions. Migration and support

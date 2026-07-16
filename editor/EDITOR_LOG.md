@@ -9771,6 +9771,75 @@ Pull request readiness:
 - Do not perform Editorial Review, Canon Review, Technical Review, Freeze Review, PR creation, or merge as part of this
   phase.
 
+## Phase 129 Chapter 24 Editorial Review
+
+- Chapter: Release Discipline and Upgrade Paths.
+- Stable ID: `CHAPTER-024`.
+- Branch: `chapter24`.
+- Stage: Editorial Review.
+- Reviewed Author Draft commit: `426175964e6cf6c62281be5892fb30ca1aa8f67e`.
+- Canonical-brief parent commit: `d964095fa6efcdf8f122ec1df164d80fb215bfbe`.
+- Manuscript path: `book/04-building-a-product/24-release-discipline-and-upgrade-paths.md`.
+- Canonical brief path preserved:
+  `editor/chapter-briefs/CHAPTER-024-release-discipline-and-upgrade-paths.md`.
+- Part position: fifth chapter of Part IV - Building a Product.
+- Primary concept: none.
+- Central illustrated concepts: `FAILURE-005` - The Release We Should Have Delayed; `RITUAL-002` - Architecture
+  Freeze.
+- Outcome: Approved with minor changes.
+- Material editorial changes:
+  - clarified that a version matrix is useful only when it records the migration contract and the promised upgrade
+    compatibility path;
+  - expanded the Editor's Commentary chapter-local term list so release discipline, upgrade path, rollback, retry,
+    forward-fix, firmware image, release candidate, version matrix, migration contract, upgrade compatibility, support
+    horizon, release gate, release notes, and release evidence remain local prose terms rather than PEAK concepts.
+- Section order result: passed. The manuscript preserves the required sequence: Opening Quote, Story, Discussion,
+  Engineering Principle, Architecture Exercise, Principal's Notebook, ADR, Editor's Commentary.
+- Principal's Notebook result: passed. It contains exactly three short observations.
+- Story result: passed. The story remains The Upgrade That Worked Only Once and includes a working latest-build lab
+  upgrade, multiple older field versions, hardware-specific migration, deprecated customer option, unclear service-tool
+  compatibility, unsafe rollback for migrated configuration, ambiguous calibration ownership, identity loss in one
+  recovery path, support-unsafe failure evidence, feature-only release notes, example testing instead of path testing,
+  and a late release-critical change.
+- Release-discipline result: passed. The chapter treats release as an architecture-aware promise with evidence,
+  boundaries, records, supported and unsupported paths, and support obligations.
+- Upgrade-path result: passed. The chapter treats an upgrade path as a supported source-to-target state transition, not
+  as a firmware image alone.
+- Compatibility and support-horizon result: passed. Backward, forward, service-tool, manufacturing, field-data,
+  configuration, variant, diagnostic, update-package, version-matrix, migration-contract, and support-horizon concerns
+  remain explicit without becoming a semantic-versioning doctrine.
+- Architecture Freeze result: passed. Freeze remains temporary, scoped, exception-aware, exit-criteria-bound, and limited
+  to release-critical surfaces rather than a full architecture freeze.
+- Chapter 25 boundary result: passed. The commentary previews the reference-project walkthrough lightly without writing
+  it early.
+- Earlier-parts boundary result: passed. Earlier chapters remain constraints and support rather than repeated content.
+- Unchanged-file confirmations: canonical brief, `knowledge/index.yaml`, PEAK concept files,
+  `editor/CHAPTER_ARCHITECTURE.md`, Part IV README, table of contents, `editor/CANON.md`, and Chapters 1-23 remain
+  unchanged.
+- Changed files:
+  - `book/04-building-a-product/24-release-discipline-and-upgrade-paths.md`
+  - `editor/EDITOR_LOG.md`
+- Final validation completed after this log entry:
+  - Direct Editorial Review assertions: passed for clean baseline, `HEAD` matching `origin/chapter24` before review,
+    reviewed SHA matching the Author Draft commit, expected changed files only, exact section order, required sections
+    unique, exactly three Principal's Notebook observations, unresolved marker absence, `CHAPTER-024` remaining `draft`,
+    primary concept absence, exact relationship set preservation, no new PEAK ID, unchanged canonical brief, unchanged
+    `knowledge/index.yaml`, unchanged PEAK concept files, unchanged Part IV README, unchanged
+    `editor/CHAPTER_ARCHITECTURE.md`, unchanged table of contents, unchanged Chapters 1-23, Chapter 25 boundary,
+    forbidden-frame checks, and no tracked `site` output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini book/04-building-a-product/24-release-discipline-and-upgrade-paths.md editor/EDITOR_LOG.md`:
+    passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed with no tracked `site/` output.
+- Next lifecycle stage: Canon Review after this Editorial Review commit is committed and pushed.
+- Do not perform Canon Review, Technical Review, Freeze Review, PR creation, or merge until this Editorial Review commit
+  is committed, pushed, and local/remote equality is clean.
+
 ## Phase 99 Chapter 19 Editorial Review
 
 - Chapter: Freezing Architecture Without Freezing Learning.
