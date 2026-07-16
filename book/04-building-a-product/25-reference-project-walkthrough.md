@@ -215,13 +215,8 @@ They could tell when rollback was safe, when retry was enough, and when forward-
 engineers could find the baseline decision, the unsupported combinations, the event meanings, the review notes, and the
 conditions that would reopen the decision.
 
-That was the walkthrough.
-
-Not a universal design.
-
-Not a reference implementation.
-
-A chain of decisions that held together when the product left the bench.
+That was the walkthrough: not a universal design, not a reference implementation, but a chain of decisions that held
+together when the product left the bench.
 
 ## Discussion
 

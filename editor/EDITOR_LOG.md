@@ -10236,6 +10236,60 @@ Pull request readiness:
   - `python -m mkdocs build --strict`: passed.
 - Next stage: Editorial Review.
 
+## Phase 135 Chapter 25 Editorial Review
+
+- Chapter: Reference Project Walkthrough.
+- Stable ID: `CHAPTER-025`.
+- Branch: `chapter25`.
+- Stage: Editorial Review.
+- Reviewed Author Draft SHA: `dfe5b4459101505a0f21b4cdd2e1361f66b7706a`.
+- Canonical brief parent SHA: `95a858232f2309cbbb38c8a8a9ff7c65f674990f`.
+- Manuscript path: `book/04-building-a-product/25-reference-project-walkthrough.md`.
+- Canonical brief path preserved:
+  `editor/chapter-briefs/CHAPTER-025-reference-project-walkthrough.md`.
+- Part IV position: sixth and final Part IV chapter.
+- Primary concept: none.
+- Outcome: Approved with minor changes.
+- Material editorial changes: tightened the story's closing cadence by combining the walkthrough disclaimer into one
+  sentence; no canon, technical, relationship, section, notebook, ADR, or boundary meaning changed.
+- Section-order result: passed. The manuscript preserves the required order: Opening Quote, Story, Discussion,
+  Engineering Principle, Architecture Exercise, Principal's Notebook, ADR, Editor's Commentary.
+- Principal's Notebook result: exactly three short observations.
+- Connected-walkthrough result: passed. The Field Sensor Gateway remains one connected product decision chain across
+  prototype assumptions, manufacturing and field reality, configuration and variants, observability, release and upgrade
+  paths, records, Architecture Review, and narrow Architecture Freeze.
+- Reference-project boundary result: passed. The chapter stays concrete without becoming a tutorial implementation,
+  product specification, MCU/RTOS/vendor guide, code walkthrough, product-management case study, or new theory chapter.
+- Part IV closure result: passed. The chapter closes Part IV by synthesizing Chapters 20 through 24 inside one product
+  baseline rather than summarizing them as separate checklists.
+- Part V boundary result: passed. Technical Leadership Without Authority is prepared only as a transition from shared
+  product memory; no Part V content was written early.
+- Unchanged files confirmed: canonical brief, `knowledge/index.yaml`, PEAK concept files,
+  `editor/CHAPTER_ARCHITECTURE.md`, Part IV README, table of contents, `editor/CANON.md`, and Chapters 1-24.
+- Changed files:
+  - `book/04-building-a-product/25-reference-project-walkthrough.md`
+  - `editor/EDITOR_LOG.md`
+- Final validation completed after this log entry:
+  - Direct Editorial Review assertions: passed for clean baseline, `HEAD` matching `origin/chapter25` before review,
+    reviewed SHA matching the Author Draft commit, expected changed files only, exact section order, required sections
+    unique, exactly three Principal's Notebook observations, unresolved marker absence, `CHAPTER-025` remaining `draft`,
+    no primary concept introduced, exact relationship set preserved, unchanged canonical brief, unchanged
+    `knowledge/index.yaml`, unchanged PEAK concept files, unchanged `editor/CHAPTER_ARCHITECTURE.md`, unchanged Part IV
+    README, unchanged table of contents, unchanged `editor/CANON.md`, unchanged Chapters 1-24, connected-walkthrough
+    result, Part IV closure, Part V boundary, and no tracked `site` output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini book/04-building-a-product/25-reference-project-walkthrough.md editor/EDITOR_LOG.md`:
+    passed with 0 errors, 0 warnings, and 0 suggestions.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed on rerun after a transient concurrent-run status-0 report against existing
+    repository-local links.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed with no tracked `site/` output.
+- Next lifecycle stage: Canon Review after this Editorial Review commit is committed and pushed.
+- Do not perform Canon Review, Technical Review, Freeze Review, PR creation, or merge as part of this phase.
+
 ## Phase 99 Chapter 19 Editorial Review
 
 - Chapter: Freezing Architecture Without Freezing Learning.
