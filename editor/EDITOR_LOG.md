@@ -10290,6 +10290,65 @@ Pull request readiness:
 - Next lifecycle stage: Canon Review after this Editorial Review commit is committed and pushed.
 - Do not perform Canon Review, Technical Review, Freeze Review, PR creation, or merge as part of this phase.
 
+## Phase 136 Chapter 25 Canon Review
+
+- Chapter: Reference Project Walkthrough.
+- Stable ID: `CHAPTER-025`.
+- Branch: `chapter25`.
+- Stage: Canon Review.
+- Reviewed Editorial Review SHA: `7d062013b40564dce94b518dd19b9020e9f8a453`.
+- Manuscript path: `book/04-building-a-product/25-reference-project-walkthrough.md`.
+- Canonical brief path preserved:
+  `editor/chapter-briefs/CHAPTER-025-reference-project-walkthrough.md`.
+- Part IV position: sixth and final Part IV chapter.
+- Primary concept: none.
+- Outcome: Approved.
+- Canonical sources checked: Chapter 25 canonical brief, `knowledge/index.yaml`, `editor/CHAPTER_ARCHITECTURE.md`,
+  `editor/CANON.md`, Part IV Chapters 20-24, earlier applied chapters 7, 8, 9, 10, 13, 15, 16, 17, 18, and 19, and the
+  registered PEAK concept files.
+- No-primary result: passed. Field Sensor Gateway, reference project, product baseline, product decision chain, pilot
+  release, supportable baseline, product memory, and walkthrough remain chapter-local prose terms and were not promoted
+  into PEAK concepts or registry fields.
+- Synthesis result: passed. The manuscript remains a Part IV synthesis chapter, not a new theory chapter, recap chapter,
+  tutorial implementation, product specification, vendor guide, code walkthrough, product-management case study, or Part
+  V chapter.
+- Relationship findings: passed. `FAILURE-003` is materially illustrated, and the exact registered Chapter 25 outgoing
+  relationship set is materially present and unchanged.
+- Product-decision-chain result: passed. Prototype assumptions, manufacturing identity and calibration, hardware
+  revision variation, configuration and variants, observability, release and upgrade paths, recovery, support pressure,
+  records, Architecture Review, and narrow Architecture Freeze connect into one baseline decision chain.
+- Artifact and ritual result: passed. ADR, RFC, Decision Journal, Mistake Ledger, Event Catalog, Architecture Ledger,
+  Architecture Review, and Architecture Freeze are used proportionately as existing records and rituals.
+- Part IV closure result: passed. Chapter 25 closes Part IV by connecting Chapters 20 through 24 in one product
+  walkthrough.
+- Part V boundary result: passed. Technical Leadership Without Authority is prepared only through the shared-memory
+  transition; no Part V operating model or organizational-leadership practice was written early.
+- Corrections: none. Manuscript unchanged during Canon Review.
+- Unchanged files confirmed: manuscript, canonical brief, `knowledge/index.yaml`, PEAK concept files,
+  `editor/CHAPTER_ARCHITECTURE.md`, Part IV README, table of contents, `editor/CANON.md`, and Chapters 1-24.
+- Changed files:
+  - `editor/EDITOR_LOG.md`
+- Final validation completed after this log entry:
+  - Direct Canon Review assertions: passed for clean baseline, `HEAD` matching `origin/chapter25` before review,
+    reviewed SHA matching the Editorial Review commit, log-only changed-file boundary, unchanged manuscript, exact
+    section order, required sections unique, exactly three Principal's Notebook observations, unresolved marker absence,
+    material coverage for every registered relationship, `CHAPTER-025` remaining `draft`, no primary concept
+    introduced, exact relationship set preserved, existing relationship targets, unchanged canonical brief, unchanged
+    `knowledge/index.yaml`, unchanged PEAK concept files, unchanged `editor/CHAPTER_ARCHITECTURE.md`, unchanged Part IV
+    README, unchanged table of contents, unchanged `editor/CANON.md`, unchanged Chapters 1-24, ordered prior review
+    entries, and no tracked `site` output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini book/04-building-a-product/25-reference-project-walkthrough.md editor/EDITOR_LOG.md`:
+    passed with 0 errors, 0 warnings, and 0 suggestions.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed with no tracked `site/` output.
+- Next lifecycle stage: Technical Review after this Canon Review commit is committed and pushed.
+- Do not perform Technical Review, Freeze Review, PR creation, or merge as part of this phase.
+
 ## Phase 99 Chapter 19 Editorial Review
 
 - Chapter: Freezing Architecture Without Freezing Learning.
