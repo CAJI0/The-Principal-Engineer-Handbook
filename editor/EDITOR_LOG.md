@@ -10166,6 +10166,76 @@ Pull request readiness:
   - `python -m mkdocs build --strict`: passed.
 - Next stage: Author Draft after author approval.
 
+## Phase 134 Chapter 25 Author Draft
+
+- Chapter: Reference Project Walkthrough.
+- Stable ID: `CHAPTER-025`.
+- Branch: `chapter25`.
+- Stage: Author Draft.
+- Starting canonical-brief registration SHA: `95a858232f2309cbbb38c8a8a9ff7c65f674990f`.
+- Manuscript path: `book/04-building-a-product/25-reference-project-walkthrough.md`.
+- Canonical brief path:
+  `editor/chapter-briefs/CHAPTER-025-reference-project-walkthrough.md`.
+- Part IV position: sixth and final Part IV chapter.
+- Primary concept: none.
+- Relationship set preserved:
+  - `CHAPTER-025 illustrates FAILURE-003`
+  - `CHAPTER-025 references FAILURE-005`
+  - `CHAPTER-025 references FAILURE-002`
+  - `CHAPTER-025 references LAW-001`
+  - `CHAPTER-025 references LAW-002`
+  - `CHAPTER-025 references LAW-003`
+  - `CHAPTER-025 references LAW-004`
+  - `CHAPTER-025 references LAW-005`
+  - `CHAPTER-025 references LAW-006`
+  - `CHAPTER-025 references LAW-007`
+  - `CHAPTER-025 references VOCAB-001`
+  - `CHAPTER-025 references METRIC-001`
+  - `CHAPTER-025 references METRIC-003`
+  - `CHAPTER-025 references METRIC-004`
+  - `CHAPTER-025 references ARTIFACT-001`
+  - `CHAPTER-025 references ARTIFACT-002`
+  - `CHAPTER-025 references ARTIFACT-003`
+  - `CHAPTER-025 references ARTIFACT-004`
+  - `CHAPTER-025 references ARTIFACT-005`
+  - `CHAPTER-025 references ARTIFACT-006`
+  - `CHAPTER-025 references RITUAL-001`
+  - `CHAPTER-025 references RITUAL-002`
+  - `CHAPTER-025 references SMELL-004`
+  - `CHAPTER-025 references SMELL-001`
+  - `CHAPTER-025 references SMELL-005`
+  - `CHAPTER-025 references SMELL-006`
+  - `CHAPTER-025 references ANTIPATTERN-006`
+  - `CHAPTER-025 references ANTIPATTERN-003`
+- No new PEAK concept, relationship, relationship type, or primary-concept field was added.
+- Draft result: created the Field Sensor Gateway reference-project walkthrough as a connected product decision chain
+  across prototype-to-product, manufacturing and field reality, configuration and variants, observability, release and
+  upgrade paths, records, Architecture Review, and narrow Architecture Freeze.
+- Part IV closure result: the chapter closes Part IV by showing Chapters 20 through 24 as connected product decisions
+  inside one small embedded reference product, not as separate checklists.
+- Part V boundary: Technical Leadership Without Authority is previewed only as the next part's transition; no Part V
+  content was written early.
+- Part IV README unchanged.
+- `editor/CHAPTER_ARCHITECTURE.md` unchanged.
+- Changed files:
+  - `book/04-building-a-product/25-reference-project-walkthrough.md`
+  - `editor/EDITOR_LOG.md`
+- Validation commands and results:
+  - Direct Author Draft assertions: passed for expected changed-file boundary, exact section order, unique required
+    sections, exactly three Principal's Notebook observations, no unresolved markers, no primary concept, `CHAPTER-025`
+    draft status, canonical brief unchanged, `knowledge/index.yaml` unchanged, exact relationship set preserved,
+    unchanged Part IV README, unchanged `editor/CHAPTER_ARCHITECTURE.md`, unchanged table of contents, no tracked
+    `site/`, required Field Sensor Gateway technical coverage, and Part V boundary.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini book/04-building-a-product/25-reference-project-walkthrough.md editor/EDITOR_LOG.md`:
+    passed with 0 errors, 0 warnings, and 0 suggestions.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+- Next stage: Editorial Review.
+
 ## Phase 99 Chapter 19 Editorial Review
 
 - Chapter: Freezing Architecture Without Freezing Learning.
