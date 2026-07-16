@@ -10047,6 +10047,125 @@ Pull request readiness:
 - Recommended pull request title: Chapter 24: Release Discipline and Upgrade Paths.
 - Do not create the pull request or merge as part of this phase.
 
+## Phase 133 Chapter 25 Canonical Brief Registration
+
+- Chapter: Reference Project Walkthrough.
+- Stable ID: `CHAPTER-025`.
+- Branch: `chapter25`.
+- Stage: Canonical Brief Registration.
+- Verified baseline `origin/main`: `56c90ec7cfec4e7fe0d839b0f89d8ce8825d2268`.
+- PR #26 merge evidence: baseline is the squash commit
+  `Chapter 24: Release Discipline and Upgrade Paths (#26)`, with parent
+  `f2550e7a243d794960a2ef48fc6e40ed24269c05`.
+- Chapter 24 feature Freeze commit checked for final-file tree equivalence:
+  `fab9ea9ec9eda79123280f90550e45f50a1db3a6`.
+- Outcome: canonical brief registered. Reader-facing manuscript was not created.
+- Part IV position: sixth and final Part IV chapter, following `CHAPTER-024` - Release Discipline and Upgrade Paths.
+- Primary-concept resolution: no primary PEAK concept and no primary-concept registry field. Chapter 25 is a synthesis
+  walkthrough carried by material outgoing relationships.
+- Synthesis/walkthrough result: the brief scopes Chapter 25 to a Field Sensor Gateway reference project that connects
+  prototype-to-product, manufacturing and field reality, configuration and variants, observability, release and upgrade
+  paths, records, Architecture Review, and narrow Architecture Freeze into one product decision chain.
+- Canonical brief path:
+  `editor/chapter-briefs/CHAPTER-025-reference-project-walkthrough.md`.
+- Index registration:
+  - `CHAPTER-025`
+  - Type: `chapter`
+  - Name: `Reference Project Walkthrough`
+  - Path: `../book/04-building-a-product/25-reference-project-walkthrough.md`
+  - Status: `draft`
+- Selected PEAK concepts:
+  - `FAILURE-003` - The Successful Prototype.
+  - `FAILURE-005` - The Release We Should Have Delayed.
+  - `FAILURE-002` - One Lost Packet.
+  - `LAW-001` - Every State Has One Owner.
+  - `LAW-002` - Every API Is a Promise.
+  - `LAW-003` - Time Is a Dependency.
+  - `LAW-004` - Simplicity Is a Feature.
+  - `LAW-005` - Evidence Before Confidence.
+  - `LAW-006` - Unused Flexibility Is Waste.
+  - `LAW-007` - Every Dependency Is a Decision.
+  - `VOCAB-001` - Change Radius.
+  - `METRIC-001` - Change Radius.
+  - `METRIC-003` - Discoverability.
+  - `METRIC-004` - API Stability.
+  - `ARTIFACT-001` - ADR.
+  - `ARTIFACT-002` - RFC.
+  - `ARTIFACT-003` - Decision Journal.
+  - `ARTIFACT-004` - Mistake Ledger.
+  - `ARTIFACT-005` - Event Catalog.
+  - `ARTIFACT-006` - Architecture Ledger.
+  - `RITUAL-001` - Architecture Review.
+  - `RITUAL-002` - Architecture Freeze.
+  - `SMELL-004` - Hidden State.
+  - `SMELL-001` - Silent Coupling.
+  - `SMELL-005` - Platform Leakage.
+  - `SMELL-006` - Event Explosion.
+  - `ANTIPATTERN-006` - Temporary Solution.
+  - `ANTIPATTERN-003` - Global Configuration.
+- Rejected concepts:
+  - `VOCAB-002` and `ARTIFACT-007`: useful for weak pilot signals, but not necessary for the initial relationship set.
+  - `VOCAB-006`: relevant through `RITUAL-002`, but the practice edge is sufficient.
+  - `ANTIPATTERN-002`: related to hardware abstraction, but too implementation-specific for the walkthrough scope.
+  - `ANTIPATTERN-005`: related to asynchronous update logic, but not material enough for the initial graph.
+  - `METRIC-005` and `VOCAB-007`: useful later, but Chapter 25 must not write Part V early.
+- Exact outgoing relationships registered:
+  - `CHAPTER-025 illustrates FAILURE-003`
+  - `CHAPTER-025 references FAILURE-005`
+  - `CHAPTER-025 references FAILURE-002`
+  - `CHAPTER-025 references LAW-001`
+  - `CHAPTER-025 references LAW-002`
+  - `CHAPTER-025 references LAW-003`
+  - `CHAPTER-025 references LAW-004`
+  - `CHAPTER-025 references LAW-005`
+  - `CHAPTER-025 references LAW-006`
+  - `CHAPTER-025 references LAW-007`
+  - `CHAPTER-025 references VOCAB-001`
+  - `CHAPTER-025 references METRIC-001`
+  - `CHAPTER-025 references METRIC-003`
+  - `CHAPTER-025 references METRIC-004`
+  - `CHAPTER-025 references ARTIFACT-001`
+  - `CHAPTER-025 references ARTIFACT-002`
+  - `CHAPTER-025 references ARTIFACT-003`
+  - `CHAPTER-025 references ARTIFACT-004`
+  - `CHAPTER-025 references ARTIFACT-005`
+  - `CHAPTER-025 references ARTIFACT-006`
+  - `CHAPTER-025 references RITUAL-001`
+  - `CHAPTER-025 references RITUAL-002`
+  - `CHAPTER-025 references SMELL-004`
+  - `CHAPTER-025 references SMELL-001`
+  - `CHAPTER-025 references SMELL-005`
+  - `CHAPTER-025 references SMELL-006`
+  - `CHAPTER-025 references ANTIPATTERN-006`
+  - `CHAPTER-025 references ANTIPATTERN-003`
+- New PEAK concept decision: no new concept, ID, relationship type, chapter primary field, artifact, metric, ritual,
+  vocabulary term, smell, anti-pattern, or failure story was added.
+- Part IV closure boundary: Chapter 25 closes Part IV by connecting Chapters 20 through 24 in one reference product,
+  without reteaching any one chapter's full playbook.
+- Part V boundary: Chapter 25 may prepare the transition into Technical Leadership Without Authority by making product
+  decisions discoverable, but it must not write Part V early.
+- Reader-facing chapter architecture preserved for the future manuscript: Opening Quote, Story, Discussion,
+  Engineering Principle, Architecture Exercise, Principal's Notebook, ADR, Editor's Commentary.
+- Changed files:
+  - `editor/EDITOR_LOG.md`
+  - `editor/chapter-briefs/CHAPTER-025-reference-project-walkthrough.md`
+  - `knowledge/index.yaml`
+- Validation commands and results:
+  - Direct Chapter 25 registration assertions: passed for exact changed-file boundary, unique `CHAPTER-025` draft
+    record, Chapters 1-24 canonical status, exact outgoing relationship set, valid relationship targets and verbs,
+    no duplicate relationships, brief existence, manuscript absence, required brief sections, no unresolved markers,
+    no primary-concept field, unchanged Part IV README, unchanged `editor/CHAPTER_ARCHITECTURE.md`, and no tracked
+    `site/` output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini editor/chapter-briefs/CHAPTER-025-reference-project-walkthrough.md editor/EDITOR_LOG.md`:
+    passed with 0 errors, 0 warnings, and 0 suggestions.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+- Next stage: Author Draft after author approval.
+
 ## Phase 99 Chapter 19 Editorial Review
 
 - Chapter: Freezing Architecture Without Freezing Learning.
