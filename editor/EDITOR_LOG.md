@@ -9840,6 +9840,80 @@ Pull request readiness:
 - Do not perform Canon Review, Technical Review, Freeze Review, PR creation, or merge until this Editorial Review commit
   is committed, pushed, and local/remote equality is clean.
 
+## Phase 130 Chapter 24 Canon Review
+
+- Chapter: Release Discipline and Upgrade Paths.
+- Stable ID: `CHAPTER-024`.
+- Branch: `chapter24`.
+- Stage: Canon Review.
+- Reviewed Editorial Review commit: `abe2f75370cbd2c14c0c58dc61d6c6a2a0a270cf`.
+- Canonical-brief parent commit: `d964095fa6efcdf8f122ec1df164d80fb215bfbe`.
+- Canonical sources: Chapter 24 canonical brief, `knowledge/index.yaml`, PEAK concept files, Chapters 1-23, Part IV
+  table of contents position, and Chapter 23 Freeze precedent.
+- Manuscript path: `book/04-building-a-product/24-release-discipline-and-upgrade-paths.md`.
+- Canonical brief path preserved:
+  `editor/chapter-briefs/CHAPTER-024-release-discipline-and-upgrade-paths.md`.
+- Outcome: Approve.
+- No-primary result: passed. `CHAPTER-024` remains a no-primary Part IV chapter; no primary-concept field or equivalent
+  registry attribute was introduced.
+- Chapter-local-term result: passed. Release discipline, upgrade path, rollback, retry, forward-fix, firmware image,
+  release candidate, version matrix, migration contract, upgrade compatibility, support horizon, release gate, release
+  notes, and release evidence remain local prose terms and are not registered as PEAK concepts.
+- Release-commitment result: passed. The manuscript treats release as an architectural commitment with support,
+  compatibility, evidence, state ownership, and future-change obligations.
+- Upgrade-path result: passed. The manuscript treats an upgrade path as a supported source-to-target state transition
+  covering source version, target version, preserved state, compatibility, migration, recovery, diagnostics, service
+  tooling, and support horizon.
+- Freeze result: passed. `RITUAL-002` and `VOCAB-006` are used narrowly: Architecture Freeze is temporary, scoped,
+  exception-aware, exit-criteria-bound, and distinct from code freeze, branch freeze, feature freeze, release freeze, or
+  a full architecture freeze.
+- Compatibility and support-horizon result: passed. The chapter distinguishes backward, forward, service-tool,
+  manufacturing, field-data, configuration, variant, diagnostic, update-package, version-matrix, migration-contract,
+  and support-horizon concerns without becoming a semantic-versioning doctrine.
+- Rollback, retry, recovery, and forward-fix result: passed. The manuscript treats them as separate promises and keeps
+  factory reset as a last resort rather than default recovery.
+- Central PEAK findings:
+  - `FAILURE-005` is materially illustrated by a release delayed because unresolved upgrade-path uncertainty would have
+    become field cost.
+  - `RITUAL-002` is materially illustrated by the narrow freeze of release-critical upgrade paths, migration rules,
+    diagnostic meanings, service-tool compatibility, and first-report behavior.
+  - `VOCAB-006` preserves the temporary, scoped, exit-criteria meaning of Architecture Freeze.
+  - `RITUAL-001`, `LAW-001`, `LAW-002`, `LAW-003`, `LAW-005`, `LAW-007`, `VOCAB-001`, `METRIC-001`, `METRIC-003`,
+    `METRIC-004`, `ARTIFACT-001`, `ARTIFACT-002`, `ARTIFACT-003`, `ARTIFACT-004`, `ARTIFACT-005`,
+    `ARTIFACT-006`, `ANTIPATTERN-006`, `SMELL-004`, `SMELL-001`, `SMELL-005`, `SMELL-006`, `ANTIPATTERN-002`,
+    `ANTIPATTERN-003`, `ANTIPATTERN-005`, and `FAILURE-002` are materially present and used as support rather than as
+    new chapter-owned concepts.
+- Relationship findings: passed. The exact registered outgoing relationship set for `CHAPTER-024` is unchanged, all
+  targets exist, no new edge was added, no edge was removed, and no broad `related_to` edge was introduced.
+- Section architecture result: passed. The exact eight-section chapter architecture is preserved.
+- Chapter 25 boundary: passed. Chapter 25 retains the reference-project walkthrough; Chapter 24 prepares release and
+  upgrade promises but does not implement or describe the reference project.
+- Earlier-parts boundary: passed. Chapters 7, 8, 9, 10, 13, 15, 16, 17, 18, 19, 20, 21, 22, and 23 are used as
+  constraints and support without being retaught.
+- Corrections: none. No manuscript correction was required during Canon Review.
+- Changed files:
+  - `editor/EDITOR_LOG.md`
+- Final validation completed after this log entry:
+  - Direct Canon Review assertions: passed for clean baseline, `HEAD` matching `origin/chapter24` before review,
+    reviewed SHA matching the Editorial Review commit, expected changed file only, unchanged manuscript, exact section
+    order, exactly three Principal's Notebook observations, unresolved marker absence, `CHAPTER-024` remaining `draft`,
+    no primary concept, exact relationship set preservation, existing relationship targets, no duplicate/self/unexpected
+    edge, no new PEAK ID, chapter-local release/upgrade terms not registered as PEAK concepts, unchanged canonical
+    brief, unchanged PEAK concept files, unchanged Part IV README, unchanged `editor/CHAPTER_ARCHITECTURE.md`,
+    unchanged table of contents, unchanged Chapters 1-23, Chapter 25 boundary, and no tracked `site` output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini book/04-building-a-product/24-release-discipline-and-upgrade-paths.md editor/EDITOR_LOG.md`:
+    passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed with no tracked `site/` output.
+- Next lifecycle stage: Technical Review after this Canon Review commit is committed and pushed.
+- Do not perform Technical Review, Freeze Review, PR creation, or merge until this Canon Review commit is committed,
+  pushed, and local/remote equality is clean.
+
 ## Phase 99 Chapter 19 Editorial Review
 
 - Chapter: Freezing Architecture Without Freezing Learning.
