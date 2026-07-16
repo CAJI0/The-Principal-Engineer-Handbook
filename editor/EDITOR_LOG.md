@@ -10414,6 +10414,73 @@ Pull request readiness:
 - Next lifecycle stage: Freeze Review after this Technical Review commit is committed and pushed.
 - Do not perform Freeze Review, PR creation, or merge as part of this phase.
 
+## Phase 138 Chapter 25 Freeze Review
+
+- Chapter: Reference Project Walkthrough.
+- Stable ID: `CHAPTER-025`.
+- Branch: `chapter25`.
+- Stage: Freeze Review.
+- Reviewed Technical Review SHA: `482bcc9876bb020c391aa6335efb6ca417e293ed`.
+- Prior review commits:
+  - Editorial Review: `7d062013b40564dce94b518dd19b9020e9f8a453`.
+  - Canon Review: `1e5e1d88679740dce3019e82d0b46d567a91ed2c`.
+  - Technical Review: `482bcc9876bb020c391aa6335efb6ca417e293ed`.
+- Manuscript path: `book/04-building-a-product/25-reference-project-walkthrough.md`.
+- Canonical brief path preserved:
+  `editor/chapter-briefs/CHAPTER-025-reference-project-walkthrough.md`.
+- Part IV position: sixth and final Part IV chapter.
+- Primary concept: none.
+- Outcome: Approved.
+- Status transition: `CHAPTER-025` moved from `draft` to `canonical` in `knowledge/index.yaml`.
+- Freeze scope result: passed. Editorial, Canon, and Technical Review entries are present in order, each was committed
+  and pushed before the next gate began, and Freeze Review started from the pushed Technical Review commit.
+- Prior review ancestry result: passed. Editorial, Canon, and Technical Review commits are all ancestors of current
+  `HEAD`.
+- Manuscript freeze result: passed. The final manuscript was read end to end and keeps the required chapter order:
+  Opening Quote, Story, Discussion, Engineering Principle, Architecture Exercise, Principal's Notebook, ADR, Editor's
+  Commentary.
+- Principal's Notebook result: exactly three short observations.
+- No-primary result: passed. Chapter 25 remains a no-primary synthesis walkthrough; Field Sensor Gateway, reference
+  project, product baseline, product decision chain, pilot release, supportable baseline, product memory, and walkthrough
+  remain chapter-local prose.
+- Relationship integrity: passed. The exact registered Chapter 25 outgoing relationship set is unchanged; no PEAK
+  concept, ID, relationship, relationship type, artifact, metric, ritual, vocabulary term, smell, anti-pattern, or
+  failure story was added, renamed, removed, or renumbered.
+- Part IV completion result: passed. Chapter 25 completes Part IV by connecting Chapters 20 through 24 into one
+  supportable Field Sensor Gateway pilot baseline.
+- Part V boundary result: passed. The chapter only bridges toward Technical Leadership Without Authority through shared
+  product memory; it does not write Part V early.
+- Canon and graph integrity result: passed. `CHAPTER-001` through `CHAPTER-024` remain `canonical`; `CHAPTER-025` is now
+  `canonical`; relationship targets exist and no duplicate, unexpected, or self-edge was introduced.
+- Technical readiness result: passed. Prototype assumptions, manufacturing and field reality, configuration and variants,
+  observability, release and upgrade paths, rollback, retry, recovery, forward-fix, support-safe evidence, records,
+  Architecture Review, and narrow Architecture Freeze are credible and proportionate.
+- Changed files:
+  - `editor/EDITOR_LOG.md`
+  - `knowledge/index.yaml`
+- No concept or ID addition: passed.
+- PR readiness: Chapter 25 is ready for a pull request after this Freeze Review commit is committed and pushed.
+- Recommended pull request title: Chapter 25: Reference Project Walkthrough.
+- Final validation completed after this log entry:
+  - Direct Freeze Review assertions: passed for clean baseline, `HEAD` matching `origin/chapter25` before freeze,
+    reviewed SHA matching the Technical Review commit, prior review commits present and ancestor-ordered, expected
+    changed files only, unchanged manuscript, unchanged canonical brief, exact section order, required sections unique,
+    exactly three Principal's Notebook observations, unresolved marker absence, `CHAPTER-025` canonical status, no
+    primary concept introduced, exact relationship set preserved, existing relationship targets, no duplicate,
+    unexpected, or self-edge, unchanged PEAK concept files, unchanged `editor/CHAPTER_ARCHITECTURE.md`, unchanged Part
+    IV README, unchanged table of contents, unchanged `editor/CANON.md`, unchanged Chapters 1-24, Part IV completion,
+    Part V boundary, ordered Chapter 25 lifecycle entries, and no tracked `site` output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini book/04-building-a-product/25-reference-project-walkthrough.md editor/EDITOR_LOG.md`:
+    passed with 0 errors, 0 warnings, and 0 suggestions.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed with no tracked `site/` output.
+- Do not create the pull request or merge as part of this phase.
+
 ## Phase 99 Chapter 19 Editorial Review
 
 - Chapter: Freezing Architecture Without Freezing Learning.

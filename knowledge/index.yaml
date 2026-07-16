@@ -398,7 +398,7 @@ entities:
       type: chapter
       name: Reference Project Walkthrough
       path: ../book/04-building-a-product/25-reference-project-walkthrough.md
-      status: draft
+      status: canonical
   adrs:
     - id: ADR-001
       type: adr
