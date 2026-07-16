@@ -10349,6 +10349,71 @@ Pull request readiness:
 - Next lifecycle stage: Technical Review after this Canon Review commit is committed and pushed.
 - Do not perform Technical Review, Freeze Review, PR creation, or merge as part of this phase.
 
+## Phase 137 Chapter 25 Technical Review
+
+- Chapter: Reference Project Walkthrough.
+- Stable ID: `CHAPTER-025`.
+- Branch: `chapter25`.
+- Stage: Technical Review.
+- Reviewed Canon Review SHA: `1e5e1d88679740dce3019e82d0b46d567a91ed2c`.
+- Manuscript path: `book/04-building-a-product/25-reference-project-walkthrough.md`.
+- Canonical brief path preserved:
+  `editor/chapter-briefs/CHAPTER-025-reference-project-walkthrough.md`.
+- Part IV position: sixth and final Part IV chapter.
+- Primary concept: none.
+- Outcome: Approved.
+- Domains checked: embedded prototype assumptions, serial identity, calibration ownership, hardware revision variation,
+  local configuration and migration, service-tool behavior, field diagnostics, event cataloging, radio dependency,
+  version and variant fingerprints, release artifact identity, upgrade paths from existing field versions, rollback,
+  retry, recovery, forward-fix, manufacturing and service boundaries, support-safe language, constrained memory, time,
+  storage, and field conditions.
+- Material corrections: none. Manuscript unchanged during Technical Review.
+- Prototype-to-product assessment: passed. The prototype is credible evidence under lab conditions but not treated as a
+  product baseline or universal reference implementation.
+- Manufacturing and field assessment: passed. Serial identity, calibration authority, hardware revision evidence,
+  station evidence, service-tool limits, and support-safe diagnostic snapshots are technically plausible and bounded.
+- Configuration and variant assessment: passed. Supported regional behavior, deferred battery package, pilot exception,
+  rejected combinations, configuration fingerprint, schema migration, and service-tool compatibility are clear without
+  implying arbitrary flag flexibility.
+- Observability assessment: passed. Event meanings distinguish radio acknowledgement failure, rejected configuration
+  migration, upgrade context, recovery state, identity, calibration, version, variant, and configuration evidence without
+  becoming a logging platform.
+- Release and upgrade assessment: passed. v1.0.2 to v1.1 direct upgrade, v1.0 intermediate migration, older service-tool
+  rejection, rollback limits, retry, recovery, and forward-fix are treated conceptually and support-safely.
+- Artifact, review, and freeze assessment: passed. Records, Architecture Review, and Architecture Freeze are scoped to
+  consequential product decisions and release-critical validation surfaces, not every local change.
+- Boundary assessment: passed. The chapter does not imply a reference project proves universal correctness, every
+  product needs the same artifacts, every decision needs every record type, pilot release is production-ready forever,
+  supportable baseline is risk-free, a walkthrough replaces validation, all Part IV practices have equal weight, or one
+  happy-path walkthrough is enough evidence.
+- Unchanged files confirmed: manuscript, canonical brief, `knowledge/index.yaml`, PEAK concept files,
+  `editor/CHAPTER_ARCHITECTURE.md`, Part IV README, table of contents, `editor/CANON.md`, and Chapters 1-24.
+- Changed files:
+  - `editor/EDITOR_LOG.md`
+- Final validation completed after this log entry:
+  - Direct Technical Review assertions: passed for clean baseline, `HEAD` matching `origin/chapter25` before review,
+    reviewed SHA matching the Canon Review commit, log-only changed-file boundary, unchanged manuscript, exact section
+    order, required sections unique, exactly three Principal's Notebook observations, unresolved marker absence,
+    `CHAPTER-025` remaining `draft`, no primary concept introduced, exact relationship set preserved, embedded
+    prototype assumptions, serial identity, calibration ownership, hardware revision variation, configuration migration,
+    service-tool behavior, field diagnostics, Event Catalog use, radio dependency, version and variant fingerprints,
+    release artifact identity, upgrade paths, rollback/retry/recovery/forward-fix coverage, manufacturing and service
+    boundaries, support-safe language, constrained resource coverage, field reality, reference-project boundary,
+    unchanged canonical brief, unchanged `knowledge/index.yaml`, unchanged PEAK concept files, unchanged
+    `editor/CHAPTER_ARCHITECTURE.md`, unchanged Part IV README, unchanged table of contents, unchanged `editor/CANON.md`,
+    unchanged Chapters 1-24, ordered prior review entries, and no tracked `site` output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini book/04-building-a-product/25-reference-project-walkthrough.md editor/EDITOR_LOG.md`:
+    passed with 0 errors, 0 warnings, and 0 suggestions.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed with no tracked `site/` output.
+- Next lifecycle stage: Freeze Review after this Technical Review commit is committed and pushed.
+- Do not perform Freeze Review, PR creation, or merge as part of this phase.
+
 ## Phase 99 Chapter 19 Editorial Review
 
 - Chapter: Freezing Architecture Without Freezing Learning.
