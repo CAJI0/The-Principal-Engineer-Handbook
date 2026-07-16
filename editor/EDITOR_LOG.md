@@ -9546,6 +9546,132 @@ Pull request readiness:
 - Recommended PR title: Chapter 23: Observability in Embedded Systems.
 - Do not create a pull request or merge as part of this phase.
 
+## Phase 127 Chapter 24 Canonical Brief Registration
+
+- Chapter: Release Discipline and Upgrade Paths.
+- Stable ID: `CHAPTER-024`.
+- Branch: `chapter24`.
+- Stage: Canonical Brief Registration.
+- Verified baseline `origin/main`: `f2550e7a243d794960a2ef48fc6e40ed24269c05`.
+- PR #25 squash verification: passed. The resolved squash commit is
+  `f2550e7a243d794960a2ef48fc6e40ed24269c05`, subject
+  `Chapter 23: Observability in Embedded Systems (#25)`, with parent
+  `e393001c8aa4d20668233766378695e537df13cb`.
+- Chapter 23 feature Freeze commit checked for final-tree equivalence:
+  `bab1617e1348d6c90e59257932666969d3ee2ca5`.
+- Canonical predecessor: `CHAPTER-023` - Observability in Embedded Systems.
+- Part position: fifth chapter of Part IV - Building a Product.
+- Reader-facing manuscript created: no.
+- Brief path:
+  `editor/chapter-briefs/CHAPTER-024-release-discipline-and-upgrade-paths.md`.
+- Expected manuscript path preserved but not created:
+  `book/04-building-a-product/24-release-discipline-and-upgrade-paths.md`.
+- Outcome: canonical brief registered.
+- Primary-concept resolution: no primary PEAK concept. Release discipline, upgrade path, rollback, retry, forward-fix,
+  support horizon, release candidate, firmware image, version matrix, migration contract, upgrade compatibility,
+  release gate, and release notes remain chapter-local prose terms.
+- Central release/upgrade result: Chapter 24 is scoped to release discipline and upgrade paths as architecture
+  obligations. A release is treated as an architectural commitment, and an upgrade path as a supported state transition
+  that must preserve compatibility, identity, data, recovery capability, diagnosis, and trust.
+- Index registration:
+  - `CHAPTER-024`
+  - type: `chapter`
+  - name: `Release Discipline and Upgrade Paths`
+  - path: `../book/04-building-a-product/24-release-discipline-and-upgrade-paths.md`
+  - status: `draft`
+- Selected concepts:
+  - `FAILURE-005` - The Release We Should Have Delayed.
+  - `RITUAL-002` - Architecture Freeze.
+  - `VOCAB-006` - Architecture Freeze.
+  - `RITUAL-001` - Architecture Review.
+  - `LAW-001` - Every State Has One Owner.
+  - `LAW-002` - Every API Is a Promise.
+  - `LAW-003` - Time Is a Dependency.
+  - `LAW-005` - Evidence Before Confidence.
+  - `LAW-007` - Every Dependency Is a Decision.
+  - `VOCAB-001` - Change Radius.
+  - `METRIC-001` - Change Radius.
+  - `METRIC-003` - Discoverability.
+  - `METRIC-004` - API Stability.
+  - `ARTIFACT-001` - ADR.
+  - `ARTIFACT-002` - RFC.
+  - `ARTIFACT-003` - Decision Journal.
+  - `ARTIFACT-004` - Mistake Ledger.
+  - `ARTIFACT-005` - Event Catalog.
+  - `ARTIFACT-006` - Architecture Ledger.
+  - `ANTIPATTERN-006` - Temporary Solution.
+  - `SMELL-004` - Hidden State.
+  - `SMELL-001` - Silent Coupling.
+  - `SMELL-005` - Platform Leakage.
+  - `SMELL-006` - Event Explosion.
+  - `ANTIPATTERN-002` - HAL Everywhere.
+  - `ANTIPATTERN-003` - Global Configuration.
+  - `ANTIPATTERN-005` - Callback Hell.
+  - `FAILURE-002` - One Lost Packet.
+- Rejected concepts:
+  - `FAILURE-003` - The Successful Prototype: Chapter 20 already owns the prototype-to-product transition.
+  - `LAW-004` - Simplicity Is a Feature: useful but not necessary for the Chapter 24 graph.
+  - `LAW-006` - Unused Flexibility Is Waste: relevant to over-support, but not necessary for the relationship set.
+  - `ARTIFACT-007` and `VOCAB-002`: useful for field learning, but release evidence is sufficiently carried by the
+    selected artifacts and review/freeze path.
+  - `METRIC-005` and `VOCAB-007`: useful later, but not material to this chapter's release and upgrade architecture.
+- Exact outgoing relationships registered:
+  - `CHAPTER-024 illustrates FAILURE-005`
+  - `CHAPTER-024 illustrates RITUAL-002`
+  - `CHAPTER-024 references VOCAB-006`
+  - `CHAPTER-024 references RITUAL-001`
+  - `CHAPTER-024 references LAW-001`
+  - `CHAPTER-024 references LAW-002`
+  - `CHAPTER-024 references LAW-003`
+  - `CHAPTER-024 references LAW-005`
+  - `CHAPTER-024 references LAW-007`
+  - `CHAPTER-024 references VOCAB-001`
+  - `CHAPTER-024 references METRIC-001`
+  - `CHAPTER-024 references METRIC-003`
+  - `CHAPTER-024 references METRIC-004`
+  - `CHAPTER-024 references ARTIFACT-001`
+  - `CHAPTER-024 references ARTIFACT-002`
+  - `CHAPTER-024 references ARTIFACT-003`
+  - `CHAPTER-024 references ARTIFACT-004`
+  - `CHAPTER-024 references ARTIFACT-005`
+  - `CHAPTER-024 references ARTIFACT-006`
+  - `CHAPTER-024 references ANTIPATTERN-006`
+  - `CHAPTER-024 references SMELL-004`
+  - `CHAPTER-024 references SMELL-001`
+  - `CHAPTER-024 references SMELL-005`
+  - `CHAPTER-024 references SMELL-006`
+  - `CHAPTER-024 references ANTIPATTERN-002`
+  - `CHAPTER-024 references ANTIPATTERN-003`
+  - `CHAPTER-024 references ANTIPATTERN-005`
+  - `CHAPTER-024 references FAILURE-002`
+- New PEAK concept result: none. No new artifact, metric, ritual, vocabulary term, law, smell, anti-pattern, failure
+  story, ID, relationship verb, or primary concept was introduced.
+- Later Part IV boundary: Chapter 25 retains the reference project walkthrough. Chapter 24 prepares release and upgrade
+  concepts the walkthrough may use but does not write the walkthrough.
+- Earlier Part IV boundary: Chapters 20, 21, 22, and 23 remain owners of prototype-to-product work, manufacturing and field
+  reality, configuration/variants/product lines, and embedded observability respectively.
+- Earlier-parts boundary: Chapters 7, 8, 9, 10, 13, 15, 16, 17, 18, and 19 are used as constraints rather than retaught.
+- Changed files:
+  - `editor/chapter-briefs/CHAPTER-024-release-discipline-and-upgrade-paths.md`
+  - `editor/EDITOR_LOG.md`
+  - `knowledge/index.yaml`
+- Validation completed after this log entry:
+  - Direct canonical-brief assertions: passed for baseline, branch, expected changed files only, `CHAPTER-024` draft record,
+    Chapters 1-23 canonical, exact relationships, valid target IDs, valid relationship verbs, no manuscript, unchanged
+    Part IV README, unchanged `editor/CHAPTER_ARCHITECTURE.md`, unchanged TOC, unchanged prior chapters, unchanged
+    existing PEAK concept files, no new PEAK ID, no unresolved markers, and no tracked `site` output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini editor/chapter-briefs/CHAPTER-024-release-discipline-and-upgrade-paths.md editor/EDITOR_LOG.md`:
+    passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed with no tracked `site/` output.
+- Next lifecycle stage: Author Draft after author approval.
+- Do not create a pull request, merge, or start the Author Draft as part of this phase.
+
 ## Phase 99 Chapter 19 Editorial Review
 
 - Chapter: Freezing Architecture Without Freezing Learning.

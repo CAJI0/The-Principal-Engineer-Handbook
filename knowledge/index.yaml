@@ -389,6 +389,11 @@ entities:
       name: Observability in Embedded Systems
       path: ../book/04-building-a-product/23-observability-in-embedded-systems.md
       status: canonical
+    - id: CHAPTER-024
+      type: chapter
+      name: Release Discipline and Upgrade Paths
+      path: ../book/04-building-a-product/24-release-discipline-and-upgrade-paths.md
+      status: draft
   adrs:
     - id: ADR-001
       type: adr
@@ -1166,5 +1171,89 @@ relationships:
     type: references
     to: ANTIPATTERN-006
   - from: CHAPTER-023
+    type: references
+    to: FAILURE-002
+  - from: CHAPTER-024
+    type: illustrates
+    to: FAILURE-005
+  - from: CHAPTER-024
+    type: illustrates
+    to: RITUAL-002
+  - from: CHAPTER-024
+    type: references
+    to: VOCAB-006
+  - from: CHAPTER-024
+    type: references
+    to: RITUAL-001
+  - from: CHAPTER-024
+    type: references
+    to: LAW-001
+  - from: CHAPTER-024
+    type: references
+    to: LAW-002
+  - from: CHAPTER-024
+    type: references
+    to: LAW-003
+  - from: CHAPTER-024
+    type: references
+    to: LAW-005
+  - from: CHAPTER-024
+    type: references
+    to: LAW-007
+  - from: CHAPTER-024
+    type: references
+    to: VOCAB-001
+  - from: CHAPTER-024
+    type: references
+    to: METRIC-001
+  - from: CHAPTER-024
+    type: references
+    to: METRIC-003
+  - from: CHAPTER-024
+    type: references
+    to: METRIC-004
+  - from: CHAPTER-024
+    type: references
+    to: ARTIFACT-001
+  - from: CHAPTER-024
+    type: references
+    to: ARTIFACT-002
+  - from: CHAPTER-024
+    type: references
+    to: ARTIFACT-003
+  - from: CHAPTER-024
+    type: references
+    to: ARTIFACT-004
+  - from: CHAPTER-024
+    type: references
+    to: ARTIFACT-005
+  - from: CHAPTER-024
+    type: references
+    to: ARTIFACT-006
+  - from: CHAPTER-024
+    type: references
+    to: ANTIPATTERN-006
+  - from: CHAPTER-024
+    type: references
+    to: SMELL-004
+  - from: CHAPTER-024
+    type: references
+    to: SMELL-001
+  - from: CHAPTER-024
+    type: references
+    to: SMELL-005
+  - from: CHAPTER-024
+    type: references
+    to: SMELL-006
+  - from: CHAPTER-024
+    type: references
+    to: ANTIPATTERN-002
+  - from: CHAPTER-024
+    type: references
+    to: ANTIPATTERN-003
+  - from: CHAPTER-024
+    type: references
+    to: ANTIPATTERN-005
+  - from: CHAPTER-024
     type: references
     to: FAILURE-002
