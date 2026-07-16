@@ -9914,6 +9914,70 @@ Pull request readiness:
 - Do not perform Technical Review, Freeze Review, PR creation, or merge until this Canon Review commit is committed,
   pushed, and local/remote equality is clean.
 
+## Phase 131 Chapter 24 Technical Review
+
+- Chapter: Release Discipline and Upgrade Paths.
+- Stable ID: `CHAPTER-024`.
+- Branch: `chapter24`.
+- Stage: Technical Review.
+- Reviewed Canon Review commit: `7abfcfdefa279f2198457785a26d616396cdbc55`.
+- Manuscript path: `book/04-building-a-product/24-release-discipline-and-upgrade-paths.md`.
+- Canonical brief path preserved:
+  `editor/chapter-briefs/CHAPTER-024-release-discipline-and-upgrade-paths.md`.
+- Outcome: Approve.
+- Domains checked: firmware image identity, conceptual boot loader and installer behavior, source and target version
+  paths, configuration and data migration, calibration preservation, device identity preservation, hardware revision and
+  variant compatibility, service-tool compatibility, diagnostic and event compatibility, release notes and support
+  knowledge, signing and artifact integrity, power loss, network interruption, partial upgrade detection, rollback,
+  retry, recovery, forward-fix, factory reset, field units on older versions, release validation evidence, support
+  horizon, deprecation, field failure after release, upgrade observability, and support-safe failure reporting.
+- Material corrections: none. No manuscript correction was required during Technical Review.
+- Upgrade-path assessment: passed. Latest-build lab upgrade is framed as evidence for one path only, while multiple
+  older versions, hardware revisions, variants, configuration schemas, service-tool versions, deprecated options, and
+  unsupported direct paths remain credible and explicit.
+- Migration, calibration, and identity assessment: passed. The manuscript distinguishes configuration migration,
+  calibration preservation, identity preservation, variant meaning, source snapshot, and recovery validity rather than
+  treating them as one generic state copy.
+- Service-tool and diagnostic compatibility assessment: passed. Older tools can install while failing to provide
+  support-safe reasons, and Event Catalog compatibility is treated as a product promise with support horizon.
+- Rollback, retry, recovery, and forward-fix assessment: passed. The chapter distinguishes each path and avoids implying
+  rollback is always safe; factory reset is rejected as the default recovery path and remains a last resort.
+- Release evidence assessment: passed. The chapter requires path evidence, power-loss coverage, service-tool failure
+  evidence, diagnostic meanings, release notes as discoverable support evidence, and records that future engineers can
+  find.
+- Support horizon and deprecation assessment: passed. Deprecated options and old diagnostic meanings are either
+  supported for a bounded horizon or explicitly rejected with support-safe evidence.
+- Architecture Freeze assessment: passed. Freeze is scoped to release-critical surfaces and does not imply every release
+  needs a full architecture freeze.
+- Boundary assessment: passed. The manuscript does not become CI/CD guidance, deployment tooling, OTA implementation,
+  bootloader implementation, rollback algorithm, release-manager checklist, product launch planning, semantic-versioning
+  doctrine, support procedure, or Chapter 25 reference-project walkthrough.
+- Unchanged-file confirmations: manuscript, canonical brief, `knowledge/index.yaml`, PEAK concept files,
+  `editor/CHAPTER_ARCHITECTURE.md`, Part IV README, table of contents, `editor/CANON.md`, and Chapters 1-23 remain
+  unchanged.
+- Changed files:
+  - `editor/EDITOR_LOG.md`
+- Final validation completed after this log entry:
+  - Direct Technical Review assertions: passed for clean baseline, `HEAD` matching `origin/chapter24` before review,
+    reviewed SHA matching the Canon Review commit, expected changed file only, unchanged manuscript, exact section order,
+    exactly three Principal's Notebook observations, unresolved marker absence, `CHAPTER-024` remaining `draft`, no
+    primary concept, exact relationship set preservation, no new PEAK ID, unchanged canonical brief, unchanged
+    `knowledge/index.yaml`, unchanged PEAK concept files, unchanged Part IV README, unchanged
+    `editor/CHAPTER_ARCHITECTURE.md`, unchanged table of contents, unchanged Chapters 1-23, technical guardrails,
+    Chapter 25 boundary, and no tracked `site` output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini book/04-building-a-product/24-release-discipline-and-upgrade-paths.md editor/EDITOR_LOG.md`:
+    passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed with no tracked `site/` output.
+- Next lifecycle stage: Freeze Review after this Technical Review commit is committed and pushed.
+- Do not perform Freeze Review, PR creation, or merge until this Technical Review commit is committed, pushed, and
+  local/remote equality is clean.
+
 ## Phase 99 Chapter 19 Editorial Review
 
 - Chapter: Freezing Architecture Without Freezing Learning.
