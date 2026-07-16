@@ -9978,6 +9978,75 @@ Pull request readiness:
 - Do not perform Freeze Review, PR creation, or merge until this Technical Review commit is committed, pushed, and
   local/remote equality is clean.
 
+## Phase 132 Chapter 24 Freeze Review
+
+- Chapter: Release Discipline and Upgrade Paths.
+- Stable ID: `CHAPTER-024`.
+- Branch: `chapter24`.
+- Stage: Freeze Review.
+- Reviewed Technical Review commit: `ab168f5d5da99842828f3151dcabbe6b3f01443e`.
+- Prior review commits:
+  - Editorial Review: `abe2f75370cbd2c14c0c58dc61d6c6a2a0a270cf`.
+  - Canon Review: `7abfcfdefa279f2198457785a26d616396cdbc55`.
+  - Technical Review: `ab168f5d5da99842828f3151dcabbe6b3f01443e`.
+- Manuscript path: `book/04-building-a-product/24-release-discipline-and-upgrade-paths.md`.
+- Canonical brief path preserved:
+  `editor/chapter-briefs/CHAPTER-024-release-discipline-and-upgrade-paths.md`.
+- Part position: fifth chapter of Part IV - Building a Product.
+- Primary concept: none.
+- Release/upgrade chapter-local frame result: passed. Release discipline, upgrade path, rollback, retry, forward-fix,
+  firmware image, release candidate, version matrix, migration contract, upgrade compatibility, support horizon,
+  release gate, release notes, and release evidence remain chapter-local prose terms.
+- Central illustrated concepts: `FAILURE-005` - The Release We Should Have Delayed; `RITUAL-002` - Architecture
+  Freeze.
+- Outcome: Approve.
+- Status transition: `CHAPTER-024` moved from `draft` to `canonical` in `knowledge/index.yaml`.
+- Freeze scope result: passed. Editorial, Canon, and Technical Review entries are present in order, each was committed
+  and pushed before the next gate began, and the Freeze Review started from the pushed Technical Review commit.
+- Prior review ancestry result: passed. Editorial, Canon, and Technical Review commits are all ancestors of current
+  `HEAD`.
+- Manuscript freeze result: passed. The final manuscript was read end to end and keeps the required chapter order:
+  Opening Quote, Story, Discussion, Engineering Principle, Architecture Exercise, Principal's Notebook, ADR, Editor's
+  Commentary.
+- Principal's Notebook result: exactly three short observations.
+- Canon freeze result: passed. Chapter 24 remains no-primary, preserves the exact registered relationship set, and
+  materially illustrates `FAILURE-005` and `RITUAL-002` with support from `VOCAB-006`, `RITUAL-001`, `LAW-001`,
+  `LAW-002`, `LAW-003`, `LAW-005`, `LAW-007`, `VOCAB-001`, `METRIC-001`, `METRIC-003`, `METRIC-004`,
+  `ARTIFACT-001`, `ARTIFACT-002`, `ARTIFACT-003`, `ARTIFACT-004`, `ARTIFACT-005`, `ARTIFACT-006`,
+  `ANTIPATTERN-006`, `SMELL-004`, `SMELL-001`, `SMELL-005`, `SMELL-006`, `ANTIPATTERN-002`, `ANTIPATTERN-003`,
+  `ANTIPATTERN-005`, and `FAILURE-002`.
+- Relationship freeze result: passed. The exact registered Chapter 24 outgoing relationship set is unchanged; no PEAK
+  concept, ID, relationship, relationship type, or primary-concept attribute was added, renamed, removed, or renumbered.
+- Technical readiness result: passed. Firmware image identity, signing, conceptual installer and boot behavior,
+  source-to-target paths, migration, calibration, identity, variants, service tools, diagnostics, power loss, network
+  interruption, partial upgrade, rollback, retry, recovery, forward-fix, release evidence, support horizon, and
+  support-safe failure reporting are credible and proportionate.
+- Chapter 25 boundary result: passed. Chapter 25 retains the reference-project walkthrough.
+- Earlier-parts boundary result: passed. Earlier chapters are constraints and support rather than repeated content.
+- Changed files:
+  - `editor/EDITOR_LOG.md`
+  - `knowledge/index.yaml`
+- Final validation completed after this log entry:
+  - Direct Freeze Review assertions: passed for clean baseline, `HEAD` matching `origin/chapter24` before review,
+    reviewed SHA matching the Technical Review commit, prior review commits present and ancestor-ordered, expected
+    changed files only, unchanged manuscript, exact section order, exactly three Principal's Notebook observations,
+    unresolved marker absence, `CHAPTER-024` canonical status, no primary concept, exact relationship set preservation,
+    existing relationship targets, no duplicate/self/unexpected edge, no new PEAK ID, unchanged canonical brief,
+    unchanged PEAK concept files, unchanged Part IV README, unchanged `editor/CHAPTER_ARCHITECTURE.md`, unchanged table
+    of contents, unchanged Chapters 1-23, Chapter 25 boundary, and no tracked `site` output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini book/04-building-a-product/24-release-discipline-and-upgrade-paths.md editor/EDITOR_LOG.md`:
+    passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed with no tracked `site/` output.
+- PR readiness: Chapter 24 is ready for a pull request after this Freeze Review commit is committed and pushed.
+- Recommended pull request title: Chapter 24: Release Discipline and Upgrade Paths.
+- Do not create the pull request or merge as part of this phase.
+
 ## Phase 99 Chapter 19 Editorial Review
 
 - Chapter: Freezing Architecture Without Freezing Learning.

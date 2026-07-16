@@ -393,7 +393,7 @@ entities:
       type: chapter
       name: Release Discipline and Upgrade Paths
       path: ../book/04-building-a-product/24-release-discipline-and-upgrade-paths.md
-      status: draft
+      status: canonical
   adrs:
     - id: ADR-001
       type: adr
