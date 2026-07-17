@@ -10481,6 +10481,92 @@ Pull request readiness:
   - `git ls-files site`: passed with no tracked `site/` output.
 - Do not create the pull request or merge as part of this phase.
 
+## Phase 139 Chapter 26 Canonical Brief Registration
+
+- Chapter: Technical Leadership Without Authority.
+- Stable ID: `CHAPTER-026`.
+- Branch: `chapter26`.
+- Stage: Canonical Brief Registration.
+- Verified baseline `origin/main`: `3e6f5126b6817c93c11571b6881fcea3ceead348`.
+- PR #27 merge evidence: `origin/main` is the squash commit `Chapter 25: Reference Project Walkthrough (#27)`;
+  resolved Chapter 25 squash SHA is `3e6f5126b6817c93c11571b6881fcea3ceead348`.
+- Chapter 25 squash parent: `56c90ec7cfec4e7fe0d839b0f89d8ce8825d2268`.
+- Chapter 25 feature lifecycle commits resolved locally:
+  - Canonical brief: `95a858232f2309cbbb38c8a8a9ff7c65f674990f`.
+  - Author Draft: `dfe5b4459101505a0f21b4cdd2e1361f66b7706a`.
+  - Editorial Review: `7d062013b40564dce94b518dd19b9020e9f8a453`.
+  - Canon Review: `1e5e1d88679740dce3019e82d0b46d567a91ed2c`.
+  - Technical Review: `482bcc9876bb020c391aa6335efb6ca417e293ed`.
+  - Freeze Review: `e4117e3597530cf90c66bddbb8a7a49ee21f0287`.
+- Squash verification: passed. The Chapter 25 squash commit is an ancestor of `origin/main`; the checked Chapter 25
+  lifecycle files are tree-equivalent between the feature Freeze commit and the squash commit.
+- Manuscript path reserved but not created:
+  `book/05-engineering-organization/26-technical-leadership-without-authority.md`.
+- Canonical brief path created:
+  `editor/chapter-briefs/CHAPTER-026-technical-leadership-without-authority.md`.
+- Part V position: first chapter of Part V - Engineering Organization.
+- Canonical predecessor: `CHAPTER-025` - Reference Project Walkthrough.
+- Outcome: canonical brief registered; reader-facing draft not created.
+- Primary concept: none. Chapter 26 is carried by existing ownership, evidence, Change Radius, record, review,
+  discoverability, and hidden-ownership concepts. No `primary_concept` field was introduced.
+- Leadership-without-authority result: the brief frames technical leadership as improving cross-team decision quality
+  without taking ownership away from accountable decision owners.
+- Index registration:
+  - `CHAPTER-026` added as `draft`.
+  - Path registered as `../book/05-engineering-organization/26-technical-leadership-without-authority.md`.
+- Exact registered outgoing relationships:
+  - `CHAPTER-026 illustrates FAILURE-004`
+  - `CHAPTER-026 references LAW-001`
+  - `CHAPTER-026 references LAW-002`
+  - `CHAPTER-026 references LAW-005`
+  - `CHAPTER-026 references LAW-007`
+  - `CHAPTER-026 references VOCAB-001`
+  - `CHAPTER-026 references METRIC-001`
+  - `CHAPTER-026 references METRIC-002`
+  - `CHAPTER-026 references METRIC-003`
+  - `CHAPTER-026 references ARTIFACT-001`
+  - `CHAPTER-026 references ARTIFACT-002`
+  - `CHAPTER-026 references ARTIFACT-003`
+  - `CHAPTER-026 references ARTIFACT-006`
+  - `CHAPTER-026 references RITUAL-001`
+  - `CHAPTER-026 references SMELL-001`
+  - `CHAPTER-026 references SMELL-004`
+  - `CHAPTER-026 references ANTIPATTERN-006`
+- Concepts selected: `FAILURE-004`, `LAW-001`, `LAW-002`, `LAW-005`, `LAW-007`, `VOCAB-001`, `METRIC-001`,
+  `METRIC-002`, `METRIC-003`, `ARTIFACT-001`, `ARTIFACT-002`, `ARTIFACT-003`, `ARTIFACT-006`, `RITUAL-001`,
+  `SMELL-001`, `SMELL-004`, and `ANTIPATTERN-006`.
+- Concepts inspected but not registered as outgoing Chapter 26 relationships: `LAW-003`, `LAW-004`, `LAW-006`,
+  `VOCAB-003`, `VOCAB-006`, `VOCAB-007`, `METRIC-004`, `METRIC-005`, `ARTIFACT-004`, `ARTIFACT-007`,
+  `RITUAL-002`, `RITUAL-004`, `RITUAL-006`, `SMELL-005`, `ANTIPATTERN-003`, and `ANTIPATTERN-004`.
+- No new PEAK concept, ID, relationship type, artifact, metric, ritual, vocabulary term, smell, anti-pattern, or
+  failure story was added, renamed, removed, or renumbered.
+- Later Part V boundaries: Chapter 27 owns design reviews as shared memory; Chapter 28 owns engineering rituals;
+  Chapter 29 owns mentoring through artifacts; Chapter 30 owns aligning teams around decisions; Chapter 31 owns
+  architecture health reviews.
+- Earlier-parts boundary: Parts I through IV are used as applied tools for organizational decision quality; their
+  teachings are not repeated or reopened.
+- Changed files:
+  - `editor/EDITOR_LOG.md`
+  - `editor/chapter-briefs/CHAPTER-026-technical-leadership-without-authority.md`
+  - `knowledge/index.yaml`
+- Final validation completed after this log entry:
+  - Direct Chapter 26 registration assertions: passed for exact changed-file boundary, unique `CHAPTER-026` draft
+    record, `CHAPTER-001` through `CHAPTER-025` canonical status, exact outgoing relationship set, existing
+    relationship targets, no duplicate or self-edge, valid relationship verbs, brief existence, manuscript absence, no
+    `primary_concept` field, unresolved marker absence, unchanged Part V README, unchanged chapter architecture,
+    unchanged table of contents, and no tracked `site` output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini editor/chapter-briefs/CHAPTER-026-technical-leadership-without-authority.md
+    editor/EDITOR_LOG.md`: passed with 0 errors, 0 warnings, and 0 suggestions.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed with no tracked `site/` output.
+- Next lifecycle stage: Author Draft after author approval.
+- Do not create the manuscript, pull request, Author Draft, review gates, or merge as part of this phase.
+
 ## Phase 99 Chapter 19 Editorial Review
 
 - Chapter: Freezing Architecture Without Freezing Learning.
