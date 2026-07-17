@@ -10567,6 +10567,71 @@ Pull request readiness:
 - Next lifecycle stage: Author Draft after author approval.
 - Do not create the manuscript, pull request, Author Draft, review gates, or merge as part of this phase.
 
+## Phase 140 Chapter 26 Author Draft
+
+- Chapter: Technical Leadership Without Authority.
+- Stable ID: `CHAPTER-026`.
+- Branch: `chapter26`.
+- Stage: Author Draft.
+- Starting canonical-brief registration SHA: `ba003708e281cbf8b43f8b5d08823bfc93a4de39`.
+- Manuscript path: `book/05-engineering-organization/26-technical-leadership-without-authority.md`.
+- Canonical brief path:
+  `editor/chapter-briefs/CHAPTER-026-technical-leadership-without-authority.md`.
+- Part V position: first chapter of Part V - Engineering Organization.
+- Primary concept: none.
+- Central illustrated concept: `FAILURE-004`.
+- Relationship set preserved:
+  - `CHAPTER-026 illustrates FAILURE-004`
+  - `CHAPTER-026 references LAW-001`
+  - `CHAPTER-026 references LAW-002`
+  - `CHAPTER-026 references LAW-005`
+  - `CHAPTER-026 references LAW-007`
+  - `CHAPTER-026 references VOCAB-001`
+  - `CHAPTER-026 references METRIC-001`
+  - `CHAPTER-026 references METRIC-002`
+  - `CHAPTER-026 references METRIC-003`
+  - `CHAPTER-026 references ARTIFACT-001`
+  - `CHAPTER-026 references ARTIFACT-002`
+  - `CHAPTER-026 references ARTIFACT-003`
+  - `CHAPTER-026 references ARTIFACT-006`
+  - `CHAPTER-026 references RITUAL-001`
+  - `CHAPTER-026 references SMELL-001`
+  - `CHAPTER-026 references SMELL-004`
+  - `CHAPTER-026 references ANTIPATTERN-006`
+- No new PEAK concept, relationship, relationship type, or primary-concept field was added.
+- Draft result: created the first Part V chapter as a technical leadership story about improving cross-team decision
+  quality without taking ownership away from accountable decision owners.
+- Leadership-without-authority result: the chapter moves the reader from asking the Principal Engineer to choose the
+  architecture toward clarifying the decision, owner, evidence, invariants, Change Radius, record, review forum, and
+  escalation boundary.
+- Cross-team story coverage: the provisioning-change story touches firmware, backend, manufacturing, service tooling,
+  support, release, product date pressure, local optimization, API assumptions, provisioning clarity, diagnostic
+  meaning, release risk, manager pressure, engineer expectation, and hidden-decision-maker temptation.
+- Later Part V boundary: design reviews, rituals, mentoring through artifacts, aligning teams around decisions, and
+  architecture health reviews are previewed only lightly and not written early.
+- Earlier-parts boundary: Parts I through IV are used as applied tools for organizational decision quality; their
+  teachings are not repeated or reopened.
+- Part V README unchanged.
+- `editor/CHAPTER_ARCHITECTURE.md` unchanged.
+- Changed files:
+  - `book/05-engineering-organization/26-technical-leadership-without-authority.md`
+  - `editor/EDITOR_LOG.md`
+- Validation status: passed.
+- Direct author-draft assertions: passed; changed files limited to the manuscript and `editor/EDITOR_LOG.md`, canonical
+  brief and `knowledge/index.yaml` unchanged, exact section order present, Principal's Notebook contains exactly three
+  bullets, registered relationship set unchanged, no primary concept added, no new PEAK IDs added, Chapters 1-25
+  unchanged, and no tracked `site/` files present.
+- Validation commands:
+  - `git diff --check`
+  - `npm.cmd run lint:md`
+  - `vale --config .vale.ini book/05-engineering-organization/26-technical-leadership-without-authority.md editor/EDITOR_LOG.md`
+  - `npm.cmd run lint:spelling`
+  - `npm.cmd run lint:links`
+  - `python -m pip check`
+  - `python -m mkdocs build --strict`
+  - `git ls-files site`
+- Next stage: Editorial Review.
+
 ## Phase 99 Chapter 19 Editorial Review
 
 - Chapter: Freezing Architecture Without Freezing Learning.
