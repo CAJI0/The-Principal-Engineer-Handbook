@@ -399,6 +399,11 @@ entities:
       name: Reference Project Walkthrough
       path: ../book/04-building-a-product/25-reference-project-walkthrough.md
       status: canonical
+    - id: CHAPTER-026
+      type: chapter
+      name: Technical Leadership Without Authority
+      path: ../book/05-engineering-organization/26-technical-leadership-without-authority.md
+      status: canonical
   adrs:
     - id: ADR-001
       type: adr
@@ -1346,3 +1351,54 @@ relationships:
   - from: CHAPTER-025
     type: references
     to: ANTIPATTERN-003
+  - from: CHAPTER-026
+    type: illustrates
+    to: FAILURE-004
+  - from: CHAPTER-026
+    type: references
+    to: LAW-001
+  - from: CHAPTER-026
+    type: references
+    to: LAW-002
+  - from: CHAPTER-026
+    type: references
+    to: LAW-005
+  - from: CHAPTER-026
+    type: references
+    to: LAW-007
+  - from: CHAPTER-026
+    type: references
+    to: VOCAB-001
+  - from: CHAPTER-026
+    type: references
+    to: METRIC-001
+  - from: CHAPTER-026
+    type: references
+    to: METRIC-002
+  - from: CHAPTER-026
+    type: references
+    to: METRIC-003
+  - from: CHAPTER-026
+    type: references
+    to: ARTIFACT-001
+  - from: CHAPTER-026
+    type: references
+    to: ARTIFACT-002
+  - from: CHAPTER-026
+    type: references
+    to: ARTIFACT-003
+  - from: CHAPTER-026
+    type: references
+    to: ARTIFACT-006
+  - from: CHAPTER-026
+    type: references
+    to: RITUAL-001
+  - from: CHAPTER-026
+    type: references
+    to: SMELL-001
+  - from: CHAPTER-026
+    type: references
+    to: SMELL-004
+  - from: CHAPTER-026
+    type: references
+    to: ANTIPATTERN-006
