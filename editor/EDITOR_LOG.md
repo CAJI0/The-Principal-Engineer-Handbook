@@ -10835,6 +10835,79 @@ Pull request readiness:
 - Next lifecycle stage: Freeze Review after this Technical Review commit is committed and pushed.
 - Do not perform Freeze Review, PR creation, or merge as part of this phase.
 
+## Phase 144 Chapter 26 Freeze Review
+
+- Chapter: Technical Leadership Without Authority.
+- Stable ID: `CHAPTER-026`.
+- Branch: `chapter26`.
+- Stage: Freeze Review.
+- Reviewed Technical Review SHA: `df222bd9a18c31bc1c8255ab392daffa55b4ff97`.
+- Prior review commits:
+  - Editorial Review: `6c14d91e8369bf84279e52c31cc6eb684bda134e`.
+  - Canon Review: `a6bb528c64470af2454603959083bc8a565b2995`.
+  - Technical Review: `df222bd9a18c31bc1c8255ab392daffa55b4ff97`.
+- Manuscript path: `book/05-engineering-organization/26-technical-leadership-without-authority.md`.
+- Canonical brief path preserved:
+  `editor/chapter-briefs/CHAPTER-026-technical-leadership-without-authority.md`.
+- Part V position: first chapter of Part V - Engineering Organization.
+- Primary concept: none.
+- Central illustrated concept: `FAILURE-004`.
+- Outcome: Approved.
+- Status transition: `CHAPTER-026` moved from `draft` to `canonical` in `knowledge/index.yaml`.
+- Freeze scope result: passed. Editorial, Canon, and Technical Review entries are present in order, each was committed
+  and pushed before the next gate began, and Freeze Review started from the pushed Technical Review commit.
+- Prior review ancestry result: passed. Editorial, Canon, and Technical Review commits are all ancestors of current
+  `HEAD`.
+- Manuscript freeze result: passed. The final manuscript was read end to end and keeps the required chapter order:
+  Opening Quote, Story, Discussion, Engineering Principle, Architecture Exercise, Principal's Notebook, ADR, Editor's
+  Commentary.
+- Principal's Notebook result: exactly three short observations.
+- No-primary result: passed. Chapter 26 remains a no-primary chapter; Technical Leadership, Influence Without
+  Authority, Decision Owner, Hidden Owner, Trust, Stewardship, Organizational Memory, Escalation, Facilitation,
+  Alignment, and Decision System remain chapter-local prose.
+- `FAILURE-004` result: passed. The Hero Engineer is materially illustrated through private memory, hidden ownership,
+  and dependence on one Principal Engineer's intervention.
+- Leadership-without-authority result: passed. The chapter keeps technical leadership grounded in decision quality,
+  visible ownership, evidence, records, review, and bounded escalation.
+- Section-order result: passed. The exact eight-section sequence is preserved.
+- Later Part V boundary result: passed. Chapter 27 design reviews, Chapter 28 rituals, Chapter 29 mentoring through
+  artifacts, Chapter 30 aligning teams around decisions, and Chapter 31 architecture health reviews are previewed only
+  lightly and not written early.
+- Earlier-parts boundary result: passed. Parts I through IV remain applied tools and predecessor constraints rather than
+  repeated teachings.
+- Canon and graph integrity result: passed. `CHAPTER-001` through `CHAPTER-025` remain `canonical`; `CHAPTER-026` is
+  now `canonical`; the exact registered Chapter 26 outgoing relationship set is unchanged; relationship targets exist;
+  no duplicate, unexpected, or self-edge was introduced.
+- Technical and organizational readiness result: passed. The cross-team provisioning scenario, ownership and authority
+  distinctions, evidence discipline, artifact and review usage, escalation boundary, manager and product-owner roles,
+  and hidden-ownership risks are credible and proportionate.
+- Changed files:
+  - `editor/EDITOR_LOG.md`
+  - `knowledge/index.yaml`
+- No concept or ID addition: passed.
+- PR readiness: Chapter 26 is ready for a pull request after this Freeze Review commit is committed and pushed.
+- Recommended pull request title: Chapter 26: Technical Leadership Without Authority.
+- Final validation completed after this log entry:
+  - Direct Freeze Review assertions: passed for clean baseline, `HEAD` matching `origin/chapter26` before freeze,
+    reviewed SHA matching the Technical Review commit, prior review commits present and ancestor-ordered, expected
+    changed files only, unchanged manuscript, unchanged canonical brief, exact section order, required sections unique,
+    exactly three Principal's Notebook observations, unresolved marker absence, `CHAPTER-026` canonical status, no
+    primary concept introduced, exact relationship set preserved, existing relationship targets, no duplicate,
+    unexpected, or self-edge, unchanged PEAK concept files, unchanged `editor/CHAPTER_ARCHITECTURE.md`, unchanged Part V
+    README, unchanged table of contents, unchanged `editor/CANON.md`, unchanged Chapters 1-25, Part V first-chapter
+    role, later Part V boundary, earlier-parts boundary, ordered Chapter 26 lifecycle entries, and no tracked `site`
+    output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini book/05-engineering-organization/26-technical-leadership-without-authority.md editor/EDITOR_LOG.md`:
+    passed with 0 errors, 0 warnings, and 0 suggestions.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed with no tracked `site/` output.
+- Do not create the pull request or merge as part of this phase.
+
 ## Phase 99 Chapter 19 Editorial Review
 
 - Chapter: Freezing Architecture Without Freezing Learning.

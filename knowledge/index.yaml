@@ -403,7 +403,7 @@ entities:
       type: chapter
       name: Technical Leadership Without Authority
       path: ../book/05-engineering-organization/26-technical-leadership-without-authority.md
-      status: draft
+      status: canonical
   adrs:
     - id: ADR-001
       type: adr
