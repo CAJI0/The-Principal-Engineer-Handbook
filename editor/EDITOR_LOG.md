@@ -5378,6 +5378,92 @@ Pull request readiness:
 - Next lifecycle stage: Author Draft after author approval.
 - Do not create the Chapter 28 manuscript, perform reviews, open a PR, or merge as part of this phase.
 
+## Phase 152 Chapter 28 Author Draft
+
+- Chapter: Building Engineering Rituals.
+- Stable ID: `CHAPTER-028`.
+- Branch: `chapter28`.
+- Stage: Author Draft.
+- Starting canonical-brief registration commit: `0980d99c94378e3ebd3df92ef03cc284c734fe0b`.
+- Manuscript path:
+  `book/05-engineering-organization/28-building-engineering-rituals.md`.
+- Canonical brief path preserved:
+  `editor/chapter-briefs/CHAPTER-028-building-engineering-rituals.md`.
+- Part position: third chapter of Part V - Engineering Organization.
+- Primary concept: none.
+- Illustrated concept: `RITUAL-001` - Architecture Review.
+- Central chapter-local practice: building engineering rituals around protected technical behaviors rather than
+  meetings, attendance, status, or process compliance.
+- Outcome: Author Draft manuscript created from the registered canonical brief.
+- Registered relationship set preserved:
+  - `CHAPTER-028 illustrates RITUAL-001`
+  - `CHAPTER-028 references RITUAL-002`
+  - `CHAPTER-028 references ARTIFACT-002`
+  - `CHAPTER-028 references ARTIFACT-001`
+  - `CHAPTER-028 references ARTIFACT-003`
+  - `CHAPTER-028 references ARTIFACT-006`
+  - `CHAPTER-028 references LAW-001`
+  - `CHAPTER-028 references LAW-005`
+  - `CHAPTER-028 references LAW-006`
+  - `CHAPTER-028 references LAW-007`
+  - `CHAPTER-028 references VOCAB-001`
+  - `CHAPTER-028 references METRIC-001`
+  - `CHAPTER-028 references METRIC-003`
+  - `CHAPTER-028 references SMELL-001`
+  - `CHAPTER-028 references SMELL-004`
+  - `CHAPTER-028 references ANTIPATTERN-006`
+- Draft scope result: passed. The manuscript teaches engineering ritual design as the protection of a technical
+  behavior through trigger, owner, input, output, health signal, decay signal, and redesign or retirement condition.
+- Required narrative premise included: The Ritual That Kept Running After It Stopped Helping, covering a weekly
+  Architecture Review that initially exposed risky designs early, found hidden dependencies, improved ADRs, and kept
+  decisions discoverable, then decayed into broad attendance, status presentation, stale outputs, unrecorded follow-up,
+  delayed small decisions, bureaucratic approval, and late high-risk dependency review before being repaired around
+  purpose.
+- Required chapter topics included: engineering ritual purpose, trigger, cadence, owner, health, decay, design,
+  retirement, Architecture Review, Architecture Freeze, RFC, ADR, Decision Journal, Architecture Ledger, ownership,
+  evidence, dependency decisions, Change Radius, Discoverability, silent coupling, hidden state, unused flexibility, and
+  temporary-solution discipline.
+- Boundary checks: Chapter 29 mentoring through artifacts, Chapter 30 team alignment around decisions, and Chapter 31
+  architecture health reviews remain future scope; earlier PEAK tools are applied without repeating their mechanics.
+- Required section order used exactly:
+  1. Opening Quote
+  2. Story
+  3. Discussion
+  4. Engineering Principle
+  5. Architecture Exercise
+  6. Principal's Notebook
+  7. ADR
+  8. Editor's Commentary
+- Principal's Notebook contains exactly three short observations and no explanations.
+- No-new-concept result: passed. No primary concept, PEAK concept, PEAK ID, relationship, relationship verb, metric,
+  artifact, ritual, anti-pattern, failure story, vocabulary concept, or separate ritual-design registry was introduced.
+- Unchanged files confirmed: canonical brief, `knowledge/index.yaml`, PEAK concept files,
+  `editor/CHAPTER_ARCHITECTURE.md`, Part V README, table of contents, `editor/CANON.md`, and Chapters 1-27.
+- Files changed in this phase:
+  - `book/05-engineering-organization/28-building-engineering-rituals.md`
+  - `editor/EDITOR_LOG.md`
+- Final validation completed after this log entry:
+  - Direct Author Draft assertions: passed for clean baseline, `HEAD` matching `origin/chapter28` before drafting,
+    starting SHA matching the Canonical Brief Registration commit, expected changed files only, exact section order,
+    required sections unique, exactly three Principal's Notebook observations, unresolved marker absence, `CHAPTER-028`
+    remaining `draft`, canonical brief unchanged, `knowledge/index.yaml` unchanged, exact relationship set preserved, no
+    primary concept introduced, no new PEAK ID, unchanged Part V README, unchanged `editor/CHAPTER_ARCHITECTURE.md`,
+    unchanged `editor/CANON.md`, unchanged table of contents, unchanged Chapters 1-27, unchanged PEAK concept files,
+    material coverage for every registered concept, later Part V boundaries, earlier-parts boundaries,
+    forbidden-frame checks, and no tracked `site/` output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini book/05-engineering-organization/28-building-engineering-rituals.md editor/EDITOR_LOG.md`:
+    passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed with no tracked `site/` output.
+- Next lifecycle stage: Editorial Review after this Author Draft commit is committed and pushed.
+- Do not perform Editorial Review, Canon Review, Technical Review, Freeze Review, PR creation, or merge as part of this
+  phase.
+
 ## Phase 69 Chapter 14 Editorial Review
 
 - Chapter: Drawing Boundaries That Survive Change.
