@@ -10632,6 +10632,67 @@ Pull request readiness:
   - `git ls-files site`
 - Next stage: Editorial Review.
 
+## Phase 141 Chapter 26 Editorial Review
+
+- Chapter: Technical Leadership Without Authority.
+- Stable ID: `CHAPTER-026`.
+- Branch: `chapter26`.
+- Stage: Editorial Review.
+- Reviewed Author Draft SHA: `926814654eceec9189b4fd4b997c90a2a3c6ad2c`.
+- Canonical brief parent SHA: `ba003708e281cbf8b43f8b5d08823bfc93a4de39`.
+- Manuscript path: `book/05-engineering-organization/26-technical-leadership-without-authority.md`.
+- Canonical brief path preserved:
+  `editor/chapter-briefs/CHAPTER-026-technical-leadership-without-authority.md`.
+- Part V position: first chapter of Part V - Engineering Organization.
+- Primary concept: none.
+- Central illustrated concept: `FAILURE-004`.
+- Outcome: Approved with minor changes.
+- Material editorial changes: added one clarifying paragraph that distinguishes recommendation, facilitation, formal
+  approval, and escalation so the leadership model is easier to follow without changing canon, relationships, story,
+  section architecture, ADR, exercise, or notebook meaning.
+- Section-order result: passed. The manuscript preserves the required order: Opening Quote, Story, Discussion,
+  Engineering Principle, Architecture Exercise, Principal's Notebook, ADR, Editor's Commentary.
+- Principal's Notebook result: exactly three short observations.
+- Leadership-without-authority result: passed. The chapter keeps technical leadership framed as improving cross-team
+  decision quality, not generic leadership, charisma, persuasion, communication skills, meeting facilitation, promotion,
+  politics, or management advice.
+- Decision-ownership result: passed. The Principal Engineer's recommendation remains strong and specific while the
+  accountable owner, affected owners, formal authority, technical authority, and escalation boundaries remain visible.
+- Evidence and trade-off result: passed. Product date pressure, API assumptions, provisioning authority, diagnostic
+  meaning, release compatibility, and team-local constraints are separated from evidence and reviewed as technical
+  trade-offs.
+- Record and review result: passed. RFC, Architecture Review, ADR, Decision Journal, and Architecture Ledger are used
+  proportionately as decision supports and records, not as substitutes for ownership or conversation.
+- Later Part V boundary result: passed. Design reviews, engineering rituals, mentoring through artifacts, aligning
+  teams around decisions, and architecture health reviews are previewed only lightly and not written early.
+- Earlier-parts boundary result: passed. Parts I through IV are used as applied tools for organizational decision
+  quality; their teachings are not repeated or reopened.
+- Unchanged files confirmed: canonical brief, `knowledge/index.yaml`, PEAK concept files,
+  `editor/CHAPTER_ARCHITECTURE.md`, Part V README, table of contents, `editor/CANON.md`, and Chapters 1-25.
+- Changed files:
+  - `book/05-engineering-organization/26-technical-leadership-without-authority.md`
+  - `editor/EDITOR_LOG.md`
+- Final validation completed after this log entry:
+  - Direct Editorial Review assertions: passed for clean baseline, reviewed SHA matching the Author Draft commit,
+    expected changed files only, exact section order, required sections unique, exactly three Principal's Notebook
+    observations, required story title, cross-team firmware/backend/manufacturing/service tooling/support/release
+    coverage, decision-owner/evidence/invariant frame shift, unresolved marker absence, `CHAPTER-026` remaining `draft`,
+    no primary concept introduced, exact relationship set preserved, unchanged canonical brief, unchanged
+    `knowledge/index.yaml`, unchanged PEAK concept files, unchanged `editor/CHAPTER_ARCHITECTURE.md`, unchanged Part V
+    README, unchanged table of contents, unchanged `editor/CANON.md`, unchanged Chapters 1-25, later Part V boundary,
+    earlier-parts boundary, and no tracked `site` output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini book/05-engineering-organization/26-technical-leadership-without-authority.md editor/EDITOR_LOG.md`:
+    passed with 0 errors, 0 warnings, and 0 suggestions.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed with no tracked `site/` output.
+- Next lifecycle stage: Canon Review after this Editorial Review commit is committed and pushed.
+- Do not perform Canon Review, Technical Review, Freeze Review, PR creation, or merge as part of this phase.
+
 ## Phase 99 Chapter 19 Editorial Review
 
 - Chapter: Freezing Architecture Without Freezing Learning.

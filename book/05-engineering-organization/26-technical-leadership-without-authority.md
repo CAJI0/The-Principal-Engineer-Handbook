@@ -29,9 +29,9 @@ Each team saw a local version of the work.
 
 Product wanted a date because the first customer using pre-provisioned devices had a deployment window. Firmware wanted
 a clean device-side state model. Backend wanted stable API assumptions before it committed to activation behavior.
-Manufacturing wanted a fixture change that would not slow the line. The service-tool team wanted one status screen
-instead of a new workflow. Support wanted diagnostic meanings it could explain without paging firmware. Release wanted a
-low-risk path for devices already in the field.
+Manufacturing wanted provisioning clarity and a fixture change that would not slow the line. The service-tool team
+wanted one status screen instead of a new workflow. Support wanted diagnostic meanings it could explain without paging
+firmware. Release wanted a low-risk path for devices already in the field.
 
 The managers wanted progress.
 
@@ -238,6 +238,10 @@ They own real constraints and real consequences. A product owner may need to dec
 engineering manager may need to change staffing. A release owner may need to block an unsupported combination. A
 Principal Engineer can make those decisions better by clarifying the technical consequence, but technical seniority does
 not replace formal accountability.
+
+A recommendation states the technical judgment and the evidence behind it. Facilitation improves the forum where the
+judgment is tested. Formal approval accepts organizational consequence. Escalation asks the right authority to decide
+what technical evidence alone cannot own. Mixing those tools is how helpful influence becomes hidden control.
 
 Influence is not ownership.
 
