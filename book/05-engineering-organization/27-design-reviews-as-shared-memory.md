@@ -249,6 +249,10 @@ review, a test, or a short Decision Journal entry. A decision with persistent da
 changes, dependency commitments, manufacturing impact, support diagnostics, release timing, or broad Change Radius
 usually deserves review memory strong enough to survive turnover.
 
+Decision maturity matters too. Early ideas may need RFC discussion or evidence gathering before a formal review can
+help. Accepted decisions need durable records. Temporary choices need owners and triggers before the team forgets why
+they exist.
+
 Every State Has One Owner (`LAW-001`) is a memory question.
 
 If a review decides who owns provisioning state, calibration validity, readiness, compatibility, or support-visible
