@@ -11367,3 +11367,114 @@ Pull request readiness:
 - Next lifecycle stage: Editorial Review after this Author Draft commit is committed and pushed.
 - Do not perform Editorial Review, Canon Review, Technical Review, Freeze Review, PR creation, or merge as part of this
   phase.
+
+## Phase 145 Chapter 27 Canonical Brief Registration
+
+- Chapter: Design Reviews as Shared Memory.
+- Stable ID: `CHAPTER-027`.
+- Branch: `chapter27`.
+- Stage: Canonical Brief Registration.
+- Verified baseline `origin/main`: `80332c17999d685e994e9bc8e1fa703ce4740231`.
+- Baseline evidence: PR #28 squash commit,
+  `Chapter 26: Technical Leadership Without Authority (#28)`.
+- PR #28 feature lifecycle evidence:
+  - Canonical Brief: `ba003708e281cbf8b43f8b5d08823bfc93a4de39`.
+  - Author Draft: `926814654eceec9189b4fd4b997c90a2a3c6ad2c`.
+  - Editorial Review: `6c14d91e8369bf84279e52c31cc6eb684bda134e`.
+  - Canon Review: `a6bb528c64470af2454603959083bc8a565b2995`.
+  - Technical Review: `df222bd9a18c31bc1c8255ab392daffa55b4ff97`.
+  - Freeze Review: `9abc1e72153806b7a0da7b1b5f447d85514aa972`.
+  - Squash merge: `80332c17999d685e994e9bc8e1fa703ce4740231`.
+- Squash verification result: passed. The squash commit is an ancestor of current `origin/main`, has parent
+  `3e6f5126b6817c93c11571b6881fcea3ceead348`, and the checked Chapter 26 lifecycle files are tree-equivalent to the
+  Chapter 26 Freeze Review commit `9abc1e72153806b7a0da7b1b5f447d85514aa972`.
+- Part position: second chapter of Part V - Engineering Organization.
+- Canonical predecessor: `CHAPTER-026` - Technical Leadership Without Authority.
+- Outcome: Approve canonical brief registration.
+- Reader-facing manuscript created: no.
+- Manuscript path remains absent:
+  `book/05-engineering-organization/27-design-reviews-as-shared-memory.md`.
+- Canonical brief path created:
+  `editor/chapter-briefs/CHAPTER-027-design-reviews-as-shared-memory.md`.
+- Index registration: `CHAPTER-027` added to `knowledge/index.yaml` as `draft`.
+- Primary concept: none. Chapter 27 applies existing review, record, evidence, ownership, Change Radius, and
+  Discoverability concepts to design reviews as organizational memory.
+- Central chapter-local practice: turning consequential design reviews into reusable decision memory for people who were
+  not in the room.
+- Canonical scope: design reviews as shared memory; decision memory; context; constraints; alternatives; evidence;
+  uncertainty; risks; trade-offs; rejected options; decision owner; affected owners; follow-up owners; record updates;
+  revisit triggers; proportional review weight; and future discoverability.
+- Selected PEAK concepts:
+  - `RITUAL-001` - Architecture Review.
+  - `ARTIFACT-002` - RFC.
+  - `ARTIFACT-001` - ADR.
+  - `ARTIFACT-003` - Decision Journal.
+  - `ARTIFACT-006` - Architecture Ledger.
+  - `LAW-001` - Every State Has One Owner.
+  - `LAW-002` - Every API Is a Promise.
+  - `LAW-005` - Evidence Before Confidence.
+  - `LAW-007` - Every Dependency Is a Decision.
+  - `VOCAB-001` - Change Radius.
+  - `METRIC-001` - Change Radius.
+  - `METRIC-003` - Discoverability.
+  - `SMELL-001` - Silent Coupling.
+  - `SMELL-004` - Hidden State.
+  - `ANTIPATTERN-006` - Temporary Solution.
+- Rejected PEAK concepts:
+  - `METRIC-002` - Bus Factor: nearby private-memory risk, but Discoverability is the stronger Chapter 27 metric.
+  - `SMELL-005` - Platform Leakage: possible embedded example detail, but not the chapter's organizing failure.
+  - `VOCAB-002` and `ARTIFACT-007` - Weak Signal and Weak Signal Register: related to later health detection, not
+    review-memory registration.
+  - `RITUAL-006` - RFC Friday: possible forum, but Chapter 17 owns RFC practice and Chapter 28 owns ritual design.
+  - `RITUAL-004` - Architecture Health Review: reserved for Chapter 31.
+  - `FAILURE-004` - The Hero Engineer: relevant background, but Chapter 26 already illustrates hidden expert dependency.
+- Exact outgoing relationships registered:
+  - `CHAPTER-027 illustrates RITUAL-001`.
+  - `CHAPTER-027 references ARTIFACT-002`.
+  - `CHAPTER-027 references ARTIFACT-001`.
+  - `CHAPTER-027 references ARTIFACT-003`.
+  - `CHAPTER-027 references ARTIFACT-006`.
+  - `CHAPTER-027 references LAW-001`.
+  - `CHAPTER-027 references LAW-002`.
+  - `CHAPTER-027 references LAW-005`.
+  - `CHAPTER-027 references LAW-007`.
+  - `CHAPTER-027 references VOCAB-001`.
+  - `CHAPTER-027 references METRIC-001`.
+  - `CHAPTER-027 references METRIC-003`.
+  - `CHAPTER-027 references SMELL-001`.
+  - `CHAPTER-027 references SMELL-004`.
+  - `CHAPTER-027 references ANTIPATTERN-006`.
+- New PEAK concept result: no new PEAK law, maxim, artifact, ritual, metric, smell, anti-pattern, failure story,
+  vocabulary concept, ID, relationship verb, or primary-concept field was added.
+- Later Part V boundaries:
+  - Chapter 28 owns building engineering rituals.
+  - Chapter 29 owns mentoring through artifacts.
+  - Chapter 30 owns aligning teams around decisions.
+  - Chapter 31 owns architecture health reviews.
+- Earlier-parts boundary: Chapter 27 uses Parts I through IV and Chapter 26 as applied tools without repeating better
+  questions, evidence discipline, ownership, ADR/RFC mechanics, Architecture Review timing, Architecture Freeze,
+  product-line obligations, or leadership without authority.
+- Required reader-facing chapter architecture preserved for the future manuscript: Opening Quote, Story, Discussion,
+  Engineering Principle, Architecture Exercise, Principal's Notebook, ADR, Editor's Commentary.
+- Changed files:
+  - `editor/chapter-briefs/CHAPTER-027-design-reviews-as-shared-memory.md`
+  - `editor/EDITOR_LOG.md`
+  - `knowledge/index.yaml`
+- Final validation completed after this log entry:
+  - Direct canonical-brief assertions: passed for branch, baseline, expected changed files only, brief existence,
+    manuscript absence, `CHAPTER-027` draft registration, Chapters 1-26 remaining canonical, exact Chapter 27
+    relationship set, existing relationship targets, no duplicate or self-edge, no new PEAK ID, unchanged PEAK concept
+    files, unchanged `book/05-engineering-organization/README.md`, unchanged `editor/CHAPTER_ARCHITECTURE.md`,
+    unchanged table of contents, unchanged existing chapters, later Part V boundaries, earlier-parts boundary, and no
+    tracked `site` output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini editor/chapter-briefs/CHAPTER-027-design-reviews-as-shared-memory.md editor/EDITOR_LOG.md`:
+    passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed with no tracked `site/` output.
+- Next lifecycle stage: Author Draft after this Canonical Brief Registration commit is committed and pushed.
+- Do not create the manuscript, perform review gates, create a pull request, or merge as part of this phase.
