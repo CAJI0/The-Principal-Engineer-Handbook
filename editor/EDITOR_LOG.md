@@ -5304,6 +5304,80 @@ Pull request readiness:
   is pushed.
 - Do not create a PR or merge as part of this phase.
 
+## Phase 151 Chapter 28 Canonical Brief Registration
+
+- Chapter: Building Engineering Rituals.
+- Stable ID: `CHAPTER-028`.
+- Branch: `chapter28`.
+- Stage: Canonical Brief Registration.
+- Verified baseline `origin/main`: `e83ade929a78be2361b73da88a623f9f19ae14fb`.
+- PR #29 merge evidence: resolved Chapter 27 squash commit
+  `e83ade929a78be2361b73da88a623f9f19ae14fb`, parent
+  `80332c17999d685e994e9bc8e1fa703ce4740231`, ancestor of current `origin/main`.
+- Chapter 27 feature Freeze commit checked for final-tree equivalence:
+  `f812ea7c6b8801929dbe98b3af327e0521753bcf`.
+- Canonical predecessor: `CHAPTER-027` - Design Reviews as Shared Memory.
+- Part position: third chapter of Part V - Engineering Organization.
+- Outcome: Approved for canonical brief registration.
+- Primary-concept resolution: none. `CHAPTER-028` has no `primary_concept` field and is carried by material outgoing
+  relationships to existing PEAK concepts.
+- Engineering-ritual result: engineering ritual, ritual decay, ritual health, ritual owner, review cadence, meeting
+  hygiene, approval theater, process debt, ritual design, and retirement condition remain chapter-local prose.
+- Reader-facing manuscript created: no.
+- Canonical brief path:
+  `editor/chapter-briefs/CHAPTER-028-building-engineering-rituals.md`.
+- Index registration: added `CHAPTER-028` as `draft` with path
+  `../book/05-engineering-organization/28-building-engineering-rituals.md`.
+- Exact outgoing relationships registered:
+  - `CHAPTER-028` illustrates `RITUAL-001`.
+  - `CHAPTER-028` references `RITUAL-002`.
+  - `CHAPTER-028` references `ARTIFACT-002`.
+  - `CHAPTER-028` references `ARTIFACT-001`.
+  - `CHAPTER-028` references `ARTIFACT-003`.
+  - `CHAPTER-028` references `ARTIFACT-006`.
+  - `CHAPTER-028` references `LAW-001`.
+  - `CHAPTER-028` references `LAW-005`.
+  - `CHAPTER-028` references `LAW-006`.
+  - `CHAPTER-028` references `LAW-007`.
+  - `CHAPTER-028` references `VOCAB-001`.
+  - `CHAPTER-028` references `METRIC-001`.
+  - `CHAPTER-028` references `METRIC-003`.
+  - `CHAPTER-028` references `SMELL-001`.
+  - `CHAPTER-028` references `SMELL-004`.
+  - `CHAPTER-028` references `ANTIPATTERN-006`.
+- Selected concepts: `RITUAL-001`, `RITUAL-002`, `ARTIFACT-002`, `ARTIFACT-001`, `ARTIFACT-003`, `ARTIFACT-006`,
+  `LAW-001`, `LAW-005`, `LAW-006`, `LAW-007`, `VOCAB-001`, `METRIC-001`, `METRIC-003`, `SMELL-001`, `SMELL-004`, and
+  `ANTIPATTERN-006`.
+- Rejected concepts: `RITUAL-004`, `RITUAL-006`, `VOCAB-006`, `VOCAB-007`, `ARTIFACT-004`, `ARTIFACT-007`,
+  `LAW-002`, `METRIC-002`, `METRIC-005`, `SMELL-005`, `SMELL-006`, `ANTIPATTERN-003`, and `VOCAB-002`.
+- New PEAK concept or ID change: none.
+- Later Part V boundaries: Chapter 29 owns mentoring through artifacts; Chapter 30 owns aligning teams around
+  decisions; Chapter 31 owns architecture health reviews.
+- Earlier-parts boundary: Parts I through IV and Chapters 26-27 are used as applied tools and predecessor constraints,
+  not repeated teachings.
+- Changed files:
+  - `editor/chapter-briefs/CHAPTER-028-building-engineering-rituals.md`
+  - `editor/EDITOR_LOG.md`
+  - `knowledge/index.yaml`
+- Final validation completed after this log entry:
+  - Direct Chapter 28 brief-registration assertions: passed for clean verified baseline, Chapter 27 squash ancestry,
+    Chapter 27 freeze-tree equivalence, `CHAPTER-028` draft registration, Chapters 1-27 canonical, exact relationship
+    set, valid relationship targets and verbs, no `primary_concept`, no new PEAK IDs, brief exists, manuscript absent,
+    Part V README unchanged, `editor/CHAPTER_ARCHITECTURE.md` unchanged, table of contents unchanged, existing PEAK
+    concept files unchanged, later Part V boundaries preserved, only expected files changed, and no tracked `site`
+    output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini editor/chapter-briefs/CHAPTER-028-building-engineering-rituals.md editor/EDITOR_LOG.md knowledge/index.yaml`:
+    passed with 0 errors, 0 warnings, and 0 suggestions.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed with no tracked `site/` output.
+- Next lifecycle stage: Author Draft after author approval.
+- Do not create the Chapter 28 manuscript, perform reviews, open a PR, or merge as part of this phase.
+
 ## Phase 69 Chapter 14 Editorial Review
 
 - Chapter: Drawing Boundaries That Survive Change.
