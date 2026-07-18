@@ -408,7 +408,7 @@ entities:
       type: chapter
       name: Design Reviews as Shared Memory
       path: ../book/05-engineering-organization/27-design-reviews-as-shared-memory.md
-      status: draft
+      status: canonical
   adrs:
     - id: ADR-001
       type: adr
