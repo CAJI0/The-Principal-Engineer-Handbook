@@ -10767,6 +10767,74 @@ Pull request readiness:
 - Next lifecycle stage: Technical Review after this Canon Review commit is committed and pushed.
 - Do not perform Technical Review, Freeze Review, PR creation, or merge as part of this phase.
 
+## Phase 143 Chapter 26 Technical Review
+
+- Chapter: Technical Leadership Without Authority.
+- Stable ID: `CHAPTER-026`.
+- Branch: `chapter26`.
+- Stage: Technical Review.
+- Reviewed Canon Review SHA: `a6bb528c64470af2454603959083bc8a565b2995`.
+- Manuscript path: `book/05-engineering-organization/26-technical-leadership-without-authority.md`.
+- Canonical brief path preserved:
+  `editor/chapter-briefs/CHAPTER-026-technical-leadership-without-authority.md`.
+- Part V position: first chapter of Part V - Engineering Organization.
+- Primary concept: none.
+- Central illustrated concept: `FAILURE-004`.
+- Outcome: Approved.
+- Domains checked: Principal Engineer influence without direct management authority, cross-team provisioning ownership,
+  firmware validation, backend reservation and entitlement, manufacturing station evidence, service-tool workflow,
+  support-safe diagnostics, release compatibility, old-version behavior, API promises, evidence quality, Change Radius,
+  RFC and Architecture Review fit, ADR, Decision Journal, Architecture Ledger, escalation boundary, hidden ownership,
+  hidden veto risk, manager/product-owner authority, and trust through reliable records.
+- Material corrections: none. Manuscript unchanged during Technical Review.
+- Cross-team technical-decision assessment: passed. The provisioning scenario is plausible and proportionate; firmware,
+  backend, manufacturing, service tooling, support, release, product, management, and test each have legitimate local
+  constraints and consequences.
+- Ownership and authority assessment: passed. The Principal Engineer's refusal to decide informally strengthens
+  ownership; formal authority, technical authority, advisory influence, stewardship, recommendation, facilitation,
+  formal approval, and escalation remain distinct.
+- Recommendation/facilitation/approval assessment: passed. The recommendation is explicit and reviewable, facilitation
+  improves the forum, formal approval owns organizational consequence, and the Principal Engineer does not become the
+  hidden owner or default veto.
+- Evidence and trade-off assessment: passed. The chapter separates tests, prototype API evidence, station timing,
+  service-tool screen evidence, compatibility matrix limits, date pressure, product constraints, and unresolved
+  authority questions.
+- Artifact and review assessment: passed. RFC and Architecture Review match the broad Change Radius; ADR, Decision
+  Journal, and Architecture Ledger are proportional records and do not replace conversation or ownership.
+- Escalation assessment: passed. Escalation is credible as a bounded tool for scope, staffing, priority, customer
+  commitment, accepted risk, missing owner, or unresolved authority, not as a reflex for every disagreement.
+- Boundary assessment: passed. The chapter does not imply authority is bad, managers are irrelevant, Principal
+  Engineers should decide everything, influence means consensus or persuasion tricks, leadership without authority means
+  avoiding accountability, technical correctness is enough, every decision needs review, every disagreement needs
+  escalation, records replace conversation, charisma is the mechanism, the Principal Engineer is the only adult in the
+  room, or cross-team friction is a moral failure.
+- Unchanged files confirmed: manuscript, canonical brief, `knowledge/index.yaml`, PEAK concept files,
+  `editor/CHAPTER_ARCHITECTURE.md`, Part V README, table of contents, `editor/CANON.md`, and Chapters 1-25.
+- Changed files:
+  - `editor/EDITOR_LOG.md`
+- Final validation completed after this log entry:
+  - Direct Technical Review assertions: passed for clean baseline, `HEAD` matching `origin/chapter26` before review,
+    reviewed SHA matching the Canon Review commit, log-only changed-file boundary, unchanged manuscript, exact section
+    order, required sections unique, exactly three Principal's Notebook observations, unresolved marker absence,
+    `CHAPTER-026` remaining `draft`, no primary concept introduced, exact relationship set preserved, plausible
+    cross-team provisioning scenario, legitimate local constraints, recommendation/facilitation/approval distinction,
+    evidence/trade-off coverage, artifact/review proportionality, escalation boundary, guardrail absence, unchanged
+    canonical brief, unchanged `knowledge/index.yaml`, unchanged PEAK concept files, unchanged
+    `editor/CHAPTER_ARCHITECTURE.md`, unchanged Part V README, unchanged table of contents, unchanged `editor/CANON.md`,
+    unchanged Chapters 1-25, ordered prior review entries, later Part V boundary, earlier-parts boundary, and no tracked
+    `site` output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini book/05-engineering-organization/26-technical-leadership-without-authority.md editor/EDITOR_LOG.md`:
+    passed with 0 errors, 0 warnings, and 0 suggestions.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed with no tracked `site/` output.
+- Next lifecycle stage: Freeze Review after this Technical Review commit is committed and pushed.
+- Do not perform Freeze Review, PR creation, or merge as part of this phase.
+
 ## Phase 99 Chapter 19 Editorial Review
 
 - Chapter: Freezing Architecture Without Freezing Learning.
