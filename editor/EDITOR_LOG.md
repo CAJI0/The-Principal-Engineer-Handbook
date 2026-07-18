@@ -10693,6 +10693,80 @@ Pull request readiness:
 - Next lifecycle stage: Canon Review after this Editorial Review commit is committed and pushed.
 - Do not perform Canon Review, Technical Review, Freeze Review, PR creation, or merge as part of this phase.
 
+## Phase 142 Chapter 26 Canon Review
+
+- Chapter: Technical Leadership Without Authority.
+- Stable ID: `CHAPTER-026`.
+- Branch: `chapter26`.
+- Stage: Canon Review.
+- Reviewed Editorial Review SHA: `6c14d91e8369bf84279e52c31cc6eb684bda134e`.
+- Manuscript path: `book/05-engineering-organization/26-technical-leadership-without-authority.md`.
+- Canonical brief path preserved:
+  `editor/chapter-briefs/CHAPTER-026-technical-leadership-without-authority.md`.
+- Part V position: first chapter of Part V - Engineering Organization.
+- Primary concept: none.
+- Central illustrated concept: `FAILURE-004`.
+- Outcome: Approved with minor changes.
+- Canonical sources checked: Chapter 26 canonical brief, `knowledge/index.yaml`, `editor/CHAPTER_ARCHITECTURE.md`,
+  `editor/CANON.md`, Chapter 25 as predecessor and bridge, earlier applied Chapters 1, 2, 3, 4, 5, 6, 7, 8, 9, 13,
+  15, 17, 18, 19, and the registered PEAK concept files.
+- No-primary result: passed. Technical Leadership, Influence Without Authority, Decision Owner, Hidden Owner, Trust,
+  Stewardship, Organizational Memory, Escalation, Facilitation, Alignment, and Decision System remain chapter-local
+  prose terms; no primary-concept field or new PEAK concept was introduced.
+- Chapter-local-term result: passed. The chapter uses decision system and leadership-without-authority language only as
+  reader-facing explanation carried by existing ownership, evidence, Change Radius, record, review, discoverability, and
+  hidden-ownership concepts.
+- `FAILURE-004` result: passed. The chapter materially illustrates The Hero Engineer risk as private memory and hidden
+  decision ownership without blaming the individual engineer.
+- Leadership-without-authority result: passed. The manuscript treats leadership as improving organizational decision
+  quality, not as title power, charisma, persuasion, management replacement, consensus, or hidden veto.
+- Decision-ownership result: passed. Recommendation, advisory influence, facilitation, decision ownership, formal
+  approval, escalation, accountability, and stewardship are distinguished; accountable owners remain visible.
+- Evidence and decision-quality result: passed. Preference, date pressure, API assumptions, station constraints,
+  diagnostic meaning, release risk, and confidence are separated from evidence and review triggers.
+- Record and review result: passed. RFC, Architecture Review, ADR, Decision Journal, and Architecture Ledger are
+  materially present and proportionate to the broad Change Radius.
+- PEAK findings: passed for `FAILURE-004`, `LAW-001`, `LAW-002`, `LAW-005`, `LAW-007`, `VOCAB-001`, `METRIC-001`,
+  `METRIC-002`, `METRIC-003`, `ARTIFACT-001`, `ARTIFACT-002`, `ARTIFACT-003`, `ARTIFACT-006`, `RITUAL-001`,
+  `SMELL-001`, `SMELL-004`, and `ANTIPATTERN-006`; no relationship target was added, removed, renamed, or broadened.
+- Later Part V boundary result: passed. Chapter 27 design reviews, Chapter 28 rituals, Chapter 29 mentoring through
+  artifacts, Chapter 30 aligning teams around decisions, and Chapter 31 architecture health reviews are previewed only
+  lightly and not written early.
+- Earlier-parts boundary result: passed. Parts I through IV remain applied tools and predecessor constraints rather than
+  repeated teachings.
+- Relationship findings: passed. The exact registered Chapter 26 outgoing relationship set is unchanged and materially
+  present in the manuscript.
+- Section architecture: passed. The manuscript preserves the required order: Opening Quote, Story, Discussion,
+  Engineering Principle, Architecture Exercise, Principal's Notebook, ADR, Editor's Commentary.
+- Corrections: added canon-precision sentences naming advisory influence as helping the owner see the decision more
+  accurately and stewardship as protecting long-term system health without hidden ownership, distinct from
+  recommendation, facilitation, formal approval, and escalation.
+- Unchanged files confirmed: canonical brief, `knowledge/index.yaml`, PEAK concept files,
+  `editor/CHAPTER_ARCHITECTURE.md`, Part V README, table of contents, `editor/CANON.md`, and Chapters 1-25.
+- Changed files:
+  - `book/05-engineering-organization/26-technical-leadership-without-authority.md`
+  - `editor/EDITOR_LOG.md`
+- Final validation completed after this log entry:
+  - Direct Canon Review assertions: passed for clean baseline, `HEAD` matching `origin/chapter26` before review,
+    reviewed SHA matching the Editorial Review commit, expected changed files only, exact section order, required
+    sections unique, exactly three Principal's Notebook observations, unresolved marker absence, `CHAPTER-026` remaining
+    `draft`, no primary concept introduced, no chapter-local terms promoted into PEAK concepts, exact relationship set
+    preserved, material coverage for every registered relationship, unchanged canonical brief, unchanged
+    `knowledge/index.yaml`, unchanged PEAK concept files, unchanged `editor/CHAPTER_ARCHITECTURE.md`, unchanged Part V
+    README, unchanged table of contents, unchanged `editor/CANON.md`, unchanged Chapters 1-25, ordered prior review
+    entry, later Part V boundary, earlier-parts boundary, and no tracked `site` output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini book/05-engineering-organization/26-technical-leadership-without-authority.md editor/EDITOR_LOG.md`:
+    passed with 0 errors, 0 warnings, and 0 suggestions.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed with no tracked `site/` output.
+- Next lifecycle stage: Technical Review after this Canon Review commit is committed and pushed.
+- Do not perform Technical Review, Freeze Review, PR creation, or merge as part of this phase.
+
 ## Phase 99 Chapter 19 Editorial Review
 
 - Chapter: Freezing Architecture Without Freezing Learning.

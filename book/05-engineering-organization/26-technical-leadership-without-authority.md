@@ -239,9 +239,11 @@ engineering manager may need to change staffing. A release owner may need to blo
 Principal Engineer can make those decisions better by clarifying the technical consequence, but technical seniority does
 not replace formal accountability.
 
-A recommendation states the technical judgment and the evidence behind it. Facilitation improves the forum where the
-judgment is tested. Formal approval accepts organizational consequence. Escalation asks the right authority to decide
-what technical evidence alone cannot own. Mixing those tools is how helpful influence becomes hidden control.
+A recommendation states the technical judgment and the evidence behind it. Advisory influence helps the owner see the
+decision more accurately. Facilitation improves the forum where the judgment is tested. Formal approval accepts
+organizational consequence. Escalation asks the right authority to decide what technical evidence alone cannot own.
+Stewardship protects long-term system health without making the steward the hidden owner. Mixing those tools is how
+helpful influence becomes hidden control.
 
 Influence is not ownership.
 
