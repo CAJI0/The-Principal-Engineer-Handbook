@@ -5077,6 +5077,233 @@ Pull request readiness:
 - Do not perform Editorial Review, Canon Review, Technical Review, Freeze Review, PR creation, or merge as part of this
   phase.
 
+## Phase 147 Chapter 27 Editorial Review
+
+- Chapter: Design Reviews as Shared Memory.
+- Stable ID: `CHAPTER-027`.
+- Branch: `chapter27`.
+- Stage: Editorial Review.
+- Reviewed Author Draft SHA: `5f13d8cd450ba51dcef54056ee05bcf42f3f73a2`.
+- Canonical brief parent SHA: `3dd7c78386224a9f7c94821f132a930efad9c85d`.
+- Manuscript path:
+  `book/05-engineering-organization/27-design-reviews-as-shared-memory.md`.
+- Canonical brief path preserved:
+  `editor/chapter-briefs/CHAPTER-027-design-reviews-as-shared-memory.md`.
+- Part V position: second chapter of Part V - Engineering Organization.
+- Primary concept: none.
+- Central illustrated concept: `RITUAL-001`.
+- Outcome: Approved with minor changes.
+- Material editorial changes: added a short proportionality clarification that decision maturity affects review weight:
+  early ideas may need RFC discussion or evidence gathering, accepted decisions need durable records, and temporary
+  choices need owners and triggers.
+- Section-order result: passed. The manuscript preserves the required order: Opening Quote, Story, Discussion,
+  Engineering Principle, Architecture Exercise, Principal's Notebook, ADR, Editor's Commentary.
+- Principal's Notebook result: exactly three short observations.
+- Design-review-as-memory result: passed. The chapter keeps design reviews focused on reusable reasoning for people who
+  were not in the room, not meeting performance, senior attendance, polish, silence, or approval.
+- Review-boundary result: passed. Design review is distinguished from Architecture Review, RFC discussion, ADR,
+  Decision Journal, Architecture Ledger, status meeting, implementation review, code review, approval gate, and
+  escalation.
+- Review-memory-content result: passed. Decision statement, context, constraints, owners, affected owners,
+  alternatives, evidence, uncertainty, trade-offs, risks, rejected options, open questions, outcomes, follow-ups, record
+  updates, and revisit triggers are concrete without becoming a checklist catalog.
+- Record/artifact result: passed. RFC, ADR, Decision Journal, and Architecture Ledger divide review memory
+  proportionately and are not presented as new containers or substitutes for conversation.
+- Later Part V boundary result: passed. Chapter 28 rituals, Chapter 29 mentoring through artifacts, Chapter 30 aligning
+  teams around decisions, and Chapter 31 architecture health reviews are previewed only lightly and not written early.
+- Earlier-parts boundary result: passed. Parts I through IV and Chapter 26 are applied as existing tools; better
+  questions, evidence discipline, ADR/RFC mechanics, Architecture Review timing, Architecture Freeze, product-line
+  obligations, and leadership without authority are not repeated.
+- Unchanged files confirmed: canonical brief, `knowledge/index.yaml`, PEAK concept files,
+  `editor/CHAPTER_ARCHITECTURE.md`, Part V README, table of contents, `editor/CANON.md`, and Chapters 1-26.
+- Changed files:
+  - `book/05-engineering-organization/27-design-reviews-as-shared-memory.md`
+  - `editor/EDITOR_LOG.md`
+- Final validation completed after this log entry:
+  - Direct Editorial Review assertions: passed for clean baseline, reviewed SHA matching the Author Draft commit,
+    expected changed files only, exact section order, required sections unique, exactly three Principal's Notebook
+    observations, required story title, cross-team firmware/backend/service tooling/manufacturing/support/release
+    coverage, apparent-success coverage, three-month symptom coverage, reusable-reasoning shift, unresolved marker
+    absence, `CHAPTER-027` remaining `draft`, no primary concept introduced, exact relationship set preserved,
+    unchanged canonical brief, unchanged `knowledge/index.yaml`, unchanged PEAK concept files, unchanged
+    `editor/CHAPTER_ARCHITECTURE.md`, unchanged Part V README, unchanged table of contents, unchanged `editor/CANON.md`,
+    unchanged Chapters 1-26, later Part V boundary, earlier-parts boundary, and no tracked `site` output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini book/05-engineering-organization/27-design-reviews-as-shared-memory.md editor/EDITOR_LOG.md`:
+    passed with 0 errors, 0 warnings, and 0 suggestions.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed with no tracked `site/` output.
+- Next lifecycle stage: Canon Review after this Editorial Review commit is committed and pushed.
+- Do not perform Canon Review, Technical Review, Freeze Review, PR creation, or merge as part of this phase.
+
+## Phase 148 Chapter 27 Canon Review
+
+- Chapter: Design Reviews as Shared Memory.
+- Stable ID: `CHAPTER-027`.
+- Branch: `chapter27`.
+- Stage: Canon Review.
+- Reviewed Editorial Review SHA: `1e5f0e965491e006d98e2e947f554bc1726e5fcd`.
+- Manuscript path:
+  `book/05-engineering-organization/27-design-reviews-as-shared-memory.md`.
+- Canonical brief path preserved:
+  `editor/chapter-briefs/CHAPTER-027-design-reviews-as-shared-memory.md`.
+- Part V position: second chapter of Part V - Engineering Organization.
+- Primary concept: none.
+- Central illustrated concept: `RITUAL-001`.
+- Outcome: Approved.
+- Canonical sources checked: Chapter 27 canonical brief, `knowledge/index.yaml`, `editor/CHAPTER_ARCHITECTURE.md`,
+  `editor/CANON.md`, Chapter 26 as predecessor, earlier applied Chapters 1, 2, 3, 4, 5, 6, 7, 8, 9, 13, 15, 17, 18,
+  19, and 25, the registered PEAK concept files, and Chapter 26 review and Freeze precedent.
+- No-primary result: passed. Chapter 27 remains carried by the exact relationship set rather than by a primary PEAK
+  concept or `primary_concept` registry field.
+- Chapter-local-term result: passed. Design Review, Shared Memory, Review Memory, Review Record, Review Outcome,
+  Decision Context, Rejected Option, Follow-up Owner, and Revisit Trigger remain chapter-local prose and are not
+  registered as PEAK concepts.
+- `RITUAL-001` result: passed. The manuscript materially illustrates Architecture Review as the closest PEAK review
+  ritual while distinguishing Chapter 27 from Chapter 18's review-timing lesson.
+- Review-memory result: passed. The chapter treats design reviews as reusable decision reasoning for people who were not
+  in the room, rather than as approval theater, consensus, seniority, meeting polish, or note-taking.
+- Review-boundary result: passed. The manuscript distinguishes design review, Architecture Review, RFC discussion, ADR,
+  Decision Journal, status meeting, implementation review, code review, approval gate, and escalation.
+- Artifact/record result: passed. RFC, ADR, Decision Journal, and Architecture Ledger are used as proportionate carriers
+  of review outcome, accepted decision, smaller follow-ups, temporary choices, owners, status, links, and review dates
+  without repeating Chapter 17 artifact mechanics.
+- PEAK findings: passed for `RITUAL-001`, `ARTIFACT-002`, `ARTIFACT-001`, `ARTIFACT-003`, `ARTIFACT-006`, `LAW-001`,
+  `LAW-002`, `LAW-005`, `LAW-007`, `VOCAB-001`, `METRIC-001`, `METRIC-003`, `SMELL-001`, `SMELL-004`, and
+  `ANTIPATTERN-006`; no relationship target was added, removed, renamed, or broadened.
+- Later Part V boundary result: passed. Chapter 28 rituals, Chapter 29 mentoring through artifacts, Chapter 30 aligning
+  teams around decisions, and Chapter 31 architecture health reviews remain future scope.
+- Earlier-parts boundary result: passed. Parts I through IV remain applied tools and predecessor constraints rather than
+  repeated teachings.
+- Relationship findings: passed. The exact registered Chapter 27 outgoing relationship set is unchanged and materially
+  present in the manuscript.
+- Section architecture: passed. The manuscript preserves the required order: Opening Quote, Story, Discussion,
+  Engineering Principle, Architecture Exercise, Principal's Notebook, ADR, Editor's Commentary.
+- Corrections made during Canon Review: none. Manuscript unchanged during Canon Review.
+- Unchanged files confirmed: manuscript, canonical brief, `knowledge/index.yaml`, PEAK concept files,
+  `editor/CHAPTER_ARCHITECTURE.md`, Part V README, table of contents, `editor/CANON.md`, and Chapters 1-26.
+- Changed files:
+  - `editor/EDITOR_LOG.md`
+- Final validation completed after this log entry:
+  - Direct Canon Review assertions: passed for clean baseline, `HEAD` matching `origin/chapter27` before review,
+    reviewed SHA matching the Editorial Review commit, log-only changed-file boundary, unchanged manuscript, exact
+    section order, required sections unique, exactly three Principal's Notebook observations, unresolved marker absence,
+    `CHAPTER-027` remaining `draft`, no primary concept introduced, no chapter-local terms promoted into PEAK concepts,
+    exact relationship set preserved, material coverage for every registered relationship, unchanged canonical brief,
+    unchanged `knowledge/index.yaml`, unchanged PEAK concept files, unchanged `editor/CHAPTER_ARCHITECTURE.md`,
+    unchanged Part V README, unchanged table of contents, unchanged `editor/CANON.md`, unchanged Chapters 1-26, ordered
+    prior review entry, later Part V boundary, earlier-parts boundary, and no tracked `site` output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini book/05-engineering-organization/27-design-reviews-as-shared-memory.md editor/EDITOR_LOG.md`:
+    passed with 0 errors, 0 warnings, and 0 suggestions.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed with no tracked `site/` output.
+- Next lifecycle stage: Technical Review after this Canon Review commit is committed and pushed.
+- Do not perform Technical Review, Freeze Review, PR creation, or merge as part of this phase.
+
+## Phase 149 Chapter 27 Technical Review
+
+- Chapter: Design Reviews as Shared Memory.
+- Stable ID: `CHAPTER-027`.
+- Branch: `chapter27`.
+- Stage: Technical Review.
+- Reviewed Canon Review SHA: `eda14456fd3a07beb3967c2a960786c5ecc35d96`.
+- Manuscript path:
+  `book/05-engineering-organization/27-design-reviews-as-shared-memory.md`.
+- Outcome: Approved.
+- Technical domains checked: cross-team provisioning compatibility, shared ownership across firmware, backend, service
+  tooling, manufacturing, support, release, and test, review-result durability, follow-up ownership, revisit triggers,
+  proportionality of review weight, and the ability of future engineers to recover the reasoning.
+- Scenario plausibility: passed. The Lumen provisioning story uses the already-established product context from Chapter
+  26 and tests a realistic failure mode: a reasonable review leaves insufficient record memory for later release,
+  support, and service-tool work.
+- Failure model: passed. The chapter does not blame the team for missing competence. The technical failure is missing
+  durable reasoning across boundaries, which is the intended Chapter 27 lesson.
+- Artifact fit: passed. RFC, ADR, Decision Journal, and Architecture Ledger each carry a plausible technical burden
+  without turning design review into a new artifact system or broad paperwork.
+- Ownership and trigger fit: passed. Follow-up owners, accepted risks, rejected options, unresolved questions, and revisit
+  triggers are concrete enough for future engineers to recover why the provisioning boundary exists.
+- Proportionality: passed. The manuscript separates local reversible decisions from consequential cross-team decisions,
+  keeping ordinary code review and tests available for small changes while requiring stronger review memory for larger
+  compatibility decisions.
+- Boundary clarity: passed. Design review remains distinct from status, implementation review, code review, approval
+  gate, and escalation; the technical purpose is decision reasoning that can survive future change.
+- Embedded/product reality: passed. Manufacturing scripts, service tooling, backend readiness semantics, support
+  diagnosis, release notes, firmware behavior, and test ownership all appear as concrete consequences of review memory.
+- Technical corrections made during Technical Review: none. Manuscript unchanged during Technical Review.
+- Changed files:
+  - `editor/EDITOR_LOG.md`
+- Final validation completed after this log entry:
+  - Direct Technical Review assertions: passed for clean baseline, `HEAD` matching `origin/chapter27` before review,
+    reviewed SHA matching the Canon Review commit, log-only changed-file boundary, unchanged manuscript, exact section
+    order, exactly three Principal's Notebook observations, no unresolved markers, durable technical coverage of
+    provisioning compatibility and future reasoning recovery, artifact proportionality, owner and trigger coverage, boundary
+    clarity, unchanged canonical brief, unchanged `knowledge/index.yaml`, unchanged PEAK concept files, unchanged
+    `editor/CHAPTER_ARCHITECTURE.md`, unchanged Part V README, unchanged table of contents, unchanged `editor/CANON.md`,
+    unchanged Chapters 1-26, ordered prior review entries, and no tracked `site` output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini book/05-engineering-organization/27-design-reviews-as-shared-memory.md editor/EDITOR_LOG.md`:
+    passed with 0 errors, 0 warnings, and 0 suggestions.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed with no tracked `site/` output.
+- Next lifecycle stage: Freeze Review after this Technical Review commit is committed and pushed.
+- Do not perform Freeze Review, PR creation, or merge as part of this phase.
+
+## Phase 150 Chapter 27 Freeze Review
+
+- Chapter: Design Reviews as Shared Memory.
+- Stable ID: `CHAPTER-027`.
+- Branch: `chapter27`.
+- Stage: Freeze Review.
+- Reviewed Technical Review SHA: `8a019d54968a44ea152d92f089d8b885ae7c69eb`.
+- Manuscript path:
+  `book/05-engineering-organization/27-design-reviews-as-shared-memory.md`.
+- Outcome: Approved for freeze.
+- Freeze action: updated `CHAPTER-027` status in `knowledge/index.yaml` from `draft` to `canonical`.
+- Manuscript freeze result: passed. No manuscript changes were made during Freeze Review.
+- Registry freeze result: passed. `CHAPTER-027` remains registered exactly once, has no `primary_concept`, and preserves
+  the exact outgoing relationship set approved by the canonical brief and prior review gates.
+- PEAK boundary result: passed. No chapter-local design-review terms were promoted into PEAK concepts, and no PEAK
+  concept file was changed.
+- Lifecycle integrity: passed. Editorial Review, Canon Review, and Technical Review exist as separate pushed commits
+  before this freeze, with clean branch equality verified before each subsequent gate.
+- Changed files:
+  - `editor/EDITOR_LOG.md`
+  - `knowledge/index.yaml`
+- Final validation completed after this log entry:
+  - Direct Freeze Review assertions: passed for clean baseline, `HEAD` matching `origin/chapter27` before freeze,
+    reviewed SHA matching the Technical Review commit, ordered and ancestor-linked prior review commits, changed-file
+    boundary limited to `editor/EDITOR_LOG.md` and `knowledge/index.yaml`, `CHAPTER-027` status set to `canonical`, no
+    primary concept introduced, exact relationship set preserved, no chapter-local terms promoted into PEAK concepts,
+    unchanged manuscript, unchanged canonical brief, unchanged PEAK concept files, unchanged `editor/CHAPTER_ARCHITECTURE.md`,
+    unchanged Part V README, unchanged table of contents, unchanged `editor/CANON.md`, unchanged Chapters 1-26, exact
+    section order, exactly three Principal's Notebook observations, all four Chapter 27 review log entries present, and
+    no tracked `site` output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini book/05-engineering-organization/27-design-reviews-as-shared-memory.md editor/EDITOR_LOG.md knowledge/index.yaml`:
+    passed with 0 errors, 0 warnings, and 0 suggestions.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed with no tracked `site/` output.
+- Pull request readiness: Chapter 27 lifecycle is complete on `chapter27`; ready for PR creation after this freeze commit
+  is pushed.
+- Do not create a PR or merge as part of this phase.
+
 ## Phase 69 Chapter 14 Editorial Review
 
 - Chapter: Drawing Boundaries That Survive Change.
@@ -11358,6 +11585,201 @@ Pull request readiness:
   - `git diff --check`: passed.
   - `npm.cmd run lint:md`: passed.
   - `vale --config .vale.ini book/04-building-a-product/20-from-prototype-to-product.md editor/EDITOR_LOG.md`:
+    passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed with no tracked `site/` output.
+- Next lifecycle stage: Editorial Review after this Author Draft commit is committed and pushed.
+- Do not perform Editorial Review, Canon Review, Technical Review, Freeze Review, PR creation, or merge as part of this
+  phase.
+
+## Phase 145 Chapter 27 Canonical Brief Registration
+
+- Chapter: Design Reviews as Shared Memory.
+- Stable ID: `CHAPTER-027`.
+- Branch: `chapter27`.
+- Stage: Canonical Brief Registration.
+- Verified baseline `origin/main`: `80332c17999d685e994e9bc8e1fa703ce4740231`.
+- Baseline evidence: PR #28 squash commit,
+  `Chapter 26: Technical Leadership Without Authority (#28)`.
+- PR #28 feature lifecycle evidence:
+  - Canonical Brief: `ba003708e281cbf8b43f8b5d08823bfc93a4de39`.
+  - Author Draft: `926814654eceec9189b4fd4b997c90a2a3c6ad2c`.
+  - Editorial Review: `6c14d91e8369bf84279e52c31cc6eb684bda134e`.
+  - Canon Review: `a6bb528c64470af2454603959083bc8a565b2995`.
+  - Technical Review: `df222bd9a18c31bc1c8255ab392daffa55b4ff97`.
+  - Freeze Review: `9abc1e72153806b7a0da7b1b5f447d85514aa972`.
+  - Squash merge: `80332c17999d685e994e9bc8e1fa703ce4740231`.
+- Squash verification result: passed. The squash commit is an ancestor of current `origin/main`, has parent
+  `3e6f5126b6817c93c11571b6881fcea3ceead348`, and the checked Chapter 26 lifecycle files are tree-equivalent to the
+  Chapter 26 Freeze Review commit `9abc1e72153806b7a0da7b1b5f447d85514aa972`.
+- Part position: second chapter of Part V - Engineering Organization.
+- Canonical predecessor: `CHAPTER-026` - Technical Leadership Without Authority.
+- Outcome: Approve canonical brief registration.
+- Reader-facing manuscript created: no.
+- Manuscript path remains absent:
+  `book/05-engineering-organization/27-design-reviews-as-shared-memory.md`.
+- Canonical brief path created:
+  `editor/chapter-briefs/CHAPTER-027-design-reviews-as-shared-memory.md`.
+- Index registration: `CHAPTER-027` added to `knowledge/index.yaml` as `draft`.
+- Primary concept: none. Chapter 27 applies existing review, record, evidence, ownership, Change Radius, and
+  Discoverability concepts to design reviews as organizational memory.
+- Central chapter-local practice: turning consequential design reviews into reusable decision memory for people who were
+  not in the room.
+- Canonical scope: design reviews as shared memory; decision memory; context; constraints; alternatives; evidence;
+  uncertainty; risks; trade-offs; rejected options; decision owner; affected owners; follow-up owners; record updates;
+  revisit triggers; proportional review weight; and future discoverability.
+- Selected PEAK concepts:
+  - `RITUAL-001` - Architecture Review.
+  - `ARTIFACT-002` - RFC.
+  - `ARTIFACT-001` - ADR.
+  - `ARTIFACT-003` - Decision Journal.
+  - `ARTIFACT-006` - Architecture Ledger.
+  - `LAW-001` - Every State Has One Owner.
+  - `LAW-002` - Every API Is a Promise.
+  - `LAW-005` - Evidence Before Confidence.
+  - `LAW-007` - Every Dependency Is a Decision.
+  - `VOCAB-001` - Change Radius.
+  - `METRIC-001` - Change Radius.
+  - `METRIC-003` - Discoverability.
+  - `SMELL-001` - Silent Coupling.
+  - `SMELL-004` - Hidden State.
+  - `ANTIPATTERN-006` - Temporary Solution.
+- Rejected PEAK concepts:
+  - `METRIC-002` - Bus Factor: nearby private-memory risk, but Discoverability is the stronger Chapter 27 metric.
+  - `SMELL-005` - Platform Leakage: possible embedded example detail, but not the chapter's organizing failure.
+  - `VOCAB-002` and `ARTIFACT-007` - Weak Signal and Weak Signal Register: related to later health detection, not
+    review-memory registration.
+  - `RITUAL-006` - RFC Friday: possible forum, but Chapter 17 owns RFC practice and Chapter 28 owns ritual design.
+  - `RITUAL-004` - Architecture Health Review: reserved for Chapter 31.
+  - `FAILURE-004` - The Hero Engineer: relevant background, but Chapter 26 already illustrates hidden expert dependency.
+- Exact outgoing relationships registered:
+  - `CHAPTER-027 illustrates RITUAL-001`.
+  - `CHAPTER-027 references ARTIFACT-002`.
+  - `CHAPTER-027 references ARTIFACT-001`.
+  - `CHAPTER-027 references ARTIFACT-003`.
+  - `CHAPTER-027 references ARTIFACT-006`.
+  - `CHAPTER-027 references LAW-001`.
+  - `CHAPTER-027 references LAW-002`.
+  - `CHAPTER-027 references LAW-005`.
+  - `CHAPTER-027 references LAW-007`.
+  - `CHAPTER-027 references VOCAB-001`.
+  - `CHAPTER-027 references METRIC-001`.
+  - `CHAPTER-027 references METRIC-003`.
+  - `CHAPTER-027 references SMELL-001`.
+  - `CHAPTER-027 references SMELL-004`.
+  - `CHAPTER-027 references ANTIPATTERN-006`.
+- New PEAK concept result: no new PEAK law, maxim, artifact, ritual, metric, smell, anti-pattern, failure story,
+  vocabulary concept, ID, relationship verb, or primary-concept field was added.
+- Later Part V boundaries:
+  - Chapter 28 owns building engineering rituals.
+  - Chapter 29 owns mentoring through artifacts.
+  - Chapter 30 owns aligning teams around decisions.
+  - Chapter 31 owns architecture health reviews.
+- Earlier-parts boundary: Chapter 27 uses Parts I through IV and Chapter 26 as applied tools without repeating better
+  questions, evidence discipline, ownership, ADR/RFC mechanics, Architecture Review timing, Architecture Freeze,
+  product-line obligations, or leadership without authority.
+- Required reader-facing chapter architecture preserved for the future manuscript: Opening Quote, Story, Discussion,
+  Engineering Principle, Architecture Exercise, Principal's Notebook, ADR, Editor's Commentary.
+- Changed files:
+  - `editor/chapter-briefs/CHAPTER-027-design-reviews-as-shared-memory.md`
+  - `editor/EDITOR_LOG.md`
+  - `knowledge/index.yaml`
+- Final validation completed after this log entry:
+  - Direct canonical-brief assertions: passed for branch, baseline, expected changed files only, brief existence,
+    manuscript absence, `CHAPTER-027` draft registration, Chapters 1-26 remaining canonical, exact Chapter 27
+    relationship set, existing relationship targets, no duplicate or self-edge, no new PEAK ID, unchanged PEAK concept
+    files, unchanged `book/05-engineering-organization/README.md`, unchanged `editor/CHAPTER_ARCHITECTURE.md`,
+    unchanged table of contents, unchanged existing chapters, later Part V boundaries, earlier-parts boundary, and no
+    tracked `site` output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini editor/chapter-briefs/CHAPTER-027-design-reviews-as-shared-memory.md editor/EDITOR_LOG.md`:
+    passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed with no tracked `site/` output.
+- Next lifecycle stage: Author Draft after this Canonical Brief Registration commit is committed and pushed.
+- Do not create the manuscript, perform review gates, create a pull request, or merge as part of this phase.
+
+## Phase 146 Chapter 27 Author Draft
+
+- Chapter: Design Reviews as Shared Memory.
+- Stable ID: `CHAPTER-027`.
+- Branch: `chapter27`.
+- Stage: Author Draft.
+- Starting canonical-brief registration commit: `3dd7c78386224a9f7c94821f132a930efad9c85d`.
+- Manuscript path:
+  `book/05-engineering-organization/27-design-reviews-as-shared-memory.md`.
+- Canonical brief path preserved:
+  `editor/chapter-briefs/CHAPTER-027-design-reviews-as-shared-memory.md`.
+- Part position: second chapter of Part V - Engineering Organization.
+- Primary concept: none.
+- Illustrated concept: `RITUAL-001` - Architecture Review.
+- Central chapter-local practice: turning consequential design reviews into reusable decision memory for people who were
+  not in the room.
+- Outcome: Author Draft manuscript created from the registered canonical brief.
+- Registered relationship set preserved:
+  - `CHAPTER-027 illustrates RITUAL-001`
+  - `CHAPTER-027 references ARTIFACT-002`
+  - `CHAPTER-027 references ARTIFACT-001`
+  - `CHAPTER-027 references ARTIFACT-003`
+  - `CHAPTER-027 references ARTIFACT-006`
+  - `CHAPTER-027 references LAW-001`
+  - `CHAPTER-027 references LAW-002`
+  - `CHAPTER-027 references LAW-005`
+  - `CHAPTER-027 references LAW-007`
+  - `CHAPTER-027 references VOCAB-001`
+  - `CHAPTER-027 references METRIC-001`
+  - `CHAPTER-027 references METRIC-003`
+  - `CHAPTER-027 references SMELL-001`
+  - `CHAPTER-027 references SMELL-004`
+  - `CHAPTER-027 references ANTIPATTERN-006`
+- Draft scope result: passed. The manuscript teaches design reviews as shared memory by moving the reader from whether
+  the review approved the design to what someone outside the room should later understand, trust, and revisit.
+- Required narrative premise included: The Review Everyone Attended and Nobody Remembered, covering a cross-team
+  provisioning compatibility change across firmware behavior, backend assumptions, service tooling, manufacturing
+  provisioning, support diagnostics, and release timing, with Mara influencing without formal authority.
+- Required chapter topics included: review memory, decision statement, context, constraints, accountable and affected
+  owners, alternatives, evidence, uncertainty, risks, trade-offs, assumptions, rejected options, open questions, review
+  outcome, follow-up actions and owners, revisit triggers, and links to existing RFC, ADR, Decision Journal, Architecture
+  Ledger, tests, compatibility matrix, release note, and support diagnostics.
+- Boundary checks: Chapter 28 rituals, Chapter 29 mentoring through artifacts, Chapter 30 team alignment, and Chapter 31
+  architecture health reviews remain future scope; Chapters 17 and 18 are applied without repeating ADR/RFC mechanics or
+  Architecture Review timing.
+- Required section order used exactly:
+  1. Opening Quote
+  2. Story
+  3. Discussion
+  4. Engineering Principle
+  5. Architecture Exercise
+  6. Principal's Notebook
+  7. ADR
+  8. Editor's Commentary
+- Principal's Notebook contains exactly three short observations and no explanations.
+- No-new-concept result: passed. No primary concept, PEAK concept, PEAK ID, relationship, relationship verb, metric,
+  artifact, ritual, anti-pattern, failure story, vocabulary concept, or separate review artifact was introduced.
+- Unchanged files confirmed: canonical brief, `knowledge/index.yaml`, PEAK concept files,
+  `editor/CHAPTER_ARCHITECTURE.md`, Part V README, table of contents, `editor/CANON.md`, and Chapters 1-26.
+- Files changed in this phase:
+  - `book/05-engineering-organization/27-design-reviews-as-shared-memory.md`
+  - `editor/EDITOR_LOG.md`
+- Final validation completed after this log entry:
+  - Direct Author Draft assertions: passed for clean baseline, `HEAD` matching `origin/chapter27` before drafting,
+    starting SHA matching the Canonical Brief Registration commit, expected changed files only, exact section order,
+    required sections unique, exactly three Principal's Notebook observations, unresolved marker absence, `CHAPTER-027`
+    remaining `draft`, canonical brief unchanged, `knowledge/index.yaml` unchanged, exact relationship set preserved, no
+    primary concept introduced, no new PEAK ID, unchanged Part V README, unchanged `editor/CHAPTER_ARCHITECTURE.md`,
+    unchanged `editor/CANON.md`, unchanged table of contents, unchanged Chapters 1-26, unchanged PEAK concept files,
+    material coverage for every registered concept, later Part V boundaries, earlier-parts boundaries,
+    forbidden-frame checks, and no tracked `site` output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini book/05-engineering-organization/27-design-reviews-as-shared-memory.md editor/EDITOR_LOG.md`:
     passed.
   - `npm.cmd run lint:spelling`: passed.
   - `npm.cmd run lint:links`: passed.
