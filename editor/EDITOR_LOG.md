@@ -5955,6 +5955,77 @@ Pull request readiness:
 - Next lifecycle stage: Canon Review after this Editorial Review commit is committed and pushed.
 - Do not perform Canon Review, Technical Review, Freeze Review, PR creation, or merge as part of this phase.
 
+## Phase 160 Chapter 29 Canon Review
+
+- Chapter: Mentoring Through Artifacts.
+- Stable ID: `CHAPTER-029`.
+- Branch: `chapter29`.
+- Stage: Canon Review.
+- Reviewed Editorial Review SHA: `ce836d46010eb112ff64cc9dea703a240d33ed64`.
+- Manuscript path:
+  `book/05-engineering-organization/29-mentoring-through-artifacts.md`.
+- Canonical brief path preserved:
+  `editor/chapter-briefs/CHAPTER-029-mentoring-through-artifacts.md`.
+- Part V position: fourth chapter of Part V - Engineering Organization.
+- Primary concept: none.
+- Central illustrated concept: `ARTIFACT-001`.
+- Outcome: Approved.
+- Canonical sources checked: Chapter 29 canonical brief, `knowledge/index.yaml`, `editor/CHAPTER_ARCHITECTURE.md`,
+  `editor/CANON.md`, Chapter 28 as predecessor, earlier applied Chapters 1, 3, 4, 5, 6, 13, 17, 18, 19, 26, 27, and
+  28, the registered PEAK concept files, and Chapter 28 review and Freeze precedent.
+- No-primary result: passed. Chapter 29 remains carried by the exact relationship set rather than by a primary PEAK
+  concept or `primary_concept` registry field.
+- Chapter-local-term result: passed. Mentoring through artifacts, mentoring artifact, teaching artifact,
+  artifact-based mentoring, judgment transfer, learning record, decision example, pattern library, ramp-up record,
+  tribal knowledge, what to notice, what not to generalize, and teaching surface remain chapter-local prose and are not
+  registered as PEAK concepts.
+- `ARTIFACT-001` result: passed. The manuscript materially illustrates ADR as a decision record that can teach judgment
+  when it exposes question, context, evidence, alternatives, trade-offs, owner, consequences, uncertainty, and revisit
+  trigger.
+- Mentoring-through-artifacts result: passed. The chapter treats durable engineering records as mentoring surfaces for
+  judgment transfer through real decisions, not as generic documentation volume.
+- Artifact-judgment-transfer result: passed. ADR, RFC, Decision Journal, Mistake Ledger, Architecture Ledger, and review
+  notes preserve distinct parts of the reasoning path without creating a new artifact taxonomy.
+- Bus Factor result: passed. `METRIC-002` is used only as Bus Factor for private Principal Engineer memory and
+  bottleneck risk, not Decision Quality.
+- PEAK findings: passed for `ARTIFACT-001`, `ARTIFACT-002`, `ARTIFACT-003`, `ARTIFACT-004`, `ARTIFACT-006`,
+  `RITUAL-001`, `LAW-001`, `LAW-005`, `LAW-006`, `LAW-007`, `VOCAB-001`, `METRIC-001`, `METRIC-002`, `METRIC-003`,
+  `SMELL-001`, `SMELL-004`, `ANTIPATTERN-006`, and `FAILURE-004`; no relationship target was added, removed, renamed,
+  or broadened.
+- Later Part V boundary result: passed. Chapter 30 team alignment around decisions and Chapter 31 architecture health
+  reviews remain future scope.
+- Earlier-parts boundary result: passed. Earlier PE role, better questions, ownership, evidence, ADR/RFC mechanics,
+  Architecture Review, freeze, and product-building examples are applied as tools rather than retaught.
+- Relationship findings: passed. The exact registered Chapter 29 outgoing relationship set is unchanged and materially
+  present in the manuscript.
+- Section architecture: passed. The manuscript preserves the required order: Opening Quote, Story, Discussion,
+  Engineering Principle, Architecture Exercise, Principal's Notebook, ADR, Editor's Commentary.
+- Corrections made during Canon Review: none. Only this Canon Review log entry changed.
+- Unchanged files confirmed: manuscript, canonical brief, `knowledge/index.yaml`, PEAK concept files,
+  `editor/CHAPTER_ARCHITECTURE.md`, Part V README, table of contents, `editor/CANON.md`, and Chapters 1-28.
+- Changed files:
+  - `editor/EDITOR_LOG.md`
+- Final validation completed after this log entry:
+  - Direct Canon Review assertions: passed for clean baseline, `HEAD` matching `origin/chapter29` before review,
+    reviewed SHA matching the Editorial Review commit, expected changed files only, exact section order, exactly three
+    Principal's Notebook observations, unresolved marker absence, `CHAPTER-029` remaining `draft`, no primary concept
+    introduced, no chapter-local mentoring terms promoted into PEAK concepts, exact relationship set preserved,
+    material coverage for every registered relationship, unchanged canonical brief, unchanged `knowledge/index.yaml`,
+    unchanged PEAK concept files, unchanged `editor/CHAPTER_ARCHITECTURE.md`, unchanged Part V README, unchanged table
+    of contents, unchanged `editor/CANON.md`, unchanged Chapters 1-28, ordered prior review entry, later Part V
+    boundary, earlier-parts boundary, and no tracked `site` output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini book/05-engineering-organization/29-mentoring-through-artifacts.md editor/EDITOR_LOG.md`:
+    passed with 0 errors, 0 warnings, and 0 suggestions.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed with no tracked `site/` output.
+- Next lifecycle stage: Technical Review after this Canon Review commit is committed and pushed.
+- Do not perform Technical Review, Freeze Review, PR creation, or merge as part of this phase.
+
 ## Phase 69 Chapter 14 Editorial Review
 
 - Chapter: Drawing Boundaries That Survive Change.
