@@ -6026,6 +6026,72 @@ Pull request readiness:
 - Next lifecycle stage: Technical Review after this Canon Review commit is committed and pushed.
 - Do not perform Technical Review, Freeze Review, PR creation, or merge as part of this phase.
 
+## Phase 161 Chapter 29 Technical Review
+
+- Chapter: Mentoring Through Artifacts.
+- Stable ID: `CHAPTER-029`.
+- Branch: `chapter29`.
+- Stage: Technical Review.
+- Reviewed Canon Review SHA: `451e387bb3fc5a7deea36503e51390197fbcf8ec`.
+- Manuscript path:
+  `book/05-engineering-organization/29-mentoring-through-artifacts.md`.
+- Canonical brief path preserved:
+  `editor/chapter-briefs/CHAPTER-029-mentoring-through-artifacts.md`.
+- Part V position: fourth chapter of Part V - Engineering Organization.
+- Outcome: Approved.
+- Technical domains checked: mentoring experienced and less experienced engineers through real engineering records,
+  distinction among direct advice, coaching, ramp-up documentation, code review, design review, documentation, process
+  records, architecture records, team memory, and artifact-based mentoring, ADR/RFC/Decision Journal/Mistake
+  Ledger/Architecture Ledger/review-note teaching roles, retry strategy across firmware, backend, service tools,
+  manufacturing, support, and field operations, copied-pattern risk, hidden uncertainty, discoverability, obsolete
+  example retirement, Principal Engineer bottleneck, and Bus Factor.
+- Material corrections during Technical Review: none. The manuscript was technically credible as reviewed.
+- Mentoring-through-artifacts assessment: passed. The chapter treats artifacts as conversation aids and repeatable
+  practice surfaces, not as replacements for mentoring or team ownership.
+- Retry-strategy scenario assessment: passed. Gateway telemetry, service-tool commands, and manufacturing provisioning
+  have distinct ownership, duplicate-handling, side-effect, operator, support, and field-consequence profiles.
+- Artifact/reasoning assessment: passed. ADR updates expose judgment without becoming a template tutorial; RFC,
+  Mistake Ledger, Decision Journal, Architecture Ledger, and review-note use is credible and proportional.
+- Bus Factor assessment: passed. The Principal Engineer bottleneck is framed as private-judgment dependency and
+  low redundancy, not as a generic people-management issue.
+- Discoverability and retirement assessment: passed. The manuscript treats Discoverability from affected behavior,
+  misleading examples, obsolete examples, temporary workarounds, owner, expiry condition, and revisit trigger as real
+  engineering concerns.
+- Boundary assessment: passed. The chapter avoids implying that documents replace mentoring, every artifact should
+  teach every audience, every decision needs a teaching artifact, examples are sufficient by themselves, senior
+  engineers should encode all judgment into templates, one pattern library prevents bad decisions, code review comments
+  are enough, longer records are more educational, uncertainty should be hidden, or artifact-based mentoring removes
+  team ownership.
+- Later Part V boundary result: passed. Chapter 30 team alignment around decisions and Chapter 31 architecture health
+  reviews remain future scope.
+- Earlier-parts boundary result: passed. Earlier technical laws, artifact mechanics, review practice, freeze discipline,
+  and product-building examples are applied without being retaught.
+- Unchanged files confirmed: manuscript, canonical brief, `knowledge/index.yaml`, PEAK concept files,
+  `editor/CHAPTER_ARCHITECTURE.md`, Part V README, table of contents, `editor/CANON.md`, and Chapters 1-28.
+- Changed files:
+  - `editor/EDITOR_LOG.md`
+- Final validation completed after this log entry:
+  - Direct Technical Review assertions: passed for clean baseline, `HEAD` matching `origin/chapter29` before review,
+    reviewed SHA matching the Canon Review commit, expected changed files only, exact section order, exactly three
+    Principal's Notebook observations, unresolved marker absence, plausible retry-strategy scenario, distinct gateway
+    telemetry/service-tool/manufacturing ownership and consequence profiles, credible ADR/RFC/Mistake Ledger/Decision
+    Journal/Architecture Ledger/review-note use, Bus Factor accuracy, discoverability and retirement credibility,
+    guardrail absence, unchanged canonical brief, unchanged `knowledge/index.yaml`, unchanged PEAK concept files,
+    unchanged `editor/CHAPTER_ARCHITECTURE.md`, unchanged Part V README, unchanged table of contents, unchanged
+    `editor/CANON.md`, unchanged Chapters 1-28, ordered prior review entries, later Part V boundary, earlier-parts
+    boundary, and no tracked `site` output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini book/05-engineering-organization/29-mentoring-through-artifacts.md editor/EDITOR_LOG.md`:
+    passed with 0 errors, 0 warnings, and 0 suggestions.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed with no tracked `site/` output.
+- Next lifecycle stage: Freeze Review after this Technical Review commit is committed and pushed.
+- Do not perform Freeze Review, PR creation, or merge as part of this phase.
+
 ## Phase 69 Chapter 14 Editorial Review
 
 - Chapter: Drawing Boundaries That Survive Change.
