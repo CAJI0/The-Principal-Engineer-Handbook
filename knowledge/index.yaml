@@ -418,7 +418,7 @@ entities:
       type: chapter
       name: Mentoring Through Artifacts
       path: ../book/05-engineering-organization/29-mentoring-through-artifacts.md
-      status: draft
+      status: canonical
   adrs:
     - id: ADR-001
       type: adr
