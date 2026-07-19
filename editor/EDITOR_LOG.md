@@ -5597,6 +5597,72 @@ Pull request readiness:
 - Next lifecycle stage: Technical Review after this Canon Review commit is committed and pushed.
 - Do not perform Technical Review, Freeze Review, PR creation, or merge as part of this phase.
 
+## Phase 155 Chapter 28 Technical Review
+
+- Chapter: Building Engineering Rituals.
+- Stable ID: `CHAPTER-028`.
+- Branch: `chapter28`.
+- Stage: Technical Review.
+- Reviewed Canon Review SHA: `03ab27f9e44acaed0dc415a30b05bfe562a47d16`.
+- Manuscript path:
+  `book/05-engineering-organization/28-building-engineering-rituals.md`.
+- Canonical brief path preserved:
+  `editor/chapter-briefs/CHAPTER-028-building-engineering-rituals.md`.
+- Part V position: third chapter of Part V - Engineering Organization.
+- Outcome: Approved with technical clarification.
+- Technical domains checked: recurring engineering practices in real teams, Principal Engineer influence over process
+  without formal authority, meeting versus ritual versus review versus gate, trigger versus cadence, proportionality by
+  risk, reversibility, Change Radius, and decision maturity, ritual ownership, inputs, outputs, follow-up owners, record
+  updates, ritual decay, redesign, retirement, manager partnership, workaround signals, asynchronous alternatives, and
+  process and calendar load.
+- Material corrections during Technical Review: added a paragraph clarifying that managers are legitimate partners in
+  cadence, staffing pressure, accountability, and calendar-load cost; that team workarounds may signal ritual mismatch;
+  and that asynchronous records can sometimes protect the behavior with less process load.
+- Recurring-practice assessment: passed. The weekly Architecture Review is credible as a once-useful cross-boundary
+  decision practice that later decays under organizational pressure.
+- Trigger/cadence assessment: passed. The manuscript distinguishes a technical trigger from a service cadence and avoids
+  implying that cadence alone creates quality.
+- Ownership/input/output assessment: passed. Ritual owner, decision owner, affected owners, participants, inputs,
+  outputs, follow-up ownership, and feedback loops are concrete enough to guide real teams.
+- Artifact/update assessment: passed. RFC, ADR, Decision Journal, and Architecture Ledger updates are plausible and
+  proportionate; small reversible decisions no longer wait for heavyweight review.
+- Ritual-decay assessment: passed. Decay is shown through technical consequences: stale records, missing follow-up,
+  hidden dependencies, late broad Change Radius review, status replacing decisions, and inappropriate review weight.
+- Redesign/retirement assessment: passed. The chapter treats redesign and retirement as stewardship, including the
+  possibility that cancellation preserves the behavior through another path.
+- Boundary assessment: passed. Chapter 28 does not imply rituals are always good, every practice needs a meeting, every
+  meeting needs an artifact, mandatory attendance fixes decay, checklists replace judgment, Principal Engineers own
+  every ritual, or asynchronous process is always better or worse.
+- Later Part V boundary result: passed. Chapters 29, 30, and 31 remain future scope.
+- Earlier-parts boundary result: passed. Earlier technical laws, artifact mechanics, Architecture Review timing, and
+  Architecture Freeze semantics are applied without being retaught.
+- Unchanged files confirmed: canonical brief, `knowledge/index.yaml`, PEAK concept files,
+  `editor/CHAPTER_ARCHITECTURE.md`, Part V README, table of contents, `editor/CANON.md`, and Chapters 1-27.
+- Changed files:
+  - `book/05-engineering-organization/28-building-engineering-rituals.md`
+  - `editor/EDITOR_LOG.md`
+- Final validation completed after this log entry:
+  - Direct Technical Review assertions: passed for clean baseline, `HEAD` matching `origin/chapter28` before review,
+    reviewed SHA matching the Canon Review commit, expected changed files only, exact section order, exactly three
+    Principal's Notebook observations, unresolved marker absence, recurring-practice credibility, technical consequence
+    of ritual decay, small-decision proportionality, broad Change Radius review path, credible Decision Journal and
+    Architecture Ledger usage, distinct Architecture Freeze use, redesign and retirement credibility, legitimate manager
+    pressure, workaround signal, asynchronous alternative, no misleading ritual absolutes, unchanged canonical brief,
+    unchanged `knowledge/index.yaml`, unchanged PEAK concept files, unchanged `editor/CHAPTER_ARCHITECTURE.md`,
+    unchanged Part V README, unchanged table of contents, unchanged `editor/CANON.md`, unchanged Chapters 1-27, ordered
+    prior review entries, and no tracked `site` output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini book/05-engineering-organization/28-building-engineering-rituals.md editor/EDITOR_LOG.md`:
+    passed with 0 errors, 0 warnings, and 0 suggestions.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed with no tracked `site/` output.
+- Next lifecycle stage: Freeze Review after this Technical Review commit is committed and pushed.
+- Do not perform Freeze Review, PR creation, or merge as part of this phase.
+
 ## Phase 69 Chapter 14 Editorial Review
 
 - Chapter: Drawing Boundaries That Survive Change.

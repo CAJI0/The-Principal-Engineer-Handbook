@@ -195,6 +195,12 @@ change. Outputs are stale. Review owners cannot explain what is still open. Hidd
 People use the ritual to avoid making a proportionate decision. At that point the ritual is no longer preserving
 judgment. It is consuming it.
 
+Managers are legitimate partners in this work. They may own cadence, staffing pressure, accountability expectations,
+and the cost of calendar load. That does not make attendance a technical health signal. If engineers work around a
+ritual, the response is not to assume resistance or force compliance. The workaround may be evidence that the trigger is
+wrong, the output is too heavy, the owner is unclear, or an asynchronous record would protect the behavior with less
+process load. Sometimes broad risk deserves synchronous review. Sometimes a Decision Journal entry is enough.
+
 This is why retirement belongs in ritual design.
 
 Some rituals should end. Some should be redesigned. Some should shrink. Some should become a lightweight artifact rather
