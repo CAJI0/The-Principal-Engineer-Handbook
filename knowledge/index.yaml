@@ -409,6 +409,11 @@ entities:
       name: Design Reviews as Shared Memory
       path: ../book/05-engineering-organization/27-design-reviews-as-shared-memory.md
       status: canonical
+    - id: CHAPTER-028
+      type: chapter
+      name: Building Engineering Rituals
+      path: ../book/05-engineering-organization/28-building-engineering-rituals.md
+      status: canonical
   adrs:
     - id: ADR-001
       type: adr
@@ -1450,5 +1455,53 @@ relationships:
     type: references
     to: SMELL-004
   - from: CHAPTER-027
+    type: references
+    to: ANTIPATTERN-006
+  - from: CHAPTER-028
+    type: illustrates
+    to: RITUAL-001
+  - from: CHAPTER-028
+    type: references
+    to: RITUAL-002
+  - from: CHAPTER-028
+    type: references
+    to: ARTIFACT-002
+  - from: CHAPTER-028
+    type: references
+    to: ARTIFACT-001
+  - from: CHAPTER-028
+    type: references
+    to: ARTIFACT-003
+  - from: CHAPTER-028
+    type: references
+    to: ARTIFACT-006
+  - from: CHAPTER-028
+    type: references
+    to: LAW-001
+  - from: CHAPTER-028
+    type: references
+    to: LAW-005
+  - from: CHAPTER-028
+    type: references
+    to: LAW-006
+  - from: CHAPTER-028
+    type: references
+    to: LAW-007
+  - from: CHAPTER-028
+    type: references
+    to: VOCAB-001
+  - from: CHAPTER-028
+    type: references
+    to: METRIC-001
+  - from: CHAPTER-028
+    type: references
+    to: METRIC-003
+  - from: CHAPTER-028
+    type: references
+    to: SMELL-001
+  - from: CHAPTER-028
+    type: references
+    to: SMELL-004
+  - from: CHAPTER-028
     type: references
     to: ANTIPATTERN-006
