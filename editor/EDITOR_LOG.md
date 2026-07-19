@@ -6246,6 +6246,103 @@ Pull request readiness:
 - Next lifecycle stage: Author Draft after this Canonical Brief Registration commit is committed and pushed.
 - Do not create the Chapter 30 manuscript, perform reviews, open a PR, or merge as part of this phase.
 
+## Phase 164 Chapter 30 Author Draft
+
+- Chapter: Aligning Teams Around Decisions.
+- Stable ID: `CHAPTER-030`.
+- Branch: `chapter30`.
+- Stage: Author Draft.
+- Starting canonical-brief registration commit: `de0a4a46541509a5593629e3cff67e58f8f9d0ce`.
+- Manuscript path:
+  `book/05-engineering-organization/30-aligning-teams-around-decisions.md`.
+- Canonical brief path preserved:
+  `editor/chapter-briefs/CHAPTER-030-aligning-teams-around-decisions.md`.
+- Part position: fifth chapter of Part V - Engineering Organization.
+- Primary concept: none.
+- Illustrated concept: `ARTIFACT-002` - RFC.
+- Central chapter-local practice: turning a recorded technical decision into explicit cross-team obligations,
+  sequencing, owners, evidence, and review triggers.
+- Outcome: Author Draft manuscript created from the registered canonical brief.
+- Registered relationship set preserved:
+  - `CHAPTER-030 illustrates ARTIFACT-002`
+  - `CHAPTER-030 references ARTIFACT-001`
+  - `CHAPTER-030 references ARTIFACT-003`
+  - `CHAPTER-030 references ARTIFACT-006`
+  - `CHAPTER-030 references RITUAL-001`
+  - `CHAPTER-030 references LAW-001`
+  - `CHAPTER-030 references LAW-002`
+  - `CHAPTER-030 references LAW-005`
+  - `CHAPTER-030 references LAW-007`
+  - `CHAPTER-030 references VOCAB-001`
+  - `CHAPTER-030 references METRIC-001`
+  - `CHAPTER-030 references METRIC-002`
+  - `CHAPTER-030 references METRIC-003`
+  - `CHAPTER-030 references SMELL-001`
+  - `CHAPTER-030 references SMELL-004`
+  - `CHAPTER-030 references ANTIPATTERN-006`
+  - `CHAPTER-030 references FAILURE-004`
+- `METRIC-002` result: passed. The manuscript uses `METRIC-002` only as Bus Factor for private-memory and Principal
+  Engineer decision-interpreter risk, not Decision Quality.
+- Draft scope result: passed. The manuscript teaches cross-team decision alignment as turning one accepted technical
+  decision into shared obligations, not generic leadership alignment, stakeholder management, consensus building,
+  meeting facilitation, program management, release readiness, RFC or ADR mechanics, design-review memory, ritual
+  design, mentoring through artifacts, architecture health review, platform-boundary design, event-model design,
+  configuration management, or a new PEAK concept proposal.
+- Required narrative premise included: The Decision Everyone Agreed To Differently, covering a provisioning
+  compatibility decision accepted after RFC and Architecture Review, with divergent interpretations across firmware,
+  backend, service tooling, manufacturing scripts, support diagnostics, test coverage, release notes, and field
+  procedures.
+- Required story symptoms included: temporary compatibility path as firmware default behavior, indefinite backend
+  support assumption, old service-tool sequence as authoritative, unclear manufacturing flag owner, support diagnostics
+  that no longer match new firmware guarantees, unclear release-critical combinations, visible evidence gaps,
+  Architecture Ledger links without affected-owner obligations, Principal Engineer translator bottleneck, and teams
+  preparing different systems.
+- Required chapter topics included: decision owner, affected owners, changed and unchanged promises, dependency
+  consequences, sequencing constraints, accepted and missing evidence, open questions, temporary exceptions with owner
+  and expiration condition, follow-up owners, review trigger, RFC alignment surface, final ADR boundary, Decision
+  Journal follow-ups, Architecture Ledger discoverability, Architecture Review, ownership, API promises, Change Radius,
+  Discoverability, Bus Factor, Silent Coupling, Hidden State, Temporary Solution, and Hero Engineer risk.
+- Boundary checks: Chapter 31 architecture health reviews remain future scope; earlier Parts I through IV and Chapters
+  26-29 are applied as tools and predecessor constraints without repeating their primary lessons.
+- Required section order used exactly:
+  1. Opening Quote
+  2. Story
+  3. Discussion
+  4. Engineering Principle
+  5. Architecture Exercise
+  6. Principal's Notebook
+  7. ADR
+  8. Editor's Commentary
+- Principal's Notebook contains exactly three short observations and no explanations.
+- No-new-concept result: passed. No primary concept, PEAK concept, PEAK ID, relationship, relationship verb, metric,
+  artifact, ritual, anti-pattern, failure story, vocabulary concept, or alignment artifact was introduced.
+- Unchanged files confirmed: canonical brief, `knowledge/index.yaml`, PEAK concept files,
+  `editor/CHAPTER_ARCHITECTURE.md`, Part V README, table of contents, `editor/CANON.md`, and Chapters 1-29.
+- Files changed in this phase:
+  - `book/05-engineering-organization/30-aligning-teams-around-decisions.md`
+  - `editor/EDITOR_LOG.md`
+- Final validation completed after this log entry:
+  - Direct Author Draft assertions: passed for clean baseline, `HEAD` matching `origin/chapter30` before drafting,
+    starting SHA matching the Canonical Brief Registration commit, expected changed files only, exact section order,
+    required sections unique, exactly three Principal's Notebook observations, unresolved marker absence, `CHAPTER-030`
+    remaining `draft`, canonical brief unchanged, `knowledge/index.yaml` unchanged, exact relationship set preserved, no
+    primary concept introduced, no new PEAK ID, unchanged Part V README, unchanged `editor/CHAPTER_ARCHITECTURE.md`,
+    unchanged `editor/CANON.md`, unchanged table of contents, unchanged Chapters 1-29, unchanged PEAK concept files,
+    material coverage for every registered concept, Chapter 31 boundary, earlier-parts boundary, forbidden-frame
+    checks, and no tracked `site/` output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini book/05-engineering-organization/30-aligning-teams-around-decisions.md editor/EDITOR_LOG.md`:
+    passed with 0 errors, 0 warnings, and 0 suggestions.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed with no tracked `site/` output.
+- Next lifecycle stage: Editorial Review after this Author Draft commit is committed and pushed.
+- Do not perform Editorial Review, Canon Review, Technical Review, Freeze Review, PR creation, or merge as part of this
+  phase.
+
 ## Phase 69 Chapter 14 Editorial Review
 
 - Chapter: Drawing Boundaries That Survive Change.
