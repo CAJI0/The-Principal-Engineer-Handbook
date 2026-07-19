@@ -157,6 +157,10 @@ Cadence is useful only when a regular rhythm protects the behavior. A weekly ser
 capacity, but it should not turn into an obligation to fill the room. Participants should follow the trigger: decision
 owner, affected owners, evidence holders, and reviewers who can test the real risk. Everyone else can read the output.
 
+Review scope and decision rights should be just as explicit. The ritual should say which decisions belong in the
+review, who can accept or reject the outcome, which questions are out of scope, and what exit criteria close the
+ritual's work for that decision.
+
 A useful ritual has an owner.
 
 Ownership does not mean the owner makes every decision. It means one person or role is responsible for the ritual's
