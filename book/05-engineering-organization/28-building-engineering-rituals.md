@@ -28,11 +28,11 @@ owner, status, related artifact, and review date.
 
 For a few months, it worked.
 
-A service-tool change arrived before implementation and exposed a manufacturing dependency nobody had named. A mobile
-application proposal looked local until the team measured the Change Radius and saw that support diagnostics and device
-recovery would need changes too. ADRs improved because the review forced rejected options into the record instead of
-leaving them in chat. Engineers joining a project could find why a boundary had been drawn without finding the people
-who had been in the room.
+Risky designs arrived early. A service-tool change arrived before implementation and exposed a manufacturing dependency
+nobody had named. A mobile application proposal looked local until the team measured the Change Radius and saw that
+support diagnostics and device recovery would need changes too. ADRs improved because the review forced rejected
+options into the record instead of leaving them in chat. Engineers joining a project could find why a boundary had been
+drawn without finding the people who had been in the room.
 
 Then the ritual kept running after the protected behavior faded.
 
@@ -40,7 +40,7 @@ Attendance grew because managers treated presence as a signal of diligence. Team
 choices because waiting for review felt safer than explaining why review was unnecessary. A firmware team delayed a
 local logging change for nine days because the next review was full. A backend team presented status on an already
 implemented migration because "architecture review" had become the place where important-looking work was seen. The
-same checklist was used for a local retry setting and for a cross-region data-retention change.
+same checklist questions were used for a local retry setting and for a cross-region data-retention change.
 
 The outputs decayed first. Follow-up owners were named in the call but not recorded. The Decision Journal fell behind
 because people thought the review notes were enough. The Architecture Ledger still listed decisions whose status had
@@ -133,19 +133,29 @@ protect.
 
 The Principal Engineer move is to name the behavior before arguing about the format.
 
+A meeting is a container. A review is a judgment activity. A gate is a formal decision point. Status says where work is.
+A record preserves what the organization decided. An artifact gives that record a durable shape. A ritual may use any of
+these, but it should not blur them. When the team treats status as review, the ritual stops testing judgment. When the
+team treats a review as a gate for every change, the ritual stops being proportional. When the meeting ends without a
+record or artifact update, the ritual depends on private memory.
+
 For Architecture Review, the behavior might be: review decisions before they become expensive to change. For an
 Architecture Freeze, it might be: stabilize named decisions during a high-risk phase and make exceptions visible. For a
 release-readiness practice, it might be: expose recovery, compatibility, diagnostics, and support gaps before the
 release is treated as safe. The wording can vary. The discipline is the same. If the behavior is vague, the ritual will
 eventually protect the ritual itself.
 
-A useful ritual has a trigger.
+A useful ritual has a trigger and, sometimes, a cadence.
 
 The trigger tells people when the ritual applies and when it does not. "Every Friday" is a time, not a trigger. "When a
 decision crosses ownership boundaries or has broad Change Radius" is a trigger. "Before validation, field trials, or
 release hardening when named decisions must remain stable" is a trigger. Clear triggers keep small decisions from
 waiting for heavyweight review and keep high-risk decisions from slipping past because the next session is
 inconvenient.
+
+Cadence is useful only when a regular rhythm protects the behavior. A weekly service window may help teams find review
+capacity, but it should not turn into an obligation to fill the room. Participants should follow the trigger: decision
+owner, affected owners, evidence holders, and reviewers who can test the real risk. Everyone else can read the output.
 
 A useful ritual has an owner.
 
@@ -196,9 +206,8 @@ technical behavior alive when memory, urgency, and personal influence are no lon
 
 Build rituals around behaviors, not meetings.
 
-A ritual should name the technical behavior it protects, the trigger that invokes it, the owner who maintains it, the
-inputs that make it evidence-based, the outputs that preserve memory, and the health signals that tell the organization
-whether to keep, redesign, or retire it.
+Name the technical judgment the organization must keep making. Give it a trigger, owner, inputs, outputs, and feedback
+loop. Retire or redesign the ritual when it stops protecting that judgment.
 
 ## Architecture Exercise
 
