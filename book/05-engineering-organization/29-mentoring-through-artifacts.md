@@ -9,7 +9,7 @@ mattered, what trade-offs were accepted, and what would change the decision.
 
 ### The Answer That Did Not Teach
 
-Mara noticed the pattern during architecture review, although the pattern was not in the diagram.
+Mara noticed the pattern during Architecture Review, although the pattern was not in the diagram.
 
 Three different engineers had asked her the same question in six weeks:
 
@@ -161,6 +161,12 @@ decision without exposing context can make the system look more mature while pre
 
 The useful question is narrower: where does an existing artifact already contain judgment that other engineers need to
 learn?
+
+That boundary matters. Direct advice helps in the moment. Coaching helps a person inspect their own reasoning. Ramp-up
+documentation helps someone find the system. Code review and design review improve a specific change. Process records
+and architecture records preserve organizational memory. Mentoring through artifacts is different: it uses a real
+engineering record to show how a technical judgment was formed, where it applies, and where copying it would become
+dangerous.
 
 An ADR can teach the shape of a decision when it names the question, owner, evidence, rejected options, accepted
 trade-offs, consequences, uncertainty, and revisit trigger. An ADR that only records the final answer may be valuable

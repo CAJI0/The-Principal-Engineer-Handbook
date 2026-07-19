@@ -5892,6 +5892,69 @@ Pull request readiness:
 - Do not perform Editorial Review, Canon Review, Technical Review, Freeze Review, open a PR, or merge as part of this
   phase.
 
+## Phase 159 Chapter 29 Editorial Review
+
+- Chapter: Mentoring Through Artifacts.
+- Stable ID: `CHAPTER-029`.
+- Branch: `chapter29`.
+- Stage: Editorial Review.
+- Reviewed Author Draft SHA: `56195eda22705f94b6c1076bb22b9fc2fdc29237`.
+- Canonical brief parent SHA: `08c770a1dc5fd82f8195adf737642c64a00f4306`.
+- Manuscript path:
+  `book/05-engineering-organization/29-mentoring-through-artifacts.md`.
+- Canonical brief path preserved:
+  `editor/chapter-briefs/CHAPTER-029-mentoring-through-artifacts.md`.
+- Part V position: fourth chapter of Part V - Engineering Organization.
+- Primary concept: none.
+- Central illustrated concept: `ARTIFACT-001`.
+- Outcome: Approved with editorial changes.
+- Material editorial changes: normalized the opening story reference to Architecture Review and added a compact
+  boundary paragraph distinguishing mentoring through artifacts from direct advice, coaching, ramp-up documentation,
+  code review, design review, process records, architecture records, and organizational memory.
+- Section-order result: passed. The manuscript preserves the required order: Opening Quote, Story, Discussion,
+  Engineering Principle, Architecture Exercise, Principal's Notebook, ADR, Editor's Commentary.
+- Principal's Notebook result: exactly three short observations.
+- Mentoring-through-artifacts result: passed. The chapter remains about durable judgment transfer through real
+  engineering records, not generic mentoring, career coaching, documentation process, review etiquette, or private
+  advice.
+- Artifact-judgment-transfer result: passed. ADR, RFC, Decision Journal, Mistake Ledger, Architecture Ledger, and review
+  notes teach the decision question, context, evidence, alternatives, owner, consequence, uncertainty, and revisit
+  trigger rather than only the answer.
+- Bus Factor result: passed. `METRIC-002` is used only as Bus Factor for Principal Engineer bottleneck and private
+  memory risk.
+- Artifact maintenance and retirement result: passed. Obsolete examples, temporary workarounds, owner, expiry
+  condition, review date, and stale teaching risk remain explicit.
+- Later Part V boundary result: passed. Chapter 30 team alignment around decisions and Chapter 31 architecture health
+  reviews are previewed only lightly and not written early.
+- Earlier-parts boundary result: passed. Earlier laws, artifacts, reviews, and product examples are applied as tools
+  without repeating their primary lessons.
+- Unchanged files confirmed: canonical brief, `knowledge/index.yaml`, PEAK concept files,
+  `editor/CHAPTER_ARCHITECTURE.md`, Part V README, table of contents, `editor/CANON.md`, and Chapters 1-28.
+- Changed files:
+  - `book/05-engineering-organization/29-mentoring-through-artifacts.md`
+  - `editor/EDITOR_LOG.md`
+- Final validation completed after this log entry:
+  - Direct Editorial Review assertions: passed for clean baseline, `HEAD` matching `origin/chapter29` before review,
+    reviewed SHA matching the Author Draft commit, exact section order, required sections unique, exactly three
+    Principal's Notebook observations, required story title and symptom coverage, preserved thesis and Engineering
+    Principle, mentoring-through-artifacts boundary, artifact-judgment-transfer coverage, Bus Factor usage, obsolete
+    example retirement, unresolved marker absence, `CHAPTER-029` remaining `draft`, no primary concept introduced,
+    exact relationship set preserved, unchanged canonical brief, unchanged `knowledge/index.yaml`, unchanged PEAK
+    concept files, unchanged `editor/CHAPTER_ARCHITECTURE.md`, unchanged Part V README, unchanged table of contents,
+    unchanged `editor/CANON.md`, unchanged Chapters 1-28, later Part V boundary, earlier-parts boundary, and no tracked
+    `site` output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini book/05-engineering-organization/29-mentoring-through-artifacts.md editor/EDITOR_LOG.md`:
+    passed with 0 errors, 0 warnings, and 0 suggestions.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed with no tracked `site/` output.
+- Next lifecycle stage: Canon Review after this Editorial Review commit is committed and pushed.
+- Do not perform Canon Review, Technical Review, Freeze Review, PR creation, or merge as part of this phase.
+
 ## Phase 69 Chapter 14 Editorial Review
 
 - Chapter: Drawing Boundaries That Survive Change.
