@@ -419,6 +419,11 @@ entities:
       name: Mentoring Through Artifacts
       path: ../book/05-engineering-organization/29-mentoring-through-artifacts.md
       status: canonical
+    - id: CHAPTER-030
+      type: chapter
+      name: Aligning Teams Around Decisions
+      path: ../book/05-engineering-organization/30-aligning-teams-around-decisions.md
+      status: draft
   adrs:
     - id: ADR-001
       type: adr
@@ -1562,5 +1567,56 @@ relationships:
     type: references
     to: ANTIPATTERN-006
   - from: CHAPTER-029
+    type: references
+    to: FAILURE-004
+  - from: CHAPTER-030
+    type: illustrates
+    to: ARTIFACT-002
+  - from: CHAPTER-030
+    type: references
+    to: ARTIFACT-001
+  - from: CHAPTER-030
+    type: references
+    to: ARTIFACT-003
+  - from: CHAPTER-030
+    type: references
+    to: ARTIFACT-006
+  - from: CHAPTER-030
+    type: references
+    to: RITUAL-001
+  - from: CHAPTER-030
+    type: references
+    to: LAW-001
+  - from: CHAPTER-030
+    type: references
+    to: LAW-002
+  - from: CHAPTER-030
+    type: references
+    to: LAW-005
+  - from: CHAPTER-030
+    type: references
+    to: LAW-007
+  - from: CHAPTER-030
+    type: references
+    to: VOCAB-001
+  - from: CHAPTER-030
+    type: references
+    to: METRIC-001
+  - from: CHAPTER-030
+    type: references
+    to: METRIC-002
+  - from: CHAPTER-030
+    type: references
+    to: METRIC-003
+  - from: CHAPTER-030
+    type: references
+    to: SMELL-001
+  - from: CHAPTER-030
+    type: references
+    to: SMELL-004
+  - from: CHAPTER-030
+    type: references
+    to: ANTIPATTERN-006
+  - from: CHAPTER-030
     type: references
     to: FAILURE-004
