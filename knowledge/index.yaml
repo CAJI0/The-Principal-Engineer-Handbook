@@ -413,7 +413,7 @@ entities:
       type: chapter
       name: Building Engineering Rituals
       path: ../book/05-engineering-organization/28-building-engineering-rituals.md
-      status: draft
+      status: canonical
   adrs:
     - id: ADR-001
       type: adr

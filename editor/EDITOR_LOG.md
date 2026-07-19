@@ -5663,6 +5663,67 @@ Pull request readiness:
 - Next lifecycle stage: Freeze Review after this Technical Review commit is committed and pushed.
 - Do not perform Freeze Review, PR creation, or merge as part of this phase.
 
+## Phase 156 Chapter 28 Freeze Review
+
+- Chapter: Building Engineering Rituals.
+- Stable ID: `CHAPTER-028`.
+- Branch: `chapter28`.
+- Stage: Freeze Review.
+- Reviewed Technical Review SHA: `82e21fff6b8f6839a99b2fc6293d5c71d4e1a8e8`.
+- Prior review commits:
+  - Editorial Review: `3118ea8adcfcdb88d87c48eb33b4aa35d81e65be`.
+  - Canon Review: `03ab27f9e44acaed0dc415a30b05bfe562a47d16`.
+  - Technical Review: `82e21fff6b8f6839a99b2fc6293d5c71d4e1a8e8`.
+- Manuscript path:
+  `book/05-engineering-organization/28-building-engineering-rituals.md`.
+- Canonical brief path preserved:
+  `editor/chapter-briefs/CHAPTER-028-building-engineering-rituals.md`.
+- Part V position: third chapter of Part V - Engineering Organization.
+- Outcome: Approved.
+- Freeze action: updated `CHAPTER-028` status in `knowledge/index.yaml` from `draft` to `canonical`.
+- Manuscript freeze result: passed. No manuscript changes were made during Freeze Review.
+- No-primary result: passed. `CHAPTER-028` remains registered without a `primary_concept` field.
+- `RITUAL-001` result: passed. Architecture Review remains the central illustrated concept and is not broadened into a
+  new ritual taxonomy.
+- Engineering-ritual result: passed. The final manuscript teaches repeated practices that protect technical behavior,
+  with purpose, trigger, cadence, owner, participants, inputs, outputs, decision rights, scope, health, decay, feedback,
+  redesign, and retirement kept as chapter-local prose.
+- Section-order result: passed. The manuscript preserves the required order: Opening Quote, Story, Discussion,
+  Engineering Principle, Architecture Exercise, Principal's Notebook, ADR, Editor's Commentary.
+- Principal's Notebook result: exactly three short observations.
+- Later Part V boundary result: passed. Chapter 29 mentoring through artifacts, Chapter 30 aligning teams around
+  decisions, and Chapter 31 architecture health reviews remain future scope.
+- Earlier-parts boundary result: passed. Earlier chapters remain applied tools rather than repeated teachings.
+- Canon and graph integrity: passed. `CHAPTER-028` exists exactly once, preserves the exact registered outgoing
+  relationship set, adds no primary concept, adds no PEAK concept or relationship, and changes no PEAK concept file.
+- Technical and organizational readiness: passed. The final manuscript credibly treats recurring engineering practices,
+  Principal Engineer influence without formal authority, trigger versus cadence, proportional review weight, ritual
+  ownership, artifact updates, process load, calendar load, manager partnership, workaround signals, asynchronous
+  alternatives, and redesign or retirement without misleading absolutes.
+- Changed files:
+  - `editor/EDITOR_LOG.md`
+  - `knowledge/index.yaml`
+- Final validation completed after this log entry:
+  - Direct Freeze Review assertions: passed for clean baseline, `HEAD` matching `origin/chapter28` before freeze,
+    reviewed SHA matching the Technical Review commit, prior review commits being ancestors of `HEAD`, prior review
+    outcomes permitting Freeze, changed-file boundary limited to `editor/EDITOR_LOG.md` and `knowledge/index.yaml`,
+    `CHAPTER-028` status set to `canonical`, no primary concept introduced, exact relationship set preserved, no
+    chapter-local ritual terms promoted into PEAK concepts, unchanged manuscript, unchanged canonical brief, unchanged
+    PEAK concept files, unchanged `editor/CHAPTER_ARCHITECTURE.md`, unchanged Part V README, unchanged table of
+    contents, unchanged `editor/CANON.md`, unchanged Chapters 1-27, no Chapter 29-31 manuscripts created, and no
+    tracked `site` output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini book/05-engineering-organization/28-building-engineering-rituals.md editor/EDITOR_LOG.md knowledge/index.yaml`:
+    passed with 0 errors, 0 warnings, and 0 suggestions.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed with no tracked `site/` output.
+- PR readiness: Chapter 28 is ready for pull request after this Freeze Review commit is committed and pushed.
+- Do not create a pull request or merge as part of this phase.
+
 ## Phase 69 Chapter 14 Editorial Review
 
 - Chapter: Drawing Boundaries That Survive Change.
