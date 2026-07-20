@@ -6994,6 +6994,79 @@ Pull request readiness:
 - Next lifecycle stage: Technical Review after this Canon Review commit is committed and pushed.
 - Do not perform Technical Review, Freeze Review, PR creation, or merge as part of this phase.
 
+## Phase 173 Chapter 31 Technical Review
+
+- Chapter: Architecture Health Reviews.
+- Stable ID: `CHAPTER-031`.
+- Branch: `chapter31`.
+- Stage: Technical Review.
+- Reviewed Canon Review SHA: `0fa6bec4a6c3fa6399804c80931fca1012094191`.
+- Manuscript path:
+  `book/05-engineering-organization/31-architecture-health-reviews.md`.
+- Canonical brief path preserved:
+  `editor/chapter-briefs/CHAPTER-031-architecture-health-reviews.md`.
+- Part position: sixth and final chapter of Part V - Engineering Organization.
+- Primary concept: none.
+- Illustrated concept: `RITUAL-004` - Architecture Health Review.
+- Outcome: Approved.
+- Domains checked: recurring architecture health review practice; operational health versus architecture health;
+  Change Radius; owner drift; API promise drift; stale compatibility layers; repeated rejected options; Event Catalog
+  drift; Bus Factor risk; weak signals; product variant avoidance; support, manufacturing, service tooling, release,
+  upgrade, diagnosis, recovery, and product obligations; Architecture Ledger, ADR, RFC, Decision Journal, Mistake
+  Ledger, Event Catalog, and Weak Signal Register usage; Architecture Review and Architecture Freeze distinctions; and
+  Principal Engineer role without architecture-board or compliance framing.
+- Material corrections during Technical Review: none.
+- Architecture-health-review assessment: passed. The manuscript presents a scoped review of an existing provisioning
+  boundary, not a broad organizational health essay, scorecard, dashboard chapter, or maturity model.
+- Evidence-source assessment: passed. Health evidence comes from high Change Radius, owner drift, API promise drift,
+  stale compatibility layer, repeated rejected options, Event Catalog drift, Bus Factor risk, weak signals, variant
+  avoidance, support cases, release exceptions, field diagnosis, and new-engineer learning.
+- Operational-versus-architecture-health assessment: passed. Green dashboards and low incidents are treated as
+  insufficient evidence of architecture health.
+- Output-decision assessment: passed. The review produces keep, repair, retire, review, freeze, investigate, document,
+  and accepted-risk decisions, and the accepted risk includes owner, evidence, expiry condition, and review trigger.
+- Artifact/update assessment: passed. Record updates are practical memory repair and do not become documentation
+  theater or a new canonical artifact.
+- Architecture Review/Freeze distinction assessment: passed. Architecture Review is used for a cross-boundary promise
+  before it hardens, while Architecture Freeze is narrow and temporary for named release-critical acceptance-state
+  meanings.
+- Principal Engineer role assessment: passed. Mara convenes evidence, scope, owners, and decisions without owning all
+  repairs or turning the review into a board process.
+- Stakeholder assessment: passed. Product, support, release, manufacturing, service tooling, and engineering partners
+  are treated as legitimate evidence holders and owners, not caricatures.
+- Part V closure assessment: passed. Chapter 31 completes Part V's organizational arc with architecture health sensing
+  and repair.
+- Part VI boundary assessment: passed. The chapter previews legacy risk without teaching legacy reading, mapping,
+  deletion, or modernization.
+- Guardrail assessment: passed. The manuscript does not imply architecture health is a single score, green dashboards
+  prove health, every finding requires refactoring, health review is status/incident/compliance/board review, every
+  subsystem needs the same cadence, metrics replace judgment, the Principal Engineer owns all repairs, broad reviews are
+  useful without scope, or Part VI starts here.
+- Unchanged files confirmed: canonical brief, `knowledge/index.yaml`, PEAK concept files,
+  `editor/CHAPTER_ARCHITECTURE.md`, Part V README, table of contents, `editor/CANON.md`, and Chapters 1-30.
+- Changed files:
+  - `editor/EDITOR_LOG.md`
+- Final validation completed after this log entry:
+  - Direct Technical Review assertions: passed for clean baseline, reviewed SHA matching the Canon Review commit,
+    expected changed files only, exact section order, required sections unique, exactly three Principal's Notebook
+    observations, unresolved marker absence, `CHAPTER-031` remaining `draft`, canonical brief unchanged,
+    `knowledge/index.yaml` unchanged, exact relationship set preserved, no primary concept introduced, no new PEAK ID,
+    unchanged PEAK concept files, unchanged Part V README, unchanged `editor/CHAPTER_ARCHITECTURE.md`, unchanged table
+    of contents, unchanged `editor/CANON.md`, unchanged Chapters 1-30, technical and organizational credibility,
+    Architecture Review/Freeze distinction, Part V closure, Part VI boundary, guardrail checks, and no tracked `site/`
+    output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini book/05-engineering-organization/31-architecture-health-reviews.md editor/EDITOR_LOG.md`:
+    passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed with no tracked `site/` output.
+- Next lifecycle stage: Freeze Review after this Technical Review commit is committed and pushed.
+- Do not perform Freeze Review, PR creation, or merge as part of this phase.
+
 ## Phase 69 Chapter 14 Editorial Review
 
 - Chapter: Drawing Boundaries That Survive Change.
