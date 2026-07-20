@@ -423,7 +423,7 @@ entities:
       type: chapter
       name: Aligning Teams Around Decisions
       path: ../book/05-engineering-organization/30-aligning-teams-around-decisions.md
-      status: draft
+      status: canonical
   adrs:
     - id: ADR-001
       type: adr

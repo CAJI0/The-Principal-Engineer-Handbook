@@ -6550,6 +6550,67 @@ Pull request readiness:
 - Next lifecycle stage: Freeze Review after this Technical Review commit is committed and pushed.
 - Do not perform Freeze Review, PR creation, or merge as part of this phase.
 
+## Phase 168 Chapter 30 Freeze Review
+
+- Chapter: Aligning Teams Around Decisions.
+- Stable ID: `CHAPTER-030`.
+- Branch: `chapter30`.
+- Stage: Freeze Review.
+- Reviewed Technical Review SHA: `bc3b4b1cc4e073518961750d0c49988bdd702028`.
+- Prior review commits:
+  - Editorial Review: `433045252961f1b98bb4e34694b1b87dad14db7b`.
+  - Canon Review: `0fa4c983107b7ac4afdb121cf20875943f1c734c`.
+  - Technical Review: `bc3b4b1cc4e073518961750d0c49988bdd702028`.
+- Manuscript path:
+  `book/05-engineering-organization/30-aligning-teams-around-decisions.md`.
+- Canonical brief path preserved:
+  `editor/chapter-briefs/CHAPTER-030-aligning-teams-around-decisions.md`.
+- Part V position: fifth chapter of Part V - Engineering Organization.
+- Outcome: Approved.
+- Freeze action: updated `CHAPTER-030` status in `knowledge/index.yaml` from `draft` to `canonical`.
+- Manuscript freeze result: passed. No manuscript changes were made during Freeze Review.
+- No-primary result: passed. `CHAPTER-030` remains registered without a `primary_concept` field.
+- `ARTIFACT-002` result: passed. RFC remains the central illustrated concept and is not broadened into a new artifact,
+  ritual, checklist, template, or task-tracking mechanism.
+- Alignment-around-decisions result: passed. The final manuscript teaches making one accepted technical decision
+  actionable across ownership boundaries through explicit obligations, evidence, sequencing, and review triggers.
+- `METRIC-002` Bus Factor result: passed. Bus Factor remains the private-memory and Principal Engineer
+  live-translator-risk metric, not Decision Quality.
+- Section-order result: passed. The manuscript preserves the required order: Opening Quote, Story, Discussion,
+  Engineering Principle, Architecture Exercise, Principal's Notebook, ADR, Editor's Commentary.
+- Principal's Notebook result: exactly three short observations.
+- Chapter 31 boundary result: passed. Architecture Health Review, health signals, cadence, and recurring health
+  assessment remain future scope.
+- Earlier-parts boundary result: passed. Chapters 1-29 remain applied context and were not changed.
+- Canon and graph integrity: passed. `CHAPTER-030` exists exactly once, preserves the exact registered outgoing
+  relationship set, adds no primary concept, adds no PEAK concept or relationship, and changes no PEAK concept file.
+- Technical and organizational readiness: passed. The final manuscript credibly treats provisioning compatibility,
+  firmware/backend/service-tool/manufacturing/support/test/release/product obligations, API promises, diagnostic
+  language, release-critical test combinations, temporary compatibility exceptions, evidence, sequencing,
+  discoverability, Bus Factor, and Principal Engineer translator dependency.
+- Changed files:
+  - `editor/EDITOR_LOG.md`
+  - `knowledge/index.yaml`
+- Final validation completed after this log entry:
+  - Direct Freeze Review assertions: passed for clean baseline, reviewed SHA matching the Technical Review commit,
+    Editorial/Canon/Technical Review commits being ancestors of `HEAD`, prior outcomes permitting Freeze, changed-file
+    boundary limited to `editor/EDITOR_LOG.md` and `knowledge/index.yaml`, `CHAPTER-030` status set to `canonical`, no
+    primary concept introduced, exact relationship set preserved, no chapter-local alignment terms promoted into PEAK
+    concepts, unchanged manuscript, unchanged canonical brief, unchanged PEAK concept files, unchanged
+    `editor/CHAPTER_ARCHITECTURE.md`, unchanged Part V README, unchanged table of contents, unchanged `editor/CANON.md`,
+    unchanged Chapters 1-29, no Chapter 31 manuscript created, and no tracked `site` output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini book/05-engineering-organization/30-aligning-teams-around-decisions.md editor/EDITOR_LOG.md knowledge/index.yaml`:
+    passed with 0 errors, 0 warnings, and 0 suggestions.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed with no tracked `site` output.
+- PR readiness: Chapter 30 is ready for pull request after this Freeze Review commit is committed and pushed.
+- Do not create a pull request or merge as part of this phase.
+
 ## Phase 69 Chapter 14 Editorial Review
 
 - Chapter: Drawing Boundaries That Survive Change.
