@@ -6408,6 +6408,77 @@ Pull request readiness:
 - Next lifecycle stage: Canon Review after this Editorial Review commit is committed and pushed.
 - Do not perform Canon Review, Technical Review, Freeze Review, PR creation, or merge as part of this phase.
 
+## Phase 166 Chapter 30 Canon Review
+
+- Chapter: Aligning Teams Around Decisions.
+- Stable ID: `CHAPTER-030`.
+- Branch: `chapter30`.
+- Stage: Canon Review.
+- Reviewed Editorial Review SHA: `433045252961f1b98bb4e34694b1b87dad14db7b`.
+- Manuscript path:
+  `book/05-engineering-organization/30-aligning-teams-around-decisions.md`.
+- Canonical brief path preserved:
+  `editor/chapter-briefs/CHAPTER-030-aligning-teams-around-decisions.md`.
+- Part V position: fifth chapter of Part V - Engineering Organization.
+- Primary concept: none.
+- Central illustrated concept: `ARTIFACT-002` - RFC.
+- Outcome: Approved.
+- Canonical sources checked: Chapter 30 canonical brief, `knowledge/index.yaml`, `editor/CHAPTER_ARCHITECTURE.md`,
+  `editor/CANON.md`, Chapter 29 as predecessor, earlier applied Chapters 1, 2, 3, 4, 5, 6, 7, 8, 9, 13, 15, 17, 18,
+  19, and Part V Chapters 26-29, registered PEAK concept files, and Chapter 29 review and Freeze precedent.
+- No-primary result: passed. Chapter 30 remains carried by the exact relationship set rather than by a primary PEAK
+  concept or `primary_concept` registry field.
+- Chapter-local-term result: passed. Decision alignment, alignment around decisions, alignment contract, alignment note,
+  affected-owner map, obligation map, implementation promise, rollout map, decision broadcast, coordination surface,
+  shared commitment, and same-decision test remain chapter-local prose and are not registered as PEAK concepts.
+- `ARTIFACT-002` result: passed. The manuscript materially illustrates RFC as the existing cross-boundary proposal and
+  alignment surface while avoiding an RFC mechanics tutorial or new artifact proposal.
+- Alignment-around-decisions result: passed. The chapter teaches turning one accepted technical decision into shared
+  operational obligations, not agreement, notification, consensus, facilitation, program management, or release
+  readiness.
+- Affected-owner-obligations result: passed. Decision owner, affected owners, changed promises, stable promises,
+  dependency consequences, sequencing constraints, accepted evidence, missing evidence, open questions, temporary
+  exceptions, follow-up owners, and review triggers remain distinct and material.
+- `METRIC-002` Bus Factor result: passed. Bus Factor is used only for private-memory and Principal Engineer
+  decision-interpreter dependency, not Decision Quality.
+- Artifact/review result: passed. ADR, Decision Journal, Architecture Ledger, and Architecture Review are used with
+  their existing canon boundaries and do not become task trackers, new artifacts, or replacement implementation plans.
+- PEAK findings: passed for `ARTIFACT-002`, `ARTIFACT-001`, `ARTIFACT-003`, `ARTIFACT-006`, `RITUAL-001`, `LAW-001`,
+  `LAW-002`, `LAW-005`, `LAW-007`, `VOCAB-001`, `METRIC-001`, `METRIC-002`, `METRIC-003`, `SMELL-001`, `SMELL-004`,
+  `ANTIPATTERN-006`, and `FAILURE-004`; no relationship target was added, removed, renamed, renumbered, or broadened.
+- Chapter 31 boundary result: passed. Architecture Health Review concepts remain future scope.
+- Earlier-Part-V boundary result: passed. Chapters 26-29 remain predecessor constraints and applied context without
+  rewriting technical leadership, design-review memory, engineering rituals, or mentoring through artifacts.
+- Relationship findings: passed. The exact registered Chapter 30 outgoing relationship set is unchanged and materially
+  present in the manuscript.
+- Section architecture: passed. The manuscript preserves the required order: Opening Quote, Story, Discussion,
+  Engineering Principle, Architecture Exercise, Principal's Notebook, ADR, Editor's Commentary.
+- Corrections made during Canon Review: none. Only this Canon Review log entry changed.
+- Unchanged files confirmed: manuscript, canonical brief, `knowledge/index.yaml`, PEAK concept files,
+  `editor/CHAPTER_ARCHITECTURE.md`, Part V README, table of contents, `editor/CANON.md`, and Chapters 1-29.
+- Changed files:
+  - `editor/EDITOR_LOG.md`
+- Final validation completed after this log entry:
+  - Direct Canon Review assertions: passed for clean baseline, reviewed SHA matching the Editorial Review commit,
+    expected changed files only, exact section order, exactly three Principal's Notebook observations, unresolved marker
+    absence, `CHAPTER-030` remaining `draft`, no primary concept introduced, no chapter-local alignment terms promoted
+    into PEAK concepts, exact relationship set preserved, material coverage for every registered relationship, unchanged
+    canonical brief, unchanged `knowledge/index.yaml`, unchanged PEAK concept files, unchanged
+    `editor/CHAPTER_ARCHITECTURE.md`, unchanged Part V README, unchanged table of contents, unchanged `editor/CANON.md`,
+    unchanged Chapters 1-29, ordered prior review entry, Chapter 31 boundary, earlier-Part-V boundary, and no tracked
+    `site` output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini book/05-engineering-organization/30-aligning-teams-around-decisions.md editor/EDITOR_LOG.md`:
+    passed with 0 errors, 0 warnings, and 0 suggestions.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed with no tracked `site` output.
+- Next lifecycle stage: Technical Review after this Canon Review commit is committed and pushed.
+- Do not perform Technical Review, Freeze Review, PR creation, or merge as part of this phase.
+
 ## Phase 69 Chapter 14 Editorial Review
 
 - Chapter: Drawing Boundaries That Survive Change.
