@@ -6752,6 +6752,52 @@ Pull request readiness:
 - Next lifecycle stage: Author Draft after this Canonical Brief Registration commit is committed and pushed.
 - Do not create the manuscript, perform review gates, create a pull request, or merge as part of this phase.
 
+## Phase 176 Chapter 32 Author Draft
+
+- Chapter: Reading a Legacy System.
+- Stable ID: `CHAPTER-032`.
+- Branch: `chapter32`.
+- Stage: Author Draft.
+- Verified baseline `origin/chapter32`: `c67427cb6ba0524518b6bd7a3f4e67e0089dcd7d`.
+- Expected manuscript path created:
+  `book/06-legacy/32-reading-a-legacy-system.md`.
+- Canonical brief path preserved unchanged:
+  `editor/chapter-briefs/CHAPTER-032-reading-a-legacy-system.md`.
+- Index registration preserved unchanged: `CHAPTER-032` remains `draft`, with no `primary_concept` field and no new PEAK
+  concept, relationship verb, or relationship target.
+- Author Draft outcome: created the full reader-facing Chapter 32 manuscript with the required sequence: Opening Quote,
+  Story, Discussion, Engineering Principle, Architecture Exercise, Principal's Notebook, ADR, and Editor's Commentary.
+- Story result: drafted `The System That Everyone Knew Differently`, a working legacy service-and-device integration
+  where a small compatibility change exposes stale diagrams, old ADRs, support procedures, service-tool diagnostics,
+  backend compatibility behavior, firmware assumptions, hidden state, global configuration, weak tests, incomplete
+  logs, release-path risk, and senior-memory Bus Factor.
+- Core practice result: positioned legacy reading as building a reading map before the first change, centered on
+  product promises, state ownership, API and diagnostic promises, dependencies, time and ordering assumptions, evidence
+  comparison, stale records, likely Change Radius, safe probes, characterization tests, and record repair.
+- Exercise result: added `Build a Reading Map Before the First Change`, ending with the required five statements for one
+  promise, one hidden assumption, one evidence source, one safe probe, and one record to update.
+- ADR result: added `Map Legacy Compatibility Behavior Before Removing the Fallback`, choosing a reading map,
+  characterization test, and Decision Journal or Architecture Ledger update before removing or rewriting the fallback.
+- Principal's Notebook result: exactly three short observations.
+- Later Part VI boundaries preserved: Chapter 32 mentions that reading may reveal Silent Coupling, utility pull,
+  configuration flags, and deletion candidates, while leaving Chapters 33 through 37 to teach those practices.
+- Changed files:
+  - `book/06-legacy/32-reading-a-legacy-system.md`
+  - `editor/EDITOR_LOG.md`
+- Final validation completed before commit:
+  - Direct author-draft assertions passed for branch, changed-file set, unchanged canonical brief and registry, exact
+    section order, exactly three Notebook bullets, no unresolved markers, no new PEAK IDs, preserved later Part VI
+    boundaries, and no tracked `site` output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini book/06-legacy/32-reading-a-legacy-system.md editor/EDITOR_LOG.md`: passed with 0 errors,
+    0 warnings, and 0 suggestions.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed on isolated rerun. A parallel run overlapped with `mkdocs build` and produced a
+    transient local-file crawl failure, then the isolated rerun scanned 182 links successfully.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+
 ## Phase 170 Chapter 31 Author Draft
 
 - Chapter: Architecture Health Reviews.
