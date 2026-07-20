@@ -13615,3 +13615,144 @@ Pull request readiness:
 - Next lifecycle stage: Editorial Review after this Author Draft commit is committed and pushed.
 - Do not perform Editorial Review, Canon Review, Technical Review, Freeze Review, PR creation, or merge as part of this
   phase.
+
+## Phase 175 Chapter 32 Canonical Brief Registration
+
+- Chapter: Reading a Legacy System.
+- Stable ID: `CHAPTER-032`.
+- Branch: `chapter32`.
+- Stage: Canonical Brief Registration.
+- Verified baseline `origin/main`: `489dc94e5c25c8e7b45b36a60b127cc67202fcc6`.
+- Baseline evidence: PR #33 squash commit, `Chapter 31: Architecture Health Reviews (#33)`.
+- Resolved Chapter 31 squash SHA: `489dc94e5c25c8e7b45b36a60b127cc67202fcc6`.
+- PR #33 feature lifecycle evidence:
+  - Canonical Brief: `345aff7`.
+  - Author Draft: `8cf23cf`.
+  - Editorial Review: `d436c23`.
+  - Canon Review: `0fa6bec`.
+  - Technical Review: `f0efb2c`.
+  - Freeze Review: `a0f1fb1`.
+  - Squash merge: `489dc94e5c25c8e7b45b36a60b127cc67202fcc6`.
+- Squash verification result: passed. The squash commit is an ancestor of current `origin/main`, has parent
+  `8325145fc07aa9256d0af40819485815ceaa251d`, and the checked Chapter 31 lifecycle files are tree-equivalent to the
+  Chapter 31 Freeze Review commit `a0f1fb1`.
+- Part position: first chapter of Part VI - Legacy.
+- Canonical predecessor: `CHAPTER-031` - Architecture Health Reviews.
+- Outcome: Approve canonical brief registration.
+- Reader-facing manuscript created: no.
+- Manuscript path remains absent:
+  `book/06-legacy/32-reading-a-legacy-system.md`.
+- Canonical brief path created:
+  `editor/chapter-briefs/CHAPTER-032-reading-a-legacy-system.md`.
+- Index registration: `CHAPTER-032` added to `knowledge/index.yaml` as `draft`.
+- Primary concept: none. Chapter 32 applies existing PEAK laws, records, metrics, smells, anti-patterns, and failure
+  stories to legacy reading and keeps the current no-primary chapter registry convention.
+- Legacy-reading result: registered as disciplined architectural discovery before change, focused on promises,
+  ownership, hidden state, boundaries, dependencies, time assumptions, evidence, stale records, Change Radius, safe
+  probes, and reading maps.
+- Canonical scope: reading legacy systems as a change-safe model-building practice; product promises; state ownership;
+  hidden state; API and diagnostic promises; implicit dependencies; timing and ordering assumptions; evidence from
+  tests, logs, runtime behavior, support notes, release records, field procedures, service tools, and senior memory;
+  stale or missing records; likely Change Radius; small safe probes; and repair of existing records.
+- Selected PEAK concepts:
+  - `LAW-001` - Every State Has One Owner.
+  - `LAW-002` - Every API Is a Promise.
+  - `LAW-003` - Time Is a Dependency.
+  - `LAW-005` - Evidence Before Confidence.
+  - `LAW-007` - Every Dependency Is a Decision.
+  - `VOCAB-001` - Change Radius.
+  - `METRIC-001` - Change Radius.
+  - `METRIC-002` - Bus Factor.
+  - `METRIC-003` - Discoverability.
+  - `METRIC-004` - API Stability.
+  - `ARTIFACT-001` - ADR.
+  - `ARTIFACT-003` - Decision Journal.
+  - `ARTIFACT-004` - Mistake Ledger.
+  - `ARTIFACT-005` - Event Catalog.
+  - `ARTIFACT-006` - Architecture Ledger.
+  - `RITUAL-004` - Architecture Health Review.
+  - `SMELL-001` - Silent Coupling.
+  - `SMELL-004` - Hidden State.
+  - `SMELL-005` - Platform Leakage.
+  - `ANTIPATTERN-003` - Global Configuration.
+  - `ANTIPATTERN-006` - Temporary Solution.
+  - `FAILURE-002` - One Lost Packet.
+  - `FAILURE-004` - The Hero Engineer.
+  - `FAILURE-005` - The Release We Should Have Delayed.
+- Rejected PEAK concepts:
+  - `LAW-004` - Simplicity Is a Feature: background only; Chapter 32 should not judge shape before discovering
+    promises.
+  - `LAW-006` - Unused Flexibility Is Waste: nearby to fallbacks, but deletion and cleanup remain later work.
+  - `VOCAB-008` - Silent Coupling: Chapter 33 owns the vocabulary-centered legacy chapter.
+  - `VOCAB-009` and `SMELL-002` - Utility Gravity: Chapter 34 owns utility gravity.
+  - `VOCAB-010` and `SMELL-003` - Boolean Explosion: Chapter 35 owns Boolean Explosion.
+  - `VOCAB-007` and `METRIC-005` - Architecture Health: Chapter 31 owns health framing; Chapter 32 only keeps the
+    `RITUAL-004` handoff.
+  - `ARTIFACT-002` - RFC: old proposals may be evidence, but this chapter's record repair is carried by ADR, Decision
+    Journal, Mistake Ledger, Event Catalog, and Architecture Ledger.
+  - `ARTIFACT-007` - Weak Signal Register: possible input, but not material enough for the registered graph.
+  - `RITUAL-001` and `RITUAL-002`: possible outputs after reading, but not part of the entry practice itself.
+  - `ANTIPATTERN-002`, `ANTIPATTERN-005`, and `SMELL-006`: possible local symptoms, but not material enough for
+    outgoing edges.
+  - `FAILURE-001` and `FAILURE-003`: useful background for legacy formation, but owned by earlier utility and
+    prototype-to-product material.
+- Exact outgoing relationships registered:
+  - `CHAPTER-032 references LAW-001`.
+  - `CHAPTER-032 references LAW-002`.
+  - `CHAPTER-032 references LAW-003`.
+  - `CHAPTER-032 references LAW-005`.
+  - `CHAPTER-032 references LAW-007`.
+  - `CHAPTER-032 references VOCAB-001`.
+  - `CHAPTER-032 references METRIC-001`.
+  - `CHAPTER-032 references METRIC-002`.
+  - `CHAPTER-032 references METRIC-003`.
+  - `CHAPTER-032 references METRIC-004`.
+  - `CHAPTER-032 references ARTIFACT-001`.
+  - `CHAPTER-032 references ARTIFACT-003`.
+  - `CHAPTER-032 references ARTIFACT-004`.
+  - `CHAPTER-032 references ARTIFACT-005`.
+  - `CHAPTER-032 references ARTIFACT-006`.
+  - `CHAPTER-032 references RITUAL-004`.
+  - `CHAPTER-032 references SMELL-001`.
+  - `CHAPTER-032 references SMELL-004`.
+  - `CHAPTER-032 references SMELL-005`.
+  - `CHAPTER-032 references ANTIPATTERN-003`.
+  - `CHAPTER-032 references ANTIPATTERN-006`.
+  - `CHAPTER-032 references FAILURE-002`.
+  - `CHAPTER-032 references FAILURE-004`.
+  - `CHAPTER-032 references FAILURE-005`.
+- New PEAK concept result: no new PEAK law, maxim, artifact, ritual, metric, smell, anti-pattern, failure story,
+  vocabulary concept, ID, relationship verb, or primary-concept field was added.
+- Later Part VI boundaries:
+  - Chapter 33 owns finding Silent Coupling.
+  - Chapter 34 owns Utility Gravity.
+  - Chapter 35 owns Boolean Explosion.
+  - Chapter 36 owns Deleting Safely.
+  - Chapter 37 owns Refactoring Without Losing Product Trust.
+- Earlier-parts boundary: Chapter 32 uses Parts I through V as reading lenses without repeating better questions,
+  ownership, evidence, laws, architecture review/freeze, ADR/RFC mechanics, product obligations, organizational rituals,
+  decision alignment, or architecture health reviews.
+- Required reader-facing chapter architecture preserved for the future manuscript: Opening Quote, Story, Discussion,
+  Engineering Principle, Architecture Exercise, Principal's Notebook, ADR, Editor's Commentary.
+- Changed files:
+  - `editor/chapter-briefs/CHAPTER-032-reading-a-legacy-system.md`
+  - `editor/EDITOR_LOG.md`
+  - `knowledge/index.yaml`
+- Final validation completed after this log entry:
+  - Direct canonical-brief assertions: passed for branch, baseline, expected changed files only, brief existence,
+    manuscript absence, `CHAPTER-032` draft registration, Chapters 1-31 remaining canonical, exact Chapter 32
+    relationship set, existing relationship targets, valid relationship verbs, no duplicate or self-edge, no
+    `primary_concept`, no new PEAK ID, unchanged PEAK concept files, unchanged `book/06-legacy/README.md`, unchanged
+    `editor/CHAPTER_ARCHITECTURE.md`, unchanged `editor/CANON.md`, unchanged table of contents, later Part VI
+    boundaries, earlier-parts boundary, unresolved marker absence, and no tracked `site` output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini editor/chapter-briefs/CHAPTER-032-reading-a-legacy-system.md editor/EDITOR_LOG.md knowledge/index.yaml`:
+    passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed with no tracked `site` output.
+- Next lifecycle stage: Author Draft after this Canonical Brief Registration commit is committed and pushed.
+- Do not create the manuscript, perform review gates, create a pull request, or merge as part of this phase.
