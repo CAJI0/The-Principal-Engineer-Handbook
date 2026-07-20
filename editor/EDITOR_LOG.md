@@ -6154,6 +6154,463 @@ Pull request readiness:
 - PR readiness: Chapter 29 is ready for pull request after this Freeze Review commit is committed and pushed.
 - Do not create a pull request or merge as part of this phase.
 
+## Phase 163 Chapter 30 Canonical Brief Registration
+
+- Chapter: Aligning Teams Around Decisions.
+- Stable ID: `CHAPTER-030`.
+- Branch: `chapter30`.
+- Stage: Canonical Brief Registration.
+- Verified baseline `origin/main`: `73cc53d2afac40abcdd9ead33e9ea3885ec82163`.
+- PR #31 merge evidence: resolved Chapter 29 squash commit
+  `73cc53d2afac40abcdd9ead33e9ea3885ec82163`, subject
+  `Chapter 29: Mentoring Through Artifacts (#31)`.
+- PR #31 feature lifecycle evidence from squash body:
+  - Canonical Brief: `08c770a1dc5fd82f8195adf737642c64a00f4306`.
+  - Author Draft: `56195eda22705f94b6c1076bb22b9fc2fdc29237`.
+  - Editorial Review: `ce836d46010eb112ff64cc9dea703a240d33ed64`.
+  - Canon Review: `451e387bb3fc5a7deea36503e51390197fbcf8ec`.
+  - Technical Review: `51408b759adc65c24313f1a85a7b17318998971e`.
+  - Freeze Review: `610da9d8a71673d04b806b614f6aa37a76131f20`.
+  - Squash merge: `73cc53d2afac40abcdd9ead33e9ea3885ec82163`.
+- Squash verification result: passed. The squash commit is an ancestor of current `origin/main`, has parent
+  `0a757baf3e72bc21ef6c045dd3397b5532a7d33b`, and the checked Chapter 29 lifecycle files are tree-equivalent to the
+  Chapter 29 Freeze Review commit `610da9d8a71673d04b806b614f6aa37a76131f20`.
+- Part position: fifth chapter of Part V - Engineering Organization.
+- Canonical predecessor: `CHAPTER-029` - Mentoring Through Artifacts.
+- Outcome: Approve canonical brief registration.
+- Reader-facing manuscript created: no.
+- Manuscript path remains absent:
+  `book/05-engineering-organization/30-aligning-teams-around-decisions.md`.
+- Canonical brief path created:
+  `editor/chapter-briefs/CHAPTER-030-aligning-teams-around-decisions.md`.
+- Index registration: added `CHAPTER-030` as `draft` with path
+  `../book/05-engineering-organization/30-aligning-teams-around-decisions.md`.
+- Primary-concept resolution: none. `CHAPTER-030` has no `primary_concept` field and is carried by material outgoing
+  relationships to existing PEAK concepts.
+- Alignment terms remain chapter-local prose: decision alignment, alignment around decisions, alignment contract,
+  alignment note, affected-owner map, obligation map, implementation promise, rollout map, decision broadcast,
+  coordination surface, shared commitment, and same-decision test.
+- Central chapter-local practice: turning a recorded technical decision into explicit cross-team obligations,
+  sequencing, owners, evidence, and review triggers.
+- Selected concepts: `ARTIFACT-002`, `ARTIFACT-001`, `ARTIFACT-003`, `ARTIFACT-006`, `RITUAL-001`, `LAW-001`,
+  `LAW-002`, `LAW-005`, `LAW-007`, `VOCAB-001`, `METRIC-001`, `METRIC-002`, `METRIC-003`, `SMELL-001`, `SMELL-004`,
+  `ANTIPATTERN-006`, and `FAILURE-004`.
+- Rejected concepts: `ARTIFACT-004`, `ARTIFACT-007`, `RITUAL-002`, `RITUAL-004`, `RITUAL-006`, `LAW-006`,
+  `SMELL-005`, `SMELL-006`, `ANTIPATTERN-003`, `FAILURE-005`, `VOCAB-002`, `VOCAB-007`, and `METRIC-005`.
+- `METRIC-002` resolution: current canon defines `METRIC-002` as Bus Factor, not Decision Quality; Chapter 30 uses it
+  only as Bus Factor for private-memory and Principal Engineer decision-interpreter risk.
+- Exact outgoing relationships registered:
+  - `CHAPTER-030 illustrates ARTIFACT-002`.
+  - `CHAPTER-030 references ARTIFACT-001`.
+  - `CHAPTER-030 references ARTIFACT-003`.
+  - `CHAPTER-030 references ARTIFACT-006`.
+  - `CHAPTER-030 references RITUAL-001`.
+  - `CHAPTER-030 references LAW-001`.
+  - `CHAPTER-030 references LAW-002`.
+  - `CHAPTER-030 references LAW-005`.
+  - `CHAPTER-030 references LAW-007`.
+  - `CHAPTER-030 references VOCAB-001`.
+  - `CHAPTER-030 references METRIC-001`.
+  - `CHAPTER-030 references METRIC-002`.
+  - `CHAPTER-030 references METRIC-003`.
+  - `CHAPTER-030 references SMELL-001`.
+  - `CHAPTER-030 references SMELL-004`.
+  - `CHAPTER-030 references ANTIPATTERN-006`.
+  - `CHAPTER-030 references FAILURE-004`.
+- Canonical scope: cross-team decision alignment, decision owner and affected owners, changed and unchanged promises,
+  obligations, sequencing constraints, evidence, open questions, temporary exceptions, review triggers, artifact links,
+  Discoverability, Bus Factor, and avoidance of one-person decision translation.
+- Later Part V boundary: Chapter 31 owns architecture health reviews.
+- Earlier-parts boundary: Parts I through IV and Chapters 26-29 are used as applied tools and predecessor constraints,
+  not repeated teachings.
+- Changed files:
+  - `editor/chapter-briefs/CHAPTER-030-aligning-teams-around-decisions.md`
+  - `editor/EDITOR_LOG.md`
+  - `knowledge/index.yaml`
+- Final validation completed after this log entry:
+  - Direct Chapter 30 brief-registration assertions: passed for clean verified baseline, Chapter 29 squash ancestry,
+    Chapter 29 freeze-tree equivalence, `CHAPTER-030` draft registration, Chapters 1-29 canonical, exact relationship
+    set, valid relationship targets and verbs, no `primary_concept`, no new PEAK IDs, brief exists, manuscript absent,
+    Part V README unchanged, `editor/CHAPTER_ARCHITECTURE.md` unchanged, table of contents unchanged, existing PEAK
+    concept files unchanged, Chapters 1-29 unchanged, later Part V boundary preserved, only expected files changed, and
+    no tracked `site` output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini editor/chapter-briefs/CHAPTER-030-aligning-teams-around-decisions.md editor/EDITOR_LOG.md knowledge/index.yaml`:
+    passed with 0 errors, 0 warnings, and 0 suggestions.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed with no tracked `site/` output.
+- Next lifecycle stage: Author Draft after this Canonical Brief Registration commit is committed and pushed.
+- Do not create the Chapter 30 manuscript, perform reviews, open a PR, or merge as part of this phase.
+
+## Phase 164 Chapter 30 Author Draft
+
+- Chapter: Aligning Teams Around Decisions.
+- Stable ID: `CHAPTER-030`.
+- Branch: `chapter30`.
+- Stage: Author Draft.
+- Starting canonical-brief registration commit: `de0a4a46541509a5593629e3cff67e58f8f9d0ce`.
+- Manuscript path:
+  `book/05-engineering-organization/30-aligning-teams-around-decisions.md`.
+- Canonical brief path preserved:
+  `editor/chapter-briefs/CHAPTER-030-aligning-teams-around-decisions.md`.
+- Part position: fifth chapter of Part V - Engineering Organization.
+- Primary concept: none.
+- Illustrated concept: `ARTIFACT-002` - RFC.
+- Central chapter-local practice: turning a recorded technical decision into explicit cross-team obligations,
+  sequencing, owners, evidence, and review triggers.
+- Outcome: Author Draft manuscript created from the registered canonical brief.
+- Registered relationship set preserved:
+  - `CHAPTER-030 illustrates ARTIFACT-002`
+  - `CHAPTER-030 references ARTIFACT-001`
+  - `CHAPTER-030 references ARTIFACT-003`
+  - `CHAPTER-030 references ARTIFACT-006`
+  - `CHAPTER-030 references RITUAL-001`
+  - `CHAPTER-030 references LAW-001`
+  - `CHAPTER-030 references LAW-002`
+  - `CHAPTER-030 references LAW-005`
+  - `CHAPTER-030 references LAW-007`
+  - `CHAPTER-030 references VOCAB-001`
+  - `CHAPTER-030 references METRIC-001`
+  - `CHAPTER-030 references METRIC-002`
+  - `CHAPTER-030 references METRIC-003`
+  - `CHAPTER-030 references SMELL-001`
+  - `CHAPTER-030 references SMELL-004`
+  - `CHAPTER-030 references ANTIPATTERN-006`
+  - `CHAPTER-030 references FAILURE-004`
+- `METRIC-002` result: passed. The manuscript uses `METRIC-002` only as Bus Factor for private-memory and Principal
+  Engineer decision-interpreter risk, not Decision Quality.
+- Draft scope result: passed. The manuscript teaches cross-team decision alignment as turning one accepted technical
+  decision into shared obligations, not generic leadership alignment, stakeholder management, consensus building,
+  meeting facilitation, program management, release readiness, RFC or ADR mechanics, design-review memory, ritual
+  design, mentoring through artifacts, architecture health review, platform-boundary design, event-model design,
+  configuration management, or a new PEAK concept proposal.
+- Required narrative premise included: The Decision Everyone Agreed To Differently, covering a provisioning
+  compatibility decision accepted after RFC and Architecture Review, with divergent interpretations across firmware,
+  backend, service tooling, manufacturing scripts, support diagnostics, test coverage, release notes, and field
+  procedures.
+- Required story symptoms included: temporary compatibility path as firmware default behavior, indefinite backend
+  support assumption, old service-tool sequence as authoritative, unclear manufacturing flag owner, support diagnostics
+  that no longer match new firmware guarantees, unclear release-critical combinations, visible evidence gaps,
+  Architecture Ledger links without affected-owner obligations, Principal Engineer translator bottleneck, and teams
+  preparing different systems.
+- Required chapter topics included: decision owner, affected owners, changed and unchanged promises, dependency
+  consequences, sequencing constraints, accepted and missing evidence, open questions, temporary exceptions with owner
+  and expiration condition, follow-up owners, review trigger, RFC alignment surface, final ADR boundary, Decision
+  Journal follow-ups, Architecture Ledger discoverability, Architecture Review, ownership, API promises, Change Radius,
+  Discoverability, Bus Factor, Silent Coupling, Hidden State, Temporary Solution, and Hero Engineer risk.
+- Boundary checks: Chapter 31 architecture health reviews remain future scope; earlier Parts I through IV and Chapters
+  26-29 are applied as tools and predecessor constraints without repeating their primary lessons.
+- Required section order used exactly:
+  1. Opening Quote
+  2. Story
+  3. Discussion
+  4. Engineering Principle
+  5. Architecture Exercise
+  6. Principal's Notebook
+  7. ADR
+  8. Editor's Commentary
+- Principal's Notebook contains exactly three short observations and no explanations.
+- No-new-concept result: passed. No primary concept, PEAK concept, PEAK ID, relationship, relationship verb, metric,
+  artifact, ritual, anti-pattern, failure story, vocabulary concept, or alignment artifact was introduced.
+- Unchanged files confirmed: canonical brief, `knowledge/index.yaml`, PEAK concept files,
+  `editor/CHAPTER_ARCHITECTURE.md`, Part V README, table of contents, `editor/CANON.md`, and Chapters 1-29.
+- Files changed in this phase:
+  - `book/05-engineering-organization/30-aligning-teams-around-decisions.md`
+  - `editor/EDITOR_LOG.md`
+- Final validation completed after this log entry:
+  - Direct Author Draft assertions: passed for clean baseline, `HEAD` matching `origin/chapter30` before drafting,
+    starting SHA matching the Canonical Brief Registration commit, expected changed files only, exact section order,
+    required sections unique, exactly three Principal's Notebook observations, unresolved marker absence, `CHAPTER-030`
+    remaining `draft`, canonical brief unchanged, `knowledge/index.yaml` unchanged, exact relationship set preserved, no
+    primary concept introduced, no new PEAK ID, unchanged Part V README, unchanged `editor/CHAPTER_ARCHITECTURE.md`,
+    unchanged `editor/CANON.md`, unchanged table of contents, unchanged Chapters 1-29, unchanged PEAK concept files,
+    material coverage for every registered concept, Chapter 31 boundary, earlier-parts boundary, forbidden-frame
+    checks, and no tracked `site/` output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini book/05-engineering-organization/30-aligning-teams-around-decisions.md editor/EDITOR_LOG.md`:
+    passed with 0 errors, 0 warnings, and 0 suggestions.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed with no tracked `site/` output.
+- Next lifecycle stage: Editorial Review after this Author Draft commit is committed and pushed.
+- Do not perform Editorial Review, Canon Review, Technical Review, Freeze Review, PR creation, or merge as part of this
+  phase.
+
+## Phase 165 Chapter 30 Editorial Review
+
+- Chapter: Aligning Teams Around Decisions.
+- Stable ID: `CHAPTER-030`.
+- Branch: `chapter30`.
+- Stage: Editorial Review.
+- Reviewed Author Draft SHA: `c0f012c79ad50c87e798d046cf155d55ccc17315`.
+- Canonical brief parent SHA: `de0a4a46541509a5593629e3cff67e58f8f9d0ce`.
+- Manuscript path:
+  `book/05-engineering-organization/30-aligning-teams-around-decisions.md`.
+- Canonical brief path preserved:
+  `editor/chapter-briefs/CHAPTER-030-aligning-teams-around-decisions.md`.
+- Part V position: fifth chapter of Part V - Engineering Organization.
+- Primary concept: none.
+- Central illustrated concept: `ARTIFACT-002` - RFC.
+- Outcome: Approved with editorial changes.
+- Material editorial changes: removed duplicated manufacturing compatibility flag ownership wording in the opening story
+  while preserving the required symptom that the manufacturing compatibility flag owner is unclear.
+- Section-order result: passed. The manuscript preserves the required order: Opening Quote, Story, Discussion,
+  Engineering Principle, Architecture Exercise, Principal's Notebook, ADR, Editor's Commentary.
+- Principal's Notebook result: exactly three short observations.
+- Alignment-around-decisions result: passed. The chapter remains about operational meaning from one accepted technical
+  decision, not generic consensus, stakeholder management, program management, meeting facilitation, status reporting,
+  release readiness, RFC mechanics, ADR mechanics, mentoring, ritual design, or architecture health review.
+- Affected-owner-obligations result: passed. Firmware, backend, service tooling, manufacturing, support, test, release,
+  product, and product architecture remain distinct affected surfaces with explicit obligations rather than private
+  interpretations routed through Mara.
+- Evidence/sequencing/review-trigger result: passed. Accepted evidence, missing evidence, release-critical test
+  combinations, temporary compatibility ownership, sequencing constraints, unsupported combinations, and review triggers
+  remain visible and proportionate.
+- Artifact usage result: passed. The RFC remains the central alignment surface; the ADR records the final decision;
+  Decision Journal entries carry smaller follow-ups; the Architecture Ledger supports discoverability; Architecture
+  Review remains background context.
+- Bus Factor result: passed. `METRIC-002` is used only as Bus Factor for private-memory and Principal Engineer
+  live-translator risk, not Decision Quality.
+- Chapter 31 boundary result: passed. Architecture health reviews are previewed only lightly and not written early.
+- Earlier-parts boundary result: passed. Chapters 1-29 and especially Chapters 26-29 remain applied context without
+  retaught primary lessons.
+- Unchanged files confirmed: canonical brief, `knowledge/index.yaml`, PEAK concept files,
+  `editor/CHAPTER_ARCHITECTURE.md`, Part V README, table of contents, `editor/CANON.md`, and Chapters 1-29.
+- Changed files:
+  - `book/05-engineering-organization/30-aligning-teams-around-decisions.md`
+  - `editor/EDITOR_LOG.md`
+- Final validation completed after this log entry:
+  - Direct Editorial Review assertions: passed for clean baseline, reviewed SHA matching the Author Draft commit, exact
+    section order, required sections unique, exactly three Principal's Notebook observations, required story title and
+    provisioning decision premise, required divergent-team symptoms, preserved thesis and Engineering Principle,
+    alignment-around-decisions boundary, affected-owner obligation coverage, evidence/sequencing/review-trigger
+    coverage, proportional artifact usage, Bus Factor usage, Chapter 31 boundary, earlier-parts boundary, unresolved
+    marker absence, `CHAPTER-030` remaining `draft`, no primary concept introduced, exact relationship set preserved,
+    unchanged canonical brief, unchanged `knowledge/index.yaml`, unchanged PEAK concept files, unchanged
+    `editor/CHAPTER_ARCHITECTURE.md`, unchanged Part V README, unchanged table of contents, unchanged `editor/CANON.md`,
+    unchanged Chapters 1-29, and no tracked `site` output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini book/05-engineering-organization/30-aligning-teams-around-decisions.md editor/EDITOR_LOG.md`:
+    passed with 0 errors, 0 warnings, and 0 suggestions.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed with no tracked `site` output.
+- Next lifecycle stage: Canon Review after this Editorial Review commit is committed and pushed.
+- Do not perform Canon Review, Technical Review, Freeze Review, PR creation, or merge as part of this phase.
+
+## Phase 166 Chapter 30 Canon Review
+
+- Chapter: Aligning Teams Around Decisions.
+- Stable ID: `CHAPTER-030`.
+- Branch: `chapter30`.
+- Stage: Canon Review.
+- Reviewed Editorial Review SHA: `433045252961f1b98bb4e34694b1b87dad14db7b`.
+- Manuscript path:
+  `book/05-engineering-organization/30-aligning-teams-around-decisions.md`.
+- Canonical brief path preserved:
+  `editor/chapter-briefs/CHAPTER-030-aligning-teams-around-decisions.md`.
+- Part V position: fifth chapter of Part V - Engineering Organization.
+- Primary concept: none.
+- Central illustrated concept: `ARTIFACT-002` - RFC.
+- Outcome: Approved.
+- Canonical sources checked: Chapter 30 canonical brief, `knowledge/index.yaml`, `editor/CHAPTER_ARCHITECTURE.md`,
+  `editor/CANON.md`, Chapter 29 as predecessor, earlier applied Chapters 1, 2, 3, 4, 5, 6, 7, 8, 9, 13, 15, 17, 18,
+  19, and Part V Chapters 26-29, registered PEAK concept files, and Chapter 29 review and Freeze precedent.
+- No-primary result: passed. Chapter 30 remains carried by the exact relationship set rather than by a primary PEAK
+  concept or `primary_concept` registry field.
+- Chapter-local-term result: passed. Decision alignment, alignment around decisions, alignment contract, alignment note,
+  affected-owner map, obligation map, implementation promise, rollout map, decision broadcast, coordination surface,
+  shared commitment, and same-decision test remain chapter-local prose and are not registered as PEAK concepts.
+- `ARTIFACT-002` result: passed. The manuscript materially illustrates RFC as the existing cross-boundary proposal and
+  alignment surface while avoiding an RFC mechanics tutorial or new artifact proposal.
+- Alignment-around-decisions result: passed. The chapter teaches turning one accepted technical decision into shared
+  operational obligations, not agreement, notification, consensus, facilitation, program management, or release
+  readiness.
+- Affected-owner-obligations result: passed. Decision owner, affected owners, changed promises, stable promises,
+  dependency consequences, sequencing constraints, accepted evidence, missing evidence, open questions, temporary
+  exceptions, follow-up owners, and review triggers remain distinct and material.
+- `METRIC-002` Bus Factor result: passed. Bus Factor is used only for private-memory and Principal Engineer
+  decision-interpreter dependency, not Decision Quality.
+- Artifact/review result: passed. ADR, Decision Journal, Architecture Ledger, and Architecture Review are used with
+  their existing canon boundaries and do not become task trackers, new artifacts, or replacement implementation plans.
+- PEAK findings: passed for `ARTIFACT-002`, `ARTIFACT-001`, `ARTIFACT-003`, `ARTIFACT-006`, `RITUAL-001`, `LAW-001`,
+  `LAW-002`, `LAW-005`, `LAW-007`, `VOCAB-001`, `METRIC-001`, `METRIC-002`, `METRIC-003`, `SMELL-001`, `SMELL-004`,
+  `ANTIPATTERN-006`, and `FAILURE-004`; no relationship target was added, removed, renamed, renumbered, or broadened.
+- Chapter 31 boundary result: passed. Architecture Health Review concepts remain future scope.
+- Earlier-Part-V boundary result: passed. Chapters 26-29 remain predecessor constraints and applied context without
+  rewriting technical leadership, design-review memory, engineering rituals, or mentoring through artifacts.
+- Relationship findings: passed. The exact registered Chapter 30 outgoing relationship set is unchanged and materially
+  present in the manuscript.
+- Section architecture: passed. The manuscript preserves the required order: Opening Quote, Story, Discussion,
+  Engineering Principle, Architecture Exercise, Principal's Notebook, ADR, Editor's Commentary.
+- Corrections made during Canon Review: none. Only this Canon Review log entry changed.
+- Unchanged files confirmed: manuscript, canonical brief, `knowledge/index.yaml`, PEAK concept files,
+  `editor/CHAPTER_ARCHITECTURE.md`, Part V README, table of contents, `editor/CANON.md`, and Chapters 1-29.
+- Changed files:
+  - `editor/EDITOR_LOG.md`
+- Final validation completed after this log entry:
+  - Direct Canon Review assertions: passed for clean baseline, reviewed SHA matching the Editorial Review commit,
+    expected changed files only, exact section order, exactly three Principal's Notebook observations, unresolved marker
+    absence, `CHAPTER-030` remaining `draft`, no primary concept introduced, no chapter-local alignment terms promoted
+    into PEAK concepts, exact relationship set preserved, material coverage for every registered relationship, unchanged
+    canonical brief, unchanged `knowledge/index.yaml`, unchanged PEAK concept files, unchanged
+    `editor/CHAPTER_ARCHITECTURE.md`, unchanged Part V README, unchanged table of contents, unchanged `editor/CANON.md`,
+    unchanged Chapters 1-29, ordered prior review entry, Chapter 31 boundary, earlier-Part-V boundary, and no tracked
+    `site` output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini book/05-engineering-organization/30-aligning-teams-around-decisions.md editor/EDITOR_LOG.md`:
+    passed with 0 errors, 0 warnings, and 0 suggestions.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed with no tracked `site` output.
+- Next lifecycle stage: Technical Review after this Canon Review commit is committed and pushed.
+- Do not perform Technical Review, Freeze Review, PR creation, or merge as part of this phase.
+
+## Phase 167 Chapter 30 Technical Review
+
+- Chapter: Aligning Teams Around Decisions.
+- Stable ID: `CHAPTER-030`.
+- Branch: `chapter30`.
+- Stage: Technical Review.
+- Reviewed Canon Review SHA: `0fa4c983107b7ac4afdb121cf20875943f1c734c`.
+- Manuscript path:
+  `book/05-engineering-organization/30-aligning-teams-around-decisions.md`.
+- Canonical brief path preserved:
+  `editor/chapter-briefs/CHAPTER-030-aligning-teams-around-decisions.md`.
+- Part V position: fifth chapter of Part V - Engineering Organization.
+- Outcome: Approved.
+- Technical domains checked: cross-team provisioning compatibility decision execution, RFC and Architecture Review
+  acceptance, firmware state ownership, backend reservation and entitlement promises, service-tool operator semantics,
+  manufacturing station flag ownership and evidence, support-safe diagnostic language, release-critical test matrix,
+  unsupported combinations, release gate evidence, temporary compatibility path owner and removal trigger, RFC/ADR/
+  Decision Journal/Architecture Ledger boundaries, discoverability, Bus Factor, and Principal Engineer live-translator
+  risk.
+- Material corrections during Technical Review: none. The manuscript was technically and organizationally credible as
+  reviewed.
+- Provisioning compatibility assessment: passed. The scenario is plausible for a long-lived embedded/product system and
+  proportionate to Chapter 30's decision-alignment scope.
+- Affected-owner obligation assessment: passed. Obligations clarify the accepted technical decision without silently
+  changing the decision, reopening the whole RFC, or transferring all ownership to the Principal Engineer.
+- Firmware/backend/service-tool/manufacturing/support/test/release/product assessment: passed. Device acceptance,
+  backend reservation/entitlement, station evidence, service-tool product-level outcomes, support diagnostic wording,
+  release-critical test combinations, release gates, and product communication remain distinct and credible.
+- Evidence and sequencing assessment: passed. Accepted evidence, missing evidence, support wording review, station proof
+  run, service-tool checks, compatibility matrix, unsupported combinations, and release gate are separated rather than
+  collapsed into confidence or status reporting.
+- Temporary exception and review trigger assessment: passed. The temporary compatibility path has owner, bounded support
+  window, review trigger, evidence, and removal/expiration conditions.
+- Artifact and discoverability assessment: passed. The RFC is the alignment surface; the ADR remains the final decision
+  record; Decision Journal entries cover smaller follow-ups; the Architecture Ledger keeps owner, contract, status, and
+  review date findable without becoming a task tracker.
+- Bus Factor/live-translator assessment: passed. Mara's risk is framed as private decision memory and Principal Engineer
+  interpreter dependency, not as generic people management.
+- Boundary assessment: passed. The chapter does not imply alignment means consensus, one meeting is enough, sending an
+  ADR/RFC is enough, every decision needs an obligation map, every artifact should become a task tracker, RFCs replace
+  implementation planning, ADRs carry all tasks, product/release/support/manufacturing/service-tool owners are secondary,
+  or architecture health review is the main topic.
+- Chapter 31 boundary result: passed. Architecture Health Reviews are not written early.
+- Earlier-Part-V boundary result: passed. Chapters 26-29 remain applied context without retaught primary lessons.
+- Unchanged files confirmed: manuscript, canonical brief, `knowledge/index.yaml`, PEAK concept files,
+  `editor/CHAPTER_ARCHITECTURE.md`, Part V README, table of contents, `editor/CANON.md`, and Chapters 1-29.
+- Changed files:
+  - `editor/EDITOR_LOG.md`
+- Final validation completed after this log entry:
+  - Direct Technical Review assertions: passed for clean baseline, reviewed SHA matching the Canon Review commit,
+    expected changed files only, exact section order, exactly three Principal's Notebook observations, unresolved marker
+    absence, plausible provisioning compatibility scenario, locally reasonable divergent interpretations, distinct
+    firmware/backend/service-tool/manufacturing/support/test/release/product ownership and consequence profiles,
+    credible affected-owner obligations, credible evidence and sequencing, temporary compatibility path owner and review
+    trigger, artifact and discoverability boundaries, Bus Factor/live-translator framing, guardrail absence, unchanged
+    canonical brief, unchanged `knowledge/index.yaml`, unchanged PEAK concept files, unchanged
+    `editor/CHAPTER_ARCHITECTURE.md`, unchanged Part V README, unchanged table of contents, unchanged `editor/CANON.md`,
+    unchanged Chapters 1-29, ordered prior review entries, Chapter 31 boundary, earlier-Part-V boundary, and no tracked
+    `site` output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini book/05-engineering-organization/30-aligning-teams-around-decisions.md editor/EDITOR_LOG.md`:
+    passed with 0 errors, 0 warnings, and 0 suggestions.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed with no tracked `site` output.
+- Next lifecycle stage: Freeze Review after this Technical Review commit is committed and pushed.
+- Do not perform Freeze Review, PR creation, or merge as part of this phase.
+
+## Phase 168 Chapter 30 Freeze Review
+
+- Chapter: Aligning Teams Around Decisions.
+- Stable ID: `CHAPTER-030`.
+- Branch: `chapter30`.
+- Stage: Freeze Review.
+- Reviewed Technical Review SHA: `bc3b4b1cc4e073518961750d0c49988bdd702028`.
+- Prior review commits:
+  - Editorial Review: `433045252961f1b98bb4e34694b1b87dad14db7b`.
+  - Canon Review: `0fa4c983107b7ac4afdb121cf20875943f1c734c`.
+  - Technical Review: `bc3b4b1cc4e073518961750d0c49988bdd702028`.
+- Manuscript path:
+  `book/05-engineering-organization/30-aligning-teams-around-decisions.md`.
+- Canonical brief path preserved:
+  `editor/chapter-briefs/CHAPTER-030-aligning-teams-around-decisions.md`.
+- Part V position: fifth chapter of Part V - Engineering Organization.
+- Outcome: Approved.
+- Freeze action: updated `CHAPTER-030` status in `knowledge/index.yaml` from `draft` to `canonical`.
+- Manuscript freeze result: passed. No manuscript changes were made during Freeze Review.
+- No-primary result: passed. `CHAPTER-030` remains registered without a `primary_concept` field.
+- `ARTIFACT-002` result: passed. RFC remains the central illustrated concept and is not broadened into a new artifact,
+  ritual, checklist, template, or task-tracking mechanism.
+- Alignment-around-decisions result: passed. The final manuscript teaches making one accepted technical decision
+  actionable across ownership boundaries through explicit obligations, evidence, sequencing, and review triggers.
+- `METRIC-002` Bus Factor result: passed. Bus Factor remains the private-memory and Principal Engineer
+  live-translator-risk metric, not Decision Quality.
+- Section-order result: passed. The manuscript preserves the required order: Opening Quote, Story, Discussion,
+  Engineering Principle, Architecture Exercise, Principal's Notebook, ADR, Editor's Commentary.
+- Principal's Notebook result: exactly three short observations.
+- Chapter 31 boundary result: passed. Architecture Health Review, health signals, cadence, and recurring health
+  assessment remain future scope.
+- Earlier-parts boundary result: passed. Chapters 1-29 remain applied context and were not changed.
+- Canon and graph integrity: passed. `CHAPTER-030` exists exactly once, preserves the exact registered outgoing
+  relationship set, adds no primary concept, adds no PEAK concept or relationship, and changes no PEAK concept file.
+- Technical and organizational readiness: passed. The final manuscript credibly treats provisioning compatibility,
+  firmware/backend/service-tool/manufacturing/support/test/release/product obligations, API promises, diagnostic
+  language, release-critical test combinations, temporary compatibility exceptions, evidence, sequencing,
+  discoverability, Bus Factor, and Principal Engineer translator dependency.
+- Changed files:
+  - `editor/EDITOR_LOG.md`
+  - `knowledge/index.yaml`
+- Final validation completed after this log entry:
+  - Direct Freeze Review assertions: passed for clean baseline, reviewed SHA matching the Technical Review commit,
+    Editorial/Canon/Technical Review commits being ancestors of `HEAD`, prior outcomes permitting Freeze, changed-file
+    boundary limited to `editor/EDITOR_LOG.md` and `knowledge/index.yaml`, `CHAPTER-030` status set to `canonical`, no
+    primary concept introduced, exact relationship set preserved, no chapter-local alignment terms promoted into PEAK
+    concepts, unchanged manuscript, unchanged canonical brief, unchanged PEAK concept files, unchanged
+    `editor/CHAPTER_ARCHITECTURE.md`, unchanged Part V README, unchanged table of contents, unchanged `editor/CANON.md`,
+    unchanged Chapters 1-29, no Chapter 31 manuscript created, and no tracked `site` output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini book/05-engineering-organization/30-aligning-teams-around-decisions.md editor/EDITOR_LOG.md knowledge/index.yaml`:
+    passed with 0 errors, 0 warnings, and 0 suggestions.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed with no tracked `site` output.
+- PR readiness: Chapter 30 is ready for pull request after this Freeze Review commit is committed and pushed.
+- Do not create a pull request or merge as part of this phase.
+
 ## Phase 69 Chapter 14 Editorial Review
 
 - Chapter: Drawing Boundaries That Survive Change.
