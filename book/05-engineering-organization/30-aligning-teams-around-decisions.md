@@ -38,8 +38,9 @@ the station-written package as the main source of readiness because that was wha
 tool could display new backend reservation information, but it did not change the old sequence labels. Support
 diagnostics were being updated from those same labels.
 
-Manufacturing scripts kept writing a compatibility flag whose owner was unclear. The manufacturing compatibility flag
-owner was unclear. The station owner believed firmware owned the flag because the device consumed it. Firmware believed manufacturing owned it because the station wrote it.
+Manufacturing scripts kept writing a manufacturing compatibility flag whose owner was unclear. The station owner
+believed firmware owned the flag because the device consumed it. Firmware believed manufacturing owned it because the
+station wrote it.
 Backend believed it was an implementation detail. Release believed it was part of the compatibility matrix. Nobody was
 lying. They were each carrying a different slice of the same decision.
 
