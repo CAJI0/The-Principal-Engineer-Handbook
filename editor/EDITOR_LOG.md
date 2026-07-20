@@ -6479,6 +6479,77 @@ Pull request readiness:
 - Next lifecycle stage: Technical Review after this Canon Review commit is committed and pushed.
 - Do not perform Technical Review, Freeze Review, PR creation, or merge as part of this phase.
 
+## Phase 167 Chapter 30 Technical Review
+
+- Chapter: Aligning Teams Around Decisions.
+- Stable ID: `CHAPTER-030`.
+- Branch: `chapter30`.
+- Stage: Technical Review.
+- Reviewed Canon Review SHA: `0fa4c983107b7ac4afdb121cf20875943f1c734c`.
+- Manuscript path:
+  `book/05-engineering-organization/30-aligning-teams-around-decisions.md`.
+- Canonical brief path preserved:
+  `editor/chapter-briefs/CHAPTER-030-aligning-teams-around-decisions.md`.
+- Part V position: fifth chapter of Part V - Engineering Organization.
+- Outcome: Approved.
+- Technical domains checked: cross-team provisioning compatibility decision execution, RFC and Architecture Review
+  acceptance, firmware state ownership, backend reservation and entitlement promises, service-tool operator semantics,
+  manufacturing station flag ownership and evidence, support-safe diagnostic language, release-critical test matrix,
+  unsupported combinations, release gate evidence, temporary compatibility path owner and removal trigger, RFC/ADR/
+  Decision Journal/Architecture Ledger boundaries, discoverability, Bus Factor, and Principal Engineer live-translator
+  risk.
+- Material corrections during Technical Review: none. The manuscript was technically and organizationally credible as
+  reviewed.
+- Provisioning compatibility assessment: passed. The scenario is plausible for a long-lived embedded/product system and
+  proportionate to Chapter 30's decision-alignment scope.
+- Affected-owner obligation assessment: passed. Obligations clarify the accepted technical decision without silently
+  changing the decision, reopening the whole RFC, or transferring all ownership to the Principal Engineer.
+- Firmware/backend/service-tool/manufacturing/support/test/release/product assessment: passed. Device acceptance,
+  backend reservation/entitlement, station evidence, service-tool product-level outcomes, support diagnostic wording,
+  release-critical test combinations, release gates, and product communication remain distinct and credible.
+- Evidence and sequencing assessment: passed. Accepted evidence, missing evidence, support wording review, station proof
+  run, service-tool checks, compatibility matrix, unsupported combinations, and release gate are separated rather than
+  collapsed into confidence or status reporting.
+- Temporary exception and review trigger assessment: passed. The temporary compatibility path has owner, bounded support
+  window, review trigger, evidence, and removal/expiration conditions.
+- Artifact and discoverability assessment: passed. The RFC is the alignment surface; the ADR remains the final decision
+  record; Decision Journal entries cover smaller follow-ups; the Architecture Ledger keeps owner, contract, status, and
+  review date findable without becoming a task tracker.
+- Bus Factor/live-translator assessment: passed. Mara's risk is framed as private decision memory and Principal Engineer
+  interpreter dependency, not as generic people management.
+- Boundary assessment: passed. The chapter does not imply alignment means consensus, one meeting is enough, sending an
+  ADR/RFC is enough, every decision needs an obligation map, every artifact should become a task tracker, RFCs replace
+  implementation planning, ADRs carry all tasks, product/release/support/manufacturing/service-tool owners are secondary,
+  or architecture health review is the main topic.
+- Chapter 31 boundary result: passed. Architecture Health Reviews are not written early.
+- Earlier-Part-V boundary result: passed. Chapters 26-29 remain applied context without retaught primary lessons.
+- Unchanged files confirmed: manuscript, canonical brief, `knowledge/index.yaml`, PEAK concept files,
+  `editor/CHAPTER_ARCHITECTURE.md`, Part V README, table of contents, `editor/CANON.md`, and Chapters 1-29.
+- Changed files:
+  - `editor/EDITOR_LOG.md`
+- Final validation completed after this log entry:
+  - Direct Technical Review assertions: passed for clean baseline, reviewed SHA matching the Canon Review commit,
+    expected changed files only, exact section order, exactly three Principal's Notebook observations, unresolved marker
+    absence, plausible provisioning compatibility scenario, locally reasonable divergent interpretations, distinct
+    firmware/backend/service-tool/manufacturing/support/test/release/product ownership and consequence profiles,
+    credible affected-owner obligations, credible evidence and sequencing, temporary compatibility path owner and review
+    trigger, artifact and discoverability boundaries, Bus Factor/live-translator framing, guardrail absence, unchanged
+    canonical brief, unchanged `knowledge/index.yaml`, unchanged PEAK concept files, unchanged
+    `editor/CHAPTER_ARCHITECTURE.md`, unchanged Part V README, unchanged table of contents, unchanged `editor/CANON.md`,
+    unchanged Chapters 1-29, ordered prior review entries, Chapter 31 boundary, earlier-Part-V boundary, and no tracked
+    `site` output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini book/05-engineering-organization/30-aligning-teams-around-decisions.md editor/EDITOR_LOG.md`:
+    passed with 0 errors, 0 warnings, and 0 suggestions.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed with no tracked `site` output.
+- Next lifecycle stage: Freeze Review after this Technical Review commit is committed and pushed.
+- Do not perform Freeze Review, PR creation, or merge as part of this phase.
+
 ## Phase 69 Chapter 14 Editorial Review
 
 - Chapter: Drawing Boundaries That Survive Change.
