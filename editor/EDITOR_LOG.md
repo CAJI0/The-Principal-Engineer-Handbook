@@ -6611,6 +6611,147 @@ Pull request readiness:
 - PR readiness: Chapter 30 is ready for pull request after this Freeze Review commit is committed and pushed.
 - Do not create a pull request or merge as part of this phase.
 
+## Phase 169 Chapter 31 Canonical Brief Registration
+
+- Chapter: Architecture Health Reviews.
+- Stable ID: `CHAPTER-031`.
+- Branch: `chapter31`.
+- Stage: Canonical Brief Registration.
+- Verified baseline `origin/main`: `8325145fc07aa9256d0af40819485815ceaa251d`.
+- Baseline evidence: PR #32 squash commit, `Chapter 30: Aligning Teams Around Decisions (#32)`.
+- Resolved Chapter 30 squash SHA: `8325145fc07aa9256d0af40819485815ceaa251d`.
+- PR #32 feature lifecycle evidence:
+  - Canonical Brief: `de0a4a4`.
+  - Author Draft: `c0f012c`.
+  - Editorial Review: `4330452`.
+  - Canon Review: `0fa4c98`.
+  - Technical Review: `bc3b4b1`.
+  - Freeze Review: `092dc17`.
+  - Squash merge: `8325145fc07aa9256d0af40819485815ceaa251d`.
+- Squash verification result: passed. The squash commit is an ancestor of current `origin/main`, has parent
+  `73cc53d2afac40abcdd9ead33e9ea3885ec82163`, and the checked Chapter 30 lifecycle files are tree-equivalent to the
+  Chapter 30 Freeze Review commit `092dc17`.
+- Part position: sixth and final chapter of Part V - Engineering Organization.
+- Canonical predecessor: `CHAPTER-030` - Aligning Teams Around Decisions.
+- Outcome: Approve canonical brief registration.
+- Reader-facing manuscript created: no.
+- Manuscript path remains absent:
+  `book/05-engineering-organization/31-architecture-health-reviews.md`.
+- Canonical brief path created:
+  `editor/chapter-briefs/CHAPTER-031-architecture-health-reviews.md`.
+- Index registration: `CHAPTER-031` added to `knowledge/index.yaml` as `draft`.
+- Primary concept: none. Chapter 31 uses existing architecture health concepts and keeps the current no-primary chapter
+  registry convention.
+- Architecture health review result: existing `RITUAL-004` Architecture Health Review is illustrated; existing
+  `VOCAB-007` and `METRIC-005` Architecture Health entries are referenced; no new health concept is required.
+- Canonical scope: architecture health reviews as a repeated, evidence-based organizational practice for deciding
+  whether architecture still supports necessary change, ownership, API promises, support, releases, records, Bus Factor
+  risk, weak signals, product obligations, follow-up decisions, artifact updates, and lightweight repeatability.
+- Selected PEAK concepts:
+  - `RITUAL-004` - Architecture Health Review.
+  - `VOCAB-007` - Architecture Health.
+  - `METRIC-005` - Architecture Health.
+  - `ARTIFACT-006` - Architecture Ledger.
+  - `ARTIFACT-001` - ADR.
+  - `ARTIFACT-002` - RFC.
+  - `ARTIFACT-003` - Decision Journal.
+  - `ARTIFACT-004` - Mistake Ledger.
+  - `ARTIFACT-005` - Event Catalog.
+  - `ARTIFACT-007` - Weak Signal Register.
+  - `RITUAL-001` - Architecture Review.
+  - `RITUAL-002` - Architecture Freeze.
+  - `LAW-001` - Every State Has One Owner.
+  - `LAW-002` - Every API Is a Promise.
+  - `LAW-005` - Evidence Before Confidence.
+  - `LAW-006` - Unused Flexibility Is Waste.
+  - `LAW-007` - Every Dependency Is a Decision.
+  - `VOCAB-001` - Change Radius.
+  - `METRIC-001` - Change Radius.
+  - `METRIC-002` - Bus Factor.
+  - `METRIC-003` - Discoverability.
+  - `METRIC-004` - API Stability.
+  - `VOCAB-002` - Weak Signal.
+  - `SMELL-001` - Silent Coupling.
+  - `SMELL-004` - Hidden State.
+  - `SMELL-005` - Platform Leakage.
+  - `SMELL-006` - Event Explosion.
+  - `ANTIPATTERN-003` - Global Configuration.
+  - `ANTIPATTERN-006` - Temporary Solution.
+  - `FAILURE-004` - The Hero Engineer.
+  - `FAILURE-005` - Release and Upgrade Failure.
+- Rejected PEAK concepts:
+  - `LAW-003` - Time Is a Dependency: related, but not needed for the registered graph.
+  - `ANTIPATTERN-004` - Manager Mania: not selected; the current graph does not name this ID as Hero Engineer.
+  - `ANTIPATTERN-002` - HAL Everywhere: possible local implementation smell, but not the chapter's organizing signal.
+  - `ANTIPATTERN-005` - Callback Hell: possible technical detail, but not material enough for an outgoing edge.
+  - `FAILURE-002` - One Lost Packet: Chapter 16 owns this failure story.
+  - `RITUAL-005` - Architecture Court: governance boundary only.
+  - `RITUAL-006` - RFC Friday: Chapter 28 owns ritual design and Chapter 17 owns RFC mechanics.
+- Exact outgoing relationships registered:
+  - `CHAPTER-031 illustrates RITUAL-004`.
+  - `CHAPTER-031 references VOCAB-007`.
+  - `CHAPTER-031 references METRIC-005`.
+  - `CHAPTER-031 references ARTIFACT-006`.
+  - `CHAPTER-031 references ARTIFACT-001`.
+  - `CHAPTER-031 references ARTIFACT-002`.
+  - `CHAPTER-031 references ARTIFACT-003`.
+  - `CHAPTER-031 references ARTIFACT-004`.
+  - `CHAPTER-031 references ARTIFACT-005`.
+  - `CHAPTER-031 references ARTIFACT-007`.
+  - `CHAPTER-031 references RITUAL-001`.
+  - `CHAPTER-031 references RITUAL-002`.
+  - `CHAPTER-031 references LAW-001`.
+  - `CHAPTER-031 references LAW-002`.
+  - `CHAPTER-031 references LAW-005`.
+  - `CHAPTER-031 references LAW-006`.
+  - `CHAPTER-031 references LAW-007`.
+  - `CHAPTER-031 references VOCAB-001`.
+  - `CHAPTER-031 references METRIC-001`.
+  - `CHAPTER-031 references METRIC-002`.
+  - `CHAPTER-031 references METRIC-003`.
+  - `CHAPTER-031 references METRIC-004`.
+  - `CHAPTER-031 references VOCAB-002`.
+  - `CHAPTER-031 references SMELL-001`.
+  - `CHAPTER-031 references SMELL-004`.
+  - `CHAPTER-031 references SMELL-005`.
+  - `CHAPTER-031 references SMELL-006`.
+  - `CHAPTER-031 references ANTIPATTERN-003`.
+  - `CHAPTER-031 references ANTIPATTERN-006`.
+  - `CHAPTER-031 references FAILURE-004`.
+  - `CHAPTER-031 references FAILURE-005`.
+- New PEAK concept result: no new PEAK law, maxim, artifact, ritual, metric, smell, anti-pattern, failure story,
+  vocabulary concept, ID, relationship verb, or primary-concept field was added.
+- Part V closure boundary: passed. Chapter 31 closes Part V by converting leadership, review memory, rituals,
+  mentoring artifacts, and team alignment into recurring architecture health sensing and repair.
+- Part VI boundary: passed. Chapter 31 may preview legacy risk, but `Reading a Legacy System` and Part VI remain future
+  scope.
+- Earlier-parts boundary: Chapter 31 uses Parts I through IV and Chapters 26-30 as applied tools without repeating
+  their teachings or changing their canon.
+- Required reader-facing chapter architecture preserved for the future manuscript: Opening Quote, Story, Discussion,
+  Engineering Principle, Architecture Exercise, Principal's Notebook, ADR, Editor's Commentary.
+- Changed files:
+  - `editor/chapter-briefs/CHAPTER-031-architecture-health-reviews.md`
+  - `editor/EDITOR_LOG.md`
+  - `knowledge/index.yaml`
+- Final validation completed after this log entry:
+  - Direct canonical-brief assertions: passed for branch, baseline, expected changed files only, brief existence,
+    manuscript absence, `CHAPTER-031` draft registration, Chapters 1-30 remaining canonical, exact Chapter 31
+    relationship set, existing relationship targets, no duplicate or self-edge, no new PEAK ID, unchanged PEAK concept
+    files, unchanged `book/05-engineering-organization/README.md`, unchanged `editor/CHAPTER_ARCHITECTURE.md`,
+    unchanged table of contents, unchanged existing chapters, Part V closure, Part VI boundary, and no tracked `site`
+    output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini editor/chapter-briefs/CHAPTER-031-architecture-health-reviews.md editor/EDITOR_LOG.md knowledge/index.yaml`:
+    passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed with no tracked `site/` output.
+- Next lifecycle stage: Author Draft after this Canonical Brief Registration commit is committed and pushed.
+- Do not create the manuscript, perform review gates, create a pull request, or merge as part of this phase.
+
 ## Phase 69 Chapter 14 Editorial Review
 
 - Chapter: Drawing Boundaries That Survive Change.
