@@ -7067,6 +7067,69 @@ Pull request readiness:
 - Next lifecycle stage: Freeze Review after this Technical Review commit is committed and pushed.
 - Do not perform Freeze Review, PR creation, or merge as part of this phase.
 
+## Phase 174 Chapter 31 Freeze Review
+
+- Chapter: Architecture Health Reviews.
+- Stable ID: `CHAPTER-031`.
+- Branch: `chapter31`.
+- Stage: Freeze Review.
+- Reviewed Technical Review SHA: `f0efb2ce5942d61fa3b1008b71c341000ce1716e`.
+- Prior review commits:
+  - Editorial Review: `d436c236e0d72da5c607f2b15eb2a2b09dc70649`.
+  - Canon Review: `0fa6bec4a6c3fa6399804c80931fca1012094191`.
+  - Technical Review: `f0efb2ce5942d61fa3b1008b71c341000ce1716e`.
+- Manuscript path:
+  `book/05-engineering-organization/31-architecture-health-reviews.md`.
+- Canonical brief path preserved:
+  `editor/chapter-briefs/CHAPTER-031-architecture-health-reviews.md`.
+- Part position: sixth and final chapter of Part V - Engineering Organization.
+- Outcome: Approved.
+- Freeze action: updated `CHAPTER-031` status in `knowledge/index.yaml` from `draft` to `canonical`.
+- Manuscript freeze result: passed. No manuscript changes were made during Freeze Review.
+- No-primary result: passed. `CHAPTER-031` remains registered without a `primary_concept` field.
+- `RITUAL-004` result: passed. Architecture Health Review remains the central illustrated concept and is not broadened
+  into a new artifact, dashboard, scorecard, audit, maturity model, or management process.
+- Architecture Health vocabulary/metric result: passed. `VOCAB-007` and `METRIC-005` remain existing Architecture
+  Health concepts; the metric is treated as evidence requiring judgment, not a single score.
+- Section-order result: passed. The manuscript preserves the required order: Opening Quote, Story, Discussion,
+  Engineering Principle, Architecture Exercise, Principal's Notebook, ADR, Editor's Commentary.
+- Principal's Notebook result: exactly three short observations.
+- Part V completion result: passed. Chapter 31 completes Engineering Organization after technical leadership, design
+  reviews as shared memory, engineering rituals, mentoring through artifacts, and decision alignment.
+- Part VI boundary result: passed. The final manuscript previews legacy risk lightly and does not teach Reading a
+  Legacy System, legacy mapping, utility gravity, Boolean Explosion, safe deletion, or modernization.
+- Earlier-parts boundary result: passed. Parts I through IV and Chapters 26-30 remain applied context and are not
+  changed.
+- Canon and graph integrity: passed. `CHAPTER-031` exists exactly once, preserves the exact registered outgoing
+  relationship set, adds no primary concept, adds no PEAK concept or relationship, and changes no PEAK concept file.
+- Technical and organizational readiness: passed. The final manuscript credibly treats scoped architecture health
+  review, operational versus architecture health, Change Radius, owner/API/dependency drift, stale compatibility,
+  repeated rejected options, Event Catalog drift, Bus Factor, weak signals, product obligations, artifact updates,
+  Architecture Review and Architecture Freeze boundaries, accepted risk, owners, and revisit triggers.
+- Changed files:
+  - `editor/EDITOR_LOG.md`
+  - `knowledge/index.yaml`
+- Final validation completed after this log entry:
+  - Direct Freeze Review assertions: passed for clean baseline, reviewed SHA matching the Technical Review commit,
+    Editorial/Canon/Technical Review commits being ancestors of `HEAD`, prior outcomes permitting Freeze, changed-file
+    boundary limited to `editor/EDITOR_LOG.md` and `knowledge/index.yaml`, `CHAPTER-031` status set to `canonical`, no
+    primary concept introduced, exact relationship set preserved, no chapter-local health terms promoted into PEAK
+    concepts, unchanged manuscript, unchanged canonical brief, unchanged PEAK concept files, unchanged Part V README,
+    unchanged `editor/CHAPTER_ARCHITECTURE.md`, unchanged table of contents, unchanged `editor/CANON.md`, unchanged
+    Chapters 1-30, Part V completion, Part VI boundary, and no tracked `site` output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini book/05-engineering-organization/31-architecture-health-reviews.md editor/EDITOR_LOG.md knowledge/index.yaml`:
+    passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed with no tracked `site` output.
+- PR readiness: Chapter 31 is ready for pull request after this Freeze Review commit is committed and pushed.
+- Recommended pull request title: Chapter 31: Architecture Health Reviews.
+- Do not create a pull request or merge as part of this phase.
+
 ## Phase 69 Chapter 14 Editorial Review
 
 - Chapter: Drawing Boundaries That Survive Change.

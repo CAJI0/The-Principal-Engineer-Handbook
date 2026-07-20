@@ -428,7 +428,7 @@ entities:
       type: chapter
       name: Architecture Health Reviews
       path: ../book/05-engineering-organization/31-architecture-health-reviews.md
-      status: draft
+      status: canonical
   adrs:
     - id: ADR-001
       type: adr
