@@ -234,10 +234,10 @@ change.
 Architecture health reviews exist for that gap.
 
 An architecture health review is a repeated, evidence-based review of whether the architecture still supports necessary
-change. The word "repeated" matters because health decays between decisions. The word "evidence" matters because
-health cannot be reduced to taste. The word "change" matters because architecture is not tested by stillness. It is
-tested by new obligations: a product variant, a field failure, an upgrade path, a support promise, a manufacturing
-change, a dependency replacement, a recovery case, or a team boundary shift.
+change. The word "repeated" matters because health decays between decisions. The word "evidence" matters because taste
+is not enough. The word "change" matters because architecture is not tested by stillness. It is tested by new
+obligations: a product variant, a field failure, an upgrade path, a support promise, a manufacturing change, a
+dependency replacement, a recovery case, or a team boundary shift.
 
 The most common mistake is to confuse architecture health with operational calm.
 
@@ -345,8 +345,8 @@ repeated failures to changed thinking. An Event Catalog keeps system events, dia
 from drifting apart. An Architecture Ledger keeps active ownership, status, health notes, and review dates visible. A
 Weak Signal Register holds early evidence that should not yet become a decision.
 
-The point is not to update artifacts because artifacts are holy. The point is that architecture memory either lives in
-records or in people. When it lives only in people, the system quietly recreates the Hero Engineer failure.
+The point is not to update artifacts for their own sake. The point is that architecture memory either lives in records
+or in people. When it lives only in people, the system quietly recreates the Hero Engineer failure.
 
 Cadence helps only after purpose is clear.
 
@@ -486,7 +486,8 @@ Each decision must name an owner, artifact update, and revisit trigger. The revi
 than create a new canonical artifact. It will stay scoped to the provisioning boundary and will not become a broad
 architecture board meeting.
 
-The review is non-blame. It judges whether the architecture can carry necessary change, not whether a team is competent.
+The review avoids blame. It judges whether the architecture can carry necessary change, not whether a team is
+competent.
 
 #### Consequences
 
