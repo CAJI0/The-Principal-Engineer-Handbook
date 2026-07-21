@@ -6910,6 +6910,50 @@ Pull request readiness:
   - `git ls-files site`: passed with no tracked `site` output.
 - Next lifecycle stage: Freeze Review after this Technical Review commit is committed and pushed.
 
+## Phase 180 Chapter 32 Freeze Review
+
+- Chapter: Reading a Legacy System.
+- Stable ID: `CHAPTER-032`.
+- Branch: `chapter32`.
+- Stage: Freeze Review.
+- Reviewed Technical Review SHA: `a25abef57576736e36ed3f49e0d9af7056384d37`.
+- Outcome: Approved.
+- Freeze criteria checked:
+  - Editorial Review, Canon Review, and Technical Review are present and distinct.
+  - Chapter 32 has one central idea: read a legacy system to discover the promises it already keeps before choosing the
+    first safe change.
+  - Required chapter architecture is exact: Opening Quote, Story, Discussion, Engineering Principle, Architecture
+    Exercise, Principal's Notebook, ADR, and Editor's Commentary.
+  - Manuscript is reader-facing and stable.
+  - No unresolved markers, TODO markers, placeholders, or author/editor notes remain.
+  - Principal's Notebook has exactly three short observations.
+  - Chapter-local ADR exists and remains local.
+  - Relationship set remains exact.
+  - No new PEAK concepts, IDs, relationship verbs, registry fields, or primary concept were created.
+  - `CHAPTER-032` moved from `draft` to `canonical` only during Freeze Review.
+  - Chapters 1-31 remain canonical and unchanged.
+  - Part VI boundaries remain intact.
+  - Generated `site/` output remains not tracked.
+- Files changed:
+  - `editor/EDITOR_LOG.md`
+  - `knowledge/index.yaml`
+- Final lifecycle state: `CHAPTER-032` is `canonical`.
+- Validation completed:
+  - Direct freeze assertions: passed for prior-stage presence, exact section architecture, chapter-local ADR, exactly
+    three Principal's Notebook bullets, unresolved-marker absence, `CHAPTER-032` canonical status, no `primary_concept`,
+    Chapters 1-31 canonical, exact relationship set, protected-file boundaries, and no tracked `site` output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini book/06-legacy/32-reading-a-legacy-system.md editor/EDITOR_LOG.md`: passed with 0 errors,
+    0 warnings, and 0 suggestions.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed with no tracked `site` output.
+- Chapter 32 is Frozen.
+- Future substantive changes require reopening Chapter 32 at the appropriate review stage.
+
 ## Phase 170 Chapter 31 Author Draft
 
 - Chapter: Architecture Health Reviews.

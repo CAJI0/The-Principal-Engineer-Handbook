@@ -433,7 +433,7 @@ entities:
       type: chapter
       name: Reading a Legacy System
       path: ../book/06-legacy/32-reading-a-legacy-system.md
-      status: draft
+      status: canonical
   adrs:
     - id: ADR-001
       type: adr
