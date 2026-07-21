@@ -6867,6 +6867,49 @@ Pull request readiness:
   - `git ls-files site`: passed with no tracked `site` output.
 - Next lifecycle stage: Technical Review after this Canon Review commit is committed and pushed.
 
+## Phase 179 Chapter 32 Technical Review
+
+- Chapter: Reading a Legacy System.
+- Stable ID: `CHAPTER-032`.
+- Branch: `chapter32`.
+- Stage: Technical Review.
+- Reviewed Canon Review SHA: `7dbe3096a81c68dc85c66645a2688f731cf3d3fa`.
+- Outcome: Approved.
+- Technical concerns reviewed:
+  - Legacy service-and-device integration credibility.
+  - Compatibility behavior around transitional readiness.
+  - Firmware, backend API, service-tool, release-note, and support-procedure interactions.
+  - Timeout and startup-window claims.
+  - Diagnostic-string dependency credibility.
+  - Global configuration and hidden-state credibility.
+  - Happy-path test limitations and characterization-test framing.
+  - Logs, clocks, retry causes, and evidence quality.
+  - Release ordering and field-support procedure risk.
+  - Safe probe versus broad rewrite.
+- Technical corrections made:
+  - Clarified that the product change does not make every slow startup wait longer; it preserves the legacy behavior
+    only for the transitional readiness signal named by the reading map.
+  - Clarified in the chapter ADR that the safe probe must remain scoped to the transitional readiness path and must not
+    turn one hardware variant's startup tolerance into a global timing rule.
+- Unresolved technical issues: none.
+- Changed files:
+  - `book/06-legacy/32-reading-a-legacy-system.md`
+  - `editor/EDITOR_LOG.md`
+- Validation completed:
+  - Direct technical assertions: passed for required section order, scoped startup correction, scoped ADR correction,
+    local chapter ADR presence, exactly three Principal's Notebook bullets, unresolved-marker absence, `CHAPTER-032`
+    remaining draft before Freeze Review, protected-file boundaries, and no tracked `site` output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini book/06-legacy/32-reading-a-legacy-system.md editor/EDITOR_LOG.md`: passed with 0 errors,
+    0 warnings, and 0 suggestions.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed with no tracked `site` output.
+- Next lifecycle stage: Freeze Review after this Technical Review commit is committed and pushed.
+
 ## Phase 170 Chapter 31 Author Draft
 
 - Chapter: Architecture Health Reviews.

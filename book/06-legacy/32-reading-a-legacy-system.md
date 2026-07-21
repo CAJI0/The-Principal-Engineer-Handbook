@@ -141,6 +141,9 @@ received a bounded compatibility path. The existing diagnostic promise remained 
 compatible. Support got a record that explained what to watch during rollout. The team still had work ahead: coupling
 to find, utilities to unwind, flags to simplify, and code to delete.
 
+The change did not make every slow startup wait longer. It preserved the legacy behavior only when the transitional
+readiness signal appeared, because that was the promise the reading map had enough evidence to name.
+
 But the first change no longer depended on everyone remembering the same system.
 
 It depended on a map.
@@ -449,6 +452,9 @@ transitional startup behavior: when the module reports the transitional readines
 controller waits once more, preserves the diagnostic behavior consumed by tools, and reports compatibility status the
 backend accepts. Add diagnostic context only where it improves cause distinction without changing existing diagnostic
 promises.
+
+Keep the probe scoped to the transitional readiness path. It should not turn all slow starts into successful
+compatibility cases or make one hardware variant's startup tolerance a global timing rule.
 
 Update the Decision Journal or Architecture Ledger with the active assumption, evidence links, likely Change Radius,
 and the condition that would allow later removal. Revisit fallback removal only after the legacy promise and Change
