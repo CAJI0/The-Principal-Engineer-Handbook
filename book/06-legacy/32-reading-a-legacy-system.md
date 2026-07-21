@@ -6,7 +6,7 @@
 
 ## Story
 
-The request sounded too small to deserve a meeting.
+The System That Everyone Knew Differently began with a request that sounded too small to deserve a meeting.
 
 A new hardware variant needed a slightly longer response window during startup. The product manager described it as a
 compatibility tweak. The firmware lead called it a timeout adjustment. The backend team thought it was probably a
@@ -46,10 +46,10 @@ Tests passed.
 
 They were mostly happy-path tests. They proved that the new module registered when it answered quickly, that the
 controller rejected a module in an explicit failure state, and that the backend received a normal status payload. They
-did not prove
-the startup window under slow peripheral response. They did not prove what happened when connectivity was absent during
-the first boot after upgrade. They did not prove that support could still recover a site through the service tool. They
-did not prove that an old firmware response was still a product promise rather than an accidental tolerance.
+did not prove the startup window under slow peripheral response. They did not prove what happened when connectivity was
+absent during the first boot after upgrade. They did not prove that support could still recover a site through the
+service tool. They did not prove that an old firmware response was still a product promise rather than an accidental
+tolerance.
 
 The logs were plentiful and oddly unhelpful.
 
@@ -137,9 +137,9 @@ article, the backend mapper, and the new characterization test.
 Only then did they make the product change.
 
 It was smaller than the original cleanup and more precise than the original timeout tweak. The new hardware variant
-received a bounded compatibility path. The existing diagnostic promise remained stable. The backend behavior was not
-surprised. Support got a record that explained what to watch during rollout. The team still had work ahead: coupling to
-find, utilities to unwind, flags to simplify, and code to delete.
+received a bounded compatibility path. The existing diagnostic promise remained stable. The backend behavior remained
+compatible. Support got a record that explained what to watch during rollout. The team still had work ahead: coupling
+to find, utilities to unwind, flags to simplify, and code to delete.
 
 But the first change no longer depended on everyone remembering the same system.
 
@@ -167,6 +167,8 @@ A working legacy system protects promises, even when nobody has recently named t
 shape, a storage schema, a protocol response, a timeout, a release sequence. Others hide inside diagnostic strings,
 service-tool screens, retry behavior, field procedures, default configuration, log names, backend tolerances, scripts,
 operator habits, and senior memory.
+
+Legacy code is often protecting something the organization stopped naming.
 
 The code matters. It is not enough.
 

@@ -6798,6 +6798,39 @@ Pull request readiness:
   - `python -m pip check`: passed.
   - `python -m mkdocs build --strict`: passed.
 
+## Phase 177 Chapter 32 Editorial Review
+
+- Chapter: Reading a Legacy System.
+- Stable ID: `CHAPTER-032`.
+- Branch: `chapter32`.
+- Stage: Editorial Review.
+- Reviewed Author Draft SHA: `cef8ed3d1ce898417a17a6b3dd100964bc4190db`.
+- Outcome: Approved.
+- Summary of editorial changes:
+  - Added the exact story-title phrase `The System That Everyone Knew Differently` to the Story opening without adding
+    a new required top-level section.
+  - Added the approved chapter-level formulation: "Legacy code is often protecting something the organization stopped
+    naming."
+  - Repaired one awkward line break in the story's test-coverage paragraph.
+  - Replaced one awkward story phrase with clearer compatibility wording.
+- Unresolved editorial issues: none.
+- Changed files:
+  - `book/06-legacy/32-reading-a-legacy-system.md`
+  - `editor/EDITOR_LOG.md`
+- Validation completed:
+  - Direct editorial assertions: passed for required section order, story-title phrase, approved formulation, exactly
+    three Principal's Notebook bullets, unresolved-marker absence, and protected-file boundaries.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini book/06-legacy/32-reading-a-legacy-system.md editor/EDITOR_LOG.md`: passed with 0 errors,
+    0 warnings, and 0 suggestions.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed with no tracked `site` output.
+- Next lifecycle stage: Canon Review after this Editorial Review commit is committed and pushed.
+
 ## Phase 170 Chapter 31 Author Draft
 
 - Chapter: Architecture Health Reviews.
