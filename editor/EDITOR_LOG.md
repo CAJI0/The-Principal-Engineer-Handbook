@@ -6831,6 +6831,42 @@ Pull request readiness:
   - `git ls-files site`: passed with no tracked `site` output.
 - Next lifecycle stage: Canon Review after this Editorial Review commit is committed and pushed.
 
+## Phase 178 Chapter 32 Canon Review
+
+- Chapter: Reading a Legacy System.
+- Stable ID: `CHAPTER-032`.
+- Branch: `chapter32`.
+- Stage: Canon Review.
+- Reviewed Editorial Review SHA: `bdb0633bd81170653bd5bf24d2695b8634693f4c`.
+- Outcome: Approved.
+- Relationship set verification: passed. The registered `CHAPTER-032` outgoing relationship set remains exact and no
+  `knowledge/index.yaml` correction was required.
+- Concept duplication check: passed. `reading map`, `safe probe`, `characterization test`, `legacy promise`,
+  `code archaeology`, `unknown ownership`, `stale diagram`, `legacy boundary`, and `product promise map` remain
+  chapter-local prose only.
+- Metadata check: passed. `CHAPTER-032` remains `draft` before Freeze Review and has no `primary_concept` field.
+- Metric and ritual resolution check: passed. `METRIC-002` is used as Bus Factor, `METRIC-003` as Discoverability,
+  `METRIC-004` as API Stability, and `RITUAL-004` as Architecture Health Review.
+- Chapter 31 and Chapter 33-37 boundary check: passed. Chapter 32 uses Architecture Health Review only as handoff
+  context and leaves Silent Coupling, Utility Gravity, Boolean Explosion, Deleting Safely, and Refactoring Without
+  Losing Product Trust to later Part VI chapters.
+- Files changed:
+  - `editor/EDITOR_LOG.md`
+- Validation completed:
+  - Direct canon assertions: passed for draft metadata, no `primary_concept`, Chapters 1-31 canonical, exact
+    relationship set, no new PEAK IDs or canon artifacts, correct `METRIC-002` and `RITUAL-004` usage, chapter-local
+    reading map, later-Part boundaries, protected-file boundaries, and no tracked `site` output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini book/06-legacy/32-reading-a-legacy-system.md editor/EDITOR_LOG.md`: passed with 0 errors,
+    0 warnings, and 0 suggestions.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed with no tracked `site` output.
+- Next lifecycle stage: Technical Review after this Canon Review commit is committed and pushed.
+
 ## Phase 170 Chapter 31 Author Draft
 
 - Chapter: Architecture Health Reviews.
