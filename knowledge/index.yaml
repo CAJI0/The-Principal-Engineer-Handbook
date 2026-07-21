@@ -429,6 +429,11 @@ entities:
       name: Architecture Health Reviews
       path: ../book/05-engineering-organization/31-architecture-health-reviews.md
       status: canonical
+    - id: CHAPTER-032
+      type: chapter
+      name: Reading a Legacy System
+      path: ../book/06-legacy/32-reading-a-legacy-system.md
+      status: canonical
   adrs:
     - id: ADR-001
       type: adr
@@ -1716,5 +1721,77 @@ relationships:
     type: references
     to: FAILURE-004
   - from: CHAPTER-031
+    type: references
+    to: FAILURE-005
+  - from: CHAPTER-032
+    type: references
+    to: LAW-001
+  - from: CHAPTER-032
+    type: references
+    to: LAW-002
+  - from: CHAPTER-032
+    type: references
+    to: LAW-003
+  - from: CHAPTER-032
+    type: references
+    to: LAW-005
+  - from: CHAPTER-032
+    type: references
+    to: LAW-007
+  - from: CHAPTER-032
+    type: references
+    to: VOCAB-001
+  - from: CHAPTER-032
+    type: references
+    to: METRIC-001
+  - from: CHAPTER-032
+    type: references
+    to: METRIC-002
+  - from: CHAPTER-032
+    type: references
+    to: METRIC-003
+  - from: CHAPTER-032
+    type: references
+    to: METRIC-004
+  - from: CHAPTER-032
+    type: references
+    to: ARTIFACT-001
+  - from: CHAPTER-032
+    type: references
+    to: ARTIFACT-003
+  - from: CHAPTER-032
+    type: references
+    to: ARTIFACT-004
+  - from: CHAPTER-032
+    type: references
+    to: ARTIFACT-005
+  - from: CHAPTER-032
+    type: references
+    to: ARTIFACT-006
+  - from: CHAPTER-032
+    type: references
+    to: RITUAL-004
+  - from: CHAPTER-032
+    type: references
+    to: SMELL-001
+  - from: CHAPTER-032
+    type: references
+    to: SMELL-004
+  - from: CHAPTER-032
+    type: references
+    to: SMELL-005
+  - from: CHAPTER-032
+    type: references
+    to: ANTIPATTERN-003
+  - from: CHAPTER-032
+    type: references
+    to: ANTIPATTERN-006
+  - from: CHAPTER-032
+    type: references
+    to: FAILURE-002
+  - from: CHAPTER-032
+    type: references
+    to: FAILURE-004
+  - from: CHAPTER-032
     type: references
     to: FAILURE-005
