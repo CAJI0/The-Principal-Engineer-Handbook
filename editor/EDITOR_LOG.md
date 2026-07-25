@@ -6891,6 +6891,84 @@ Pull request readiness:
 - Next lifecycle stage: Author Draft after this Canonical Brief Registration commit is committed and pushed.
 - Do not create the manuscript, perform review gates, create a pull request, or merge as part of this phase.
 
+## Phase 182 Chapter 33 Author Draft
+
+- Chapter: Finding Silent Coupling.
+- Stable ID: `CHAPTER-033`.
+- Branch: `chapter33`.
+- Stage: Author Draft.
+- Starting canonical brief commit: `2a3e8a5546dc4871f940f81339a8a2d4f03d035f`.
+- Manuscript path created:
+  `book/06-legacy/33-finding-silent-coupling.md`.
+- Canonical brief path preserved:
+  `editor/chapter-briefs/CHAPTER-033-finding-silent-coupling.md`.
+- Index registration preserved unchanged: `CHAPTER-033` remains `draft`, with no `primary_concept` field.
+- Primary concept: none.
+- Central illustrated concept: `SMELL-001` - Silent Coupling.
+- Central vocabulary term: `VOCAB-008` - Silent Coupling.
+- Author Draft outcome: created the full reader-facing Chapter 33 manuscript with the required sequence: Opening Quote,
+  Story, Discussion, Engineering Principle, Architecture Exercise, Principal's Notebook, ADR, and Editor's Commentary.
+- Story result: drafted `The Change That Broke Nothing Locally`, a legacy device-registration change where local
+  firmware tests pass and the visible API signature remains stable, but release validation exposes hidden dependents in
+  the service tool, backend mapper, manufacturing script, support procedure, upgrade path, and Architecture Ledger.
+- Core practice result: positioned silent coupling as hidden shared behavior found by tracing diagnostics, events, named
+  values, state meanings, data shapes, timing windows, tools, tests, release records, manufacturing, support workflows,
+  senior memory, and ownership records before trusting a local edit.
+- Exact relationship set preserved:
+  - `CHAPTER-033 illustrates SMELL-001`.
+  - `CHAPTER-033 references VOCAB-008`.
+  - `CHAPTER-033 references LAW-002`.
+  - `CHAPTER-033 references LAW-007`.
+  - `CHAPTER-033 references LAW-001`.
+  - `CHAPTER-033 references LAW-003`.
+  - `CHAPTER-033 references LAW-005`.
+  - `CHAPTER-033 references VOCAB-001`.
+  - `CHAPTER-033 references METRIC-001`.
+  - `CHAPTER-033 references METRIC-002`.
+  - `CHAPTER-033 references METRIC-003`.
+  - `CHAPTER-033 references METRIC-004`.
+  - `CHAPTER-033 references ARTIFACT-001`.
+  - `CHAPTER-033 references ARTIFACT-002`.
+  - `CHAPTER-033 references ARTIFACT-003`.
+  - `CHAPTER-033 references ARTIFACT-005`.
+  - `CHAPTER-033 references ARTIFACT-006`.
+  - `CHAPTER-033 references RITUAL-001`.
+  - `CHAPTER-033 references RITUAL-004`.
+  - `CHAPTER-033 references SMELL-004`.
+  - `CHAPTER-033 references SMELL-005`.
+  - `CHAPTER-033 references ANTIPATTERN-003`.
+  - `CHAPTER-033 references ANTIPATTERN-006`.
+  - `CHAPTER-033 references FAILURE-002`.
+  - `CHAPTER-033 references FAILURE-004`.
+  - `CHAPTER-033 references FAILURE-005`.
+- No-new-concept result: passed. No new PEAK law, maxim, artifact, ritual, metric, smell, anti-pattern, failure story,
+  vocabulary concept, ID, relationship verb, or primary-concept field was introduced.
+- Later Part VI boundaries preserved: Chapter 34 Utility Gravity, Chapter 35 Boolean Explosion, Chapter 36 Deleting
+  Safely, and Chapter 37 Refactoring Without Losing Product Trust remain future scope.
+- Standard manuscript architecture satisfied: Opening Quote, Story, Discussion, Engineering Principle, Architecture
+  Exercise, Principal's Notebook, ADR, and Editor's Commentary.
+- Principal's Notebook result: exactly three short observations.
+- Changed files:
+  - `book/06-legacy/33-finding-silent-coupling.md`
+  - `editor/EDITOR_LOG.md`
+- Final validation completed after this log entry:
+  - Direct Author Draft assertions: passed for branch, starting canonical brief commit, `origin/main` baseline,
+    expected changed files only, manuscript existence, unchanged canonical brief, unchanged `knowledge/index.yaml`,
+    exact section order, exactly three Principal's Notebook observations, unresolved marker absence, `CHAPTER-033`
+    remaining `draft`, no `primary_concept`, exact relationship set preserved, no new PEAK ID, preserved later Part VI
+    boundaries, and no tracked `site` output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini book/06-legacy/33-finding-silent-coupling.md editor/EDITOR_LOG.md`: passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed with no tracked `site/` output.
+- Next lifecycle stage: Editorial Review after this Author Draft commit is committed and pushed.
+- Do not perform Editorial Review, Canon Review, Technical Review, Freeze Review, PR creation, or merge as part of this
+  phase.
+
 ## Phase 176 Chapter 32 Author Draft
 
 - Chapter: Reading a Legacy System.
