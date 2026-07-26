@@ -438,7 +438,7 @@ entities:
       type: chapter
       name: Finding Silent Coupling
       path: ../book/06-legacy/33-finding-silent-coupling.md
-      status: draft
+      status: canonical
   adrs:
     - id: ADR-001
       type: adr
