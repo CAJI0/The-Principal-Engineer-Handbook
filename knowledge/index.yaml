@@ -434,6 +434,11 @@ entities:
       name: Reading a Legacy System
       path: ../book/06-legacy/32-reading-a-legacy-system.md
       status: canonical
+    - id: CHAPTER-033
+      type: chapter
+      name: Finding Silent Coupling
+      path: ../book/06-legacy/33-finding-silent-coupling.md
+      status: canonical
   adrs:
     - id: ADR-001
       type: adr
@@ -1793,5 +1798,83 @@ relationships:
     type: references
     to: FAILURE-004
   - from: CHAPTER-032
+    type: references
+    to: FAILURE-005
+  - from: CHAPTER-033
+    type: illustrates
+    to: SMELL-001
+  - from: CHAPTER-033
+    type: references
+    to: VOCAB-008
+  - from: CHAPTER-033
+    type: references
+    to: LAW-002
+  - from: CHAPTER-033
+    type: references
+    to: LAW-007
+  - from: CHAPTER-033
+    type: references
+    to: LAW-001
+  - from: CHAPTER-033
+    type: references
+    to: LAW-003
+  - from: CHAPTER-033
+    type: references
+    to: LAW-005
+  - from: CHAPTER-033
+    type: references
+    to: VOCAB-001
+  - from: CHAPTER-033
+    type: references
+    to: METRIC-001
+  - from: CHAPTER-033
+    type: references
+    to: METRIC-002
+  - from: CHAPTER-033
+    type: references
+    to: METRIC-003
+  - from: CHAPTER-033
+    type: references
+    to: METRIC-004
+  - from: CHAPTER-033
+    type: references
+    to: ARTIFACT-001
+  - from: CHAPTER-033
+    type: references
+    to: ARTIFACT-002
+  - from: CHAPTER-033
+    type: references
+    to: ARTIFACT-003
+  - from: CHAPTER-033
+    type: references
+    to: ARTIFACT-005
+  - from: CHAPTER-033
+    type: references
+    to: ARTIFACT-006
+  - from: CHAPTER-033
+    type: references
+    to: RITUAL-001
+  - from: CHAPTER-033
+    type: references
+    to: RITUAL-004
+  - from: CHAPTER-033
+    type: references
+    to: SMELL-004
+  - from: CHAPTER-033
+    type: references
+    to: SMELL-005
+  - from: CHAPTER-033
+    type: references
+    to: ANTIPATTERN-003
+  - from: CHAPTER-033
+    type: references
+    to: ANTIPATTERN-006
+  - from: CHAPTER-033
+    type: references
+    to: FAILURE-002
+  - from: CHAPTER-033
+    type: references
+    to: FAILURE-004
+  - from: CHAPTER-033
     type: references
     to: FAILURE-005
