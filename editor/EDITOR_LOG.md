@@ -7206,8 +7206,142 @@ Pull request readiness:
   - `npm.cmd run lint:links`: passed.
   - `python -m pip check`: passed.
   - `python -m mkdocs build --strict`: passed.
-  - `git ls-files site`: passed with no tracked files.
+- `git ls-files site`: passed with no tracked files.
 - Lifecycle status after this commit: Chapter 33 Frozen; no PR created by this workflow.
+
+## Phase 187 Chapter 34 Canonical Brief Registration
+
+- Chapter: Managing Utility Gravity.
+- Stable ID: `CHAPTER-034`.
+- Branch: `chapter34`.
+- Stage: Canonical Brief Registration.
+- Verified `origin/main` baseline SHA: `0d34780320928576dcedceed078a412f6176f256`.
+- Required repository synchronization and verification:
+  - `git fetch --all --prune`: passed.
+  - `git switch main`: passed; branch was already `main`.
+  - `git pull --ff-only`: passed; already up to date.
+  - `git status --short --branch`: `## main...origin/main`.
+  - `git rev-parse HEAD`: `0d34780320928576dcedceed078a412f6176f256`.
+  - `git rev-parse origin/main`: `0d34780320928576dcedceed078a412f6176f256`.
+  - one-line latest commit check: `0d34780 Chapter 33: Finding Silent Coupling (#35)`.
+- Chapter 33 merge and canonical verification evidence: Chapter 33 manuscript and canonical brief exist on `main`;
+  `CHAPTER-033` is `canonical` in `knowledge/index.yaml`; Phase 186 records Freeze Review, PR readiness, and Frozen
+  lifecycle status; `origin/main` is the Chapter 33 squash merge commit.
+- Preflight result: passed. Chapters 1-33 are canonical, `CHAPTER-034` was absent, the Chapter 34 brief and manuscript
+  were absent, Chapter 35-37 manuscripts were absent, no Chapter 34 lifecycle phase existed, no tracked `site` output
+  existed, and the working tree was clean before edits.
+- Branch setup: `git switch -c chapter34 origin/main` passed.
+- Outcome: Canonical brief registered.
+- Reader-facing manuscript created: no.
+- Manuscript path remains absent: `book/06-legacy/34-managing-utility-gravity.md`.
+- Canonical brief path created: `editor/chapter-briefs/CHAPTER-034-managing-utility-gravity.md`.
+- `CHAPTER-034` registered in `knowledge/index.yaml` as `draft`.
+- Primary concept result: absent; no `primary_concept` field was added.
+- Central illustrated concept: `SMELL-002` - Utility Gravity.
+- Central vocabulary term: `VOCAB-009` - Utility Gravity.
+- Selected concepts:
+  - `SMELL-002` - Utility Gravity.
+  - `VOCAB-009` - Utility Gravity.
+  - `LAW-001` - Every State Has One Owner.
+  - `LAW-002` - Every API Is a Promise.
+  - `LAW-004` - Simplicity Is a Feature.
+  - `LAW-005` - Evidence Before Confidence.
+  - `LAW-007` - Every Dependency Is a Decision.
+  - `VOCAB-001` - Change Radius.
+  - `METRIC-001` - Change Radius.
+  - `METRIC-002` - Bus Factor.
+  - `METRIC-003` - Discoverability.
+  - `ARTIFACT-001` - ADR.
+  - `ARTIFACT-002` - RFC.
+  - `ARTIFACT-003` - Decision Journal.
+  - `ARTIFACT-006` - Architecture Ledger.
+  - `RITUAL-001` - Architecture Review.
+  - `RITUAL-004` - Architecture Health Review.
+  - `SMELL-001` - Silent Coupling.
+  - `SMELL-004` - Hidden State.
+  - `SMELL-005` - Platform Leakage.
+  - `ANTIPATTERN-001` - God Module.
+  - `ANTIPATTERN-002` - HAL Everywhere.
+  - `ANTIPATTERN-003` - Global Configuration.
+  - `ANTIPATTERN-006` - Temporary Solution.
+  - `FAILURE-001` - Logger That Became a Platform.
+  - `FAILURE-004` - The Hero Engineer.
+  - `FAILURE-005` - The Release We Should Have Delayed.
+- Rejected or background concepts and reasons:
+  - `VOCAB-010` and `SMELL-003` - Boolean Explosion: Chapter 35 owns Boolean Explosion.
+  - `VOCAB-005` and `RITUAL-003` - Deletion Day: Chapter 36 owns deletion and removal rituals.
+  - `LAW-006` - Unused Flexibility Is Waste: nearby when unused utility hooks accumulate, but Chapter 36 owns deletion
+    and Chapter 37 owns trust-preserving refactoring.
+  - `SMELL-006` - Event Explosion: may appear in product systems but is not the center of Utility Gravity.
+  - `ARTIFACT-004` - Mistake Ledger: useful after incidents, but not central to the Chapter 34 teaching frame.
+  - `ARTIFACT-005` - Event Catalog: useful when utility gravity manifests through event semantics, but not generally
+    central.
+  - `ARTIFACT-007` - Weak Signal Register: Chapter 31 owns health review signal gathering; Chapter 34 focuses on
+    utility-boundary mapping.
+  - `METRIC-004` - API Stability: related to utility APIs, but Chapter 34 is about responsibility gravity and change
+    radius rather than API stability measurement.
+  - `METRIC-005` - Architecture Health: background through Architecture Health Review, but Chapter 31 owns the metric.
+  - `RITUAL-002` - Architecture Freeze: release and freeze governance belongs earlier Part IV and Part V material, not
+    this chapter.
+  - `RITUAL-005` - Architecture Court and `RITUAL-006` - RFC Friday: existing rituals, but not central to this chapter.
+- Exact relationship set:
+  - `CHAPTER-034 illustrates SMELL-002`
+  - `CHAPTER-034 references VOCAB-009`
+  - `CHAPTER-034 references LAW-001`
+  - `CHAPTER-034 references LAW-002`
+  - `CHAPTER-034 references LAW-004`
+  - `CHAPTER-034 references LAW-005`
+  - `CHAPTER-034 references LAW-007`
+  - `CHAPTER-034 references VOCAB-001`
+  - `CHAPTER-034 references METRIC-001`
+  - `CHAPTER-034 references METRIC-002`
+  - `CHAPTER-034 references METRIC-003`
+  - `CHAPTER-034 references ARTIFACT-001`
+  - `CHAPTER-034 references ARTIFACT-002`
+  - `CHAPTER-034 references ARTIFACT-003`
+  - `CHAPTER-034 references ARTIFACT-006`
+  - `CHAPTER-034 references RITUAL-001`
+  - `CHAPTER-034 references RITUAL-004`
+  - `CHAPTER-034 references SMELL-001`
+  - `CHAPTER-034 references SMELL-004`
+  - `CHAPTER-034 references SMELL-005`
+  - `CHAPTER-034 references ANTIPATTERN-001`
+  - `CHAPTER-034 references ANTIPATTERN-002`
+  - `CHAPTER-034 references ANTIPATTERN-003`
+  - `CHAPTER-034 references ANTIPATTERN-006`
+  - `CHAPTER-034 references FAILURE-001`
+  - `CHAPTER-034 references FAILURE-004`
+  - `CHAPTER-034 references FAILURE-005`
+- Later Part VI boundaries preserved: Chapter 35 owns Boolean Explosion, Chapter 36 owns Deleting Safely, and Chapter 37
+  owns Refactoring Without Losing Product Trust.
+- Earlier-parts boundaries preserved: Chapter 34 applies state ownership, API promises, dependency decisions,
+  simplicity, evidence, Change Radius, ADRs, RFCs, Architecture Review, and Architecture Health Review without
+  reteaching those chapters.
+- New PEAK concept result: no new PEAK law, maxim, artifact, ritual, metric, smell, anti-pattern, failure story,
+  vocabulary concept, ID, relationship verb, or primary-concept field was introduced.
+- Changed files:
+  - `editor/chapter-briefs/CHAPTER-034-managing-utility-gravity.md`
+  - `editor/EDITOR_LOG.md`
+  - `knowledge/index.yaml`
+- Final validation completed after this log entry:
+  - Direct Chapter 34 registration assertions: passed for expected changed files, absent Chapter 34 manuscript, absent
+    Chapter 35-37 manuscripts, `CHAPTER-034` registered exactly once as `draft`, no `primary_concept`, Chapters 1-33
+    canonical, exact relationship set, existing targets, valid verbs, no duplicates, no self-edge, Phase 187 uniqueness,
+    and no tracked site.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `vale --config .vale.ini editor/chapter-briefs/CHAPTER-034-managing-utility-gravity.md editor/EDITOR_LOG.md knowledge/index.yaml`:
+    passed.
+  - `git status --short`: passed before commit with only the expected three registration files changed.
+  - `git diff --name-status origin/main...HEAD`: passed after commit with exactly
+    `M editor/EDITOR_LOG.md`, `A editor/chapter-briefs/CHAPTER-034-managing-utility-gravity.md`, and
+    `M knowledge/index.yaml`.
+- Next lifecycle stage: Author Draft.
+- Do not create the Chapter 34 manuscript, perform review gates, create a pull request, or merge as part of this phase.
 
 ## Phase 176 Chapter 32 Author Draft
 
