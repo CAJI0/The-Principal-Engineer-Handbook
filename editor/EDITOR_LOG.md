@@ -7105,6 +7105,61 @@ Pull request readiness:
 - Do not perform Technical Review, Freeze Review, PR creation, or merge until this Canon Review commit is committed and
   pushed.
 
+## Phase 185 Chapter 33 Technical Review
+
+- Chapter: Finding Silent Coupling.
+- Stable ID: `CHAPTER-033`.
+- Branch: `chapter33`.
+- Stage: Technical Review.
+- Reviewed Canon Review commit: `48bbeec408b683afac2f39d0c3af2713e6e6ebc6`.
+- Required prior stage result: Canon Review commit was current local and remote branch tip before review.
+- Outcome: Approved.
+- Material corrections during Technical Review: none.
+- Manuscript changed during Technical Review: no.
+- Canonical brief changed during Technical Review: no.
+- `knowledge/index.yaml` changed during Technical Review: no.
+- Technical credibility result: passed. The chapter treats coupling as hidden shared behavior rather than only static
+  calls, imports, or service diagrams.
+- Embedded/product scope result: passed. Firmware, backend, service-tool, manufacturing, support, release validation,
+  staged upgrade, and field-recovery workflows are concrete and plausible.
+- Diagnostic and event result: passed. Diagnostic strings, state names, event order, named values, payload behavior,
+  retry windows, timing, and upgrade order are treated as possible accidental interfaces only when product behavior
+  depends on them.
+- Evidence result: passed. Tests, logs, support articles, release notes, backend mappings, tool repositories,
+  manufacturing scripts, Architecture Ledger entries, and senior memory are treated as bounded evidence sources, not as
+  complete truth.
+- Memory and Discoverability result: passed. Senior memory is useful evidence but remains insufficient because it
+  creates Bus Factor and Discoverability risk.
+- Active-coupling result: passed. The chapter distinguishes active coupling from folklore by requiring evidence before
+  acting.
+- Compatibility result: passed. The story preserves product compatibility before later deletion or refactoring
+  decisions, and does not imply every hidden dependency should be removed immediately.
+- Guardrail result: passed. The manuscript does not imply all coupling is bad, import graphs reveal the full dependency
+  graph, static analysis is sufficient, documentation alone fixes coupling, support or manufacturing are outside
+  architecture, surprising dependencies prove incompetence, or the right answer is an immediate broad refactor.
+- Standard manuscript architecture preserved: Opening Quote, Story, Discussion, Engineering Principle, Architecture
+  Exercise, Principal's Notebook, ADR, and Editor's Commentary.
+- Principal's Notebook result: exactly three short observations.
+- Relationship set changed during Technical Review: no.
+- New PEAK concept result: no new PEAK law, maxim, artifact, ritual, metric, smell, anti-pattern, failure story,
+  vocabulary concept, ID, relationship verb, or primary-concept field was introduced.
+- Changed files:
+  - `editor/EDITOR_LOG.md`
+- Final validation completed after this log entry:
+  - Direct Technical Review assertions: passed for expected log-only change, required technical markers, absence of
+    forbidden claims, exact H1/H2, exactly three Notebook observations, `CHAPTER-033` remaining draft, no
+    `primary_concept`, exact relationship set, no Freeze phase, and no tracked site.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini book/06-legacy/33-finding-silent-coupling.md editor/EDITOR_LOG.md`: passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed with no tracked files.
+- Next lifecycle stage: Freeze Review after this Technical Review commit is committed and pushed.
+- Do not perform Freeze Review, PR creation, or merge until this Technical Review commit is committed and pushed.
+
 ## Phase 176 Chapter 32 Author Draft
 
 - Chapter: Reading a Legacy System.
