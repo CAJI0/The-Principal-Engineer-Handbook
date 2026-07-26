@@ -7022,6 +7022,89 @@ Pull request readiness:
 - Do not perform Canon Review, Technical Review, Freeze Review, PR creation, or merge until this Editorial Review commit
   is committed and pushed.
 
+## Phase 184 Chapter 33 Canon Review
+
+- Chapter: Finding Silent Coupling.
+- Stable ID: `CHAPTER-033`.
+- Branch: `chapter33`.
+- Stage: Canon Review.
+- Reviewed Editorial Review commit: `09cad4dd87ae14446f25dbe02453c9ddd73270a7`.
+- Required prior stage result: Editorial Review commit was current local and remote branch tip before review.
+- Outcome: Approved.
+- Corrections made during Canon Review: none.
+- Manuscript changed during Canon Review: no.
+- Canonical brief changed during Canon Review: no.
+- `knowledge/index.yaml` changed during Canon Review: no.
+- `CHAPTER-033` registry state: remains `draft`, with no `primary_concept` field.
+- Central illustrated concept result: passed. The chapter continues to illustrate `SMELL-001` - Silent Coupling by
+  teaching how hidden behavioral dependencies make local changes unsafe.
+- Central vocabulary result: passed. The manuscript materially uses `VOCAB-008` - Silent Coupling as the name for shared
+  behavior that lacks an explicit contract.
+- Registered relationship coverage result: passed. Every registered target remains materially present:
+  - `LAW-002`, `LAW-007`, `LAW-001`, `LAW-003`, and `LAW-005` are applied as finding lenses.
+  - `VOCAB-001`, `METRIC-001`, `METRIC-002`, `METRIC-003`, and `METRIC-004` are used as Change Radius, Bus Factor,
+    Discoverability, and API Stability evidence lenses.
+  - `ARTIFACT-001`, `ARTIFACT-002`, `ARTIFACT-003`, `ARTIFACT-005`, and `ARTIFACT-006` appear as ADR, RFC, Decision
+    Journal, Event Catalog, and Architecture Ledger record paths.
+  - `RITUAL-001` and `RITUAL-004` appear as Architecture Review and Architecture Health Review paths.
+  - `SMELL-004`, `SMELL-005`, `ANTIPATTERN-003`, and `ANTIPATTERN-006` appear as sources or carriers of hidden
+    behavioral dependency.
+  - `FAILURE-002`, `FAILURE-004`, and `FAILURE-005` are materially represented through timing/protocol coupling,
+    single-expert memory, and release-validation surprise.
+- Exact relationship set preserved:
+  - `CHAPTER-033 illustrates SMELL-001`.
+  - `CHAPTER-033 references VOCAB-008`.
+  - `CHAPTER-033 references LAW-002`.
+  - `CHAPTER-033 references LAW-007`.
+  - `CHAPTER-033 references LAW-001`.
+  - `CHAPTER-033 references LAW-003`.
+  - `CHAPTER-033 references LAW-005`.
+  - `CHAPTER-033 references VOCAB-001`.
+  - `CHAPTER-033 references METRIC-001`.
+  - `CHAPTER-033 references METRIC-002`.
+  - `CHAPTER-033 references METRIC-003`.
+  - `CHAPTER-033 references METRIC-004`.
+  - `CHAPTER-033 references ARTIFACT-001`.
+  - `CHAPTER-033 references ARTIFACT-002`.
+  - `CHAPTER-033 references ARTIFACT-003`.
+  - `CHAPTER-033 references ARTIFACT-005`.
+  - `CHAPTER-033 references ARTIFACT-006`.
+  - `CHAPTER-033 references RITUAL-001`.
+  - `CHAPTER-033 references RITUAL-004`.
+  - `CHAPTER-033 references SMELL-004`.
+  - `CHAPTER-033 references SMELL-005`.
+  - `CHAPTER-033 references ANTIPATTERN-003`.
+  - `CHAPTER-033 references ANTIPATTERN-006`.
+  - `CHAPTER-033 references FAILURE-002`.
+  - `CHAPTER-033 references FAILURE-004`.
+  - `CHAPTER-033 references FAILURE-005`.
+- Chapter-local phrase result: passed. Coupling map, shared assumption, hidden contract, dependency trace, blast path,
+  contract probe, evidence trace, coupling ledger, and shared behavior map remain prose only and are not registered as
+  canon.
+- Boundary result: passed. Chapter 34 Utility Gravity, Chapter 35 Boolean Explosion, Chapter 36 Deleting Safely, and
+  Chapter 37 Refactoring Without Losing Product Trust remain future scope. Chapter 31 Architecture Health and Chapter
+  32 legacy-reading boundaries remain intact.
+- `METRIC-002` result: passed. The manuscript treats `METRIC-002` only as Bus Factor, not Decision Quality.
+- New PEAK concept result: no new PEAK law, maxim, artifact, ritual, metric, smell, anti-pattern, failure story,
+  vocabulary concept, ID, relationship verb, or primary-concept field was introduced.
+- Changed files:
+  - `editor/EDITOR_LOG.md`
+- Final validation completed after this log entry:
+  - Direct Canon Review assertions: passed for expected log-only change, exact H1/H2 structure, exactly three
+    Principal's Notebook observations, `CHAPTER-033` remaining `draft`, no `primary_concept`, exact relationship set,
+    `METRIC-002` as Bus Factor only, no later Chapter 33 gate entry, and no tracked `site` output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini book/06-legacy/33-finding-silent-coupling.md editor/EDITOR_LOG.md`: passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed with no tracked `site/` output.
+- Next lifecycle stage: Technical Review after this Canon Review commit is committed and pushed.
+- Do not perform Technical Review, Freeze Review, PR creation, or merge until this Canon Review commit is committed and
+  pushed.
+
 ## Phase 176 Chapter 32 Author Draft
 
 - Chapter: Reading a Legacy System.
