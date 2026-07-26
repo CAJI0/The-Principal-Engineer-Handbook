@@ -7,7 +7,7 @@
 
 ## Story
 
-The Change That Broke Nothing Locally began with a review nobody expected to be interesting.
+The Change That Broke Nothing Locally began with a review nobody expected to slow the release.
 
 A firmware team needed to adjust device registration for a legacy controller. A new peripheral module sometimes took a
 little longer to report readiness after cold startup. The firmware change was small: accept one transitional readiness
@@ -56,7 +56,7 @@ looked for the previous state ordering: module detected, waiting, ready, registe
 between waiting and ready. The hardware still passed its electrical tests. The script marked the unit as inconclusive.
 The line lead did not know whether to rerun, quarantine, or override the result.
 
-The firmware team was surprised in a precise way.
+The firmware team was surprised in a precise, uncomfortable way.
 
 They had not broken an interface they knew about. They had broken a relationship nobody had named as an interface.
 
@@ -74,8 +74,8 @@ Each question was fair. None of them made the release safer by itself.
 
 Mara, the Principal Engineer, stopped the discussion before it became a search for the first team to blame.
 
-"The problem is not that one team did something strange," she said. "The problem is that the behavior has dependents we
-did not know to review."
+"The problem is not that one team made a bad choice," she said. "The problem is that the behavior has dependents we did
+not know to review."
 
 She asked the team to stop tracing files and start tracing behavior.
 
@@ -292,7 +292,7 @@ Architecture Health Review (`RITUAL-004`) can also surface silent coupling. If h
 that require unexpected reviewers, repeated release surprises, stale records, or dependence on one expert, the team may
 not have a delivery problem first. It may have hidden relationships that need to be named.
 
-The response is not always removal.
+The responsible response is not always removal.
 
 A discovered coupling may be intentional and valuable. A product may need stable diagnostics for service recovery. A
 manufacturing script may need a reliable event sequence. A backend may need to tolerate old firmware during staged
@@ -304,7 +304,7 @@ relationship and deciding the next responsible action.
 
 Name it. Prove it. Make it owned. Decide what happens next.
 
-That is enough work for one chapter and often enough to save one release.
+That is enough work for one chapter. It is also enough to save some releases.
 
 ## Engineering Principle
 
@@ -313,7 +313,7 @@ Treat silent coupling as hidden shared behavior.
 Find it by tracing what must change together across code, data, time, tools, tests, releases, and people. Then make the
 relationship explicit enough to own, test, review, stabilize, or retire.
 
-The practical move is to shift from structure-first questions to behavior-first questions.
+The practical move is to replace structure-first questions with behavior-first questions.
 
 Do not begin with:
 

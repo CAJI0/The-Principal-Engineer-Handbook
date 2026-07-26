@@ -6969,6 +6969,59 @@ Pull request readiness:
 - Do not perform Editorial Review, Canon Review, Technical Review, Freeze Review, PR creation, or merge as part of this
   phase.
 
+## Phase 183 Chapter 33 Editorial Review
+
+- Chapter: Finding Silent Coupling.
+- Stable ID: `CHAPTER-033`.
+- Branch: `chapter33`.
+- Stage: Editorial Review.
+- Reviewed Author Draft commit: `91425be1515f8d4b4f58a6fa3c62a22b271cc617`.
+- Required prior stage result: Author Draft commit was current local and remote branch tip before review.
+- Outcome: Approved with minor manuscript edits.
+- Manuscript path reviewed and updated:
+  `book/06-legacy/33-finding-silent-coupling.md`.
+- Canonical brief path preserved unchanged:
+  `editor/chapter-briefs/CHAPTER-033-finding-silent-coupling.md`.
+- Index registration preserved unchanged: `CHAPTER-033` remains `draft`, with no `primary_concept` field.
+- Editorial changes:
+  - tightened the opening story sentence so the review connects more directly to release pressure;
+  - clarified the firmware team's surprise without making the story blameful;
+  - replaced a blame-adjacent line with a cleaner Principal Engineer frame;
+  - sharpened the removal boundary and the structure-versus-behavior transition.
+- Central thesis preserved: silent coupling is found by tracing behavior that changes together even when contracts,
+  ownership, records, tests, and review paths do not name the relationship.
+- Story shape preserved: a local device-registration change breaks nothing locally but exposes hidden dependents in the
+  service tool, backend mapper, manufacturing script, support procedure, upgrade path, and release validation.
+- Embedded/product credibility preserved: firmware, backend, service-tool, manufacturing, support, release, and field
+  workflows remain concrete.
+- Standard manuscript architecture preserved: Opening Quote, Story, Discussion, Engineering Principle, Architecture
+  Exercise, Principal's Notebook, ADR, and Editor's Commentary.
+- Principal's Notebook result: exactly three short observations.
+- Relationship set changed during Editorial Review: no.
+- New PEAK concept result: no new PEAK law, maxim, artifact, ritual, metric, smell, anti-pattern, failure story,
+  vocabulary concept, ID, relationship verb, or primary-concept field was introduced.
+- Later Part VI boundaries preserved: Chapter 34 Utility Gravity, Chapter 35 Boolean Explosion, Chapter 36 Deleting
+  Safely, and Chapter 37 Refactoring Without Losing Product Trust remain future scope.
+- Changed files:
+  - `book/06-legacy/33-finding-silent-coupling.md`
+  - `editor/EDITOR_LOG.md`
+- Final validation completed after this log entry:
+  - Direct Editorial Review assertions: passed for expected changed files, exact H1/H2 structure, exactly three
+    Principal's Notebook observations, unresolved marker absence, `CHAPTER-033` remaining `draft`, no
+    `primary_concept`, exact relationship set, unchanged `knowledge/index.yaml`, unchanged canonical brief, no later
+    Chapter 33 gate entry, and no tracked `site` output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `vale --config .vale.ini book/06-legacy/33-finding-silent-coupling.md editor/EDITOR_LOG.md`: passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `git ls-files site`: passed with no tracked `site/` output.
+- Next lifecycle stage: Canon Review after this Editorial Review commit is committed and pushed.
+- Do not perform Canon Review, Technical Review, Freeze Review, PR creation, or merge until this Editorial Review commit
+  is committed and pushed.
+
 ## Phase 176 Chapter 32 Author Draft
 
 - Chapter: Reading a Legacy System.
