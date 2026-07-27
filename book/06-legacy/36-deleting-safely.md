@@ -150,10 +150,10 @@ dependence, support procedure use, backend classification mismatch, or a custome
 
 The second deletion attempt was quieter.
 
-The release emitted warnings before removal. The service tool showed a clear message for old hardware. The backend
-accepted the new explicit event and tracked the old diagnostic during the window. Manufacturing updated the station
-script. Support replaced the PDF. The dashboard stopped implying support for the old recoverable code and started
-showing the compatibility window by customer.
+The release emitted warning events before removal. The service tool showed a clear message for old hardware. The
+backend accepted the new explicit compatibility event and tracked the old diagnostic during the window. Manufacturing
+updated the station script. Support replaced the PDF. The dashboard stopped implying support for the old recoverable
+code and started showing the compatibility window by customer.
 
 Two releases later, the branch was removed.
 
@@ -288,9 +288,10 @@ blockers are health signals. They tell the organization where the system is expe
 Guardrails are not apologies for deletion.
 
 They are how deletion reaches the product without surprise. A warning period can reveal consumers who were invisible to
-source search. Shadow detection can count behavior before it is removed. A feature gate can stage exposure. A canary
-release can limit blast radius. A compatibility window can give customers and tools time to move. A rollback path can
-restore behavior quickly. A recovery plan can help support and operations handle the unexpected without improvising.
+source search. Shadow detection can count behavior before it is removed. A feature gate can limit exposure while
+evidence arrives. A canary release can limit blast radius. A compatibility window can give customers and tools time to
+move. A rollback path can restore behavior quickly. A recovery plan can help support and operations handle the
+unexpected without improvising.
 
 Rollback is not enough by itself.
 
@@ -482,8 +483,8 @@ removal before the final branch deletion. Architecture Health Review will track 
 stale support records, manufacturing script dependence, and unclear ownership.
 
 The final deletion may proceed only when the evidence shows no active customers inside the window, manufacturing no
-longer depends on the diagnostic, service-tool and backend contracts have moved, support procedures are updated, and
-the rollback or recovery plan is ready.
+longer depends on the diagnostic, service-tool and backend contracts have moved, affected release versions can be
+identified, support procedures are updated, and the rollback or recovery plan is ready.
 
 #### Alternatives Considered
 

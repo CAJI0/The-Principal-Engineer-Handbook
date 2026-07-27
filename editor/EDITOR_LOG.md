@@ -8395,6 +8395,46 @@ Pull request readiness:
 - Commit subject: `docs(chapter-36): complete canon review`.
 - Next expected phase: Technical Review.
 
+## Phase 203 Chapter 36 Technical Review
+
+- Chapter: Deleting Safely.
+- Stable ID: `CHAPTER-036`.
+- Branch: `chapter36`.
+- Stage: Technical Review.
+- Reviewed baseline commit: `0b69135dfc82a7b4f5bae6d0cd5147cd1c3a80c8`.
+- Sync status before review: local `HEAD` matched `origin/chapter36` at
+  `0b69135dfc82a7b4f5bae6d0cd5147cd1c3a80c8`.
+- Outcome: approved with minor technical precision changes.
+- Technical changes:
+  - Clarified that the staged release emits warning events before removal.
+  - Named the replacement signal as an explicit compatibility event.
+  - Tightened feature-gate language around limiting exposure while evidence arrives.
+  - Added affected-release-version traceability to the final deletion criteria.
+- Canon and PEAK status: unchanged. `CHAPTER-036` remains `draft`; no `primary_concept` field was added; the exact
+  relationship set was preserved.
+- Chapter 37 status: not started.
+- Changed files:
+  - `book/06-legacy/36-deleting-safely.md`
+  - `editor/EDITOR_LOG.md`
+- Final validation completed after this log entry:
+  - Direct Chapter 36 Technical assertions: passed for branch sync, `CHAPTER-036` uniqueness, `draft` status,
+    absence of `primary_concept`, exact H1/H2 structure, exactly three Principal's Notebook observations, exact
+    outgoing relationship set, supported verbs, existing targets, no duplicate edges, Chapter 1 through Chapter 35
+    canonical status, Chapter 37 manuscript absence, and no tracked site.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed with a conservative `linkinator` rerun using `--concurrency 1`,
+    `--retry-errors`, and `--retry-errors-count 2`, scanning 190 links successfully after default-concurrency runs
+    reported transient `[0]` statuses for existing local markdown files.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `vale --config .vale.ini book/06-legacy/36-deleting-safely.md editor/EDITOR_LOG.md knowledge/index.yaml editor/chapter-briefs/CHAPTER-036-deleting-safely.md`:
+    passed with 0 errors, 0 warnings, and 0 suggestions.
+  - `git ls-files site`: passed with no tracked files.
+- Commit subject: `docs(chapter-36): complete technical review`.
+- Next expected phase: Freeze Review.
+
 ## Phase 176 Chapter 32 Author Draft
 
 - Chapter: Reading a Legacy System.
