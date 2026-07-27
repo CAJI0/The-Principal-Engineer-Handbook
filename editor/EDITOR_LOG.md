@@ -8473,6 +8473,60 @@ Pull request readiness:
 - Commit subject: `docs(chapter-36): freeze chapter`.
 - Pull request readiness: Chapter 36 is ready for PR from `chapter36` to `main` after this commit is pushed.
 
+## Phase 206 Chapter 37 Author Draft
+
+- Chapter: Refactoring Without Losing Product Trust.
+- Stable ID: `CHAPTER-037`.
+- Branch: `chapter37`.
+- Lifecycle stage: Author Draft.
+- Verified starting branch state:
+  - `git fetch --all --prune`: passed.
+  - `git switch chapter37`: passed; branch was already checked out and up to date with `origin/chapter37`.
+  - `git pull --ff-only`: passed; branch was already up to date.
+  - `git status --short --branch`: clean on `chapter37...origin/chapter37`.
+  - `git rev-parse HEAD`: `59f5ebcfb8cd121e93cad59a5f43e1c6a46c68cd`.
+  - `git rev-parse origin/chapter37`: `59f5ebcfb8cd121e93cad59a5f43e1c6a46c68cd`.
+  - `git log` with one-line decorated output for the latest eight commits: confirmed the branch tip was the Chapter 37
+    canonical brief registration commit,
+    followed by `f0c14c968e85ad777f5991425e641c9ce02163fa` for Chapter 36.
+- Canonical brief registration commit SHA: `59f5ebcfb8cd121e93cad59a5f43e1c6a46c68cd`.
+- Baseline recorded in the canonical brief: `f0c14c968e85ad777f5991425e641c9ce02163fa`.
+- Manuscript path created:
+  `book/06-legacy/37-refactoring-without-losing-product-trust.md`.
+- Lifecycle status confirmation: `CHAPTER-037` remains `draft` in `knowledge/index.yaml`.
+- Primary concept confirmation: no `primary_concept` field was added.
+- PEAK graph confirmation: no new PEAK concept, ID, relationship verb, artifact, ritual, metric, smell, anti-pattern,
+  law, vocabulary term, failure story, or appendix artifact was created.
+- Canonical brief preservation: `editor/chapter-briefs/CHAPTER-037-refactoring-without-losing-product-trust.md`
+  preserved unchanged.
+- Chapters 1-36 preservation: no Chapter 1-36 manuscripts were modified.
+- Appendix preservation: no appendix content, appendix roadmap, appendix template, glossary material, or final-book
+  metadata was created.
+- Story used: `The Refactor That Was Technically Right and Operationally Wrong`.
+- Principle used: `Refactor from the product promise inward.`
+- Architecture exercise used: `Plan a Trust-Preserving Refactor`.
+- Chapter-local ADR/record used: `Refactor the Legacy Startup Path Behind a Compatibility Boundary`.
+- Principal's Notebook observations: exactly three.
+  - `A cleaner structure is not done until the product still trusts it.`
+  - `Refactor from the promise inward.`
+  - `The best legacy refactor lowers future change cost without spending current trust.`
+- Validation completed after this log entry:
+  - Direct Chapter 37 Author Draft assertions: passed for allowed changed files, manuscript existence, canonical brief
+    preservation, unchanged `knowledge/index.yaml`, `CHAPTER-037` draft status, no `primary_concept`, Chapters 1-36
+    canonical status, required story, principle, exercise, chapter-local ADR, closing line, exactly three Notebook
+    observations, Author Draft log entry, and no tracked `site` files.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed; 192 links scanned successfully.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `vale --config .vale.ini book/06-legacy/37-refactoring-without-losing-product-trust.md editor/EDITOR_LOG.md`:
+    passed with 0 errors, 0 warnings, and 0 suggestions.
+  - `git ls-files site`: passed with no tracked files.
+- Commit subject: `docs(chapter-37): add author draft`.
+- Next lifecycle stage: Editorial Review.
+
 ## Phase 205 Chapter 37 Canonical Brief Registration
 
 - Chapter: Refactoring Without Losing Product Trust.
