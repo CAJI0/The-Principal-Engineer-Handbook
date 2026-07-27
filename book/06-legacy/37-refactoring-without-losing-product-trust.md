@@ -355,8 +355,8 @@ Then produce nine outputs:
    what it cannot see.
 5. The tests, telemetry, logs, service-tool checks, manufacturing checks, release checks, and support checks that prove
    behavior still holds.
-6. The staged movement plan, including compatibility boundary, migration slice, observable signal, rollback path, and
-   recovery path.
+6. The staged movement plan, including compatibility boundary, migration slice, stage owner, observable signal,
+   rollback path, and recovery path.
 7. The records and dashboards to update: ADR, RFC, Decision Journal, Mistake Ledger, Event Catalog, Architecture Ledger,
    release notes, support procedures, alerts, or operational dashboards.
 8. The review checkpoint and freeze point. Name who must review before the movement hardens and what becomes stable for
@@ -420,8 +420,9 @@ Firmware will add characterization tests for current startup recovery behavior b
 contract tests for old and new startup reports. Service tools will add integration checks for technician recovery.
 Manufacturing will run station checks against refurbished units and mixed hardware. Support will validate procedures
 against the old diagnostic phrase and the new product-state wording. Release will validate mixed-version sequencing,
-rollback, and recovery. Observability will include raw device status, backend classification, service-tool action,
-manufacturing result, support-case tag, and compatibility-window dashboard views.
+rollback, and recovery. Each stage will name one owner who can decide whether to continue, pause, or reverse the
+movement. Observability will include raw device status, backend classification, service-tool action, manufacturing
+result, support-case tag, and compatibility-window dashboard views.
 
 The compatibility boundary will have a retirement trigger. It can be removed only after shadow observations show no
 active use outside the approved window, service tools and backend mapping consume the new structured signal, support
@@ -434,8 +435,8 @@ customers inside the compatibility window lose upgrade confidence, or logs canno
 startup.
 
 Recovery criteria are also product-facing. The team must be able to restore the old trusted behavior or guide affected
-surfaces to a known safe state, update records, communicate with support and release, and preserve evidence for the
-next decision.
+surfaces to a known safe state, reconcile any old/new report divergence, update records, communicate with support and
+release, and preserve evidence for the next decision.
 
 Update the ADR, Decision Journal, Event Catalog, Architecture Ledger, dashboards, alerts, release notes, support
 procedures, manufacturing checks, and service-tool guidance as part of the refactor. Route the movement through

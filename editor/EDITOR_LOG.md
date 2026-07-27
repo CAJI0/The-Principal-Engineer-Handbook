@@ -8473,6 +8473,46 @@ Pull request readiness:
 - Commit subject: `docs(chapter-36): freeze chapter`.
 - Pull request readiness: Chapter 36 is ready for PR from `chapter36` to `main` after this commit is pushed.
 
+## Phase 209 Chapter 37 Technical Review
+
+- Chapter: Refactoring Without Losing Product Trust.
+- Stable ID: `CHAPTER-037`.
+- Branch: `chapter37`.
+- Lifecycle stage: Technical Review.
+- Reviewed baseline commit: `7aeea865442fc9710936d205f98e9272d9ecf2c2`.
+- Outcome: approved with minor technical tightening.
+- Technical areas reviewed:
+  - Embedded/product-system plausibility of the legacy startup and recovery scenario.
+  - Refactoring as structural improvement with product-facing trust risk.
+  - Trust surfaces across firmware, service tools, backend classification, manufacturing scripts, support procedures,
+    release sequencing, dashboards, logs, and customer workflows.
+  - Evidence realism across characterization tests, contract tests, integration checks, telemetry, service-tool checks,
+    manufacturing checks, support checks, release checks, rollback, and recovery.
+  - Distinction between rollback of firmware behavior and recovery of product operations and support confidence.
+  - Compatibility boundary retirement trigger and avoidance of permanent hidden debt.
+  - Use of Chapters 32-36 as inputs without reteaching them.
+- Technical changes:
+  - Added a stage-owner expectation to the Architecture Exercise's staged movement output.
+  - Added stage ownership to the chapter-local ADR decision so each step can continue, pause, or reverse responsibly.
+  - Added old/new report divergence reconciliation to recovery criteria.
+- Unresolved issues: none.
+- Canon and PEAK status: unchanged. `CHAPTER-037` remains `draft`; no `primary_concept`, new PEAK concept,
+  relationship change, or `illustrates` relationship was added.
+- Appendix status: no appendix files, templates, glossary material, or appendix prose created.
+- Validation completed after this log entry:
+  - Direct Technical Review assertions: passed.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed; 192 links checked.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `vale --config .vale.ini book/06-legacy/37-refactoring-without-losing-product-trust.md editor/EDITOR_LOG.md knowledge/index.yaml`:
+    passed with 0 errors, 0 warnings, and 0 suggestions.
+  - `git ls-files site`: passed; no tracked site files.
+- Commit subject: `docs(chapter-37): complete technical review`.
+- Next lifecycle stage: Freeze Review.
+
 ## Phase 208 Chapter 37 Canon Review
 
 - Chapter: Refactoring Without Losing Product Trust.
