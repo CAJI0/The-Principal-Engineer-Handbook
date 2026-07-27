@@ -33,7 +33,7 @@ validation added two cases: old sensor with compatibility mode, and customer rec
 
 The release shipped.
 
-Then the flags started to attract friends.
+Then the flags started to combine with the rest of the product.
 
 The next release added a compile-time option for a cost-reduced controller board. That board had a slower startup path
 and reused part of the old sensor timing. The firmware team did not want to expose another product mode to the backend,
@@ -64,7 +64,7 @@ Firmware had a few flags and build options. The backend had a mapper. The servic
 Manufacturing had a provisioning script. Support had procedures. Release validation had a matrix that still fit on one
 page if you used small type and did not ask too many questions.
 
-The combination space was larger than the page.
+The visible matrix was smaller than the state space.
 
 Mara, the Principal Engineer, noticed it during review for a change that seemed unrelated. A new controller variant
 needed to stop sending the old diagnostic phrase. The phrase confused a support workflow for new customers. The author
@@ -90,7 +90,7 @@ She wrote the known switches on the whiteboard:
 "That is sixteen combinations before we talk about firmware version, backend mapper version, service-tool version, or
 field upgrade order."
 
-The room went quiet in the way rooms go quiet when arithmetic becomes architecture.
+The arithmetic changed the review.
 
 Nobody believed all sixteen combinations were supported. Nobody could say which ones were invalid. Nobody knew whether
 manufacturing ever shipped a device with provisioning mode still present on the cost-reduced board. Nobody knew whether
@@ -212,7 +212,7 @@ deployed devices move through versions. A customer exception may honor a real co
 switches exist. The problem is when their combinations become product behavior without names, owners, tests, records,
 or review triggers.
 
-This is where Boolean Explosion becomes architecture.
+This is where the smell becomes architecture.
 
 A compatibility flag can become an API promise. It may not be public. It may not appear in generated documentation. But
 if customers, tools, release procedures, support workflows, manufacturing scripts, or field upgrades depend on the
@@ -386,7 +386,7 @@ Choose one legacy area with several flags or modes. Prefer an area where firmwar
 service tools, manufacturing scripts, support procedures, release validation, or field upgrades interact. Do not choose
 an area only because the code looks messy. Choose an area where a small switch change could alter product behavior.
 
-Spend the first pass reading, not changing.
+Use the first pass for reading, not changing.
 
 Find the switches. Include runtime flags, mode bits, configuration switches, compile-time options, compatibility
 toggles, temporary paths, product variants, and customer exceptions. For each switch, write where it is set, where it is
@@ -525,6 +525,6 @@ states, promises, owners, constraints, evidence, and review paths the flag creat
 flag is legitimate. Sometimes the answer is that the combination is invalid. Sometimes the answer is that the team does
 not know enough yet.
 
-That last answer is not failure.
+That last answer is useful.
 
 In a legacy system, knowing where the unknown combinations are is often the first honest architecture improvement.

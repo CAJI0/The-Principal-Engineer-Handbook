@@ -7911,6 +7911,49 @@ Pull request readiness:
 - Do not create a pull request, merge, start review, change `CHAPTER-035` status, or create Chapter 36/37 as part of
   this phase.
 
+## Phase 195 Chapter 35 Editorial Review
+
+- Chapter: Reducing Boolean Explosion.
+- Stable ID: `CHAPTER-035`.
+- Branch: `chapter35`.
+- Stage: Editorial Review.
+- Reviewed baseline commit: `b078d1f567e2ddaec095f5188265dc998d099408`.
+- Outcome: Approved with minor changes.
+- Review scope: clarity, rhythm, chapter focus, opening quote quality, story pacing and causality, repetition, concrete
+  examples, house style, transition from Chapter 34, and handoff toward Chapter 36 without starting deletion work.
+- Editorial changes made: tightened the story transition from two flags to broader product combination behavior,
+  clarified the difference between the visible release matrix and the real state space, made the arithmetic-review
+  turning point less ornamental, replaced one repeated concept phrase with lighter wording, tightened the exercise
+  instruction, and strengthened the closing commentary.
+- Material intentionally preserved: opening quote, story title, embedded/product-system setting, firmware/backend/service
+  tool/manufacturing/support/release/field-upgrade crossings, central Boolean Explosion framing, mechanism-versus-policy
+  distinction, classification categories, evidence strategy, chapter-local ADR, exercise outputs, and exactly three
+  Principal's Notebook observations.
+- Canon and PEAK status: unchanged. `CHAPTER-035` remains `draft`; no `primary_concept` field, PEAK concept, ID,
+  relationship, relationship verb, or registry entry was introduced.
+- Canonical brief preserved unchanged:
+  `editor/chapter-briefs/CHAPTER-035-reducing-boolean-explosion.md`.
+- `knowledge/index.yaml` preserved unchanged during Editorial Review.
+- Chapter 36 and Chapter 37 status: not started.
+- Changed files:
+  - `book/06-legacy/35-reducing-boolean-explosion.md`
+  - `editor/EDITOR_LOG.md`
+- Final validation completed after this log entry:
+  - Direct Editorial Review assertions: passed for exact H1 and H2 order, exactly three Principal's Notebook bullets,
+    unresolved marker absence, `CHAPTER-035` remaining `draft`, unchanged `knowledge/index.yaml`, unchanged canonical
+    brief, Chapter 36/37 manuscript absence, and no tracked site.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed; scanned 188 links successfully.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `vale --config .vale.ini book/06-legacy/35-reducing-boolean-explosion.md editor/EDITOR_LOG.md`: passed.
+  - `git ls-files site`: passed with no tracked files.
+- Commit subject: `docs(chapter-35): complete editorial review`.
+- Next lifecycle stage: Canon Review.
+- Do not create a pull request, merge, start Chapter 36, or mark Chapter 35 canonical as part of this phase.
+
 ## Phase 176 Chapter 32 Author Draft
 
 - Chapter: Reading a Legacy System.
