@@ -7816,6 +7816,101 @@ Pull request readiness:
 - Next expected phase: Author Draft.
 - Do not create the Chapter 35 manuscript, create Chapter 36/37 files, or change Chapters 1-34 as part of this phase.
 
+## Phase 194 Chapter 35 Author Draft
+
+- Chapter: Reducing Boolean Explosion.
+- Stable ID: `CHAPTER-035`.
+- Branch: `chapter35`.
+- Stage: Author Draft.
+- Verified baseline branch and commit: `origin/chapter35` at
+  `861fbfb94584486ccedfba34d6f8e460aeeaabb2`.
+- Canonical brief registration commit SHA resolved during preflight:
+  `861fbfb94584486ccedfba34d6f8e460aeeaabb2`.
+- Required repository synchronization and verification:
+  - `git fetch --all --prune`: passed.
+  - `git switch chapter35`: passed; branch was already `chapter35`.
+  - `git pull --ff-only`: passed; already up to date.
+  - `git status --short --branch`: `## chapter35...origin/chapter35`.
+  - `git rev-parse HEAD`: `861fbfb94584486ccedfba34d6f8e460aeeaabb2`.
+  - `git rev-parse origin/chapter35`: `861fbfb94584486ccedfba34d6f8e460aeeaabb2`.
+  - eight-commit log check: passed; branch tip was the Chapter 35 canonical brief registration commit.
+- Preflight result: passed. Local `HEAD` equaled `origin/chapter35`, the canonical brief existed, `CHAPTER-035`
+  remained `draft` with no `primary_concept`, the Chapter 35 manuscript was absent, Chapters 1-34 remained canonical,
+  Chapter 36/37 manuscripts were absent, no prior Chapter 35 Author Draft phase existed, and the working tree was clean
+  before edits.
+- Manuscript path created: `book/06-legacy/35-reducing-boolean-explosion.md`.
+- Canonical brief path preserved unchanged:
+  `editor/chapter-briefs/CHAPTER-035-reducing-boolean-explosion.md`.
+- Registry status preserved unchanged: `CHAPTER-035` remains `draft` in `knowledge/index.yaml`.
+- Primary concept result: remains absent; no `primary_concept` field was added.
+- Central illustrated concept: `SMELL-003` - Boolean Explosion.
+- Central vocabulary term: `VOCAB-010` - Boolean Explosion.
+- Story drafted: `The Two Flags That Became Sixteen Products`.
+- Core practice drafted: mapping product states, valid combinations, owners, evidence, and review triggers before adding,
+  removing, or refactoring flags and modes.
+- Exercise drafted: `Map the Boolean State Space`.
+- ADR drafted: `Name the Product Modes Before Adding Another Compatibility Flag`.
+- Principal's Notebook observations drafted:
+  - `A Boolean is cheap to add but expensive to combine.`
+  - `Flags become product states when customers depend on them.`
+  - `Reduce the state space before changing behavior.`
+- Exact relationship set preserved materially:
+  - `CHAPTER-035 illustrates SMELL-003`
+  - `CHAPTER-035 references VOCAB-010`
+  - `CHAPTER-035 references LAW-001`
+  - `CHAPTER-035 references LAW-002`
+  - `CHAPTER-035 references LAW-004`
+  - `CHAPTER-035 references LAW-005`
+  - `CHAPTER-035 references LAW-006`
+  - `CHAPTER-035 references LAW-007`
+  - `CHAPTER-035 references VOCAB-001`
+  - `CHAPTER-035 references METRIC-001`
+  - `CHAPTER-035 references METRIC-002`
+  - `CHAPTER-035 references METRIC-003`
+  - `CHAPTER-035 references METRIC-004`
+  - `CHAPTER-035 references ARTIFACT-001`
+  - `CHAPTER-035 references ARTIFACT-002`
+  - `CHAPTER-035 references ARTIFACT-003`
+  - `CHAPTER-035 references ARTIFACT-006`
+  - `CHAPTER-035 references RITUAL-001`
+  - `CHAPTER-035 references RITUAL-004`
+  - `CHAPTER-035 references SMELL-001`
+  - `CHAPTER-035 references SMELL-004`
+  - `CHAPTER-035 references SMELL-005`
+  - `CHAPTER-035 references SMELL-006`
+  - `CHAPTER-035 references ANTIPATTERN-003`
+  - `CHAPTER-035 references ANTIPATTERN-006`
+  - `CHAPTER-035 references FAILURE-004`
+  - `CHAPTER-035 references FAILURE-005`
+- Neighboring chapter boundaries preserved: Chapter 32 reading, Chapter 33 Silent Coupling, Chapter 34 Utility Gravity,
+  Chapter 36 deletion safety, and Chapter 37 trust-preserving refactoring.
+- New PEAK concept result: none. No new PEAK concepts, IDs, relationship verbs, or `primary_concept` field were
+  introduced.
+- Changed files:
+  - `book/06-legacy/35-reducing-boolean-explosion.md`
+  - `editor/EDITOR_LOG.md`
+- Final validation completed after this log entry:
+  - Direct Chapter 35 Author Draft assertions: passed for manuscript existence, exact H1, exact H2 order, story
+    subsection, exactly three Principal's Notebook bullets, unresolved marker absence, expected changed files only,
+    `knowledge/index.yaml` unchanged, canonical brief unchanged, `CHAPTER-035` still `draft`, no `primary_concept`,
+    exact relationship set unchanged, Chapter 36/37 manuscripts absent, and no tracked site.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed; scanned 188 links successfully.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `vale --config .vale.ini book/06-legacy/35-reducing-boolean-explosion.md editor/EDITOR_LOG.md`: passed after one
+    evidence-first wording cleanup in the manuscript.
+  - `git ls-files site`: passed with no tracked files.
+- Commit subject: `docs(chapter-35): add author draft`.
+- Pull request readiness: not requested in this phase.
+- Branch merged: no.
+- Review gate started: no.
+- Next lifecycle stage: Editorial Review.
+- Do not create a pull request, merge, start review, change `CHAPTER-035` status, or create Chapter 36/37 as part of
+  this phase.
+
 ## Phase 176 Chapter 32 Author Draft
 
 - Chapter: Reading a Legacy System.
