@@ -8473,6 +8473,100 @@ Pull request readiness:
 - Commit subject: `docs(chapter-36): freeze chapter`.
 - Pull request readiness: Chapter 36 is ready for PR from `chapter36` to `main` after this commit is pushed.
 
+## Phase 205 Chapter 37 Canonical Brief Registration
+
+- Chapter: Refactoring Without Losing Product Trust.
+- Stable ID: `CHAPTER-037`.
+- Branch: `chapter37`.
+- Stage: Canonical Brief Registration.
+- Verified `origin/main` baseline SHA: `f0c14c968e85ad777f5991425e641c9ce02163fa`.
+- Baseline evidence: PR #38 Chapter 36 squash merge commit, `Chapter 36: Deleting Safely`.
+- Required repository synchronization and verification:
+  - `git fetch origin`: passed; `origin/main` advanced to
+    `f0c14c968e85ad777f5991425e641c9ce02163fa`.
+  - `git checkout main`: passed via branch switch to `main`.
+  - `git pull --ff-only origin main`: passed; local `main` fast-forwarded to `origin/main`.
+  - `git rev-parse origin/main`: `f0c14c968e85ad777f5991425e641c9ce02163fa`.
+  - `git status --short`: clean.
+- Preflight result: passed. `origin/main` was reachable and up to date locally, contained Chapter 36 canonical state and
+  `book/06-legacy/36-deleting-safely.md`, local `knowledge/index.yaml` contained `CHAPTER-036` as canonical, the Part
+  VI table of contents order was correct, `CHAPTER-037` was absent, the Chapter 37 canonical brief and manuscript were
+  absent, no previous Chapter 37 Canonical Brief Registration log entry existed, and the working tree was clean before
+  edits.
+- Branch setup: `git checkout -B chapter37 origin/main` passed; branch `chapter37` created from baseline
+  `f0c14c968e85ad777f5991425e641c9ce02163fa`.
+- Outcome: Chapter 37 canonical brief registered.
+- Lifecycle registration: `CHAPTER-037` added as `draft` in `knowledge/index.yaml`.
+- Manuscript path expected but not created:
+  `book/06-legacy/37-refactoring-without-losing-product-trust.md`.
+- Canonical brief path created:
+  `editor/chapter-briefs/CHAPTER-037-refactoring-without-losing-product-trust.md`.
+- Primary concept result: none; no `primary_concept` field was added.
+- New PEAK concept result: none; Chapter 37 references existing PEAK concepts only.
+- Relationship stance: all registered Chapter 37 outgoing relationships use `references`; no `illustrates`
+  relationship was added because Chapter 37 is a capstone practice chapter without one central PEAK concept.
+- Exact relationship set registered:
+  - `CHAPTER-037 references LAW-001`
+  - `CHAPTER-037 references LAW-002`
+  - `CHAPTER-037 references LAW-003`
+  - `CHAPTER-037 references LAW-004`
+  - `CHAPTER-037 references LAW-005`
+  - `CHAPTER-037 references LAW-006`
+  - `CHAPTER-037 references LAW-007`
+  - `CHAPTER-037 references VOCAB-001`
+  - `CHAPTER-037 references METRIC-001`
+  - `CHAPTER-037 references METRIC-002`
+  - `CHAPTER-037 references METRIC-003`
+  - `CHAPTER-037 references METRIC-004`
+  - `CHAPTER-037 references METRIC-005`
+  - `CHAPTER-037 references ARTIFACT-001`
+  - `CHAPTER-037 references ARTIFACT-002`
+  - `CHAPTER-037 references ARTIFACT-003`
+  - `CHAPTER-037 references ARTIFACT-004`
+  - `CHAPTER-037 references ARTIFACT-005`
+  - `CHAPTER-037 references ARTIFACT-006`
+  - `CHAPTER-037 references RITUAL-001`
+  - `CHAPTER-037 references RITUAL-002`
+  - `CHAPTER-037 references RITUAL-004`
+  - `CHAPTER-037 references SMELL-001`
+  - `CHAPTER-037 references SMELL-002`
+  - `CHAPTER-037 references SMELL-003`
+  - `CHAPTER-037 references SMELL-004`
+  - `CHAPTER-037 references SMELL-005`
+  - `CHAPTER-037 references SMELL-006`
+  - `CHAPTER-037 references ANTIPATTERN-001`
+  - `CHAPTER-037 references ANTIPATTERN-002`
+  - `CHAPTER-037 references ANTIPATTERN-003`
+  - `CHAPTER-037 references ANTIPATTERN-006`
+  - `CHAPTER-037 references FAILURE-003`
+  - `CHAPTER-037 references FAILURE-004`
+  - `CHAPTER-037 references FAILURE-005`
+- `METRIC-002` meaning guardrail: verified as Bus Factor, not Decision Quality.
+- Part VI closure result: Chapter 37 registered as the final Legacy chapter and final main reader-facing chapter before
+  the Appendix; no appendix content was created.
+- Changed files:
+  - `editor/chapter-briefs/CHAPTER-037-refactoring-without-losing-product-trust.md`
+  - `editor/EDITOR_LOG.md`
+  - `knowledge/index.yaml`
+- Final validation completed after this log entry:
+  - Direct Chapter 37 Canonical Brief assertions: passed for exact draft record, Chapters 1-36 canonical status, exact
+    all-reference relationship set, existing targets, no duplicate edges, no `primary_concept`, brief existence,
+    manuscript absence, Part VI order, expected changed-file set, no new PEAK entity, and no tracked `site` files.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed with a conservative link-checker rerun using `--concurrency 1`,
+    `--retry-errors`, and `--retry-errors-count 2`; 191 links scanned successfully.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `vale --config .vale.ini editor/chapter-briefs/CHAPTER-037-refactoring-without-losing-product-trust.md editor/EDITOR_LOG.md knowledge/index.yaml`:
+    passed with 0 errors, 0 warnings, and 0 suggestions.
+  - `git ls-files site`: passed with no tracked files.
+- Commit subject: `docs(chapter-37): register canonical brief`.
+- Next lifecycle stage: Author Draft after this Canonical Brief Registration commit is committed and pushed.
+- Do not create the manuscript, perform review gates, create a pull request, merge, or start appendix work as part of
+  this phase.
+
 ## Phase 176 Chapter 32 Author Draft
 
 - Chapter: Reading a Legacy System.
