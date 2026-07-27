@@ -8473,6 +8473,44 @@ Pull request readiness:
 - Commit subject: `docs(chapter-36): freeze chapter`.
 - Pull request readiness: Chapter 36 is ready for PR from `chapter36` to `main` after this commit is pushed.
 
+## Phase 211 Appendix Canonical Brief Registration
+
+- Date: 2026-07-27
+- Branch: appendix
+- Baseline: `b2099e80ba6742cc3f06d3e962f3a38d6245118b`
+- Outcome: Completed
+- Scope:
+  - Registered canonical brief for the Appendix suite.
+  - Did not draft reader-facing appendix content.
+  - Did not create new PEAK concepts.
+  - Did not change Chapters 1-37.
+- Appendix items registered:
+  - ADR Template
+  - RFC Template
+  - Decision Journal Template
+  - Architecture Review Template
+  - Chapter Review Checklist
+  - Glossary
+- Files added:
+  - `editor/appendix-briefs/APPENDIX-canonical-brief.md`
+- Registry decision:
+  - `knowledge/index.yaml` was unchanged because the current registry does not define appendix entities and no new PEAK
+    concepts were created.
+- Validation:
+  - Direct Appendix Canonical Brief assertions: passed.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed; 193 links checked.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `vale --config .vale.ini editor/appendix-briefs/APPENDIX-canonical-brief.md editor/EDITOR_LOG.md`: passed with
+    0 errors, 0 warnings, and 0 suggestions.
+  - `git ls-files site`: passed; no tracked site files.
+- Next stage:
+  - Appendix Author Draft
+- Commit subject: `docs(appendix): register canonical brief`.
+
 ## Phase 210 Chapter 37 Freeze Review
 
 - Chapter: Refactoring Without Losing Product Trust.
