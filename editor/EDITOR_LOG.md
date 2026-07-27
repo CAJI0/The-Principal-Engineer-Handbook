@@ -8473,6 +8473,29 @@ Pull request readiness:
 - Commit subject: `docs(chapter-36): freeze chapter`.
 - Pull request readiness: Chapter 36 is ready for PR from `chapter36` to `main` after this commit is pushed.
 
+## Appendix Freeze Review
+
+- Branch: `appendix`.
+- Stage: Freeze Review.
+- Reviewed baseline commit: `f54074e42b5ce2f13c760c209b2ba1038be05566`.
+- Outcome: Approved.
+- Prior stages verified: Canonical Brief Registration, Author Draft, Editorial Review, Canon Review, Technical Review.
+- Required appendix files verified:
+  - `book/appendix/adr-template.md`.
+  - `book/appendix/rfc-template.md`.
+  - `book/appendix/decision-journal-template.md`.
+  - `book/appendix/architecture-review-template.md`.
+  - `book/appendix/chapter-review-checklist.md`.
+  - `book/appendix/glossary.md`.
+- Appendix brief final status: canonical; reader-facing appendix drafted: yes.
+- PEAK integrity result: no new PEAK concepts; `METRIC-002` remains Bus Factor.
+- Chapters 1-37 changed: no.
+- Unresolved notes or markers: none.
+- Validation commands and results: `git diff --check` passed; `npm.cmd run lint:md` passed; `npm.cmd run lint:spelling` passed; `npm.cmd run lint:links` passed; `vale --config .vale.ini book/appendix editor/appendix-briefs/APPENDIX-canonical-brief.md editor/EDITOR_LOG.md` passed with 0 errors, 0 warnings, and 0 suggestions; `python -m pip check` passed; `python -m mkdocs build --strict` passed; `git ls-files site` returned no tracked files; Appendix freeze checks script passed.
+- Final lifecycle state: Appendix Frozen.
+- Future substantive appendix changes require reopening the appropriate review stage.
+- Branch merged: no.
+
 ## Appendix Technical Review
 
 - Branch: `appendix`.

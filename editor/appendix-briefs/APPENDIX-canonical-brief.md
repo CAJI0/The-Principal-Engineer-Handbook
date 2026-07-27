@@ -2,11 +2,11 @@
 
 ## Status
 
-Status: brief-registered
+Status: canonical
 Baseline: b2099e80ba6742cc3f06d3e962f3a38d6245118b
 Branch: appendix
 Main chapters complete: yes
-Reader-facing appendix drafted: no
+Reader-facing appendix drafted: yes
 
 ## Baseline
 

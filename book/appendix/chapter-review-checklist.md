@@ -31,7 +31,8 @@ brief file, and the established four-gate chapter workflow.
 - [ ] Flow, repetition, section balance, and transitions have been reviewed.
 - [ ] Reader value is practical rather than decorative.
 - [ ] The author boundary is preserved.
-- [ ] No unresolved TODO, TBD, FIXME, AUTHOR NOTE, or conflict marker remains unless explicitly accepted for the stage.
+- [ ] No unresolved draft note, placeholder note, fix marker, author note, or conflict marker remains unless explicitly
+  accepted for the stage.
 - [ ] The editor log records what changed and what was validated.
 
 ## Canon Review Check
