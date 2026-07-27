@@ -8473,6 +8473,48 @@ Pull request readiness:
 - Commit subject: `docs(chapter-36): freeze chapter`.
 - Pull request readiness: Chapter 36 is ready for PR from `chapter36` to `main` after this commit is pushed.
 
+## Phase 208 Chapter 37 Canon Review
+
+- Chapter: Refactoring Without Losing Product Trust.
+- Stable ID: `CHAPTER-037`.
+- Branch: `chapter37`.
+- Lifecycle stage: Canon Review.
+- Reviewed baseline commit: `35549dc89564f80e395e71265618a1af2f4df1d8`.
+- Outcome: approved. No manuscript terminology corrections were required during Canon Review.
+- Identity audit:
+  - `CHAPTER-037` exists exactly once in `knowledge/index.yaml`.
+  - `CHAPTER-037` remains `draft`.
+  - No `primary_concept` field exists for `CHAPTER-037`.
+  - Manuscript path and canonical brief path match the registered brief.
+- Relationship audit: passed. The exact Chapter 37 outgoing relationship set matches the canonical brief; every outgoing
+  relationship uses `references`; no `illustrates` relationship exists; no duplicate Chapter 37 edge exists; all targets
+  exist; and all relationship verbs are supported by `editor/KNOWLEDGE_MODEL.md`.
+- Meaning guardrails: `METRIC-002` remains Bus Factor, `METRIC-004` remains API Stability, `METRIC-005` remains
+  Architecture Health, and `VOCAB-001` / `METRIC-001` remain Change Radius references.
+- Chapter-local terminology: product trust, trust-preserving refactoring, product trust surface, refactoring map,
+  migration slice, compatibility seam, strangler path, branch-by-abstraction, shadow path, dual write, rollback proof,
+  recovery proof, and trust erosion signal remain chapter-local prose only.
+- Neighboring chapter boundaries: Chapters 32-36 remain the sources for reading maps, Silent Coupling, Utility Gravity,
+  Boolean Explosion, and deletion evidence; Chapter 37 synthesizes them without making any one of them a new primary
+  concept.
+- Appendix boundary: no appendix content, template, glossary, or future appendix roadmap was created.
+- Validation completed after this log entry:
+  - Direct Canon Review assertions: passed for exact `CHAPTER-037` draft record, no `primary_concept`, exact
+    all-reference relationship set, no `illustrates`, no duplicate Chapter 37 edges, existing relationship targets,
+    supported relationship verbs, Chapters 1-36 canonical status, no appendix branch changes, and no tracked `site`
+    files.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed; 192 links scanned successfully.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `vale --config .vale.ini book/06-legacy/37-refactoring-without-losing-product-trust.md editor/EDITOR_LOG.md knowledge/index.yaml editor/chapter-briefs/CHAPTER-037-refactoring-without-losing-product-trust.md`:
+    passed with 0 errors, 0 warnings, and 0 suggestions.
+  - `git ls-files site`: passed with no tracked files.
+- Commit subject: `docs(chapter-37): complete canon review`.
+- Next lifecycle stage: Technical Review.
+
 ## Phase 207 Chapter 37 Editorial Review
 
 - Chapter: Refactoring Without Losing Product Trust.
