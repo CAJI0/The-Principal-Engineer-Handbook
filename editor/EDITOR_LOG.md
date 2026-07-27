@@ -7954,6 +7954,55 @@ Pull request readiness:
 - Next lifecycle stage: Canon Review.
 - Do not create a pull request, merge, start Chapter 36, or mark Chapter 35 canonical as part of this phase.
 
+## Phase 196 Chapter 35 Canon Review
+
+- Chapter: Reducing Boolean Explosion.
+- Stable ID: `CHAPTER-035`.
+- Branch: `chapter35`.
+- Stage: Canon Review.
+- Reviewed baseline commit: `1cc639ec333b5d8b9be1ba44f059d3277c7b282f`.
+- Required repository synchronization and verification:
+  - `git fetch --all --prune`: passed.
+  - `git status --short --branch`: `## chapter35...origin/chapter35`.
+  - `git rev-parse HEAD`: `1cc639ec333b5d8b9be1ba44f059d3277c7b282f`.
+  - `git rev-parse origin/chapter35`: `1cc639ec333b5d8b9be1ba44f059d3277c7b282f`.
+- Outcome: Approved.
+- Canon identity result: `CHAPTER-035` remains the only chapter under review and remains `draft` before Freeze.
+- Central concept result: manuscript remains centered on `SMELL-003` - Boolean Explosion and `VOCAB-010` - Boolean
+  Explosion as uncontrolled product behavior combination growth, not conditional-code style.
+- Relationship audit result: exact required outgoing relationship set preserved in `knowledge/index.yaml`; no
+  unsupported relationship verb, duplicate Chapter 35 edge, missing target, or relationship drift found.
+- PEAK terminology result: `METRIC-002` is used as Bus Factor, `METRIC-004` as API Stability, and local phrases such as
+  Boolean state map, compatibility matrix, decision table, named mode boundary, flag inventory, combination budget,
+  mechanism switch, policy-bearing flag, product-state decision, and compatibility promise remain unregistered
+  chapter-local prose.
+- Boundary result: Chapter 32 reading, Chapter 33 Silent Coupling, Chapter 34 Utility Gravity, Chapter 36 deletion
+  safety, and Chapter 37 trust-preserving refactoring boundaries are preserved.
+- Chapter-local ADR result: `Name the Product Modes Before Adding Another Compatibility Flag` remains reader-facing and
+  unregistered; no canonical handbook artifact was added.
+- Manuscript terminology corrections: none required.
+- Canonical brief changes: none.
+- Registry changes: none.
+- New PEAK concept result: none. No PEAK concept, ID, relationship verb, or `primary_concept` field was introduced.
+- Changed files:
+  - `editor/EDITOR_LOG.md`
+- Final validation completed after this log entry:
+  - Direct Canon Review assertions: passed for `CHAPTER-035` uniqueness, draft status, no `primary_concept`, exact
+    outgoing relationship set, supported relationship verbs, existing relationship targets, duplicate edge absence,
+    Chapters 1-34 canonical, Chapter 36/37 manuscript absence, and no tracked site.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed; scanned 188 links successfully.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `vale --config .vale.ini book/06-legacy/35-reducing-boolean-explosion.md editor/EDITOR_LOG.md knowledge/index.yaml
+    editor/chapter-briefs/CHAPTER-035-reducing-boolean-explosion.md`: passed.
+  - `git ls-files site`: passed with no tracked files.
+- Commit subject: `docs(chapter-35): complete canon review`.
+- Next lifecycle stage: Technical Review.
+- Do not create a pull request, merge, start Chapter 36, or mark Chapter 35 canonical as part of this phase.
+
 ## Phase 176 Chapter 32 Author Draft
 
 - Chapter: Reading a Legacy System.
