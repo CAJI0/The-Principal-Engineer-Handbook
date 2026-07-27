@@ -8473,6 +8473,43 @@ Pull request readiness:
 - Commit subject: `docs(chapter-36): freeze chapter`.
 - Pull request readiness: Chapter 36 is ready for PR from `chapter36` to `main` after this commit is pushed.
 
+## Phase 207 Chapter 37 Editorial Review
+
+- Chapter: Refactoring Without Losing Product Trust.
+- Stable ID: `CHAPTER-037`.
+- Branch: `chapter37`.
+- Lifecycle stage: Editorial Review.
+- Reviewed baseline commit: `b702f97f6a292970343a1a5a98de8098bb3594e9`.
+- Outcome: approved with minor editorial changes.
+- Editorial changes:
+  - Tightened the story's release-candidate failure transition so the issue reads as a trust-surface miss rather than a
+    generic failed refactor.
+  - Smoothed the team reaction paragraph without changing the Principal Engineer's response.
+  - Softened the synthesis wording around the refactoring map so it remains a chapter-local practice rather than a new
+    canonical artifact.
+  - Improved the cadence of the branch-by-abstraction, shadow-path, and dual-write paragraph.
+  - Tuned the final commentary line to emphasize synthesis without adding a new book-wide framework.
+- Canon and PEAK status: unchanged. `CHAPTER-037` remains `draft`; no `primary_concept` field, new PEAK concept,
+  relationship change, or relationship verb was added.
+- Canonical brief status: preserved unchanged.
+- `knowledge/index.yaml` status: unchanged during Editorial Review.
+- Appendix status: no appendix files, templates, glossary material, or appendix prose created.
+- Validation completed after this log entry:
+  - Direct Editorial Review assertions: passed for unchanged `knowledge/index.yaml`, unchanged canonical brief,
+    `CHAPTER-037` draft status, no `primary_concept`, no unresolved markers, exactly three Notebook observations, log
+    entry presence, no appendix branch changes, and no tracked `site` files.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed; 192 links scanned successfully.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `vale --config .vale.ini book/06-legacy/37-refactoring-without-losing-product-trust.md editor/EDITOR_LOG.md`:
+    passed with 0 errors, 0 warnings, and 0 suggestions.
+  - `git ls-files site`: passed with no tracked files.
+- Commit subject: `docs(chapter-37): complete editorial review`.
+- Next lifecycle stage: Canon Review.
+
 ## Phase 206 Chapter 37 Author Draft
 
 - Chapter: Refactoring Without Losing Product Trust.

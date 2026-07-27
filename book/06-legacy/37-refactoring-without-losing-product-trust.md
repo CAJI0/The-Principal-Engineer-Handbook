@@ -36,7 +36,7 @@ The code would be easier to read. Dependency direction would improve. The state 
 new boundary would make later deletion and variant work more plausible. Characterization tests covered the firmware
 behavior the team knew. The current hardware passed. The old peripheral test passed. No public API shape changed.
 
-The release candidate failed in a way the refactor did not predict.
+The release candidate exposed a failure the refactor had not been shaped to see.
 
 Manufacturing reported inconclusive units on the rework station. The controllers started correctly, but the final-test
 script watched for a diagnostic ordering the new coordinator no longer emitted. The script had not imported firmware
@@ -57,7 +57,7 @@ been missed. During staged upgrade, some customers could roll firmware back with
 mapper back on the same day. The old diagnostic sequence had kept mixed versions understandable. The new sequence was
 cleaner inside the controller and less trustworthy across release order.
 
-The room reacted in the usual ways.
+The room reacted with understandable frustration.
 
 "This is why we should stop touching startup."
 
@@ -202,7 +202,7 @@ Chapter 36 gives deletion evidence. Before removing old behavior as part of refa
 promise can disappear. Some old paths should be deleted. Some should be migrated. Some should be frozen. Some should be
 left alone until evidence improves.
 
-Together, those outputs form a refactoring map.
+Together, those outputs can form a refactoring map.
 
 The map starts with the product promise being preserved. It names the structural target: boundary, dependency
 direction, ownership, API, state placement, configuration model, event flow, utility extraction, timing path, or
@@ -214,10 +214,10 @@ The map keeps the team from confusing movement with improvement.
 
 Moving code behind a new interface may be useful. It may also preserve every old ambiguity behind a more modern name.
 Extracting a component may reduce import cycles. It may also create a new API promise before consumers understand it.
-Introducing branch-by-abstraction may let old and new paths coexist. It may also double the state space if the
-retirement trigger is unclear. A shadow path may give evidence. It may also create false comfort if no one knows what
-the shadow signal can and cannot see. Dual write may keep systems aligned during migration. It may also corrupt trust
-if recovery after divergence is not defined.
+Introducing branch-by-abstraction may let old and new paths coexist, but it can double the state space when the
+retirement trigger is unclear. A shadow path may give evidence, but it can create false comfort when no one knows what
+the shadow signal can and cannot see. Dual write may keep systems aligned during migration, but it can corrupt trust if
+recovery after divergence is not defined.
 
 Temporary compatibility is useful only when it has an owner and an exit.
 
@@ -500,7 +500,7 @@ constraints, configuration, observability, releases, upgrades, diagnostics, and 
 organizational through leadership, rituals, shared memory, team alignment, and architecture health. Part VI applied all
 of that to legacy systems.
 
-Chapter 37 does not add a final framework. It synthesizes the existing discipline into one closing standard.
+Chapter 37 does not add a final framework. It gathers the existing discipline into one closing standard.
 
 Read what the system promises. Name who trusts it. Make hidden dependents visible. Separate shared mechanism from
 product policy. Reduce the state space. Delete only with evidence. Refactor from the product promise inward.
