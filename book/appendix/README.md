@@ -1,3 +1,13 @@
 # Appendix
 
-> AUTHOR NOTE: Add author-approved appendix material.
+The Appendix contains copyable templates and reference material for applying the handbook's decision discipline,
+ownership model, evidence habits, review workflow, and PEAK vocabulary. These templates are intentionally lightweight:
+adapt the fields to the situation, but keep the underlying discipline of clear ownership, explicit evidence, named
+promises, visible dependencies, and review triggers.
+
+- [ADR Template](adr-template.md)
+- [RFC Template](rfc-template.md)
+- [Decision Journal Template](decision-journal-template.md)
+- [Architecture Review Template](architecture-review-template.md)
+- [Chapter Review Checklist](chapter-review-checklist.md)
+- [Glossary](glossary.md)

@@ -1,0 +1,120 @@
+# Architecture Review Template
+
+Use this template to review an architecture decision or change before it hardens: context, affected boundaries, owners,
+APIs, state, dependencies, time behavior, failure modes, observability, rollout, and follow-up artifacts.
+
+## When to Use This
+
+Use Architecture Review (`RITUAL-001`) when a decision crosses ownership, release, product, operational, manufacturing,
+support, or recovery boundaries. The goal is to make the decision responsible before it becomes expensive to change.
+
+Do not use this template to retell Chapter 18 or to turn review into an approval ceremony.
+
+## Template
+
+### Review Title
+
+[review title]
+
+### Review Owner
+
+[owner]
+
+### Decision or Change Under Review
+
+[decision or change]
+
+### Affected Teams
+
+[affected teams]
+
+### Affected Boundaries
+
+[modules, services, devices, tools, data formats, manufacturing steps, support procedures, release paths, or operational
+boundaries]
+
+### State Ownership
+
+[which meaningful state changes, and who owns changing, validating, and explaining it]
+
+This section supports Every State Has One Owner (`LAW-001`).
+
+### API Promises
+
+[interfaces, diagnostics, events, timing behavior, files, procedures, or tool behavior that dependents will trust]
+
+This section supports Every API Is a Promise (`LAW-002`) and API Stability (`METRIC-004`).
+
+### Dependencies
+
+[dependencies introduced, removed, or accepted, with owners and replacement cost]
+
+This section supports Every Dependency Is a Decision (`LAW-007`).
+
+### Time Behavior
+
+[ordering, deadlines, retries, timeouts, startup timing, synchronization, release windows, or compatibility windows]
+
+This section supports Time Is a Dependency (`LAW-003`).
+
+### Failure Modes
+
+[what could fail, who would see it, and how the system would recover]
+
+### Observability
+
+[tests, telemetry, logs, dashboards, manufacturing checks, service-tool checks, support signals, or field evidence]
+
+### Rollout
+
+[stages, owners, compatibility boundary, validation signal, and rollback trigger]
+
+### Recovery
+
+[how product behavior, support confidence, records, and customer trust recover if the decision is wrong]
+
+### Evidence Available
+
+[evidence already gathered and evidence still missing]
+
+This section supports Evidence Before Confidence (`LAW-005`).
+
+### Unresolved Questions
+
+- [question, owner, needed evidence, decision date]
+
+### Decision Outcome
+
+[accepted | accepted with changes | narrowed | deferred | split | rejected | sent for evidence | escalated]
+
+### Follow-Up Artifacts
+
+- ADR (`ARTIFACT-001`): [link or owner]
+- RFC (`ARTIFACT-002`): [link or owner]
+- Architecture Ledger (`ARTIFACT-006`): [link or owner]
+- Decision Journal: [link or owner]
+- Tests, dashboards, release notes, support records: [links or owners]
+
+### Review Date and Revisit Trigger
+
+- Review date: [date]
+- Revisit trigger: [signal, event, release, evidence threshold, or Architecture Health Review]
+
+## Review Prompts
+
+- Is the decision still changeable?
+- Which owners must accept obligations, not just awareness?
+- What is the Change Radius (`METRIC-001`)?
+- Can a future engineer discover the decision, owner, and contract (`METRIC-003`)?
+- Which evidence is strong enough, and which confidence is still unsupported?
+- What follow-up artifact makes the review memory durable?
+
+## Completion Check
+
+- [ ] The decision under review is explicit.
+- [ ] Affected teams, boundaries, owners, state, APIs, dependencies, and time behavior are named.
+- [ ] Failure modes, observability, rollout, and recovery are concrete.
+- [ ] Evidence and unresolved questions have owners.
+- [ ] The review outcome is recorded.
+- [ ] Follow-up artifacts are assigned.
+- [ ] The revisit trigger is concrete.

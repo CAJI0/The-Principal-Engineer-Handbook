@@ -1,0 +1,95 @@
+# Glossary
+
+This glossary is a reader-facing reference for PEAK terms used across the book. The canonical source remains
+`knowledge/index.yaml` and the concept files in `knowledge/`.
+
+## How to Use This Glossary
+
+Use this file to look up exact concept names and IDs while reading or applying the handbook. Entries are intentionally
+short. They summarize the registered concept; they do not replace the canonical files or add new definitions.
+
+## Laws
+
+- `LAW-001` - Every State Has One Owner: every meaningful state needs one clear owner responsible for changing,
+  validating, and explaining it.
+- `LAW-002` - Every API Is a Promise: every interface carries behavior, meaning, timing, error, and ownership promises
+  that others trust.
+- `LAW-003` - Time Is a Dependency: delays, ordering, deadlines, and timeouts are system contracts.
+- `LAW-004` - Simplicity Is a Feature: simplicity is a product capability because it makes future change safer.
+- `LAW-005` - Evidence Before Confidence: confidence should follow tested, observed, or recorded evidence.
+- `LAW-006` - Unused Flexibility Is Waste: unjustified flexibility becomes maintenance, test, and review cost.
+- `LAW-007` - Every Dependency Is a Decision: every dependency commits the system to behavior, failure modes, lifecycle
+  constraints, ownership boundaries, and replacement cost.
+
+## Artifacts
+
+- `ARTIFACT-001` - ADR: a record of an architectural decision, why it was made, and what consequences it creates.
+- `ARTIFACT-002` - RFC: a proposal artifact that invites review before a decision becomes hard to change.
+- `ARTIFACT-003` - Decision Journal: a lightweight record for decision reasoning, evidence, confidence, and review
+  triggers.
+- `ARTIFACT-004` - Mistake Ledger: a record of failures and the system conditions that made them possible.
+- `ARTIFACT-005` - Event Catalog: a record of important system events, their meanings, and ownership.
+- `ARTIFACT-006` - Architecture Ledger: a compact inventory of active architectural decisions and known debts.
+- `ARTIFACT-007` - Weak Signal Register: a place to track early architecture concerns before they become confirmed
+  failures.
+
+## Rituals
+
+- `RITUAL-001` - Architecture Review: review decisions before they become expensive to change.
+- `RITUAL-002` - Architecture Freeze: stabilize architectural decisions during a high-risk phase.
+- `RITUAL-003` - Deletion Day: remove unused architecture before it becomes permanent cost.
+- `RITUAL-004` - Architecture Health Review: assess whether architecture still supports necessary change.
+- `RITUAL-005` - Architecture Court: resolve contested architecture decisions with evidence and explicit trade-offs.
+- `RITUAL-006` - RFC Friday: create regular review space for proposals before they become implementation facts.
+
+## Metrics
+
+- `METRIC-001` - Change Radius: how much system surface is affected by one change.
+- `METRIC-002` - Bus Factor: the number of people whose absence would make a system area difficult to change safely.
+- `METRIC-003` - Discoverability: how easily an engineer can find the decision, owner, and contract behind behavior.
+- `METRIC-004` - API Stability: how reliably an API preserves the behavior its dependents trust.
+- `METRIC-005` - Architecture Health: the system's ability to support necessary change at acceptable cost.
+
+## Vocabulary
+
+- `VOCAB-001` - Change Radius: the system surface that must change, be reviewed, or be retested when one decision
+  changes.
+- `VOCAB-002` - Weak Signal: an early, low-confidence sign that a system decision may be aging badly.
+- `VOCAB-003` - Decision Journal: a lightweight record of decisions, evidence, confidence, and review triggers.
+- `VOCAB-004` - Mistake Ledger: a record of engineering mistakes and the system conditions that made them possible.
+- `VOCAB-005` - Deletion Day: a planned ritual for removing unused code, stale options, dead configuration, and obsolete
+  architecture.
+- `VOCAB-006` - Architecture Freeze: a temporary pause on architectural change while a team stabilizes a product or
+  decision.
+- `VOCAB-007` - Architecture Health: the current ability of a system to absorb necessary change without disproportionate
+  cost.
+- `VOCAB-008` - Silent Coupling: a behavioral dependency that is not visible in code, contracts, or documentation.
+- `VOCAB-009` - Utility Gravity: the tendency for a generic utility area to attract unrelated responsibilities.
+- `VOCAB-010` - Boolean Explosion: uncontrolled growth of flags and modes that multiply system behavior.
+
+## Smells
+
+- `SMELL-001` - Silent Coupling: a hidden dependency that affects behavior but is not represented as an explicit
+  contract.
+- `SMELL-002` - Utility Gravity: a utility area accumulating unrelated behavior because it is easy to reuse.
+- `SMELL-003` - Boolean Explosion: too many flags creating behavior combinations no one can reason about.
+- `SMELL-004` - Hidden State: state that affects behavior but is not visible through a clear owner, interface, or model.
+- `SMELL-005` - Platform Leakage: platform details escaping into product code without an explicit boundary.
+- `SMELL-006` - Event Explosion: uncontrolled growth of events without clear meaning, ownership, or lifecycle.
+
+## Anti-Patterns
+
+- `ANTIPATTERN-001` - God Module: a module that owns too many unrelated responsibilities.
+- `ANTIPATTERN-002` - HAL Everywhere: low-level hardware abstraction leaking through most of the product.
+- `ANTIPATTERN-003` - Global Configuration: configuration shared broadly without ownership, scope, or lifecycle.
+- `ANTIPATTERN-004` - Manager Mania: manager objects coordinating behavior without clear domain ownership.
+- `ANTIPATTERN-005` - Callback Hell: control flow spread across callbacks so behavior is hard to trace or own.
+- `ANTIPATTERN-006` - Temporary Solution: a workaround with no owner, review trigger, or removal plan.
+
+## Failure Stories
+
+- `FAILURE-001` - Logger That Became a Platform: a logging utility gradually became a shared platform dependency.
+- `FAILURE-002` - One Lost Packet: a system failure triggered by one dropped or reordered packet.
+- `FAILURE-003` - The Successful Prototype: a prototype became production architecture without review.
+- `FAILURE-004` - The Hero Engineer: a system depends on one engineer's private memory and intervention.
+- `FAILURE-005` - The Release We Should Have Delayed: a release shipped despite unresolved architectural risk.
