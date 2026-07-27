@@ -8424,7 +8424,7 @@ Pull request readiness:
   - `git diff --check`: passed.
   - `npm.cmd run lint:md`: passed.
   - `npm.cmd run lint:spelling`: passed.
-  - `npm.cmd run lint:links`: passed with a conservative `linkinator` rerun using `--concurrency 1`,
+  - `npm.cmd run lint:links`: passed with a conservative link-checker rerun using `--concurrency 1`,
     `--retry-errors`, and `--retry-errors-count 2`, scanning 190 links successfully after default-concurrency runs
     reported transient `[0]` statuses for existing local markdown files.
   - `python -m pip check`: passed.
@@ -8434,6 +8434,44 @@ Pull request readiness:
   - `git ls-files site`: passed with no tracked files.
 - Commit subject: `docs(chapter-36): complete technical review`.
 - Next expected phase: Freeze Review.
+
+## Phase 204 Chapter 36 Freeze Review
+
+- Chapter: Deleting Safely.
+- Stable ID: `CHAPTER-036`.
+- Branch: `chapter36`.
+- Stage: Freeze Review.
+- Reviewed baseline commit: `6686a9985525188d5a4857fe255c38c1d5b795cc`.
+- Sync status before review: local `HEAD` matched `origin/chapter36` at
+  `6686a9985525188d5a4857fe255c38c1d5b795cc`.
+- Outcome: approved for freeze.
+- Freeze result: `CHAPTER-036` moved from `draft` to `canonical` in `knowledge/index.yaml`.
+- Manuscript result: Chapter 36 is Frozen with the required chapter architecture, exact title, exact section order,
+  no unresolved notes, no conflict markers, and exactly three Principal's Notebook observations.
+- Canon result: exact Chapter 36 relationship set preserved; `RITUAL-003` and `VOCAB-005` remained central;
+  `METRIC-002` remained Bus Factor; no `primary_concept` field was added.
+- Part VI boundary result: Chapter 37 was not started.
+- Changed files:
+  - `knowledge/index.yaml`
+  - `editor/EDITOR_LOG.md`
+- Final validation completed after this log entry:
+  - Direct Chapter 36 Freeze assertions: passed for review phase presence, `CHAPTER-036` uniqueness, `canonical`
+    status, absence of `primary_concept`, path resolution, exact H1/H2 structure, exactly three Principal's Notebook
+    observations, no unresolved notes or conflict markers, exact outgoing relationship set, supported verbs, existing
+    targets, no duplicate edges, Chapter 1 through Chapter 35 canonical status, Chapter 37 manuscript absence, expected
+    Freeze changed-file set, and no tracked site.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed with a conservative link-checker rerun using `--concurrency 1`,
+    `--retry-errors`, and `--retry-errors-count 2`, scanning 190 links successfully.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `vale --config .vale.ini book/06-legacy/36-deleting-safely.md editor/EDITOR_LOG.md knowledge/index.yaml editor/chapter-briefs/CHAPTER-036-deleting-safely.md`:
+    passed with 0 errors, 0 warnings, and 0 suggestions.
+  - `git ls-files site`: passed with no tracked files.
+- Commit subject: `docs(chapter-36): freeze chapter`.
+- Pull request readiness: Chapter 36 is ready for PR from `chapter36` to `main` after this commit is pushed.
 
 ## Phase 176 Chapter 32 Author Draft
 

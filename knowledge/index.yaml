@@ -453,7 +453,7 @@ entities:
       type: chapter
       name: Deleting Safely
       path: ../book/06-legacy/36-deleting-safely.md
-      status: draft
+      status: canonical
   adrs:
     - id: ADR-001
       type: adr
