@@ -1,0 +1,86 @@
+# Chapter Review Checklist
+
+Use this checklist to maintain The Principal Engineer Handbook through author boundary, editorial review, canon review,
+technical review, freeze review, validation, and merge readiness.
+
+This checklist is for maintainers of this book. It is not a general engineering document review checklist.
+
+## When to Use This
+
+Use it when registering, drafting, reviewing, freezing, or merging a chapter or appendix workflow item in this
+repository. Follow `BOOK_BIBLE.md`, `STYLE_GUIDE.md`, `editor/EDITOR_LOG.md`, `knowledge/index.yaml`, the relevant
+brief file, and the established four-gate chapter workflow.
+
+## Author Draft Check
+
+- [ ] A canonical brief exists before the draft starts.
+- [ ] Brief registration did not create reader-facing manuscript content.
+- [ ] The working branch matches the prompt.
+- [ ] The working tree is clean before drafting.
+- [ ] Baseline SHA is recorded.
+- [ ] Draft changes stay within the registered scope.
+- [ ] No unrelated files, generated files, caches, or `site/` output are staged.
+- [ ] Chapters outside the requested scope are unchanged.
+- [ ] No new PEAK concept is invented unless the brief explicitly registered it.
+- [ ] The editor log records the Author Draft stage and next review stage.
+
+## Editorial Review Check
+
+- [ ] Prose is clear, concrete, and useful to the target reader.
+- [ ] Structure follows the registered chapter or appendix architecture.
+- [ ] Flow, repetition, section balance, and transitions have been reviewed.
+- [ ] Reader value is practical rather than decorative.
+- [ ] The author boundary is preserved.
+- [ ] No unresolved TODO, TBD, FIXME, AUTHOR NOTE, or conflict marker remains unless explicitly accepted for the stage.
+- [ ] The editor log records what changed and what was validated.
+
+## Canon Review Check
+
+- [ ] `knowledge/index.yaml` has the expected chapter identity and lifecycle status.
+- [ ] PEAK IDs and names are exact.
+- [ ] Registered relationships are present, material, and supported by the manuscript.
+- [ ] No unregistered PEAK concept, `primary_concept`, or relationship is added casually.
+- [ ] Boundaries with earlier and neighboring chapters are preserved.
+- [ ] Existing canon is reused instead of redefined.
+- [ ] The editor log records the canon decision and any registry changes.
+
+## Technical Review Check
+
+- [ ] Embedded-system or product-system scenario is technically plausible.
+- [ ] Causality is credible: the problem, intervention, evidence, and consequence connect.
+- [ ] Evidence claims name tests, telemetry, logs, manufacturing checks, support signals, review records, or operational
+  observations as appropriate.
+- [ ] Risk language is specific and proportionate.
+- [ ] Rollout, rollback, recovery, ownership, and review triggers are realistic when the chapter requires them.
+- [ ] Technical tightening does not rewrite the canon or change unrelated chapters.
+- [ ] The editor log records technical areas reviewed and validations run.
+
+## Freeze Review Check
+
+- [ ] Editorial Review, Canon Review, and Technical Review are complete.
+- [ ] Lifecycle state is updated to canonical when the prompt requires it.
+- [ ] Final manuscript or appendix content has no unresolved notes or conflict markers.
+- [ ] `knowledge/index.yaml` changes are expected, minimal, and validated.
+- [ ] Validation commands have real recorded results.
+- [ ] The freeze log states whether the branch was merged and whether appendix work started.
+- [ ] Future substantive changes require reopening the appropriate review stage.
+
+## PR and Merge Check
+
+- [ ] Commit subjects use Conventional Commits style.
+- [ ] Only expected files are included.
+- [ ] Branch is pushed and matches its remote.
+- [ ] PR title, base branch, and compare branch match the workflow.
+- [ ] Squash merge is acceptable when the repository workflow uses it.
+- [ ] After a squash merge, the feature Freeze SHA need not be an ancestor of `main`.
+- [ ] After merge, verify the final tree and canonical state on `main`.
+- [ ] Do not assume remote state from memory; fetch and verify.
+
+## Completion Check
+
+- [ ] Expected files changed.
+- [ ] `git diff --check` passed.
+- [ ] Project lint, spelling, links, and build checks passed or unavailable commands were recorded honestly.
+- [ ] `git status --short` shows only expected changes before commit and is clean after commit.
+- [ ] The editor log records baseline, branch, scope, files changed, registry decision, validation, and next stage.
+- [ ] No PDF/export work or site restructuring was performed unless explicitly requested.

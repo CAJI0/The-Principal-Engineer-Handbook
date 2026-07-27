@@ -8473,6 +8473,48 @@ Pull request readiness:
 - Commit subject: `docs(chapter-36): freeze chapter`.
 - Pull request readiness: Chapter 36 is ready for PR from `chapter36` to `main` after this commit is pushed.
 
+## Phase 212 Appendix Author Draft
+
+- Date: 2026-07-27
+- Branch: appendix
+- Baseline: `6c50fc693fc14593156783c394b46cba2fd342d2`
+- Outcome: Completed
+- Scope:
+  - Created reader-facing Appendix draft material from the registered Appendix canonical brief.
+  - Created ADR Template, RFC Template, Decision Journal Template, Architecture Review Template, Chapter Review
+    Checklist, and Glossary.
+  - Updated the Appendix landing page.
+  - Did not create new PEAK concepts.
+  - Did not change Chapters 1-37.
+- Files changed:
+  - `book/appendix/README.md`
+  - `book/appendix/adr-template.md`
+  - `book/appendix/rfc-template.md`
+  - `book/appendix/decision-journal-template.md`
+  - `book/appendix/architecture-review-template.md`
+  - `book/appendix/chapter-review-checklist.md`
+  - `book/appendix/glossary.md`
+  - `editor/EDITOR_LOG.md`
+- Registry decision:
+  - `knowledge/index.yaml` was unchanged because the current registry does not define appendix entities and no new PEAK
+    concepts were created.
+- Glossary source:
+  - Entries were derived from `knowledge/index.yaml` and existing concept files in `knowledge/`.
+- Validation:
+  - Direct Appendix Author Draft assertions: passed.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed; 199 links checked.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `vale --config .vale.ini book/appendix/README.md book/appendix/adr-template.md book/appendix/rfc-template.md book/appendix/decision-journal-template.md book/appendix/architecture-review-template.md book/appendix/chapter-review-checklist.md book/appendix/glossary.md editor/EDITOR_LOG.md`:
+    passed with 0 errors, 0 warnings, and 0 suggestions.
+  - `git ls-files site`: passed; no tracked site files.
+- Next stage:
+  - Appendix Editorial Review
+- Commit subject: `docs(appendix): add appendix draft`.
+
 ## Phase 211 Appendix Canonical Brief Registration
 
 - Date: 2026-07-27
