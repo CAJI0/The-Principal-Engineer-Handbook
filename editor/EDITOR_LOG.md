@@ -8360,6 +8360,41 @@ Pull request readiness:
 - Commit subject: `docs(chapter-36): complete editorial review`.
 - Next expected phase: Canon Review.
 
+## Phase 202 Chapter 36 Canon Review
+
+- Chapter: Deleting Safely.
+- Stable ID: `CHAPTER-036`.
+- Branch: `chapter36`.
+- Stage: Canon Review.
+- Reviewed baseline commit: `7d0a6d2b8625df761934bb1d2ace9892709825e1`.
+- Sync status before review: local `HEAD` matched `origin/chapter36` at
+  `7d0a6d2b8625df761934bb1d2ace9892709825e1`.
+- Outcome: approved with no manuscript or canon terminology changes required.
+- Canon result: central concept remained `RITUAL-003 - Deletion Day`; central vocabulary term remained
+  `VOCAB-005 - Deletion Day`.
+- PEAK relationship audit: the exact Chapter 36 relationship set was preserved, all targets existed,
+  relationship verbs were supported, and no duplicate edges were found.
+- Meaning guardrails checked: `METRIC-002` remained Bus Factor, not Decision Quality; no `primary_concept` field was
+  added; no PEAK concepts, verbs, classifications, or targets were added, renamed, or reclassified.
+- Part VI boundaries: Chapter 36 stayed focused on safe deletion and did not start Chapter 37.
+- Changed files:
+  - `editor/EDITOR_LOG.md`
+- Final validation completed after this log entry:
+  - Direct Chapter 36 Canon assertions: passed for branch sync, `CHAPTER-036` uniqueness, `draft` status,
+    absence of `primary_concept`, exact outgoing relationship set, supported verbs, existing targets, no duplicate
+    edges, Chapter 1 through Chapter 35 canonical status, Chapter 37 manuscript absence, and no tracked site.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed and scanned 190 links successfully.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `vale --config .vale.ini book/06-legacy/36-deleting-safely.md editor/EDITOR_LOG.md knowledge/index.yaml editor/chapter-briefs/CHAPTER-036-deleting-safely.md`:
+    passed with 0 errors, 0 warnings, and 0 suggestions.
+  - `git ls-files site`: passed with no tracked files.
+- Commit subject: `docs(chapter-36): complete canon review`.
+- Next expected phase: Technical Review.
+
 ## Phase 176 Chapter 32 Author Draft
 
 - Chapter: Reading a Legacy System.
