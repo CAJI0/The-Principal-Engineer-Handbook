@@ -8003,6 +8003,59 @@ Pull request readiness:
 - Next lifecycle stage: Technical Review.
 - Do not create a pull request, merge, start Chapter 36, or mark Chapter 35 canonical as part of this phase.
 
+## Phase 197 Chapter 35 Technical Review
+
+- Chapter: Reducing Boolean Explosion.
+- Stable ID: `CHAPTER-035`.
+- Branch: `chapter35`.
+- Stage: Technical Review.
+- Reviewed baseline commit: `3ffb67d1a2d94aef17f0e7bbffc66da211b1a91d`.
+- Required repository synchronization and verification:
+  - `git fetch --all --prune`: passed.
+  - `git status --short --branch`: `## chapter35...origin/chapter35`.
+  - `git rev-parse HEAD`: `3ffb67d1a2d94aef17f0e7bbffc66da211b1a91d`.
+  - `git rev-parse origin/chapter35`: `3ffb67d1a2d94aef17f0e7bbffc66da211b1a91d`.
+- Outcome: Approved with minor changes.
+- Technical areas reviewed: embedded/product-system plausibility, firmware mode bits, runtime flags, compile-time
+  options, compatibility toggles, customer exceptions, manufacturing provisioning, backend interpretation, service-tool
+  workflows, support procedures, field upgrade order, release validation, state-space classification, ownership,
+  reviewer assignment, characterization evidence, contract tests, integration tests, release evidence, field data, API
+  promises, compatibility promises, and later deletion/refactoring boundaries.
+- Technical corrections applied: replaced proof-like wording around contract tests with evidence wording; changed
+  testing and evidence prose from "show/prove complete behavior" toward capture, expose, exercise, validate, and reveal;
+  clarified that valid combinations need evidence for the specific product promise being made.
+- Technical credibility result: the chapter treats Boolean Explosion as product behavior combination growth rather than
+  conditional style, distinguishes legitimate flags from unmanaged combinations, separates mechanism switches from
+  product policy, and keeps unsupported, obsolete, temporary, and unknown combinations distinct.
+- Test strategy result: characterization, contract, integration, release, log, support, manufacturing, field, and team
+  memory evidence are presented as complementary signals, not complete proof of safety.
+- ADR result: technically actionable and bounded; it does not prescribe a universal state machine, rewrite, deletion
+  workflow, or broad trust-preserving migration.
+- Exercise result: actionable for a real legacy area and still ends with exactly seven outputs.
+- Canon and PEAK status: unchanged. `CHAPTER-035` remains `draft`; no `primary_concept` field, PEAK concept, ID,
+  relationship, relationship verb, or registry entry was introduced.
+- Chapter 36 and Chapter 37 status: not started.
+- Changed files:
+  - `book/06-legacy/35-reducing-boolean-explosion.md`
+  - `editor/EDITOR_LOG.md`
+- Unresolved technical issues: none.
+- Final validation completed after this log entry:
+  - Direct Technical Review assertions: passed for `CHAPTER-035` draft status, exact H1 and H2 order, exactly three
+    Principal's Notebook bullets, unresolved marker absence, exact relationship set preservation, no `primary_concept`,
+    Chapter 36/37 manuscript absence, and no tracked site.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed; scanned 188 links successfully.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `vale --config .vale.ini book/06-legacy/35-reducing-boolean-explosion.md editor/EDITOR_LOG.md knowledge/index.yaml`:
+    passed.
+  - `git ls-files site`: passed with no tracked files.
+- Commit subject: `docs(chapter-35): complete technical review`.
+- Next lifecycle stage: Freeze Review.
+- Do not create a pull request, merge, start Chapter 36, or mark Chapter 35 canonical as part of this phase.
+
 ## Phase 176 Chapter 32 Author Draft
 
 - Chapter: Reading a Legacy System.

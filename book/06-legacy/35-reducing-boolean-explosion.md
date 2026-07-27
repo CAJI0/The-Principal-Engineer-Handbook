@@ -139,8 +139,8 @@ Customer recovery flow on without the customer product family: invalid.
 
 Provisioning mode present in field reports: unsupported, but real enough to need detection and support handling.
 
-Old sensor compatibility with the new service-tool recovery flow: unknown until contract tests proved the diagnostic
-meaning.
+Old sensor compatibility with the new service-tool recovery flow: unknown until contract tests gave evidence for the
+diagnostic meaning.
 
 Several rows were not product states at all. They were mechanism controls. A compile-time option changed board timing.
 A runtime flag preserved a customer workflow. A provisioning marker existed for manufacturing. A backend tolerance
@@ -268,12 +268,12 @@ change it safely.
 
 The evidence is distributed.
 
-Characterization tests show what the current system does before you change it. Contract tests show what one surface has
-promised another. Integration tests show how combinations behave across firmware, backend, service tools, and release
-paths. Release evidence shows what the organization actually validates. Logs and field data show what has appeared
-outside the lab. Support procedures show what humans have been taught to trust. Manufacturing scripts show temporary
-states that may never appear in product diagrams. Team memory can explain why a strange combination exists, but if the
-only map lives in one engineer's head, the Bus Factor is part of the risk.
+Characterization tests capture what the current system does before you change it. Contract tests expose what one
+surface has promised another. Integration tests exercise combinations across firmware, backend, service tools, and
+release paths. Release evidence shows what the organization has actually validated. Logs and field data show what has
+appeared outside the lab. Support procedures show what humans have been taught to trust. Manufacturing scripts reveal
+temporary states that may never appear in product diagrams. Team memory can explain why a strange combination exists,
+but if the only map lives in one engineer's head, the Bus Factor is part of the risk.
 
 Use metrics as evidence lenses, not as theater.
 
@@ -362,10 +362,10 @@ The useful categories are plain:
 
 Those categories are not final truth. They are a way to make the next review honest.
 
-A valid combination needs tests, owners, and release evidence. An invalid combination needs prevention or explicit
-failure. An unsupported combination needs detection and safe handling. An obsolete combination needs evidence before
-removal. A temporary combination needs an owner and revisit trigger. An unknown combination needs investigation before it
-becomes the quiet reason nobody changes anything.
+A valid combination needs owners, tests, and release evidence for the promise being made. An invalid combination needs
+prevention or explicit failure. An unsupported combination needs detection and safe handling. An obsolete combination
+needs evidence before removal. A temporary combination needs an owner and revisit trigger. An unknown combination needs
+investigation before it becomes the quiet reason nobody changes anything.
 
 Finally, put a review path around growth.
 
