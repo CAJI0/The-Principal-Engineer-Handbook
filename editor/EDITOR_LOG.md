@@ -8133,6 +8133,95 @@ Pull request readiness:
 - Branch merged: no.
 - Chapter 36 started: no.
 
+## Phase 199 Chapter 36 Canonical Brief Registration
+
+- Chapter: Deleting Safely.
+- Stable ID: `CHAPTER-036`.
+- Branch: `chapter36`.
+- Stage: Canonical Brief Registration.
+- Verified `origin/main` baseline SHA: `52193fc288f4fc3b1c6cd9d7c48de470b67a1413`.
+- Baseline evidence: PR #37 Chapter 35 squash merge commit,
+  `Chapter 35: Reducing Boolean Explosion (#37)`.
+- Required repository synchronization and verification:
+  - `git fetch origin`: passed; `origin/main` advanced to `52193fc288f4fc3b1c6cd9d7c48de470b67a1413`.
+  - `git checkout main`: passed via branch switch to `main`.
+  - `git pull --ff-only origin main`: passed; local `main` fast-forwarded to `origin/main`.
+  - `git rev-parse origin/main`: `52193fc288f4fc3b1c6cd9d7c48de470b67a1413`.
+  - `git status --short`: clean.
+- Preflight result: passed. `origin/main` was reachable and up to date locally, contained Chapter 35 canonical state and
+  `book/06-legacy/35-reducing-boolean-explosion.md`, local `knowledge/index.yaml` contained `CHAPTER-035` as
+  canonical, the Part VI table of contents order was correct, `CHAPTER-036` was absent, the Chapter 36 canonical brief
+  and manuscript were absent, the Chapter 37 manuscript was absent, no previous Chapter 36 Canonical Brief Registration
+  log entry existed, and the working tree was clean before edits.
+- Branch setup: `git checkout -B chapter36 origin/main` passed; branch `chapter36` created from baseline
+  `52193fc288f4fc3b1c6cd9d7c48de470b67a1413`.
+- Outcome: Chapter 36 canonical brief registered.
+- Lifecycle registration: `CHAPTER-036` added as `draft` in `knowledge/index.yaml`.
+- Manuscript path expected but not created: `book/06-legacy/36-deleting-safely.md`.
+- Canonical brief path created:
+  `editor/chapter-briefs/CHAPTER-036-deleting-safely.md`.
+- Primary concept result: none; no `primary_concept` field was added.
+- New PEAK concept result: none; Chapter 36 illustrates existing `RITUAL-003` and references existing `VOCAB-005`.
+- Exact relationship set registered:
+  - `CHAPTER-036 illustrates RITUAL-003`
+  - `CHAPTER-036 references VOCAB-005`
+  - `CHAPTER-036 references LAW-001`
+  - `CHAPTER-036 references LAW-002`
+  - `CHAPTER-036 references LAW-003`
+  - `CHAPTER-036 references LAW-004`
+  - `CHAPTER-036 references LAW-005`
+  - `CHAPTER-036 references LAW-006`
+  - `CHAPTER-036 references LAW-007`
+  - `CHAPTER-036 references VOCAB-001`
+  - `CHAPTER-036 references METRIC-001`
+  - `CHAPTER-036 references METRIC-002`
+  - `CHAPTER-036 references METRIC-003`
+  - `CHAPTER-036 references METRIC-004`
+  - `CHAPTER-036 references METRIC-005`
+  - `CHAPTER-036 references ARTIFACT-001`
+  - `CHAPTER-036 references ARTIFACT-002`
+  - `CHAPTER-036 references ARTIFACT-003`
+  - `CHAPTER-036 references ARTIFACT-004`
+  - `CHAPTER-036 references ARTIFACT-005`
+  - `CHAPTER-036 references ARTIFACT-006`
+  - `CHAPTER-036 references RITUAL-001`
+  - `CHAPTER-036 references RITUAL-004`
+  - `CHAPTER-036 references SMELL-001`
+  - `CHAPTER-036 references SMELL-002`
+  - `CHAPTER-036 references SMELL-003`
+  - `CHAPTER-036 references SMELL-004`
+  - `CHAPTER-036 references SMELL-005`
+  - `CHAPTER-036 references SMELL-006`
+  - `CHAPTER-036 references ANTIPATTERN-003`
+  - `CHAPTER-036 references ANTIPATTERN-006`
+  - `CHAPTER-036 references FAILURE-004`
+  - `CHAPTER-036 references FAILURE-005`
+- Changed files:
+  - `editor/EDITOR_LOG.md`
+  - `editor/chapter-briefs/CHAPTER-036-deleting-safely.md`
+  - `knowledge/index.yaml`
+- Final validation completed after this log entry:
+  - Direct Chapter 36 Canonical Brief Registration assertions: passed for expected changed files, `CHAPTER-036`
+    registered exactly once as `draft`, no `primary_concept`, Chapters 1-35 canonical, Chapter 36 manuscript absent,
+    Chapter 37 manuscript absent, exact relationship set, target existence, duplicate relationship absence, Phase 199
+    uniqueness, required commit subject present, and no tracked site.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `npm.cmd run lint:spelling`: passed after replacing `product sunsetting playbook` with `product retirement
+    playbook` in the Chapter 36 brief to satisfy the project dictionary while preserving the non-goal.
+  - `npm.cmd run lint:links`: passed; scanned 189 links successfully.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `vale --config .vale.ini editor/chapter-briefs/CHAPTER-036-deleting-safely.md editor/EDITOR_LOG.md
+    knowledge/index.yaml`: passed.
+  - `git ls-files site`: passed with no tracked files.
+- Commit subject: `docs(chapter-36): register canonical brief`.
+- Pull request readiness: ready after this Canonical Brief Registration commit is committed and pushed.
+- Branch merged: no.
+- Chapter 36 Author Draft started: no.
+- Next expected phase: Author Draft.
+- Do not create the Chapter 36 manuscript, create Chapter 37 files, or change Chapters 1-35 as part of this phase.
+
 ## Phase 176 Chapter 32 Author Draft
 
 - Chapter: Reading a Legacy System.
