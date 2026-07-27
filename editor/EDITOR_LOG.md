@@ -8473,6 +8473,28 @@ Pull request readiness:
 - Commit subject: `docs(chapter-36): freeze chapter`.
 - Pull request readiness: Chapter 36 is ready for PR from `chapter36` to `main` after this commit is pushed.
 
+## Appendix Editorial Review
+
+- Branch: `appendix`.
+- Stage: Editorial Review.
+- Reviewed baseline commit: `5d3c7256b67b6d1bf3041dee38a331fef83d26c7`.
+- Outcome: Approved.
+- Files reviewed:
+  - `book/appendix/adr-template.md`.
+  - `book/appendix/rfc-template.md`.
+  - `book/appendix/decision-journal-template.md`.
+  - `book/appendix/architecture-review-template.md`.
+  - `book/appendix/chapter-review-checklist.md`.
+  - `book/appendix/glossary.md`.
+  - `book/appendix/README.md`.
+- Editorial changes made: none; Appendix draft was already practical, copyable, bounded, and stylistically consistent.
+- Stale notes or placeholders: none.
+- Appendix scope preserved: yes.
+- Chapters 1-37 changed: no.
+- New PEAK concepts introduced: no.
+- Validation commands and results: `git diff --check` passed; `npm.cmd run lint:md` passed; `npm.cmd run lint:spelling` passed; `npm.cmd run lint:links` passed; `python -m pip check` passed; `python -m mkdocs build --strict` passed; `git ls-files site` returned no tracked files; `vale --config .vale.ini book/appendix editor/EDITOR_LOG.md` passed with 0 errors, 0 warnings, and 0 suggestions.
+- Next stage: Appendix Canon Review.
+
 ## Phase 212 Appendix Author Draft
 
 - Date: 2026-07-27
