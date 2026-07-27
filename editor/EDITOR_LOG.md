@@ -7426,6 +7426,83 @@ Pull request readiness:
 - Do not perform Editorial Review, Canon Review, Technical Review, Freeze Review, PR creation, or merge as part of this
   phase.
 
+## Phase 189 Chapter 34 Editorial Review
+
+- Chapter: Managing Utility Gravity.
+- Stable ID: `CHAPTER-034`.
+- Branch: `chapter34`.
+- Stage: Editorial Review.
+- Reviewed baseline branch and commit: `origin/chapter34` at
+  `408749f65fff17c412ecc038105a865821ab4974`.
+- Required repository synchronization and verification:
+  - `git status --short --branch`: `## chapter34...origin/chapter34`.
+  - `git rev-parse HEAD`: `408749f65fff17c412ecc038105a865821ab4974`.
+  - `git rev-parse origin/chapter34`: `408749f65fff17c412ecc038105a865821ab4974`.
+  - decorated five-commit log check: passed; branch tip was the Chapter 34 Author Draft commit.
+- Preflight result: passed. Local `HEAD` equaled `origin/chapter34`, the manuscript and canonical brief existed,
+  `CHAPTER-034` remained `draft` with no `primary_concept`, Chapters 1-33 remained canonical, Chapter 35-37 manuscripts
+  were absent, and the working tree was clean before edits.
+- Outcome: approved with minor editorial changes.
+- Editorial changes:
+  - tightened the opening quote so the chapter begins with dependency rather than metaphor;
+  - sharpened the story's opening request line;
+  - clarified that the release failure changed the utility's promise without changing its signature;
+  - split the failure-story comparison into readable sentences while preserving `FAILURE-004` and `FAILURE-005`.
+- Canonical brief path preserved unchanged: `editor/chapter-briefs/CHAPTER-034-managing-utility-gravity.md`.
+- Registry status preserved: `CHAPTER-034` remains `draft` in `knowledge/index.yaml`.
+- Primary concept result: remains absent; no `primary_concept` field was added.
+- Exact relationship set preserved:
+  - `CHAPTER-034 illustrates SMELL-002`
+  - `CHAPTER-034 references VOCAB-009`
+  - `CHAPTER-034 references LAW-001`
+  - `CHAPTER-034 references LAW-002`
+  - `CHAPTER-034 references LAW-004`
+  - `CHAPTER-034 references LAW-005`
+  - `CHAPTER-034 references LAW-007`
+  - `CHAPTER-034 references VOCAB-001`
+  - `CHAPTER-034 references METRIC-001`
+  - `CHAPTER-034 references METRIC-002`
+  - `CHAPTER-034 references METRIC-003`
+  - `CHAPTER-034 references ARTIFACT-001`
+  - `CHAPTER-034 references ARTIFACT-002`
+  - `CHAPTER-034 references ARTIFACT-003`
+  - `CHAPTER-034 references ARTIFACT-006`
+  - `CHAPTER-034 references RITUAL-001`
+  - `CHAPTER-034 references RITUAL-004`
+  - `CHAPTER-034 references SMELL-001`
+  - `CHAPTER-034 references SMELL-004`
+  - `CHAPTER-034 references SMELL-005`
+  - `CHAPTER-034 references ANTIPATTERN-001`
+  - `CHAPTER-034 references ANTIPATTERN-002`
+  - `CHAPTER-034 references ANTIPATTERN-003`
+  - `CHAPTER-034 references ANTIPATTERN-006`
+  - `CHAPTER-034 references FAILURE-001`
+  - `CHAPTER-034 references FAILURE-004`
+  - `CHAPTER-034 references FAILURE-005`
+- Later Part VI boundaries preserved: Chapter 35 owns Boolean Explosion, Chapter 36 owns Deleting Safely, and Chapter 37
+  owns Refactoring Without Losing Product Trust.
+- Unresolved AUTHOR NOTE result: none.
+- Changed files:
+  - `book/06-legacy/34-managing-utility-gravity.md`
+  - `editor/EDITOR_LOG.md`
+- Final validation completed after this log entry:
+  - Direct Chapter 34 Editorial Review assertions: passed for expected changed files, protected brief and registry
+    unchanged, exact H1 and section order, story subsection, exactly three Notebook observations, unresolved marker
+    absence, `CHAPTER-034` remaining `draft`, no `primary_concept`, Chapters 1-33 canonical, Chapter 35-37 manuscripts
+    absent, exact relationship set, Phase 189 uniqueness, future review-phase absence, and no tracked site.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `vale --config .vale.ini book/06-legacy/34-managing-utility-gravity.md editor/EDITOR_LOG.md knowledge/index.yaml`:
+    passed.
+  - `git ls-files site`: passed with no tracked files.
+- Next lifecycle stage: Canon Review after this Editorial Review commit is committed and pushed.
+- Do not perform Canon Review, Technical Review, Freeze Review, PR creation, merge, Chapter 35 start, or Chapter 36/37
+  creation as part of this phase.
+
 ## Phase 176 Chapter 32 Author Draft
 
 - Chapter: Reading a Legacy System.

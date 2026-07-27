@@ -1,12 +1,12 @@
 # Managing Utility Gravity
 
-> A utility is small only until product behavior starts orbiting it.
+> A utility is small only until product behavior depends on it.
 
 ## Story
 
 ### The Helper That Became the Platform
 
-The Helper That Became the Platform began with a request that sounded too small to need architecture.
+The Helper That Became the Platform began with a request that sounded too small for architecture.
 
 A firmware team wanted to add one device default to `device_utils`.
 
@@ -51,7 +51,7 @@ event past the final-test expectation. Support saw the new category in a release
 field instructions still applied. The backend team noticed that one customer-specific rule had been written using the
 old default timeout as evidence that a module was late rather than still starting.
 
-Nobody had broken the utility's signature.
+Nobody had changed the utility's signature.
 
 They had changed what the utility promised.
 
@@ -234,7 +234,9 @@ Backend mappings show how device behavior becomes fleet state. ADRs, RFCs, Decis
 Ledger rows show what the organization decided, forgot, or deferred. Senior memory explains context that records may
 have lost, but memory alone creates Bus Factor (`METRIC-002`) risk.
 
-The Hero Engineer (`FAILURE-004`) is the warning sign when one person is the only reliable map of the utility. The Release We Should Have Delayed (`FAILURE-005`) is the warning sign when release pressure exposes that the utility's consumer map was smaller in the records than it was in the product.
+The Hero Engineer (`FAILURE-004`) is the warning sign when one person is the only reliable map of the utility.
+The Release We Should Have Delayed (`FAILURE-005`) is the warning sign when release pressure exposes that the utility's
+consumer map was smaller in the records than it was in the product.
 
 Discoverability (`METRIC-003`) is the practical test. Could a future engineer find the utility's promises and consumers
 without knowing whom to ask? If not, the utility may be carrying architecture invisibly.
