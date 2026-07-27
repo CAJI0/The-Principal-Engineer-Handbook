@@ -458,7 +458,7 @@ entities:
       type: chapter
       name: Refactoring Without Losing Product Trust
       path: ../book/06-legacy/37-refactoring-without-losing-product-trust.md
-      status: draft
+      status: canonical
   adrs:
     - id: ADR-001
       type: adr
