@@ -8473,6 +8473,313 @@ Pull request readiness:
 - Commit subject: `docs(chapter-36): freeze chapter`.
 - Pull request readiness: Chapter 36 is ready for PR from `chapter36` to `main` after this commit is pushed.
 
+## Phase 210 Chapter 37 Freeze Review
+
+- Chapter: Refactoring Without Losing Product Trust.
+- Stable ID: `CHAPTER-037`.
+- Branch: `chapter37`.
+- Lifecycle stage: Freeze Review.
+- Reviewed baseline commit: `2bacc7494a034d7d62b59cec076e924a997a2398`.
+- Outcome: frozen.
+- Freeze criteria checked:
+  - Prior review stages completed in order: Editorial Review, Canon Review, and Technical Review.
+  - Canon lifecycle state updated from `draft` to `canonical`.
+  - Canon relationships retained the exact registered all-reference set.
+  - No `primary_concept`, new PEAK concept, or `illustrates` relationship was introduced.
+  - Manuscript architecture, H1/H2 structure, Principal's Notebook count, ADR section, and Editor's Commentary were stable.
+  - Technical review changes remained limited to staged ownership and recovery precision.
+  - No unresolved TODO, TBD, FIXME, AUTHOR NOTE, or conflict marker remained.
+  - No appendix branch, appendix template, glossary, or tracked `site` work was started.
+- Manuscript changes made: none.
+- Canon changes made: `CHAPTER-037` status changed from `draft` to `canonical` in `knowledge/index.yaml`.
+- Log changes made: recorded this Freeze Review entry.
+- Unresolved issues: none.
+- Final lifecycle state: `CHAPTER-037` is `canonical`.
+- Validation completed after this log entry:
+  - Direct Freeze Review assertions: passed.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed; 192 links checked.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `vale --config .vale.ini book/06-legacy/37-refactoring-without-losing-product-trust.md editor/EDITOR_LOG.md knowledge/index.yaml editor/chapter-briefs/CHAPTER-037-refactoring-without-losing-product-trust.md`:
+    passed with 0 errors, 0 warnings, and 0 suggestions.
+  - `git ls-files site`: passed; no tracked site files.
+- Chapter 37 is Frozen.
+- Future substantive changes require reopening the chapter at the appropriate review stage.
+- Branch merged: no.
+- Appendix work started: no.
+- Commit subject: `docs(chapter-37): freeze chapter`.
+- Pull request readiness: Chapter 37 is ready for PR from `chapter37` to `main` after this commit is pushed.
+
+## Phase 209 Chapter 37 Technical Review
+
+- Chapter: Refactoring Without Losing Product Trust.
+- Stable ID: `CHAPTER-037`.
+- Branch: `chapter37`.
+- Lifecycle stage: Technical Review.
+- Reviewed baseline commit: `7aeea865442fc9710936d205f98e9272d9ecf2c2`.
+- Outcome: approved with minor technical tightening.
+- Technical areas reviewed:
+  - Embedded/product-system plausibility of the legacy startup and recovery scenario.
+  - Refactoring as structural improvement with product-facing trust risk.
+  - Trust surfaces across firmware, service tools, backend classification, manufacturing scripts, support procedures,
+    release sequencing, dashboards, logs, and customer workflows.
+  - Evidence realism across characterization tests, contract tests, integration checks, telemetry, service-tool checks,
+    manufacturing checks, support checks, release checks, rollback, and recovery.
+  - Distinction between rollback of firmware behavior and recovery of product operations and support confidence.
+  - Compatibility boundary retirement trigger and avoidance of permanent hidden debt.
+  - Use of Chapters 32-36 as inputs without reteaching them.
+- Technical changes:
+  - Added a stage-owner expectation to the Architecture Exercise's staged movement output.
+  - Added stage ownership to the chapter-local ADR decision so each step can continue, pause, or reverse responsibly.
+  - Added old/new report divergence reconciliation to recovery criteria.
+- Unresolved issues: none.
+- Canon and PEAK status: unchanged. `CHAPTER-037` remains `draft`; no `primary_concept`, new PEAK concept,
+  relationship change, or `illustrates` relationship was added.
+- Appendix status: no appendix files, templates, glossary material, or appendix prose created.
+- Validation completed after this log entry:
+  - Direct Technical Review assertions: passed.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed; 192 links checked.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `vale --config .vale.ini book/06-legacy/37-refactoring-without-losing-product-trust.md editor/EDITOR_LOG.md knowledge/index.yaml`:
+    passed with 0 errors, 0 warnings, and 0 suggestions.
+  - `git ls-files site`: passed; no tracked site files.
+- Commit subject: `docs(chapter-37): complete technical review`.
+- Next lifecycle stage: Freeze Review.
+
+## Phase 208 Chapter 37 Canon Review
+
+- Chapter: Refactoring Without Losing Product Trust.
+- Stable ID: `CHAPTER-037`.
+- Branch: `chapter37`.
+- Lifecycle stage: Canon Review.
+- Reviewed baseline commit: `35549dc89564f80e395e71265618a1af2f4df1d8`.
+- Outcome: approved. No manuscript terminology corrections were required during Canon Review.
+- Identity audit:
+  - `CHAPTER-037` exists exactly once in `knowledge/index.yaml`.
+  - `CHAPTER-037` remains `draft`.
+  - No `primary_concept` field exists for `CHAPTER-037`.
+  - Manuscript path and canonical brief path match the registered brief.
+- Relationship audit: passed. The exact Chapter 37 outgoing relationship set matches the canonical brief; every outgoing
+  relationship uses `references`; no `illustrates` relationship exists; no duplicate Chapter 37 edge exists; all targets
+  exist; and all relationship verbs are supported by `editor/KNOWLEDGE_MODEL.md`.
+- Meaning guardrails: `METRIC-002` remains Bus Factor, `METRIC-004` remains API Stability, `METRIC-005` remains
+  Architecture Health, and `VOCAB-001` / `METRIC-001` remain Change Radius references.
+- Chapter-local terminology: product trust, trust-preserving refactoring, product trust surface, refactoring map,
+  migration slice, compatibility seam, strangler path, branch-by-abstraction, shadow path, dual write, rollback proof,
+  recovery proof, and trust erosion signal remain chapter-local prose only.
+- Neighboring chapter boundaries: Chapters 32-36 remain the sources for reading maps, Silent Coupling, Utility Gravity,
+  Boolean Explosion, and deletion evidence; Chapter 37 synthesizes them without making any one of them a new primary
+  concept.
+- Appendix boundary: no appendix content, template, glossary, or future appendix roadmap was created.
+- Validation completed after this log entry:
+  - Direct Canon Review assertions: passed for exact `CHAPTER-037` draft record, no `primary_concept`, exact
+    all-reference relationship set, no `illustrates`, no duplicate Chapter 37 edges, existing relationship targets,
+    supported relationship verbs, Chapters 1-36 canonical status, no appendix branch changes, and no tracked `site`
+    files.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed; 192 links scanned successfully.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `vale --config .vale.ini book/06-legacy/37-refactoring-without-losing-product-trust.md editor/EDITOR_LOG.md knowledge/index.yaml editor/chapter-briefs/CHAPTER-037-refactoring-without-losing-product-trust.md`:
+    passed with 0 errors, 0 warnings, and 0 suggestions.
+  - `git ls-files site`: passed with no tracked files.
+- Commit subject: `docs(chapter-37): complete canon review`.
+- Next lifecycle stage: Technical Review.
+
+## Phase 207 Chapter 37 Editorial Review
+
+- Chapter: Refactoring Without Losing Product Trust.
+- Stable ID: `CHAPTER-037`.
+- Branch: `chapter37`.
+- Lifecycle stage: Editorial Review.
+- Reviewed baseline commit: `b702f97f6a292970343a1a5a98de8098bb3594e9`.
+- Outcome: approved with minor editorial changes.
+- Editorial changes:
+  - Tightened the story's release-candidate failure transition so the issue reads as a trust-surface miss rather than a
+    generic failed refactor.
+  - Smoothed the team reaction paragraph without changing the Principal Engineer's response.
+  - Softened the synthesis wording around the refactoring map so it remains a chapter-local practice rather than a new
+    canonical artifact.
+  - Improved the cadence of the branch-by-abstraction, shadow-path, and dual-write paragraph.
+  - Tuned the final commentary line to emphasize synthesis without adding a new book-wide framework.
+- Canon and PEAK status: unchanged. `CHAPTER-037` remains `draft`; no `primary_concept` field, new PEAK concept,
+  relationship change, or relationship verb was added.
+- Canonical brief status: preserved unchanged.
+- `knowledge/index.yaml` status: unchanged during Editorial Review.
+- Appendix status: no appendix files, templates, glossary material, or appendix prose created.
+- Validation completed after this log entry:
+  - Direct Editorial Review assertions: passed for unchanged `knowledge/index.yaml`, unchanged canonical brief,
+    `CHAPTER-037` draft status, no `primary_concept`, no unresolved markers, exactly three Notebook observations, log
+    entry presence, no appendix branch changes, and no tracked `site` files.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed; 192 links scanned successfully.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `vale --config .vale.ini book/06-legacy/37-refactoring-without-losing-product-trust.md editor/EDITOR_LOG.md`:
+    passed with 0 errors, 0 warnings, and 0 suggestions.
+  - `git ls-files site`: passed with no tracked files.
+- Commit subject: `docs(chapter-37): complete editorial review`.
+- Next lifecycle stage: Canon Review.
+
+## Phase 206 Chapter 37 Author Draft
+
+- Chapter: Refactoring Without Losing Product Trust.
+- Stable ID: `CHAPTER-037`.
+- Branch: `chapter37`.
+- Lifecycle stage: Author Draft.
+- Verified starting branch state:
+  - `git fetch --all --prune`: passed.
+  - `git switch chapter37`: passed; branch was already checked out and up to date with `origin/chapter37`.
+  - `git pull --ff-only`: passed; branch was already up to date.
+  - `git status --short --branch`: clean on `chapter37...origin/chapter37`.
+  - `git rev-parse HEAD`: `59f5ebcfb8cd121e93cad59a5f43e1c6a46c68cd`.
+  - `git rev-parse origin/chapter37`: `59f5ebcfb8cd121e93cad59a5f43e1c6a46c68cd`.
+  - `git log` with one-line decorated output for the latest eight commits: confirmed the branch tip was the Chapter 37
+    canonical brief registration commit,
+    followed by `f0c14c968e85ad777f5991425e641c9ce02163fa` for Chapter 36.
+- Canonical brief registration commit SHA: `59f5ebcfb8cd121e93cad59a5f43e1c6a46c68cd`.
+- Baseline recorded in the canonical brief: `f0c14c968e85ad777f5991425e641c9ce02163fa`.
+- Manuscript path created:
+  `book/06-legacy/37-refactoring-without-losing-product-trust.md`.
+- Lifecycle status confirmation: `CHAPTER-037` remains `draft` in `knowledge/index.yaml`.
+- Primary concept confirmation: no `primary_concept` field was added.
+- PEAK graph confirmation: no new PEAK concept, ID, relationship verb, artifact, ritual, metric, smell, anti-pattern,
+  law, vocabulary term, failure story, or appendix artifact was created.
+- Canonical brief preservation: `editor/chapter-briefs/CHAPTER-037-refactoring-without-losing-product-trust.md`
+  preserved unchanged.
+- Chapters 1-36 preservation: no Chapter 1-36 manuscripts were modified.
+- Appendix preservation: no appendix content, appendix roadmap, appendix template, glossary material, or final-book
+  metadata was created.
+- Story used: `The Refactor That Was Technically Right and Operationally Wrong`.
+- Principle used: `Refactor from the product promise inward.`
+- Architecture exercise used: `Plan a Trust-Preserving Refactor`.
+- Chapter-local ADR/record used: `Refactor the Legacy Startup Path Behind a Compatibility Boundary`.
+- Principal's Notebook observations: exactly three.
+  - `A cleaner structure is not done until the product still trusts it.`
+  - `Refactor from the promise inward.`
+  - `The best legacy refactor lowers future change cost without spending current trust.`
+- Validation completed after this log entry:
+  - Direct Chapter 37 Author Draft assertions: passed for allowed changed files, manuscript existence, canonical brief
+    preservation, unchanged `knowledge/index.yaml`, `CHAPTER-037` draft status, no `primary_concept`, Chapters 1-36
+    canonical status, required story, principle, exercise, chapter-local ADR, closing line, exactly three Notebook
+    observations, Author Draft log entry, and no tracked `site` files.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed; 192 links scanned successfully.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `vale --config .vale.ini book/06-legacy/37-refactoring-without-losing-product-trust.md editor/EDITOR_LOG.md`:
+    passed with 0 errors, 0 warnings, and 0 suggestions.
+  - `git ls-files site`: passed with no tracked files.
+- Commit subject: `docs(chapter-37): add author draft`.
+- Next lifecycle stage: Editorial Review.
+
+## Phase 205 Chapter 37 Canonical Brief Registration
+
+- Chapter: Refactoring Without Losing Product Trust.
+- Stable ID: `CHAPTER-037`.
+- Branch: `chapter37`.
+- Stage: Canonical Brief Registration.
+- Verified `origin/main` baseline SHA: `f0c14c968e85ad777f5991425e641c9ce02163fa`.
+- Baseline evidence: PR #38 Chapter 36 squash merge commit, `Chapter 36: Deleting Safely`.
+- Required repository synchronization and verification:
+  - `git fetch origin`: passed; `origin/main` advanced to
+    `f0c14c968e85ad777f5991425e641c9ce02163fa`.
+  - `git checkout main`: passed via branch switch to `main`.
+  - `git pull --ff-only origin main`: passed; local `main` fast-forwarded to `origin/main`.
+  - `git rev-parse origin/main`: `f0c14c968e85ad777f5991425e641c9ce02163fa`.
+  - `git status --short`: clean.
+- Preflight result: passed. `origin/main` was reachable and up to date locally, contained Chapter 36 canonical state and
+  `book/06-legacy/36-deleting-safely.md`, local `knowledge/index.yaml` contained `CHAPTER-036` as canonical, the Part
+  VI table of contents order was correct, `CHAPTER-037` was absent, the Chapter 37 canonical brief and manuscript were
+  absent, no previous Chapter 37 Canonical Brief Registration log entry existed, and the working tree was clean before
+  edits.
+- Branch setup: `git checkout -B chapter37 origin/main` passed; branch `chapter37` created from baseline
+  `f0c14c968e85ad777f5991425e641c9ce02163fa`.
+- Outcome: Chapter 37 canonical brief registered.
+- Lifecycle registration: `CHAPTER-037` added as `draft` in `knowledge/index.yaml`.
+- Manuscript path expected but not created:
+  `book/06-legacy/37-refactoring-without-losing-product-trust.md`.
+- Canonical brief path created:
+  `editor/chapter-briefs/CHAPTER-037-refactoring-without-losing-product-trust.md`.
+- Primary concept result: none; no `primary_concept` field was added.
+- New PEAK concept result: none; Chapter 37 references existing PEAK concepts only.
+- Relationship stance: all registered Chapter 37 outgoing relationships use `references`; no `illustrates`
+  relationship was added because Chapter 37 is a capstone practice chapter without one central PEAK concept.
+- Exact relationship set registered:
+  - `CHAPTER-037 references LAW-001`
+  - `CHAPTER-037 references LAW-002`
+  - `CHAPTER-037 references LAW-003`
+  - `CHAPTER-037 references LAW-004`
+  - `CHAPTER-037 references LAW-005`
+  - `CHAPTER-037 references LAW-006`
+  - `CHAPTER-037 references LAW-007`
+  - `CHAPTER-037 references VOCAB-001`
+  - `CHAPTER-037 references METRIC-001`
+  - `CHAPTER-037 references METRIC-002`
+  - `CHAPTER-037 references METRIC-003`
+  - `CHAPTER-037 references METRIC-004`
+  - `CHAPTER-037 references METRIC-005`
+  - `CHAPTER-037 references ARTIFACT-001`
+  - `CHAPTER-037 references ARTIFACT-002`
+  - `CHAPTER-037 references ARTIFACT-003`
+  - `CHAPTER-037 references ARTIFACT-004`
+  - `CHAPTER-037 references ARTIFACT-005`
+  - `CHAPTER-037 references ARTIFACT-006`
+  - `CHAPTER-037 references RITUAL-001`
+  - `CHAPTER-037 references RITUAL-002`
+  - `CHAPTER-037 references RITUAL-004`
+  - `CHAPTER-037 references SMELL-001`
+  - `CHAPTER-037 references SMELL-002`
+  - `CHAPTER-037 references SMELL-003`
+  - `CHAPTER-037 references SMELL-004`
+  - `CHAPTER-037 references SMELL-005`
+  - `CHAPTER-037 references SMELL-006`
+  - `CHAPTER-037 references ANTIPATTERN-001`
+  - `CHAPTER-037 references ANTIPATTERN-002`
+  - `CHAPTER-037 references ANTIPATTERN-003`
+  - `CHAPTER-037 references ANTIPATTERN-006`
+  - `CHAPTER-037 references FAILURE-003`
+  - `CHAPTER-037 references FAILURE-004`
+  - `CHAPTER-037 references FAILURE-005`
+- `METRIC-002` meaning guardrail: verified as Bus Factor, not Decision Quality.
+- Part VI closure result: Chapter 37 registered as the final Legacy chapter and final main reader-facing chapter before
+  the Appendix; no appendix content was created.
+- Changed files:
+  - `editor/chapter-briefs/CHAPTER-037-refactoring-without-losing-product-trust.md`
+  - `editor/EDITOR_LOG.md`
+  - `knowledge/index.yaml`
+- Final validation completed after this log entry:
+  - Direct Chapter 37 Canonical Brief assertions: passed for exact draft record, Chapters 1-36 canonical status, exact
+    all-reference relationship set, existing targets, no duplicate edges, no `primary_concept`, brief existence,
+    manuscript absence, Part VI order, expected changed-file set, no new PEAK entity, and no tracked `site` files.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed with a conservative link-checker rerun using `--concurrency 1`,
+    `--retry-errors`, and `--retry-errors-count 2`; 191 links scanned successfully.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `vale --config .vale.ini editor/chapter-briefs/CHAPTER-037-refactoring-without-losing-product-trust.md editor/EDITOR_LOG.md knowledge/index.yaml`:
+    passed with 0 errors, 0 warnings, and 0 suggestions.
+  - `git ls-files site`: passed with no tracked files.
+- Commit subject: `docs(chapter-37): register canonical brief`.
+- Next lifecycle stage: Author Draft after this Canonical Brief Registration commit is committed and pushed.
+- Do not create the manuscript, perform review gates, create a pull request, merge, or start appendix work as part of
+  this phase.
+
 ## Phase 176 Chapter 32 Author Draft
 
 - Chapter: Reading a Legacy System.

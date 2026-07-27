@@ -454,6 +454,11 @@ entities:
       name: Deleting Safely
       path: ../book/06-legacy/36-deleting-safely.md
       status: canonical
+    - id: CHAPTER-037
+      type: chapter
+      name: Refactoring Without Losing Product Trust
+      path: ../book/06-legacy/37-refactoring-without-losing-product-trust.md
+      status: canonical
   adrs:
     - id: ADR-001
       type: adr
@@ -2152,5 +2157,110 @@ relationships:
     type: references
     to: FAILURE-004
   - from: CHAPTER-036
+    type: references
+    to: FAILURE-005
+  - from: CHAPTER-037
+    type: references
+    to: LAW-001
+  - from: CHAPTER-037
+    type: references
+    to: LAW-002
+  - from: CHAPTER-037
+    type: references
+    to: LAW-003
+  - from: CHAPTER-037
+    type: references
+    to: LAW-004
+  - from: CHAPTER-037
+    type: references
+    to: LAW-005
+  - from: CHAPTER-037
+    type: references
+    to: LAW-006
+  - from: CHAPTER-037
+    type: references
+    to: LAW-007
+  - from: CHAPTER-037
+    type: references
+    to: VOCAB-001
+  - from: CHAPTER-037
+    type: references
+    to: METRIC-001
+  - from: CHAPTER-037
+    type: references
+    to: METRIC-002
+  - from: CHAPTER-037
+    type: references
+    to: METRIC-003
+  - from: CHAPTER-037
+    type: references
+    to: METRIC-004
+  - from: CHAPTER-037
+    type: references
+    to: METRIC-005
+  - from: CHAPTER-037
+    type: references
+    to: ARTIFACT-001
+  - from: CHAPTER-037
+    type: references
+    to: ARTIFACT-002
+  - from: CHAPTER-037
+    type: references
+    to: ARTIFACT-003
+  - from: CHAPTER-037
+    type: references
+    to: ARTIFACT-004
+  - from: CHAPTER-037
+    type: references
+    to: ARTIFACT-005
+  - from: CHAPTER-037
+    type: references
+    to: ARTIFACT-006
+  - from: CHAPTER-037
+    type: references
+    to: RITUAL-001
+  - from: CHAPTER-037
+    type: references
+    to: RITUAL-002
+  - from: CHAPTER-037
+    type: references
+    to: RITUAL-004
+  - from: CHAPTER-037
+    type: references
+    to: SMELL-001
+  - from: CHAPTER-037
+    type: references
+    to: SMELL-002
+  - from: CHAPTER-037
+    type: references
+    to: SMELL-003
+  - from: CHAPTER-037
+    type: references
+    to: SMELL-004
+  - from: CHAPTER-037
+    type: references
+    to: SMELL-005
+  - from: CHAPTER-037
+    type: references
+    to: SMELL-006
+  - from: CHAPTER-037
+    type: references
+    to: ANTIPATTERN-001
+  - from: CHAPTER-037
+    type: references
+    to: ANTIPATTERN-002
+  - from: CHAPTER-037
+    type: references
+    to: ANTIPATTERN-003
+  - from: CHAPTER-037
+    type: references
+    to: ANTIPATTERN-006
+  - from: CHAPTER-037
+    type: references
+    to: FAILURE-003
+  - from: CHAPTER-037
+    type: references
+    to: FAILURE-004
+  - from: CHAPTER-037
     type: references
     to: FAILURE-005
