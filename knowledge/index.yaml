@@ -449,6 +449,11 @@ entities:
       name: Reducing Boolean Explosion
       path: ../book/06-legacy/35-reducing-boolean-explosion.md
       status: canonical
+    - id: CHAPTER-036
+      type: chapter
+      name: Deleting Safely
+      path: ../book/06-legacy/36-deleting-safely.md
+      status: canonical
   adrs:
     - id: ADR-001
       type: adr
@@ -2048,5 +2053,104 @@ relationships:
     type: references
     to: FAILURE-004
   - from: CHAPTER-035
+    type: references
+    to: FAILURE-005
+  - from: CHAPTER-036
+    type: illustrates
+    to: RITUAL-003
+  - from: CHAPTER-036
+    type: references
+    to: VOCAB-005
+  - from: CHAPTER-036
+    type: references
+    to: LAW-001
+  - from: CHAPTER-036
+    type: references
+    to: LAW-002
+  - from: CHAPTER-036
+    type: references
+    to: LAW-003
+  - from: CHAPTER-036
+    type: references
+    to: LAW-004
+  - from: CHAPTER-036
+    type: references
+    to: LAW-005
+  - from: CHAPTER-036
+    type: references
+    to: LAW-006
+  - from: CHAPTER-036
+    type: references
+    to: LAW-007
+  - from: CHAPTER-036
+    type: references
+    to: VOCAB-001
+  - from: CHAPTER-036
+    type: references
+    to: METRIC-001
+  - from: CHAPTER-036
+    type: references
+    to: METRIC-002
+  - from: CHAPTER-036
+    type: references
+    to: METRIC-003
+  - from: CHAPTER-036
+    type: references
+    to: METRIC-004
+  - from: CHAPTER-036
+    type: references
+    to: METRIC-005
+  - from: CHAPTER-036
+    type: references
+    to: ARTIFACT-001
+  - from: CHAPTER-036
+    type: references
+    to: ARTIFACT-002
+  - from: CHAPTER-036
+    type: references
+    to: ARTIFACT-003
+  - from: CHAPTER-036
+    type: references
+    to: ARTIFACT-004
+  - from: CHAPTER-036
+    type: references
+    to: ARTIFACT-005
+  - from: CHAPTER-036
+    type: references
+    to: ARTIFACT-006
+  - from: CHAPTER-036
+    type: references
+    to: RITUAL-001
+  - from: CHAPTER-036
+    type: references
+    to: RITUAL-004
+  - from: CHAPTER-036
+    type: references
+    to: SMELL-001
+  - from: CHAPTER-036
+    type: references
+    to: SMELL-002
+  - from: CHAPTER-036
+    type: references
+    to: SMELL-003
+  - from: CHAPTER-036
+    type: references
+    to: SMELL-004
+  - from: CHAPTER-036
+    type: references
+    to: SMELL-005
+  - from: CHAPTER-036
+    type: references
+    to: SMELL-006
+  - from: CHAPTER-036
+    type: references
+    to: ANTIPATTERN-003
+  - from: CHAPTER-036
+    type: references
+    to: ANTIPATTERN-006
+  - from: CHAPTER-036
+    type: references
+    to: FAILURE-004
+  - from: CHAPTER-036
     type: references
     to: FAILURE-005

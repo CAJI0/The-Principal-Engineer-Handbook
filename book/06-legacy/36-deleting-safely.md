@@ -1,0 +1,543 @@
+# Deleting Safely
+
+> Deleting safely is not the same as deleting confidently.
+
+## Story
+
+### The Code Nobody Used Until Tuesday
+
+The Code Nobody Used Until Tuesday had survived four product generations.
+
+It lived behind a small compatibility branch in the firmware startup path. If a controller saw an old peripheral report
+one particular status byte during boot, it waited six extra seconds, retried the handshake, translated the status into
+an older diagnostic code, and marked the unit as recoverable instead of failed.
+
+The branch looked like an old compromise whose context had expired.
+
+The peripheral had not been manufactured for years. The old diagnostic code did not appear in current release notes.
+The service-tool team had moved to a guided recovery flow. The backend mapper had a newer field for device condition.
+The firmware tests covered the current startup path. Source search found one obvious caller and no active feature flag.
+
+The cleanup issue had been open for three releases.
+
+The pull request was small. It removed the compatibility branch, deleted a stale test fixture, simplified the startup
+state machine, and removed two lines from a diagnostic mapping table. The author included a note that the old peripheral
+was no longer supported. The unit tests passed. The integration test for current hardware passed. The release dashboard
+showed no recent devices using the old diagnostic code.
+
+"This should be safe now," someone wrote in review.
+
+The release shipped on Monday.
+
+On Tuesday morning, support opened the first escalation.
+
+A customer in a remote facility had power-cycled several controllers after a maintenance outage. The controllers were
+not new. They were mixed units from a staged upgrade. The main board had been replaced two years earlier, but the
+peripheral assembly had not. The old peripheral still reported the old status byte during a cold boot after long power
+loss. Before the release, the controller waited, retried, and surfaced a recoverable diagnostic. After the release, it
+failed fast.
+
+The service tool did not offer the old recovery flow because the new diagnostic code did not match its procedure.
+
+The backend did not classify the units as recoverable because the translated status no longer arrived.
+
+The dashboard did not show recent use because it only counted successful recovery events after the backend translation.
+It had never counted the raw old status byte. The telemetry was quiet because it was not designed to hear the behavior
+being deleted.
+
+Manufacturing joined the call two hours later.
+
+The old branch had another use. Refurbished units sometimes arrived with older peripheral assemblies during rework. The
+manufacturing station used the recoverable diagnostic to decide whether the unit needed a peripheral swap or only a
+firmware retry. That station was not part of product telemetry. It ran inside the factory network. Its script had not
+been touched in years because it kept working.
+
+Then support found the procedure.
+
+It was a PDF in a regional support folder, linked from a case template no current engineer had seen. The procedure told
+technicians to power-cycle the unit, wait for the old recoverable code, run the service-tool flow, and attach the
+resulting report to the customer record. The procedure did not say "firmware compatibility branch." It said "legacy
+startup recovery."
+
+The team gathered in a release review that felt uncomfortably familiar.
+
+"We searched the code," the firmware engineer said.
+
+"You searched one repository," Mara said.
+
+Mara was the Principal Engineer on call for the release. She did not treat the deletion as foolish. The branch had been
+a real deletion candidate. It was old. It was ugly. It complicated startup. It preserved behavior for hardware the
+company did not sell anymore.
+
+But the evidence had proved less than the team thought it proved.
+
+They had evidence that current firmware tests did not need the branch. They had evidence that one dashboard did not
+show recent translated recoveries. They had evidence that the current service-tool happy path did not use the old
+diagnostic. They did not have evidence that old devices, factory rework, regional support, backend classification, or
+customer-specific upgrade paths no longer depended on the behavior.
+
+The first proposed fix was to revert the deletion and avoid cleanup near releases.
+
+Mara pushed back.
+
+"The problem is not deletion. The problem is that we deleted a product promise as if it were only code."
+
+They restored the compatibility branch in a patch release. Then they treated the next deletion attempt as a product
+change.
+
+The first step was naming what had been removed.
+
+It was not "old startup code." It was a compatibility promise: for controllers with older peripheral assemblies, the
+firmware would give the system one retry window and report a recoverable diagnostic that service tools, backend
+classification, manufacturing rework, and support procedures could understand.
+
+That name changed the room.
+
+Firmware owned the startup behavior. The service-tool team owned technician recovery. Backend owned the classification
+contract. Manufacturing owned rework station behavior. Support owned procedures and customer communication. Release
+owned the compatibility window. Product owned the decision about whether old peripheral assemblies would remain
+supported during staged upgrades.
+
+The second step was rebuilding evidence.
+
+Firmware added characterization tests around the existing boot behavior. Backend added a contract test that consumed
+both the old translated diagnostic and the proposed replacement. The service-tool team added an integration test for
+mixed hardware recovery. Manufacturing ran the rework script against refurbished units and recorded which diagnostics
+the station used. Support searched cases for the procedure name instead of only the diagnostic code. Release pulled
+deployment inventory to find customers with mixed hardware still inside the upgrade window.
+
+Some evidence was clean.
+
+New devices did not need the path. Current manufactured units did not need the path. Most customers had completed the
+upgrade. The happy path was safe without the branch.
+
+Some evidence was less convenient.
+
+Three customers still had mixed hardware. The factory rework station still used the diagnostic. One regional support
+procedure still described it. A dashboard still implied support for the recoverable condition because the alert text had
+never been changed. A test fixture looked stale but was the only executable example of the old peripheral behavior.
+
+Mara asked the team to classify the deletion candidate before proposing the next removal.
+
+They did not call it dead.
+
+They called it active for three customers, active for manufacturing rework, obsolete for new production, temporary with
+an owner during the compatibility window, unsupported-but-real for devices outside the official upgrade plan, and
+dangerous if removed without service-tool and backend changes.
+
+The classification was not tidy.
+
+It was also useful.
+
+The team wrote an ADR. They would not delete the compatibility behavior in the current release. They would replace the
+old diagnostic with a new explicit compatibility event in the next minor release, keep a compatibility window for two
+release cycles, add shadow detection for raw old peripheral status, update the service tool and backend mapper, change
+the manufacturing script, revise support procedures, and publish release notes for customers still inside the staged
+upgrade.
+
+They added a rollback trigger.
+
+If shadow detection found raw old status from a customer not in the deployment inventory, the deletion would pause. If
+support cases rose above a threshold during the warning window, the release would keep the compatibility path. If
+manufacturing rework still needed the old diagnostic after the script update, the branch would stay until the station
+contract changed.
+
+They also wrote what would reopen the decision later.
+
+One customer request would not automatically preserve the branch forever. One quiet dashboard would not prove it safe
+to delete. The decision would reopen only with evidence: active raw status in field logs, manufacturing rework
+dependence, support procedure use, backend classification mismatch, or a customer inside the compatibility window.
+
+The second deletion attempt was quieter.
+
+The release emitted warning events before removal. The service tool showed a clear message for old hardware. The
+backend accepted the new explicit compatibility event and tracked the old diagnostic during the window. Manufacturing
+updated the station script. Support replaced the PDF. The dashboard stopped implying support for the old recoverable
+code and started showing the compatibility window by customer.
+
+Two releases later, the branch was removed.
+
+This time, the pull request was larger than the first one. It removed code, tests, fixtures, dashboard text, release
+notes, service-tool assumptions, manufacturing script behavior, support procedure links, and an Architecture Ledger row
+that had reached its revisit date.
+
+The codebase became smaller, but that was not the main result.
+
+The product promises became smaller too.
+
+Nobody celebrated the number of deleted lines.
+
+They celebrated that the system had fewer hidden promises than it had on Monday.
+
+## Discussion
+
+Deletion is a product change.
+
+That sentence sounds heavier than a cleanup branch wants to be. But in a legacy system, old code often survives because
+someone outside the file still depends on the behavior. The dependency may live in old hardware, a service tool, a
+backend mapper, a manufacturing station, a release script, a support procedure, a dashboard, a customer contract, or an
+upgrade path that only appears every few months.
+
+Deleting safely is not the same as deleting confidently.
+
+Confidence can come from a clean source search, an engineer's memory, a passing test suite, or a dashboard with no
+recent events. Evidence is narrower and more explicit. It says what the team looked for, where it looked, what the
+instrumentation can actually see, which owners agreed, which consumers were checked, what tests protect the behavior,
+and what signal would pause or reverse the decision.
+
+A local search result is evidence.
+
+It is rarely sufficient by itself.
+
+Source search tells you who names the symbol. It may not tell you who depends on the behavior through persisted device
+state, stored events, copied scripts, old dashboards, support playbooks, manufacturing procedures, customer upgrade
+orders, or manual workflows. It may miss generated code, archived release branches, diagnostic meanings, and tooling
+that consumes outputs rather than imports.
+
+Absence of telemetry is also evidence, but only for the thing the telemetry was designed to see.
+
+If the dashboard counts translated backend recoveries, it cannot prove that old devices no longer emit a raw startup
+status. If logs only exist after a successful boot, they cannot prove that failed startup behavior is gone. If
+manufacturing data never leaves the factory network, product telemetry cannot prove the factory no longer depends on a
+path. Silence means something only when you know what could have made noise.
+
+The first move is to name what is being removed.
+
+Not "cleanup." Not "dead code." Not "old branch." Name the behavior or promise:
+
+- an API response that a tool parses;
+- a diagnostic phrase that support recognizes;
+- a flag that preserves a customer workflow;
+- a variant that manufacturing provisions;
+- an event that a dashboard counts;
+- a configuration branch that enables a field upgrade;
+- a test fixture that documents old device behavior;
+- a script that repairs units during rework;
+- a procedure that tells technicians what to do;
+- a compatibility promise that keeps mixed hardware safe.
+
+Once the removal has a name, ownership becomes possible.
+
+`LAW-001`, Every State Has One Owner, matters because removal often crosses state and recovery paths. Someone must own
+the behavior being removed. Someone must own the consumer side. Someone must own the release window. Someone must own
+the support procedure. Someone must own the rollback or recovery plan if product trust is at risk.
+
+`LAW-002`, Every API Is a Promise, applies even when the API is informal.
+
+A diagnostic code can be an API. A log field can be an API. A manufacturing script input can be an API. A dashboard
+label can be an API to operations. A release note can be an API to a customer success team. When deletion changes what
+another surface can rely on, the removal changes a promise.
+
+Time matters too.
+
+Chapter 10's law, Time Is a Dependency, becomes very concrete during deletion. Old hardware and new firmware may coexist
+for months. Backend and service-tool releases may land on different days. Manufacturing stations may update after the
+product release. Customers may be inside a compatibility window. Field devices may sleep through the entire period when
+the team expected to see telemetry. A path can be unused this week and still be needed next Tuesday.
+
+This is why deletion work starts from a candidate, not from disgust.
+
+Disgust at messy code is not a deletion argument. It may point you toward a candidate. It does not prove the candidate
+is safe. A Principal Engineer asks what product surface shrinks if the deletion succeeds and what product trust breaks
+if the evidence is wrong.
+
+Useful classifications keep the conversation honest.
+
+An active candidate is still in use. Do not delete it unless the product decision is to end that behavior and the team
+has a migration, communication, and recovery plan.
+
+An unused-with-evidence candidate has been checked through the right evidence surfaces. It may be safe to remove if the
+team records what was checked and what would reopen the decision.
+
+An obsolete candidate no longer belongs in the intended product, but may still exist in tools, tests, support, or
+field reality. Obsolete is not the same as absent.
+
+A temporary-with-owner candidate exists for a reason, has an owner, and should have a revisit trigger. If the owner has
+left and the trigger is missing, the candidate is not automatically dead. It is unknown.
+
+An unsupported-but-real candidate is outside the official promise but appears in reality. These are uncomfortable. They
+may need detection, explicit failure, customer communication, or a product decision before deletion.
+
+An unknown candidate lacks enough evidence. Unknown should not become a permanent veto, but it should stop a confident
+deletion from masquerading as a safe one.
+
+A dangerous candidate touches product trust, recovery, legal commitments, safety, manufacturing, or customer upgrade
+paths. It may still be removed. It needs stronger guardrails.
+
+Tests are part of deletion evidence.
+
+Characterization tests capture what the old behavior does before the team removes it. Contract tests prove what one
+surface expects from another. Integration tests exercise release paths that unit tests miss. A test fixture may look
+stale because it describes a rare device, but that can be exactly why it is valuable. Delete the fixture only after you
+know whether it is documenting an obsolete path or preserving the only executable memory of a real one.
+
+Records are also part of deletion evidence.
+
+ADRs help when the removal changes a durable architecture promise. RFCs help when several teams need to review the
+change before it lands. Decision Journal entries help smaller choices survive memory loss. Mistake Ledger entries help
+when a previous deletion or failed cleanup taught something the team must not forget. Event Catalog updates matter when
+an event disappears, changes meaning, or stops feeding a dashboard. Architecture Ledger rows keep owners, consumers,
+evidence, risks, and revisit triggers visible.
+
+Architecture Review and Architecture Health Review serve different roles.
+
+Use Architecture Review when a deletion changes a cross-boundary promise. Use Architecture Health Review when the same
+area repeatedly cannot delete anything because ownership, tests, telemetry, or records are too weak. Repeated deletion
+blockers are health signals. They tell the organization where the system is expensive to shrink.
+
+Guardrails are not apologies for deletion.
+
+They are how deletion reaches the product without surprise. A warning period can reveal consumers who were invisible to
+source search. Shadow detection can count behavior before it is removed. A feature gate can limit exposure while
+evidence arrives. A canary release can limit blast radius. A compatibility window can give customers and tools time to
+move. A rollback path can restore behavior quickly. A recovery plan can help support and operations handle the
+unexpected without improvising.
+
+Rollback is not enough by itself.
+
+If the team deletes first and says "we can roll back," it may still break manufacturing, confuse technicians, corrupt a
+dashboard, or leave customers with a failed upgrade. Rollback protects only what it can restore quickly and safely. For
+trust-sensitive behavior, the team needs to know what will trigger rollback, who can make the call, how support will
+recognize the issue, and what records must change after the rollback.
+
+Safe deletion also deletes the surroundings.
+
+Leaving stale promises around is how old behavior returns. Delete or update release notes, support procedures,
+dashboards, alerts, migration instructions, service-tool assumptions, manufacturing scripts, test fixtures, training
+material, and Architecture Ledger rows. If the old path is gone but the organization still describes it as supported,
+the system has not really become smaller. It has become inconsistent.
+
+This is the connection to earlier Legacy chapters.
+
+Chapter 32 gives you the reading map. Chapter 33 gives you silent dependents. Chapter 34 gives you utility ownership
+and consumers. Chapter 35 gives you state-space classification. Chapter 36 uses all of those as inputs, but its question
+is narrower: can this old behavior disappear without surprising the product?
+
+The chapter also stops before Chapter 37.
+
+Deletion may reveal that the remaining design is still awkward. It may reveal that several promises need migration, not
+removal. It may reveal that a compatibility path should become a named interface before it can disappear. That is broader
+refactoring and migration strategy. Chapter 37 owns that work. Chapter 36 owns shrinking the system where evidence,
+ownership, communication, staging, validation, and recovery make removal responsible.
+
+The goal is not to be brave about deletion.
+
+The goal is to shrink the system without surprising the product.
+
+## Engineering Principle
+
+Treat deletion as a change to product promises, not only a change to code.
+
+Before removing old behavior, name the promise that might disappear. Then prove who still depends on it, how the team
+knows, what will change outside the repository, and how the product will recover if the evidence is wrong.
+
+Start with the candidate deletion.
+
+Write down exactly what is leaving:
+
+- behavior;
+- API;
+- flag;
+- product variant;
+- event;
+- configuration branch;
+- script;
+- dashboard;
+- test;
+- procedure;
+- compatibility promise;
+- workaround.
+
+Then ask who can be surprised.
+
+Look beyond code owners. Include product owners, firmware owners, backend owners, service-tool owners, manufacturing,
+support, operations, release, customers, and field-upgrade coordinators. A deletion that crosses those surfaces needs
+owners on both sides of the promise.
+
+Then ask what evidence proves the removal.
+
+Use source search, but do not stop there. Use telemetry, logs, field data, support cases, manufacturing records, release
+history, deployment inventory, characterization tests, contract tests, integration tests, records, and human memory.
+For each evidence source, ask what it cannot see.
+
+Then decide how the deletion should move.
+
+Some deletions can land directly after evidence and tests. Some need a warning period. Some need shadow detection. Some
+need a feature gate or canary. Some need a compatibility window. Some need an explicit rollback or recovery plan. Some
+should be deferred because the candidate is still active, unknown, or dangerous.
+
+Finally, delete the surrounding promise.
+
+Update the ADR, RFC, Decision Journal, Architecture Ledger, Event Catalog, release notes, dashboards, alerts, support
+procedures, manufacturing scripts, service-tool assumptions, migration instructions, and tests. The exact list depends
+on the promise being removed. The principle is the same: do not leave the old promise alive in the organization after
+the code is gone.
+
+Deletion is successful when the system is smaller and the promise surface is clearer.
+
+It is not successful merely because the diff is red.
+
+## Architecture Exercise
+
+Plan one safe deletion.
+
+Choose one old behavior people want to remove. Prefer a candidate that touches more than one surface: firmware,
+backend, service tools, manufacturing, support, operations, release, field upgrades, or customer workflows. Do not
+choose it only because the code is ugly. Choose it because removing it would make the system and its promises smaller.
+
+Use the first pass for naming, not changing.
+
+Write the candidate as one sentence:
+
+> We intend to remove [behavior], which currently promises [outcome] to [consumer].
+
+If you cannot fill in the promise and consumer, the deletion is not ready.
+
+Classify the candidate:
+
+- active;
+- unused-with-evidence;
+- obsolete;
+- temporary-with-owner;
+- unsupported-but-real;
+- unknown;
+- dangerous.
+
+Then build the deletion evidence.
+
+Look for evidence in at least six places:
+
+- source search and dependency search;
+- characterization, contract, and integration tests;
+- telemetry and logs designed to see the behavior;
+- field data, support cases, and customer records;
+- manufacturing scripts, station logs, and rework procedures;
+- backend, service-tool, dashboard, and alert behavior;
+- release history, deployment inventory, and compatibility windows;
+- ADRs, RFCs, Decision Journal entries, Architecture Ledger rows, Mistake Ledger entries, and Event Catalog records;
+- team memory, especially when no record exists.
+
+For each source, write one sentence about what it proves and one sentence about what it cannot prove.
+
+Plan the movement.
+
+Decide whether the deletion needs a direct removal, warning period, shadow detection, feature gate, canary release,
+compatibility window, rollback path, or recovery plan. Name the owner for each guardrail. Name the signal that would
+pause, roll back, or reopen the decision.
+
+The exercise ends with exactly three outputs:
+
+1. a deletion candidate statement with promise, owner, consumer, and classification;
+2. an evidence table that separates "not seen" from "not possible" and "not supported" from "safe to delete";
+3. a staged removal plan that includes records to update, surrounding promises to delete, and evidence that would
+   reopen the decision.
+
+Do not remove the behavior as part of this exercise.
+
+The goal is to make deletion ready enough that the later pull request is boring.
+
+## Principal's Notebook
+
+- Deletion removes promises, not only code.
+- Silence is evidence only when the system was designed to hear.
+- Shrink the system without surprising the product.
+
+## ADR
+
+### Stage Removal of the Legacy Startup Recovery Path
+
+#### Status
+
+Accepted for the next two releases in this legacy area.
+
+#### Context
+
+The controller still contains a legacy startup recovery path for older peripheral assemblies. The path waits during
+boot, retries the handshake, translates an old status byte into a recoverable diagnostic, and allows service tools,
+backend classification, manufacturing rework, and support procedures to treat the unit as recoverable.
+
+The old peripheral is no longer sold with new products. Current happy-path firmware tests do not need the branch.
+Source search shows limited direct use. Ordinary product telemetry shows no recent translated recoveries.
+
+The earlier deletion attempt showed that the evidence was incomplete. Old devices, manufacturing rework, support
+procedures, backend interpretation, dashboards, release scripts, and customer-specific upgrade paths may still depend
+on the behavior. The branch is obsolete for new production, active for some mixed-hardware customers, active for
+manufacturing rework, temporary with an owner during the compatibility window, unsupported-but-real outside the formal
+upgrade plan, and dangerous if removed without guardrails.
+
+#### Decision
+
+We will not delete the legacy startup recovery path as a local cleanup.
+
+We will stage the removal as a product change. Firmware will add characterization tests for the current startup
+behavior and shadow detection for the raw old status byte. Backend will accept a new explicit compatibility event and
+keep mapping the old diagnostic during the compatibility window. The service-tool team will update technician recovery
+behavior and add integration coverage for mixed hardware. Manufacturing will update the rework station script and
+record when the old diagnostic is still observed. Support will replace the regional procedure and prepare customer
+communication for sites still inside the upgrade window.
+
+Release will keep a two-release compatibility window. During that window, dashboards will show old-status observations
+by customer, hardware family, firmware version, backend version, and service-tool version. The Architecture Ledger will
+record owners, consumers, evidence links, risk, warning dates, and revisit triggers. Architecture Review will review the
+removal before the final branch deletion. Architecture Health Review will track repeated blockers: missing telemetry,
+stale support records, manufacturing script dependence, and unclear ownership.
+
+The final deletion may proceed only when the evidence shows no active customers inside the window, manufacturing no
+longer depends on the diagnostic, service-tool and backend contracts have moved, affected release versions can be
+identified, support procedures are updated, and the rollback or recovery plan is ready.
+
+#### Alternatives Considered
+
+We could delete the branch because source search is quiet. That would repeat the same failure mode: local confidence
+without product evidence.
+
+We could keep the branch forever because one deletion caused a support incident. That would preserve uncertainty as
+architecture and make future startup changes more expensive.
+
+We could hide the behavior behind another flag. That might reduce immediate risk while expanding the Boolean state
+space Chapter 35 warned about.
+
+We could rewrite the startup flow before deleting anything. That would turn a removal decision into broad refactoring
+before the product promises are named. Chapter 37 owns that kind of trust-sensitive restructuring.
+
+We could rely on rollback alone. That would restore code if the release fails, but it would not repair confused service
+tools, manufacturing scripts, dashboards, support procedures, or customer communication quickly enough.
+
+#### Consequences
+
+The deletion takes longer than the original cleanup pull request.
+
+The team gains better evidence. The old promise receives an owner, consumer list, compatibility window, tests, records,
+and rollback triggers. Manufacturing, support, backend, service tools, and release all know what will change and when.
+
+The system becomes smaller only when the product promise becomes smaller. Stale dashboards, procedures, fixtures,
+scripts, and records are removed with the code instead of contradicting it afterward.
+
+The decision does not preserve all old behavior forever. It creates the conditions under which old behavior can
+actually disappear.
+
+## Editor's Commentary
+
+This chapter belongs near the end of Part VI because deletion is where understanding becomes irreversible.
+
+Reading a legacy system gives the team a map. Finding Silent Coupling shows hidden dependents. Managing Utility Gravity
+shows where shared helpers have accumulated responsibility. Reducing Boolean Explosion names product states and
+unsupported combinations. Deleting Safely turns those findings into removal work.
+
+The chapter deliberately avoids the romance of cleanup.
+
+Many teams learn to fear deletion after one bad removal. Others keep deleting with confidence and calling the failures
+surprises. Both reactions miss the Principal Engineer's job. The job is not to preserve every old path. It is not to
+delete old things because they offend the current code shape. It is to make product promises small enough to own and
+clear enough to change.
+
+This is also why Chapter 36 stops before Chapter 37.
+
+Deletion can prepare refactoring, but it is not the same work. If the team needs to migrate product behavior, reshape
+interfaces, move responsibility across teams, or preserve trust while the structure changes, that belongs to the next
+chapter. Chapter 36 is narrower: remove what can responsibly disappear, prove the removal, communicate it, stage it,
+recover if the evidence is wrong, and clean up the records around it.
+
+Good deletion leaves less code behind.
+
+Better deletion leaves fewer promises behind.

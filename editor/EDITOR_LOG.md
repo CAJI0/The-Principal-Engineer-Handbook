@@ -8133,6 +8133,346 @@ Pull request readiness:
 - Branch merged: no.
 - Chapter 36 started: no.
 
+## Phase 199 Chapter 36 Canonical Brief Registration
+
+- Chapter: Deleting Safely.
+- Stable ID: `CHAPTER-036`.
+- Branch: `chapter36`.
+- Stage: Canonical Brief Registration.
+- Verified `origin/main` baseline SHA: `52193fc288f4fc3b1c6cd9d7c48de470b67a1413`.
+- Baseline evidence: PR #37 Chapter 35 squash merge commit,
+  `Chapter 35: Reducing Boolean Explosion (#37)`.
+- Required repository synchronization and verification:
+  - `git fetch origin`: passed; `origin/main` advanced to `52193fc288f4fc3b1c6cd9d7c48de470b67a1413`.
+  - `git checkout main`: passed via branch switch to `main`.
+  - `git pull --ff-only origin main`: passed; local `main` fast-forwarded to `origin/main`.
+  - `git rev-parse origin/main`: `52193fc288f4fc3b1c6cd9d7c48de470b67a1413`.
+  - `git status --short`: clean.
+- Preflight result: passed. `origin/main` was reachable and up to date locally, contained Chapter 35 canonical state and
+  `book/06-legacy/35-reducing-boolean-explosion.md`, local `knowledge/index.yaml` contained `CHAPTER-035` as
+  canonical, the Part VI table of contents order was correct, `CHAPTER-036` was absent, the Chapter 36 canonical brief
+  and manuscript were absent, the Chapter 37 manuscript was absent, no previous Chapter 36 Canonical Brief Registration
+  log entry existed, and the working tree was clean before edits.
+- Branch setup: `git checkout -B chapter36 origin/main` passed; branch `chapter36` created from baseline
+  `52193fc288f4fc3b1c6cd9d7c48de470b67a1413`.
+- Outcome: Chapter 36 canonical brief registered.
+- Lifecycle registration: `CHAPTER-036` added as `draft` in `knowledge/index.yaml`.
+- Manuscript path expected but not created: `book/06-legacy/36-deleting-safely.md`.
+- Canonical brief path created:
+  `editor/chapter-briefs/CHAPTER-036-deleting-safely.md`.
+- Primary concept result: none; no `primary_concept` field was added.
+- New PEAK concept result: none; Chapter 36 illustrates existing `RITUAL-003` and references existing `VOCAB-005`.
+- Exact relationship set registered:
+  - `CHAPTER-036 illustrates RITUAL-003`
+  - `CHAPTER-036 references VOCAB-005`
+  - `CHAPTER-036 references LAW-001`
+  - `CHAPTER-036 references LAW-002`
+  - `CHAPTER-036 references LAW-003`
+  - `CHAPTER-036 references LAW-004`
+  - `CHAPTER-036 references LAW-005`
+  - `CHAPTER-036 references LAW-006`
+  - `CHAPTER-036 references LAW-007`
+  - `CHAPTER-036 references VOCAB-001`
+  - `CHAPTER-036 references METRIC-001`
+  - `CHAPTER-036 references METRIC-002`
+  - `CHAPTER-036 references METRIC-003`
+  - `CHAPTER-036 references METRIC-004`
+  - `CHAPTER-036 references METRIC-005`
+  - `CHAPTER-036 references ARTIFACT-001`
+  - `CHAPTER-036 references ARTIFACT-002`
+  - `CHAPTER-036 references ARTIFACT-003`
+  - `CHAPTER-036 references ARTIFACT-004`
+  - `CHAPTER-036 references ARTIFACT-005`
+  - `CHAPTER-036 references ARTIFACT-006`
+  - `CHAPTER-036 references RITUAL-001`
+  - `CHAPTER-036 references RITUAL-004`
+  - `CHAPTER-036 references SMELL-001`
+  - `CHAPTER-036 references SMELL-002`
+  - `CHAPTER-036 references SMELL-003`
+  - `CHAPTER-036 references SMELL-004`
+  - `CHAPTER-036 references SMELL-005`
+  - `CHAPTER-036 references SMELL-006`
+  - `CHAPTER-036 references ANTIPATTERN-003`
+  - `CHAPTER-036 references ANTIPATTERN-006`
+  - `CHAPTER-036 references FAILURE-004`
+  - `CHAPTER-036 references FAILURE-005`
+- Changed files:
+  - `editor/EDITOR_LOG.md`
+  - `editor/chapter-briefs/CHAPTER-036-deleting-safely.md`
+  - `knowledge/index.yaml`
+- Final validation completed after this log entry:
+  - Direct Chapter 36 Canonical Brief Registration assertions: passed for expected changed files, `CHAPTER-036`
+    registered exactly once as `draft`, no `primary_concept`, Chapters 1-35 canonical, Chapter 36 manuscript absent,
+    Chapter 37 manuscript absent, exact relationship set, target existence, duplicate relationship absence, Phase 199
+    uniqueness, required commit subject present, and no tracked site.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `npm.cmd run lint:spelling`: passed after replacing one unsupported dictionary term in the Chapter 36 brief with
+    `product retirement playbook` while preserving the non-goal.
+  - `npm.cmd run lint:links`: passed; scanned 189 links successfully.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `vale --config .vale.ini editor/chapter-briefs/CHAPTER-036-deleting-safely.md editor/EDITOR_LOG.md
+    knowledge/index.yaml`: passed.
+  - `git ls-files site`: passed with no tracked files.
+- Commit subject: `docs(chapter-36): register canonical brief`.
+- Pull request readiness: ready after this Canonical Brief Registration commit is committed and pushed.
+- Branch merged: no.
+- Chapter 36 Author Draft started: no.
+- Next expected phase: Author Draft.
+- Do not create the Chapter 36 manuscript, create Chapter 37 files, or change Chapters 1-35 as part of this phase.
+
+## Phase 200 Chapter 36 Author Draft
+
+- Chapter: Deleting Safely.
+- Stable ID: `CHAPTER-036`.
+- Branch: `chapter36`.
+- Stage: Author Draft.
+- Verified baseline branch and commit: `origin/chapter36` at
+  `893e26cbd7da718855e43d2867065d6a378ef30a`.
+- Canonical brief registration commit SHA resolved during preflight:
+  `893e26cbd7da718855e43d2867065d6a378ef30a`.
+- Required repository synchronization and verification:
+  - `git fetch --all --prune`: passed.
+  - `git switch chapter36`: passed; branch was already `chapter36`.
+  - `git pull --ff-only`: passed; already up to date.
+  - `git status --short --branch`: `## chapter36...origin/chapter36`.
+  - `git rev-parse HEAD`: `893e26cbd7da718855e43d2867065d6a378ef30a`.
+  - `git rev-parse origin/chapter36`: `893e26cbd7da718855e43d2867065d6a378ef30a`.
+  - eight-commit log check: passed; branch tip was the Chapter 36 canonical brief registration commit.
+- Preflight result: passed. Local `HEAD` equaled `origin/chapter36`, the canonical brief existed, `CHAPTER-036`
+  remained `draft` with no `primary_concept`, the Chapter 36 manuscript was absent, the Chapter 37 manuscript was
+  absent, Chapters 1-35 remained canonical, no previous Chapter 36 Author Draft phase existed, and the working tree was
+  clean before edits.
+- Manuscript path created: `book/06-legacy/36-deleting-safely.md`.
+- Canonical brief path preserved unchanged:
+  `editor/chapter-briefs/CHAPTER-036-deleting-safely.md`.
+- Registry status preserved unchanged: `CHAPTER-036` remains `draft` in `knowledge/index.yaml`.
+- Primary concept result: remains absent; no `primary_concept` field was added.
+- Central illustrated concept: `RITUAL-003` - Deletion Day.
+- Central vocabulary term: `VOCAB-005` - Deletion Day.
+- Story drafted: `The Code Nobody Used Until Tuesday`.
+- Author Draft outcome: created the full reader-facing Chapter 36 manuscript with the required sequence: Opening Quote,
+  Story, Discussion, Engineering Principle, Architecture Exercise, Principal's Notebook, ADR, and Editor's Commentary.
+- Core practice result: framed deletion as a product change rather than housekeeping, centered on naming the removed
+  promise, finding owners and consumers, proving active or absent use, classifying deletion candidates, staging removal,
+  preserving rollback or recovery, and deleting surrounding records.
+- Exercise result: added `Plan one safe deletion`, ending with exactly three outputs for candidate statement, evidence
+  table, and staged removal plan.
+- ADR result: added `Stage Removal of the Legacy Startup Recovery Path`, choosing staged removal with evidence,
+  compatibility window, cross-team records, review, rollback triggers, and surrounding promise cleanup before final
+  branch deletion.
+- Principal's Notebook result: exactly three short observations.
+- Boundary result: Chapter 36 uses Chapters 32-35 as inputs, preserves Chapter 37 for broader trust-preserving
+  refactoring, and does not create Chapter 37 files.
+- Exact relationship set preserved:
+  - `CHAPTER-036 illustrates RITUAL-003`
+  - `CHAPTER-036 references VOCAB-005`
+  - `CHAPTER-036 references LAW-001`
+  - `CHAPTER-036 references LAW-002`
+  - `CHAPTER-036 references LAW-003`
+  - `CHAPTER-036 references LAW-004`
+  - `CHAPTER-036 references LAW-005`
+  - `CHAPTER-036 references LAW-006`
+  - `CHAPTER-036 references LAW-007`
+  - `CHAPTER-036 references VOCAB-001`
+  - `CHAPTER-036 references METRIC-001`
+  - `CHAPTER-036 references METRIC-002`
+  - `CHAPTER-036 references METRIC-003`
+  - `CHAPTER-036 references METRIC-004`
+  - `CHAPTER-036 references METRIC-005`
+  - `CHAPTER-036 references ARTIFACT-001`
+  - `CHAPTER-036 references ARTIFACT-002`
+  - `CHAPTER-036 references ARTIFACT-003`
+  - `CHAPTER-036 references ARTIFACT-004`
+  - `CHAPTER-036 references ARTIFACT-005`
+  - `CHAPTER-036 references ARTIFACT-006`
+  - `CHAPTER-036 references RITUAL-001`
+  - `CHAPTER-036 references RITUAL-004`
+  - `CHAPTER-036 references SMELL-001`
+  - `CHAPTER-036 references SMELL-002`
+  - `CHAPTER-036 references SMELL-003`
+  - `CHAPTER-036 references SMELL-004`
+  - `CHAPTER-036 references SMELL-005`
+  - `CHAPTER-036 references SMELL-006`
+  - `CHAPTER-036 references ANTIPATTERN-003`
+  - `CHAPTER-036 references ANTIPATTERN-006`
+  - `CHAPTER-036 references FAILURE-004`
+  - `CHAPTER-036 references FAILURE-005`
+- New PEAK concept result: none. No PEAK concept, ID, relationship verb, or `primary_concept` field was introduced.
+- Changed files:
+  - `book/06-legacy/36-deleting-safely.md`
+  - `editor/EDITOR_LOG.md`
+- Final validation completed after this log entry:
+  - Direct Chapter 36 Author Draft assertions: passed for expected manuscript creation, `CHAPTER-036` remaining
+    `draft`, no `primary_concept`, Chapters 1-35 canonical, Chapter 37 manuscript absence, required chapter sections,
+    required story title, exactly three Principal's Notebook observations, Phase 200 uniqueness, preserved relationship
+    set, and duplicate relationship absence.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed after replacing blank underscore placeholders in the exercise with bracket
+    placeholders.
+  - `npm.cmd run lint:spelling`: passed after replacing one unsupported dictionary term in the Chapter 36 registration
+    log note.
+  - `npm.cmd run lint:links`: passed; scanned 190 links successfully.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `vale --config .vale.ini book/06-legacy/36-deleting-safely.md editor/EDITOR_LOG.md knowledge/index.yaml
+    editor/chapter-briefs/CHAPTER-036-deleting-safely.md`: passed.
+  - `git ls-files site`: passed with no tracked files.
+- Commit subject: `docs(chapter-36): add author draft`.
+- Branch merged: no.
+- Next expected phase: Editorial Review.
+- Do not run Editorial Review, Canon Review, Technical Review, or Freeze Review as part of this phase.
+
+## Phase 201 Chapter 36 Editorial Review
+
+- Chapter: Deleting Safely.
+- Stable ID: `CHAPTER-036`.
+- Branch: `chapter36`.
+- Stage: Editorial Review.
+- Reviewed baseline commit: `fe80b7ca570ddb9b7b1cae6162065c0921d7e149`.
+- Outcome: approved with minor editorial changes.
+- Editorial changes:
+  - Replaced sharper cleanup-frustration phrasing with more precise release-history language.
+  - Tightened the review quote and post-incident response so the story stays focused on product evidence rather than
+    cleanup sentiment.
+  - Clarified that classification happens before the next removal attempt.
+  - Smoothed the story ending and final commentary lines without changing the chapter's thesis.
+- Canon and PEAK status: unchanged. `CHAPTER-036` remains `draft`; no `primary_concept` field was added; the canonical
+  brief and `knowledge/index.yaml` were not changed.
+- Chapter 37 status: not started.
+- Changed files:
+  - `book/06-legacy/36-deleting-safely.md`
+  - `editor/EDITOR_LOG.md`
+- Final validation completed after this log entry:
+  - Direct Chapter 36 Editorial assertions: passed for expected changed files, unchanged `knowledge/index.yaml`,
+    unchanged canonical brief, `CHAPTER-036` remaining `draft`, no `primary_concept`, exact H1/H2 structure, exactly
+    three Principal's Notebook observations, Chapter 37 manuscript absence, and no tracked site.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed after isolated rerun; the first concurrent run reported transient `[0]` statuses
+    for local markdown files, and the isolated rerun scanned 190 links successfully.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `vale --config .vale.ini book/06-legacy/36-deleting-safely.md editor/EDITOR_LOG.md`: passed.
+  - `git ls-files site`: passed with no tracked files.
+- Commit subject: `docs(chapter-36): complete editorial review`.
+- Next expected phase: Canon Review.
+
+## Phase 202 Chapter 36 Canon Review
+
+- Chapter: Deleting Safely.
+- Stable ID: `CHAPTER-036`.
+- Branch: `chapter36`.
+- Stage: Canon Review.
+- Reviewed baseline commit: `7d0a6d2b8625df761934bb1d2ace9892709825e1`.
+- Sync status before review: local `HEAD` matched `origin/chapter36` at
+  `7d0a6d2b8625df761934bb1d2ace9892709825e1`.
+- Outcome: approved with no manuscript or canon terminology changes required.
+- Canon result: central concept remained `RITUAL-003 - Deletion Day`; central vocabulary term remained
+  `VOCAB-005 - Deletion Day`.
+- PEAK relationship audit: the exact Chapter 36 relationship set was preserved, all targets existed,
+  relationship verbs were supported, and no duplicate edges were found.
+- Meaning guardrails checked: `METRIC-002` remained Bus Factor, not Decision Quality; no `primary_concept` field was
+  added; no PEAK concepts, verbs, classifications, or targets were added, renamed, or reclassified.
+- Part VI boundaries: Chapter 36 stayed focused on safe deletion and did not start Chapter 37.
+- Changed files:
+  - `editor/EDITOR_LOG.md`
+- Final validation completed after this log entry:
+  - Direct Chapter 36 Canon assertions: passed for branch sync, `CHAPTER-036` uniqueness, `draft` status,
+    absence of `primary_concept`, exact outgoing relationship set, supported verbs, existing targets, no duplicate
+    edges, Chapter 1 through Chapter 35 canonical status, Chapter 37 manuscript absence, and no tracked site.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed and scanned 190 links successfully.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `vale --config .vale.ini book/06-legacy/36-deleting-safely.md editor/EDITOR_LOG.md knowledge/index.yaml editor/chapter-briefs/CHAPTER-036-deleting-safely.md`:
+    passed with 0 errors, 0 warnings, and 0 suggestions.
+  - `git ls-files site`: passed with no tracked files.
+- Commit subject: `docs(chapter-36): complete canon review`.
+- Next expected phase: Technical Review.
+
+## Phase 203 Chapter 36 Technical Review
+
+- Chapter: Deleting Safely.
+- Stable ID: `CHAPTER-036`.
+- Branch: `chapter36`.
+- Stage: Technical Review.
+- Reviewed baseline commit: `0b69135dfc82a7b4f5bae6d0cd5147cd1c3a80c8`.
+- Sync status before review: local `HEAD` matched `origin/chapter36` at
+  `0b69135dfc82a7b4f5bae6d0cd5147cd1c3a80c8`.
+- Outcome: approved with minor technical precision changes.
+- Technical changes:
+  - Clarified that the staged release emits warning events before removal.
+  - Named the replacement signal as an explicit compatibility event.
+  - Tightened feature-gate language around limiting exposure while evidence arrives.
+  - Added affected-release-version traceability to the final deletion criteria.
+- Canon and PEAK status: unchanged. `CHAPTER-036` remains `draft`; no `primary_concept` field was added; the exact
+  relationship set was preserved.
+- Chapter 37 status: not started.
+- Changed files:
+  - `book/06-legacy/36-deleting-safely.md`
+  - `editor/EDITOR_LOG.md`
+- Final validation completed after this log entry:
+  - Direct Chapter 36 Technical assertions: passed for branch sync, `CHAPTER-036` uniqueness, `draft` status,
+    absence of `primary_concept`, exact H1/H2 structure, exactly three Principal's Notebook observations, exact
+    outgoing relationship set, supported verbs, existing targets, no duplicate edges, Chapter 1 through Chapter 35
+    canonical status, Chapter 37 manuscript absence, and no tracked site.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed with a conservative link-checker rerun using `--concurrency 1`,
+    `--retry-errors`, and `--retry-errors-count 2`, scanning 190 links successfully after default-concurrency runs
+    reported transient `[0]` statuses for existing local markdown files.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `vale --config .vale.ini book/06-legacy/36-deleting-safely.md editor/EDITOR_LOG.md knowledge/index.yaml editor/chapter-briefs/CHAPTER-036-deleting-safely.md`:
+    passed with 0 errors, 0 warnings, and 0 suggestions.
+  - `git ls-files site`: passed with no tracked files.
+- Commit subject: `docs(chapter-36): complete technical review`.
+- Next expected phase: Freeze Review.
+
+## Phase 204 Chapter 36 Freeze Review
+
+- Chapter: Deleting Safely.
+- Stable ID: `CHAPTER-036`.
+- Branch: `chapter36`.
+- Stage: Freeze Review.
+- Reviewed baseline commit: `6686a9985525188d5a4857fe255c38c1d5b795cc`.
+- Sync status before review: local `HEAD` matched `origin/chapter36` at
+  `6686a9985525188d5a4857fe255c38c1d5b795cc`.
+- Outcome: approved for freeze.
+- Freeze result: `CHAPTER-036` moved from `draft` to `canonical` in `knowledge/index.yaml`.
+- Manuscript result: Chapter 36 is Frozen with the required chapter architecture, exact title, exact section order,
+  no unresolved notes, no conflict markers, and exactly three Principal's Notebook observations.
+- Canon result: exact Chapter 36 relationship set preserved; `RITUAL-003` and `VOCAB-005` remained central;
+  `METRIC-002` remained Bus Factor; no `primary_concept` field was added.
+- Part VI boundary result: Chapter 37 was not started.
+- Changed files:
+  - `knowledge/index.yaml`
+  - `editor/EDITOR_LOG.md`
+- Final validation completed after this log entry:
+  - Direct Chapter 36 Freeze assertions: passed for review phase presence, `CHAPTER-036` uniqueness, `canonical`
+    status, absence of `primary_concept`, path resolution, exact H1/H2 structure, exactly three Principal's Notebook
+    observations, no unresolved notes or conflict markers, exact outgoing relationship set, supported verbs, existing
+    targets, no duplicate edges, Chapter 1 through Chapter 35 canonical status, Chapter 37 manuscript absence, expected
+    Freeze changed-file set, and no tracked site.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed with a conservative link-checker rerun using `--concurrency 1`,
+    `--retry-errors`, and `--retry-errors-count 2`, scanning 190 links successfully.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `vale --config .vale.ini book/06-legacy/36-deleting-safely.md editor/EDITOR_LOG.md knowledge/index.yaml editor/chapter-briefs/CHAPTER-036-deleting-safely.md`:
+    passed with 0 errors, 0 warnings, and 0 suggestions.
+  - `git ls-files site`: passed with no tracked files.
+- Commit subject: `docs(chapter-36): freeze chapter`.
+- Pull request readiness: Chapter 36 is ready for PR from `chapter36` to `main` after this commit is pushed.
+
 ## Phase 176 Chapter 32 Author Draft
 
 - Chapter: Reading a Legacy System.
