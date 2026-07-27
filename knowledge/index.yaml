@@ -448,7 +448,7 @@ entities:
       type: chapter
       name: Reducing Boolean Explosion
       path: ../book/06-legacy/35-reducing-boolean-explosion.md
-      status: draft
+      status: canonical
   adrs:
     - id: ADR-001
       type: adr
