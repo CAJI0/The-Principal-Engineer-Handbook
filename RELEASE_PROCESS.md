@@ -17,4 +17,5 @@ This process describes how maintainers prepare a release. It does not approve ma
 
 ## Versioning
 
-> AUTHOR NOTE: Authors and maintainers to choose versioning rules for manuscript releases.
+Release tags are created only after an approved release-readiness audit and explicit maintainer approval.
+Until a versioning ADR is accepted, use the release candidate branch and changelog entry as the release boundary.

@@ -1,8 +1,7 @@
 # The Principal Engineer Handbook
 
-This site is the maintainable manuscript workspace for *The Principal Engineer Handbook*.
-
-> AUTHOR NOTE: Import the author-approved introduction or landing text.
+This site publishes generated manuscript wrappers for *The Principal Engineer Handbook*.
+Canonical manuscript content lives in `book/`; the pages under `docs/manuscript/` are generated publishing support.
 
 ## Maintainer Boundary
 

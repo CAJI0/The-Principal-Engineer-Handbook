@@ -1,5 +1,18 @@
 # Manuscript
 
-This section will contain the author-approved manuscript.
+This publishing section is generated from the canonical manuscript in `book/`.
+Edit `book/` first, then regenerate these wrappers with `python tools/generate_publishing_docs.py`.
 
-> AUTHOR NOTE: Import the existing draft and establish the approved structure.
+## Front Matter
+
+- Manifesto
+- Preface
+- Table of Contents
+
+## Chapters
+
+- Chapters 1-37
+
+## Appendix
+
+- Appendix templates and glossary
