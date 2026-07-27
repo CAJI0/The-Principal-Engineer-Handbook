@@ -8324,6 +8324,42 @@ Pull request readiness:
 - Next expected phase: Editorial Review.
 - Do not run Editorial Review, Canon Review, Technical Review, or Freeze Review as part of this phase.
 
+## Phase 201 Chapter 36 Editorial Review
+
+- Chapter: Deleting Safely.
+- Stable ID: `CHAPTER-036`.
+- Branch: `chapter36`.
+- Stage: Editorial Review.
+- Reviewed baseline commit: `fe80b7ca570ddb9b7b1cae6162065c0921d7e149`.
+- Outcome: approved with minor editorial changes.
+- Editorial changes:
+  - Replaced sharper cleanup-frustration phrasing with more precise release-history language.
+  - Tightened the review quote and post-incident response so the story stays focused on product evidence rather than
+    cleanup sentiment.
+  - Clarified that classification happens before the next removal attempt.
+  - Smoothed the story ending and final commentary lines without changing the chapter's thesis.
+- Canon and PEAK status: unchanged. `CHAPTER-036` remains `draft`; no `primary_concept` field was added; the canonical
+  brief and `knowledge/index.yaml` were not changed.
+- Chapter 37 status: not started.
+- Changed files:
+  - `book/06-legacy/36-deleting-safely.md`
+  - `editor/EDITOR_LOG.md`
+- Final validation completed after this log entry:
+  - Direct Chapter 36 Editorial assertions: passed for expected changed files, unchanged `knowledge/index.yaml`,
+    unchanged canonical brief, `CHAPTER-036` remaining `draft`, no `primary_concept`, exact H1/H2 structure, exactly
+    three Principal's Notebook observations, Chapter 37 manuscript absence, and no tracked site.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed after isolated rerun; the first concurrent run reported transient `[0]` statuses
+    for local markdown files, and the isolated rerun scanned 190 links successfully.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `vale --config .vale.ini book/06-legacy/36-deleting-safely.md editor/EDITOR_LOG.md`: passed.
+  - `git ls-files site`: passed with no tracked files.
+- Commit subject: `docs(chapter-36): complete editorial review`.
+- Next expected phase: Canon Review.
+
 ## Phase 176 Chapter 32 Author Draft
 
 - Chapter: Reading a Legacy System.

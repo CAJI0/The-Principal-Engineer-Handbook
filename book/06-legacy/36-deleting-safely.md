@@ -12,20 +12,20 @@ It lived behind a small compatibility branch in the firmware startup path. If a 
 one particular status byte during boot, it waited six extra seconds, retried the handshake, translated the status into
 an older diagnostic code, and marked the unit as recoverable instead of failed.
 
-Nobody liked the branch.
+The branch looked like an old compromise whose context had expired.
 
 The peripheral had not been manufactured for years. The old diagnostic code did not appear in current release notes.
 The service-tool team had moved to a guided recovery flow. The backend mapper had a newer field for device condition.
 The firmware tests covered the current startup path. Source search found one obvious caller and no active feature flag.
 
-The cleanup issue had been open long enough to become embarrassing.
+The cleanup issue had been open for three releases.
 
 The pull request was small. It removed the compatibility branch, deleted a stale test fixture, simplified the startup
 state machine, and removed two lines from a diagnostic mapping table. The author included a note that the old peripheral
 was no longer supported. The unit tests passed. The integration test for current hardware passed. The release dashboard
 showed no recent devices using the old diagnostic code.
 
-"Finally," someone wrote in review.
+"This should be safe now," someone wrote in review.
 
 The release shipped on Monday.
 
@@ -76,7 +76,7 @@ show recent translated recoveries. They had evidence that the current service-to
 diagnostic. They did not have evidence that old devices, factory rework, regional support, backend classification, or
 customer-specific upgrade paths no longer depended on the behavior.
 
-The first proposed fix was to revert the deletion and ban cleanup near releases.
+The first proposed fix was to revert the deletion and avoid cleanup near releases.
 
 Mara pushed back.
 
@@ -117,7 +117,7 @@ Three customers still had mixed hardware. The factory rework station still used 
 procedure still described it. A dashboard still implied support for the recoverable condition because the alert text had
 never been changed. A test fixture looked stale but was the only executable example of the old peripheral behavior.
 
-Mara asked the team to classify the deletion candidate.
+Mara asked the team to classify the deletion candidate before proposing the next removal.
 
 They did not call it dead.
 
@@ -125,7 +125,7 @@ They called it active for three customers, active for manufacturing rework, obso
 an owner during the compatibility window, unsupported-but-real for devices outside the official upgrade plan, and
 dangerous if removed without service-tool and backend changes.
 
-The classification was awkward.
+The classification was not tidy.
 
 It was also useful.
 
@@ -148,7 +148,7 @@ One customer request would not automatically preserve the branch forever. One qu
 to delete. The decision would reopen only with evidence: active raw status in field logs, manufacturing rework
 dependence, support procedure use, backend classification mismatch, or a customer inside the compatibility window.
 
-The second deletion attempt was not dramatic.
+The second deletion attempt was quieter.
 
 The release emitted warnings before removal. The service tool showed a clear message for old hardware. The backend
 accepted the new explicit event and tracked the old diagnostic during the window. Manufacturing updated the station
@@ -161,9 +161,9 @@ This time, the pull request was larger than the first one. It removed code, test
 notes, service-tool assumptions, manufacturing script behavior, support procedure links, and an Architecture Ledger row
 that had reached its revisit date.
 
-The codebase became smaller.
+The codebase became smaller, but that was not the main result.
 
-More important, the product promises became smaller too.
+The product promises became smaller too.
 
 Nobody celebrated the number of deleted lines.
 
@@ -537,6 +537,6 @@ interfaces, move responsibility across teams, or preserve trust while the struct
 chapter. Chapter 36 is narrower: remove what can responsibly disappear, prove the removal, communicate it, stage it,
 recover if the evidence is wrong, and clean up the records around it.
 
-The best deletion leaves less code behind.
+Good deletion leaves less code behind.
 
-The better deletion leaves fewer promises behind.
+Better deletion leaves fewer promises behind.
