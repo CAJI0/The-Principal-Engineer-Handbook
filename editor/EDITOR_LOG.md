@@ -7343,6 +7343,89 @@ Pull request readiness:
 - Next lifecycle stage: Author Draft.
 - Do not create the Chapter 34 manuscript, perform review gates, create a pull request, or merge as part of this phase.
 
+## Phase 188 Chapter 34 Author Draft
+
+- Chapter: Managing Utility Gravity.
+- Stable ID: `CHAPTER-034`.
+- Branch: `chapter34`.
+- Stage: Author Draft.
+- Verified baseline branch and commit: `origin/chapter34` at
+  `0139c8c08ff2b5ac3e3896e44c16c35436f30391`.
+- Required repository synchronization and verification:
+  - `git fetch --all --prune`: passed.
+  - `git switch chapter34`: passed.
+  - `git pull --ff-only`: passed; already up to date.
+  - `git status --short --branch`: `## chapter34...origin/chapter34`.
+  - `git rev-parse HEAD`: `0139c8c08ff2b5ac3e3896e44c16c35436f30391`.
+  - `git rev-parse origin/chapter34`: `0139c8c08ff2b5ac3e3896e44c16c35436f30391`.
+  - decorated eight-commit log check: passed; branch tip was the Chapter 34 canonical brief registration commit.
+- Preflight result: passed. Local `HEAD` equaled `origin/chapter34`, the canonical brief existed, `CHAPTER-034` remained
+  `draft` with no `primary_concept`, the Chapter 34 manuscript was absent, Chapters 1-33 remained canonical, Chapter
+  35-37 manuscripts were absent, and the working tree was clean before edits.
+- Manuscript path created: `book/06-legacy/34-managing-utility-gravity.md`.
+- Canonical brief path preserved unchanged: `editor/chapter-briefs/CHAPTER-034-managing-utility-gravity.md`.
+- Registry status preserved: `CHAPTER-034` remains `draft` in `knowledge/index.yaml`.
+- Primary concept result: remains absent; no `primary_concept` field was added.
+- Central illustrated concept: `SMELL-002` - Utility Gravity.
+- Central vocabulary term: `VOCAB-009` - Utility Gravity.
+- Story drafted: `The Helper That Became the Platform`.
+- Core practice drafted: mapping utility promises, owners, consumers, state, policies, evidence, and Change Radius before
+  adding, extracting, or moving behavior.
+- Exercise drafted: `Map the Utility Before Moving It`.
+- ADR drafted: `Split Product Policy From the Shared Device Utility Before Adding More Behavior`.
+- Principal's Notebook result: exactly three short observations.
+- Exact relationship set preserved materially:
+  - `CHAPTER-034 illustrates SMELL-002`
+  - `CHAPTER-034 references VOCAB-009`
+  - `CHAPTER-034 references LAW-001`
+  - `CHAPTER-034 references LAW-002`
+  - `CHAPTER-034 references LAW-004`
+  - `CHAPTER-034 references LAW-005`
+  - `CHAPTER-034 references LAW-007`
+  - `CHAPTER-034 references VOCAB-001`
+  - `CHAPTER-034 references METRIC-001`
+  - `CHAPTER-034 references METRIC-002`
+  - `CHAPTER-034 references METRIC-003`
+  - `CHAPTER-034 references ARTIFACT-001`
+  - `CHAPTER-034 references ARTIFACT-002`
+  - `CHAPTER-034 references ARTIFACT-003`
+  - `CHAPTER-034 references ARTIFACT-006`
+  - `CHAPTER-034 references RITUAL-001`
+  - `CHAPTER-034 references RITUAL-004`
+  - `CHAPTER-034 references SMELL-001`
+  - `CHAPTER-034 references SMELL-004`
+  - `CHAPTER-034 references SMELL-005`
+  - `CHAPTER-034 references ANTIPATTERN-001`
+  - `CHAPTER-034 references ANTIPATTERN-002`
+  - `CHAPTER-034 references ANTIPATTERN-003`
+  - `CHAPTER-034 references ANTIPATTERN-006`
+  - `CHAPTER-034 references FAILURE-001`
+  - `CHAPTER-034 references FAILURE-004`
+  - `CHAPTER-034 references FAILURE-005`
+- Later Part VI boundaries preserved: Chapter 35 owns Boolean Explosion, Chapter 36 owns Deleting Safely, and Chapter 37
+  owns Refactoring Without Losing Product Trust.
+- New PEAK concept result: no new PEAK law, maxim, artifact, ritual, metric, smell, anti-pattern, failure story,
+  vocabulary concept, ID, relationship verb, registry entry, or primary-concept field was introduced.
+- Changed files:
+  - `book/06-legacy/34-managing-utility-gravity.md`
+  - `editor/EDITOR_LOG.md`
+- Final validation completed after this log entry:
+  - Direct Chapter 34 Author Draft assertions: passed for expected changed files, manuscript existence, exact H1 and H2
+    order, story subsection, exactly three Notebook observations, no unresolved markers, protected brief and registry
+    unchanged, `CHAPTER-034` remaining `draft`, no `primary_concept`, exact relationship set preserved, Chapter 35-37
+    manuscripts absent, material concept coverage, and no tracked site.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `vale --config .vale.ini book/06-legacy/34-managing-utility-gravity.md editor/EDITOR_LOG.md`: passed.
+  - `git ls-files site`: passed with no tracked files.
+- Next lifecycle stage: Editorial Review.
+- Do not perform Editorial Review, Canon Review, Technical Review, Freeze Review, PR creation, or merge as part of this
+  phase.
+
 ## Phase 176 Chapter 32 Author Draft
 
 - Chapter: Reading a Legacy System.
