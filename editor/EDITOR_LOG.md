@@ -7732,6 +7732,407 @@ Pull request readiness:
 - Chapter 35 started: no.
 - Do not create a pull request, merge, start Chapter 35, or create Chapter 36/37 as part of this phase.
 
+## Phase 193 Chapter 35 Canonical Brief Registration
+
+- Chapter: Reducing Boolean Explosion.
+- Stable ID: `CHAPTER-035`.
+- Branch: `chapter35`.
+- Stage: Canonical Brief Registration.
+- Verified `origin/main` baseline SHA: `487507ebbd12fce8fde8f36633f9a21d5f40f4c8`.
+- Baseline evidence: PR #36 Chapter 34 squash merge commit,
+  `Chapter 34: Managing Utility Gravity (#36)`.
+- Required repository synchronization and verification:
+  - `git fetch origin`: passed.
+  - `git checkout main`: passed; branch was already `main`.
+  - `git pull --ff-only origin main`: passed; already up to date.
+  - `git rev-parse origin/main`: `487507ebbd12fce8fde8f36633f9a21d5f40f4c8`.
+  - `git status --short`: clean.
+- Preflight result: passed. `origin/main` was reachable and up to date locally, contained Chapter 34 canonical state and
+  `book/06-legacy/34-managing-utility-gravity.md`, local `knowledge/index.yaml` contained `CHAPTER-034` as canonical,
+  the Part VI table of contents order was correct, `CHAPTER-035` was absent, the Chapter 35 canonical brief and
+  manuscript were absent, no previous Chapter 35 Canonical Brief Registration log entry existed, and the working tree
+  was clean before edits.
+- Branch setup: `git checkout -B chapter35 origin/main` passed; branch `chapter35` created from baseline
+  `487507ebbd12fce8fde8f36633f9a21d5f40f4c8`.
+- Outcome: Chapter 35 canonical brief registered.
+- Lifecycle registration: `CHAPTER-035` added as `draft` in `knowledge/index.yaml`.
+- Manuscript path expected but not created: `book/06-legacy/35-reducing-boolean-explosion.md`.
+- Canonical brief path created:
+  `editor/chapter-briefs/CHAPTER-035-reducing-boolean-explosion.md`.
+- Primary concept result: none; no `primary_concept` field was added.
+- New PEAK concept result: none; Chapter 35 illustrates existing `SMELL-003` and references existing `VOCAB-010`.
+- Exact relationship set registered:
+  - `CHAPTER-035 illustrates SMELL-003`
+  - `CHAPTER-035 references VOCAB-010`
+  - `CHAPTER-035 references LAW-001`
+  - `CHAPTER-035 references LAW-002`
+  - `CHAPTER-035 references LAW-004`
+  - `CHAPTER-035 references LAW-005`
+  - `CHAPTER-035 references LAW-006`
+  - `CHAPTER-035 references LAW-007`
+  - `CHAPTER-035 references VOCAB-001`
+  - `CHAPTER-035 references METRIC-001`
+  - `CHAPTER-035 references METRIC-002`
+  - `CHAPTER-035 references METRIC-003`
+  - `CHAPTER-035 references METRIC-004`
+  - `CHAPTER-035 references ARTIFACT-001`
+  - `CHAPTER-035 references ARTIFACT-002`
+  - `CHAPTER-035 references ARTIFACT-003`
+  - `CHAPTER-035 references ARTIFACT-006`
+  - `CHAPTER-035 references RITUAL-001`
+  - `CHAPTER-035 references RITUAL-004`
+  - `CHAPTER-035 references SMELL-001`
+  - `CHAPTER-035 references SMELL-004`
+  - `CHAPTER-035 references SMELL-005`
+  - `CHAPTER-035 references SMELL-006`
+  - `CHAPTER-035 references ANTIPATTERN-003`
+  - `CHAPTER-035 references ANTIPATTERN-006`
+  - `CHAPTER-035 references FAILURE-004`
+  - `CHAPTER-035 references FAILURE-005`
+- Changed files:
+  - `editor/EDITOR_LOG.md`
+  - `editor/chapter-briefs/CHAPTER-035-reducing-boolean-explosion.md`
+  - `knowledge/index.yaml`
+- Final validation completed after this log entry:
+  - Direct Chapter 35 Canonical Brief Registration assertions: passed for expected changed files, `CHAPTER-035`
+    registered exactly once as `draft`, no `primary_concept`, Chapters 1-34 canonical, Chapter 35 manuscript absent,
+    Chapter 36/37 manuscripts absent, exact relationship set, duplicate relationship absence, Phase 193 uniqueness,
+    required commit subject present, and no tracked site.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `npm.cmd run lint:spelling`: passed after replacing local lowercase/spelling variants in the Chapter 35 brief with
+    accepted project wording.
+  - `npm.cmd run lint:links`: passed after isolated rerun; the first concurrent run reported transient `[0]` statuses
+    for local markdown files, and the isolated rerun scanned 187 links successfully.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `vale --config .vale.ini editor/chapter-briefs/CHAPTER-035-reducing-boolean-explosion.md editor/EDITOR_LOG.md
+    knowledge/index.yaml`: passed after the same wording cleanup.
+  - `git ls-files site`: passed with no tracked files.
+- Commit subject: `docs(chapter-35): register canonical brief`.
+- Pull request readiness: ready after this Canonical Brief Registration commit is committed and pushed.
+- Branch merged: no.
+- Chapter 35 Author Draft started: no.
+- Next expected phase: Author Draft.
+- Do not create the Chapter 35 manuscript, create Chapter 36/37 files, or change Chapters 1-34 as part of this phase.
+
+## Phase 194 Chapter 35 Author Draft
+
+- Chapter: Reducing Boolean Explosion.
+- Stable ID: `CHAPTER-035`.
+- Branch: `chapter35`.
+- Stage: Author Draft.
+- Verified baseline branch and commit: `origin/chapter35` at
+  `861fbfb94584486ccedfba34d6f8e460aeeaabb2`.
+- Canonical brief registration commit SHA resolved during preflight:
+  `861fbfb94584486ccedfba34d6f8e460aeeaabb2`.
+- Required repository synchronization and verification:
+  - `git fetch --all --prune`: passed.
+  - `git switch chapter35`: passed; branch was already `chapter35`.
+  - `git pull --ff-only`: passed; already up to date.
+  - `git status --short --branch`: `## chapter35...origin/chapter35`.
+  - `git rev-parse HEAD`: `861fbfb94584486ccedfba34d6f8e460aeeaabb2`.
+  - `git rev-parse origin/chapter35`: `861fbfb94584486ccedfba34d6f8e460aeeaabb2`.
+  - eight-commit log check: passed; branch tip was the Chapter 35 canonical brief registration commit.
+- Preflight result: passed. Local `HEAD` equaled `origin/chapter35`, the canonical brief existed, `CHAPTER-035`
+  remained `draft` with no `primary_concept`, the Chapter 35 manuscript was absent, Chapters 1-34 remained canonical,
+  Chapter 36/37 manuscripts were absent, no prior Chapter 35 Author Draft phase existed, and the working tree was clean
+  before edits.
+- Manuscript path created: `book/06-legacy/35-reducing-boolean-explosion.md`.
+- Canonical brief path preserved unchanged:
+  `editor/chapter-briefs/CHAPTER-035-reducing-boolean-explosion.md`.
+- Registry status preserved unchanged: `CHAPTER-035` remains `draft` in `knowledge/index.yaml`.
+- Primary concept result: remains absent; no `primary_concept` field was added.
+- Central illustrated concept: `SMELL-003` - Boolean Explosion.
+- Central vocabulary term: `VOCAB-010` - Boolean Explosion.
+- Story drafted: `The Two Flags That Became Sixteen Products`.
+- Core practice drafted: mapping product states, valid combinations, owners, evidence, and review triggers before adding,
+  removing, or refactoring flags and modes.
+- Exercise drafted: `Map the Boolean State Space`.
+- ADR drafted: `Name the Product Modes Before Adding Another Compatibility Flag`.
+- Principal's Notebook observations drafted:
+  - `A Boolean is cheap to add but expensive to combine.`
+  - `Flags become product states when customers depend on them.`
+  - `Reduce the state space before changing behavior.`
+- Exact relationship set preserved materially:
+  - `CHAPTER-035 illustrates SMELL-003`
+  - `CHAPTER-035 references VOCAB-010`
+  - `CHAPTER-035 references LAW-001`
+  - `CHAPTER-035 references LAW-002`
+  - `CHAPTER-035 references LAW-004`
+  - `CHAPTER-035 references LAW-005`
+  - `CHAPTER-035 references LAW-006`
+  - `CHAPTER-035 references LAW-007`
+  - `CHAPTER-035 references VOCAB-001`
+  - `CHAPTER-035 references METRIC-001`
+  - `CHAPTER-035 references METRIC-002`
+  - `CHAPTER-035 references METRIC-003`
+  - `CHAPTER-035 references METRIC-004`
+  - `CHAPTER-035 references ARTIFACT-001`
+  - `CHAPTER-035 references ARTIFACT-002`
+  - `CHAPTER-035 references ARTIFACT-003`
+  - `CHAPTER-035 references ARTIFACT-006`
+  - `CHAPTER-035 references RITUAL-001`
+  - `CHAPTER-035 references RITUAL-004`
+  - `CHAPTER-035 references SMELL-001`
+  - `CHAPTER-035 references SMELL-004`
+  - `CHAPTER-035 references SMELL-005`
+  - `CHAPTER-035 references SMELL-006`
+  - `CHAPTER-035 references ANTIPATTERN-003`
+  - `CHAPTER-035 references ANTIPATTERN-006`
+  - `CHAPTER-035 references FAILURE-004`
+  - `CHAPTER-035 references FAILURE-005`
+- Neighboring chapter boundaries preserved: Chapter 32 reading, Chapter 33 Silent Coupling, Chapter 34 Utility Gravity,
+  Chapter 36 deletion safety, and Chapter 37 trust-preserving refactoring.
+- New PEAK concept result: none. No new PEAK concepts, IDs, relationship verbs, or `primary_concept` field were
+  introduced.
+- Changed files:
+  - `book/06-legacy/35-reducing-boolean-explosion.md`
+  - `editor/EDITOR_LOG.md`
+- Final validation completed after this log entry:
+  - Direct Chapter 35 Author Draft assertions: passed for manuscript existence, exact H1, exact H2 order, story
+    subsection, exactly three Principal's Notebook bullets, unresolved marker absence, expected changed files only,
+    `knowledge/index.yaml` unchanged, canonical brief unchanged, `CHAPTER-035` still `draft`, no `primary_concept`,
+    exact relationship set unchanged, Chapter 36/37 manuscripts absent, and no tracked site.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed; scanned 188 links successfully.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `vale --config .vale.ini book/06-legacy/35-reducing-boolean-explosion.md editor/EDITOR_LOG.md`: passed after one
+    evidence-first wording cleanup in the manuscript.
+  - `git ls-files site`: passed with no tracked files.
+- Commit subject: `docs(chapter-35): add author draft`.
+- Pull request readiness: not requested in this phase.
+- Branch merged: no.
+- Review gate started: no.
+- Next lifecycle stage: Editorial Review.
+- Do not create a pull request, merge, start review, change `CHAPTER-035` status, or create Chapter 36/37 as part of
+  this phase.
+
+## Phase 195 Chapter 35 Editorial Review
+
+- Chapter: Reducing Boolean Explosion.
+- Stable ID: `CHAPTER-035`.
+- Branch: `chapter35`.
+- Stage: Editorial Review.
+- Reviewed baseline commit: `b078d1f567e2ddaec095f5188265dc998d099408`.
+- Outcome: Approved with minor changes.
+- Review scope: clarity, rhythm, chapter focus, opening quote quality, story pacing and causality, repetition, concrete
+  examples, house style, transition from Chapter 34, and handoff toward Chapter 36 without starting deletion work.
+- Editorial changes made: tightened the story transition from two flags to broader product combination behavior,
+  clarified the difference between the visible release matrix and the real state space, made the arithmetic-review
+  turning point less ornamental, replaced one repeated concept phrase with lighter wording, tightened the exercise
+  instruction, and strengthened the closing commentary.
+- Material intentionally preserved: opening quote, story title, embedded/product-system setting, firmware/backend/service
+  tool/manufacturing/support/release/field-upgrade crossings, central Boolean Explosion framing, mechanism-versus-policy
+  distinction, classification categories, evidence strategy, chapter-local ADR, exercise outputs, and exactly three
+  Principal's Notebook observations.
+- Canon and PEAK status: unchanged. `CHAPTER-035` remains `draft`; no `primary_concept` field, PEAK concept, ID,
+  relationship, relationship verb, or registry entry was introduced.
+- Canonical brief preserved unchanged:
+  `editor/chapter-briefs/CHAPTER-035-reducing-boolean-explosion.md`.
+- `knowledge/index.yaml` preserved unchanged during Editorial Review.
+- Chapter 36 and Chapter 37 status: not started.
+- Changed files:
+  - `book/06-legacy/35-reducing-boolean-explosion.md`
+  - `editor/EDITOR_LOG.md`
+- Final validation completed after this log entry:
+  - Direct Editorial Review assertions: passed for exact H1 and H2 order, exactly three Principal's Notebook bullets,
+    unresolved marker absence, `CHAPTER-035` remaining `draft`, unchanged `knowledge/index.yaml`, unchanged canonical
+    brief, Chapter 36/37 manuscript absence, and no tracked site.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed; scanned 188 links successfully.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `vale --config .vale.ini book/06-legacy/35-reducing-boolean-explosion.md editor/EDITOR_LOG.md`: passed.
+  - `git ls-files site`: passed with no tracked files.
+- Commit subject: `docs(chapter-35): complete editorial review`.
+- Next lifecycle stage: Canon Review.
+- Do not create a pull request, merge, start Chapter 36, or mark Chapter 35 canonical as part of this phase.
+
+## Phase 196 Chapter 35 Canon Review
+
+- Chapter: Reducing Boolean Explosion.
+- Stable ID: `CHAPTER-035`.
+- Branch: `chapter35`.
+- Stage: Canon Review.
+- Reviewed baseline commit: `1cc639ec333b5d8b9be1ba44f059d3277c7b282f`.
+- Required repository synchronization and verification:
+  - `git fetch --all --prune`: passed.
+  - `git status --short --branch`: `## chapter35...origin/chapter35`.
+  - `git rev-parse HEAD`: `1cc639ec333b5d8b9be1ba44f059d3277c7b282f`.
+  - `git rev-parse origin/chapter35`: `1cc639ec333b5d8b9be1ba44f059d3277c7b282f`.
+- Outcome: Approved.
+- Canon identity result: `CHAPTER-035` remains the only chapter under review and remains `draft` before Freeze.
+- Central concept result: manuscript remains centered on `SMELL-003` - Boolean Explosion and `VOCAB-010` - Boolean
+  Explosion as uncontrolled product behavior combination growth, not conditional-code style.
+- Relationship audit result: exact required outgoing relationship set preserved in `knowledge/index.yaml`; no
+  unsupported relationship verb, duplicate Chapter 35 edge, missing target, or relationship drift found.
+- PEAK terminology result: `METRIC-002` is used as Bus Factor, `METRIC-004` as API Stability, and local phrases such as
+  Boolean state map, compatibility matrix, decision table, named mode boundary, flag inventory, combination budget,
+  mechanism switch, policy-bearing flag, product-state decision, and compatibility promise remain unregistered
+  chapter-local prose.
+- Boundary result: Chapter 32 reading, Chapter 33 Silent Coupling, Chapter 34 Utility Gravity, Chapter 36 deletion
+  safety, and Chapter 37 trust-preserving refactoring boundaries are preserved.
+- Chapter-local ADR result: `Name the Product Modes Before Adding Another Compatibility Flag` remains reader-facing and
+  unregistered; no canonical handbook artifact was added.
+- Manuscript terminology corrections: none required.
+- Canonical brief changes: none.
+- Registry changes: none.
+- New PEAK concept result: none. No PEAK concept, ID, relationship verb, or `primary_concept` field was introduced.
+- Changed files:
+  - `editor/EDITOR_LOG.md`
+- Final validation completed after this log entry:
+  - Direct Canon Review assertions: passed for `CHAPTER-035` uniqueness, draft status, no `primary_concept`, exact
+    outgoing relationship set, supported relationship verbs, existing relationship targets, duplicate edge absence,
+    Chapters 1-34 canonical, Chapter 36/37 manuscript absence, and no tracked site.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed; scanned 188 links successfully.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `vale --config .vale.ini book/06-legacy/35-reducing-boolean-explosion.md editor/EDITOR_LOG.md knowledge/index.yaml
+    editor/chapter-briefs/CHAPTER-035-reducing-boolean-explosion.md`: passed.
+  - `git ls-files site`: passed with no tracked files.
+- Commit subject: `docs(chapter-35): complete canon review`.
+- Next lifecycle stage: Technical Review.
+- Do not create a pull request, merge, start Chapter 36, or mark Chapter 35 canonical as part of this phase.
+
+## Phase 197 Chapter 35 Technical Review
+
+- Chapter: Reducing Boolean Explosion.
+- Stable ID: `CHAPTER-035`.
+- Branch: `chapter35`.
+- Stage: Technical Review.
+- Reviewed baseline commit: `3ffb67d1a2d94aef17f0e7bbffc66da211b1a91d`.
+- Required repository synchronization and verification:
+  - `git fetch --all --prune`: passed.
+  - `git status --short --branch`: `## chapter35...origin/chapter35`.
+  - `git rev-parse HEAD`: `3ffb67d1a2d94aef17f0e7bbffc66da211b1a91d`.
+  - `git rev-parse origin/chapter35`: `3ffb67d1a2d94aef17f0e7bbffc66da211b1a91d`.
+- Outcome: Approved with minor changes.
+- Technical areas reviewed: embedded/product-system plausibility, firmware mode bits, runtime flags, compile-time
+  options, compatibility toggles, customer exceptions, manufacturing provisioning, backend interpretation, service-tool
+  workflows, support procedures, field upgrade order, release validation, state-space classification, ownership,
+  reviewer assignment, characterization evidence, contract tests, integration tests, release evidence, field data, API
+  promises, compatibility promises, and later deletion/refactoring boundaries.
+- Technical corrections applied: replaced proof-like wording around contract tests with evidence wording; changed
+  testing and evidence prose from "show/prove complete behavior" toward capture, expose, exercise, validate, and reveal;
+  clarified that valid combinations need evidence for the specific product promise being made.
+- Technical credibility result: the chapter treats Boolean Explosion as product behavior combination growth rather than
+  conditional style, distinguishes legitimate flags from unmanaged combinations, separates mechanism switches from
+  product policy, and keeps unsupported, obsolete, temporary, and unknown combinations distinct.
+- Test strategy result: characterization, contract, integration, release, log, support, manufacturing, field, and team
+  memory evidence are presented as complementary signals, not complete proof of safety.
+- ADR result: technically actionable and bounded; it does not prescribe a universal state machine, rewrite, deletion
+  workflow, or broad trust-preserving migration.
+- Exercise result: actionable for a real legacy area and still ends with exactly seven outputs.
+- Canon and PEAK status: unchanged. `CHAPTER-035` remains `draft`; no `primary_concept` field, PEAK concept, ID,
+  relationship, relationship verb, or registry entry was introduced.
+- Chapter 36 and Chapter 37 status: not started.
+- Changed files:
+  - `book/06-legacy/35-reducing-boolean-explosion.md`
+  - `editor/EDITOR_LOG.md`
+- Unresolved technical issues: none.
+- Final validation completed after this log entry:
+  - Direct Technical Review assertions: passed for `CHAPTER-035` draft status, exact H1 and H2 order, exactly three
+    Principal's Notebook bullets, unresolved marker absence, exact relationship set preservation, no `primary_concept`,
+    Chapter 36/37 manuscript absence, and no tracked site.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed; scanned 188 links successfully.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `vale --config .vale.ini book/06-legacy/35-reducing-boolean-explosion.md editor/EDITOR_LOG.md knowledge/index.yaml`:
+    passed.
+  - `git ls-files site`: passed with no tracked files.
+- Commit subject: `docs(chapter-35): complete technical review`.
+- Next lifecycle stage: Freeze Review.
+- Do not create a pull request, merge, start Chapter 36, or mark Chapter 35 canonical as part of this phase.
+
+## Phase 198 Chapter 35 Freeze Review
+
+- Chapter: Reducing Boolean Explosion.
+- Stable ID: `CHAPTER-035`.
+- Branch: `chapter35`.
+- Stage: Freeze Review.
+- Reviewed baseline commit: `615fc3a605d2e8b7cab7505add4dbf97b3da4ab7`.
+- Required repository synchronization and verification:
+  - `git fetch --all --prune`: passed.
+  - `git status --short --branch`: `## chapter35...origin/chapter35`.
+  - `git rev-parse HEAD`: `615fc3a605d2e8b7cab7505add4dbf97b3da4ab7`.
+  - `git rev-parse origin/chapter35`: `615fc3a605d2e8b7cab7505add4dbf97b3da4ab7`.
+- Outcome: Chapter 35 frozen.
+- Review history result: Author Draft, Editorial Review, Canon Review, and Technical Review entries exist and are
+  distinct.
+- Freeze criteria checked: one central idea, canonical chapter architecture, editorial stability, canon identity,
+  technical credibility, non-heroic story, chapter-local Engineering Principle, bounded Architecture Exercise, exactly
+  three Principal's Notebook observations, chapter-local ADR, PEAK integrity, unsupported relationship absence,
+  unresolved marker absence, Chapters 1-34 canonical, Chapter 36/37 absence, and repository validation.
+- Lifecycle status update: `CHAPTER-035` moved from `draft` to `canonical` in `knowledge/index.yaml`.
+- Manuscript path preserved unchanged: `book/06-legacy/35-reducing-boolean-explosion.md`.
+- Canonical brief path preserved unchanged:
+  `editor/chapter-briefs/CHAPTER-035-reducing-boolean-explosion.md`.
+- Primary concept result: remains absent; no `primary_concept` field was added.
+- Exact relationship set preserved:
+  - `CHAPTER-035 illustrates SMELL-003`
+  - `CHAPTER-035 references VOCAB-010`
+  - `CHAPTER-035 references LAW-001`
+  - `CHAPTER-035 references LAW-002`
+  - `CHAPTER-035 references LAW-004`
+  - `CHAPTER-035 references LAW-005`
+  - `CHAPTER-035 references LAW-006`
+  - `CHAPTER-035 references LAW-007`
+  - `CHAPTER-035 references VOCAB-001`
+  - `CHAPTER-035 references METRIC-001`
+  - `CHAPTER-035 references METRIC-002`
+  - `CHAPTER-035 references METRIC-003`
+  - `CHAPTER-035 references METRIC-004`
+  - `CHAPTER-035 references ARTIFACT-001`
+  - `CHAPTER-035 references ARTIFACT-002`
+  - `CHAPTER-035 references ARTIFACT-003`
+  - `CHAPTER-035 references ARTIFACT-006`
+  - `CHAPTER-035 references RITUAL-001`
+  - `CHAPTER-035 references RITUAL-004`
+  - `CHAPTER-035 references SMELL-001`
+  - `CHAPTER-035 references SMELL-004`
+  - `CHAPTER-035 references SMELL-005`
+  - `CHAPTER-035 references SMELL-006`
+  - `CHAPTER-035 references ANTIPATTERN-003`
+  - `CHAPTER-035 references ANTIPATTERN-006`
+  - `CHAPTER-035 references FAILURE-004`
+  - `CHAPTER-035 references FAILURE-005`
+- New PEAK concept result: none. No PEAK concept, ID, relationship verb, or `primary_concept` field was introduced.
+- Changed files:
+  - `editor/EDITOR_LOG.md`
+  - `knowledge/index.yaml`
+- Unresolved issues: none.
+- Final validation completed after this log entry:
+  - Direct Chapter 35 Freeze assertions: passed for review history, `CHAPTER-035` canonical status, no
+    `primary_concept`, path resolution, exact H1 and H2 structure, exactly three notebook bullets, unresolved marker
+    absence, exact relationship set, target existence, supported relationship types, duplicate edge absence, Chapters
+    1-34 canonical status, Chapter 36/37 manuscript absence, and no tracked `site` output.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `npm.cmd run lint:spelling`: passed.
+  - `npm.cmd run lint:links`: passed; scanned 188 links successfully.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `vale --config .vale.ini book/06-legacy/35-reducing-boolean-explosion.md editor/EDITOR_LOG.md knowledge/index.yaml
+    editor/chapter-briefs/CHAPTER-035-reducing-boolean-explosion.md`: passed.
+  - `git ls-files site`: passed with no tracked files.
+- Commit subject: `docs(chapter-35): freeze chapter`.
+- Chapter 35 is Frozen.
+- Future substantive changes require reopening the chapter at the appropriate review stage.
+- Branch merged: no.
+- Chapter 36 started: no.
+
 ## Phase 176 Chapter 32 Author Draft
 
 - Chapter: Reading a Legacy System.
