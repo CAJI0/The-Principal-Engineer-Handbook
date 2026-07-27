@@ -9,3 +9,5 @@ This page mirrors the repository changelog.
 ### Added
 
 - Initial repository bootstrap for documentation, quality checks, and GitHub collaboration.
+- Sprint 0 handbook repository structure, editorial documents, ADRs, and templates.
+- Completed canonical manuscript coverage for Chapters 1-37 and the Appendix.

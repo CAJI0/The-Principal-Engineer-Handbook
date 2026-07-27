@@ -1,8 +1,6 @@
 # Release Process
 
-This page mirrors the repository release process.
-
-> AUTHOR NOTE: Keep this page aligned with the canonical root `RELEASE_PROCESS.md` file.
+This page mirrors the repository release process. The canonical file is `RELEASE_PROCESS.md`.
 
 ## Release Checklist
 
@@ -19,4 +17,5 @@ This page mirrors the repository release process.
 
 ## Versioning
 
-> AUTHOR NOTE: Authors and maintainers to choose versioning rules for manuscript releases.
+Release tags are created only after an approved release-readiness audit and explicit maintainer approval.
+Until a versioning ADR is accepted, use the release candidate branch and changelog entry as the release boundary.

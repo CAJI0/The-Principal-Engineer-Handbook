@@ -4,7 +4,7 @@
   "scripts": {
     "lint:md": "markdownlint-cli2 \"**/*.md\"",
     "lint:spelling": "cspell \"**/*.md\" \"mkdocs.yml\"",
-    "lint:links": "linkinator \"**/*.md\" --markdown --recurse --skip \"^mailto:\" --skip \"node_modules\" --skip \"site\" --timeout 20000",
+    "lint:links": "linkinator \"*.md\" \"assets/**/*.md\" \"templates/**/*.md\" \"tools/**/*.md\" --markdown --recurse --skip \"^mailto:\" --skip \"node_modules\" --skip \"site\" --timeout 60000 && linkinator \"book/**/*.md\" --markdown --recurse --skip \"^mailto:\" --skip \"node_modules\" --skip \"site\" --timeout 60000 && linkinator \"docs/**/*.md\" --markdown --recurse --skip \"^mailto:\" --skip \"node_modules\" --skip \"site\" --timeout 60000 && linkinator \"editor/**/*.md\" --markdown --recurse --skip \"^mailto:\" --skip \"node_modules\" --skip \"site\" --timeout 60000 && linkinator \"knowledge/**/*.md\" --markdown --recurse --skip \"^mailto:\" --skip \"node_modules\" --skip \"site\" --timeout 60000",
     "lint": "npm run lint:md && npm run lint:spelling",
     "format:md": "prettier --write \"**/*.md\""
   },

@@ -6,7 +6,7 @@ This is a professional long-term book project about how Principal Engineers thin
 
 This is not a C tutorial. This is not an STM32 tutorial. This is a handbook about engineering thinking, architecture, decision-making, and long-living embedded systems.
 
-Current status: early draft / PEAK knowledge model foundation.
+Current status: final release-readiness audit after completion of Chapters 1-37 and the Appendix.
 
 The repository itself must demonstrate the engineering practices described in the book.
 
@@ -35,7 +35,7 @@ The repository itself must demonstrate the engineering practices described in th
 
 Maintainers may organize, refactor, format, cross-reference, and improve maintainability. Maintainers must not invent manuscript content.
 
-Use issues and pull requests for non-trivial work. Mark author decisions with `AUTHOR NOTE:` or track them in `editor/OPEN_QUESTIONS.md`.
+Use issues and pull requests for non-trivial work. Track unresolved author decisions in `editor/OPEN_QUESTIONS.md`.
 
 ## Decision Documentation
 
@@ -122,4 +122,4 @@ vale .
 
 ## Manuscript Policy
 
-Do not invent content. If a section needs author input, add a clear `AUTHOR NOTE:` or open an issue.
+Do not invent content. If a section needs author input, open an issue or record the question in `editor/OPEN_QUESTIONS.md`.

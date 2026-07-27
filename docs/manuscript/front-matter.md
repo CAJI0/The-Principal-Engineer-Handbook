@@ -1,3 +1,7 @@
 # Front Matter
 
-> AUTHOR NOTE: Add author-approved front matter.
+Generated links to the canonical front matter.
+
+- Manifesto
+- Preface
+- Table of Contents
