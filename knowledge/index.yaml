@@ -443,7 +443,7 @@ entities:
       type: chapter
       name: Managing Utility Gravity
       path: ../book/06-legacy/34-managing-utility-gravity.md
-      status: draft
+      status: canonical
   adrs:
     - id: ADR-001
       type: adr
