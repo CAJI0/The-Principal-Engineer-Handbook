@@ -444,6 +444,11 @@ entities:
       name: Managing Utility Gravity
       path: ../book/06-legacy/34-managing-utility-gravity.md
       status: canonical
+    - id: CHAPTER-035
+      type: chapter
+      name: Reducing Boolean Explosion
+      path: ../book/06-legacy/35-reducing-boolean-explosion.md
+      status: draft
   adrs:
     - id: ADR-001
       type: adr
@@ -1962,5 +1967,86 @@ relationships:
     type: references
     to: FAILURE-004
   - from: CHAPTER-034
+    type: references
+    to: FAILURE-005
+  - from: CHAPTER-035
+    type: illustrates
+    to: SMELL-003
+  - from: CHAPTER-035
+    type: references
+    to: VOCAB-010
+  - from: CHAPTER-035
+    type: references
+    to: LAW-001
+  - from: CHAPTER-035
+    type: references
+    to: LAW-002
+  - from: CHAPTER-035
+    type: references
+    to: LAW-004
+  - from: CHAPTER-035
+    type: references
+    to: LAW-005
+  - from: CHAPTER-035
+    type: references
+    to: LAW-006
+  - from: CHAPTER-035
+    type: references
+    to: LAW-007
+  - from: CHAPTER-035
+    type: references
+    to: VOCAB-001
+  - from: CHAPTER-035
+    type: references
+    to: METRIC-001
+  - from: CHAPTER-035
+    type: references
+    to: METRIC-002
+  - from: CHAPTER-035
+    type: references
+    to: METRIC-003
+  - from: CHAPTER-035
+    type: references
+    to: METRIC-004
+  - from: CHAPTER-035
+    type: references
+    to: ARTIFACT-001
+  - from: CHAPTER-035
+    type: references
+    to: ARTIFACT-002
+  - from: CHAPTER-035
+    type: references
+    to: ARTIFACT-003
+  - from: CHAPTER-035
+    type: references
+    to: ARTIFACT-006
+  - from: CHAPTER-035
+    type: references
+    to: RITUAL-001
+  - from: CHAPTER-035
+    type: references
+    to: RITUAL-004
+  - from: CHAPTER-035
+    type: references
+    to: SMELL-001
+  - from: CHAPTER-035
+    type: references
+    to: SMELL-004
+  - from: CHAPTER-035
+    type: references
+    to: SMELL-005
+  - from: CHAPTER-035
+    type: references
+    to: SMELL-006
+  - from: CHAPTER-035
+    type: references
+    to: ANTIPATTERN-003
+  - from: CHAPTER-035
+    type: references
+    to: ANTIPATTERN-006
+  - from: CHAPTER-035
+    type: references
+    to: FAILURE-004
+  - from: CHAPTER-035
     type: references
     to: FAILURE-005

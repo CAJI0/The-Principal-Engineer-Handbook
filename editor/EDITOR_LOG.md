@@ -7732,6 +7732,90 @@ Pull request readiness:
 - Chapter 35 started: no.
 - Do not create a pull request, merge, start Chapter 35, or create Chapter 36/37 as part of this phase.
 
+## Phase 193 Chapter 35 Canonical Brief Registration
+
+- Chapter: Reducing Boolean Explosion.
+- Stable ID: `CHAPTER-035`.
+- Branch: `chapter35`.
+- Stage: Canonical Brief Registration.
+- Verified `origin/main` baseline SHA: `487507ebbd12fce8fde8f36633f9a21d5f40f4c8`.
+- Baseline evidence: PR #36 Chapter 34 squash merge commit,
+  `Chapter 34: Managing Utility Gravity (#36)`.
+- Required repository synchronization and verification:
+  - `git fetch origin`: passed.
+  - `git checkout main`: passed; branch was already `main`.
+  - `git pull --ff-only origin main`: passed; already up to date.
+  - `git rev-parse origin/main`: `487507ebbd12fce8fde8f36633f9a21d5f40f4c8`.
+  - `git status --short`: clean.
+- Preflight result: passed. `origin/main` was reachable and up to date locally, contained Chapter 34 canonical state and
+  `book/06-legacy/34-managing-utility-gravity.md`, local `knowledge/index.yaml` contained `CHAPTER-034` as canonical,
+  the Part VI table of contents order was correct, `CHAPTER-035` was absent, the Chapter 35 canonical brief and
+  manuscript were absent, no previous Chapter 35 Canonical Brief Registration log entry existed, and the working tree
+  was clean before edits.
+- Branch setup: `git checkout -B chapter35 origin/main` passed; branch `chapter35` created from baseline
+  `487507ebbd12fce8fde8f36633f9a21d5f40f4c8`.
+- Outcome: Chapter 35 canonical brief registered.
+- Lifecycle registration: `CHAPTER-035` added as `draft` in `knowledge/index.yaml`.
+- Manuscript path expected but not created: `book/06-legacy/35-reducing-boolean-explosion.md`.
+- Canonical brief path created:
+  `editor/chapter-briefs/CHAPTER-035-reducing-boolean-explosion.md`.
+- Primary concept result: none; no `primary_concept` field was added.
+- New PEAK concept result: none; Chapter 35 illustrates existing `SMELL-003` and references existing `VOCAB-010`.
+- Exact relationship set registered:
+  - `CHAPTER-035 illustrates SMELL-003`
+  - `CHAPTER-035 references VOCAB-010`
+  - `CHAPTER-035 references LAW-001`
+  - `CHAPTER-035 references LAW-002`
+  - `CHAPTER-035 references LAW-004`
+  - `CHAPTER-035 references LAW-005`
+  - `CHAPTER-035 references LAW-006`
+  - `CHAPTER-035 references LAW-007`
+  - `CHAPTER-035 references VOCAB-001`
+  - `CHAPTER-035 references METRIC-001`
+  - `CHAPTER-035 references METRIC-002`
+  - `CHAPTER-035 references METRIC-003`
+  - `CHAPTER-035 references METRIC-004`
+  - `CHAPTER-035 references ARTIFACT-001`
+  - `CHAPTER-035 references ARTIFACT-002`
+  - `CHAPTER-035 references ARTIFACT-003`
+  - `CHAPTER-035 references ARTIFACT-006`
+  - `CHAPTER-035 references RITUAL-001`
+  - `CHAPTER-035 references RITUAL-004`
+  - `CHAPTER-035 references SMELL-001`
+  - `CHAPTER-035 references SMELL-004`
+  - `CHAPTER-035 references SMELL-005`
+  - `CHAPTER-035 references SMELL-006`
+  - `CHAPTER-035 references ANTIPATTERN-003`
+  - `CHAPTER-035 references ANTIPATTERN-006`
+  - `CHAPTER-035 references FAILURE-004`
+  - `CHAPTER-035 references FAILURE-005`
+- Changed files:
+  - `editor/EDITOR_LOG.md`
+  - `editor/chapter-briefs/CHAPTER-035-reducing-boolean-explosion.md`
+  - `knowledge/index.yaml`
+- Final validation completed after this log entry:
+  - Direct Chapter 35 Canonical Brief Registration assertions: passed for expected changed files, `CHAPTER-035`
+    registered exactly once as `draft`, no `primary_concept`, Chapters 1-34 canonical, Chapter 35 manuscript absent,
+    Chapter 36/37 manuscripts absent, exact relationship set, duplicate relationship absence, Phase 193 uniqueness,
+    required commit subject present, and no tracked site.
+  - `git diff --check`: passed.
+  - `npm.cmd run lint:md`: passed.
+  - `npm.cmd run lint:spelling`: passed after replacing local lowercase/spelling variants in the Chapter 35 brief with
+    accepted project wording.
+  - `npm.cmd run lint:links`: passed after isolated rerun; the first concurrent run reported transient `[0]` statuses
+    for local markdown files, and the isolated rerun scanned 187 links successfully.
+  - `python -m pip check`: passed.
+  - `python -m mkdocs build --strict`: passed.
+  - `vale --config .vale.ini editor/chapter-briefs/CHAPTER-035-reducing-boolean-explosion.md editor/EDITOR_LOG.md
+    knowledge/index.yaml`: passed after the same wording cleanup.
+  - `git ls-files site`: passed with no tracked files.
+- Commit subject: `docs(chapter-35): register canonical brief`.
+- Pull request readiness: ready after this Canonical Brief Registration commit is committed and pushed.
+- Branch merged: no.
+- Chapter 35 Author Draft started: no.
+- Next expected phase: Author Draft.
+- Do not create the Chapter 35 manuscript, create Chapter 36/37 files, or change Chapters 1-34 as part of this phase.
+
 ## Phase 176 Chapter 32 Author Draft
 
 - Chapter: Reading a Legacy System.
