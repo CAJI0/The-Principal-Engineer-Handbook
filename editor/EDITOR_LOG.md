@@ -8473,6 +8473,23 @@ Pull request readiness:
 - Commit subject: `docs(chapter-36): freeze chapter`.
 - Pull request readiness: Chapter 36 is ready for PR from `chapter36` to `main` after this commit is pushed.
 
+## Appendix Canon Review
+
+- Branch: `appendix`.
+- Stage: Canon Review.
+- Reviewed baseline commit: `d431deab2e661f8e18f250cc61c6c8671943a21a`.
+- Outcome: Approved.
+- Canon sources checked: `knowledge/index.yaml`, canonical concept files, Appendix brief, and relevant chapter boundaries.
+- PEAK concept result: no new concepts introduced.
+- Registry result: `knowledge/index.yaml` unchanged.
+- `METRIC-002` result: Bus Factor preserved.
+- Glossary result: canonical names and IDs match existing registry.
+- Boundary result: Appendix supports existing chapters without rewriting them.
+- Canon changes made: none.
+- Chapters 1-37 changed: no.
+- Validation commands and results: `git diff --check` passed; Appendix canon Python check passed; `npm.cmd run lint:md` passed; `npm.cmd run lint:spelling` passed; `npm.cmd run lint:links` passed; `vale --config .vale.ini book/appendix editor/appendix-briefs/APPENDIX-canonical-brief.md editor/EDITOR_LOG.md` passed with 0 errors, 0 warnings, and 0 suggestions; `python -m pip check` passed; `python -m mkdocs build --strict` passed; `git ls-files site` returned no tracked files.
+- Next stage: Appendix Technical Review.
+
 ## Appendix Editorial Review
 
 - Branch: `appendix`.
