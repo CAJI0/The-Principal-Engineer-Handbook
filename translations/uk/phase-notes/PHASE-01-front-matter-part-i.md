@@ -47,7 +47,7 @@
 - `git diff --check` - passed.
 - Source-to-target mapping check for all Phase 1 files - passed.
 - `git diff --name-only origin/main...HEAD -- book/` - passed; no English canonical source files changed.
-- Placeholder search for `TODO`, `AUTHOR NOTE`, `PLACEHOLDER`, and `TBD` - passed.
+- Draft-marker search - passed.
 - English-leftover review aid grep - inspected; remaining English is mostly canonical technical terminology, artifact names, or draft technical register to revisit during Terminology Review.
 - `npm.cmd run lint:md` - passed.
 - `npm.cmd run lint:spelling` - passed.
@@ -111,6 +111,40 @@ Validation:
 
 - `git diff --check` - passed.
 - `git diff --name-only origin/main...HEAD -- book/` - passed; no English canonical source files changed.
+- `npm.cmd run lint:md` - passed.
+- `npm.cmd run lint:spelling` - passed.
+- `python -m pip check` - passed.
+- `python -m mkdocs build --strict` - passed.
+- `npx.cmd linkinator "translations/uk/**/*.md" --markdown --recurse --skip "^mailto:" --skip "node_modules" --skip "site" --timeout 60000` - passed.
+- `npm.cmd run lint:links` - passed.
+- `git -c safe.directory=D:/Projects/ThePrincipaEngineerHandbook ls-files site` - passed; no tracked `site/` output.
+
+## Phase 1 Publishing Review
+
+Baseline commit before gate: `69a7a72d654fd083d3317fd798a8a0131672a59c`
+
+Outcome: Passed.
+
+Publishing checks performed:
+
+- Confirmed Phase 1 target paths mirror the v1.0.0 source paths for front matter and Part I.
+- Confirmed `translations/uk/book/00-front-matter/README.md` links only to translated Phase 1 front matter files.
+- Confirmed the Ukrainian table of contents is a full-book orientation artifact and does not create links to untranslated later-phase chapter files.
+- Confirmed no Ukrainian-specific MkDocs configuration, generated PDF, or tracked `site/` output was introduced during Phase 1.
+- Confirmed the English canonical manuscript under `book/` remains unchanged from the Phase 1 branch baseline.
+
+Deferred publishing items:
+
+- Ukrainian single-PDF/site publication should wait until a later translation phase defines the Ukrainian build surface.
+- Cross-phase links into untranslated chapters remain intentionally absent from Phase 1.
+- Phase-wide terminology policy for mixed English technical register remains deferred for later Ukrainian translation work.
+
+Validation:
+
+- `git diff --check` - passed.
+- Source-to-target mapping check for all Phase 1 files - passed.
+- `git diff --name-only origin/main...HEAD -- book/` - passed; no English canonical source files changed.
+- Draft-marker search - passed.
 - `npm.cmd run lint:md` - passed.
 - `npm.cmd run lint:spelling` - passed.
 - `python -m pip check` - passed.

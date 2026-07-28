@@ -36,3 +36,18 @@ Notes:
 - Reader-facing structural headings and several exercise prompts were made more natural in Ukrainian.
 - Canonical names, IDs, ADR structure, examples, and code-like records remain unchanged.
 - Some English technical terms remain intentionally for later phase-wide terminology policy.
+
+## Phase 1 - Publishing Review
+
+Baseline: 69a7a72d654fd083d3317fd798a8a0131672a59c
+Gate: Phase 1 Publishing Review
+Outcome: Passed
+Reader-facing translation created: No new scope; publishing review only
+English canonical manuscript modified: No
+Notes:
+
+- Phase 1 target paths mirror the immutable v1.0.0 source paths for front matter and Part I.
+- Front matter links are valid within the translated Phase 1 scope.
+- Full-book table of contents remains orientation-only and does not link to untranslated later-phase files.
+- No Ukrainian MkDocs configuration, generated PDF, or tracked `site/` output was introduced.
+- Phase 1 is ready for PR review after the publishing review commit.
