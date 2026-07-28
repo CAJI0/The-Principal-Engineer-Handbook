@@ -61,3 +61,31 @@
 ## Outcome
 
 Translation Draft complete.
+
+## Phase 1 Terminology Review
+
+Baseline commit before gate: `785ee03a9c94b94a9c04a383b80a624c2247928a`
+
+Outcome: Passed.
+
+Terminology changes made:
+
+- Preserved `Principal Engineer` in English and confirmed it is not rendered as `головний інженер`.
+- Replaced several misleading standalone uses of `ownership`, `evidence`, `judgment`, and `constraints` with the glossary-preferred Ukrainian responsibility, evidence, judgment, and constraint language where the term was not intentionally canonical.
+- Preserved canonical PEAK names, artifact names, and IDs such as `Evidence Before Confidence`, `Change Radius`, `Decision Journal`, `LAW-005`, `SMELL-001`, and similar references.
+
+Unresolved items:
+
+- Editorial Review should still reduce draft-level English connective prose where it is not a canonical term, code-like text, or preserved artifact language.
+
+Validation:
+
+- `git diff --check` - passed.
+- `git diff --name-only origin/main...HEAD -- book/` - passed; no English canonical source files changed.
+- `npm.cmd run lint:md` - passed.
+- `npm.cmd run lint:spelling` - passed.
+- `python -m pip check` - passed.
+- `python -m mkdocs build --strict` - passed.
+- `npx.cmd linkinator "translations/uk/**/*.md" --markdown --recurse --skip "^mailto:" --skip "node_modules" --skip "site" --timeout 60000` - passed.
+- `npm.cmd run lint:links` - passed.
+- `git -c safe.directory=D:/Projects/ThePrincipaEngineerHandbook ls-files site` - passed; no tracked `site/` output.

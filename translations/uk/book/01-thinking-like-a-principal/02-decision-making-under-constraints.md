@@ -32,7 +32,7 @@ Release date мав реальне зовнішнє commitment: customer rollout
 
 «Ми не можемо так пізно будувати compressed updater.»
 
-Одна й та сама фраза приховувала різні види constraints. Одні були physical limits. Інші — safety and integrity requirements. Деякі були commitments to other groups. Деякі — assumptions, які ніхто не reviewed. Деякі — preferences, сказані з силою constraints.
+Одна й та сама фраза приховувала різні види обмежень. Одні були physical limits. Інші — safety and integrity requirements. Деякі були commitments to other groups. Деякі — assumptions, які ніхто не reviewed. Деякі — preferences, сказані з силою обмежень.
 
 Principal Engineer попросив написати options без adjectives:
 
@@ -48,7 +48,7 @@ Principal Engineer попросив написати options без adjectives:
 
 Потім Principal Engineer запитав повільніше: «Яку ціну ми уникаємо назвати?»
 
-Після паузи кожен вказав на свою cost: qualification delay, customer date, field recovery, lack of evidence, service cost. Хтось тихо сказав про variant hooks: «Ми захищаємо option, потребу в якому не довели».
+Після паузи кожен вказав на свою cost: qualification delay, customer date, field recovery, брак доказів, service cost. Хтось тихо сказав про variant hooks: «Ми захищаємо option, потребу в якому не довели».
 
 Meeting змінився. Команда більше не шукала option, яка не порушує жодного constraint. Вона вирішувала, який constraint можна challenged, яку cost можна accepted і який risk неприйнятно переносити в field.
 
@@ -74,9 +74,9 @@ Release date був commitment із owners outside engineering. Його не м
 
 Complex update mechanism був tempting option, бо ніби зберігав release date, diagnostics, recovery, hardware plan і future flexibility. Саме тому він заслужив suspicion. Рішення, яке late in release задовольняє every constraint, часто переносить uncertainty з meeting у field.
 
-Prototype update engineer мав значення. Це було evidence, але не enough evidence for commitment. Його не interrupted during worst-case writes, не tested across oldest supported deployed images, не reviewed for partial transfer recovery, не exercised by field service. Команда мала confidence, що mechanism could be made to work, але ще не evidence, що він should become release path for long-lived product.
+Prototype update engineer мав значення. Це були докази, але не достатні докази для commitment. Його не interrupted during worst-case writes, не tested across oldest supported deployed images, не reviewed for partial transfer recovery, не exercised by field service. Команда мала confidence, що mechanism could be made to work, але ще не докази, що він should become release path for long-lived product.
 
-Це Evidence Before Confidence (`LAW-005`) у практиці. Закон не каже чекати perfect proof. Він каже, що confidence має йти за evidence, а не замінювати його.
+Це Evidence Before Confidence (`LAW-005`) у практиці. Закон не каже чекати perfect proof. Він каже, що confidence має йти за доказами, а не замінювати їх.
 
 Weaker recovery path був гіршим option. Він виглядав меншим, бо не disturb visible plan. Але його cost платили б field teams, support teams, customers і engineers наступного update.
 
@@ -84,7 +84,7 @@ Keep everything and hope for later optimization не був plan. Це transfer 
 
 Лишилися чесні options: defer part of diagnostics, remove speculative variant hooks, preserve recovery path і keep update mechanism simple enough to validate. Це не робило release painless. Воно зменшувало scope, щоб захистити property, яку product найменше міг втратити.
 
-Немає best option в abstract. Responsible choice залежить від constraints, evidence, uncertainty, consequences і reversibility перед командою. Кожна option щось витрачає.
+Немає best option в abstract. Responsible choice залежить від обмежень, доказів, uncertainty, consequences і reversibility перед командою. Кожна option щось витрачає.
 
 Обраний напрям витратив product scope і частину future optionality. Він захистив recovery, qualification evidence і release predictability. Він також створив cost для product і service teams, бо deferred diagnostics треба буде wait або narrow. Ця cost потребувала owner.
 
@@ -96,7 +96,7 @@ Flexibility mattered теж. Команда не видалила flexibility, �
 
 Change Radius (`VOCAB-001`) допоміг описати consequence of being wrong. Помилка deferred diagnostics болюча, але bounded. Помилка recovery path торкнеться update tooling, field service, support, customer trust і possibly every deployed device that needs a fix.
 
-Reversibility змінила evidence threshold. Deferring diagnostics more reversible than shipping fragile update path. Removing speculative hooks можна revisit when variant has evidence. Complex updater main release path hard to reverse after deployment. Що дорожче reversal, то більше evidence треба before committing.
+Reversibility змінила evidence threshold. Deferring diagnostics more reversible than shipping fragile update path. Removing speculative hooks можна revisit when variant has evidence. Complex updater main release path hard to reverse after deployment. Що дорожче reversal, то більше доказів треба before committing.
 
 Команда зрештою обрала narrower release:
 
@@ -131,9 +131,9 @@ Deadline не absolve team from field risk. Memory limit не absolve from produ
 
 ## Engineering Principle
 
-Sound engineering decision робить constraints, evidence, uncertainty, consequences і cost of reversal explicit before committing.
+Sound engineering decision робить обмеження, докази, uncertainty, consequences і cost of reversal explicit before committing.
 
-Цей principle не remove judgment і не guarantee success. Він змінює quality of commitment.
+Цей principle не remove інженерне судження і не guarantee success. Він змінює quality of commitment.
 
 Коли constraints visible, їх можна honestly challenged. Коли evidence named, confidence calibrated. Коли uncertainty recorded, future engineers know what to revisit. Коли consequences мають owners, risk stops drifting silently. Коли reversal cost understood, team can decide how much evidence decision deserves.
 

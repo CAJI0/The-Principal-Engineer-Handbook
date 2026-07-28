@@ -64,7 +64,7 @@ Principal Engineer розділила facts і interpretations:
 
 Питання не solved incident. Воно changed investigation.
 
-Gateway engineer added logging for command receipt, forwarding, device acknowledgment і state publication as separate events. Firmware engineer added events for command accepted into device state machine and device observed resulting operational state. Application engineer stopped treating gateway acknowledgment as evidence displayed state was current. Test engineer built a run that delayed state reports without dropping acknowledgments.
+Gateway engineer added logging for command receipt, forwarding, device acknowledgment і state publication as separate events. Firmware engineer added events for command accepted into device state machine and device observed resulting operational state. Application engineer stopped treating gateway acknowledgment as evidence that displayed state was current. Test engineer built a run that delayed state reports without dropping acknowledgments.
 
 Команда також записала питання, якого раніше не відповідала:
 
