@@ -1,4 +1,4 @@
-# Phase 3 Ukrainian Translation Draft - Part III
+# Phase 3 Ukrainian Translation Review - Part III
 
 ## Source Baseline
 
@@ -72,7 +72,7 @@
 
 ## Outcome
 
-Translation Draft complete.
+Translation and review complete.
 
 ## Terminology Review
 
@@ -90,8 +90,28 @@ Translation Draft complete.
 ## Ukrainian Editorial Review
 
 - Outcome: Passed
-- Commit: pending at commit time
+- Commit: `0106c0a`
 - Notes:
   - Removed corrupted replacement remnants in Phase 3 reader-facing chapters.
   - Restored Phase 3 local terms for `boundary`, `contract`, `owner`, `hardening point`, `allowed movement`, and `exception path` according to the terminology review.
   - Preserved canonical English labels and PEAK identifiers while keeping the surrounding Ukrainian/engineering register stable for publication.
+
+## Publishing Review
+
+- Outcome: Passed
+- Commit: pending at commit time
+- Validation:
+  - `git status --short` - passed; working tree was clean before recording this review section.
+  - `git diff --check` - passed.
+  - `git diff --name-only origin/main...HEAD -- book/` - passed; no English source changed.
+  - Phase 3 target file inventory - passed; all seven Part III Ukrainian files exist.
+  - Reader-facing Phase 3 marker scan - passed.
+  - Phase 4 creation check - passed; no files under `translations/uk/book/04-building-a-product/` were created by this branch.
+  - `npm run lint:md` - passed.
+  - `npm run lint:spelling` - passed.
+  - `python -m pip check` - passed.
+  - `python -m mkdocs build --strict` - passed.
+  - `linkinator translations/uk/**/*.md` - passed.
+  - `npm run lint:links` - passed.
+  - tracked `site/` output - none.
+- Outcome: Phase 3 review complete.
