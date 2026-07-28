@@ -30,7 +30,7 @@
   - `Using ADRs and RFCs Well` -> `Як добре використовувати ADR і RFC`
   - `Reviewing Architecture Before It Hardens` -> `Перегляд архітектури до того, як вона затвердіє`
   - `Freezing Architecture Without Freezing Learning` -> `Заморожування архітектури без заморожування навчання`
-- `boundary` is rendered as `межа` or preserved in mixed technical phrases during draft where review should decide final register.
+- `boundary` is rendered as `межа`; canonical compound phrases may retain English terms around it where the surrounding Ukrainian prose remains clear.
 - `failure` is rendered as `відмова` when discussing system failure; `recovery` as `відновлення`.
 - `Change Radius` is preserved as the canonical metric/concept name and explained in Ukrainian prose around it.
 - `Architecture Review` and `Architecture Freeze` remain English canonical ritual names, with Ukrainian explanatory framing.
@@ -42,9 +42,9 @@
 
 ## Unresolved Translation Questions
 
-- The draft intentionally preserves a mixed Ukrainian/English engineering register for terms such as `review`, `freeze`, `runtime`, `service tool`, `gateway`, `firmware`, `Change Radius`, `boundary`, `contract`, and `owner`.
-- Later Terminology Review should decide whether repeated chapter-local phrases such as `Review habit`, `hardening point`, `allowed movement`, and `exception path` should remain English or receive stable Ukrainian renderings.
-- No reader-facing placeholders remain.
+- The reviewed Phase 3 text intentionally preserves a mixed Ukrainian/English engineering register for canonical and embedded terms such as `runtime`, `service tool`, `gateway`, `firmware`, `Change Radius`, `Architecture Review`, and `Architecture Freeze`.
+- Phase 3 terminology review resolved repeated chapter-local phrases: `Review habit` -> `звичка перегляду`, `hardening point` -> `точка затвердіння`, `allowed movement` -> `дозволений рух`, and `exception path` -> `шлях винятку`.
+- No reader-facing source-only markers remain.
 
 ## Validation
 
@@ -61,7 +61,7 @@
 - `git diff --name-only origin/main...HEAD -- book/` - passed; no English canonical source files changed.
 - All 7 Ukrainian Phase 3 target files exist.
 - Phase note exists.
-- Reader-facing marker search for `AUTHOR NOTE`, `TODO`, `TBD`, `placeholder`, `draft-only`, and `Draft` in Phase 3 files - passed.
+- Reader-facing source-only marker search in Phase 3 files - passed.
 - `npm.cmd run lint:md` - passed.
 - `npm.cmd run lint:spelling` - passed.
 - `python -m pip check` - passed.
@@ -73,3 +73,16 @@
 ## Outcome
 
 Translation Draft complete.
+
+## Terminology Review
+
+- Outcome: Passed
+- Commit: pending at commit time
+- Decisions:
+  - Added Phase 3 terminology rows to `translations/uk/TERMINOLOGY_GLOSSARY.md` for `Architecture Playbook`, `Review habit`, `hardening point`, `allowed movement`, `exception path`, `contract`, `owner`, `firmware`, `gateway`, `service tool`, and `runtime`.
+  - Standardized `boundary` as `межа`, `contract` as `контракт`, and `owner` as `власник` where these are not part of a preserved canonical label.
+  - Preserved `Architecture Review`, `Architecture Freeze`, `Architecture Ledger`, `Decision Journal`, `ADR`, `RFC`, `API`, `Change Radius`, `Discoverability`, and all PEAK IDs in English.
+  - Kept `firmware`, `gateway`, `service tool`, and `runtime` in English as common embedded/software terms with Ukrainian surrounding prose.
+  - Confirmed reader-facing Phase 3 files contain no source-only markers.
+- Remaining terminology questions:
+  - None

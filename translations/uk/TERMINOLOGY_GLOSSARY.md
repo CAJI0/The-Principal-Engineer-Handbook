@@ -36,4 +36,16 @@
 | Hero Engineer | Hero Engineer | Usually keep in English. | Explain as a risky role pattern, not praise. |
 | Failure Story | Failure Story | Usually keep in English. | Explain as «історія відмови» when needed. |
 
+| Architecture Playbook | Архітектурний playbook | Preserve `playbook` as the recognizable practice term. | Introduced in Phase 3. |
+| Review habit | звичка перегляду | Use for repeated practice questions after an engineering principle. | Avoid leaving the phrase as standalone English outside canonical labels. |
+| hardening point | точка затвердіння | Use for the moment after which a decision becomes expensive to change. | Introduced in Phase 3 review practice. |
+| allowed movement | дозволений рух | Use in Architecture Freeze context. | Means changes permitted inside a frozen decision. |
+| exception path | шлях винятку | Use in Architecture Freeze context. | Means the controlled path for changing or revalidating a frozen decision. |
+| contract | контракт | Use for behavioral/API/architecture promises. | Keep `API` and canonical artifact names in English. |
+| owner | власник | Use for a responsible authority in architecture decisions. | Prefer contextual responsibility language where Ukrainian flow requires it. |
+| firmware | firmware | Preserve in English. | Common embedded term; translate surrounding prose. |
+| gateway | gateway | Preserve in English. | Common product/integration term in Part III examples. |
+| service tool | service tool | Preserve in English. | Common field/support tooling term in Part III examples. |
+| runtime | runtime | Preserve in English when used technically. | Translate surrounding prose. |
+
 When a term is ambiguous, record the ambiguity in the phase notes instead of forcing a poor translation.
