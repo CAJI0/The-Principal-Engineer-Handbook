@@ -1,10 +1,10 @@
 # Як ставити кращі інженерні питання
 
-## Opening Quote
+## Вступна цитата
 
 > Питання успадковує кожне припущення, якого не виявляє.
 
-## Story
+## Історія
 
 Alert виглядав меншим, ніж суперечка навколо нього.
 
@@ -74,7 +74,7 @@ Final architectural decision ще не було.
 
 Це було правильно. Команда still shaping inquiry. Decision мав прийти лише after evidence could distinguish explanations.
 
-## Discussion
+## Обговорення
 
 Слабке investigation часто fails before first experiment.
 
@@ -133,7 +133,7 @@ Endpoint of this chapter is not selected option. Chapter 3 stops earlier. It ask
 
 Second question is slower at first. It is cheaper if first question would have produced another local fix around unnamed system contract.
 
-## Engineering Principle
+## Інженерний принцип
 
 Кращі питання роблять припущення testable before they become architecture.
 
@@ -149,32 +149,32 @@ Strongest form is often plain:
 
 «What evidence would cause us to change our current explanation?»
 
-## Architecture Exercise
+## Архітектурна вправа
 
 Оберіть unresolved engineering question зі своєї current або recent work.
 
 Запишіть:
 
-1. The original question.
-2. Direct observations.
-3. Interpretations currently presented as facts.
-4. Embedded assumptions.
-5. The accepted system boundary.
-6. At least two plausible explanations.
-7. Evidence that would distinguish them.
-8. The owner of the relevant state, contract, or next experiment.
-9. A rewritten, answerable question.
-10. The next evidence-gathering action.
+1. Початкове питання.
+2. Прямі спостереження.
+3. Інтерпретації, які зараз подаються як факти.
+4. Вбудовані припущення.
+5. Прийнята system boundary.
+6. Принаймні два правдоподібні пояснення.
+7. Докази, які розрізнили б ці пояснення.
+8. Owner відповідного state, contract або next experiment.
+9. Переписане, answerable question.
+10. Наступна дія зі збору доказів.
 
 Завершіть питанням:
 
-What evidence would cause us to change our current explanation?
+Які докази змусили б нас змінити поточне пояснення?
 
-## Principal's Notebook
+## Нотатник Principal Engineer
 
-- Observations are not explanations.
-- A question can silently choose the system boundary.
-- An answer without evidence or ownership does not close the inquiry.
+- Спостереження — це не пояснення.
+- Питання може тихо вибрати system boundary.
+- Відповідь без доказів або ownership не закриває inquiry.
 
 ## ADR
 
@@ -210,7 +210,7 @@ Gateway publishes last-observed state with explicit freshness metadata. Acknowle
 - Treat the latest received value as current.
 - Allow each consumer to infer freshness independently.
 
-## Editor's Commentary
+## Коментар редактора
 
 Chapter 1 showed why questions matter: вони expose decision system around code. Chapter 2 showed constrained commitments. Chapter 3 sits before commitment and teaches how to shape inquiry so team does not commit to assumption hidden inside first plausible question.
 

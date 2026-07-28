@@ -23,3 +23,16 @@ Notes:
 - `Principal Engineer` remains in English.
 - Glossary-sensitive terms were corrected where the draft used misleading standalone English terminology.
 - Canonical PEAK names and IDs remain unchanged.
+
+## Phase 1 - Ukrainian Editorial Review
+
+Baseline: 4165c0e
+Gate: Phase 1 Ukrainian Editorial Review
+Outcome: Passed
+Reader-facing translation created: No new scope; Phase 1 draft editorial pass completed
+English canonical manuscript modified: No
+Notes:
+
+- Reader-facing structural headings and several exercise prompts were made more natural in Ukrainian.
+- Canonical names, IDs, ADR structure, examples, and code-like records remain unchanged.
+- Some English technical terms remain intentionally for later phase-wide terminology policy.

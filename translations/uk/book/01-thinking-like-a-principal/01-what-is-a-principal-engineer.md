@@ -1,10 +1,10 @@
 # Що таке Principal Engineer?
 
-## Opening Quote
+## Вступна цитата
 
 > Корисне питання може змінити більше коду, ніж дотепна відповідь.
 
-## Story
+## Історія
 
 Відмова почалася як число на dashboard.
 
@@ -51,7 +51,7 @@ Principal Engineer майже не торкнувся implementation.
 
 У цьому й був сенс.
 
-## Discussion
+## Обговорення
 
 Легко описати Principal Engineer як сильнішу версію Senior Engineer: більше досвіду, складніші проблеми, ширший вплив, краще debugging. Це не марні описи, але вони пропускають головну різницю.
 
@@ -137,7 +137,7 @@ Principal Engineers зменшують future cost, перетворюючи fam
 
 Їхня цінність зʼявляється пізніше, коли команда може змінити систему, не відкриваючи її історію з нуля.
 
-## Engineering Principle
+## Інженерний принцип
 
 Architecture — це дисципліна прийняття рішень.
 
@@ -157,7 +157,7 @@ Principal Engineer — не людина, яка приймає кожне ва�
 
 Саме тому роль не можна звести до career badge. Це відповідальність за future cost system.
 
-## Architecture Exercise
+## Архітектурна вправа
 
 Оберіть одне недавнє technical decision зі своєї поточної або недавньої роботи.
 
@@ -177,7 +177,7 @@ Principal Engineer — не людина, яка приймає кожне ва�
 
 Якщо відповіді нечіткі, а рішення має long lifetime, high reversal cost, cross-boundary impact, ownership або compatibility consequences чи впливає на later decisions, воно, ймовірно, є частиною architecture.
 
-## Principal's Notebook
+## Нотатник Principal Engineer
 
 - Питання — архітектурні інструменти.
 - Рішення накопичуються.
@@ -213,7 +213,7 @@ Handbook міг би початися з embedded technology: C, STM32, RTOS API
 - Почати з embedded architecture patterns.
 - Почати з reference project.
 
-## Editor's Commentary
+## Коментар редактора
 
 Цей розділ навмисно уникає technology.
 

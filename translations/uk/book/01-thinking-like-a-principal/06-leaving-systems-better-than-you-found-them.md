@@ -1,10 +1,10 @@
 # Залишати системи кращими, ніж ви їх знайшли
 
-## Opening Quote
+## Вступна цитата
 
 > Зміна не завершена, доки наступна зміна не бачить, що успадкувала.
 
-## Story
+## Історія
 
 New board revision виглядала modest on schedule.
 
@@ -62,7 +62,7 @@ Change still shipped board revision. Controller shipped with new monitor support
 
 System was better in a specific way: one product change reduced cost of next related change without pretending to solve every nearby problem.
 
-## Discussion
+## Обговорення
 
 Locally correct change can still raise future cost.
 
@@ -108,7 +108,7 @@ That is enough.
 
 Part I has been about mindset of principal engineering: decisions as future cost, constraints explicit, better questions, ownership beyond code, judgment tied to evidence. This chapter closes arc with stewardship. Principal Engineer does not merely complete todayʼs change or chase ideal system. Work is to make current outcome real while leaving next necessary change cheaper, safer, or easier to understand.
 
-## Engineering Principle
+## Інженерний принцип
 
 When a change exposes or creates structural cost, include the smallest justified improvement that reduces that cost without displacing product outcome.
 
@@ -116,33 +116,33 @@ This principle depends on Simplicity Is a Feature (`LAW-004`) and Unused Flexibi
 
 Practical move: disciplined stewardship. Use current change as evidence. Improve only boundary or behavior the change crosses. Remove/narrow obsolete flexibility only with enough evidence. Record decision so next engineer can find it. Then stop.
 
-## Architecture Exercise
+## Архітектурна вправа
 
 ### Define a Bounded Stewardship Action
 
 Choose a change you are making or recently reviewed.
 
-1. What product outcome must this change deliver?
-2. What part of system resists the change?
-3. What structural cost does the change expose or create?
-4. What evidence shows cost is real rather than preference?
-5. What is smallest improvement that directly reduces cost?
-6. How should it affect boundary clarity, Change Radius, Discoverability, ownership, or failure visibility?
-7. What debt remains deliberately out of scope?
-8. What existing behavior must not change?
-9. What validation is needed for product outcome?
-10. What validation is needed for stewardship action?
-11. Where will decision, limitation, or review trigger be discoverable?
-12. What is stop condition?
+1. Який product outcome має deliver ця зміна?
+2. Яка частина system чинить опір зміні?
+3. Яку structural cost ця зміна виявляє або створює?
+4. Які докази показують, що cost реальна, а не особиста preference?
+5. Яке smallest improvement прямо зменшує цю cost?
+6. Як воно має вплинути на boundary clarity, Change Radius, Discoverability, ownership або failure visibility?
+7. Який debt свідомо лишається out of scope?
+8. Яка existing behavior не має змінитися?
+9. Яка validation потрібна для product outcome?
+10. Яка validation потрібна для stewardship action?
+11. Де decision, limitation або review trigger будуть discoverable?
+12. Яка stop condition?
 
 > What is the smallest improvement you can include now that leaves the next
 > necessary change cheaper without turning this task into a rewrite?
 
-## Principal's Notebook
+## Нотатник Principal Engineer
 
-- Leave a cheaper path for the next related change.
-- Improve the boundary the change actually crosses.
-- Stop when the product outcome and the bounded stewardship outcome are both met.
+- Залишайте дешевший шлях для наступної related change.
+- Покращуйте boundary, яку change справді перетинає.
+- Зупиняйтеся, коли product outcome і bounded stewardship outcome обидва досягнуті.
 
 ## ADR
 
@@ -172,7 +172,7 @@ Deliver only feature and defer every structural correction. Protects narrow sche
 
 Keep obsolete fallback and unused option. Avoids removal risk, but evidence shows they no longer support current product or service scope.
 
-## Editor's Commentary
+## Коментар редактора
 
 Chapter 6 follows Chapter 5 by turning evidence-based judgment into bounded stewardship. Chapter 5 asks how much confidence claim deserves; this chapter asks what current evidence justifies changing in system itself.
 

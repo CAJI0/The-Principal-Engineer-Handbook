@@ -1,10 +1,10 @@
 # Інженерне судження й докази
 
-## Opening Quote
+## Вступна цитата
 
 > Доказ корисний лише тоді, коли ви знаєте, яке твердження він підтримує.
 
-## Story
+## Історія
 
 Test report заспокоював так, як може заспокоювати добре число.
 
@@ -66,7 +66,7 @@ No one became less technical.
 
 They became less willing to let successful test prove wrong claim.
 
-## Discussion
+## Обговорення
 
 Data does not interpret itself. Test result, measurement, prototype, benchmark, simulation, field report, or expert opinion becomes evidence only in relation to a claim. Same result can be strong evidence for one claim, weak for another, irrelevant for third.
 
@@ -153,7 +153,7 @@ Evidence is sufficient when it justifies next commitment, not when it eliminates
 
 That is technical judgment under incomplete information.
 
-## Engineering Principle
+## Інженерний принцип
 
 Evidence Before Confidence (`LAW-005`) is canonical anchor for this chapter.
 
@@ -167,7 +167,7 @@ Increase required evidence strength as consequences grow and reversal becomes ha
 
 Practical consequence: make claim explicit, name evidence, state confidence, expose uncertainty, and define feedback that would change judgment.
 
-## Architecture Exercise
+## Архітектурна вправа
 
 ### Build an Evidence-Bounded Judgment
 
@@ -175,24 +175,24 @@ Choose one pending or recent technical commitment.
 
 Write short answers:
 
-1. Commitment and claim:
-   What commitment is being considered? What exact claim must be true for that commitment to be responsible?
-2. Evidence and reasoning:
-   What was directly observed? What is inferred? What assumptions remain?
-3. Evidence conditions and quality:
-   Under which hardware, software, build, environment, load, timing, duration, and instrumentation conditions was evidence collected? How relevant, representative, independent, and fresh is it? Which states, boundaries, failure modes, and blind spots are covered or missing? What observations would contradict or lower confidence?
-4. Confidence and consequence:
-   What is current confidence and its scope? What is Change Radius? How reversible is commitment? How detectable would failure be? What would recovery cost? How much exposure does commitment create?
-5. Next action:
-   What next evidence action would most reduce decision-critical uncertainty? What evidence threshold is sufficient for next commitment? What review trigger should reopen judgment?
+1. Commitment і claim:
+   Який commitment розглядається? Яке точне claim має бути true, щоб цей commitment був responsible?
+2. Докази й reasoning:
+   Що було прямо observed? Що команда inferred? Які assumptions лишаються?
+3. Умови та якість доказів:
+   За яких hardware, software, build, environment, load, timing, duration та instrumentation conditions були зібрані докази? Наскільки вони relevant, representative, independent і fresh? Які states, boundaries, failure modes і blind spots covered або missing? Які observations contradicted або lowered confidence?
+4. Confidence і consequence:
+   Яка current confidence і її scope? Який Change Radius? Наскільки commitment reversible? Наскільки failure detectable? Якою буде recovery cost? Яку exposure створює commitment?
+5. Наступна дія:
+   Яка next evidence action найбільше зменшить decision-critical uncertainty? Який evidence threshold достатній для next commitment? Який review trigger має reopen judgment?
 
-What evidence would justify this commitment, and what evidence would merely make team feel more comfortable?
+Які докази виправдали б цей commitment, а які лише зробили б команді спокійніше?
 
-## Principal's Notebook
+## Нотатник Principal Engineer
 
-- A test result proves only the claim it exercised.
-- Repetition is not independence.
-- Silence is weak evidence when failure is hard to observe.
+- Test result доводить лише claim, який він перевіряв.
+- Repetition не є independence.
+- Silence є слабким evidence, коли failure важко observe.
 
 ## ADR
 
@@ -234,7 +234,7 @@ Add redundancy without identifying disputed assumption. Rejected because complex
 
 Restrict feature permanently to controlled environments. Rejected as premature.
 
-## Editor's Commentary
+## Коментар редактора
 
 Chapter 1 established Principal Engineer as responsible for future cost. Chapter 2 made constrained commitments explicit. Chapter 3 shaped questions. Chapter 4 made ownership of closure visible.
 

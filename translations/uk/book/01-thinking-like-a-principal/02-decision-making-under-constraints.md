@@ -1,10 +1,10 @@
 # Прийняття рішень в умовах обмежень
 
-## Opening Quote
+## Вступна цитата
 
 > Обмеження стає рішенням тоді, коли хтось приймає його ціну.
 
-## Story
+## Історія
 
 Release meeting почався з числа, яке ніхто не хотів захищати.
 
@@ -54,7 +54,7 @@ Meeting змінився. Команда більше не шукала option, 
 
 Рішення ще не було прийняте.
 
-## Discussion
+## Обговорення
 
 Meeting змінився, коли команда перестала бачити constraint list як стіну.
 
@@ -129,7 +129,7 @@ Deadline не absolve team from field risk. Memory limit не absolve from produ
 
 Саме тому constrained decision-making central to principal engineering. Робота не в тому, щоб знайти pure option. Її може не бути. Робота — make accepted cost explicit before the system hides it.
 
-## Engineering Principle
+## Інженерний принцип
 
 Sound engineering decision робить обмеження, докази, uncertainty, consequences і cost of reversal explicit before committing.
 
@@ -139,34 +139,34 @@ Sound engineering decision робить обмеження, докази, uncert
 
 Goal не remove all risk. Goal — знати, який risk team accepts, why, і when decision must be opened again.
 
-## Architecture Exercise
+## Архітектурна вправа
 
 Оберіть current або recent engineering decision, де жодна option не задовольняла every demand.
 
 Дайте короткі відповіді:
 
-- What decision is being made?
-- What outcome are you trying to protect?
-- Which constraints are genuinely hard?
-- Which commitments might be renegotiated?
-- Which assumptions are being treated as facts?
-- What remains unknown?
-- What evidence is available?
-- What is the cost of being wrong?
-- What is its Change Radius?
-- How reversible is the decision?
-- Who owns the accepted risk?
-- What review trigger would reopen the decision?
+- Яке рішення приймається?
+- Який результат ви намагаєтеся захистити?
+- Які обмеження справді жорсткі?
+- Які commitments можна renegotiate?
+- Які припущення команда трактує як факти?
+- Що лишається невідомим?
+- Які докази доступні?
+- Яка ціна помилки?
+- Який його Change Radius?
+- Наскільки це рішення reversible?
+- Хто owns the accepted risk?
+- Який review trigger відкриє рішення знову?
 
 Потім останнє питання:
 
 Що б ви обрали, якби goal був не remove all risk, а make accepted risk explicit and recoverable?
 
-## Principal's Notebook
+## Нотатник Principal Engineer
 
-- Constraints must be visible before they can be challenged.
-- Reversibility buys learning, not safety.
-- Deadlines transfer risk; they do not erase it.
+- Обмеження мають бути видимими до того, як їх можна challenged.
+- Reversibility купує навчання, а не безпеку.
+- Deadlines переносять ризик; вони його не стирають.
 
 ## ADR
 
@@ -201,7 +201,7 @@ Record remaining uncertainty and revisit decision when future hardware revision,
 - Delay the release until every planned capability fits comfortably.
 - Keep speculative flexibility and assume later optimization will recover enough space.
 
-## Editor's Commentary
+## Коментар редактора
 
 Chapter 1 established principal engineering as responsibility for future system cost. Chapter 2 показує, як це виглядає, коли every available option spends something the team would rather keep.
 

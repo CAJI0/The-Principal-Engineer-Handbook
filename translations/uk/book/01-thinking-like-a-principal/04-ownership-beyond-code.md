@@ -1,10 +1,10 @@
 # Ownership поза кодом
 
-## Opening Quote
+## Вступна цитата
 
 > Ownership завершується тоді, коли outcome може стояти без owner у кімнаті.
 
-## Story
+## Історія
 
 Diagnostic command почалася як manufacturing convenience.
 
@@ -72,7 +72,7 @@ Who owns the closure?
 
 The room did not become simpler. Firmware, tools, manufacturing, support, and release kept their component ownership. Але missing object finally had a name.
 
-## Discussion
+## Обговорення
 
 Local completion is not system closure.
 
@@ -136,7 +136,7 @@ Principal Engineer in story did useful work by naming outcome and ownership gap,
 
 Own the closure, not all the work.
 
-## Engineering Principle
+## Інженерний принцип
 
 Ownership is responsibility for making a bounded outcome reach visible closure across boundaries.
 
@@ -150,7 +150,7 @@ Ownership survives beyond one person when future engineers can find owner, contr
 
 That is ownership beyond code.
 
-## Architecture Exercise
+## Архітектурна вправа
 
 Map an ownership gap from your current or recent work.
 
@@ -176,11 +176,11 @@ End with:
 
 What is currently assigned, but not truly owned?
 
-## Principal's Notebook
+## Нотатник Principal Engineer
 
-- Assignment is not acceptance.
-- Closure without evidence is only a claim.
-- Private memory is not an ownership model.
+- Assignment не є acceptance.
+- Closure без доказів — лише claim.
+- Приватна памʼять не є ownership model.
 
 ## ADR
 
@@ -221,7 +221,7 @@ Component teams retain implementation responsibility for firmware, tools, manufa
 - Add coordinator without changing technical ownership.
 - Wait for integration or field failure to expose gap.
 
-## Editor's Commentary
+## Коментар редактора
 
 Chapter 3 showed how better questions expose assumptions, boundaries, evidence needs, and ownership gaps before team commits to wrong explanation. Chapter 4 begins after gap visible. It asks how bounded concern reaches durable closure without pretending one person should do or remember everything.
 

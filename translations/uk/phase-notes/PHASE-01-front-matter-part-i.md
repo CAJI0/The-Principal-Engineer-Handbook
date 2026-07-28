@@ -89,3 +89,32 @@ Validation:
 - `npx.cmd linkinator "translations/uk/**/*.md" --markdown --recurse --skip "^mailto:" --skip "node_modules" --skip "site" --timeout 60000` - passed.
 - `npm.cmd run lint:links` - passed.
 - `git -c safe.directory=D:/Projects/ThePrincipaEngineerHandbook ls-files site` - passed; no tracked `site/` output.
+
+## Phase 1 Ukrainian Editorial Review
+
+Baseline commit before gate: `4165c0e`
+
+Outcome: Passed.
+
+Editorial corrections made:
+
+- Translated repeated reader-facing structural headings such as `Opening Quote`, `Story`, `Discussion`, `Engineering Principle`, `Architecture Exercise`, `Principal's Notebook`, and `Editor's Commentary`.
+- Translated the most visible exercise prompts and notebook bullets that were still plain English prose.
+- Preserved source section order, ADR structure, PEAK IDs, canonical artifact names, examples, and code-like Decision Journal entries.
+
+Terms deliberately left in English:
+
+- Role and artifact names such as `Principal Engineer`, `ADR`, `Decision Journal`, `Architecture Review`, and `Change Radius`.
+- Technical register terms still requiring later phase-wide policy, including `commitment`, `claim`, `review`, `release`, `field`, `support`, `workflow`, and `boundary` where the draft intentionally keeps a mixed engineering register.
+
+Validation:
+
+- `git diff --check` - passed.
+- `git diff --name-only origin/main...HEAD -- book/` - passed; no English canonical source files changed.
+- `npm.cmd run lint:md` - passed.
+- `npm.cmd run lint:spelling` - passed.
+- `python -m pip check` - passed.
+- `python -m mkdocs build --strict` - passed.
+- `npx.cmd linkinator "translations/uk/**/*.md" --markdown --recurse --skip "^mailto:" --skip "node_modules" --skip "site" --timeout 60000` - passed.
+- `npm.cmd run lint:links` - passed.
+- `git -c safe.directory=D:/Projects/ThePrincipaEngineerHandbook ls-files site` - passed; no tracked `site/` output.
