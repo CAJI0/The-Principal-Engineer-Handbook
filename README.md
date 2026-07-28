@@ -74,6 +74,10 @@ Canonical manuscript content lives in [book/](book/README.md).
 
 Repository ownership rules are documented in [Source of Truth Policy](editor/SOURCE_OF_TRUTH.md).
 
+## Translations
+
+The English manuscript is the canonical source. Ukrainian translation planning lives in `translations/uk/` and is based on release `v1.0.0`.
+
 ## Local Preview
 
 Install the documentation dependencies:

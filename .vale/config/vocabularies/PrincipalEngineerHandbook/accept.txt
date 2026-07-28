@@ -1,7 +1,12 @@
 ADRs
 APIs
+cspell
 Discoverability
+config
+untracked
 Walkthrough
+workstream
+Workstream
 anti_pattern
 booleans
 bootloader
@@ -10,5 +15,6 @@ failure_story
 operationalized
 operationalizes
 reviewability
+Russianisms
 rollout
 unmanaged

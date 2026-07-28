@@ -8,7 +8,8 @@
   "ignorePaths": [
     ".git",
     "site",
-    "node_modules"
+    "node_modules",
+    "translations/uk/**"
   ],
   "words": [
     "ADR",
