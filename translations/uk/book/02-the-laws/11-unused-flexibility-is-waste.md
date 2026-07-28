@@ -14,69 +14,69 @@ Radio service був спроєктований так, ніби мав пере
 
 Тому команда preserved options.
 
-Service gained runtime mode selector, transport strategies, conditional compilation for unapproved boards, fallback for weak-link prototype, service-tool compatibility path, test-only configuration that later leaked, and dormant hardware transport. Code looked careful: interfaces, flags, runtime modes, tests, comments saying some modes were not used yet but might be needed later.
+Service отримав runtime mode selector, transport strategies, conditional compilation for unapproved boards, fallback for weak-link prototype, service-tool compatibility path, test-only configuration that later leaked і dormant hardware transport. Code виглядав careful: interfaces, flags, runtime modes, tests, comments saying some modes were not used yet but might be needed later.
 
-Only one combination shipped.
+Shipped лише one combination.
 
-Production controller used validated radio module, production packet format, normal runtime mode, and supported service-tool flow. The rest stayed because "we may need it later" sounded cheaper than decision.
+Production controller used validated radio module, production packet format, normal runtime mode і supported service-tool flow. Решта лишилася, бо «we may need it later» звучало cheaper than decision.
 
-Field defect was narrow: after noisy gateway drop during command exchange, shipped transport received late response after retry. Production path should classify late response, keep retry bounded, and report diagnostic. Some units instead reported `radio unavailable` and stopped retrying.
+Field defect був narrow: після noisy gateway drop during command exchange shipped transport received late response after retry. Production path мав classify late response, keep retry bounded і report diagnostic. Some units натомість reported `radio unavailable` and stopped retrying.
 
-Bug looked like radio work until review touched flexible service. Retry state depended on runtime mode. Error mapping depended on current radio, dormant long-range transport, or prototype fallback. Parser carried unused packet branch. Diagnostic path used generic mode names. Service tool exposed old prototype compatibility switch. CI built unsupported variants.
+Bug виглядав як radio work, доки review не торкнувся flexible service. Retry state depended on runtime mode. Error mapping depended on current radio, dormant long-range transport або prototype fallback. Parser carried unused packet branch. Diagnostic path used generic mode names. Service tool exposed old prototype compatibility switch. CI built unsupported variants.
 
-Defect was in shipped path, but team had to reason about everything around it.
+Defect був у shipped path, але team had to reason about everything around it.
 
-Proposals kept discomfort alive: keep all modes, test every combination, mark paths legacy, hide unsupported docs, add production bypass flag, move selector to compile time, add abstraction layer, clean up later.
+Proposals залишали discomfort alive: keep all modes, test every combination, mark paths legacy, hide unsupported docs, add production bypass flag, move selector to compile time, add abstraction layer, clean up later.
 
-Principal Engineer asked team to list every mode, backend, build flag, fallback path, service-tool compatibility behavior, test-only switch, dormant implementation, and board branch without using word flexible. For each: who uses it, which product supports it, tests, tools, docs, uncertainty protected, owner, and retirement decision.
+Principal Engineer попросив team list every mode, backend, build flag, fallback path, service-tool compatibility behavior, test-only switch, dormant implementation і board branch без слова flexible. Для кожного: who uses it, which product supports it, tests, tools, docs, uncertainty protected, owner і retirement decision.
 
-Most rows were quiet.
+Більшість rows були quiet.
 
-Production transport had evidence and owner. Prototype compatibility path had history but no owner: Temporary Solution (`ANTIPATTERN-006`). Dormant long-range transport had hope but no evidence; its error model already leaked: Platform Leakage (`SMELL-005`). Runtime selector created Boolean Explosion (`SMELL-003`). Board flags affected CI, release packaging, manufacturing scripts, and confidence.
+Production transport мав evidence і owner. Prototype compatibility path мав history, але no owner: Temporary Solution (`ANTIPATTERN-006`). Dormant long-range transport мав hope, але no evidence; його error model already leaked: Platform Leakage (`SMELL-005`). Runtime selector created Boolean Explosion (`SMELL-003`). Board flags affected CI, release packaging, manufacturing scripts і confidence.
 
-Team measured Change Radius (`VOCAB-001` and `METRIC-001`): unit tests, integration tests, CI jobs, service-tool behavior, field diagnostics, release notes, security review, manufacturing scripts, support explanations.
+Team виміряла Change Radius (`VOCAB-001` and `METRIC-001`): unit tests, integration tests, CI jobs, service-tool behavior, field diagnostics, release notes, security review, manufacturing scripts, support explanations.
 
 "This is not a flexible service," Principal Engineer said. "It is a service with unowned options charging rent."
 
 Команда kept one narrow product-owned transport seam, але removed unsupported runtime modes from shipped builds, deleted exposed unsupported configuration, removed dormant implementation and prototype fallback, reduced CI to supported combinations plus seam tests, migrated service tests, updated diagnostics, and recorded evidence that old compatibility users had ended.
 
-ADR captured the material decision. Smaller retained options went to Decision Journal (`ARTIFACT-003`). Discoverability (`METRIC-003`) improved: a new engineer could find supported variations, owner, why seam remained, and conditions for another implementation.
+ADR captured the material decision. Smaller retained options пішли до Decision Journal (`ARTIFACT-003`). Discoverability (`METRIC-003`) improved: new engineer міг знайти supported variations, owner, why seam remained і conditions for another implementation.
 
-Radio service became less flexible visibly. It became more able to change.
+Radio service visibly став less flexible. Він став more able to change.
 
 ## Обговорення
 
 `LAW-006` states: Flexibility that is not used or justified becomes maintenance cost.
 
-This is not complaint about abstraction. Engineers should preserve options when real uncertainty justifies cost. Problem is that options become system surface long before anyone uses them.
+Це не complaint about abstraction. Engineers should preserve options, коли real uncertainty justifies cost. Problem у тому, що options become system surface long before anyone uses them.
 
-Flexibility has value only when it protects material uncertainty. Options without use, evidence, owner, or review trigger become maintenance cost.
+Flexibility має value лише тоді, коли protects material uncertainty. Options without use, evidence, owner або review trigger become maintenance cost.
 
-Separate flexibility from variability. Variability is supported product/environment/operation difference with consumers, tests, docs, support expectations, and owners. Hypothetical future mode is different.
+Separate flexibility from variability. Variability — це supported product/environment/operation difference with consumers, tests, docs, support expectations і owners. Hypothetical future mode is different.
 
-Separate flexibility from optionality. Optionality may preserve ability to decide later without shipping every possible implementation now. A team can preserve a narrow seam without carrying dormant transports, runtime modes, and public selector.
+Separate flexibility from optionality. Optionality може preserve ability to decide later without shipping every possible implementation now. Team може preserve a narrow seam without carrying dormant transports, runtime modes і public selector.
 
-Flexibility is used when supported product, environment, workflow, customer, deployment, or test strategy actively depends on it. It may be justified before use if uncertainty is material, alternatives known, adding later expensive, seam small, owner exists, review trigger clear, evidence real.
+Flexibility is used, коли supported product, environment, workflow, customer, deployment або test strategy actively depends on it. Вона може бути justified before use, якщо uncertainty material, alternatives known, adding later expensive, seam small, owner exists, review trigger clear, evidence real.
 
-Flexibility becomes waste when no supported user, no material uncertainty, no evidence, no owner, no review trigger, and unbounded continuing cost exist.
+Flexibility becomes waste, коли no supported user, no material uncertainty, no evidence, no owner, no review trigger і unbounded continuing cost exist.
 
-Runtime flexibility is easiest to feel in incidents: modes, runtime flags, selectable backends, fallback behavior, product configuration. Compile-time flexibility moves cost to CI, release packaging, manufacturing, service tools, and support. Architectural flexibility - seams, adapters, extension points, compatibility layers - can be valuable, but seam is not inventory of imagined changes.
+Runtime flexibility найлегше відчути в incidents: modes, runtime flags, selectable backends, fallback behavior, product configuration. Compile-time flexibility moves cost to CI, release packaging, manufacturing, service tools і support. Architectural flexibility — seams, adapters, extension points, compatibility layers — can be valuable, але seam is not inventory of imagined changes.
 
-Cost surface is wider than code: state combinations, tests, CI matrices, release packaging, configuration migration, docs, review, support, manufacturing, diagnostics, security review, compatibility, rollback, upgrade, deletion.
+Cost surface ширша за code: state combinations, tests, CI matrices, release packaging, configuration migration, docs, review, support, manufacturing, diagnostics, security review, compatibility, rollback, upgrade, deletion.
 
-Boolean Explosion (`SMELL-003`) appears when independent flags create combinations nobody owns. Platform Leakage (`SMELL-005`) appears when dormant platform detail shapes product logic. Temporary Solution (`ANTIPATTERN-006`) survives when owner, trigger, and removal condition disappear.
+Boolean Explosion (`SMELL-003`) appears, коли independent flags create combinations nobody owns. Platform Leakage (`SMELL-005`) appears, коли dormant platform detail shapes product logic. Temporary Solution (`ANTIPATTERN-006`) survives, коли owner, trigger і removal condition disappear.
 
-Remedy is not deletion by search result. Removing flexibility is architecture decision when code, tests, tools, docs, workflows, or shipped versions may depend on it. Prove use/non-use, identify consumers, migrate tools/tests, delete configuration, reduce CI, update docs, check manufacturing and field workflows, define rollback boundaries, and preserve evidence.
+Remedy — не deletion by search result. Removing flexibility — architecture decision, коли code, tests, tools, docs, workflows або shipped versions may depend on it. Prove use/non-use, identify consumers, migrate tools/tests, delete configuration, reduce CI, update docs, check manufacturing and field workflows, define rollback boundaries і preserve evidence.
 
-Retained flexibility needs evidence, ownership, and review trigger. ADR (`ARTIFACT-001`) fits large decisions. Decision Journal (`ARTIFACT-003`) fits smaller retained options. Discoverability matters because unused flexibility hides in plain sight.
+Retained flexibility needs evidence, ownership і review trigger. ADR (`ARTIFACT-001`) fits large decisions. Decision Journal (`ARTIFACT-003`) fits smaller retained options. Discoverability matters, бо unused flexibility hides in plain sight.
 
-The practical test: if option protects real uncertainty or supports owned variation, pay deliberately. Otherwise remove option or preserve only smallest seam justified by evidence.
+Practical test: якщо option protects real uncertainty або supports owned variation, pay deliberately. Otherwise remove option або preserve only smallest seam justified by evidence.
 
 ## Інженерний принцип
 
-Keep flexibility only when it protects real uncertainty or supports owned variation. Otherwise remove option and preserve only smallest seam justified by evidence.
+Keep flexibility only when it protects real uncertainty або supports owned variation. Otherwise remove option і preserve only smallest seam justified by evidence.
 
-Questions:
+Питання:
 
 1. Хто uses this option today?
 2. Від якої real uncertainty вона захищає?
@@ -138,39 +138,39 @@ Questions:
 
 ### Context
 
-One shipped product uses one validated communication path. Radio service also contains dormant runtime modes, transport candidates, conditional build paths, prototype compatibility behavior, test-only configuration, and fallback branches.
+One shipped product використовує one validated communication path. Radio service також contains dormant runtime modes, transport candidates, conditional build paths, prototype compatibility behavior, test-only configuration і fallback branches.
 
-Unsupported combinations affect tests, review, diagnostics, service tools, release packaging, and security review. Future transport variation is plausible, but no current product owns dormant implementations.
+Unsupported combinations affect tests, review, diagnostics, service tools, release packaging і security review. Future transport variation plausible, але no current product owns dormant implementations.
 
 ### Decision
 
-Define single supported runtime mode for current product. Remove unsupported runtime modes from shipped builds. Delete configuration exposing unsupported behavior. Remove dormant implementations and old prototype fallback. Reduce CI and release packaging to supported combinations plus focused seam tests.
+Define single supported runtime mode для current product. Remove unsupported runtime modes from shipped builds. Delete configuration exposing unsupported behavior. Remove dormant implementations і old prototype fallback. Reduce CI and release packaging to supported combinations plus focused seam tests.
 
-Preserve one narrow product-owned transport seam with product meanings: send accepted, response received, late response, retry allowed, radio unavailable, unsupported transport, permanent failure. Assign owner and review trigger. Document compatibility obligations. Use Decision Journal for smaller retained options.
+Preserve one narrow product-owned transport seam із product meanings: send accepted, response received, late response, retry allowed, radio unavailable, unsupported transport, permanent failure. Assign owner і review trigger. Document compatibility obligations. Use Decision Journal for smaller retained options.
 
 ### Consequences
 
-Supported behavior becomes clearer. State space and test combinations shrink. Review, diagnosis, service tools, diagnostics, Boolean Explosion, and unsupported behavior reduce. Product keeps future change seam without shipping every imagined transport.
+Supported behavior becomes clearer. State space і test combinations shrink. Review, diagnosis, service tools, diagnostics, Boolean Explosion і unsupported behavior reduce. Product keeps future change seam without shipping every imagined transport.
 
-Migration work remains. Tests and tools using prototype behavior must change. Evidence retained. Removed path may need rebuilding if future product makes it real. Retained seam requires discipline.
+Migration work remains. Tests і tools using prototype behavior must change. Evidence retained. Removed path may need rebuilding, якщо future product makes it real. Retained seam requires discipline.
 
 ### Alternatives Considered
 
-Keep all modes until future product appears. Maximum apparent flexibility, ongoing cost.
+Keep all modes until future product appears. Maximum apparent flexibility, але ongoing cost.
 
-Test every combination. Expands cost instead of deciding supported combinations.
+Test every combination. Expands cost замість deciding supported combinations.
 
-Hide unsupported options in documentation while retaining behavior. Keeps runtime and diagnostic ambiguity.
+Hide unsupported options in documentation while retaining behavior. Keeps runtime і diagnostic ambiguity.
 
-Replace runtime options with compile-time flags. Helps only if unsupported combinations removed from CI, packaging, tools, support.
+Replace runtime options with compile-time flags. Helps only if unsupported combinations removed from CI, packaging, tools і support.
 
-Remove all abstraction and call hardware APIs directly. Discards justified seam.
+Remove all abstraction and call hardware APIs directly. Це discards justified seam.
 
-Duplicate subsystem per product. Creates parallel behavior before variation exists.
+Duplicate subsystem per product. Це creates parallel behavior before variation exists.
 
-Build broader plug-in framework. Formalizes speculative surface.
+Build broader plug-in framework. Це formalizes speculative surface.
 
-Postpone cleanup. Leaves next defect to rediscover same unowned options.
+Postpone cleanup. Це leaves next defect to rediscover same unowned options.
 
 ## Коментар редактора
 

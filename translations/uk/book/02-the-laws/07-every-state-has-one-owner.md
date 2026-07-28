@@ -114,7 +114,7 @@ Multiple writers створюють policy випадково.
 
 `RequestServiceMode` відрізняється від `mode = Service`. Command carries intent. Owner перевіряє outputs, calibration, recovery, privilege і current mode; accept, reject, publish і explain.
 
-Inference - subtle form of ownership.
+Inference — subtle form of ownership.
 
 Supervisor міг infer `Ready` з outputs і telemetry. Це не дурість. Operators часто потребують useful interpretations, коли direct communication delayed. Але inferred value стає небезпечним, коли починає control behavior як authoritative.
 
@@ -126,19 +126,19 @@ One owner не означає one participant.
 
 Law не каже, що тільки одна function може ever write memory. Він каже, що one authority must decide valid value and transitions for the state at the given time and scope.
 
-Scope matters.
+Scope matters, але його треба назвати явно.
 
 During boot bootloader може own update mode. After handoff application може own runtime operational mode. During firmware-update recovery component може own narrower update state. In active-standby pair active controller може own current control state, standby keeps replica. During standby switch ownership may transfer.
 
 Такі designs comply with the law, якщо transfer explicit, ordered і mutually exclusive at relevant scope. Вони violate law, коли обидві сторони вірять, що можуть decide same state at same time, або observers не можуть tell which authority is active.
 
-Recovery requires choosing authority, not merging guesses.
+Recovery requires choosing authority, а не merging guesses.
 
 Найважчі ownership bugs часто з'являються після reset, reconnect, partial failure, controller handoff або interrupted service. Representations disagree for understandable reasons. Якщо recovery rule - "merge the best-looking values", system asks copies to vote on truth. Newest-timestamp-wins має ту саму пастку: new value не обов'язково authoritative value.
 
 Кращий recovery rule starts from ownership. Runtime state machine входить у conservative mode і re-establishes authority. Він може consult persisted boot policy, read acknowledged configuration, use hardware observations, publish recovery transition і reject requests until invariants hold. Але old cache, inferred state або persisted last value не assign current operational mode directly.
 
-State ownership should be discoverable.
+State ownership має бути discoverable.
 
 Discoverability (`METRIC-003`) - це не decorative documentation. Для meaningful state repository має дати знайти owner, valid values, invariants, commands, published observations, persistence semantics, reset rule, handoff rule і tests, що prove invalid transitions rejected.
 
@@ -222,7 +222,7 @@ Validation rules inconsistent. Деякі paths check interlocks and recovery st
 
 Замінити external raw mode setters intent-level commands, such as `RequestServiceMode`, `EnterSafeIdle`, and fixture calibration requests routed through the same transition boundary. Validate preconditions and invariants in the owner. Publish accepted transitions with sequence, generation, or transition identity sufficient for observers to detect stale values.
 
-Define persistence as input, policy, or history according to its own responsibility, not as a second runtime owner. Define fixture privilege through bounded commands rather than bypass assignment. Document reset recovery and any ownership handoff so only one authority controls current mode at a given time and scope.
+Define persistence як input, policy або history according to its own responsibility, not as a second runtime owner. Define fixture privilege through bounded commands rather than bypass assignment. Document reset recovery і будь-який ownership handoff, so only one authority controls current mode at a given time and scope.
 
 ### Consequences
 
@@ -246,6 +246,6 @@ Use a distributed ownership protocol. Це може бути appropriate for sys
 
 Chapter 7 відкриває Part II, перетворюючи питання з попередніх розділів на law. Chapter 3 used stale state to show how better questions expose ownership gaps. Chapter 4 used ownership як responsibility for closing an engineering outcome. This chapter uses ownership in a narrower architectural sense: authority over a meaningful state and its valid transitions.
 
-This distinction matters for the rest of the book. Later chapters use state ownership as a premise. API promises, dependency direction, time, simplicity, evidence, product configuration, observability, and legacy recovery all become harder when meaningful state has several unofficial authorities.
+Ця distinction matters for the rest of the book. Later chapters use state ownership as a premise. API promises, dependency direction, time, simplicity, evidence, product configuration, observability і legacy recovery all become harder, коли meaningful state має several unofficial authorities.
 
 PEAK concepts цього chapter: Every State Has One Owner (`LAW-001`), Hidden State (`SMELL-004`), Global Configuration (`ANTIPATTERN-003`), ADR (`ARTIFACT-001`), Event Catalog (`ARTIFACT-005`) і Discoverability (`METRIC-003`). Їх достатньо. Chapter не потребує нового artifact або vocabulary term, щоб teach the law.

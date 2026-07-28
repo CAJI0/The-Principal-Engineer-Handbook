@@ -30,7 +30,7 @@ Radio service restored last requested channel from persistent storage. Hardware 
 
 Стара implementation несла більше meaning, ніж визнавала signature.
 
-Callers learned that successful return meant hardware had applied the channel. They learned that invalid input left prior channel unchanged. They learned callbacks arrived before function returned. They learned repeated calls with same channel were harmless. They learned what different failures meant, which task contexts were safe, and what persisted channel after reset represented.
+Callers learned, що successful return означав: hardware applied the channel. Вони learned, що invalid input лишає prior channel unchanged. Вони learned, що callbacks arrive before function returned. Вони learned, що repeated calls with same channel були harmless. Вони learned, what different failures meant, які task contexts safe, і що represented persisted channel after reset.
 
 Частина цього була documented. Частина була в tests. Частина - в examples. Частина - only in memory of service engineers and manufacturing scripts.
 
@@ -65,73 +65,73 @@ Principal Engineer попросила записати стару обіцянк
 
 Команда split behavior. Old function лишився compatibility path for migration window. New request-oriented API made acceptance explicit. Completion arrived through named event with defined ordering and callback context. Error codes separated invalid input, rejected request, queued request, unavailable radio, and failed application. Repeated requests got documented result. Persistence recorded last requested channel and last applied channel separately, бо це були не той самий факт.
 
-Tests changed too. Unit test checking return code was still useful, but not enough. Integration tests checked UI state did not report applied hardware before completion. Supervisory retry tests checked duplicate requests. Reset tests checked whether restored state meant requested, applied, or unknown. Service-tool tests checked which errors should be retried and which should be shown to the operator.
+Tests теж змінилися. Unit test, що checking return code, і далі був useful, але цього було not enough. Integration tests checked, що UI state не reports applied hardware before completion. Supervisory retry tests checked duplicate requests. Reset tests checked, чи restored state означає requested, applied або unknown. Service-tool tests checked, які errors should be retried, а які shown to the operator.
 
-Header had hidden a contract. Failure made it visible.
+Header приховав contract. Failure зробив його visible.
 
-Final decision was not "never make APIs asynchronous." More precise: when an API crosses a meaningful boundary, observable behavior is the contract. If that behavior changes, architecture has changed even when compiler is satisfied.
+Final decision не був «never make APIs asynchronous». Точніше: коли API crosses a meaningful boundary, observable behavior is the contract. Якщо ця behavior changes, architecture has changed even when compiler is satisfied.
 
 Every API Is a Promise.
 
 ## Обговорення
 
-API begins where behavior becomes observable.
+API починається там, де behavior becomes observable.
 
 Це не означає, що кожна helper function deserves a compatibility policy. Local function used by one file can change with the implementation that owns it. Private data structure can be rearranged when no consumer can observe or rely on it.
 
-Threshold is reliance.
+Threshold — це reliance.
 
 Коли інший component, task, tool, test, script, team або field procedure може observe behavior і build expectations on it, boundary starts becoming an API. Boundary may be C function, header, driver call, RTOS service, callback, event, command packet, persisted format, bootloader handoff, manufacturing command, debug hook, or service-tool workflow.
 
-Shape is only easiest part to see. Radio function had name, parameter, return value. Consumers cared about hardware completion, success meaning, retry duplication, task context, data lifetime, reset behavior.
+Shape — лише easiest part to see. Radio function мала name, parameter, return value. Consumers cared about hardware completion, success meaning, retry duplication, task context, data lifetime, reset behavior.
 
-Consumers depend on behavior, not declarations.
+Consumers залежать від behavior, а не від declarations.
 
-That is the practical core of Every API Is a Promise (`LAW-002`). Declaration can stay still while behavior moves underneath. Source can compile while product becomes incompatible. Packet can keep same fields while meaning changes. Callback can keep type while arriving from different context. Persisted record can keep layout while changing what stored value means after startup.
+Це practical core of Every API Is a Promise (`LAW-002`). Declaration може stay still, поки behavior moves underneath. Source може compile, поки product becomes incompatible. Packet може keep same fields, поки meaning changes. Callback може keep type, приходячи from different context. Persisted record може keep layout, але changing what stored value means after startup.
 
-Compatibility is larger than type compatibility.
+Compatibility ширша за type compatibility.
 
-Source compatibility asks whether source builds. Binary compatibility asks whether binaries link and run. Wire compatibility asks whether messages cross boundary correctly. Data compatibility asks whether stored formats remain readable and meaningful. Operational compatibility asks whether deployment, rollback, diagnostics, manufacturing, service, and field workflows still work.
+Source compatibility питає, чи source builds. Binary compatibility питає, чи binaries link and run. Wire compatibility питає, чи messages cross boundary correctly. Data compatibility питає, чи stored formats remain readable and meaningful. Operational compatibility питає, чи deployment, rollback, diagnostics, manufacturing, service і field workflows still work.
 
-Behavioral compatibility cuts across all of them.
+Behavioral compatibility проходить across all of them.
 
-Does success still mean same thing? Does error still tell caller what to do next? Does callback still arrive before memory release? Does call still block? Does system make same promise after reset? Does repeated request still have same effect? Does old tool see state it was designed to interpret?
+Чи success still means same thing? Чи error still tells caller what to do next? Чи callback still arrives before memory release? Чи call still blocks? Чи system makes same promise after reset? Чи repeated request still has same effect? Чи old tool sees state it was designed to interpret?
 
-APIs may evolve. Danger is pretending answer is yes because signature, version field, or packet shape survived.
+APIs можуть evolve. Danger — pretending answer is yes because signature, version field або packet shape survived.
 
-Undocumented behavior can still become a contract.
+Undocumented behavior все одно може become a contract.
 
-Consumers learn from repeated behavior, examples, tests, sample applications, manufacturing scripts, field tools, support procedures, and previous releases. If every released implementation delivered callback before return, consumer may reasonably expect it. If service tool used "internal" debug command for three years, service workflow became real.
+Consumers learn from repeated behavior, examples, tests, sample applications, manufacturing scripts, field tools, support procedures і previous releases. Якщо every released implementation delivered callback before return, consumer може reasonably expect it. Якщо service tool використовував "internal" debug command три роки, service workflow став real.
 
-That is Silent Coupling (`SMELL-001`): hidden dependency affects behavior but is not represented as explicit contract. Producer thinks it changes implementation detail. Consumer experiences broken promise.
+Це Silent Coupling (`SMELL-001`): hidden dependency affects behavior, але не represented as explicit contract. Producer thinks it changes implementation detail. Consumer experiences broken promise.
 
-Remedy is not to promise everything forever. Good API says what is intentionally unspecified, distinguishes intentional contract, accidental contract, implementation detail, undefined behavior, unsupported behavior, and deprecated behavior.
+Remedy — не promise everything forever. Good API says what is intentionally unspecified, distinguishes intentional contract, accidental contract, implementation detail, undefined behavior, unsupported behavior і deprecated behavior.
 
-Errors are part of the API promise. Invalid input tells caller to fix arguments. Temporarily unavailable tells caller to retry, wait, or show message. Request accepted but not completed tells caller to observe completion elsewhere. If meanings blur, recovery becomes guesswork.
+Errors — part of the API promise. Invalid input tells caller to fix arguments. Temporarily unavailable tells caller to retry, wait або show message. Request accepted but not completed tells caller to observe completion elsewhere. Якщо meanings blur, recovery becomes guesswork.
 
-Internal APIs also accumulate compatibility cost. Internal means cost may be easier to coordinate, not free. Firmware modules may be consumed by production code, diagnostics, manufacturing scripts, service tools, automated tests, bootloader code, and support procedures. Some release on different schedules or live outside repository.
+Internal APIs також accumulate compatibility cost. Internal означає, що cost may be easier to coordinate, але not free. Firmware modules may be consumed by production code, diagnostics, manufacturing scripts, service tools, automated tests, bootloader code і support procedures. Some release on different schedules або live outside repository.
 
-Cost of change depends on consumers, not on whether boundary is called public.
+Cost of change залежить від consumers, а не від того, чи boundary called public.
 
-Change Radius (`VOCAB-001`) matters. A small signature change can have small radius. Behavioral change behind stable signature can have large one. Affected surface includes code, tests, scripts, docs, release procedures, manufacturing instructions, service training, and rollback plans.
+Change Radius (`VOCAB-001`) matters. Small signature change can have small radius. Behavioral change behind stable signature can have large one. Affected surface includes code, tests, scripts, docs, release procedures, manufacturing instructions, service training і rollback plans.
 
-API Stability (`METRIC-004`) is not "APIs never change." It asks how reliably API preserves behavior its dependents trust. Stable APIs evolve by naming promise, naming incompatible part, and giving consumers a path.
+API Stability (`METRIC-004`) — не «APIs never change». Вона asks how reliably API preserves behavior its dependents trust. Stable APIs evolve by naming promise, naming incompatible part і giving consumers a path.
 
-Version numbers do not create compatibility. They help choose behavior or reject unsupported combinations, but cannot make incompatible semantic change safe by themselves.
+Version numbers не create compatibility. Вони help choose behavior або reject unsupported combinations, але cannot make incompatible semantic change safe by themselves.
 
-Deprecation is a promise too. It says old behavior continues long enough for migration, replacement is known, consumers can detect or test difference, and removal happens after evidence shows migration is real.
+Deprecation — теж promise. Вона says old behavior continues long enough for migration, replacement is known, consumers can detect або test difference, і removal happens after evidence shows migration is real.
 
-Tests and documentation reveal the promise. They do not create it alone. ADR (`ARTIFACT-001`) can record why compatibility decision was made. Discoverability (`METRIC-003`) matters because promise that cannot be found will be rediscovered through failures.
+Tests і documentation reveal the promise. Вони не create it alone. ADR (`ARTIFACT-001`) can record why compatibility decision was made. Discoverability (`METRIC-003`) matters, бо promise that cannot be found will be rediscovered through failures.
 
-Good API work protects implementation freedom. Vague promises restrict more because consumers depend on whatever happens. Precise API narrows what consumers may trust and leaves implementation free inside the boundary.
+Good API work protects implementation freedom. Vague promises restrict more, бо consumers depend on whatever happens. Precise API narrows what consumers may trust і leaves implementation free inside the boundary.
 
-API is not merely the thing you call. It is behavior other parts of the system are allowed to trust.
+API — не merely the thing you call. Це behavior, якій other parts of the system are allowed to trust.
 
 ## Інженерний принцип
 
-Treat every observable boundary as a contract.
+Treat every observable boundary як contract.
 
-Specify what consumers may rely on, preserve those promises deliberately, and make incompatible change explicit instead of hiding it behind unchanged interface.
+Specify what consumers may rely on, preserve those promises deliberately і make incompatible change explicit instead of hiding it behind unchanged interface.
 
 Використовуйте такі питання:
 
@@ -196,35 +196,35 @@ Specify what consumers may rely on, preserve those promises deliberately, and ma
 
 Existing `radio_set_channel()` API hides synchronous completion assumptions. Several consumers rely on successful return to mean radio hardware has applied channel. Service tooling, UI code, supervisory retry logic, and integration tests all depend on parts of that behavior.
 
-Radio implementation needs queued hardware work so other tasks can continue running while radio settles. Keeping old signature while changing completion semantics creates race conditions, false UI state, confusing retries, and reset behavior consumers cannot interpret safely.
+Radio implementation needs queued hardware work, щоб other tasks can continue running while radio settles. Keeping old signature while changing completion semantics creates race conditions, false UI state, confusing retries і reset behavior, який consumers cannot interpret safely.
 
 ### Decision
 
-Separate channel-change request acceptance from channel-change completion.
+Separate channel-change request acceptance від channel-change completion.
 
-Keep old blocking API only as compatibility path during defined migration window. Introduce request-oriented API whose success means "request accepted." Publish completion through named event or callback with documented ordering and execution context.
+Keep old blocking API only as compatibility path during defined migration window. Introduce request-oriented API, whose success means "request accepted." Publish completion through named event або callback with documented ordering and execution context.
 
-Define error meanings for invalid input, rejected request, accepted request, temporarily unavailable radio, and failed application. Define retry and repeated-call behavior. Define ownership and lifetime for request data, callback data, and persisted channel state. Record whether persisted channel state means last requested, last applied, or unknown after reset.
+Define error meanings для invalid input, rejected request, accepted request, temporarily unavailable radio і failed application. Define retry і repeated-call behavior. Define ownership і lifetime for request data, callback data і persisted channel state. Record whether persisted channel state means last requested, last applied або unknown after reset.
 
-Retire old behavior only after migration evidence shows consumers no longer depend on blocking completion.
+Retire old behavior only after migration evidence shows, що consumers no longer depend on blocking completion.
 
 ### Consequences
 
 Consumers можуть відрізняти accepted work від completed hardware state. UI avoids reporting applied state too early. Retry logic avoids duplicating queued work. Integration tests encode completion ordering, error meanings, and reset semantics. Radio implementation can become asynchronous without pretending old promise still holds.
 
-The decision creates work: migration, compatibility maintenance, event/callback states, documentation and service tooling changes, and visible unsupported/deprecated behavior until migration is complete.
+Decision creates work: migration, compatibility maintenance, event/callback states, documentation і service tooling changes, and visible unsupported/deprecated behavior until migration is complete.
 
 ### Alternatives Considered
 
-Preserve blocking semantics indefinitely. Protects old consumers but ties implementation to hardware wait time.
+Preserve blocking semantics indefinitely. Protects old consumers, але ties implementation to hardware wait time.
 
-Change implementation silently behind old signature. Header stable, consumers broken.
+Change implementation silently behind old signature. Header stable, але consumers broken.
 
-Add only timeout parameter. Exposes one timing concern but not acceptance, completion, retry behavior, callback context, or persistence semantics.
+Add only timeout parameter. Exposes one timing concern, але not acceptance, completion, retry behavior, callback context або persistence semantics.
 
-Create second API without migration policy. Gives new consumers better shape but leaves old behavior ambiguous.
+Create second API without migration policy. Gives new consumers better shape, але leaves old behavior ambiguous.
 
-Expose hardware state directly. Pushes radio state interpretation into consumers and increases change radius.
+Expose hardware state directly. Pushes radio state interpretation into consumers і increases change radius.
 
 ## Коментар редактора
 

@@ -8,83 +8,83 @@
 
 Radio decision виглядало практичним.
 
-Product needed a new wireless module for next controller revision. Hardware choice was narrowing, pilot line date mattered, and team needed initialization, channel setup, packet handling, power-state transitions, retries, diagnostics, and enough compliance behavior without spending whole release writing radio stack.
+Product потребував new wireless module для next controller revision. Hardware choice звужувався, pilot line date мав значення, і team потребувала initialization, channel setup, packet handling, power-state transitions, retries, diagnostics і enough compliance behavior, не витрачаючи whole release на writing radio stack.
 
-Vendor provided software kit for radio. It supported hardware, had example initialization code, handled protocol details, moved packets on evaluation board, and included painful but useful errata: timing around wake, retry sequence after channel loss, and narrow compiler version range.
+Vendor надав software kit для radio. Він supported hardware, мав example initialization code, handled protocol details, moved packets on evaluation board і included painful but useful errata: timing around wake, retry sequence after channel loss і narrow compiler version range.
 
-Using it was not foolish.
+Використати його було not foolish.
 
-Building complete stack internally would delay release and move risk into area with less evidence. Selecting another part would reopen hardware work. Delaying product until every replacement risk was understood would protect architecture in theory while failing product in practice.
+Building complete stack internally затримав би release і move risk into area with less evidence. Selecting another part reopened би hardware work. Delaying product, доки every replacement risk was understood, protected би architecture in theory while failing product in practice.
 
-Firmware team made reasonable compromise: vendor kit behind thin wrapper. Product code called wrapper. Only radio driver directory included vendor headers. Short ADR said team would use kit for first release and preserve option to replace later. Review was brief because boundary looked obvious.
+Firmware team зробила reasonable compromise: vendor kit behind thin wrapper. Product code called wrapper. Лише radio driver directory included vendor headers. Short ADR казав, що team would use kit for first release and preserve option to replace later. Review був brief, бо boundary looked obvious.
 
-For first release, that was enough.
+Для first release цього було enough.
 
-Then dependency spread.
+Потім dependency spread.
 
-Vendor kit expected radio work from one task context. Callbacks arrived from that context and carried buffers owned by kit until callback returned. Wrapper preserved that shape. Product code learned vendor buffer format. Supervisory task learned vendor errors. Logging copied vendor reason names. Manufacturing scripts waited for vendor ready event. Service tool displayed same error categories. Tests mocked wrapper but used vendor-style errors. Production fixture used vendor diagnostic sequence. Release engineering pinned compiler version.
+Vendor kit expected radio work from one task context. Callbacks приходили from that context і carried buffers owned by kit until callback returned. Wrapper preserved that shape. Product code learned vendor buffer format. Supervisory task learned vendor errors. Logging copied vendor reason names. Manufacturing scripts waited for vendor ready event. Service tool displayed same error categories. Tests mocked wrapper, але used vendor-style errors. Production fixture used vendor diagnostic sequence. Release engineering pinned compiler version.
 
-No one decided "let vendor software kit define product." Product learned it anyway.
+Ніхто не вирішував «let vendor software kit define product». Product learned it anyway.
 
-Next hardware revision exposed the real surface. New kit had similar functions, but callback context, buffer ownership, error model, tooling support, calibration readiness, compiler assumptions, tests, scripts, service messages, and field compatibility did not match old assumptions.
+Next hardware revision exposed the real surface. New kit мав similar functions, але callback context, buffer ownership, error model, tooling support, calibration readiness, compiler assumptions, tests, scripts, service messages і field compatibility did not match old assumptions.
 
 "It is behind the wrapper" was partly true. It hid headers and names. It did not isolate behavior.
 
-Principal Engineer asked the team to draw the real dependency surface: task context, callback ordering, buffer ownership, error meanings, retry policy, power-state behavior, logging names, test harness assumptions, calibration sequence, service-tool messages, compiler support, release cadence, and field compatibility.
+Principal Engineer попросив team draw the real dependency surface: task context, callback ordering, buffer ownership, error meanings, retry policy, power-state behavior, logging names, test harness assumptions, calibration sequence, service-tool messages, compiler support, release cadence і field compatibility.
 
-The diagram looked less like driver boundary and more like product decision.
+Diagram виглядав less like driver boundary and more like product decision.
 
 Команда змінила work from "swap library" to "name and contain commitments." Vendor kit лишився, бо solved real risk. Але product boundary змінилася. Integration layer тепер naming product-owned outcomes: radio ready, send accepted, send completed, receive available, radio unavailable, safe to retry, unsupported, permanently failed. Vendor errors translated before leaving integration. Callback context normalized. Buffer ownership defined in product terms. Tests rewritten around product contract. Fixture waited for product-level calibration readiness. Service tooling displayed product meanings and kept vendor detail only as diagnostic context. Compiler and kit version became owned release assumption.
 
-ADR was rewritten. It no longer said only "use vendor kit behind wrapper." It said which commitments team accepted, where dependency may appear, who owns updates, what evidence proves boundary, and what triggers replacement.
+ADR rewritten. Він більше не казав лише «use vendor kit behind wrapper». Він казав, які commitments team accepted, where dependency may appear, who owns updates, what evidence proves boundary і what triggers replacement.
 
-System did not become independent of vendor kit. It became honest about depending on it.
+System не став independent of vendor kit. Він став honest about depending on it.
 
-That honesty changed architecture more than wrapper had.
+Ця honesty changed architecture more than wrapper had.
 
 ## Обговорення
 
-A dependency is any external or internal thing whose behavior the system relies on and cannot freely change alone.
+Dependency — це будь-яка external або internal thing, на чию behavior system relies і яку cannot freely change alone.
 
 Це ширше за imported code: library, service, protocol, hardware part, file format, build image, compiler, release tool, production fixture, test harness, support procedure, internal platform. If system relies on it and cannot change it freely, decision carries architectural cost.
 
-Every dependency commits system to behavior, failure modes, lifecycle constraints, ownership boundaries, and replacement cost.
+Every dependency commits system to behavior, failure modes, lifecycle constraints, ownership boundaries і replacement cost.
 
-This does not mean dependencies are bad. Radio kit reduced schedule risk and brought hardware knowledge. Many good decisions depend on other people's work. Law is not "avoid dependencies." Law is "know what you are accepting."
+Це не означає, що dependencies bad. Radio kit reduced schedule risk і brought hardware knowledge. Many good decisions depend on other people's work. Law не «avoid dependencies». Law — «know what you are accepting».
 
-First mistake is treating dependency choice as implementation detail because first integration is local. Wrapper lived in one directory, but behavior moved through product: callback context, error meanings, logging language, compiler support, calibration events.
+First mistake — treating dependency choice as implementation detail, бо first integration local. Wrapper lived in one directory, але behavior moved through product: callback context, error meanings, logging language, compiler support, calibration events.
 
-That is Silent Coupling (`SMELL-001`): hidden dependency affects behavior but is not explicit contract. Team thinks product depends on wrapper. In practice, it depends on vendor timing, error vocabulary, memory ownership, and lifecycle.
+Це Silent Coupling (`SMELL-001`): hidden dependency affects behavior, але не є explicit contract. Team thinks product depends on wrapper. In practice, він depends on vendor timing, error vocabulary, memory ownership і lifecycle.
 
-Dependency use and dependency spread are different.
+Dependency use і dependency spread — різні речі.
 
-Using dependency may be reasonable. Dependency spread happens when dependency concepts escape containment boundary: product errors become vendor errors, tests assert vendor callback order, manufacturing waits for vendor event, support docs use vendor names, release planning follows dependency support horizon without owner.
+Using dependency може бути reasonable. Dependency spread трапляється, коли dependency concepts escape containment boundary: product errors become vendor errors, tests assert vendor callback order, manufacturing waits for vendor event, support docs use vendor names, release planning follows dependency support horizon without owner.
 
-A wrapper can help. It is not proof.
+Wrapper може допомогти. Але це not proof.
 
-Syntactic isolation hides names, headers, types, call shapes. Semantic isolation asks whether consumers depend on product-owned contract or underlying dependency behavior. If wrapper exposes vendor errors, callback context, memory rules, ordering, and categories, architecture remains dependent on vendor semantics.
+Syntactic isolation hides names, headers, types і call shapes. Semantic isolation питає, чи consumers depend on product-owned contract або underlying dependency behavior. Якщо wrapper exposes vendor errors, callback context, memory rules, ordering і categories, architecture remains dependent on vendor semantics.
 
-Replacement cost includes more than swapping code: contract redesign, product migration, data migration, tests, fixture updates, operational retraining, support documentation, shipped-version compatibility, confidence rebuilding, release coordination, compiler updates, hardware qualification, customer migration risk.
+Replacement cost includes more than swapping code: contract redesign, product migration, data migration, tests, fixture updates, operational retraining, support documentation, shipped-version compatibility, confidence rebuilding, release coordination, compiler updates, hardware qualification і customer migration risk.
 
 "We can swap it later" deserves follow-up: what exactly would have to change if we did?
 
-Direct dependencies are visible in imports, build files, service calls, protocol choices, hardware selections, interface definitions, process handoffs, and recorded decisions. Transitive dependencies arrive through other dependencies. Transitive does not mean another team owns consequence; it means commitment is one step farther from first choice.
+Direct dependencies visible в imports, build files, service calls, protocol choices, hardware selections, interface definitions, process handoffs і recorded decisions. Transitive dependencies arrive through other dependencies. Transitive не означає, що another team owns consequence; це означає, що commitment is one step farther from first choice.
 
-Dependency direction preserves architectural control when product code depends on stable product contract, narrow integration layer depends on volatile vendor component, and product owns vocabulary, errors, states, and lifecycle. Bad direction lets volatile component define product.
+Dependency direction preserves architectural control, коли product code depends on stable product contract, narrow integration layer depends on volatile vendor component, і product owns vocabulary, errors, states і lifecycle. Bad direction lets volatile component define product.
 
-Failure behavior is imported too: unavailable states, latency, errors safe to retry, permanent failures, resources exhausted, version skew, support horizon, hardware degradation, service changes, tool support end.
+Failure behavior теж imported: unavailable states, latency, errors safe to retry, permanent failures, resources exhausted, version skew, support horizon, hardware degradation, service changes, tool support end.
 
-Lifecycle is part of dependency. Selection, adoption, integration, update, support, deprecation, replacement, and removal need owners when dependency is material. Removal means consumers no longer depend on behavior, tests no longer encode it, tools no longer assume it, manufacturing no longer waits for it, support no longer explains it.
+Lifecycle — part of dependency. Selection, adoption, integration, update, support, deprecation, replacement і removal need owners, коли dependency material. Removal означає, що consumers no longer depend on behavior, tests no longer encode it, tools no longer assume it, manufacturing no longer waits for it, support no longer explains it.
 
-Not every dependency needs same process. Small isolated utility with obvious behavior and cheap replacement needs little ceremony. Material dependencies need decision record, containment, and discoverable owner.
+Не кожна dependency needs same process. Small isolated utility with obvious behavior and cheap replacement needs little ceremony. Material dependencies need decision record, containment і discoverable owner.
 
-Discoverability (`METRIC-003`) matters because dependency decisions age quietly. ADR (`ARTIFACT-001`) is a good home for material dependency decision: why chosen, alternatives, imported behavior, update owner, limitations, replacement trigger.
+Discoverability (`METRIC-003`) matters, бо dependency decisions age quietly. ADR (`ARTIFACT-001`) — good home for material dependency decision: why chosen, alternatives, imported behavior, update owner, limitations, replacement trigger.
 
-Practical standard: deliberate dependencies whose commitments are understood and proportionate to their value.
+Practical standard: deliberate dependencies, чиї commitments understood and proportionate to their value.
 
 ## Інженерний принцип
 
-Name the commitment before accepting the dependency. If it can shape behavior, failure, lifecycle, or replacement cost, record the decision and contain the spread.
+Name the commitment before accepting the dependency. Якщо вона can shape behavior, failure, lifecycle або replacement cost, record the decision and contain the spread.
 
 Питання для review:
 
@@ -145,37 +145,37 @@ Name the commitment before accepting the dependency. If it can shape behavior, f
 
 ### Context
 
-Product needs radio support for selected hardware in next controller revision. Vendor radio software kit provides working initialization, protocol handling, diagnostics, and hardware-specific guidance that reduce delivery and integration risk for first release.
+Product needs radio support для selected hardware in next controller revision. Vendor radio software kit provides working initialization, protocol handling, diagnostics і hardware-specific guidance, що reduce delivery and integration risk for first release.
 
-Kit imports commitments: callback model, memory ownership, error meanings, retry behavior, compiler support, release cadence, and diagnostic assumptions can spread into product code, tests, manufacturing, service tools, and support procedures if boundary is too thin.
+Kit imports commitments: callback model, memory ownership, error meanings, retry behavior, compiler support, release cadence і diagnostic assumptions can spread into product code, tests, manufacturing, service tools і support procedures, якщо boundary too thin.
 
 ### Decision
 
-Adopt vendor radio software kit, but constrain direct use to one bounded radio integration layer.
+Adopt vendor radio software kit, але constrain direct use to one bounded radio integration layer.
 
-Define product-owned radio contract for readiness, send acceptance, send completion, receive behavior, unavailable states, failures safe to retry, unsupported states, and permanent failures. Normalize vendor errors into product meanings before leaving integration layer. Normalize callback context and buffer ownership into product terms. Prohibit new direct vendor kit use outside integration boundary.
+Define product-owned radio contract для readiness, send acceptance, send completion, receive behavior, unavailable states, failures safe to retry, unsupported states і permanent failures. Normalize vendor errors into product meanings before leaving integration layer. Normalize callback context і buffer ownership into product terms. Prohibit new direct vendor kit use outside integration boundary.
 
-Add contract tests around product-owned behavior and integration tests around actual kit. Keep manufacturing, service tooling, logging, and support procedures aligned to product meanings. Record supported kit versions, compiler assumptions, update ownership, support horizon, and exit triggers.
+Add contract tests around product-owned behavior і integration tests around actual kit. Keep manufacturing, service tooling, logging і support procedures aligned to product meanings. Record supported kit versions, compiler assumptions, update ownership, support horizon і exit triggers.
 
 ### Consequences
 
 Product може use vendor kit, не дозволяючи vendor semantics випадково стати product model. Delivery risk reduced. Replacement thinking more realistic. Tests check product contract first and vendor integration second. Upgrade decisions have owners.
 
-Work remains: integration layer maintenance, careful translation of errors/lifecycle, contract and integration tests, and unavoidable deep hardware behavior.
+Work remains: integration layer maintenance, careful translation of errors/lifecycle, contract and integration tests і unavoidable deep hardware behavior.
 
 ### Alternatives Considered
 
-Build complete radio stack internally. More control, delayed release.
+Build complete radio stack internally. More control, але delayed release.
 
-Use vendor kit directly throughout product. Fastest at first, but vendor vocabulary and lifecycle define product behavior.
+Use vendor kit directly throughout product. Fastest at first, але vendor vocabulary and lifecycle define product behavior.
 
-Delay product until all replacement risks solved. Protects optionality in theory while ignoring current product commitment.
+Delay product until all replacement risks solved. Protects optionality in theory, але ignoring current product commitment.
 
-Select another radio vendor. Reopens hardware and qualification and introduces another dependency decision.
+Select another radio vendor. Reopens hardware and qualification і introduces another dependency decision.
 
-Create fully generic radio abstraction. Likely unused flexibility before real variation known.
+Create fully generic radio abstraction. Це likely unused flexibility before real variation known.
 
-Avoid integration until every exit path cheap. Makes replacement easy only by not shipping product.
+Avoid integration until every exit path cheap. Це makes replacement easy only by not shipping product.
 
 ## Коментар редактора
 

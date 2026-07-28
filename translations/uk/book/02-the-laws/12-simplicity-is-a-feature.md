@@ -2,45 +2,45 @@
 
 ## Вступна цитата
 
-> Simple system - не та, де найменше parts. Це та, чиї consequences still can be explained.
+> Simple system — не та, де найменше parts. Це та, чиї consequences все ще можна пояснити.
 
 ## Історія
 
-Command path looked clean when controller first shipped.
+Command path виглядав clean, коли controller уперше shipped.
 
-Input arrived from service interface. Command validated. Runtime state owner decided whether command allowed. If allowed, hardware command issued. Hardware reported result. Controller recorded outcome and sent diagnostic.
+Input приходив із service interface. Command проходила validation. Runtime state owner вирішував, чи command allowed. Якщо allowed, надсилалася hardware command. Hardware повідомляв result. Controller записував outcome і надсилав diagnostic.
 
-Path was direct, and product behavior easy to explain: validation failed, state owner rejected, hardware sent, completed, failed, or entered recovery. Service tool showed reason. Logs showed state. Tests described product rule.
+Path був direct, а product behavior легко пояснювалася: validation failed, state owner rejected, hardware sent, completed, failed або entered recovery. Service tool показував reason. Logs показували state. Tests описували product rule.
 
-Then product grew. Manufacturing got second entry path. UI needed immediate feedback. Field-service command needed different diagnostic text. Hardware revision needed wrapper. Configuration routed commands differently for one variant. Recovery path remembered late hardware completion. Support requested fallback when service interface disconnected during calibration.
+Потім product виріс. Manufacturing отримав second entry path. UI потребував immediate feedback. Field-service command потребувала іншого diagnostic text. Hardware revision потребувала wrapper. Configuration routed commands інакше для одного variant. Recovery path памʼятав late hardware completion. Support попросив fallback, коли service interface disconnected during calibration.
 
-None was foolish. Team added global service locator, manager modules, generic command objects, callback registries, event forwarding, platform wrappers, configuration routing, utilities, pass-through adapters, fallback paths, and shared context.
+Ніщо з цього не було foolish. Team додала global service locator, manager modules, generic command objects, callback registries, event forwarding, platform wrappers, configuration routing, utilities, pass-through adapters, fallback paths і shared context.
 
-Each addition solved local problem. Diagram still looked organized. Methods were short. Local pieces looked tidy.
+Кожне addition розвʼязувало local problem. Diagram і далі виглядав organized. Methods були short. Local pieces виглядали tidy.
 
-Then field issue required small change: reject one unsafe command while calibration is active, preserve diagnostics and recovery for already-started hardware work.
+Потім field issue вимагав малої change: reject one unsafe command while calibration is active, preserve diagnostics and recovery for already-started hardware work.
 
-It sounded like one condition.
+Це звучало як одна condition.
 
-Engineer found calibration flag in UI command manager, but it was display hint, not authority. Service path used different manager and utility helper. Manufacturing bypassed helper. Fallback path used generic command object with platform names. Callback registry could report completion after manager returned. Event forwarding updated diagnostics after helper accepted. Global context flag was read before routing in one adapter and after routing in another.
+Engineer знайшов calibration flag в UI command manager, але це був display hint, не authority. Service path використовував інший manager і utility helper. Manufacturing bypassed helper. Fallback path використовував generic command object із platform names. Callback registry міг report completion після повернення manager. Event forwarding оновлював diagnostics after helper accepted. Global context flag читався before routing в одному adapter і after routing в іншому.
 
-Acceptance decision depended on UI state, configuration, manager state, callback order, global context, utility helper, platform wrapper, deferred hardware completion, and logging side effects. No single component could explain why command accepted or rejected.
+Acceptance decision залежав від UI state, configuration, manager state, callback order, global context, utility helper, platform wrapper, deferred hardware completion і logging side effects. Жоден single component не міг пояснити, чому command accepted або rejected.
 
-Tests mocked managers, routers, helpers, configuration, drivers, callbacks, and diagnostic strings. They proved forwarding, not product behavior: command rejected while calibration active, hardware not started, diagnostic explains reason, recovery for already-started work intact.
+Tests mocked managers, routers, helpers, configuration, drivers, callbacks і diagnostic strings. Вони доводили forwarding, а не product behavior: command rejected while calibration active, hardware not started, diagnostic explains reason, recovery for already-started work intact.
 
-Logs listed infrastructure hops, not product decision.
+Logs перелічували infrastructure hops, а не product decision.
 
-First proposed fixes added more concepts: calibration manager, callback before dispatch, Boolean in shared context, generic policy interface, central module, utility helper rule, call-sequence documentation, more mocks, rewrite, duplicated calibration path.
+Перші proposed fixes додавали ще більше concepts: calibration manager, callback before dispatch, Boolean in shared context, generic policy interface, central module, utility helper rule, call-sequence documentation, more mocks, rewrite, duplicated calibration path.
 
-Principal Engineer changed question: "What product decision is being made, who owns it, and what is the shortest truthful path from input to consequence?"
+Principal Engineer змінив питання: «Яке product decision ухвалюється, хто ним owns, і який shortest truthful path веде від input до consequence?»
 
-Decision was accept/reject a product command while calibration active, preserving recovery and diagnostics. Owner was runtime state owner that already owned calibration state and allowed commands. Team mapped real path and found Manager Mania (`ANTIPATTERN-004`), Silent Coupling (`SMELL-001`), Platform Leakage (`SMELL-005`), and Callback Hell (`ANTIPATTERN-005`).
+Decision було accept/reject product command while calibration active, preserving recovery and diagnostics. Owner був runtime state owner, який уже owned calibration state і allowed commands. Team mapped real path і знайшла Manager Mania (`ANTIPATTERN-004`), Silent Coupling (`SMELL-001`), Platform Leakage (`SMELL-005`) і Callback Hell (`ANTIPATTERN-005`).
 
-New shape was not rewrite. Team defined explicit acceptance boundary owned by product state owner. Boundary used product language: command accepted, rejected because calibration active, invalid input, hardware execution started, hardware execution failed, completion deferred, completion timed out, late completion, recovery required, unknown outcome. Entry paths migrated toward boundary. Platform wrapper stayed behind bounded integration edge and did not decide product acceptance.
+New shape не був rewrite. Team defined explicit acceptance boundary, owned by product state owner. Boundary використовував product language: command accepted, rejected because calibration active, invalid input, hardware execution started, hardware execution failed, completion deferred, completion timed out, late completion, recovery required, unknown outcome. Entry paths migrated toward boundary. Platform wrapper залишився behind bounded integration edge і не вирішував product acceptance.
 
-Ordinary path became visible: input, validation, state owner decision, hardware integration start, immediate or deferred completion, product-language result, diagnostics at decision and completion.
+Ordinary path став visible: input, validation, state owner decision, hardware integration start, immediate or deferred completion, product-language result, diagnostics at decision and completion.
 
-Tests described behavior directly. Integration tests still covered platform wrapper and callbacks. Change Radius shrank. ADR recorded collapse of command routing into one product-owned decision path.
+Tests описували behavior directly. Integration tests і далі covered platform wrapper and callbacks. Change Radius shrank. ADR recorded collapse of command routing into one product-owned decision path.
 
 System не стала tiny. Вона стала explainable.
 
@@ -48,33 +48,33 @@ System не стала tiny. Вона стала explainable.
 
 `LAW-004` states: Simplicity Is a Feature, тобто простота є функцією продукту, бо робить майбутні зміни безпечнішими.
 
-Simplicity is not taste, line count, file count, layer count, or familiar code. Simplicity is the property that lets important behavior be explained, changed, tested, operated, diagnosed, and recovered with a small truthful set of concepts.
+Simplicity — це не taste, line count, file count, layer count або familiar code. Simplicity — це property, яка дозволяє important behavior пояснювати, змінювати, тестувати, operated, diagnosed і recovered через малий truthful set of concepts.
 
-Truthful matters. Simplistic design removes distinctions product still needs. One generic `status` can look cleaner than separate outcomes for rejected input, rejected state, hardware failure, deferred completion, late completion, and recovery. It is not simpler if support tool, recovery code, and tests rediscover those distinctions elsewhere.
+Truthful matters. Simplistic design прибирає distinctions, які product ще потребує. Один generic `status` може виглядати cleaner, ніж окремі outcomes для rejected input, rejected state, hardware failure, deferred completion, late completion і recovery. Це не simpler, якщо support tool, recovery code і tests rediscover those distinctions elsewhere.
 
-Simple does not mean short. Concise, compact, easy, explicit, and understandable code are related but not identical. Global helper may be easy and make system less simple. Small explicit boundary may require more code and make future behavior easier.
+Simple не означає short. Concise, compact, easy, explicit і understandable code повʼязані, але не identical. Global helper може бути easy і робити system less simple. Small explicit boundary може вимагати more code і робити future behavior easier.
 
-Product pays for every concept that must be understood together. Local abstraction can reduce code in one module while increasing concepts across product. Duplication and unification are not automatically good or bad. Question is whether result reduces truthful reasoning or only moves complexity behind a clean name.
+Product платить за кожен concept, який треба understood together. Local abstraction може reduce code в одному module і водночас increasing concepts across product. Duplication і unification не є automatically good or bad. Питання в тому, чи result reduces truthful reasoning, чи лише moves complexity behind a clean name.
 
-Essential complexity comes from real product needs: hardware constraints, protocols, timing, safety behavior, manufacturing, field lifetime, recovery, support tools. Accidental complexity comes from concepts product did not need: forwarding managers, utility gravity, event routing hiding control flow, callback chains, runtime configuration recreating code structure, platform terms in product policy, shared context flags, generic command objects.
+Essential complexity приходить із real product needs: hardware constraints, protocols, timing, safety behavior, manufacturing, field lifetime, recovery, support tools. Accidental complexity приходить із concepts, яких product не потребував: forwarding managers, utility gravity, event routing hiding control flow, callback chains, runtime configuration recreating code structure, platform terms in product policy, shared context flags, generic command objects.
 
-Simplicity preserves essential complexity and removes accidental concepts.
+Simplicity preserves essential complexity і removes accidental concepts.
 
-Abstraction earns place when it names stable concept, protects meaningful boundary, reduces duplicated reasoning, narrows Change Radius, preserves dependency direction, clarifies ownership, improves testability, or keeps platform details behind product edge. It harms simplicity when it hides ordinary control flow, generalizes without evidence, mirrors platform vocabulary, adds managers/registries without reducing concepts, or creates unused extension points.
+Abstraction заслуговує місце, коли names stable concept, protects meaningful boundary, reduces duplicated reasoning, narrows Change Radius, preserves dependency direction, clarifies ownership, improves testability або keeps platform details behind product edge. Вона шкодить simplicity, коли hides ordinary control flow, generalizes without evidence, mirrors platform vocabulary, adds managers/registries without reducing concepts або creates unused extension points.
 
-Change Radius (`VOCAB-001` and `METRIC-001`) is practical signal. It is not just file count; it is behavior, ownership, tests, diagnostics, tools, and recovery paths that must move for safe change.
+Change Radius (`VOCAB-001` and `METRIC-001`) — practical signal. Це не лише file count; це behavior, ownership, tests, diagnostics, tools і recovery paths, які мають move for safe change.
 
-Discoverability (`METRIC-003`) is another signal. Future engineer should find decision, owner, contract, state, diagnostics, and tests. Poor discoverability turns maintenance into archaeology.
+Discoverability (`METRIC-003`) — ще один signal. Future engineer має знайти decision, owner, contract, state, diagnostics і tests. Poor discoverability перетворює maintenance на archaeology.
 
-Architecture Health (`VOCAB-007` and `METRIC-005`) ties simplicity to product capability: product can be corrected, extended, diagnosed, released, supported, and recovered without every small rule becoming expedition.
+Architecture Health (`VOCAB-007` and `METRIC-005`) привʼязує simplicity до product capability: product можна corrected, extended, diagnosed, released, supported і recovered без того, щоб кожне small rule ставало expedition.
 
-Tests and diagnostics reveal whether simplicity is real. Product-level tests should name behavior. Diagnostics should answer product questions: which command, which state, who decided, why accepted/rejected, hardware started, completion deferred, recovery required.
+Tests і diagnostics показують, чи simplicity реальна. Product-level tests мають named behavior. Diagnostics мають відповідати на product questions: which command, which state, who decided, why accepted/rejected, hardware started, completion deferred, recovery required.
 
-Deletion and narrowing are design work when they reduce accidental concepts. Simplicity must be maintained as product evolves through review, naming, narrowing, migration, ownership, product vocabulary, and refusal to keep accidental concepts merely because familiar.
+Deletion і narrowing — це design work, коли вони reduce accidental concepts. Simplicity треба підтримувати, поки product evolves, через review, naming, narrowing, migration, ownership, product vocabulary і refusal to keep accidental concepts merely because familiar.
 
 ## Інженерний принцип
 
-Prefer the design that makes product behavior, ownership, and consequences easiest to explain and safely change. Preserve essential complexity; remove accidental concepts.
+Обирайте design, який робить product behavior, ownership і consequences найлегшими для пояснення й safe change. Preserve essential complexity; remove accidental concepts.
 
 Review habit:
 
@@ -134,19 +134,19 @@ Review habit:
 
 ### Context
 
-Embedded control subsystem accepts commands through UI, service, manufacturing, and recovery entry paths. Path has grown managers, generic command objects, callbacks, event forwarding, configuration routing, utilities, adapters, platform wrappers, fallback paths, and shared context.
+Embedded control subsystem accepts commands через UI, service, manufacturing і recovery entry paths. Path обріс managers, generic command objects, callbacks, event forwarding, configuration routing, utilities, adapters, platform wrappers, fallback paths і shared context.
 
-Field issue requires narrow product rule: reject unsafe command while calibration active, preserve diagnostics and recovery.
+Field issue вимагає narrow product rule: reject unsafe command while calibration active, preserve diagnostics and recovery.
 
-Current design cannot explain rule in one place. Tests verify forwarding more than behavior. Diagnostics show infrastructure hops but not why accepted/rejected. Hardware completion may be deferred.
+Current design не може explain rule in one place. Tests verify forwarding more than behavior. Diagnostics показують infrastructure hops, але не why accepted/rejected. Hardware completion may be deferred.
 
 ### Decision
 
-Assign command acceptance to product state owner that owns calibration state and command validity.
+Assign command acceptance to product state owner, який owns calibration state and command validity.
 
-Define product-level vocabulary: invalid input, accepted, rejected because calibration active, hardware execution started, hardware execution failed, completion deferred, completion timed out, late completion, recovery required, cancellation, unknown outcome.
+Define product-level vocabulary українською в product language: invalid input, accepted, rejected because calibration active, hardware execution started, hardware execution failed, completion deferred, completion timed out, late completion, recovery required, cancellation, unknown outcome.
 
-Create explicit acceptance boundary. Entry paths request acceptance through boundary. Keep hardware calls behind bounded integration edge. Remove pass-through layers where evidence shows they only forward or hide ownership. Preserve layers that transform behavior, protect boundary, or support migration. Align tests with product behavior. Emit diagnostics at decision point and hardware completion. Migrate incrementally. Record ADR (`ARTIFACT-001`).
+Create explicit acceptance boundary. Entry paths request acceptance through boundary. Keep hardware calls behind bounded integration edge. Remove pass-through layers там, де evidence shows they only forward or hide ownership. Preserve layers, які transform behavior, protect boundary або support migration. Align tests with product behavior. Emit diagnostics at decision point and hardware completion. Migrate incrementally. Record ADR (`ARTIFACT-001`).
 
 ### Consequences
 
@@ -154,21 +154,21 @@ Decision becomes discoverable. Change Radius falls. Diagnostics improve. Reviewe
 
 ### Alternatives Considered
 
-Add another policy manager. May add Manager Mania.
+Add another policy manager. Може додати Manager Mania.
 
-Add calibration state to global context. Hides authority and creates Silent Coupling.
+Add calibration state to global context. Hides authority і creates Silent Coupling.
 
-Route through generic event bus. May hide ordinary control flow.
+Route through generic event bus. Може hide ordinary control flow.
 
-Duplicate command logic per entry point. Fast patch, later drift.
+Duplicate command logic per entry point. Fast patch, потім drift.
 
-Rewrite subsystem. Evidence supports scoped routing decision, not framework replacement.
+Rewrite subsystem. Evidence supports scoped routing decision, а не framework replacement.
 
-Document existing call chains. Does not remove duplicated policies.
+Document existing call chains. Не removes duplicated policies.
 
-Make driver responsible for product acceptance. Moves product policy into platform vocabulary.
+Make driver responsible for product acceptance. Це moves product policy into platform vocabulary.
 
-Introduce generic rules framework. Adds concept before evidence.
+Introduce generic rules framework. Це adds concept before evidence.
 
 ## Коментар редактора
 

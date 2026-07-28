@@ -8,79 +8,79 @@
 
 Controller мав три види time before anyone admitted design had one timing model.
 
-It had RTC storing UTC, monotonic hardware timer starting at boot, and network sync path correcting wall-clock time after connectivity. Features needed time too: persisted records, command freshness checks, communication timeouts, periodic cleanup, retry scheduling, and local UI display.
+У ньому був RTC, що зберігав UTC, monotonic hardware timer, який стартував під час boot, і шлях network sync, що коригував wall-clock time після появи connectivity. Функціям теж потрібен був час: persisted records, перевірки freshness команд, communication timeouts, periodic cleanup, retry scheduling і local UI display.
 
-Platform team exposed simple helper: `now()`.
+Platform team відкрила простий helper: `now()`.
 
-It returned current UTC when RTC looked usable. During early boot it returned last persisted RTC value until synchronization completed. Monotonic timer existed elsewhere, but most code did not ask for it. `now()` was easy and fit every call site well enough because callers did not have to say which kind of time they meant.
+Він повертав current UTC, коли RTC виглядав придатним. Під час early boot він повертав last persisted RTC value, доки synchronization не завершувалася. Monotonic timer існував окремо, але більшість коду його не просила. `now()` був зручним і достатньо добре підходив кожному call site, бо callers не мусили казати, який саме вид часу вони мають на увазі.
 
-Failures looked unrelated. A field unit rebooted after long power interruption. RTC came stale. Network took minutes to connect. During gap controller accepted a command that should have been too old because command timestamp compared close to stale `now()`.
+Failures виглядали не повʼязаними. Field unit rebooted після тривалого power interruption. RTC повернувся stale. Network підключалася кілька хвилин. У цей проміжок controller прийняв command, яка мала бути надто старою, бо command timestamp виявився близьким до stale `now()`.
 
 Another unit extended communication timeout across restart. Timeout had been calculated as "expire at `now() + 30 seconds`" and persisted with operation state, so runtime wait became wall-clock timestamp. After reboot stale RTC made deadline appear farther away. Later network sync corrected clock backward and timeout did not expire when expected; another build corrected forward and expired immediately.
 
-Records became hard to trust: future records, premature cleanup, strange retry delay behavior, UI and diagnostics disagreement, logs with impossible order.
+Records стало важко довіряти: future records, premature cleanup, дивна поведінка retry delay, розбіжність UI і diagnostics, logs із неможливим порядком.
 
-Tests did not help. Fake clock always moved forward, never lost validity, never corrected backward, never drifted, never wrapped, never rebooted with persisted records. Tests proved arithmetic when clock behaved like polite counter. Field failure required reset, delayed sync, and backward wall-clock correction.
+Tests не допомогли. Fake clock завжди рухався вперед, ніколи не втрачав validity, не коригувався назад, не drifted, не wrapped і не rebooted разом із persisted records. Tests доводили арифметику, коли clock поводився як чемний counter. Field failure вимагав reset, delayed sync і backward wall-clock correction.
 
 First fixes solved symptoms: increase timeout, clamp negative elapsed time, use Unix time everywhere, sync more often, add `time_valid`, ignore timestamps before sync, trust newest timestamp, persist monotonic counter.
 
-Principal Engineer recast it: "We have one API that means different things to different callers."
+Principal Engineer переформулював проблему: «У нас є один API, який означає різні речі для різних callers».
 
-Command path was not asking for time; it asked whether command was fresh enough. Communication path measured elapsed waiting and state after expiry. Record store needed wall-clock evidence. Cleanup needed expiration surviving reboot. Retry scheduler needed safe spacing. UI needed local display. Diagnostics needed both what device believed and how valid that belief was.
+Command path не питав «котра година»; він питав, чи command достатньо fresh. Communication path вимірював elapsed waiting і state after expiry. Record store потребував wall-clock evidence. Cleanup потребував expiration, що переживає reboot. Retry scheduler потребував safe spacing. UI потребував local display. Diagnostics потребували і того, що device вважав часом, і того, наскільки valid була ця belief.
 
-Those were not same dependency.
+Це були не одна й та сама dependency.
 
 Команда inventoried temporal decisions. Вона назвала clock domains: runtime monotonic time since boot, UTC wall-clock time after validation, persisted timestamps written under known clock state, server receipt time, UI-local display time. Elapsed runtime behavior used monotonic time. Timeouts became relative waits measured on runtime clock, with explicit state after expiry and late-completion rules. UTC wall-clock remained stored calendar meaning for externally interpreted records, but records carried whether wall-clock time was valid when written.
 
-Freshness separated from timestamp comparison. A command was fresh only if source, transport delay assumptions, receipt path, clock validity, and maximum acceptable age satisfied command rule. Timestamp alone did not make command fresh.
+Freshness відділили від timestamp comparison. Command була fresh лише тоді, коли source, transport delay assumptions, receipt path, clock validity і maximum acceptable age задовольняли command rule. Сам timestamp не робив command fresh.
 
-Synchronization behavior defined. Wall-clock correction did not move elapsed timers. Diagnostics recorded correction. Persisted records kept original clock domain and validity. Cleanup did not delete records merely because corrected clock changed assumption. Periodic work gained policy: fixed-rate where missed samples matter, delay-after-completion where load matters, skipped periods where catch-up would create unsafe backlog.
+Synchronization behavior визначили явно. Wall-clock correction не рухала elapsed timers. Diagnostics записували correction. Persisted records зберігали original clock domain і validity. Cleanup не видаляв records лише тому, що corrected clock змінив assumption. Periodic work отримав policy: fixed-rate там, де missed samples важливі; delay-after-completion там, де важливе load; skipped periods там, де catch-up створив би unsafe backlog.
 
-Reset became part of model. Monotonic counter reset on boot. Runtime deadlines did not survive reboot as monotonic values. Persisted expiration used wall-clock rules only after validity or product-specific ordering when validity absent. Boot generation entered diagnostics.
+Reset став частиною моделі. Monotonic counter reset on boot. Runtime deadlines не переживали reboot як monotonic values. Persisted expiration використовував wall-clock rules лише після validity або product-specific ordering, коли validity не було. Boot generation увійшов у diagnostics.
 
-Tests changed and became useful: invalid wall-clock startup, monotonic advance, wall-clock jumps, drift, wrap, reboot with persisted records, late sync, late completion after timeout.
+Tests змінилися й стали корисними: invalid wall-clock startup, monotonic advance, wall-clock jumps, drift, wrap, reboot with persisted records, late sync, late completion after timeout.
 
-Final ADR did not say "Use monotonic time." It recorded which decisions used monotonic runtime timing, which used UTC wall-clock time, how validity represented, what sync changes, what reset invalidates, how timeouts change state, how late completion handled, which freshness rules do not rely on timestamps alone, and diagnostics required.
+Final ADR не казав просто «Use monotonic time». Він записував, які decisions використовують monotonic runtime timing, які використовують UTC wall-clock time, як представлена validity, що змінює sync, що invalidates reset, як timeouts змінюють state, як обробляється late completion, які freshness rules не покладаються тільки на timestamps, і які diagnostics потрібні.
 
-Controller still depended on time. It stopped pretending time was one thing.
+Controller і далі залежав від time. Він перестав удавати, що time — це одна річ.
 
 ## Обговорення
 
-Any code that depends on timing depends on architecture.
+Будь-який code, що залежить від timing, залежить від architecture.
 
-That is `LAW-003`. Time often arrives as helper function, timestamp field, delay call, retry interval, or scheduler setting. Forms look small; assumptions are not.
+Це `LAW-003`. Time часто приходить як helper function, timestamp field, delay call, retry interval або scheduler setting. Форми виглядають малими; assumptions — ні.
 
-Every consequential use of time imports assumptions about clock source, accuracy, monotonicity, synchronization, ordering, persistence, reset behavior, validity, and failure. Those assumptions are dependencies and must be designed explicitly.
+Кожне consequential use of time приносить assumptions про clock source, accuracy, monotonicity, synchronization, ordering, persistence, reset behavior, validity і failure. Ці assumptions є dependencies, і їх треба проектувати явно.
 
-Same number can look usable for several meanings. Wall-clock timestamp can tell human when record was written. It cannot by itself prove elapsed duration, causal order, or freshness. Monotonic timer measures elapsed time inside one runtime domain. It is strong for timeouts and runtime deadlines because wall clock correction does not move it, but it is not calendar and may reset, wrap, or be meaningless outside domain.
+Одне й те саме число може виглядати придатним для кількох meaning. Wall-clock timestamp може сказати людині, коли record був written. Сам по собі він не доводить elapsed duration, causal order або freshness. Monotonic timer вимірює elapsed time всередині одного runtime domain. Він сильний для timeouts і runtime deadlines, бо wall-clock correction його не рухає, але він не є calendar і може reset, wrap або бути meaningless outside domain.
 
-Rule is not "wall clock bad, monotonic good." Rule is: choose clock and temporal meaning before relying on value.
+Правило не в тому, що «wall clock bad, monotonic good». Правило таке: оберіть clock і temporal meaning до того, як покладатися на value.
 
-One generic `now()` hides incompatible meanings. That is Silent Coupling (`SMELL-001`) in temporal form. Hidden State (`SMELL-004`) appears when behavior depends on invisible temporal facts: wall-clock validity, timestamp before sync, previous boot deadline, counter wrap, runtime generation.
+Один generic `now()` hides incompatible meanings. Це Silent Coupling (`SMELL-001`) у temporal form. Hidden State (`SMELL-004`) appears, коли behavior depends on invisible temporal facts: wall-clock validity, timestamp before sync, previous boot deadline, counter wrap, runtime generation.
 
-Common temporal meanings are not interchangeable: duration, timestamp, deadline, timeout, ordering, freshness, display. A command timestamp is not freshness. Freshness is a rule, not a field.
+Common temporal meanings are not interchangeable: duration, timestamp, deadline, timeout, ordering, freshness, display. Command timestamp — не freshness. Freshness — rule, not a field.
 
-Ordering does not always require wall-clock time. Events can be ordered by sequence numbers, accepted transitions, event IDs, server receipt order, local monotonic measurements, or protocol rules. Event Catalog (`ARTIFACT-005`) can record producer, consumers, and timing/ordering assumptions.
+Ordering не завжди requires wall-clock time. Events можуть be ordered by sequence numbers, accepted transitions, event IDs, server receipt order, local monotonic measurements або protocol rules. Event Catalog (`ARTIFACT-005`) can record producer, consumers і timing/ordering assumptions.
 
-Timeouts are state transitions. When timeout expires, did operation fail, become unknown, remain canceling, or continue in background? Can it complete late? Is late completion ignored, reconciled, or reported? Is retry safe? Which clock measures wait? What happens after reboot?
+Timeouts — це state transitions. Коли timeout expires, operation failed, became unknown, remained canceling чи continued in background? Can it complete late? Is late completion ignored, reconciled або reported? Is retry safe? Which clock measures wait? What happens after reboot?
 
-Periodic work also needs policy: delay-after-completion, fixed-rate, skip missed periods, catch up, merge, tolerate jitter, cap backlog, or fault backlog.
+Periodic work також needs policy: delay-after-completion, fixed-rate, skip missed periods, catch up, merge, tolerate jitter, cap backlog або fault backlog.
 
-Reset exposes assumptions. Monotonic starts over, RTC may be invalid or corrected later, persisted data may contain timestamps from different clock state, absolute wall-clock deadline may be interpreted before clock valid.
+Reset exposes assumptions. Monotonic starts over, RTC may be invalid або corrected later, persisted data may contain timestamps from different clock state, absolute wall-clock deadline may be interpreted before clock valid.
 
-Synchronization can move time forward or backward. Precision is not accuracy. Valid RTC does not prove data fresh. Multiple devices can have reasonable clocks and still disagree enough that comparison unsafe.
+Synchronization може move time forward or backward. Precision — не accuracy. Valid RTC does not prove data fresh. Multiple devices можуть have reasonable clocks and still disagree enough that comparison unsafe.
 
-Drift and wrap matter in long-lived systems. Testability is part of dependency: tests need controllable clocks to advance elapsed time, jump wall clock, start invalid, sync late, simulate drift, force wrap, reboot, miss periods, and complete after timeout.
+Drift і wrap matter in long-lived systems. Testability — part of dependency: tests need controllable clocks to advance elapsed time, jump wall clock, start invalid, sync late, simulate drift, force wrap, reboot, miss periods і complete after timeout.
 
-Diagnostics are part of design. Field failures should reveal clock source, domain, validity, correction, uncertainty, boot generation, and whether timestamp was written before or after sync.
+Diagnostics — part of design. Field failures should reveal clock source, domain, validity, correction, uncertainty, boot generation і whether timestamp was written before or after sync.
 
-Discoverability (`METRIC-003`) matters because temporal assumptions age quietly. ADR (`ARTIFACT-001`) is appropriate when temporal decision shapes behavior across components, persistence, tests, diagnostics, or product promises.
+Discoverability (`METRIC-003`) matters, бо temporal assumptions age quietly. ADR (`ARTIFACT-001`) appropriate, коли temporal decision shapes behavior across components, persistence, tests, diagnostics або product promises.
 
-Time is a dependency because systems depend not on numbers alone, but on what those numbers mean.
+Time — dependency, бо systems depend не лише on numbers, а on what those numbers mean.
 
 ## Інженерний принцип
 
-Name the clock and temporal meaning behind every consequential use of time. Use elapsed time, wall time, ordering, freshness, and deadlines deliberately.
+Name the clock і temporal meaning behind every consequential use of time. Use elapsed time, wall time, ordering, freshness і deadlines deliberately.
 
 Питання для review:
 
@@ -140,39 +140,39 @@ The system depends on this time value as ______, and the value is trustworthy on
 
 ### Context
 
-Embedded controller uses one generic `now()` API for timeouts, timestamps, command freshness, cleanup, retry scheduling, diagnostics, and UI display. Device has RTC storing UTC, monotonic hardware timer starting at boot, and network synchronization that may correct wall-clock after connectivity. RTC may be invalid or stale during boot. Wall-clock correction may move time forward or backward. Monotonic time is useful for elapsed runtime behavior but resets at reboot.
+Embedded controller використовує one generic `now()` API для timeouts, timestamps, command freshness, cleanup, retry scheduling, diagnostics і UI display. Device має RTC storing UTC, monotonic hardware timer starting at boot і network synchronization, що may correct wall-clock after connectivity. RTC may be invalid або stale during boot. Wall-clock correction may move time forward or backward. Monotonic time useful for elapsed runtime behavior, але resets at reboot.
 
-Field failures appeared after reset followed by delayed synchronization.
+Field failures appeared після reset followed by delayed synchronization.
 
 ### Decision
 
-Separate monotonic runtime timing from UTC wall-clock time.
+Separate monotonic runtime timing від UTC wall-clock time.
 
-Use monotonic runtime time for elapsed duration, timeout measurement, retry spacing, watchdog windows, and runtime deadlines inside one boot. Do not persist monotonic deadlines as durable calendar meaning.
+Use monotonic runtime time для elapsed duration, timeout measurement, retry spacing, watchdog windows і runtime deadlines inside one boot. Do not persist monotonic deadlines as durable calendar meaning.
 
-Use UTC wall-clock for persisted records, external timestamps, and diagnostics needing calendar interpretation. Store whether wall-clock was valid when record was written where validity affects later behavior. Keep UI-local time as display conversion.
+Use UTC wall-clock для persisted records, external timestamps і diagnostics needing calendar interpretation. Store whether wall-clock was valid when record was written там, де validity affects later behavior. Keep UI-local time as display conversion.
 
-Represent wall-clock validity explicitly. Define behavior before synchronization, changes after synchronization, and effects of forward/backward correction. Define reset behavior, timeout state, late completion, retry safety, freshness separate from timestamp comparison, controllable clocks in tests, and diagnostics.
+Represent wall-clock validity explicitly. Define behavior before synchronization, changes after synchronization і effects of forward/backward correction. Define reset behavior, timeout state, late completion, retry safety, freshness separate from timestamp comparison, controllable clocks in tests і diagnostics.
 
 ### Consequences
 
 Elapsed-time behavior більше не змінюється, коли wall-clock corrected. Timeouts become state decisions. Persisted records carry context. Freshness checks reject uncertainty. Tests can reproduce field failures.
 
-Design is more explicit. Callers choose temporal meaning. Multiple clock representations must be maintained. Existing call sites migrate. Some persisted data may need versioned interpretation.
+Design стає more explicit. Callers choose temporal meaning. Multiple clock representations must be maintained. Existing call sites migrate. Some persisted data may need versioned interpretation.
 
 ### Alternatives Considered
 
-Continue using wall clock everywhere. Simple API, wrong elapsed behavior under correction.
+Continue using wall clock everywhere. Simple API, але wrong elapsed behavior under correction.
 
-Use monotonic time everywhere. Better elapsed measurement, loses calendar meaning and durable time.
+Use monotonic time everywhere. Better elapsed measurement, але loses calendar meaning and durable time.
 
-Persist monotonic counter. Treats boot-relative value as durable.
+Persist monotonic counter. Це treats boot-relative value as durable.
 
-Clamp clock jumps. Hides arithmetic without defining semantics.
+Clamp clock jumps. Це hides arithmetic without defining semantics.
 
-Reject all time-dependent behavior until synchronization. May block safe local behavior and still not define elapsed runtime timing.
+Reject all time-dependent behavior until synchronization. Може block safe local behavior і still not define elapsed runtime timing.
 
-Add generic clock abstraction. Helps tests but without semantic separation preserves confusion.
+Add generic clock abstraction. Helps tests, але without semantic separation preserves confusion.
 
 ## Коментар редактора
 
