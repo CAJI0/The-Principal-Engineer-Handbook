@@ -10,3 +10,44 @@ Notes:
 
 - Ukrainian translation will be based on the immutable v1.0.0 release.
 - This phase created strategy, style, glossary, phase plan, validation checklist, and translation log only.
+
+## Phase 1 - Terminology Review
+
+Baseline: 785ee03a9c94b94a9c04a383b80a624c2247928a
+Gate: Phase 1 Terminology Review
+Outcome: Passed
+Reader-facing translation created: No new scope; Phase 1 draft terminology reviewed
+English canonical manuscript modified: No
+Notes:
+
+- `Principal Engineer` remains in English.
+- Glossary-sensitive terms were corrected where the draft used misleading standalone English terminology.
+- Canonical PEAK names and IDs remain unchanged.
+
+## Phase 1 - Ukrainian Editorial Review
+
+Baseline: 4165c0e
+Gate: Phase 1 Ukrainian Editorial Review
+Outcome: Passed
+Reader-facing translation created: No new scope; Phase 1 draft editorial pass completed
+English canonical manuscript modified: No
+Notes:
+
+- Reader-facing structural headings and several exercise prompts were made more natural in Ukrainian.
+- Canonical names, IDs, ADR structure, examples, and code-like records remain unchanged.
+- Some English technical terms remain intentionally for later phase-wide terminology policy.
+
+## Phase 1 - Publishing Review
+
+Baseline: 69a7a72d654fd083d3317fd798a8a0131672a59c
+Gate: Phase 1 Publishing Review
+Outcome: Passed
+Reader-facing translation created: No new scope; publishing review only
+English canonical manuscript modified: No
+Notes:
+
+- Phase 1 target paths mirror the immutable v1.0.0 source paths for front matter and Part I.
+- Front matter links are valid within the translated Phase 1 scope.
+- Full-book table of contents remains orientation-only and does not link to untranslated later-phase files.
+- No Ukrainian MkDocs configuration, generated PDF, or tracked `site/` output was introduced.
+- Phase 1 is ready for PR review after the publishing review commit.
