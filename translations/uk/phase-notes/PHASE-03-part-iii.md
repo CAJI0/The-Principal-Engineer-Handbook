@@ -77,7 +77,7 @@ Translation Draft complete.
 ## Terminology Review
 
 - Outcome: Passed
-- Commit: pending at commit time
+- Commit: `05cbb79`
 - Decisions:
   - Added Phase 3 terminology rows to `translations/uk/TERMINOLOGY_GLOSSARY.md` for `Architecture Playbook`, `Review habit`, `hardening point`, `allowed movement`, `exception path`, `contract`, `owner`, `firmware`, `gateway`, `service tool`, and `runtime`.
   - Standardized `boundary` as `межа`, `contract` as `контракт`, and `owner` as `власник` where these are not part of a preserved canonical label.
@@ -86,3 +86,12 @@ Translation Draft complete.
   - Confirmed reader-facing Phase 3 files contain no source-only markers.
 - Remaining terminology questions:
   - None
+
+## Ukrainian Editorial Review
+
+- Outcome: Passed
+- Commit: pending at commit time
+- Notes:
+  - Removed corrupted replacement remnants in Phase 3 reader-facing chapters.
+  - Restored Phase 3 local terms for `boundary`, `contract`, `owner`, `hardening point`, `allowed movement`, and `exception path` according to the terminology review.
+  - Preserved canonical English labels and PEAK identifiers while keeping the surrounding Ukrainian/engineering register stable for publication.

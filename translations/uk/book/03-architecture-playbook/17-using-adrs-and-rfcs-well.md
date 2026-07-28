@@ -43,21 +43,21 @@ Team split work. Existing ADR stopped pretending accepted. Live question moved i
 
 RFC named non-goals: not redesign entire configuration system, not define every variant, not replace service tool, not decide rollout, not teach gateway to own configuration truth, not require station to understand private firmware layout.
 
-Reviewers asked sharper questions. Firmware owned proposal; product architecture ??????? owned eventual decision. Required reviewers named by affected surface: firmware, gateway, service tool, manufacturing, test, support and release. RFC listed evidence and assumptions.
+Reviewers asked sharper questions. Firmware owned proposal; product architecture owner owned eventual decision. Required reviewers named by affected surface: firmware, gateway, service tool, manufacturing, test, support and release. RFC listed evidence and assumptions.
 
 At RFC Friday (`RITUAL-006`), team walked open questions. Old gateway release inspected length field. Raw firmware errors leaked into exports. Station profiles came from different source. Compatibility tests needed old gateway and old firmware versions. RFC changed direction: device remained validation authority; gateway validated framing only; service tool translated product-level reasons; manufacturing used same package format, with station-only metadata outside payload.
 
 Release compatibility risk went to Architecture Review. RFC did not become the ritual; it carried proposal and open question into right review.
 
-After compatibility closed, ADR became useful. New ADR linked RFC and recorded accepted decision, evidence, rejected alternatives, consequences, ???????, status and revisit trigger. Smaller choices went to Decision Journal (`ARTIFACT-003`). Architecture Ledger (`ARTIFACT-006`) got row for active protocol decision.
+After compatibility closed, ADR became useful. New ADR linked RFC and recorded accepted decision, evidence, rejected alternatives, consequences, owner, status and revisit trigger. Smaller choices went to Decision Journal (`ARTIFACT-003`). Architecture Ledger (`ARTIFACT-006`) got row for active protocol decision.
 
-Future engineer could start at service-tool rejection message, find governing ADR, RFC, compatibility tests and ???????. That was shared memory, not documentation for its own sake.
+Future engineer could start at service-tool rejection message, find governing ADR, RFC, compatibility tests and owner. That was shared memory, not documentation for its own sake.
 
 ## Обговорення
 
 ADRs and RFCs work when they make architectural reasoning reviewable before commitment and discoverable after commitment.
 
-RFC is useful while meaningful change is still possible. It exposes motivation, scope, non-goals, proposal, risks and open questions so affected ???????? can add evidence before rejection becomes theater.
+RFC is useful while meaningful change is still possible. It exposes motivation, scope, non-goals, proposal, risks and open questions so affected owners can add evidence before rejection becomes theater.
 
 ADR is useful when material architectural decision has been accepted. It records what was decided, why, rejected alternatives and accepted consequences.
 
@@ -73,11 +73,11 @@ Evidence belongs in artifact, not as decoration. `LAW-005` means records separat
 
 Alternatives deserve fair treatment. Useful ADR explains why rejected option was attractive and why not selected in this context. Consequences deserve honesty about costs.
 
-Ownership keeps artifacts alive. Proposal ???????, decision ???????, reviewers, release ???????? and future maintenance ??????? may differ. Comments need closure: accepted, rejected, narrowed, deferred, split, experiment/evidence requested or escalated to Architecture Review.
+Ownership keeps artifacts alive. Proposal owner, decision owner, reviewers, release owners and future maintenance owner may differ. Comments need closure: accepted, rejected, narrowed, deferred, split, experiment/evidence requested or escalated to Architecture Review.
 
 Status is part of meaning. Do not rewrite history silently. Supersede or retire records with links.
 
-Discoverability (`METRIC-003`) tests shared memory. Future engineers should move from module, test, rejection message, release note, incident or ??????? to governing decision.
+Discoverability (`METRIC-003`) tests shared memory. Future engineers should move from module, test, rejection message, release note, incident or owner to governing decision.
 
 Architecture Ledger (`ARTIFACT-006`) is compact inventory of active decisions and known debts, not second ADR. Decision Journal (`ARTIFACT-003`) captures smaller or reversible decisions with evidence/confidence/trigger.
 
@@ -108,11 +108,11 @@ Answer may be no artifact, Decision Journal, RFC, ADR, or linked RFC and ADR.
 
 ### Choose the Right Decision Artifact
 
-Choose one current or recent architecture choice. State the choice in one sentence. Then answer decision state, affected surfaces, reversibility, Change Radius, evidence, assumptions, uncertainty, alternatives, non-goals, risks, ????????, reviewers, closure, status, links, trigger and Architecture Ledger pointer.
+Choose one current or recent architecture choice. State the choice in one sentence. Then answer decision state, affected surfaces, reversibility, Change Radius, evidence, assumptions, uncertainty, alternatives, non-goals, risks, owners, reviewers, closure, status, links, trigger and Architecture Ledger pointer.
 
 Choose artifact weight: no artifact, Decision Journal entry, RFC, ADR, linked RFC and ADR.
 
-End with artifact choice and why sufficient, named ???????, evidence statement and discoverability action.
+End with artifact choice and why sufficient, named owner, evidence statement and discoverability action.
 
 ## Нотатник Principal Engineer
 
@@ -130,13 +130,13 @@ Accepted.
 
 #### Context
 
-Configuration-update protocol affects firmware, gateway, service tooling, manufacturing tests, support diagnostics, release compatibility and field operation. Implementation began before affected ???????? had shared proposal. First ADR draft recorded preferred direction but hid unresolved questions about scope, old gateway behavior, service-tool translation, manufacturing loading and support-visible rejection reasons.
+Configuration-update protocol affects firmware, gateway, service tooling, manufacturing tests, support diagnostics, release compatibility and field operation. Implementation began before affected owners had shared proposal. First ADR draft recorded preferred direction but hid unresolved questions about scope, old gateway behavior, service-tool translation, manufacturing loading and support-visible rejection reasons.
 
 #### Decision
 
-Convert live protocol proposal into RFC before accepting architecture decision. RFC records motivation, scope, non-goals, proposal, risks, evidence, assumptions, alternatives, affected ???????? and open questions. It names proposal ??????? and decision ???????. Affected ???????? review.
+Convert live protocol proposal into RFC before accepting architecture decision. RFC records motivation, scope, non-goals, proposal, risks, evidence, assumptions, alternatives, affected owners and open questions. It names proposal owner and decision owner. Affected contract review.
 
-Use RFC Friday for lightweight review while alternatives remain open. Escalate unresolved cross-???? risk to Architecture Review. Close RFC clearly. After acceptance, write ADR with context, decision, consequences, alternatives, ???????, status and revisit trigger. Link ADR to RFC, implementation, compatibility tests, release notes, support diagnostics and Architecture Ledger.
+Use RFC Friday for lightweight review while alternatives remain open. Escalate unresolved cross-boundary risk to Architecture Review. Close RFC clearly. After acceptance, write ADR with context, decision, consequences, alternatives, owner, status and revisit trigger. Link ADR to RFC, implementation, compatibility tests, release notes, support diagnostics and Architecture Ledger.
 
 Use Decision Journal for smaller reversible choices. Preserve superseded ADRs and link successors.
 

@@ -43,7 +43,7 @@ Applying
 Completed but reported late
 Rejected because another operation owns the device
 Unknown to the service tool
-Known by the device ???????
+Known by the device owner
 ```
 
 Bug was not lost packet. Lost packets, late events and retries were allowed. Bug was missing designed state for «command may have succeeded, but caller does not know yet».
@@ -76,17 +76,17 @@ Operator no longer guessed whether retry would help or harm system. Incident wor
 
 Failure design starts by refusing to let one symptom name system state. Timeout, dropped acknowledgement, rejected retry and late completion event are evidence, not automatically truth.
 
-This story is concrete `FAILURE-002`: one lost packet exposes hidden architecture. Packet did not create every weakness; it revealed no explicit ???????, no durable outcome model and no safe retry meaning.
+This story is concrete `FAILURE-002`: one lost packet exposes hidden architecture. Packet did not create every weakness; it revealed no explicit owner, no durable outcome model and no safe retry meaning.
 
 Designing for failure is not writing more error handlers. Error handler catches local condition. Recovery architecture defines what whole system may believe and do after condition occurs.
 
-First recovery question is ownership. `LAW-001` says every meaningful state has one clear ???????. Operation outcome is state. Service tool owns user view, gateway owns transport observation, dashboard owns observed events, but device owns update outcome.
+First recovery question is ownership. `LAW-001` says every meaningful state has one clear owner. Operation outcome is state. Service tool owns user view, gateway owns transport observation, dashboard owns observed events, but device owns update outcome.
 
 Second question is promise. `LAW-002` says API promises behavior, meaning, errors, timing and ownership. That includes failure semantics: what missing acknowledgement means, what repeated command means, and whether late completion overrides failure or requires reconciliation.
 
 Retry is architectural. Retrying status read differs from retrying payment, update, migration, deletion or physical command. Question is not how many times to retry; it is what is safe to repeat and what evidence is needed.
 
-Third question is time. `LAW-003` matters because timeouts, deadlines, ordering and late arrivals are ?????????. Timeout proves local waiting policy expired; it does not prove remote side failed. Unknown may be uncomfortable, but it can be truthful.
+Third question is time. `LAW-003` matters because timeouts, deadlines, ordering and late arrivals are contracts. Timeout proves local waiting policy expired; it does not prove remote side failed. Unknown may be uncomfortable, but it can be truthful.
 
 Mature recovery design gives unknown bounded place: what work is allowed, what is blocked, what evidence resolves unknown and who escalates if it persists.
 
@@ -96,11 +96,11 @@ Fifth question is evidence. `LAW-005` says confidence follows evidence. Tests mu
 
 Events need discipline. Without Event Catalog (`ARTIFACT-005`), event names pretend everyone understands them. `SMELL-006` appears when event growth lacks meaning, ownership or lifecycle.
 
-Callback-heavy designs make recovery harder. `ANTIPATTERN-005` appears when ordering, errors and state transitions spread across callbacks. Repair is not banning callbacks; repair is naming operation state and forcing callbacks to update it through one ???????.
+Callback-heavy designs make recovery harder. `ANTIPATTERN-005` appears when ordering, errors and state transitions spread across callbacks. Repair is not banning callbacks; repair is naming operation state and forcing callbacks to update it through one owner.
 
-Workarounds need ???????, trigger and removal path. Otherwise `ANTIPATTERN-006` turns emergency recovery into hidden protocol.
+Workarounds need owner, trigger and removal path. Otherwise `ANTIPATTERN-006` turns emergency recovery into hidden protocol.
 
-A useful recovery model names: consequential operation, ??????? of outcome, observable states, retry meaning in each state and path back to known state. Known state may be new version active, old version active, operation unknown with dependent operations blocked, or human inspection required.
+A useful recovery model names: consequential operation, owner of outcome, observable states, retry meaning in each state and path back to known state. Known state may be new version active, old version active, operation unknown with dependent operations blocked, or human inspection required.
 
 Good architecture keeps important distinctions even when UI chooses simpler language.
 
@@ -112,7 +112,7 @@ Review questions:
 
 - What operation requires explicit recovery design?
 - Who owns operation outcome?
-- What can each ???? honestly say after timeout, dropped response, restart or late event?
+- What can each boundary honestly say after timeout, dropped response, restart or late event?
 - Which states are observable, durable and safe to depend on?
 - What does retry mean in each state?
 - What evidence is required before repeating command?
@@ -127,7 +127,7 @@ Review questions:
 
 Choose one operation that changes durable state, external state, trust, money, permissions, physical behavior or operational safety.
 
-Answer: happy-path completion state, ???????, evidence accepted/started/completed/not started/unknown, late/duplicated/lost/reordered events, state surviving power loss, state reconstructed from events, retry meaning before/after acceptance and during unknown, blocked and safe user actions, event names needing catalog entries, workaround and ???????.
+Answer: happy-path completion state, owner, evidence accepted/started/completed/not started/unknown, late/duplicated/lost/reordered events, state surviving power loss, state reconstructed from events, retry meaning before/after acceptance and during unknown, blocked and safe user actions, event names needing catalog entries, workaround and owner.
 
 Start from:
 
@@ -137,7 +137,7 @@ The caller times out after sending the command.
 
 Do not stop at «return error». Continue until known state.
 
-Output: one ???????, named states, retry meaning, evidence from unknown to known, one Event Catalog entry, one Decision Journal entry for weak assumption, and ADR only if recovery changes ????/API/ownership.
+Output: one owner, named states, retry meaning, evidence from unknown to known, one Event Catalog entry, one Decision Journal entry for weak assumption, and ADR only if recovery changes boundary/API/ownership.
 
 ## Нотатник Principal Engineer
 
@@ -157,7 +157,7 @@ Accepted.
 
 Firmware update flow crosses service tool, gateway, network and device. Lost acknowledgement can leave service tool unsure whether device accepted command. Previous design treated caller timeout as failure and allowed retry. Field evidence showed first command could still be applying when retry arrived.
 
-Views conflicted: device applying or new firmware active; gateway missing acknowledgement or rejected retry; service tool failure; dashboard late completion. System lacked ??????? for outcome and recovery path from unknown to known.
+Views conflicted: device applying or new firmware active; gateway missing acknowledgement or rejected retry; service tool failure; dashboard late completion. System lacked owner for outcome and recovery path from unknown to known.
 
 #### Decision
 
@@ -178,4 +178,4 @@ Update path gains explicit recovery model. Operators receive accurate uncertaint
 
 ## Коментар редактора
 
-Chapter 16 is recovery chapter for Architecture Playbook. It centers `FAILURE-002`, One Lost Packet, and connects `LAW-001`, `LAW-002`, `LAW-003`, `LAW-005`, `LAW-007`, `SMELL-001`, `SMELL-004`, `SMELL-006`, `ANTIPATTERN-005`, `ANTIPATTERN-006`, `ARTIFACT-001`, `ARTIFACT-003` and `ARTIFACT-005`. It stops at recovery design ????; Chapter 17 owns broader ADR/RFC practice.
+Chapter 16 is recovery chapter for Architecture Playbook. It centers `FAILURE-002`, One Lost Packet, and connects `LAW-001`, `LAW-002`, `LAW-003`, `LAW-005`, `LAW-007`, `SMELL-001`, `SMELL-004`, `SMELL-006`, `ANTIPATTERN-005`, `ANTIPATTERN-006`, `ARTIFACT-001`, `ARTIFACT-003` and `ARTIFACT-005`. It stops at recovery design boundary; Chapter 17 owns broader ADR/RFC practice.

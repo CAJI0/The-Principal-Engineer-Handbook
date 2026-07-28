@@ -32,9 +32,9 @@ Map separated required radius from accidental radius. Required radius: record ve
 
 Plan changed from «edit structure» to «sequence product decision».
 
-First, team named authoritative product meaning and versioned persistent representation. Firmware owned persisted meaning; manufacturing and service tools consumed documented serialized/export representations rather than shared in-memory layout. That honored Every State Has One ??????? (`LAW-001`).
+First, team named authoritative product meaning and versioned persistent representation. Firmware owned persisted meaning; manufacturing and service tools consumed documented serialized/export representations rather than shared in-memory layout. That honored Every State Has One Owner (`LAW-001`).
 
-Second, ???????? became explicit. Every API Is a Promise (`LAW-002`) applied to record format, export file, service-tool view and diagnostic message. New reader accepted old records. New writer created new records only after manufacturing and service tools were updated. Downgrade behavior documented.
+Second, Контракт став явним. Every API Is a Promise (`LAW-002`) applied to record format, export file, service-tool view and diagnostic message. New reader accepted old records. New writer created new records only after manufacturing and service tools were updated. Downgrade behavior documented.
 
 Third, team mapped time. Time Is a Dependency (`LAW-003`) appeared in startup ordering, update recovery, factory transition, service-tool rollout and gap between firmware release and field adoption.
 
@@ -48,9 +48,9 @@ Final source diff remained modest. Real change was visible: what changes, what i
 
 Change Radius is amount of system surface that must change, be reviewed or retested when one decision changes.
 
-This is intentionally larger than source diff. A one-file change can require ???????? review, migration, compatibility, factory validation, service-tool verification, release observation, support updates and new evidence. Many-file mechanical edits may have narrow semantic radius.
+This is intentionally larger than source diff. A one-file change can require contract review, migration, compatibility, factory validation, service-tool verification, release observation, support updates and new evidence. Many-file mechanical edits may have narrow semantic radius.
 
-Cost and risk are determined by surfaces that must move, be reviewed, retested, migrated, remain compatible or observed because one decision changes. Surfaces include behavior, state, ?????????, dependencies, timing, tests, tools, releases, ???????? and evidence.
+Cost and risk are determined by surfaces that must move, be reviewed, retested, migrated, remain compatible or observed because one decision changes. Surfaces include behavior, state, contracts, dependencies, timing, tests, tools, releases, owners and evidence.
 
 ### Map the Decision
 
@@ -72,11 +72,11 @@ Ask:
 4. Which consumers rely on old meaning, including tools and released versions?
 5. Which lifecycle moments matter: startup, update, reset, retry, timeout, recovery, factory test, service or support?
 6. Which tests and evidence supported old behavior?
-7. Which ???????? and reviewers must participate?
+7. Which owners and reviewers must participate?
 8. Which surfaces must change, be reviewed, retested, migrated or remain compatible?
 9. Which parts of radius are still unknown?
 
-Use code search, call graphs, build targets, schema definitions, fixtures, CI, release notes, ADRs, Decision Journal entries, commits, incidents, telemetry, support notes and ??????? interviews.
+Use code search, call graphs, build targets, schema definitions, fixtures, CI, release notes, ADRs, Decision Journal entries, commits, incidents, telemetry, support notes and owner interviews.
 
 ### Separate Radius Types
 
@@ -90,11 +90,11 @@ Broad Change Radius is not automatically bad architecture. Required radius must 
 
 ### Use Dimensions Lightly
 
-Consider behavioral, state, ????????, dependency, temporal, test, tool, release, organizational and evidence surfaces. Do not force every change through every dimension. Map should change decision, not become ceremony.
+Consider behavioral, state, contract, dependency, temporal, test, tool, release, organizational and evidence surfaces. Do not force every change through every dimension. Map should change decision, not become ceremony.
 
 ### Manage the Radius
 
-Mapping is useful only if it changes plan. Contain accidental spread by moving translation to ????, naming authority, making ???????? explicit, replacing copied schema knowledge, removing back channel or moving platform detail out of product logic.
+Mapping is useful only if it changes plan. Contain accidental spread by moving translation to boundary, naming authority, making contract explicit, replacing copied schema knowledge, removing back channel or moving platform detail out of product logic.
 
 Sequence required spread deliberately: compatible reader before new writer, migration before behavior change, diagnostics before rollout, manufacturing tool before factory transition, service tool before field support, cleanup after old versions retire.
 
@@ -109,7 +109,7 @@ Ask:
 1. What decision is changing?
 2. Which behavior changes?
 3. Who owns authoritative meaning?
-4. Which ????????? and representations carry it?
+4. Which contracts and representations carry it?
 5. Which consumers rely on old meaning?
 6. Which surfaces change, require review, need retest, migrate or remain compatible?
 7. Which radius is required?
@@ -117,7 +117,7 @@ Ask:
 9. What remains unknown?
 10. Which evidence no longer transfers?
 11. What sequence preserves compatibility?
-12. Which ??????? accepts residual radius?
+12. Which boundaryboundary accepts residual radius?
 
 ## Архітектурна вправа
 
@@ -125,9 +125,9 @@ Ask:
 
 Choose one upcoming change that looks smaller than it feels: configuration, record format, protocol, dependency update, product rule, test fixture or tool behavior.
 
-Write one sentence for changing decision. Then map visible behavior, ???????, representation, APIs/protocols/schemas/events/storage/diagnostics/export, consumers, variants, released versions, migration, timing, tests/evidence, manufacturing/service/support/release paths, ????????, implementation/review/retest/migration/observation surfaces, required/accidental/unknown radius, containment action, compatibility sequence, reversible first step and ADR or Decision Journal update.
+Write one sentence for changing decision. Then map visible behavior, owner, representation, APIs/protocols/schemas/events/storage/diagnostics/export, consumers, variants, released versions, migration, timing, tests/evidence, manufacturing/service/support/release paths, owners, implementation/review/retest/migration/observation surfaces, required/accidental/unknown radius, containment action, compatibility sequence, reversible first step and ADR or Decision Journal update.
 
-End with four outputs: explicit radius map, sequencing decision, containment action, and accepted residual uncertainty with ???????.
+End with four outputs: explicit radius map, sequencing decision, containment action, and accepted residual uncertainty with owner.
 
 ## Нотатник Principal Engineer
 
@@ -137,7 +137,7 @@ End with four outputs: explicit radius map, sequencing decision, containment act
 
 ## ADR
 
-### Chapter ADR: Version and Migrate the Calibration Record Across Product and Tooling ????
+### Chapter ADR: Version and Migrate the Calibration Record Across Product and Tooling boundary
 
 #### Context
 
@@ -151,13 +151,13 @@ Introduce versioned calibration record with one authoritative product meaning ow
 
 Firmware reads old and new records before any tool writes new version. Manufacturing station and service tool updated before factory transition. Migration preserves valid old calibration data, populates new range only with evidence and reports version/migration outcome through diagnostics. Downgrade behavior documented.
 
-Service tool and fixtures stop depending on binary padding/private layout. Factory dashboard consumes product diagnostic meanings. Unknown external consumers recorded in Decision Journal (`ARTIFACT-003`) with ???????, discovery action and trigger. Temporary old-record compatibility path remains only until supported old firmware and factory image retire.
+Service tool and fixtures stop depending on binary padding/private layout. Factory dashboard consumes product diagnostic meanings. Unknown external consumers recorded in Decision Journal (`ARTIFACT-003`) with owner, discovery action and trigger. Temporary old-record compatibility path remains only until supported old firmware and factory image retire.
 
 #### Consequences
 
 Required radius explicit: firmware parsing, persistent schema, boot support, manufacturing write behavior, service-tool behavior, migration/downgrade, diagnostics, release artifacts and targeted tests.
 
-Accidental radius reduced: duplicated layout knowledge removed from tools/fixtures, platform status stops leaking, record version becomes named ????????.
+Accidental radius reduced: duplicated layout knowledge removed from tools/fixtures, platform status stops leaking, record version becomes named contract.
 
 Costs: version logic, migration tests, compatibility behavior, diagnostics, tool coordination and cleanup. Residual radius remains for unknown external consumers.
 
