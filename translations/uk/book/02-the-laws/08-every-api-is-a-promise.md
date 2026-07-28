@@ -1,4 +1,4 @@
-# Кожен API - це обіцянка
+# Кожен API — це обіцянка
 
 ## Вступна цитата
 
@@ -34,15 +34,15 @@ Callers learned that successful return meant hardware had applied the channel. T
 
 Частина цього була documented. Частина була в tests. Частина - в examples. Частина - only in memory of service engineers and manufacturing scripts.
 
-Усе це стало part of the promise.
+Усе це стало частиною обіцянки API.
 
 Team proposed local fixes: delay UI before reporting channel, add version number, optional callback, tell callers to wait for telemetry, keep old function name, make supervisor retry carefully, add note that implementation is asynchronous.
 
 Жодна зміна не відповідала на shared question:
 
-What does `radio_set_channel()` promise now?
+Що `radio_set_channel()` обіцяє тепер?
 
-Principal Engineer попросила записати old promise before approving new implementation. Не signature. Не module name. Promise.
+Principal Engineer попросила записати стару обіцянку перед approval нової implementation. Не signature. Не module name. Саму обіцянку.
 
 Команда записала, на що consumers relied:
 
@@ -61,7 +61,7 @@ Principal Engineer попросила записати old promise before approv
 
 Нова implementation не мусила бути rejected. Queuing hardware work was reasonable. Проблема була в тому, що команда змінила completion semantics while preserving old shape. Old API promised "channel applied". New implementation returned after "request accepted".
 
-Це різні promises.
+Це різні обіцянки.
 
 Team split behavior. Old function лишився compatibility path for migration window. New request-oriented API made acceptance explicit. Completion arrived through named event with defined ordering and callback context. Error codes separated invalid input, rejected request, queued request, unavailable radio, and failed application. Repeated requests got documented result. Persistence recorded last requested channel and last applied channel separately, бо це were not the same fact.
 
@@ -71,7 +71,7 @@ Header had hidden a contract. Failure made it visible.
 
 Final decision was not "never make APIs asynchronous." More precise: when an API crosses a meaningful boundary, observable behavior is the contract. If that behavior changes, architecture has changed even when compiler is satisfied.
 
-Every API is a promise.
+Every API Is a Promise.
 
 ## Обговорення
 
@@ -107,7 +107,7 @@ That is Silent Coupling (`SMELL-001`): hidden dependency affects behavior but is
 
 Remedy is not to promise everything forever. Good API says what is intentionally unspecified, distinguishes intentional contract, accidental contract, implementation detail, undefined behavior, unsupported behavior, and deprecated behavior.
 
-Errors are part of promise. Invalid input tells caller to fix arguments. Temporarily unavailable tells caller to retry, wait, or show message. Request accepted but not completed tells caller to observe completion elsewhere. If meanings blur, recovery becomes guesswork.
+Errors are part of the API promise. Invalid input tells caller to fix arguments. Temporarily unavailable tells caller to retry, wait, or show message. Request accepted but not completed tells caller to observe completion elsewhere. If meanings blur, recovery becomes guesswork.
 
 Internal APIs also accumulate compatibility cost. Internal means cost may be easier to coordinate, not free. Firmware modules may be consumed by production code, diagnostics, manufacturing scripts, service tools, automated tests, bootloader code, and support procedures. Some release on different schedules or live outside repository.
 

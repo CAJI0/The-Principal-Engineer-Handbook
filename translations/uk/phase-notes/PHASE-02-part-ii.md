@@ -25,13 +25,13 @@
 - `Principal Engineer`, `ADR`, `RFC`, `API`, `Decision Journal`, `Architecture Review`, `Change Radius`, `Bus Factor`, and PEAK IDs remain in English according to the Ukrainian glossary.
 - Law titles are translated for Ukrainian readability while keeping canonical recognition:
   - `Every State Has One Owner` -> `Кожен стан має одного власника`
-  - `Every API Is a Promise` -> `Кожен API - це обіцянка`
-  - `Every Dependency Is a Decision` -> `Кожна залежність - це рішення`
-  - `Time Is a Dependency` -> `Час - це залежність`
-  - `Unused Flexibility Is Waste` -> `Невикористана гнучкість - це марнування`
-  - `Simplicity Is a Feature` -> `Простота - це feature`
+  - `Every API Is a Promise` -> `Кожен API — це обіцянка`
+  - `Every Dependency Is a Decision` -> `Кожна залежність — це рішення`
+  - `Time Is a Dependency` -> `Час — це залежність`
+  - `Unused Flexibility Is Waste` -> `Невикористана гнучкість — це марнування`
+  - `Simplicity Is a Feature` -> `Простота — це функція продукту`
   - `Evidence Before Confidence` -> `Докази перед впевненістю`
-- Draft keeps a mixed Ukrainian/English engineering register where Phase 1 already preserved canonical terms or where later Terminology Review should decide the final rendering.
+- Draft keeps a mixed Ukrainian/English engineering register where Phase 1 already preserved canonical terms or where later review should decide the final rendering.
 - Source `v1.0.0:book/02-the-laws/README.md` contains an author note; it was not copied into the Ukrainian reader-facing README.
 - `LAW-007`, `LAW-003`, `LAW-006`, `LAW-004`, and `LAW-005` are preserved exactly as they appear in source, without renumbering.
 
@@ -42,8 +42,8 @@
 
 ## Unresolved Translation Questions
 
-- The draft intentionally leaves several English technical nouns for later review: `promise`, `boundary`, `runtime`, `feature`, `callback`, `fixture`, `workflow`, `review`, `release`, `field`, `support`, and related engineering-register terms.
-- `Simplicity Is a Feature` currently uses `Простота - це feature`; Terminology Review should decide whether `feature`, `властивість`, or another rendering best preserves the product-engineering nuance.
+- The draft intentionally leaves several English technical nouns for later review: `boundary`, `runtime`, `callback`, `fixture`, `workflow`, `review`, `release`, `field`, `support`, and related engineering-register terms.
+- `Simplicity Is a Feature` was resolved during Terminology Review as `Простота — це функція продукту`, preserving the product-capability meaning rather than using colloquial `feature` or the flatter `властивість`.
 
 ## Validation
 
@@ -72,3 +72,34 @@
 ## Outcome
 
 Translation Draft complete.
+
+## Phase 2 Terminology Review
+
+Baseline commit before gate: `a90fd7e8d3bac3c2f594dd96dd7c0a5905ad91a3`
+
+Outcome: Passed.
+
+Terminology changes made:
+
+- Recorded that the terminology governance file for this repository is `translations/uk/TERMINOLOGY_GLOSSARY.md`.
+- Standardized Ukrainian law-title punctuation with an em dash where the title uses an equative construction.
+- Resolved `Simplicity Is a Feature` as `Простота — це функція продукту`, preserving the product-capability sense while avoiding the draft-level mixed rendering `feature`.
+- Replaced several visible uses of `promise` in Chapter 8 with Ukrainian `обіцянка` where the word was not a canonical English law title.
+- Preserved canonical law names and PEAK IDs exactly where the source uses them as canonical concepts.
+
+Unresolved items:
+
+- Broader English connective prose cleanup remains for the Ukrainian Editorial Review gate.
+- Technical-register words such as `boundary`, `runtime`, `callback`, `fixture`, `workflow`, `review`, `release`, `field`, and `support` require editorial-context decisions rather than blanket replacement.
+
+Validation:
+
+- `git diff --check` - passed.
+- `git diff --name-only origin/main...HEAD -- book/` - passed; no English canonical source files changed.
+- `npm.cmd run lint:md` - passed.
+- `npm.cmd run lint:spelling` - passed.
+- `python -m pip check` - passed.
+- `python -m mkdocs build --strict` - passed.
+- `npx.cmd linkinator "translations/uk/**/*.md" --markdown --recurse --skip "^mailto:" --skip "node_modules" --skip "site" --timeout 60000` - passed.
+- `npm.cmd run lint:links` - passed.
+- `git -c safe.directory=D:/Projects/ThePrincipaEngineerHandbook ls-files site` - passed; no tracked `site/` output.

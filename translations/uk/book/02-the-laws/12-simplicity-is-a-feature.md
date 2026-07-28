@@ -1,4 +1,4 @@
-# Простота - це feature
+# Простота — це функція продукту
 
 ## Вступна цитата
 
@@ -46,7 +46,7 @@ System did not become tiny. It became explainable.
 
 ## Обговорення
 
-`LAW-004` states: Simplicity is a product capability because it makes future change safer.
+`LAW-004` states: Simplicity Is a Feature, тобто простота є функцією продукту, бо робить майбутні зміни безпечнішими.
 
 Simplicity is not taste, line count, file count, layer count, or familiar code. Simplicity is the property that lets important behavior be explained, changed, tested, operated, diagnosed, and recovered with a small truthful set of concepts.
 
