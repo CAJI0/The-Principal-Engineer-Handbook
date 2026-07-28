@@ -226,9 +226,9 @@ Define persistence as input, policy, or history according to its own responsibil
 
 ### Consequences
 
-Operational-mode invariants now have one reviewable home. Invalid commands can be rejected with explainable reasons. Service tooling, fixtures, supervisors, and UI surfaces can distinguish requests and observations from authority. Reset behavior becomes clearer because recovery starts by re-establishing the runtime owner instead of merging stale guesses. Tests can exercise invalid transitions at one boundary.
+Operational-mode invariants тепер мають один reviewable home. Invalid commands можна reject з explainable reasons. Service tooling, fixtures, supervisors і UI surfaces можуть відрізняти requests та observations від authority. Reset behavior стає зрозумілішою, бо recovery починається з re-establishing runtime owner, а не з merging stale guesses. Tests можуть exercise invalid transitions at one boundary.
 
-This decision requires migration work. Existing writers must be converted to commands. Service tools may need compatibility handling while older firmware still exposes raw setters. The owner may need queueing or serialization around concurrent requests. Observers need version, generation, or transition identity where stale values matter. Ownership handoff requires explicit design. The state-machine boundary must stay focused so it does not become a god object for every operational concern.
+This decision requires migration work. Existing writers треба convert to commands. Service tools можуть потребувати compatibility handling, доки older firmware still exposes raw setters. Owner може потребувати queueing або serialization around concurrent requests. Observers need version, generation або transition identity where stale values matter. Ownership handoff requires explicit design. State-machine boundary має лишатися focused, щоб не стати god object for every operational concern.
 
 ### Alternatives Considered
 
@@ -244,8 +244,8 @@ Use a distributed ownership protocol. Це може бути appropriate for sys
 
 ## Коментар редактора
 
-Chapter 7 opens Part II by turning a question that appeared earlier into a law. Chapter 3 used stale state to show how better questions expose ownership gaps. Chapter 4 used ownership as responsibility for closing an engineering outcome. This chapter uses ownership in a narrower architectural sense: authority over a meaningful state and its valid transitions.
+Chapter 7 відкриває Part II, перетворюючи питання з попередніх розділів на law. Chapter 3 used stale state to show how better questions expose ownership gaps. Chapter 4 used ownership як responsibility for closing an engineering outcome. This chapter uses ownership in a narrower architectural sense: authority over a meaningful state and its valid transitions.
 
 This distinction matters for the rest of the book. Later chapters use state ownership as a premise. API promises, dependency direction, time, simplicity, evidence, product configuration, observability, and legacy recovery all become harder when meaningful state has several unofficial authorities.
 
-The PEAK concepts carrying this chapter are Every State Has One Owner (`LAW-001`), Hidden State (`SMELL-004`), Global Configuration (`ANTIPATTERN-003`), ADR (`ARTIFACT-001`), Event Catalog (`ARTIFACT-005`), and Discoverability (`METRIC-003`). They are enough. The chapter does not need a new artifact or vocabulary term to teach the law.
+PEAK concepts цього chapter: Every State Has One Owner (`LAW-001`), Hidden State (`SMELL-004`), Global Configuration (`ANTIPATTERN-003`), ADR (`ARTIFACT-001`), Event Catalog (`ARTIFACT-005`) і Discoverability (`METRIC-003`). Їх достатньо. Chapter не потребує нового artifact або vocabulary term, щоб teach the law.

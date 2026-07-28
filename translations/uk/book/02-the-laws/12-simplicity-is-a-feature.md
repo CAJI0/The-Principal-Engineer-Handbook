@@ -42,7 +42,7 @@ Ordinary path became visible: input, validation, state owner decision, hardware 
 
 Tests described behavior directly. Integration tests still covered platform wrapper and callbacks. Change Radius shrank. ADR recorded collapse of command routing into one product-owned decision path.
 
-System did not become tiny. It became explainable.
+System не стала tiny. Вона стала explainable.
 
 ## Обговорення
 
@@ -95,7 +95,7 @@ Review habit:
 
 ### Поясніть одну поведінку end to end
 
-Choose important product behavior crossing boundaries: command, state transition, recovery action, manufacturing flow, service-tool operation, hardware interaction, or diagnostic decision.
+Оберіть важливу product behavior, що перетинає кілька boundaries: command, state transition, recovery action, manufacturing flow, service-tool operation, hardware interaction або diagnostic decision.
 
 1. What trigger starts behavior?
 2. What inputs arrive?
@@ -120,7 +120,7 @@ Choose important product behavior crossing boundaries: command, state transition
 21. Which concepts can be removed, narrowed, or renamed?
 22. Where should decision be recorded?
 
-End with one small simplification decision: remove pass-through layer, move rule to owner, rename generic outcome in product language, narrow utility helper, align test with product behavior, emit diagnostic at decision point, or record scoped ADR.
+Завершіть одним малим simplification decision: remove pass-through layer, move rule to owner, rename generic outcome in product language, narrow utility helper, align test with product behavior, emit diagnostic at decision point або record scoped ADR.
 
 ## Нотатник Principal Engineer
 
@@ -150,7 +150,7 @@ Create explicit acceptance boundary. Entry paths request acceptance through boun
 
 ### Consequences
 
-Decision becomes discoverable. Change Radius falls. Diagnostics improve. Reviewers separate product policy from platform execution. Work remains: migration, narrowing familiar code, rewriting forwarding tests, preserving asynchronous hardware behavior, avoiding new central module.
+Decision becomes discoverable. Change Radius falls. Diagnostics improve. Reviewers separate product policy from platform execution. Work remains: migration, narrowing familiar code, rewriting forwarding tests, preserving asynchronous hardware behavior і avoiding new central module.
 
 ### Alternatives Considered
 
@@ -172,6 +172,6 @@ Introduce generic rules framework. Adds concept before evidence.
 
 ## Коментар редактора
 
-Chapter 12 turns earlier laws into product-level property: ability to understand and change important behavior safely. It uses state owners, API promises, dependency spread, and time only where they make behavior easier or harder to explain.
+Chapter 12 перетворює earlier laws на product-level property: здатність understand and change important behavior safely. Він використовує state owners, API promises, dependency spread і time тільки там, де вони роблять behavior легшою або важчою для пояснення.
 
-The PEAK concepts carrying the chapter are Simplicity Is a Feature (`LAW-004`), Utility Gravity (`SMELL-002`), Manager Mania (`ANTIPATTERN-004`), Silent Coupling (`SMELL-001`), Platform Leakage (`SMELL-005`), Callback Hell (`ANTIPATTERN-005`), Change Radius (`VOCAB-001` and `METRIC-001`), Discoverability (`METRIC-003`), Architecture Health (`VOCAB-007` and `METRIC-005`), and ADR (`ARTIFACT-001`).
+PEAK concepts цього chapter: Simplicity Is a Feature (`LAW-004`), Utility Gravity (`SMELL-002`), Manager Mania (`ANTIPATTERN-004`), Silent Coupling (`SMELL-001`), Platform Leakage (`SMELL-005`), Callback Hell (`ANTIPATTERN-005`), Change Radius (`VOCAB-001` and `METRIC-001`), Discoverability (`METRIC-003`), Architecture Health (`VOCAB-007` and `METRIC-005`) і ADR (`ARTIFACT-001`).

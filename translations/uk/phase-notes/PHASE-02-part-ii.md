@@ -67,6 +67,40 @@
 - `npx.cmd linkinator "translations/uk/**/*.md" --markdown --recurse --skip "^mailto:" --skip "node_modules" --skip "site" --timeout 60000` - passed.
 - `npm.cmd run lint:links` - passed.
 - `git -c safe.directory=D:/Projects/ThePrincipaEngineerHandbook ls-files site` - passed; no tracked `site/` output.
+
+## Phase 2 Ukrainian Editorial Review
+
+Baseline commit before gate: `f1f80b8c4443c8a802b02e8fabf4c1721e31b968`
+
+Outcome: Passed.
+
+Editorial corrections made:
+
+- Translated the most visible English exercise prompts, review-question lead-ins, and closing questions in Chapters 8-13.
+- Smoothed repeated editor commentary paragraphs so they read as Ukrainian localization notes while preserving canonical chapter and PEAK references.
+- Replaced several draft-level English connective sentences in story and ADR sections with Ukrainian-led prose.
+- Preserved the original section order, lists, ADR structure, examples, law semantics, and all PEAK IDs.
+
+Terms deliberately left in English:
+
+- Canonical names and artifact terms such as `Principal Engineer`, `ADR`, `RFC`, `API`, `Decision Journal`, `Architecture Review`, `Change Radius`, `Discoverability`, and PEAK concept names.
+- Technical register terms that remain clearer as engineering English in this phase, including `runtime`, `callback`, `fixture`, `workflow`, `release`, `field`, and `support` where used as domain vocabulary rather than ordinary connective prose.
+
+Unresolved items:
+
+- A later full Ukrainian editorial pass should decide how far to reduce the mixed technical English register across all translated phases.
+
+Validation:
+
+- `git diff --check` - passed.
+- `git diff --name-only origin/main...HEAD -- book/` - passed; no English canonical source files changed.
+- `npm.cmd run lint:md` - passed.
+- `npm.cmd run lint:spelling` - passed.
+- `python -m pip check` - passed.
+- `python -m mkdocs build --strict` - passed.
+- `npx.cmd linkinator "translations/uk/**/*.md" --markdown --recurse --skip "^mailto:" --skip "node_modules" --skip "site" --timeout 60000` - passed.
+- `npm.cmd run lint:links` - passed.
+- `git -c safe.directory=D:/Projects/ThePrincipaEngineerHandbook ls-files site` - passed; no tracked `site/` output.
 - `vale .` - passed with 0 errors and 3 existing non-blocking warnings outside Ukrainian Phase 2 files: `CONTRIBUTING.md`, `editor/ARCHITECTURE_REVIEW_0.md`, and `editor/SOURCE_OF_TRUTH.md`.
 
 ## Outcome

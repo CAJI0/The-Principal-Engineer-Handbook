@@ -10,9 +10,9 @@ Radio service був спроєктований так, ніби мав пере
 
 Перший product потребував одного validated transport: one radio module, one board family, one packet format, one field service workflow. Release already needed service to wake radio, send command, receive response, retry safely, report diagnostics, and recover after reset.
 
-Team knew product line might grow: lower-cost board, long-range transport, manufacturing service mode, second radio module, different packet-framing rule. These possibilities were not absurd. Hardware changes, customers ask for variants, and supply chains turn dependencies into release problems.
+Команда знала, що product line might grow: lower-cost board, long-range transport, manufacturing service mode, second radio module, different packet-framing rule. These possibilities were not absurd. Hardware changes, customers ask for variants, and supply chains turn dependencies into release problems.
 
-So team preserved options.
+Тому команда preserved options.
 
 Service gained runtime mode selector, transport strategies, conditional compilation for unapproved boards, fallback for weak-link prototype, service-tool compatibility path, test-only configuration that later leaked, and dormant hardware transport. Code looked careful: interfaces, flags, runtime modes, tests, comments saying some modes were not used yet but might be needed later.
 
@@ -38,7 +38,7 @@ Team measured Change Radius (`VOCAB-001` and `METRIC-001`): unit tests, integrat
 
 "This is not a flexible service," Principal Engineer said. "It is a service with unowned options charging rent."
 
-Team kept one narrow product-owned transport seam, but removed unsupported runtime modes from shipped builds, deleted exposed unsupported configuration, removed dormant implementation and prototype fallback, reduced CI to supported combinations plus seam tests, migrated service tests, updated diagnostics, and recorded evidence that old compatibility users had ended.
+Команда kept one narrow product-owned transport seam, але removed unsupported runtime modes from shipped builds, deleted exposed unsupported configuration, removed dormant implementation and prototype fallback, reduced CI to supported combinations plus seam tests, migrated service tests, updated diagnostics, and recorded evidence that old compatibility users had ended.
 
 ADR captured the material decision. Smaller retained options went to Decision Journal (`ARTIFACT-003`). Discoverability (`METRIC-003`) improved: a new engineer could find supported variations, owner, why seam remained, and conditions for another implementation.
 
@@ -78,22 +78,22 @@ Keep flexibility only when it protects real uncertainty or supports owned variat
 
 Questions:
 
-1. Who uses this option today?
-2. Which real uncertainty does it protect against?
-3. What would it cost to add later?
-4. Which products, tools, tests, or workflows support it?
-5. Who owns it?
-6. Which tests prove supported combinations?
-7. What documentation and tools expose it?
-8. Which compatibility obligations exist?
-9. What condition will trigger review or retirement?
-10. Which seam can remain if option removed?
+1. Хто uses this option today?
+2. Від якої real uncertainty вона захищає?
+3. Скільки коштувало б add later?
+4. Які products, tools, tests або workflows support it?
+5. Хто owns it?
+6. Які tests prove supported combinations?
+7. Яка documentation і tools expose it?
+8. Які compatibility obligations exist?
+9. Яка condition trigger review або retirement?
+10. Яка seam може лишитися, якщо option removed?
 
 ## Архітектурна вправа
 
 ### Перевірте одну точку гнучкості
 
-Choose one flexibility point: mode, flag, backend, interface, fallback, build option, compatibility layer, extension point.
+Оберіть одну flexibility point: mode, flag, backend, interface, fallback, build option, compatibility layer або extension point.
 
 1. What is exact option name?
 2. Which products, customers, tools, tests, or workflows use it today?
@@ -115,7 +115,7 @@ Choose one flexibility point: mode, flag, backend, interface, fallback, build op
 18. What is smallest seam worth preserving?
 19. Where should decision live: ADR or Decision Journal?
 
-End with one decision:
+Завершіть одним decision:
 
 - keep and own;
 - narrow;
@@ -124,7 +124,7 @@ End with one decision:
 - preserve only the seam;
 - create a review trigger with a date or condition.
 
-Do not create new artifact for exercise. Use records system already has.
+Не створюйте нового artifact для цієї вправи. Використайте records, які system already has.
 
 ## Нотатник Principal Engineer
 
@@ -174,6 +174,6 @@ Postpone cleanup. Leaves next defect to rediscover same unowned options.
 
 ## Коментар редактора
 
-Chapter 11 focuses on option surface. It does not reteach state authority, API promises, dependency selection, or time. It makes one narrower claim: unused flexibility is maintenance cost unless evidence, ownership, and review triggers justify paying for it.
+Chapter 11 focuses on option surface. Він не переказує state authority, API promises, dependency selection або time. Він робить вужче твердження: unused flexibility is maintenance cost, якщо evidence, ownership і review triggers не виправдовують цю плату.
 
-The PEAK concepts carrying this chapter are Unused Flexibility Is Waste (`LAW-006`), Boolean Explosion (`SMELL-003`), Platform Leakage (`SMELL-005`), Temporary Solution (`ANTIPATTERN-006`), Change Radius (`VOCAB-001` and `METRIC-001`), Discoverability (`METRIC-003`), ADR (`ARTIFACT-001`), and Decision Journal (`ARTIFACT-003`).
+PEAK concepts цього chapter: Unused Flexibility Is Waste (`LAW-006`), Boolean Explosion (`SMELL-003`), Platform Leakage (`SMELL-005`), Temporary Solution (`ANTIPATTERN-006`), Change Radius (`VOCAB-001` and `METRIC-001`), Discoverability (`METRIC-003`), ADR (`ARTIFACT-001`) і Decision Journal (`ARTIFACT-003`).

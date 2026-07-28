@@ -34,7 +34,7 @@ Principal Engineer asked the team to draw the real dependency surface: task cont
 
 The diagram looked less like driver boundary and more like product decision.
 
-Team changed work from "swap library" to "name and contain commitments." They kept vendor kit because it solved real risk. But product boundary changed. Integration layer now named product-owned outcomes: radio ready, send accepted, send completed, receive available, radio unavailable, safe to retry, unsupported, permanently failed. Vendor errors translated before leaving integration. Callback context normalized. Buffer ownership defined in product terms. Tests rewritten around product contract. Fixture waited for product-level calibration readiness. Service tooling displayed product meanings and kept vendor detail only as diagnostic context. Compiler and kit version became owned release assumption.
+Команда змінила work from "swap library" to "name and contain commitments." Vendor kit лишився, бо solved real risk. Але product boundary змінилася. Integration layer тепер naming product-owned outcomes: radio ready, send accepted, send completed, receive available, radio unavailable, safe to retry, unsupported, permanently failed. Vendor errors translated before leaving integration. Callback context normalized. Buffer ownership defined in product terms. Tests rewritten around product contract. Fixture waited for product-level calibration readiness. Service tooling displayed product meanings and kept vendor detail only as diagnostic context. Compiler and kit version became owned release assumption.
 
 ADR was rewritten. It no longer said only "use vendor kit behind wrapper." It said which commitments team accepted, where dependency may appear, who owns updates, what evidence proves boundary, and what triggers replacement.
 
@@ -86,22 +86,22 @@ Practical standard: deliberate dependencies whose commitments are understood and
 
 Name the commitment before accepting the dependency. If it can shape behavior, failure, lifecycle, or replacement cost, record the decision and contain the spread.
 
-Review questions:
+Питання для review:
 
-1. What problem does dependency solve?
-2. What kind: code, service, protocol, hardware, tool, process, or platform?
-3. Who consumes it directly?
-4. Who consumes it transitively?
-5. Which behavior are we importing?
-6. Which failures enter our system?
-7. Which vocabulary, errors, timing, ownership, or lifecycle assumptions might leak?
-8. Which boundary keeps product semantics under product control?
-9. Who owns versions, updates, support, and deprecation?
-10. What would replacement actually require?
-11. What evidence shows replacement is plausible?
-12. What event would trigger update, replacement, or removal?
+1. Яку проблему розвʼязує dependency?
+2. Якого вона типу: code, service, protocol, hardware, tool, process чи platform?
+3. Хто consumes it directly?
+4. Хто consumes it transitively?
+5. Яку behavior ми імпортуємо?
+6. Які failures входять у нашу system?
+7. Які vocabulary, errors, timing, ownership або lifecycle assumptions можуть leak?
+8. Яка boundary тримає product semantics під product control?
+9. Хто owns versions, updates, support і deprecation?
+10. Чого replacement реально вимагатиме?
+11. Які докази показують, що replacement plausible?
+12. Яка подія trigger update, replacement або removal?
 
-Point is not a form. Point is to prevent local convenience from becoming architecture unnoticed.
+Суть не у формі. Суть у тому, щоб локальна зручність не стала architecture непомітно.
 
 ## Архітектурна вправа
 
@@ -109,29 +109,29 @@ Point is not a form. Point is to prevent local convenience from becoming archite
 
 Оберіть real dependency: library, service, hardware part, protocol, build tool, test fixture, file format, release process, or internal platform.
 
-1. What is dependency?
-2. What category is it?
-3. What problem does it solve?
-4. Which components consume it directly?
-5. Which components, tests, tools, fixtures, or procedures consume it transitively?
-6. What behavior does it import?
-7. What failures does it import?
-8. What runtime assumptions does it bring?
-9. What build, release, or support assumptions does it bring?
-10. Which vocabulary or error meanings leak into product?
-11. Which data, protocol, storage, or manufacturing behavior depends on it?
-12. Who owns updates?
-13. Who owns compatibility with existing releases?
-14. What support horizon matters?
-15. What evidence shows dependency is contained?
-16. What would replacement require beyond code?
-17. What would replacement cost in tests, tooling, operations, support, and confidence?
-18. What condition would trigger update, replacement, or removal?
-19. Where is decision recorded?
+1. Що це за dependency?
+2. До якої category вона належить?
+3. Яку проблему вона розвʼязує?
+4. Які components consume it directly?
+5. Які components, tests, tools, fixtures або procedures consume it transitively?
+6. Яку behavior вона імпортує?
+7. Які failures вона імпортує?
+8. Які runtime assumptions вона приносить?
+9. Які build, release або support assumptions вона приносить?
+10. Яка vocabulary або error meanings leak into product?
+11. Яка data, protocol, storage або manufacturing behavior depends on it?
+12. Хто owns updates?
+13. Хто owns compatibility with existing releases?
+14. Який support horizon важливий?
+15. Які докази показують, що dependency contained?
+16. Чого replacement вимагатиме beyond code?
+17. Якою буде replacement cost in tests, tooling, operations, support і confidence?
+18. Яка condition trigger update, replacement або removal?
+19. Де recorded decision?
 
-End with:
+Завершіть питанням:
 
-What part of the system currently depends on this dependency's behavior while believing it depends only on your boundary?
+Яка частина system зараз depends on this dependencyʼs behavior, вважаючи, що depends only on your boundary?
 
 ## Нотатник Principal Engineer
 
@@ -159,7 +159,7 @@ Add contract tests around product-owned behavior and integration tests around ac
 
 ### Consequences
 
-Product can use vendor kit without letting vendor semantics become product model by accident. Delivery risk reduced. Replacement thinking more realistic. Tests check product contract first and vendor integration second. Upgrade decisions have owners.
+Product може use vendor kit, не дозволяючи vendor semantics випадково стати product model. Delivery risk reduced. Replacement thinking more realistic. Tests check product contract first and vendor integration second. Upgrade decisions have owners.
 
 Work remains: integration layer maintenance, careful translation of errors/lifecycle, contract and integration tests, and unavoidable deep hardware behavior.
 
@@ -179,6 +179,6 @@ Avoid integration until every exit path cheap. Makes replacement easy only by no
 
 ## Коментар редактора
 
-Chapter 9 widens the boundary from Chapters 7 and 8. Dependency decisions are easy to misclassify as implementation choices; cost can appear in failure behavior, release cadence, tests, manufacturing, service, support, hardware qualification, and replacement planning.
+Chapter 9 розширює boundary з Chapters 7 і 8. Dependency decisions легко помилково класифікувати як implementation choices; cost може проявитися у failure behavior, release cadence, tests, manufacturing, service, support, hardware qualification і replacement planning.
 
-The PEAK concepts carrying this chapter are Every Dependency Is a Decision (`LAW-007`), Silent Coupling (`SMELL-001`), Change Radius (`VOCAB-001`), ADR (`ARTIFACT-001`), and Discoverability (`METRIC-003`). They are enough. Chapter 10 will take one imported commitment, time, and give it its own law.
+PEAK concepts цього chapter: Every Dependency Is a Decision (`LAW-007`), Silent Coupling (`SMELL-001`), Change Radius (`VOCAB-001`), ADR (`ARTIFACT-001`) і Discoverability (`METRIC-003`). Їх достатньо. Chapter 10 візьме один imported commitment — time — і дасть йому власний law.

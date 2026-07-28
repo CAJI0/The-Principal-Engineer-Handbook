@@ -36,7 +36,7 @@ Callers learned that successful return meant hardware had applied the channel. T
 
 Усе це стало частиною обіцянки API.
 
-Team proposed local fixes: delay UI before reporting channel, add version number, optional callback, tell callers to wait for telemetry, keep old function name, make supervisor retry carefully, add note that implementation is asynchronous.
+Команда запропонувала локальні fixes: delay UI before reporting channel, add version number, optional callback, tell callers to wait for telemetry, keep old function name, make supervisor retry carefully, add note that implementation is asynchronous.
 
 Жодна зміна не відповідала на shared question:
 
@@ -63,7 +63,7 @@ Principal Engineer попросила записати стару обіцянк
 
 Це різні обіцянки.
 
-Team split behavior. Old function лишився compatibility path for migration window. New request-oriented API made acceptance explicit. Completion arrived through named event with defined ordering and callback context. Error codes separated invalid input, rejected request, queued request, unavailable radio, and failed application. Repeated requests got documented result. Persistence recorded last requested channel and last applied channel separately, бо це were not the same fact.
+Команда split behavior. Old function лишився compatibility path for migration window. New request-oriented API made acceptance explicit. Completion arrived through named event with defined ordering and callback context. Error codes separated invalid input, rejected request, queued request, unavailable radio, and failed application. Repeated requests got documented result. Persistence recorded last requested channel and last applied channel separately, бо це були не той самий факт.
 
 Tests changed too. Unit test checking return code was still useful, but not enough. Integration tests checked UI state did not report applied hardware before completion. Supervisory retry tests checked duplicate requests. Reset tests checked whether restored state meant requested, applied, or unknown. Service-tool tests checked which errors should be retried and which should be shown to the operator.
 
@@ -133,54 +133,54 @@ Treat every observable boundary as a contract.
 
 Specify what consumers may rely on, preserve those promises deliberately, and make incompatible change explicit instead of hiding it behind unchanged interface.
 
-Use questions:
+Використовуйте такі питання:
 
-1. Who are the consumers?
-2. What behavior can they observe?
-3. What assumptions do they rely on today?
-4. Which behaviors are guaranteed?
-5. Which behaviors are intentionally unspecified?
-6. What do success, rejection, and failure mean?
-7. What are retry and repeated-call semantics?
-8. Who owns memory, lifetime, and persisted state?
-9. What execution context is supported?
-10. Which compatibility dimensions matter for this boundary?
-11. How will consumers migrate if the promise changes?
+1. Хто є consumers?
+2. Яку поведінку вони можуть спостерігати?
+3. На які припущення вони покладаються сьогодні?
+4. Яка поведінка гарантована?
+5. Яка поведінка навмисно не визначена?
+6. Що означають success, rejection і failure?
+7. Яка семантика retry і repeated call?
+8. Хто володіє memory, lifetime і persisted state?
+9. Який execution context підтримується?
+10. Які dimensions of compatibility важливі для цієї межі?
+11. Як consumers мігруватимуть, якщо обіцянка зміниться?
 
-Goal is not to freeze every interface forever. Goal is to make change honest enough that consumers can survive it.
+Мета не в тому, щоб заморозити кожен interface назавжди. Мета в тому, щоб зробити зміну достатньо чесною, аби consumers могли її пережити.
 
 ## Архітектурна вправа
 
 ### Запишіть обіцянку за одним API
 
-Оберіть real API з system you work on. Choose boundary where another component, tool, test, script, or workflow already relies on behavior.
+Оберіть реальний API із системи, над якою працюєте. Візьміть межу, де інший component, tool, test, script або workflow уже покладається на поведінку.
 
-1. Who produces the API?
-2. Who consumes it?
-3. What purpose does it serve?
-4. Which inputs are accepted?
-5. Which inputs are rejected?
-6. What preconditions must hold?
-7. What does success mean?
-8. What can fail, and what does each failure mean?
-9. What side effects occur?
-10. Who owns memory, handles, buffers, callbacks, or other lifetime-sensitive values?
-11. Which execution contexts are supported?
-12. Does API block, return after acceptance, or report completion later?
-13. What ordering does it promise?
-14. What happens when same request repeated?
-15. Which failures should consumers retry?
-16. Does API read or write persisted state?
-17. Which compatibility dimensions matter: source, binary, wire, behavioral, data, or operational?
-18. What behavior intentionally unspecified?
-19. What accidental behavior do consumers appear to rely on?
-20. Which tests encode promise?
-21. What plausible incompatible change would require migration?
-22. Where should decision be recorded: ADR, RFC, test, documentation, or existing artifact?
+1. Хто produces API?
+2. Хто consumes it?
+3. Для чого він потрібен?
+4. Які inputs приймаються?
+5. Які inputs відхиляються?
+6. Які preconditions мають виконуватися?
+7. Що означає success?
+8. Що може fail і що означає кожен failure?
+9. Які side effects відбуваються?
+10. Хто володіє memory, handles, buffers, callbacks або іншими lifetime-sensitive values?
+11. Які execution contexts підтримуються?
+12. API блокує, повертається після acceptance чи повідомляє completion пізніше?
+13. Який ordering він обіцяє?
+14. Що відбувається, коли той самий request повторюється?
+15. Які failures consumers мають retry?
+16. API читає або записує persisted state?
+17. Які dimensions of compatibility важливі: source, binary, wire, behavioral, data чи operational?
+18. Яка поведінка навмисно не визначена?
+19. На яку accidental behavior consumers, схоже, покладаються?
+20. Які tests encode the promise?
+21. Яка plausible incompatible change потребувала б migration?
+22. Де decision слід записати: ADR, RFC, test, documentation або existing artifact?
 
-End with:
+Завершіть питанням:
 
-What would break if the implementation changed but the declaration stayed the same?
+Що зламалося б, якби implementation змінилася, а declaration лишилася тією самою?
 
 ## Нотатник Principal Engineer
 
@@ -210,7 +210,7 @@ Retire old behavior only after migration evidence shows consumers no longer depe
 
 ### Consequences
 
-Consumers can distinguish accepted work from completed hardware state. UI avoids reporting applied state too early. Retry logic avoids duplicating queued work. Integration tests encode completion ordering, error meanings, and reset semantics. Radio implementation can become asynchronous without pretending old promise still holds.
+Consumers можуть відрізняти accepted work від completed hardware state. UI avoids reporting applied state too early. Retry logic avoids duplicating queued work. Integration tests encode completion ordering, error meanings, and reset semantics. Radio implementation can become asynchronous without pretending old promise still holds.
 
 The decision creates work: migration, compatibility maintenance, event/callback states, documentation and service tooling changes, and visible unsupported/deprecated behavior until migration is complete.
 
@@ -228,8 +228,8 @@ Expose hardware state directly. Pushes radio state interpretation into consumers
 
 ## Коментар редактора
 
-Chapter 8 continues Part II by taking the boundary that Chapter 7 made visible and asking what crosses it.
+Chapter 8 продовжує Part II: бере межу, яку Chapter 7 зробив видимою, і питає, що через неї проходить.
 
-Chapter 7 defined owner of meaningful state and transitions. This chapter defines what consumers may rely on when they call, observe, subscribe, persist, or automate across that boundary. A state owner can be correct internally and still harm system if API around it silently changes its promise.
+Chapter 7 визначив owner meaningful state і transitions. Цей chapter визначає, на що consumers можуть покладатися, коли call, observe, subscribe, persist або automate across that boundary. State owner може бути внутрішньо correct і все одно нашкодити system, якщо API навколо нього мовчки змінює свою promise.
 
-The PEAK concepts carrying this chapter are Every API Is a Promise (`LAW-002`), Silent Coupling (`SMELL-001`), API Stability (`METRIC-004`), ADR (`ARTIFACT-001`), Discoverability (`METRIC-003`), and Change Radius (`VOCAB-001`). They are enough.
+PEAK concepts цього chapter: Every API Is a Promise (`LAW-002`), Silent Coupling (`SMELL-001`), API Stability (`METRIC-004`), ADR (`ARTIFACT-001`), Discoverability (`METRIC-003`) і Change Radius (`VOCAB-001`). Їх достатньо.

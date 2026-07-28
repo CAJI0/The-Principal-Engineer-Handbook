@@ -12,7 +12,7 @@ Controller sent command to peripheral module, waited for acknowledgement, then a
 
 First team measured path carefully enough for decision. One prototype board, one module revision, one component lot, room temperature, stable bench supply, one firmware build, one traffic pattern, debug instrumentation, limited repeated command cycles. Response arrived well inside deadline. Worst observed result still left margin. Team recorded ADR (`ARTIFACT-001`): existing bus schedule and command deadline acceptable for prototype and early controlled deployment.
 
-That was not foolish. Evidence supported narrow claim: on that prototype, with that build, board, module, load, and measurement path, acknowledgement arrived with enough margin for tested command sequence.
+Це не було foolish. Evidence supported narrow claim: on that prototype, with that build, board, module, load, and measurement path, acknowledgement arrived with enough margin for tested command sequence.
 
 Then product kept living. Compiler upgrade, diagnostic logging, RTOS workload, interrupt source, peripheral firmware, board revision, component tolerance, power management, service-tool mode, colder environment, broader field exposure.
 
@@ -32,7 +32,7 @@ Active claim was no longer "prototype command responded quickly." It was: curren
 
 That claim was larger than original evidence.
 
-Team recovered evidence provenance: prototype board revision, peripheral firmware, compiler version, optimization, RTOS workload, bench supply, room temperature, traffic pattern, instrumentation method, run count, latency range. Old evidence remained valuable for original claim and baseline. It did not automatically transfer.
+Команда recovered evidence provenance: prototype board revision, peripheral firmware, compiler version, optimization, RTOS workload, bench supply, room temperature, traffic pattern, instrumentation method, run count, latency range. Old evidence remained valuable for original claim and baseline. It did not automatically transfer.
 
 Changes were sorted by materiality. Weak signals went into Weak Signal Register (`ARTIFACT-007`). Decision Journal (`VOCAB-003` and `ARTIFACT-003`) recorded active claim, historical evidence, current confidence, residual uncertainty, and review trigger.
 
@@ -40,7 +40,7 @@ Next evidence action was not "test everything." Team selected smallest targeted 
 
 Exposure stayed bounded while confidence limited. Product variant would not broaden deployment until evidence supported broader claim. Existing deployments kept monitored path and review trigger.
 
-No one declared original decision irresponsible or current design broken. Team moved confidence back under evidence.
+Ніхто не оголосив original decision irresponsible або current design broken. Команда moved confidence back under evidence.
 
 ## Обговорення
 
@@ -96,7 +96,7 @@ Part II laws create architecture claims. They remain useful only while supported
 
 ## Інженерний принцип
 
-Keep architecture confidence attached to specific claim, evidence envelope, and review trigger. When system or conditions change, revalidate assumption before carrying confidence forward.
+Тримайте architecture confidence привʼязаною до specific claim, evidence envelope і review trigger. Коли system або conditions змінюються, revalidate assumption before carrying confidence forward.
 
 Review habit:
 
@@ -141,7 +141,7 @@ Choose active architecture claim affecting product behavior, release confidence,
 20. What condition should reopen decision?
 21. Which ADR, Decision Journal, or Weak Signal Register entry needs creation/update?
 
-End with one decision:
+Завершіть одним decision:
 
 - confidence remains justified;
 - confidence narrows;
@@ -168,7 +168,7 @@ Current product line still relies on timing margin, but compiler, workload, diag
 
 ### Decision
 
-Do not broaden product exposure based only on original prototype timing measurement.
+Не broaden product exposure based only on original prototype timing measurement.
 
 Define current timing claim and products, firmware versions, hardware revisions, peripheral firmware, build configurations, power states, and variants relying on it. Preserve valid historical evidence and conditions. Compare original and current conditions. Run targeted production-equivalent measurements around disputed boundary. Include only material workload, interrupt load, hardware revision, firmware, voltage, temperature, power state, and traffic patterns.
 
@@ -188,7 +188,7 @@ Increase timeout. May hide late responses and delay recovery.
 
 Add retries. May mask regression without validating margin.
 
-Repeat original bench test. Does not answer transfer to current conditions.
+Repeat original bench test. Це не відповідає на питання transfer to current conditions.
 
 Demand proof of field failure. Waits for product to pay uncertainty.
 
@@ -202,8 +202,8 @@ Keep old ADR unchanged. Hides narrower current confidence.
 
 ## Коментар редактора
 
-Chapter 13 closes Part II by making laws answerable to evidence. It does not duplicate Chapter 5: Chapter 5 asks whether evidence is sufficient for current decision; Chapter 13 asks whether that evidence still supports claim system continues to carry.
+Chapter 13 closes Part II by making laws answerable to evidence. Він не дублює Chapter 5: Chapter 5 питає, чи evidence sufficient for current decision; Chapter 13 питає, чи ця evidence досі supports claim, який system continues to carry.
 
-The PEAK concepts carrying the chapter are Evidence Before Confidence (`LAW-005`), The Successful Prototype (`FAILURE-003`), Weak Signal (`VOCAB-002`), Weak Signal Register (`ARTIFACT-007`), Decision Journal (`VOCAB-003` and `ARTIFACT-003`), ADR (`ARTIFACT-001`), Architecture Review (`RITUAL-001`), Change Radius (`VOCAB-001` and `METRIC-001`), and Architecture Health (`VOCAB-007` and `METRIC-005`).
+PEAK concepts цього chapter: Evidence Before Confidence (`LAW-005`), The Successful Prototype (`FAILURE-003`), Weak Signal (`VOCAB-002`), Weak Signal Register (`ARTIFACT-007`), Decision Journal (`VOCAB-003` and `ARTIFACT-003`), ADR (`ARTIFACT-001`), Architecture Review (`RITUAL-001`), Change Radius (`VOCAB-001` and `METRIC-001`) і Architecture Health (`VOCAB-007` and `METRIC-005`).
 
 Part III can now take over. The reader-facing move is simple: do not ask whether old decision was proven wrong. Ask whether current claim is still supported by current evidence.

@@ -30,7 +30,7 @@ Command path was not asking for time; it asked whether command was fresh enough.
 
 Those were not same dependency.
 
-Team inventoried temporal decisions. They named clock domains: runtime monotonic time since boot, UTC wall-clock time after validation, persisted timestamps written under known clock state, server receipt time, UI-local display time. Elapsed runtime behavior used monotonic time. Timeouts became relative waits measured on runtime clock, with explicit state after expiry and late-completion rules. UTC wall-clock remained stored calendar meaning for externally interpreted records, but records carried whether wall-clock time was valid when written.
+Команда inventoried temporal decisions. Вона назвала clock domains: runtime monotonic time since boot, UTC wall-clock time after validation, persisted timestamps written under known clock state, server receipt time, UI-local display time. Elapsed runtime behavior used monotonic time. Timeouts became relative waits measured on runtime clock, with explicit state after expiry and late-completion rules. UTC wall-clock remained stored calendar meaning for externally interpreted records, but records carried whether wall-clock time was valid when written.
 
 Freshness separated from timestamp comparison. A command was fresh only if source, transport delay assumptions, receipt path, clock validity, and maximum acceptable age satisfied command rule. Timestamp alone did not make command fresh.
 
@@ -82,49 +82,49 @@ Time is a dependency because systems depend not on numbers alone, but on what th
 
 Name the clock and temporal meaning behind every consequential use of time. Use elapsed time, wall time, ordering, freshness, and deadlines deliberately.
 
-Review questions:
+Питання для review:
 
-1. What temporal decision is being made?
-2. Which clock domain supplies the value?
-3. Is value duration, timestamp, deadline, ordering signal, freshness input, or display value?
-4. Can clock jump, drift, reset, wrap, or become invalid?
-5. What happens after reboot?
-6. What does timeout expiry change in system state?
-7. Can operation complete after timeout?
-8. Is retry safe if first operation later completes?
-9. How is uncertainty represented?
-10. How will tests control time enough to prove behavior?
+1. Яке temporal decision приймається?
+2. Який clock domain supplies the value?
+3. Це duration, timestamp, deadline, ordering signal, freshness input чи display value?
+4. Чи може clock jump, drift, reset, wrap або become invalid?
+5. Що відбувається після reboot?
+6. Що timeout expiry змінює в system state?
+7. Чи може operation complete after timeout?
+8. Чи retry safe, якщо перша operation later completes?
+9. Як represented uncertainty?
+10. Як tests control time enough to prove behavior?
 
 ## Архітектурна вправа
 
 ### Простежте одне temporal decision
 
-Choose one consequential use of time: command freshness check, retry interval, timeout, periodic job, expiration rule, stored timestamp, lease, watchdog, UI display, diagnostic event, or cleanup process.
+Оберіть один consequential use of time: command freshness check, retry interval, timeout, periodic job, expiration rule, stored timestamp, lease, watchdog, UI display, diagnostic event або cleanup process.
 
-1. What decision is being made?
-2. What clock source supplies value?
-3. What clock domain gives value meaning?
-4. Is this duration, timestamp, deadline, timeout, ordering, freshness, or display?
-5. What units and resolution matter?
-6. What accuracy assumed?
-7. Must clock be monotonic?
-8. Can clock be invalid?
-9. Can it drift?
-10. Can it wrap?
-11. What happens after reset?
-12. Is any value persisted?
-13. What happens during synchronization or correction?
-14. What does timeout or deadline expiry mean?
-15. What state remains after expiry?
-16. Can completion arrive late?
-17. Is retry safe?
-18. What ordering assumptions may consumers make?
-19. What freshness rule is enforced?
-20. What diagnostics expose source, domain, validity, correction, uncertainty?
-21. Which tests control time enough to exercise jumps, drift, reset, wrap, invalidity, and late sync?
-22. Where is decision recorded?
+1. Яке decision приймається?
+2. Яке clock source supplies value?
+3. Який clock domain дає value meaning?
+4. Це duration, timestamp, deadline, timeout, ordering, freshness чи display?
+5. Які units і resolution важливі?
+6. Яка accuracy assumed?
+7. Чи має clock бути monotonic?
+8. Чи може clock бути invalid?
+9. Чи може він drift?
+10. Чи може він wrap?
+11. Що відбувається після reset?
+12. Чи persisted якесь value?
+13. Що відбувається під час synchronization або correction?
+14. Що означає timeout або deadline expiry?
+15. Який state лишається після expiry?
+16. Чи може completion arrive late?
+17. Чи retry safe?
+18. Які ordering assumptions можуть робити consumers?
+19. Яке freshness rule enforced?
+20. Які diagnostics expose source, domain, validity, correction, uncertainty?
+21. Які tests control time enough to exercise jumps, drift, reset, wrap, invalidity і late sync?
+22. Де recorded decision?
 
-End with:
+Завершіть реченням:
 
 The system depends on this time value as ______, and the value is trustworthy only when ______.
 
@@ -156,7 +156,7 @@ Represent wall-clock validity explicitly. Define behavior before synchronization
 
 ### Consequences
 
-Elapsed-time behavior no longer changes when wall-clock corrected. Timeouts become state decisions. Persisted records carry context. Freshness checks reject uncertainty. Tests can reproduce field failures.
+Elapsed-time behavior більше не змінюється, коли wall-clock corrected. Timeouts become state decisions. Persisted records carry context. Freshness checks reject uncertainty. Tests can reproduce field failures.
 
 Design is more explicit. Callers choose temporal meaning. Multiple clock representations must be maintained. Existing call sites migrate. Some persisted data may need versioned interpretation.
 
@@ -176,6 +176,6 @@ Add generic clock abstraction. Helps tests but without semantic separation prese
 
 ## Коментар редактора
 
-Chapter 10 takes one dependency from Chapter 9 and gives it its own shape. It does not retell ownership, API, dependency, observability, or testing chapters. The reader-facing move is small and durable: before relying on time, name which time you mean.
+Chapter 10 бере одну dependency з Chapter 9 і дає їй власну форму. Він не переказує ownership, API, dependency, observability або testing chapters. Reader-facing move малий і міцний: before relying on time, name which time you mean.
 
-The PEAK concepts carrying the chapter are Time Is a Dependency (`LAW-003`), Hidden State (`SMELL-004`), Silent Coupling (`SMELL-001`), Event Catalog (`ARTIFACT-005`), ADR (`ARTIFACT-001`), and Discoverability (`METRIC-003`).
+PEAK concepts цього chapter: Time Is a Dependency (`LAW-003`), Hidden State (`SMELL-004`), Silent Coupling (`SMELL-001`), Event Catalog (`ARTIFACT-005`), ADR (`ARTIFACT-001`) і Discoverability (`METRIC-003`).
