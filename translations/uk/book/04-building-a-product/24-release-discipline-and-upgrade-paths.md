@@ -68,7 +68,7 @@ Release artifact видимий: file, hash, version label, service-tool success
 
 «Did the new image pass?» - не погане питання, просто замале. Краще: які upgrade paths ми обіцяємо, і що має лишатися true before, during and after upgrade?
 
-Before upgrade: source version, hardware revision, product variant, configuration schema, calibration state, identity record, data shape, service-tool expectation, diagnostic vocabulary, dependency behavior, support horizon. During: bootloader/installer states, migration, power-loss windows, network interruptions, partial writes, retries, recovery decisions, first-report handshakes. After: product explains what happened і proves target state supportable.
+Перед upgrade: source version, hardware revision, product variant, configuration schema, calibration state, identity record, data shape, service-tool expectation, diagnostic vocabulary, dependency behavior, support horizon. During upgrade: bootloader/installer states, migration, power-loss windows, network interruptions, partial writes, retries, recovery decisions, first-report handshakes. Після upgrade: product explains what happened і proves target state supportable.
 
 Every State Has One Owner (`LAW-001`) означає, що release-critical state має authority, перш ніж upgrade може його preserve. Every API Is a Promise (`LAW-002`) означає, що firmware command, diagnostic event, service-tool protocol, manufacturing programming path, configuration schema, update package format або recovery behavior стають promises after release. API Stability (`METRIC-004`) включає behavior, errors, timing і meaning.
 
@@ -113,7 +113,7 @@ Release-іть лише promises, які можете support, і upgrade-іть
 
 Запишіть:
 
-> Device on source version X, hardware revision Y, variant Z, and configuration schema N upgrades to target version T through supported path P.
+> Device on source version X, hardware revision Y, variant Z і configuration schema N upgrades to target version T through supported path P.
 
 Задокументуйте source, target, hardware revision, variant, schema, data/calibration to survive, release-critical state owner, compatibility promises, migration step, rollback/retry/recovery/forward-fix behavior, observability, service-tool compatibility, evidence available/missing, nearby unsupported paths, decision record і freeze/review trigger.
 
@@ -140,17 +140,17 @@ Context:
 
 Decision:
 
-- Enumerate supported source-to-target upgrade paths before field release.
+- Перелічити supported source-to-target upgrade paths before field release.
 - Explicitly reject/defer unsupported paths.
-- Freeze release-critical state transitions, configuration migration, diagnostic meanings і service-tool compatibility before final validation.
+- Заморозити release-critical state transitions, configuration migration, diagnostic meanings і service-tool compatibility before final validation.
 - Preserve identity, calibration, configuration і variant meaning across supported paths.
 - Require evidence for each supported path.
 - Record risks, limits, support notes і review triggers in ADR, RFC, Decision Journal, Architecture Ledger, Event Catalog, release notes або Mistake Ledger.
-- Defer reference-project integration walkthrough to Chapter 25.
+- Відкласти reference-project integration walkthrough до Chapter 25.
 
 Consequences:
 
-Support promises clearer; field surprises reduced; validation follows paths; rollback/retry/recovery/forward-fix separated; product trust improves. Validation work increases; late changes slower when touching frozen surfaces; service-tool coordination becomes release work.
+Обіцянки support стають яснішими; field surprises зменшуються; validation follows paths; rollback/retry/recovery/forward-fix розділені; product trust improves. Validation work зростає; late changes сповільнюються, коли торкаються frozen surfaces; service-tool coordination стає release work.
 
 Alternatives Considered:
 
@@ -159,15 +159,15 @@ Alternatives Considered:
 - Require all customers to factory reset.
 - Rely on rollback only.
 - Patch unsupported paths in support scripts.
-- Defer upgrade-path definition until after release.
+- Відкласти upgrade-path definition until after release.
 - Freeze whole architecture.
 
-Rejected because they hide field readiness, destroy trust, create Temporary Solution/Silent Coupling risk, or freeze too broadly.
+Відхилено, бо вони ховають field readiness, руйнують trust, створюють Temporary Solution/Silent Coupling risk або freeze too broadly.
 
 ## Коментар редактора
 
 Chapter 24 перетворює observable product evidence на supported release and upgrade commitments. Він не вводить primary PEAK concept. PEAK weight тримається на The Release We Should Have Delayed (`FAILURE-005`) і Architecture Freeze (`RITUAL-002`), з Architecture Freeze (`VOCAB-006`) як temporary scoped vocabulary.
 
-Earlier chapters працюють як constraints: release-critical state needs owners; released diagnostics are API promises; update tooling and service tools are dependency decisions; migration/support horizons depend on time; confidence needs evidence; Change Radius and Discoverability determine ceremony; Event Catalog, ADR, RFC, Decision Journal, Architecture Ledger, release notes і Mistake Ledger keep decisions findable.
+Earlier chapters працюють як constraints: release-critical state needs owners; released diagnostics are API promises; update tooling і service tools are dependency decisions; migration/support horizons depend on time; confidence needs evidence; Change Radius і Discoverability determine ceremony; Event Catalog, ADR, RFC, Decision Journal, Architecture Ledger, release notes і Mistake Ledger keep decisions findable.
 
 Не запитуйте лише, чи image passed. Запитуйте, які paths product promises, який state вони preserve, яка evidence це proves і що support can safely do, коли path fails.

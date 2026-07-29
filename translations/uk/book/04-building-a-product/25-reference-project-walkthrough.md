@@ -26,7 +26,7 @@ Mara запитала:
 
 Regional reporting interval став supported variant promise. Battery package deferred, бо він змінював measurement cadence, retry timing і field-support expectations. Special customer timeout став pilot exception з owner і review trigger. Global setting зник. Configuration стала owned state, а не hiding place for product difference.
 
-Другий argument: manufacturing. Station могла записати serial identity і calibration. Проблемою була authority. Manufacturing measured calibration; firmware used it; service tool could request recalibration; v1.1 migration needed preserve it; older hardware revision stored backup differently; recovery could restore firmware but not know calibration still matched hardware revision without owner. Команда назвала state owners: manufacturing owns first measurement/evidence, firmware owns runtime calibration state and validation rules, service tool requests workflow but cannot write raw product truth, release owns migration evidence, support owns field procedure. Device reports serial identity, hardware revision, calibration version, active configuration fingerprint і firmware version in support-safe diagnostic snapshot.
+Другий argument: manufacturing. Station могла записати serial identity і calibration. Проблемою була authority. Manufacturing вимірювало calibration; firmware використовувала її; service tool міг request recalibration; v1.1 migration мала preserve it; older hardware revision stored backup differently; recovery могла restore firmware, але не знала, чи calibration still matched hardware revision без owner. Команда назвала state owners: manufacturing owns first measurement/evidence, firmware owns runtime calibration state and validation rules, service tool requests workflow but cannot write raw product truth, release owns migration evidence, support owns field procedure. Device reports serial identity, hardware revision, calibration version, active configuration fingerprint і firmware version in support-safe diagnostic snapshot.
 
 Третій argument: second board revision. Sensor offset змінився. Happy path виглядав нормально. Old calibration flow, service-tool label, event meaning і v1.0 update path тепер залежали від hardware revision. Команда майже додала flag. Mara попросила trace Change Radius. Він зачіпав firmware validation, station programming, service-tool display, field diagnostics, release notes, migration evidence, support scripts і Event Catalog. Це був не local flag, а product promise. Команда відкрила RFC для hardware-revision and configuration compatibility across firmware, manufacturing, service tooling, QA, support і release.
 
@@ -34,10 +34,10 @@ Regional reporting interval став supported variant promise. Battery package 
 
 Support потребував identity, active firmware, configuration fingerprint, variant, calibration validity і rejected boundary. Команда написала перші Event Catalog entries:
 
-- `upgrade_started`: accepted package and recorded source version, target version, hardware revision and variant.
-- `configuration_migration_rejected`: firmware rejected migration and preserved source configuration.
-- `first_report_not_acknowledged`: radio path missed expected acknowledgement within supported retry window.
-- `recovery_ready`: device entered supportable recovery state with identity, calibration state, active version and configuration fingerprint.
+- `upgrade_started`: package accepted; записано source version, target version, hardware revision і variant.
+- `configuration_migration_rejected`: firmware відхилила migration і preserved source configuration.
+- `first_report_not_acknowledged`: radio path не отримав expected acknowledgement у supported retry window.
+- `recovery_ready`: device entered supportable recovery state з identity, calibration state, active version і configuration fingerprint.
 
 Кожен event мав owner, producer, consumer, ordering assumption і failure meaning. Event Explosion був risk з одного боку; Hidden State - з іншого. Команда обрала менше events із гострішим meaning.
 
@@ -49,13 +49,13 @@ Release owner запитав: «Can we ship v1.1?» Mara запитала:
 
 Команда побудувала decision chain замість checklist. Prototype assumptions стали owned product decisions. Hard-coded interval став regional variant default, а не global setting. Manual calibration стала manufacturing measurement із firmware ownership of runtime validity. Developer logs стали support-safe diagnostics, tied to event meanings. Lab-only update script став release path із supported source versions і recovery behavior.
 
-Supported pilot baseline: hardware revisions A and B, standard and regional packages, configuration schema v2, service tool 4.3+, direct upgrade v1.0.2 to v1.1, upgrade v1.0 to v1.1 only through intermediate migration package. Special customer timeout лишився pilot exception у Decision Journal з review trigger after thirty field days або second customer request. Battery package deferred. Older service tool rejected for v1.1 upgrade.
+Supported pilot baseline включав hardware revisions A and B, standard and regional packages, configuration schema v2, service tool 4.3+, direct upgrade з v1.0.2 до v1.1 і upgrade з v1.0 до v1.1 лише через intermediate migration package. Special customer timeout лишився pilot exception у Decision Journal з review trigger після thirty field days або second customer request. Battery package deferred. Older service tool rejected for v1.1 upgrade.
 
-Unsupported combinations: revision A with unvalidated calibration backup cannot directly upgrade; regional package cannot use special timeout; battery package cannot be hidden flags; v1.0 cannot skip intermediate migration; service tool older than 4.3 cannot upgrade; factory reset not default recovery because it destroys identity, calibration evidence and trust.
+Unsupported combinations: revision A with unvalidated calibration backup не може upgrade directly; regional package cannot use special timeout; battery package cannot be hidden flags; v1.0 cannot skip intermediate migration; service tool older than 4.3 cannot upgrade; factory reset is not default recovery, бо він destroys identity, calibration evidence і trust.
 
 Records: pilot baseline in ADR; compatibility proposal in RFC; special timeout in Decision Journal; event meanings in Event Catalog; active decisions in Architecture Ledger; escaped assumption «latest lab update proves field update readiness» in Mistake Ledger.
 
-Review and freeze: Architecture Review for broad compatibility decision crossing firmware, manufacturing, service tooling, support, QA, release and field behavior. Architecture Freeze narrowly for v1.1 upgrade-path validation: supported paths, migration rules, service-tool compatibility, event meanings, release-critical state owners and recovery behavior. Bug fixes could continue if preserving decisions; changes required exception, owner review, record updates and evidence.
+Review and freeze: Architecture Review для broad compatibility decision, що crossed firmware, manufacturing, service tooling, support, QA, release і field behavior. Architecture Freeze був narrow для v1.1 upgrade-path validation: supported paths, migration rules, service-tool compatibility, event meanings, release-critical state owners і recovery behavior. Bug fixes могли continue, якщо preserving decisions; changes required exception, owner review, record updates і evidence.
 
 Pilot не став perfect. Він став supportable. Коли unit stopped reporting, support бачив source version, target version, active variant, configuration fingerprint, hardware revision, calibration state, reset reason, migration result і first-report outcome. Вони знали різницю між radio acknowledgement failure і rejected migration, коли rollback safe, коли retry enough, коли forward-fix honest. Future engineers могли знайти baseline decision, unsupported combinations, event meanings, review notes і reopen conditions.
 
@@ -125,7 +125,7 @@ Build product як chain of explicit decisions. Кожне decision назива
 
 Запишіть:
 
-> Because prototype assumption A became product promise P, owner O must preserve evidence E until revisit trigger T.
+> Оскільки prototype assumption A стала product promise P, owner O має preserve evidence E until revisit trigger T.
 
 Trace prototype assumption, manufacturing/field reality, configuration/variant decision, observable event/diagnostic, release/upgrade path, owner, promise, evidence, record, review/freeze trigger і revisit condition.
 
@@ -143,7 +143,7 @@ Trace prototype assumption, manufacturing/field reality, configuration/variant d
 
 - Product - це chain of promises.
 - Baseline корисний лише тоді, коли assumptions findable.
-- Good walkthrough leaves decisions people can reuse.
+- Good walkthrough лишає decisions, які people can reuse.
 
 ## ADR
 
@@ -155,15 +155,15 @@ Accepted for this chapter.
 
 #### Context
 
-Field Sensor Gateway prototype works: reports sensor readings over radio path, stores local configuration, has simple service tool and can be updated in lab. Manufacturing needs serial identity and calibration flow. Field support needs diagnostic evidence beyond developer logs. Regional and hardware variants exist. Firmware v1.1 changes configuration schema. Field units exist on v1.0 and v1.0.2. Support and future engineers need discoverable baseline: supported, deferred, evidence.
+Field Sensor Gateway prototype працює: reports sensor readings over radio path, stores local configuration, має simple service tool і can be updated in lab. Manufacturing потребує serial identity і calibration flow. Field support потребує diagnostic evidence beyond developer logs. Regional and hardware variants exist. Firmware v1.1 changes configuration schema. Field units exist on v1.0 and v1.0.2. Support і future engineers потребують discoverable baseline: supported, deferred, evidence.
 
 #### Decision
 
-Accept limited supported baseline for pilot release.
+Прийняти limited supported baseline for pilot release.
 
-Pilot baseline supports hardware revisions A and B, standard and regional packages, configuration schema v2, service tool 4.3+, direct upgrade from v1.0.2 to v1.1. Upgrade from v1.0 to v1.1 requires intermediate migration package. Battery package, unsupported regional timeout combinations and old service-tool upgrade path are deferred or rejected.
+Pilot baseline підтримує hardware revisions A and B, standard and regional packages, configuration schema v2, service tool 4.3+ і direct upgrade from v1.0.2 to v1.1. Upgrade from v1.0 to v1.1 requires intermediate migration package. Battery package, unsupported regional timeout combinations і old service-tool upgrade path are deferred or rejected.
 
-Assign owners for serial identity, calibration state, configuration schema, regional variant promises, event meanings, release artifact identity, migration behavior, update state and recovery state. Preserve identity, calibration, configuration fingerprint, hardware revision, variant, source version, target version, migration result, reset reason and first-report outcome as support-safe evidence.
+Assign owners for serial identity, calibration state, configuration schema, regional variant promises, event meanings, release artifact identity, migration behavior, update state і recovery state. Preserve identity, calibration, configuration fingerprint, hardware revision, variant, source version, target version, migration result, reset reason і first-report outcome as support-safe evidence.
 
 Record pilot baseline in ADR; keep hardware-revision/service-tool compatibility proposal in RFC; use Decision Journal for pilot exceptions/evidence gaps; Event Catalog for event meanings; Architecture Ledger for active baseline decisions; Mistake Ledger for escaped assumptions. Run Architecture Review for broad Change Radius decisions. Apply Architecture Freeze narrowly to v1.1 upgrade-path validation.
 
@@ -180,7 +180,7 @@ Pilot baseline стає supportable. Ownership clearer, hidden promises reduced,
 - Split every customer into separate firmware.
 - Freeze entire architecture until all unknowns resolved.
 
-Rejected because they hide assumptions, add speculative flexibility, expand support surface or freeze too broadly.
+Відхилено, бо вони ховають assumptions, додають speculative flexibility, expand support surface або freeze too broadly.
 
 ## Коментар редактора
 

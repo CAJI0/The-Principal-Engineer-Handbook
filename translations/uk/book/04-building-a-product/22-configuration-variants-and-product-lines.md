@@ -48,9 +48,9 @@ Unsupported combinations змінили кімнату. Cheaper radio plus licen
 
 Product manager хвилювався, що unsupported combinations звучать як losing options. Mara відповіла: «They were not options. They were promises we could not explain.»
 
-Change Radius (`VOCAB-001`, `METRIC-001`) decided ceremony. Protocol timeout affected firmware validation, customer configuration, one service-tool message і tests: Decision Journal enough. Licensed remote control on cheaper module affected firmware, hardware, radio dependency, service-tool behavior, manufacturing test, update recovery, release packaging, support training і field diagnosis: RFC (`ARTIFACT-002`) і Architecture Review (`RITUAL-001`) before hardening.
+Change Radius (`VOCAB-001`, `METRIC-001`) визначав ceremony. Protocol timeout зачіпав firmware validation, customer configuration, one service-tool message і tests: Decision Journal enough. Licensed remote control on cheaper module зачіпав firmware, hardware, radio dependency, service-tool behavior, manufacturing test, update recovery, release packaging, support training і field diagnosis: RFC (`ARTIFACT-002`) і Architecture Review (`RITUAL-001`) before hardening.
 
-Shared core і variation points went into Architecture Ledger (`ARTIFACT-006`). ADR (`ARTIFACT-001`) defined product-line boundary before third package. Smaller defaults і temporary exceptions went into Decision Journal (`ARTIFACT-003`). Architecture Freeze (`RITUAL-002`) froze package identity, supported radio capability, diagnostic meaning for unsupported operations і recovery compatibility before release validation.
+Shared core і variation points пішли в Architecture Ledger (`ARTIFACT-006`). ADR (`ARTIFACT-001`) defined product-line boundary before third package. Smaller defaults і temporary exceptions пішли в Decision Journal (`ARTIFACT-003`). Architecture Freeze (`RITUAL-002`) froze package identity, supported radio capability, diagnostic meaning for unsupported operations і recovery compatibility before release validation.
 
 Команда removed two flags: debug flag from production builds і broad manufacturing-mode flag, split into station-owned commands with product-level API promises. Hidden service-tool option або стала supported recovery action зі stable meaning, або disappeared from customer support flows.
 
@@ -60,13 +60,13 @@ Third package shipped slower than flag-only version. Але shipped with fewer l
 
 Configuration і variants стають dangerous, коли команда uses them to avoid naming product decisions.
 
-Thesis: configuration is owned product state. Supported variant is product promise.
+Теза: configuration - це owned product state. Supported variant - це product promise.
 
 Configuration value affects behavior; тому йому потрібні owner, scope, default, validation, migration path, source of truth і support meaning. Variant - це promise: product can behave, fail, recover, be manufactured, updated and supported in a way someone can trust. Product line - не spreadsheet; це architecture, яка lets related products share a core while differing intentionally.
 
-Flags, compile-time defines, configuration files, build variants і spreadsheets - mechanisms. Problem begins when mechanisms are only place where product promises live.
+Flags, compile-time defines, configuration files, build variants і spreadsheets - це mechanisms. Проблема починається тоді, коли mechanisms are the only place where product promises live.
 
-Every State Has One Owner (`LAW-001`) applies to configuration. Firmware may own validation, manufacturing may write first value, service tool may update, release may migrate, support may read. Вони можуть participate without all becoming owners of same meaning. Dangerous case: firmware default, manufacturing station value, service tool cache, release assumption і support spreadsheet all carry partial truth.
+Every State Has One Owner (`LAW-001`) applies to configuration. Firmware may own validation, manufacturing may write first value, service tool may update, release may migrate, support may read. Вони можуть participate without all becoming owners of same meaning. Небезпечний випадок: firmware default, manufacturing station value, service tool cache, release assumption і support spreadsheet all carry partial truth.
 
 Every API Is a Promise (`LAW-002`) applies to variants. Regional variant promises radio behavior, label content, manufacturing checks, service-tool warnings, release packaging, diagnostic wording і support instructions. Flag у firmware alone does not fulfill that promise.
 
@@ -80,29 +80,29 @@ Global Configuration (`ANTIPATTERN-003`) - common trap: one setting controls log
 
 Simplicity Is a Feature (`LAW-004`) matters: product line with fewer combinations but direct explanation може бути healthier, ніж flexibility everywhere. Unused Flexibility Is Waste (`LAW-006`) keeps generic variation framework from expanding test space before evidence justifies it. Evidence Before Confidence (`LAW-005`) decides what becomes supported.
 
-Records не дають product line стати oral history. Use ADR for boundaries, shared core, supported/unsupported combinations або long-lived variation point. Use RFC when broad variation point needs review. Use Decision Journal for smaller configuration choices, temporary exceptions, evidence gaps і review triggers. Use Architecture Ledger for active decisions, owners і review dates. Discoverability (`METRIC-003`) is ability to find why a package is supported or unsupported.
+Records не дають product line стати oral history. Використовуйте ADR for boundaries, shared core, supported/unsupported combinations або long-lived variation point. Використовуйте RFC, when broad variation point needs review. Використовуйте Decision Journal for smaller configuration choices, temporary exceptions, evidence gaps і review triggers. Використовуйте Architecture Ledger for active decisions, owners і review dates. Discoverability (`METRIC-003`) - це ability to find why a package is supported or unsupported.
 
-Chapter 23 will take observability; Chapter 24 release discipline; Chapter 25 reference project. Тут job narrower: name difference, classify it, own it, bound it, record it, test the promise.
+Chapter 23 візьме observability; Chapter 24 - release discipline; Chapter 25 - reference project. Тут job narrower: name difference, classify it, own it, bound it, record it і test the promise.
 
 ## Інженерний принцип
 
-Treat configuration as owned state and variants as product promises. Keep product line small enough to understand, explicit enough to test, and discoverable enough to support.
+Ставтеся до configuration як до owned state, а до variants - як до product promises. Тримайте product line достатньо малою, щоб її можна було understand, достатньо explicit, щоб її можна було test, і достатньо discoverable, щоб її можна було support.
 
 Запитуйте:
 
-- Це difference configuration, supported variant, implementation detail, temporary exception чи unsupported?
-- Who owns this value or variation point?
-- Who may change it?
-- What is default?
-- How is it validated?
-- How does it migrate?
-- Which combinations are supported?
-- Which are intentionally unsupported?
+- Це difference: configuration, supported variant, implementation detail, temporary exception чи unsupported?
+- Хто owns this value або variation point?
+- Хто may change it?
+- Який default?
+- Як it is validated?
+- Як it migrates?
+- Які combinations supported?
+- Які intentionally unsupported?
 - Яку promise цей variant makes to customers, manufacturing, service, release або support?
-- What is Change Radius?
-- What must be recorded, reviewed, tested or frozen?
+- Який Change Radius?
+- Що must be recorded, reviewed, tested або frozen?
 
-Мета не prevent product differences. Мета - make every supported difference explicit enough that product line can keep promises.
+Мета не prevent product differences. Мета - make every supported difference explicit enough, щоб product line могла keep promises.
 
 ## Архітектурна вправа
 
@@ -112,14 +112,14 @@ Treat configuration as owned state and variants as product promises. Keep produc
 
 Document:
 
-1. classification: configuration, variant, implementation detail, temporary exception or unsupported combination;
+1. classification: configuration, variant, implementation detail, temporary exception або unsupported combination;
 2. owner;
 3. who may change it;
 4. default;
 5. validation rule;
 6. migration rule;
 7. storage/source of truth;
-8. affected state, API, dependency, test, manufacturing, service, release and support surfaces;
+8. affected state, API, dependency, test, manufacturing, service, release і support surfaces;
 9. supported combinations;
 10. unsupported combinations;
 11. evidence available;
@@ -127,13 +127,13 @@ Document:
 13. review or freeze trigger;
 14. expiration/removal trigger if temporary.
 
-End with one classification, one owner, one supported/unsupported boundary, one validation or decision action. If answer is `just add a flag`, keep going. Flag is mechanism, not decision.
+Завершіть one classification, one owner, one supported/unsupported boundary, one validation або decision action. Якщо answer is `just add a flag`, keep going. Flag is mechanism, not decision.
 
 ## Нотатник Principal Engineer
 
 - Flag without owner is hidden state.
 - Every supported variant is a promise.
-- Cheapest product line is the one you can still understand.
+- Cheapest product line - та, яку you can still understand.
 
 ## ADR
 
@@ -145,7 +145,7 @@ Accepted for the chapter.
 
 #### Context
 
-First product package shipped with small configuration differences. Second added cheaper hardware module and service-tool differences. Both reached customers through configuration files, build defines, package labels, service-tool options and temporary flags. Third package adds pressure range, licensed remote-control capability, customer-specific protocol timing і recovery behavior depending on module capability. Current variation model is not explicit enough.
+First product package shipped with small configuration differences. Second added cheaper hardware module і service-tool differences. Обидва reached customers through configuration files, build defines, package labels, service-tool options і temporary flags. Third package adds pressure range, licensed remote-control capability, customer-specific protocol timing і recovery behavior depending on module capability. Current variation model is not explicit enough.
 
 #### Decision
 
@@ -153,11 +153,11 @@ Define supported variant boundaries before third package. Separate configuration
 
 Define shared core: pump-control behavior, calibration record shape, identity lifecycle, product-level diagnostic categories, configuration validation rules і update state model. Define variation points: radio capability, region behavior, licensed remote control, customer protocol timing і recovery access. Each has owner, supported/unsupported combinations, validation evidence і discoverable record.
 
-Remove/expire temporary flags that are not supported product behavior. Record consequential product-line decisions in ADR; use RFCs for broad variation points, Decision Journal for smaller choices, Architecture Ledger for active decisions. Require Architecture Review before new variation point with broad Change Radius. Freeze selected variant promises before release validation when needed.
+Remove/expire temporary flags, які are not supported product behavior. Record consequential product-line decisions in ADR; use RFCs for broad variation points, Decision Journal for smaller choices, Architecture Ledger for active decisions. Require Architecture Review before new variation point with broad Change Radius. Freeze selected variant promises before release validation when needed.
 
 #### Consequences
 
-Product line becomes easier to reason about. Configuration values have owners; supported variants have explicit promises; unsupported combinations are named. Accidental test space shrinks. Supportability improves. Cost: slower feature addition for unsupported combinations, review for customer-specific behavior, maintenance of records, removal of flexibility without evidence.
+Product line стає easier to reason about. Configuration values have owners; supported variants have explicit promises; unsupported combinations are named. Accidental test space shrinks. Supportability improves. Cost: slower feature addition for unsupported combinations, review for customer-specific behavior, maintenance of records, removal of flexibility without evidence.
 
 #### Alternatives Considered
 
@@ -168,10 +168,10 @@ Product line becomes easier to reason about. Configuration values have owners; s
 - Support every combination discovered in field.
 - Postpone variant modeling until after next customer ships.
 
-Rejected because they hide promises, duplicate shared core, expand accidental combinations or freeze/ship unowned variation.
+Відхилено, бо вони hide promises, duplicate shared core, expand accidental combinations або freeze/ship unowned variation.
 
 ## Коментар редактора
 
-Chapter 22 asks what happens when product is no longer one product in one shape. Він не вводить primary PEAK concept; configuration, variant, product line, supported combination і unsupported combination are chapter-local working terms. It applies state ownership, API promises, simplicity, evidence, unused flexibility, dependency decisions, Change Radius, Discoverability, ADR, RFC, Decision Journal, Architecture Ledger, Architecture Review, Architecture Freeze, Hidden State, Silent Coupling, Platform Leakage, Global Configuration, Temporary Solution and HAL Everywhere.
+Chapter 22 asks what happens, коли product is no longer one product in one shape. Він не вводить primary PEAK concept; configuration, variant, product line, supported combination і unsupported combination are chapter-local working terms. Він applies state ownership, API promises, simplicity, evidence, unused flexibility, dependency decisions, Change Radius, Discoverability, ADR, RFC, Decision Journal, Architecture Ledger, Architecture Review, Architecture Freeze, Hidden State, Silent Coupling, Platform Leakage, Global Configuration, Temporary Solution і HAL Everywhere.
 
-This is not a product-management chapter, feature-flag guide, SKU tutorial or build-system guide. It is an architecture chapter about product differences becoming promises.
+Це не product-management chapter, не feature-flag guide, не SKU tutorial і не build-system guide. Це architecture chapter about product differences becoming promises.
