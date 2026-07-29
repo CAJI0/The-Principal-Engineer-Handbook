@@ -2,7 +2,7 @@
 
 ## Вступна цитата
 
-> Продукт — це не одне рішення, зроблене добре. Це ланцюг рішень, які все ще можна знайти, коли поле питає чому.
+> Продукт - це не одне рішення, зроблене добре. Це ланцюг рішень, які все ще можна знайти, коли field питає чому.
 
 ## Історія
 
@@ -10,46 +10,46 @@
 
 Prototype був достатньо малим для одного bench і достатньо складним, щоб стати product.
 
-Команда називала його Field Sensor Gateway. Він sampled one field sensor, stored local configuration, reported readings over low-power radio link and exposed simple service tool for setup and diagnosis. First customer wanted pilot. Prototype proved sensor reading useful, reporting path worked in lab, technician could change basic configuration without rebuilding firmware.
+Команда називала його Field Sensor Gateway. Він sampled one field sensor, stored local configuration, reported readings over low-power radio link і exposed simple service tool for setup and diagnosis. First customer хотів pilot. Prototype довів, що sensor reading корисний, reporting path працює в lab, а technician може змінити basic configuration без rebuilding firmware.
 
-It was focused prototype: hard-coded reporting interval, manual calibration for five units, service tool showing developer logs, firmware update through lab cable/script, latest build updating to next build on bench, one hardware revision, one sensor offset, one radio module, one configuration shape, one customer package.
+Це був focused prototype: hard-coded reporting interval, manual calibration для пʼяти units, service tool, що показував developer logs, firmware update through lab cable/script, latest build updating to next build on bench, одна hardware revision, один sensor offset, один radio module, одна configuration shape, один customer package.
 
-Prototype success created pressure. Sales wanted ten pilot units. Manufacturing wanted serial identity and calibration flow. Support wanted diagnose radio failures without firmware engineer reading raw logs. Product owner wanted regional package with longer reporting interval and another package with different radio option. Customer asked special timeout because gateway disappeared for minutes. Release wanted v1.1 with new configuration schema. Field units on v1.0 and v1.0.2 already existed.
+Prototype success створив pressure. Sales хотіли десять pilot units. Manufacturing хотіло serial identity і calibration flow. Support хотів діагностувати radio failures без firmware engineer, який читає raw logs. Product owner хотів regional package із довшим reporting interval і ще один package з іншою radio option. Customer попросив special timeout, бо gateway зникав на minutes. Release хотів v1.1 з new configuration schema. Field units на v1.0 і v1.0.2 уже існували.
 
-Each pressure looked local. Firmware could replace hard-coded interval with setting. Manufacturing could add station file. Support could get richer log. Service-tool owner could add regional toggle. Release could add migration. Radio owner could tune retry. None wrong alone; together they would create product nobody could explain.
+Кожний pressure виглядав local. Firmware могла замінити hard-coded interval на setting. Manufacturing могло додати station file. Support міг отримати richer log. Service-tool owner міг додати regional toggle. Release міг додати migration. Radio owner міг tune retry. Жодне рішення не було хибним окремо; разом вони створили б product, який ніхто не міг пояснити.
 
-First argument: reporting interval. One engineer wanted global `reportingInterval` in non-volatile configuration. Manufacturing writes it, service tool edits it, firmware reads it, regional package sets default, special timeout another value. Simple until combinations appeared: standard every ten minutes; regional every thirty; battery package longer interval plus different retry; special customer timeout not reporting interval at all but gateway-absence tolerance. One broad value would look flexible while nobody owned promise.
+Перший argument: reporting interval. Один engineer хотів global `reportingInterval` у non-volatile configuration. Manufacturing writes it, service tool edits it, firmware reads it, regional package sets default, special timeout another value. Просто, доки не зʼявилися combinations: standard every ten minutes; regional every thirty; battery package longer interval plus different retry; special customer timeout був не reporting interval, а gateway-absence tolerance. One broad value виглядав би flexible, але ніхто не owned promise.
 
-Mara asked:
+Mara запитала:
 
-> Which difference are we promising to support, and which difference are we only tolerating for the pilot?
+> Яку difference ми обіцяємо support, а яку лише tolerating for the pilot?
 
-Regional reporting interval became supported variant promise. Battery package deferred because it changed measurement cadence, retry timing and field-support expectations. Special customer timeout became pilot exception with owner and review trigger. Global setting disappeared. Configuration became owned state, not hiding place for product difference.
+Regional reporting interval став supported variant promise. Battery package deferred, бо він змінював measurement cadence, retry timing і field-support expectations. Special customer timeout став pilot exception з owner і review trigger. Global setting зник. Configuration стала owned state, а не hiding place for product difference.
 
-Second argument: manufacturing. Station could write serial identity and calibration. Authority was problem. Manufacturing measured calibration; firmware used it; service tool could request recalibration; v1.1 migration needed preserve it; older hardware revision stored backup differently; recovery could restore firmware but not know calibration still matched hardware revision without owner. Team named state owners: manufacturing owns first measurement/evidence, firmware owns runtime calibration state and validation rules, service tool requests workflow but cannot write raw product truth, release owns migration evidence, support owns field procedure. Device reports serial identity, hardware revision, calibration version, active configuration fingerprint and firmware version in support-safe diagnostic snapshot.
+Другий argument: manufacturing. Station могла записати serial identity і calibration. Проблемою була authority. Manufacturing measured calibration; firmware used it; service tool could request recalibration; v1.1 migration needed preserve it; older hardware revision stored backup differently; recovery could restore firmware but not know calibration still matched hardware revision without owner. Команда назвала state owners: manufacturing owns first measurement/evidence, firmware owns runtime calibration state and validation rules, service tool requests workflow but cannot write raw product truth, release owns migration evidence, support owns field procedure. Device reports serial identity, hardware revision, calibration version, active configuration fingerprint і firmware version in support-safe diagnostic snapshot.
 
-Third argument: second board revision. Sensor offset changed. Happy path looked fine. Old calibration flow, service-tool label, event meaning and v1.0 update path now depended on hardware revision. Team almost added flag. Mara asked trace Change Radius. It touched firmware validation, station programming, service-tool display, field diagnostics, release notes, migration evidence, support scripts and Event Catalog. Not local flag; product promise. Team opened RFC for hardware-revision and configuration compatibility across firmware, manufacturing, service tooling, QA, support and release.
+Третій argument: second board revision. Sensor offset змінився. Happy path виглядав нормально. Old calibration flow, service-tool label, event meaning і v1.0 update path тепер залежали від hardware revision. Команда майже додала flag. Mara попросила trace Change Radius. Він зачіпав firmware validation, station programming, service-tool display, field diagnostics, release notes, migration evidence, support scripts і Event Catalog. Це був не local flag, а product promise. Команда відкрила RFC для hardware-revision and configuration compatibility across firmware, manufacturing, service tooling, QA, support і release.
 
-Fourth pressure: field. Three pilot units stopped reporting after v1.1 update. Two completed migration and lost radio contact during first report. One rejected configuration migration because regional package used old field name. Service tool showed same message: update failed. True but useless.
+Четвертий pressure: field. Три pilot units stopped reporting after v1.1 update. Два завершили migration і втратили radio contact during first report. Один rejected configuration migration, бо regional package used old field name. Service tool показав те саме message: update failed. Правда, але марна.
 
-Support needed identity, active firmware, configuration fingerprint, variant, calibration validity and rejected boundary. Team wrote first Event Catalog entries:
+Support потребував identity, active firmware, configuration fingerprint, variant, calibration validity і rejected boundary. Команда написала перші Event Catalog entries:
 
 - `upgrade_started`: accepted package and recorded source version, target version, hardware revision and variant.
 - `configuration_migration_rejected`: firmware rejected migration and preserved source configuration.
 - `first_report_not_acknowledged`: radio path missed expected acknowledgement within supported retry window.
 - `recovery_ready`: device entered supportable recovery state with identity, calibration state, active version and configuration fingerprint.
 
-Each event had owner, producer, consumer, ordering assumption and failure meaning. Event Explosion was risk on one side; Hidden State on the other. Team chose fewer events with sharper meaning.
+Кожен event мав owner, producer, consumer, ordering assumption і failure meaning. Event Explosion був risk з одного боку; Hidden State - з іншого. Команда обрала менше events із гострішим meaning.
 
-Fifth pressure: release. v1.1 changed configuration schema. Latest lab build upgraded cleanly, but field units existed on v1.0 and v1.0.2. Hardware revision needed different calibration migration. Regional variant had different reporting interval and radio option. Special timeout was pilot exception, not supported variant. Rollback could return executable but lose migrated configuration meaning unless source snapshot and calibration state preserved.
+Пʼятий pressure: release. v1.1 змінив configuration schema. Latest lab build upgraded cleanly, але field units існували на v1.0 і v1.0.2. Hardware revision потребувала different calibration migration. Regional variant мав different reporting interval і radio option. Special timeout був pilot exception, а не supported variant. Rollback міг повернути executable, але втратити migrated configuration meaning, якщо source snapshot і calibration state не preserved.
 
-Release owner asked: «Can we ship v1.1?» Mara asked:
+Release owner запитав: «Can we ship v1.1?» Mara запитала:
 
-> Which product baseline are we promising, and what evidence keeps that promise true?
+> Який product baseline ми обіцяємо, і яка evidence тримає цю promise true?
 
-Team built decision chain instead of checklist. Prototype assumptions became owned product decisions. Hard-coded interval became regional variant default, not global setting. Manual calibration became manufacturing measurement with firmware ownership of runtime validity. Developer logs became support-safe diagnostics tied to event meanings. Lab-only update script became release path with supported source versions and recovery behavior.
+Команда побудувала decision chain замість checklist. Prototype assumptions стали owned product decisions. Hard-coded interval став regional variant default, а не global setting. Manual calibration стала manufacturing measurement із firmware ownership of runtime validity. Developer logs стали support-safe diagnostics, tied to event meanings. Lab-only update script став release path із supported source versions і recovery behavior.
 
-Supported pilot baseline: hardware revisions A and B, standard and regional packages, configuration schema v2, service tool 4.3+, direct upgrade v1.0.2 to v1.1, upgrade v1.0 to v1.1 only through intermediate migration package. Special customer timeout remained pilot exception in Decision Journal with review trigger after thirty field days or second customer request. Battery package deferred. Older service tool rejected for v1.1 upgrade.
+Supported pilot baseline: hardware revisions A and B, standard and regional packages, configuration schema v2, service tool 4.3+, direct upgrade v1.0.2 to v1.1, upgrade v1.0 to v1.1 only through intermediate migration package. Special customer timeout лишився pilot exception у Decision Journal з review trigger after thirty field days або second customer request. Battery package deferred. Older service tool rejected for v1.1 upgrade.
 
 Unsupported combinations: revision A with unvalidated calibration backup cannot directly upgrade; regional package cannot use special timeout; battery package cannot be hidden flags; v1.0 cannot skip intermediate migration; service tool older than 4.3 cannot upgrade; factory reset not default recovery because it destroys identity, calibration evidence and trust.
 
@@ -57,79 +57,79 @@ Records: pilot baseline in ADR; compatibility proposal in RFC; special timeout i
 
 Review and freeze: Architecture Review for broad compatibility decision crossing firmware, manufacturing, service tooling, support, QA, release and field behavior. Architecture Freeze narrowly for v1.1 upgrade-path validation: supported paths, migration rules, service-tool compatibility, event meanings, release-critical state owners and recovery behavior. Bug fixes could continue if preserving decisions; changes required exception, owner review, record updates and evidence.
 
-Pilot did not become perfect. It became supportable. When unit stopped reporting, support saw source version, target version, active variant, configuration fingerprint, hardware revision, calibration state, reset reason, migration result and first-report outcome. They knew difference between radio acknowledgement failure and rejected migration, when rollback safe, when retry enough, when forward-fix honest. Future engineers could find baseline decision, unsupported combinations, event meanings, review notes and reopen conditions.
+Pilot не став perfect. Він став supportable. Коли unit stopped reporting, support бачив source version, target version, active variant, configuration fingerprint, hardware revision, calibration state, reset reason, migration result і first-report outcome. Вони знали різницю між radio acknowledgement failure і rejected migration, коли rollback safe, коли retry enough, коли forward-fix honest. Future engineers могли знайти baseline decision, unsupported combinations, event meanings, review notes і reopen conditions.
 
-That is walkthrough: not universal design or reference implementation, but chain of decisions that held together when product left bench.
+Ось що таке walkthrough: не universal design і не reference implementation, а chain of decisions, який тримався разом, коли product left bench.
 
 ## Обговорення
 
-Reference project is useful when it connects decisions. If Field Sensor Gateway becomes product specification, it argues with real systems. If code walkthrough, it teaches mechanics. If recap, it repeats. Useful question:
+Reference project корисний, коли він connects decisions. Якщо Field Sensor Gateway стає product specification, він argues with real systems. Якщо code walkthrough - teaches mechanics. Якщо recap - repeats. Корисне питання:
 
-> If we had to take one embedded product from prototype to supported release, which architecture decisions would we make, record, test, review, freeze, and revisit?
+> Якби нам треба було провести один embedded product від prototype до supported release, які architecture decisions ми б made, recorded, tested, reviewed, frozen and revisited?
 
-Answer is a chain.
+Відповідь - chain.
 
-Prototype proved useful behavior under prototype conditions. It did not prove manufacturing repeatability, field diagnosis, regional variants, release compatibility, calibration migration, support horizon or interrupted reporting recovery. That distinction is Chapter 20: successful prototype is evidence, not baseline.
+Prototype довів useful behavior under prototype conditions. Він не довів manufacturing repeatability, field diagnosis, regional variants, release compatibility, calibration migration, support horizon або interrupted reporting recovery. Це distinction із Chapter 20: successful prototype - evidence, not baseline.
 
-First product move exposes assumptions and decides promises. Hard-coded interval may become regional variant promise, battery trade-off, support expectation, radio dependency and release compatibility concern. Manual calibration becomes identity, manufacturing evidence, firmware validation, support diagnosis and migration behavior. Developer logs help bring-up but support needs stable product meaning.
+Перший product move exposes assumptions і decides promises. Hard-coded interval може стати regional variant promise, battery trade-off, support expectation, radio dependency і release compatibility concern. Manual calibration стає identity, manufacturing evidence, firmware validation, support diagnosis і migration behavior. Developer logs допомагають bring-up, але support потребує stable product meaning.
 
-State ownership appears early. Identity, calibration, configuration, variant, event meaning, update state and recovery state decide what product may do and support can believe. Every State Has One Owner (`LAW-001`) separates explainable device from competing truths across firmware, station scripts, service tools, release packages and support notes.
+State ownership зʼявляється рано. Identity, calibration, configuration, variant, event meaning, update state і recovery state визначають, що product може робити і чому support може вірити. Every State Has One Owner (`LAW-001`) відділяє explainable device від competing truths across firmware, station scripts, service tools, release packages і support notes.
 
-API promises appear next. Service-tool command, diagnostic event, configuration file, regional package, update package, station record or support note may feel informal until another surface depends on it. Every API Is a Promise (`LAW-002`) and API Stability (`METRIC-004`) mean promise must survive change without surprising dependents.
+API promises зʼявляються далі. Service-tool command, diagnostic event, configuration file, regional package, update package, station record або support note можуть здаватися informal, доки інша surface не почне від них залежати. Every API Is a Promise (`LAW-002`) і API Stability (`METRIC-004`) означають, що promise має survive change without surprising dependents.
 
-Dependencies become visible off bench. Radio link brings retry behavior, timing assumptions, acknowledgements, gateway compatibility, field failure modes and support cost. Service tool decides what technicians see/install/recover. Manufacturing fixture creates identity and calibration evidence. Every Dependency Is a Decision (`LAW-007`).
+Dependencies стають видимими off bench. Radio link приносить retry behavior, timing assumptions, acknowledgements, gateway compatibility, field failure modes і support cost. Service tool вирішує, що technicians see/install/recover. Manufacturing fixture створює identity і calibration evidence. Every Dependency Is a Decision (`LAW-007`).
 
-Time becomes product concern: reporting intervals, gateway absence tolerance, update windows, retry timing, event ordering, support horizons and revisit triggers. Time Is a Dependency (`LAW-003`) because bench behavior can fail when device sleeps, misses acknowledgement, updates during service window or waits for support.
+Time стає product concern: reporting intervals, gateway absence tolerance, update windows, retry timing, event ordering, support horizons і revisit triggers. Time Is a Dependency (`LAW-003`), бо bench behavior може fail, коли device sleeps, misses acknowledgement, updates during service window або waits for support.
 
-Manufacturing and field reality make baseline honest. Product needs serial identity, calibration ownership, fixture/service boundaries. Configuration and variants force deliberate difference. Regional interval is supported variant; special timeout is pilot exception; battery package deferred. Simplicity Is a Feature (`LAW-004`) keeps baseline understandable. Unused Flexibility Is Waste (`LAW-006`) avoids perfect product-line architecture for imagined variants.
+Manufacturing and field reality роблять baseline чесним. Product потребує serial identity, calibration ownership, fixture/service boundaries. Configuration and variants змушують difference бути deliberate. Regional interval - supported variant; special timeout - pilot exception; battery package deferred. Simplicity Is a Feature (`LAW-004`) тримає baseline understandable. Unused Flexibility Is Waste (`LAW-006`) не дає будувати perfect product-line architecture для imagined variants.
 
-Global Configuration is tempting shortcut: one broad flag blurs regional behavior, hardware revision, migration, diagnostics and support. Recovery: name supported/unsupported combinations, keep defaults owned, give values scope/lifecycle.
+Global Configuration - спокусливий shortcut: one broad flag розмиває regional behavior, hardware revision, migration, diagnostics і support. Recovery: name supported/unsupported combinations, keep defaults owned, give values scope/lifecycle.
 
-Observability turns field behavior into usable evidence. Useful Field Sensor Gateway evidence: reset reason, active/source/target firmware, hardware revision, configuration fingerprint, variant, calibration state, migration result, radio boundary outcome, first-report result, service-tool compatibility and recovery state. Event Catalog keeps meanings stable. Hidden State, Silent Coupling, Platform Leakage and Event Explosion are risks. Answer is not more events, but owned events with product meaning.
+Observability перетворює field behavior на usable evidence. Корисна Field Sensor Gateway evidence: reset reason, active/source/target firmware, hardware revision, configuration fingerprint, variant, calibration state, migration result, radio boundary outcome, first-report result, service-tool compatibility і recovery state. Event Catalog тримає meanings stable. Hidden State, Silent Coupling, Platform Leakage і Event Explosion - risks. Відповідь не more events, а owned events with product meaning.
 
-Release and upgrade paths turn chain into promise. Supported baseline names direct path v1.0.2 to v1.1 with hardware revisions, regional packages, schema v2, service tool 4.3+, and preserved identity/calibration/configuration/event/recovery state. Deferred v1.0 path requires intermediate package. Rejected paths include old service tools, hidden variants and factory reset as default. One Lost Packet (`FAILURE-002`), The Release We Should Have Delayed (`FAILURE-005`) and The Successful Prototype (`FAILURE-003`) all matter because missing facts and release pressure expose hidden assumptions.
+Release and upgrade paths перетворюють chain на promise. Supported baseline називає direct path v1.0.2 to v1.1 with hardware revisions, regional packages, schema v2, service tool 4.3+ і preserved identity/calibration/configuration/event/recovery state. Deferred v1.0 path потребує intermediate package. Rejected paths включають old service tools, hidden variants і factory reset as default. One Lost Packet (`FAILURE-002`), The Release We Should Have Delayed (`FAILURE-005`) і The Successful Prototype (`FAILURE-003`) усі важливі, бо missing facts і release pressure expose hidden assumptions.
 
-Records keep chain discoverable: ADR for baseline, RFC for compatibility proposal, Decision Journal for bounded exception, Mistake Ledger for escaped assumption, Event Catalog for event meanings, Architecture Ledger for active decisions. Discoverability (`METRIC-003`) is how future engineers avoid treating same assumptions as new.
+Records keep chain discoverable: ADR для baseline, RFC для compatibility proposal, Decision Journal для bounded exception, Mistake Ledger для escaped assumption, Event Catalog для event meanings, Architecture Ledger для active decisions. Discoverability (`METRIC-003`) - це те, як future engineers не treats same assumptions as new.
 
-Review and freeze are scoped. Architecture Review (`RITUAL-001`) when Change Radius crosses owners. Architecture Freeze (`RITUAL-002`) when selected decisions need stability for validation. Freeze named release-critical decisions, not whole product, and keeps exception path.
+Review and freeze scoped. Architecture Review (`RITUAL-001`) коли Change Radius crosses owners. Architecture Freeze (`RITUAL-002`) коли selected decisions need stability for validation. Freeze names release-critical decisions, а не whole product, і keeps exception path.
 
-Temporary Solution (`ANTIPATTERN-006`) appears throughout: prototype shortcut, pilot timeout, support script, calibration bypass, manual recovery note. Temporary work is not shameful; it needs path out.
+Temporary Solution (`ANTIPATTERN-006`) зʼявляється всюди: prototype shortcut, pilot timeout, support script, calibration bypass, manual recovery note. Temporary work не shameful; йому потрібен path out.
 
-Product becomes supportable when decisions connect: promises, owners, evidence, records and revisit triggers form chain. Part IV ends here because product is no longer only design problem. It is shared memory, bridge into technical leadership.
+Product стає supportable, коли decisions connect: promises, owners, evidence, records і revisit triggers утворюють chain. Part IV завершується тут, бо product уже не лише design problem. Це shared memory, bridge into technical leadership.
 
 ## Інженерний принцип
 
-Build product as chain of explicit decisions. Each decision names promise, owner, evidence and revisit condition.
+Build product як chain of explicit decisions. Кожне decision називає promise, owner, evidence і revisit condition.
 
-Ask:
+Запитуйте:
 
-1. What did prototype actually prove?
-2. Which product reality changed architecture?
-3. Which state needs owner?
-4. Which interface became promise?
-5. Which dependency became support obligation?
-6. Which configuration difference is supported variant?
-7. Which unsupported combination must be stated?
-8. Which field failure must explain itself?
-9. Which upgrade path is promised?
-10. Which evidence supports release?
-11. Which decision needs review, freeze or ledger entry?
+1. Що prototype actually proved?
+2. Яка product reality changed architecture?
+3. Який state needs owner?
+4. Який interface became promise?
+5. Яка dependency became support obligation?
+6. Яка configuration difference is supported variant?
+7. Яку unsupported combination треба state?
+8. Яка field failure must explain itself?
+9. Який upgrade path promised?
+10. Яка evidence supports release?
+11. Яке decision needs review, freeze або ledger entry?
 
-Мета не apply every Part IV practice equally. Мета — connect decisions that must stay true after product leaves prototype bench.
+Мета не apply every Part IV practice equally. Мета - connect decisions that must stay true after product leaves prototype bench.
 
 ## Архітектурна вправа
 
 ### Walk One Product Decision Chain
 
-Оберіть small product or subsystem, ideally starting from real prototype assumption.
+Оберіть small product або subsystem, ideally starting from real prototype assumption.
 
-Write:
+Запишіть:
 
 > Because prototype assumption A became product promise P, owner O must preserve evidence E until revisit trigger T.
 
-Trace prototype assumption, manufacturing/field reality, configuration/variant decision, observable event/diagnostic, release/upgrade path, owner, promise, evidence, record, review/freeze trigger and revisit condition.
+Trace prototype assumption, manufacturing/field reality, configuration/variant decision, observable event/diagnostic, release/upgrade path, owner, promise, evidence, record, review/freeze trigger і revisit condition.
 
-End with:
+Завершіть:
 
 1. one product promise;
 2. one owner;
@@ -137,12 +137,12 @@ End with:
 4. one record to update;
 5. one revisit trigger.
 
-If exercise produces long checklist, narrow it. If only local fix, widen until next product surface appears.
+Якщо exercise produces long checklist, narrow it. Якщо only local fix, widen until next product surface appears.
 
 ## Нотатник Principal Engineer
 
-- Product is a chain of promises.
-- Baseline is useful only when assumptions are findable.
+- Product - це chain of promises.
+- Baseline корисний лише тоді, коли assumptions findable.
 - Good walkthrough leaves decisions people can reuse.
 
 ## ADR
@@ -169,7 +169,7 @@ Record pilot baseline in ADR; keep hardware-revision/service-tool compatibility 
 
 #### Consequences
 
-Pilot baseline becomes supportable. Ownership clearer, hidden promises reduced, unsupported paths stated before support discovers them. Field diagnosis improves, future engineers can find product memory. Cost: more validation, visible deferrals, cross-team coordination, delayed customer requests, records to maintain.
+Pilot baseline стає supportable. Ownership clearer, hidden promises reduced, unsupported paths stated before support discovers them. Field diagnosis improves, future engineers can find product memory. Cost: more validation, visible deferrals, cross-team coordination, delayed customer requests, records to maintain.
 
 #### Alternatives Considered
 
@@ -184,8 +184,8 @@ Rejected because they hide assumptions, add speculative flexibility, expand supp
 
 ## Коментар редактора
 
-Chapter 25 closes Part IV by making product-building chapters meet inside one reference product. It does not repeat previous chapters; it shows how Field Sensor Gateway decision chain touches prototype evidence, manufacturing/field reality, variants, observability and release paths.
+Chapter 25 closes Part IV тим, що змушує product-building chapters meet inside one reference product. Він не повторює previous chapters; він показує, як Field Sensor Gateway decision chain touches prototype evidence, manufacturing/field reality, variants, observability і release paths.
 
-Reference project, Field Sensor Gateway, product baseline, product decision chain, pilot release and walkthrough remain chapter-local language. No new PEAK concept. Relationship set includes successful prototype pressure, release risk, communication/recovery failure, state ownership, API promises, time, simplicity, evidence, unused flexibility, dependency decisions, Change Radius, Discoverability, API Stability, ADR, RFC, Decision Journal, Mistake Ledger, Event Catalog, Architecture Ledger, Architecture Review, Architecture Freeze, Hidden State, Silent Coupling, Platform Leakage, Event Explosion, Temporary Solution and Global Configuration.
+Reference project, Field Sensor Gateway, product baseline, product decision chain, pilot release і walkthrough лишаються chapter-local language. Нового PEAK concept немає. Relationship set включає successful prototype pressure, release risk, communication/recovery failure, state ownership, API promises, time, simplicity, evidence, unused flexibility, dependency decisions, Change Radius, Discoverability, API Stability, ADR, RFC, Decision Journal, Mistake Ledger, Event Catalog, Architecture Ledger, Architecture Review, Architecture Freeze, Hidden State, Silent Coupling, Platform Leakage, Event Explosion, Temporary Solution і Global Configuration.
 
-This is not MCU guide, RTOS design, boot loader pattern, radio protocol comparison, service-tool spec or manufacturing-process manual. Embedded details keep walkthrough credible. Transition to Part V is quiet: product decisions that can be found become shared memory strong enough for leadership to work through it.
+Це не MCU guide, не RTOS design, не boot loader pattern, не radio protocol comparison, не service-tool spec і не manufacturing-process manual. Embedded details тримають walkthrough credible. Transition to Part V тихий: product decisions, які можна знайти, стають shared memory, достатньо сильною, щоб leadership могло працювати через неї.

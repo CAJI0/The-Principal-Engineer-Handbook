@@ -40,7 +40,7 @@ Update path був гіршим. Прототип оновлювався lab-onl
 
 Тоді розмова змінилася. Команда питала: «How fast can we ship the prototype?» Principal Engineer написала інше питання:
 
-> Which prototype assumptions must be promoted, replaced, owned, tested, or intentionally accepted before this becomes the product?
+> Які prototype assumptions треба promoted, replaced, owned, tested або intentionally accepted, перш ніж це стане product?
 
 Питання сповільнило кімнату не тому, що було абстрактним, а тому, що кожен міг назвати assumption. Firmware lead назвав hard-coded configuration. Hardware owner — board revision і sensor lot. Manufacturing engineer — manual calibration step. Service-tool owner — debug tool. Support — missing field diagnosis. Release — lab-only update script. QA — single customer path. Firmware lead останнім і тихо назвав vendor example driver, бо всі знали, що він розповзся далі, ніж планувалося.
 
@@ -88,7 +88,7 @@ Manual setup стає production configuration. Lab fixture стає manufacturi
 
 Classification запобігає двом overreactions: ship prototype unchanged, бо customer liked it, або rewrite prototype, бо це «only a prototype». Перше плутає evidence з readiness. Друге викидає evidence і часто замінює working simplicity speculative flexibility. Unused flexibility is waste.
 
-Кращий шлях вужчий: list assumptions, classify them, assign owners, decide missing evidence, decide what must change before release baseline, decide what can ship only with review trigger, record consequential choices.
+Кращий шлях вужчий: перелічити assumptions, класифікувати їх, призначити owners, визначити missing evidence, вирішити, що має змінитися before release baseline, що може ship only with review trigger, і записати consequential choices.
 
 Ownership є hinge. Prototype work often hides ownership inside people. Firmware lead знає update script. Hardware owner знає board revision. Manufacturing engineer знає manual fixture step. Support engineer знає diagnostic message. Це valuable knowledge, але це не architecture, доки system не може survive without private memory.
 
@@ -174,7 +174,7 @@ Product потребує більше. Manufacturing потребує repeatable
 
 Зробити prototype configuration path product-ready перед тим, як прийняти його як release baseline. Зберегти intentionally simple and stable частини: narrow device behavior, small configuration surface для першого product, customer-visible flow, який demo довело valuable.
 
-Замінити manual configuration owned product configuration path. Firmware owns device configuration validation and stored configuration state. Manufacturing owns station step. Service-tool owner owns product-level messages and operator flow. QA owns evidence, що path repeats across supported board revisions and customer configuration paths.
+Замінити manual configuration на owned product configuration path. Firmware owns device configuration validation and stored configuration state. Manufacturing owns station step. Service-tool owner owns product-level messages and operator flow. QA owns evidence, що path repeats across supported board revisions and customer configuration paths.
 
 Temporary shortcuts, які залишаються для pilot, мусять мати owner, expiration condition and review trigger. Product-level diagnostics and validation мають розрізняти configuration rejected, unsupported board revision, invalid calibration, interrupted update and unknown device state. Raw debug logs можуть лишатися engineering diagnostics, але не support contract.
 
@@ -184,12 +184,12 @@ Temporary shortcuts, які залишаються для pilot, мусять м
 
 #### Alternatives Considered
 
-- Ship prototype unchanged. Fast, але manual calibration, hard-coded configuration, developer scripts, lab-only update behavior and debug-only diagnosis стають product architecture without owners.
+- Ship prototype unchanged. Fast, але manual calibration, hard-coded configuration, developer scripts, lab-only update behavior і debug-only diagnosis стають product architecture without owners.
 - Rewrite entire architecture before baseline. Cleaner на вигляд, але викидає prototype evidence і створює untested abstractions.
-- Add flexibility for every possible future variant. Розширює test matrix, configuration surface, review cost and support burden.
+- Add flexibility for every possible future variant. Розширює test matrix, configuration surface, review cost і support burden.
 - Defer manufacturing, service and update concerns until after first release. Release baseline не може залежати від invisible manual steps.
 - Document assumptions only in comments. Comments не створюють ownership, review triggers або discoverability.
-- Freeze prototype behavior immediately. Freeze too early protects hidden assumptions, not product architecture.
+- Freeze prototype behavior immediately. Freeze too early protects hidden assumptions, а не product architecture.
 
 ## Коментар редактора
 
@@ -197,6 +197,6 @@ Chapter 20 відкриває Part IV і змінює джерело архіт�
 
 Відповідь не «slow down», не «rewrite», не «add process». Відповідь — expose assumptions, які зробили prototype successful, і вирішити, які з них можуть survive as product architecture.
 
-Chapter has no primary PEAK concept. It is anchored by The Successful Prototype (`FAILURE-003`) and Temporary Solution (`ANTIPATTERN-006`), with Simplicity Is a Feature (`LAW-004`), Unused Flexibility Is Waste (`LAW-006`), Evidence Before Confidence (`LAW-005`), state ownership, API promises, dependency decisions, Change Radius, ADRs, Decision Journal, Architecture Review and Discoverability.
+Chapter не має primary PEAK concept. Він anchored by The Successful Prototype (`FAILURE-003`) і Temporary Solution (`ANTIPATTERN-006`), with Simplicity Is a Feature (`LAW-004`), Unused Flexibility Is Waste (`LAW-006`), Evidence Before Confidence (`LAW-005`), state ownership, API promises, dependency decisions, Change Radius, ADRs, Decision Journal, Architecture Review і Discoverability.
 
-Later Part IV chapters go deeper: Chapter 21 manufacturing and field reality, Chapter 22 configuration and variants, Chapter 23 observability, Chapter 24 release discipline, Chapter 25 reference project. Chapter 20 creates the doorway: product reality is architecture pressure, and it first appears in the gap between a successful prototype and the product it is expected to become.
+Later Part IV chapters ідуть глибше: Chapter 21 - manufacturing and field reality, Chapter 22 - configuration and variants, Chapter 23 - observability, Chapter 24 - release discipline, Chapter 25 - reference project. Chapter 20 creates the doorway: product reality is architecture pressure, and it first appears in the gap between a successful prototype and the product it is expected to become.

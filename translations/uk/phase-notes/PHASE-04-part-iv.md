@@ -53,3 +53,14 @@
 ## Outcome
 
 Translation Draft complete. Ready for Terminology Review.
+
+## Localization Remediation
+
+- Outcome: Reader-facing Phase 4 prose remediated after the review blocker on large untranslated English paragraphs.
+- Scope: `translations/uk/book/04-building-a-product/`
+- Notes:
+  - Chapters 21-25 received focused localization passes for English-heavy narrative, discussion, exercises, ADR prose, and editor comments.
+  - Chapter 20 received targeted cleanup for remaining English-heavy reader-facing lines.
+  - Canonical labels, PEAK IDs, artifact names, code spans, commands, file paths, interface literals, and embedded/software terms were preserved where required for correctness.
+  - No Phase 4 review gates were completed in this remediation run.
+  - Phase 5 was not started.
