@@ -44,31 +44,31 @@ Late defect fix змінив gateway retry window під час first report aft
 
 Older hardware revision стала окремим path: upgrade лише якщо calibration backup compacted by intermediate release; інакше support recovery procedure зберігає firmware/identity, але вимагає calibration validation before return to service. Factory reset відхилили як default, бо він стирає product trust разом із product state.
 
-Deprecated customer option: package rejects unsupported option with support-safe diagnostic, preserves original configuration і requires service decision. Release notes називають unsupported path і support horizon.
+Deprecated customer option: package відхиляє unsupported option із support-safe diagnostic, зберігає original configuration і потребує service decision. Release notes називають unsupported path і support horizon.
 
-Rollback став вужчим. Команда розділила rollback, retry, recovery і forward-fix. Retry означає, що той самий package може attempt same stage після recoverable interruption. Recovery означає known supportable state after partial upgrade. Rollback означає повернення до previous executable лише тоді, коли configuration, calibration, identity і diagnostic meaning йому відповідають. Forward-fix означає corrected package, коли rollback preserves code but not trust.
+Rollback став вужчим. Команда розділила rollback, retry, recovery і forward-fix. Retry означає, що той самий package може повторити той самий stage після recoverable interruption. Recovery означає known supportable state після partial upgrade. Rollback означає повернення до previous executable лише тоді, коли configuration, calibration, identity і diagnostic meaning йому відповідають. Forward-fix означає corrected package, коли rollback preserves code but not trust.
 
 Supported paths зберігають identity, calibration, configuration snapshot, source version, target version, variant identity, migration result, service-tool compatibility і diagnostic event version. Event Catalog записує події upgrade started, image verified, migration accepted/rejected, recovery entered, rollback unavailable, retry allowed і upgrade complete.
 
-Architecture Review (`RITUAL-001`) reviewed upgrade paths, state ownership, compatibility promises, evidence gaps і unsupported paths across firmware, service tools, manufacturing, support, QA, gateway і release owners. Architecture Freeze (`RITUAL-002`) froze supported source-to-target upgrade paths, migration rules, diagnostic event meanings, service-tool compatibility promise, release-critical state owners і gateway retry behavior during first post-upgrade report. Implementation fixes могли продовжуватися, якщо вони зберігали decisions.
+Architecture Review (`RITUAL-001`) переглянув upgrade paths, state ownership, compatibility promises, evidence gaps і unsupported paths across firmware, service tools, manufacturing, support, QA, gateway і release owners. Architecture Freeze (`RITUAL-002`) заморозив supported source-to-target upgrade paths, migration rules, diagnostic event meanings, service-tool compatibility promise, release-critical state owners і gateway retry behavior during first post-upgrade report. Implementation fixes могли продовжуватися, якщо вони зберігали decisions.
 
-Late gateway retry change став exception request. Його Change Radius включав firmware, gateway behavior, first-report diagnostics, service-tool wording, update validation, support notes і release evidence. Його прийняли лише після preserving frozen promise і adding targeted validation.
+Late gateway retry change став exception request. Його Change Radius включав firmware, gateway behavior, first-report diagnostics, service-tool wording, update validation, support notes і release evidence. Його прийняли лише після збереження frozen promise і додавання targeted validation.
 
-Records змінилися: ADR captured supported upgrade path freeze, RFC recorded service-tool compatibility/migration proposal, Decision Journal captured smaller path decisions, Architecture Ledger listed active release-critical decisions, release notes became support evidence, Mistake Ledger captured assumption: «latest-build lab upgrade proves field upgrade readiness.»
+Records змінилися: ADR зафіксував supported upgrade path freeze, RFC записав service-tool compatibility/migration proposal, Decision Journal зафіксував smaller path decisions, Architecture Ledger перелічив active release-critical decisions, release notes стали support evidence, Mistake Ledger зафіксував assumption: «latest-build lab upgrade proves field upgrade readiness.»
 
 Release не ship-нувся того тижня. Він вийшов пізніше з меншою кількістю surprises. Support знав units, яким потрібен intermediate release. Manufacturing пояснювало old hardware revision calibration validation. Service tool refused unsupported paths. Firmware preserved promised state. QA validated paths, not examples. Release notes told future engineers where promises ended. Delay був engineering decision.
 
 ## Обговорення
 
-Release discipline - це не ceremony навколо build artifact. Це architecture-aware judgment про те, що можна ship, що треба hold, яка evidence потрібна, які promises зроблені і як product можна support after release.
+Release discipline - це не ceremony навколо build artifact. Це architecture-aware judgment про те, що можна випускати, що треба hold, яка evidence потрібна, які promises зроблені і як product можна підтримувати after release.
 
-Upgrade path — це supported transition from one product state to another, а не лише firmware image.
+Upgrade path - це supported transition from one product state to another, а не лише firmware image.
 
 Release artifact видимий: file, hash, version label, service-tool success, lab install. Це важливо, але саме по собі не визначає promise. Release commits product to behavior, на який покладатимуться other people, tools, devices, procedures і future versions. Він commits support to explanations, manufacturing/service to compatible paths, customers to meaning of version/variant/configuration/diagnostic/recovery state, future engineers to records.
 
-«Did the new image pass?» - не погане питання, просто замале. Краще: які upgrade paths ми обіцяємо, і що має лишатися true before, during and after upgrade?
+«Did the new image pass?» - не погане питання, просто замале. Краще: які upgrade paths ми обіцяємо, і що має лишатися true до, під час і після upgrade?
 
-Перед upgrade: source version, hardware revision, product variant, configuration schema, calibration state, identity record, data shape, service-tool expectation, diagnostic vocabulary, dependency behavior, support horizon. During upgrade: bootloader/installer states, migration, power-loss windows, network interruptions, partial writes, retries, recovery decisions, first-report handshakes. Після upgrade product explains what happened і proves target state supportable.
+Перед upgrade: source version, hardware revision, product variant, configuration schema, calibration state, identity record, data shape, service-tool expectation, diagnostic vocabulary, dependency behavior, support horizon. Під час upgrade: bootloader/installer states, migration, power-loss windows, network interruptions, partial writes, retries, recovery decisions, first-report handshakes. Після upgrade product пояснює, що сталося, і доводить, що target state supportable.
 
 Every State Has One Owner (`LAW-001`) означає, що release-critical state має authority, перш ніж upgrade може його preserve. Every API Is a Promise (`LAW-002`) означає, що firmware command, diagnostic event, service-tool protocol, manufacturing programming path, configuration schema, update package format або recovery behavior стають promises after release. API Stability (`METRIC-004`) включає behavior, errors, timing і meaning.
 
@@ -113,9 +113,9 @@ Release-іть лише promises, які можете support, і upgrade-іть
 
 Запишіть:
 
-> Device on source version X, hardware revision Y, variant Z і configuration schema N upgrades to target version T through supported path P.
+> Device на source version X, hardware revision Y, variant Z і configuration schema N оновлюється до target version T через supported path P.
 
-Задокументуйте source, target, hardware revision, variant, schema, data/calibration to survive, release-critical state owner, compatibility promises, migration step, rollback/retry/recovery/forward-fix behavior, observability, service-tool compatibility, evidence available/missing, nearby unsupported paths, decision record і freeze/review trigger.
+Задокументуйте source, target, hardware revision, variant, schema, data/calibration, що мають зберегтися, release-critical state owner, compatibility promises, migration step, rollback/retry/recovery/forward-fix behavior, observability, service-tool compatibility, available/missing evidence, nearby unsupported paths, decision record і freeze/review trigger.
 
 Завершіть одним supported path, одним unsupported/deferred path, одним release-critical owner і однією validation/recovery action.
 
@@ -129,38 +129,38 @@ Release-іть лише promises, які можете support, і upgrade-іть
 
 ### ADR розділу: Freeze Supported Upgrade Paths Before Field Release
 
-Status: Accepted for this chapter.
+Статус: прийнято для цього розділу.
 
-Context:
+Контекст:
 
 - Product має multiple field versions, hardware revisions, configurations, variants і service-tool versions.
-- Lab upgrade from latest build works.
-- Field release expose-ить unsupported source versions і uncertain migration paths.
+- Lab upgrade from latest build працює.
+- Field release відкриває unsupported source versions і uncertain migration paths.
 - Rollback/recovery не однаково safe для кожного path.
 
-Decision:
+Рішення:
 
-- Перелічити supported source-to-target upgrade paths before field release.
-- Explicitly reject/defer unsupported paths.
-- Заморозити release-critical state transitions, configuration migration, diagnostic meanings і service-tool compatibility before final validation.
+- Перелічити supported source-to-target upgrade paths перед field release.
+- Явно reject/defer unsupported paths.
+- Заморозити release-critical state transitions, configuration migration, diagnostic meanings і service-tool compatibility перед final validation.
 - Зберігати identity, calibration, configuration і variant meaning across supported paths.
-- Require evidence for each supported path.
-- Record risks, limits, support notes і review triggers in ADR, RFC, Decision Journal, Architecture Ledger, Event Catalog, release notes або Mistake Ledger.
+- Вимагати evidence для кожного supported path.
+- Записувати risks, limits, support notes і review triggers в ADR, RFC, Decision Journal, Architecture Ledger, Event Catalog, release notes або Mistake Ledger.
 - Відкласти reference-project integration walkthrough до Chapter 25.
 
-Consequences:
+Наслідки:
 
-Обіцянки support стають яснішими; field surprises зменшуються; validation follows paths; rollback/retry/recovery/forward-fix розділені; product trust improves. Validation work зростає; late changes сповільнюються, коли торкаються frozen surfaces; service-tool coordination стає release work.
+Обіцянки support стають яснішими; field surprises зменшуються; validation йде за paths; rollback/retry/recovery/forward-fix розділені; product trust поліпшується. Validation work зростає; late changes сповільнюються, коли торкаються frozen surfaces; service-tool coordination стає release work.
 
-Alternatives Considered:
+Розглянуті альтернативи:
 
 - Відправити image лише тому, що latest lab upgrade worked.
-- Support every field version.
-- Require all customers to factory reset.
-- Rely on rollback only.
-- Patch unsupported paths у support scripts.
-- Відкласти upgrade-path definition until after release.
-- Freeze whole architecture.
+- Підтримувати кожну field version.
+- Вимагати від усіх customers factory reset.
+- Покладатися лише на rollback.
+- Латати unsupported paths у support scripts.
+- Відкласти upgrade-path definition до release.
+- Заморозити всю architecture.
 
 Відхилено, бо вони ховають field readiness, руйнують trust, створюють ризик Temporary Solution/Silent Coupling або заморожують надто широкий контур.
 
@@ -168,6 +168,6 @@ Alternatives Considered:
 
 Chapter 24 перетворює observable product evidence на supported release and upgrade commitments. Він не вводить primary PEAK concept. PEAK weight тримається на The Release We Should Have Delayed (`FAILURE-005`) і Architecture Freeze (`RITUAL-002`), з Architecture Freeze (`VOCAB-006`) як temporary scoped vocabulary.
 
-Earlier chapters працюють як constraints: release-critical state needs owners; released diagnostics are API promises; update tooling і service tools are dependency decisions; migration/support horizons depend on time; confidence needs evidence; Change Radius і Discoverability determine ceremony; Event Catalog, ADR, RFC, Decision Journal, Architecture Ledger, release notes і Mistake Ledger keep decisions findable.
+Попередні chapters працюють як constraints: release-critical state потребує owners; released diagnostics є API promises; update tooling і service tools є dependency decisions; migration/support horizons залежать від time; confidence потребує evidence; Change Radius і Discoverability визначають ceremony; Event Catalog, ADR, RFC, Decision Journal, Architecture Ledger, release notes і Mistake Ledger тримають decisions findable.
 
-Не запитуйте лише, чи image passed. Запитуйте, які paths product promises, який state вони preserve, яка evidence це proves і що support can safely do, коли path fails.
+Не запитуйте лише, чи image passed. Запитуйте, які paths обіцяє product, який state вони зберігають, яка evidence це доводить і що support може безпечно зробити, коли path відмовляє.

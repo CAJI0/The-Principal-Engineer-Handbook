@@ -160,17 +160,17 @@ Chapter 20 може назвати manufacturing, service, diagnostics, variants
 
 ### ADR розділу: `Productize the Prototype Configuration Path Before Release Baseline`
 
-#### Status
+#### Статус
 
-Accepted.
+Прийнято.
 
-#### Context
+#### Контекст
 
 Prototype configuration path працював у lab через manual steps і developer scripts. Firmware lead міг перевести device у правильний state, скопіювати calibration value з bench note, запустити flashing script, застосувати hard-coded customer configuration і прочитати debug log після failure. Для prototype це було acceptable: потрібне було fast evidence, що device behavior має value і configuration idea може працювати.
 
 Product потребує більше. Manufacturing потребує repeatable configuration і calibration path. Service потребує stable product-level rejection reasons і diagnostic visibility для field unit. Variants потребують способу виразити real differences без framework for every future possibility. Update and recovery потребують visible state, коли configuration changes interrupted. Release потребує packaging, який не залежить від local script одного developer.
 
-#### Decision
+#### Рішення
 
 Зробити prototype configuration path product-ready перед тим, як прийняти його як release baseline. Зберегти intentionally simple and stable частини: narrow device behavior, small configuration surface для першого product, customer-visible flow, який demo довело valuable.
 
@@ -178,17 +178,17 @@ Product потребує більше. Manufacturing потребує repeatable
 
 Temporary shortcuts, які залишаються для pilot, мусять мати owner, expiration condition and review trigger. Product-level diagnostics and validation мають розрізняти configuration rejected, unsupported board revision, invalid calibration, interrupted update and unknown device state. Raw debug logs можуть лишатися engineering diagnostics, але не support contract.
 
-#### Consequences
+#### Наслідки
 
 Команда зберігає швидший шлях від prototype до product baseline, бо не переписує доведений behavior і не додає speculative flexibility. Вона отримує explicit ownership для product assumptions: configuration state, calibration path, service messages, temporary shortcuts, vendor/tool dependency surfaces. Cost — видима product work до видимого feature progress, validation assumptions, residual risks and review triggers.
 
-#### Alternatives Considered
+#### Розглянуті альтернативи
 
 - Ship prototype unchanged. Це швидко, але manual calibration, hard-coded configuration, developer scripts, lab-only update behavior і debug-only diagnosis стають product architecture без owners.
 - Rewrite entire architecture before baseline. Виглядає cleaner, але викидає prototype evidence і створює untested abstractions.
 - Додати flexibility для every possible future variant. Це розширює test matrix, configuration surface, review cost і support burden.
 - Defer manufacturing, service and update concerns until after first release. Release baseline не може залежати від invisible manual steps.
-- Document assumptions only in comments. Comments не створюють ownership, review triggers або discoverability.
+- Документувати припущення лише в коментарях. Коментарі не створюють ownership, review triggers або discoverability.
 - Freeze prototype behavior immediately. Надто ранній freeze захищає hidden assumptions, а не product architecture.
 
 ## Коментар редактора

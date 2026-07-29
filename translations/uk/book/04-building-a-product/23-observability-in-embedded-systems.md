@@ -46,7 +46,7 @@ Evidence Before Confidence (`LAW-005`) стає конкретним. Evidence �
 
 Це API problem. Service tool — API для field organization. `communication failed` обіцяє мало. Last owned events, reset context, firmware/configuration versions, variant identity, update phase, recovery state, manufacturing identity і failure domain дають support обмежені, придатні для дії decisions.
 
-Time — dependency. Failure може статися before reboot, during update, after migration, while waiting gateway response, after first report. Time Is a Dependency (`LAW-003`) не вимагає perfect wall-clock time; вона вимагає useful order: sequence numbers, boot counters, monotonic ticks, install attempts, update phases, retained reset snapshots.
+Time - це dependency. Failure може статися до reboot, під час update, після migration, під час очікування gateway response або після first report. Time Is a Dependency (`LAW-003`) не вимагає perfect wall-clock time; вона вимагає useful order: sequence numbers, boot counters, monotonic ticks, install attempts, update phases, retained reset snapshots.
 
 Every Dependency Is a Decision (`LAW-007`) зʼявляється, коли gateway behavior, radio coverage, vendor drivers, network policy, manufacturing data і configuration delivery беруть участь в одному field symptom. Observability має зробити boundary outcome достатньо явним, щоб вирішити: firmware fix, gateway fix, configuration correction, service action або dependency review.
 
@@ -86,7 +86,7 @@ Product не потребує perfect observability platform. Йому потр�
 
 Запишіть decision, яке хтось має ухвалити з field evidence. Визначте missing evidence, що змушує guessing. Зіставте state transition або boundary outcome. Назвіть owner. Чернетково опишіть один event або diagnostic record зі stable name, payload, severity, retention rule, reset behavior, time/sequence, version, configuration, variant і manufacturing identity fields. Вирішіть support-safety, privacy/security constraint, де записується decision, і як validation доводить, що evidence survives failure path.
 
-Outputs:
+Результати:
 
 1. one decision evidence must support;
 2. one owned event or diagnostic;
@@ -103,9 +103,9 @@ Outputs:
 
 ### ADR розділу: Adopt Decision-Oriented Field Events for Update and Recovery Failures
 
-Status: Accepted for this chapter.
+Статус: прийнято для цього розділу.
 
-Context:
+Контекст:
 
 - Field devices можуть відмовити після update, reset, configuration migration, variant selection, gateway interaction, radio communication або recovery.
 - Developer debug logs корисні в lab, але не є stable product promise для support.
@@ -114,23 +114,23 @@ Context:
 - Embedded constraints обмежують evidence.
 - Logging everything створив би Event Explosion.
 
-Decision:
+Рішення:
 
-- Maintain Event Catalog для product diagnostics: owner, name, trigger, payload, severity, retention, reset behavior, support visibility, privacy/security, validation і supported decision.
+- Підтримувати Event Catalog для product diagnostics: owner, name, trigger, payload, severity, retention, reset behavior, support visibility, privacy/security, validation і supported decision.
 - Treat update, recovery, reset, configuration, variant, gateway, radio і reporting outcomes як owned product events, коли вони впливають на field decisions.
 - Keep developer debug logs окремо від support-safe diagnostics.
-- Preserve enough context across reset/recovery, щоб розрізняти firmware, configuration, gateway, network, power, variant, dependency і recovery causes.
-- Record false diagnostic assumptions і field escapes у Mistake Ledger.
+- Зберігати достатньо context через reset/recovery, щоб розрізняти firmware, configuration, gateway, network, power, variant, dependency і recovery causes.
+- Записувати false diagnostic assumptions і field escapes у Mistake Ledger.
 
-Consequences:
+Наслідки:
 
 - Support може ухвалювати bounded decisions без developer tools для кожної issue.
-- Engineering може triage from retained evidence.
+- Engineering може triage на основі retained evidence.
 - Diagnostic events стають product API і потребують ownership, review, tests і compatibility care.
 - Event versions/deprecation стають support promises.
 - Team має відкидати noisy events і проєктувати з урахуванням storage, power, privacy, security і service-tool constraints.
 
-Alternatives Considered:
+Розглянуті альтернативи:
 
 - Add verbose logging everywhere.
 - Keep diagnostics developer-only.

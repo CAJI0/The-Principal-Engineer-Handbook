@@ -66,7 +66,7 @@ Product crossed a boundary, яку lab не міг simulate: він став arc
 
 Manufacturing reality і field reality — не cleanup наприкінці роботи. Це design inputs.
 
-Lab дає unusual advantages: knowledgeable engineers, direct board access, private tools, flexible timing, forgiving setup і people who remember why strange behavior is acceptable. Manufacturing and field use прибирають ці advantages. Вони питають, чи product можна будувати повторювано, налаштовувати правильно, калібрувати безпечно, ідентифікувати надійно, recover without developers, diagnose by support і explain from evidence.
+Лабораторія дає незвичні переваги: обізнаних інженерів, прямий доступ до плати, приватні інструменти, гнучкий час, поблажливе налаштування і людей, які памʼятають, чому дивна поведінка прийнятна. Виробниче й польове використання прибирають ці переваги. Вони питають, чи продукт можна будувати повторювано, налаштовувати правильно, калібрувати безпечно, ідентифікувати надійно, відновлювати без розробників, діагностувати силами підтримки і пояснювати на основі доказів.
 
 Architecture не має contain every manufacturing procedure. Manufacturing process вирішує, how line runs. Product architecture вирішує, what state exists, хто owns it, які surfaces can change it і what evidence proves it. Field service process вирішує, how support works with customers. Product architecture вирішує, яким diagnosis, recovery, traceability і configuration promises цей process can trust.
 
@@ -84,11 +84,11 @@ Update recovery — та сама promise. Product is recoverable, коли inte
 
 Architecture має чинити опір broad catch-all modes. Single manufacturing flag або field-service flag часто creates Global Configuration. Про smaller owned surfaces легше reason about.
 
-Evidence Before Confidence matters here: lab success є evidence for lab conditions. Pilot manufacturing, component substitution, enclosure assembly, field wiring, customer configuration і support use потребують власної evidence.
+Evidence Before Confidence має тут значення: лабораторний успіх є доказом для лабораторних умов. Пілотне виробництво, заміна компонента, складання enclosure, польова проводка, клієнтська конфігурація і використання підтримкою потребують власних доказів.
 
 Discoverability (`METRIC-003`) стає product quality. Future maintainer має знайти decision, owner і contract behind calibration ownership, identity lifecycle, diagnostic vocabulary, recovery path і traceability record. ADRs, Decision Journal і Mistake Ledger entries тримають reality attached to architecture.
 
-This chapter не є manufacturing handbook, field-service manual, fixture-design guide, observability chapter або release-process chapter. Він робить manufacturing and field assumptions explicit, перш ніж pilot use почне від них залежати.
+Цей розділ не є довідником з виробництва, польовим сервісним посібником, інструкцією з проєктування fixture, розділом про спостережуваність або описом release process. Він робить виробничі й польові припущення явними, перш ніж пілотне використання почне від них залежати.
 
 ## Інженерний принцип
 
@@ -99,7 +99,7 @@ This chapter не є manufacturing handbook, field-service manual, fixture-desig
 1. На який state покладатимуться manufacturing або support?
 2. Хто owns that state?
 3. Яка surface може create, change, validate або retire it?
-4. Що product promises about calibration, identity, configuration і recovery?
+4. Що продукт обіцяє щодо калібрування, ідентичності, конфігурації і відновлення?
 5. Які assumptions живуть у scripts, spreadsheets, private tools або team memory?
 6. Яка field evidence має survive reset, update failure або loss of connection?
 7. Чи може support розділити configuration, hardware, firmware, environment і calibration causes?
@@ -114,17 +114,17 @@ This chapter не є manufacturing handbook, field-service manual, fixture-desig
 
 ### `Expose One Manufacturing or Field Assumption`
 
-Оберіть product behavior, яка works in lab і matters in manufacturing or field: calibration, identity, fixture access, service diagnostics, update recovery, configuration assignment, field logs after reset, component substitution або board revision handling.
+Оберіть поведінку продукту, яка працює в лабораторії і має значення у виробництві або в полі: калібрування, ідентичність, доступ до fixture, сервісна діагностика, відновлення після оновлення, призначення конфігурації, польові логи після скидання, заміна компонента або обробка ревізії плати.
 
 Опрацюйте assumption:
 
-1. Describe lab behavior in one sentence.
+1. Опишіть лабораторну поведінку одним реченням.
 2. Назвіть manufacturing або field condition, яка changes behavior.
-3. Identify current hidden assumption.
+3. Визначте поточне приховане припущення.
 4. Назвіть state, dependency, API promise або evidence gap.
-5. Decide owner.
+5. Визначте власника.
 6. Вирішіть, яку architectural surface add/change/make explicit.
-7. Define validation action outside lab.
+7. Визначте дію перевірки поза лабораторією.
 8. Запишіть ADR, Decision Journal або Mistake Ledger.
 
 Завершіть одним assumption, одним owner, однією architectural surface і однією evidence або validation action.
@@ -139,27 +139,27 @@ This chapter не є manufacturing handbook, field-service manual, fixture-desig
 
 ### ADR розділу: `Make Calibration and Recovery Product Responsibilities Before Pilot Manufacturing`
 
-#### Status
+#### Статус
 
-Accepted for the chapter.
+Прийнято для цього розділу.
 
-#### Context
+#### Контекст
 
-Product works in lab після prototype-to-product transition. Configuration стала clearer, service tool уже існує, updates can be tested by engineering. Pilot build наближається. Remaining risk: product obligations досі припускають engineering presence — developer-assisted calibration scripts, recovery через developer laptop/private cable, identity через spreadsheet/station script, fixture access через debug connector, raw developer states in service diagnostics і field logs lost after reset.
+Продукт працює в лабораторії після переходу від прототипу до продукту. Конфігурація стала яснішою, service tool уже існує, оновлення може перевіряти інженерна команда. Pilot build наближається. Залишковий ризик: продуктові зобовʼязання досі припускають присутність інженерів - скрипти калібрування за участі розробника, відновлення через developer laptop/private cable, ідентичність через spreadsheet/station script, доступ до fixture через debug connector, сирі стани розробників у сервісній діагностиці і втрачені польові логи після скидання.
 
-#### Decision
+#### Рішення
 
 Зробити calibration ownership explicit. Firmware-owned calibration record містить status, version, source, validation result і enough evidence for manufacturing/support. Надати manufacturing-safe calibration/provisioning path: fixture requests calibration, submits measurements, provisions required identity/setup values через product contract і receives product-level pass/fail reasons. Він не може створювати separate hidden state model.
 
-Визначити minimum service-visible diagnostic vocabulary, яка розділяє configuration, hardware, firmware, environment, update і calibration causes. Зробити update recovery possible without developer tools. Treat identity and traceability as architecture contracts: lifecycle, ownership, validation і fields, що connect board revision, component substitution, firmware, configuration, calibration і field evidence.
+Визначити мінімальний сервісно видимий діагностичний словник, який розділяє причини, повʼязані з configuration, hardware, firmware, environment, update і calibration. Зробити відновлення після update можливим без інструментів лише для розробників. Ставитися до identity і traceability як до архітектурних контрактів: lifecycle, ownership, validation і fields, що поєднують board revision, component substitution, firmware, configuration, calibration і field evidence.
 
-Записати residual assumptions і review triggers в ADR, Decision Journal і Mistake Ledger where appropriate. Defer deeper variants, observability, release discipline і reference-project examples to later Part IV chapters.
+Записати залишкові припущення і тригери перегляду в ADR, Decision Journal і Mistake Ledger там, де це доречно. Глибші variants, observability, release discipline і reference-project examples відкласти до наступних розділів Part IV.
 
-#### Consequences
+#### Наслідки
 
 Manufacturing може будувати repeatable units без private engineering judgment. Support може діагностувати через product-level reasons. Calibration, identity, recovery і traceability мають owners. Cost: more integration work before pilot, cross-owner agreement, evidence outside lab і constraints on future variants.
 
-#### Alternatives Considered
+#### Розглянуті альтернативи
 
 - Let manufacturing own the workaround.
 - Keep developer scripts and train the line.
@@ -172,6 +172,6 @@ Manufacturing може будувати repeatable units без private engineer
 
 ## Коментар редактора
 
-Chapter 21 asks whether product decisions survive manufacturing and field reality when engineers are absent. Він не вводить new PEAK concept. Він applies Every State Has One Owner (`LAW-001`), Every API Is a Promise (`LAW-002`), Evidence Before Confidence (`LAW-005`), Every Dependency Is a Decision (`LAW-007`), Change Radius, Discoverability, ADR, Decision Journal, Mistake Ledger, Architecture Review, Architecture Freeze, Temporary Solution, Hidden State, Silent Coupling, Platform Leakage, HAL Everywhere і Global Configuration.
+Chapter 21 питає, чи виживають продуктові рішення у виробничій і польовій реальності, коли інженерів немає поруч. Він не вводить нового PEAK concept. Він застосовує Every State Has One Owner (`LAW-001`), Every API Is a Promise (`LAW-002`), Evidence Before Confidence (`LAW-005`), Every Dependency Is a Decision (`LAW-007`), Change Radius, Discoverability, ADR, Decision Journal, Mistake Ledger, Architecture Review, Architecture Freeze, Temporary Solution, Hidden State, Silent Coupling, Platform Leakage, HAL Everywhere і Global Configuration.
 
-Boundary deliberate: це не manufacturing handbook і не service manual, а architecture chapter about explicit manufacturing and field assumptions. Chapter 22 can now take configuration and product lines; Chapter 23 — observability; Chapter 24 — release; Chapter 25 — reference project.
+Межа навмисна: це не manufacturing handbook і не service manual, а архітектурний розділ про явні виробничі й польові припущення. Chapter 22 тепер може перейти до configuration і product lines; Chapter 23 - до observability; Chapter 24 - до release; Chapter 25 - до reference project.
