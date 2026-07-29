@@ -186,7 +186,7 @@ Temporary shortcuts, які залишаються для pilot, мусять м
 
 - Ship prototype unchanged. Це швидко, але manual calibration, hard-coded configuration, developer scripts, lab-only update behavior і debug-only diagnosis стають product architecture без owners.
 - Rewrite entire architecture before baseline. Виглядає cleaner, але викидає prototype evidence і створює untested abstractions.
-- Add flexibility for every possible future variant. Це розширює test matrix, configuration surface, review cost і support burden.
+- Додати flexibility для every possible future variant. Це розширює test matrix, configuration surface, review cost і support burden.
 - Defer manufacturing, service and update concerns until after first release. Release baseline не може залежати від invisible manual steps.
 - Document assumptions only in comments. Comments не створюють ownership, review triggers або discoverability.
 - Freeze prototype behavior immediately. Надто ранній freeze захищає hidden assumptions, а не product architecture.

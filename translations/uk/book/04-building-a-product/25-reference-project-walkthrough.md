@@ -51,7 +51,7 @@ Release owner запитав: «Can we ship v1.1?» Mara запитала:
 
 Supported pilot baseline включав hardware revisions A and B, standard and regional packages, configuration schema v2, service tool 4.3+, direct upgrade з v1.0.2 до v1.1 і upgrade з v1.0 до v1.1 лише через intermediate migration package. Special customer timeout лишився pilot exception у Decision Journal з review trigger після thirty field days або second customer request. Battery package був deferred. Older service tool rejected for v1.1 upgrade.
 
-Unsupported combinations: revision A with unvalidated calibration backup не може upgrade directly; regional package cannot use special timeout; battery package cannot be hidden flags; v1.0 cannot skip intermediate migration; service tool older than 4.3 cannot upgrade; factory reset is not default recovery, бо він destroys identity, calibration evidence і trust.
+Unsupported combinations: revision A with unvalidated calibration backup не може upgrade directly; regional package не може use special timeout; battery package не може бути hidden flags; v1.0 не може skip intermediate migration; service tool older than 4.3 не може upgrade; factory reset не є default recovery, бо він destroys identity, calibration evidence і trust.
 
 Records: pilot baseline in ADR; compatibility proposal in RFC; special timeout in Decision Journal; event meanings in Event Catalog; active decisions in Architecture Ledger; escaped assumption «latest lab update proves field update readiness» in Mistake Ledger.
 
@@ -155,7 +155,7 @@ Accepted for this chapter.
 
 #### Context
 
-Field Sensor Gateway prototype працює: reports sensor readings over radio path, stores local configuration, має simple service tool і може бути updated in lab. Manufacturing потребує serial identity і calibration flow. Field support потребує diagnostic evidence beyond developer logs. Regional and hardware variants уже існують. Firmware v1.1 змінює configuration schema. Field units існують на v1.0 і v1.0.2. Support і future engineers потребують discoverable baseline: supported, deferred, evidence.
+Field Sensor Gateway prototype працює: він передає sensor readings over radio path, зберігає local configuration, має simple service tool і може бути updated in lab. Manufacturing потребує serial identity і calibration flow. Field support потребує diagnostic evidence beyond developer logs. Regional and hardware variants уже існують. Firmware v1.1 змінює configuration schema. Field units існують на v1.0 і v1.0.2. Support і future engineers потребують discoverable baseline: supported, deferred, evidence.
 
 #### Decision
 
@@ -163,9 +163,9 @@ Field Sensor Gateway prototype працює: reports sensor readings over radio 
 
 Pilot baseline підтримує hardware revisions A and B, standard and regional packages, configuration schema v2, service tool 4.3+ і direct upgrade from v1.0.2 to v1.1. Upgrade from v1.0 to v1.1 requires intermediate migration package. Battery package, unsupported regional timeout combinations і old service-tool upgrade path відкладені або відхилені.
 
-Assign owners for serial identity, calibration state, configuration schema, regional variant promises, event meanings, release artifact identity, migration behavior, update state і recovery state. Preserve identity, calibration, configuration fingerprint, hardware revision, variant, source version, target version, migration result, reset reason і first-report outcome як support-safe evidence.
+Призначити owners для serial identity, calibration state, configuration schema, regional variant promises, event meanings, release artifact identity, migration behavior, update state і recovery state. Зберігати identity, calibration, configuration fingerprint, hardware revision, variant, source version, target version, migration result, reset reason і first-report outcome як support-safe evidence.
 
-Record pilot baseline in ADR; keep hardware-revision/service-tool compatibility proposal in RFC; use Decision Journal for pilot exceptions/evidence gaps; Event Catalog for event meanings; Architecture Ledger for active baseline decisions; Mistake Ledger for escaped assumptions. Run Architecture Review for broad Change Radius decisions. Apply Architecture Freeze narrowly to v1.1 upgrade-path validation.
+Записати pilot baseline в ADR; keep hardware-revision/service-tool compatibility proposal in RFC; use Decision Journal for pilot exceptions/evidence gaps; Event Catalog for event meanings; Architecture Ledger for active baseline decisions; Mistake Ledger for escaped assumptions. Run Architecture Review для broad Change Radius decisions. Apply Architecture Freeze narrowly to v1.1 upgrade-path validation.
 
 #### Consequences
 
@@ -174,11 +174,11 @@ Pilot baseline стає supportable. Ownership стає clearer, hidden promises
 #### Alternatives Considered
 
 - Ship prototype baseline.
-- Wait for perfect product-line architecture.
+- Чекати на perfect product-line architecture.
 - Support every requested configuration.
-- Defer observability and upgrade evidence until after pilot.
-- Split every customer into separate firmware.
-- Freeze entire architecture until all unknowns resolved.
+- Відкласти observability and upgrade evidence until after pilot.
+- Розділити every customer into separate firmware.
+- Заморозити entire architecture until all unknowns resolved.
 
 Відхилено, бо вони ховають assumptions, додають speculative flexibility, розширюють support surface або freeze too broadly.
 

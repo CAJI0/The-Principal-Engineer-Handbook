@@ -64,13 +64,13 @@ Product crossed a boundary, яку lab не міг simulate: він став arc
 
 ## Обговорення
 
-Manufacturing reality і field reality — не late-stage cleanup. Це design inputs.
+Manufacturing reality і field reality — не cleanup наприкінці роботи. Це design inputs.
 
 Lab дає unusual advantages: knowledgeable engineers, direct board access, private tools, flexible timing, forgiving setup і people who remember why strange behavior is acceptable. Manufacturing and field use прибирають ці advantages. Вони питають, чи product можна будувати повторювано, налаштовувати правильно, калібрувати безпечно, ідентифікувати надійно, recover without developers, diagnose by support і explain from evidence.
 
 Architecture не має contain every manufacturing procedure. Manufacturing process вирішує, how line runs. Product architecture вирішує, what state exists, хто owns it, які surfaces can change it і what evidence proves it. Field service process вирішує, how support works with customers. Product architecture вирішує, яким diagnosis, recovery, traceability і configuration promises цей process can trust.
 
-Repeatability — перший pressure. Prototype often succeeds through skilled repetition. Manufacturing needs ordinary repetition: shift changes, fixture variation, component lots, board revisions, enclosure constraints, line timing. Якщо step requires judgment, architecture має сказати, яке judgment belongs to person, а яке стає product decision with clear result.
+Repeatability — перший pressure. Prototype часто succeeds through skilled repetition. Manufacturing потребує ordinary repetition: shift changes, fixture variation, component lots, board revisions, enclosure constraints, line timing. Якщо step requires judgment, architecture має сказати, яке judgment belongs to person, а яке стає product decision with clear result.
 
 Calibration example: небезпечне питання — не «Can unit be calibrated?» Краще питати: що product знає after calibration, хто owns that state, як it is validated і що system promises? Без відповіді calibration стає Hidden State (`SMELL-004`).
 
@@ -82,11 +82,11 @@ Diagnostics matter, бо field робить ambiguity дорогою. Developer 
 
 Update recovery — та сама promise. Product is recoverable, коли intended support/field path може recover it за реалістичних access, tooling, time, power і network constraints. Private tools are not field recovery.
 
-Architecture має resist broad catch-all modes. Single manufacturing flag або field-service flag often creates Global Configuration. Smaller owned surfaces легше reason about.
+Architecture має чинити опір broad catch-all modes. Single manufacturing flag або field-service flag часто creates Global Configuration. Про smaller owned surfaces легше reason about.
 
 Evidence Before Confidence matters here: lab success є evidence for lab conditions. Pilot manufacturing, component substitution, enclosure assembly, field wiring, customer configuration і support use потребують власної evidence.
 
-Discoverability (`METRIC-003`) becomes product quality. Future maintainer має знайти decision, owner і contract behind calibration ownership, identity lifecycle, diagnostic vocabulary, recovery path і traceability record. ADRs, Decision Journal і Mistake Ledger entries тримають reality attached to architecture.
+Discoverability (`METRIC-003`) стає product quality. Future maintainer має знайти decision, owner і contract behind calibration ownership, identity lifecycle, diagnostic vocabulary, recovery path і traceability record. ADRs, Decision Journal і Mistake Ledger entries тримають reality attached to architecture.
 
 This chapter не є manufacturing handbook, field-service manual, fixture-design guide, observability chapter або release-process chapter. Він робить manufacturing and field assumptions explicit, перш ніж pilot use почне від них залежати.
 
@@ -103,7 +103,7 @@ This chapter не є manufacturing handbook, field-service manual, fixture-desig
 5. Які assumptions живуть у scripts, spreadsheets, private tools або team memory?
 6. Яка field evidence має survive reset, update failure або loss of connection?
 7. Чи може support розділити configuration, hardware, firmware, environment і calibration causes?
-8. Яку dependency manufacturing або field path quietly imported?
+8. Яку dependency manufacturing або field path тихо imported?
 9. Який Change Radius, якщо assumption wrong?
 10. Яка evidence exists outside lab?
 11. Де future engineer знайде owner, contract, decision і review trigger?
@@ -151,21 +151,21 @@ Product works in lab після prototype-to-product transition. Configuration �
 
 Зробити calibration ownership explicit. Firmware-owned calibration record містить status, version, source, validation result і enough evidence for manufacturing/support. Надати manufacturing-safe calibration/provisioning path: fixture requests calibration, submits measurements, provisions required identity/setup values через product contract і receives product-level pass/fail reasons. Він не може створювати separate hidden state model.
 
-Визначити minimum service-visible diagnostic vocabulary, яка separates configuration, hardware, firmware, environment, update і calibration causes. Зробити update recovery possible without developer tools. Treat identity and traceability as architecture contracts: lifecycle, ownership, validation і fields, що connect board revision, component substitution, firmware, configuration, calibration і field evidence.
+Визначити minimum service-visible diagnostic vocabulary, яка розділяє configuration, hardware, firmware, environment, update і calibration causes. Зробити update recovery possible without developer tools. Treat identity and traceability as architecture contracts: lifecycle, ownership, validation і fields, що connect board revision, component substitution, firmware, configuration, calibration і field evidence.
 
-Записати residual assumptions і review triggers в ADR, Decision Journal і Mistake Ledger as appropriate. Defer deeper variants, observability, release discipline і reference-project examples to later Part IV chapters.
+Записати residual assumptions і review triggers в ADR, Decision Journal і Mistake Ledger where appropriate. Defer deeper variants, observability, release discipline і reference-project examples to later Part IV chapters.
 
 #### Consequences
 
-Manufacturing може build repeatable units без private engineering judgment. Support може diagnose through product-level reasons. Calibration, identity, recovery і traceability мають owners. Cost: more integration work before pilot, cross-owner agreement, evidence outside lab і constraints on future variants.
+Manufacturing може будувати repeatable units без private engineering judgment. Support може діагностувати через product-level reasons. Calibration, identity, recovery і traceability мають owners. Cost: more integration work before pilot, cross-owner agreement, evidence outside lab і constraints on future variants.
 
 #### Alternatives Considered
 
 - Let manufacturing own the workaround.
 - Keep developer scripts and train the line.
 - Add broad manufacturing mode.
-- Postpone service diagnostics until after field trial.
-- Rely on release notes and support training.
+- Відкласти service diagnostics until after field trial.
+- Покластися на release notes and support training.
 - Rework full architecture before pilot.
 
 Усі варіанти відхилено, бо вони either hide ownership, depend on engineering presence, create Global Configuration, weaken field learning або are broader than current evidence.

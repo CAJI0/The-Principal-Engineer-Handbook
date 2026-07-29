@@ -48,7 +48,7 @@ Deprecated customer option: package rejects unsupported option with support-safe
 
 Rollback став вужчим. Команда розділила rollback, retry, recovery і forward-fix. Retry означає, що той самий package може attempt same stage після recoverable interruption. Recovery означає known supportable state after partial upgrade. Rollback означає повернення до previous executable лише тоді, коли configuration, calibration, identity і diagnostic meaning йому відповідають. Forward-fix означає corrected package, коли rollback preserves code but not trust.
 
-Supported paths зберігають identity, calibration, configuration snapshot, source version, target version, variant identity, migration result, service-tool compatibility і diagnostic event version. Event Catalog records upgrade started, image verified, migration accepted/rejected, recovery entered, rollback unavailable, retry allowed і upgrade complete.
+Supported paths зберігають identity, calibration, configuration snapshot, source version, target version, variant identity, migration result, service-tool compatibility і diagnostic event version. Event Catalog записує події upgrade started, image verified, migration accepted/rejected, recovery entered, rollback unavailable, retry allowed і upgrade complete.
 
 Architecture Review (`RITUAL-001`) reviewed upgrade paths, state ownership, compatibility promises, evidence gaps і unsupported paths across firmware, service tools, manufacturing, support, QA, gateway і release owners. Architecture Freeze (`RITUAL-002`) froze supported source-to-target upgrade paths, migration rules, diagnostic event meanings, service-tool compatibility promise, release-critical state owners і gateway retry behavior during first post-upgrade report. Implementation fixes могли продовжуватися, якщо вони зберігали decisions.
 
@@ -143,7 +143,7 @@ Decision:
 - Перелічити supported source-to-target upgrade paths before field release.
 - Explicitly reject/defer unsupported paths.
 - Заморозити release-critical state transitions, configuration migration, diagnostic meanings і service-tool compatibility before final validation.
-- Preserve identity, calibration, configuration і variant meaning across supported paths.
+- Зберігати identity, calibration, configuration і variant meaning across supported paths.
 - Require evidence for each supported path.
 - Record risks, limits, support notes і review triggers in ADR, RFC, Decision Journal, Architecture Ledger, Event Catalog, release notes або Mistake Ledger.
 - Відкласти reference-project integration walkthrough до Chapter 25.
@@ -154,11 +154,11 @@ Consequences:
 
 Alternatives Considered:
 
-- Ship image because latest lab upgrade worked.
+- Відправити image лише тому, що latest lab upgrade worked.
 - Support every field version.
 - Require all customers to factory reset.
 - Rely on rollback only.
-- Patch unsupported paths in support scripts.
+- Patch unsupported paths у support scripts.
 - Відкласти upgrade-path definition until after release.
 - Freeze whole architecture.
 

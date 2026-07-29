@@ -153,20 +153,20 @@ Accepted for the chapter.
 
 Визначити shared core: pump-control behavior, calibration record shape, identity lifecycle, product-level diagnostic categories, configuration validation rules і update state model. Визначити variation points: radio capability, region behavior, licensed remote control, customer protocol timing і recovery access. Кожен має owner, supported/unsupported combinations, validation evidence і discoverable record.
 
-Remove/expire temporary flags, які are not supported product behavior. Record consequential product-line decisions in ADR; use RFCs for broad variation points, Decision Journal for smaller choices, Architecture Ledger for active decisions. Require Architecture Review before new variation point with broad Change Radius. Freeze selected variant promises before release validation when needed.
+Видалити або expire temporary flags, які не є supported product behavior. Записувати consequential product-line decisions в ADR; використовувати RFCs для broad variation points, Decision Journal для smaller choices, Architecture Ledger для active decisions. Вимагати Architecture Review перед new variation point with broad Change Radius. За потреби freeze selected variant promises before release validation.
 
 #### Consequences
 
-Product line стає easier to reason about. Configuration values мають owners; supported variants мають explicit promises; unsupported combinations are named. Accidental test space shrinks. Supportability improves. Cost: slower feature addition for unsupported combinations, review for customer-specific behavior, maintenance of records, removal of flexibility without evidence.
+Product line стає easier to reason about. Configuration values мають owners; supported variants мають explicit promises; unsupported combinations are named. Accidental test space shrinks. Supportability improves. Cost: slower feature addition for unsupported combinations, review for customer-specific behavior, maintenance of records і removal of flexibility without evidence.
 
 #### Alternatives Considered
 
 - Add another flag.
-- Create separate firmware for each customer.
+- Створити separate firmware для кожного customer.
 - Make everything configurable.
 - Freeze current variant model immediately.
-- Support every combination discovered in field.
-- Postpone variant modeling until after next customer ships.
+- Підтримувати every combination discovered in field.
+- Відкласти variant modeling until after next customer ships.
 
 Відхилено, бо вони hide promises, duplicate shared core, expand accidental combinations або freeze/ship unowned variation.
 
