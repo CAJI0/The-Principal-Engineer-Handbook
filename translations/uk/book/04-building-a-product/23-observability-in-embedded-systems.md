@@ -44,9 +44,9 @@ Evidence Before Confidence (`LAW-005`) стає конкретним. Evidence �
 
 Перший архітектурний рух - ownership. Every State Has One Owner (`LAW-001`) застосовується до diagnostics. Якщо update state скопійований у три modules, truth не належить нікому. Якщо radio driver, gateway client і product service виробляють той самий `communication failed`, product має hidden state, замаскований під simplicity. Device має називати state transition або boundary outcome на тому рівні, де meaning має owner.
 
-Це API problem. Service tool - API для field organization. `communication failed` обіцяє мало. Last owned events, reset context, firmware/configuration versions, variant identity, update phase, recovery state, manufacturing identity і failure domain обіцяють bounded support decisions.
+Це API problem. Service tool — API для field organization. `communication failed` обіцяє мало. Last owned events, reset context, firmware/configuration versions, variant identity, update phase, recovery state, manufacturing identity і failure domain дають support обмежені, придатні для дії decisions.
 
-Time - dependency. Failure може статися before reboot, during update, after migration, while waiting gateway response, after first report. Time Is a Dependency (`LAW-003`) не вимагає perfect wall-clock time; вона вимагає useful order: sequence numbers, boot counters, monotonic ticks, install attempts, update phases, retained reset snapshots.
+Time — dependency. Failure може статися before reboot, during update, after migration, while waiting gateway response, after first report. Time Is a Dependency (`LAW-003`) не вимагає perfect wall-clock time; вона вимагає useful order: sequence numbers, boot counters, monotonic ticks, install attempts, update phases, retained reset snapshots.
 
 Every Dependency Is a Decision (`LAW-007`) зʼявляється, коли gateway behavior, radio coverage, vendor drivers, network policy, manufacturing data і configuration delivery беруть участь в одному field symptom. Observability має зробити boundary outcome достатньо явним, щоб вирішити: firmware fix, gateway fix, configuration correction, service action або dependency review.
 
@@ -101,7 +101,7 @@ Outputs:
 
 ## ADR
 
-### Chapter ADR: Adopt Decision-Oriented Field Events for Update and Recovery Failures
+### ADR розділу: Adopt Decision-Oriented Field Events for Update and Recovery Failures
 
 Status: Accepted for this chapter.
 

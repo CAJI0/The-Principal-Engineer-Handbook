@@ -108,7 +108,7 @@ Chapter 20 може назвати manufacturing, service, diagnostics, variants
 
 - Що prototype насправді довів?
 - Які assumptions жили в people, scripts, wiring, fixtures або одному test unit?
-- Які shortcuts є harmless implementation details?
+- Які shortcuts є безпечними implementation details?
 - Які shortcuts стають product risk?
 - Яка behavior стає product promise?
 - Які manual steps мають стати repeatable?
@@ -134,10 +134,10 @@ Chapter 20 може назвати manufacturing, service, diagnostics, variants
 4. owner;
 5. available evidence;
 6. missing evidence;
-7. classification: product contract, implementation detail, temporary risk, evidence gap або removed shortcut;
+7. класифікація: product contract, implementation detail, temporary risk, evidence gap або removed shortcut;
 8. affected surfaces;
 9. test або validation needed;
-10. manufacturing, service, update, variant або release implication;
+10. наслідок для manufacturing, service, update, variant або release;
 11. decision record needed;
 12. review trigger або expiration condition.
 
@@ -158,7 +158,7 @@ Chapter 20 може назвати manufacturing, service, diagnostics, variants
 
 ## ADR
 
-### Chapter ADR: `Productize the Prototype Configuration Path Before Release Baseline`
+### ADR розділу: `Productize the Prototype Configuration Path Before Release Baseline`
 
 #### Status
 
@@ -184,12 +184,12 @@ Temporary shortcuts, які залишаються для pilot, мусять м
 
 #### Alternatives Considered
 
-- Ship prototype unchanged. Швидко, але manual calibration, hard-coded configuration, developer scripts, lab-only update behavior і debug-only diagnosis стають product architecture without owners.
+- Ship prototype unchanged. Це швидко, але manual calibration, hard-coded configuration, developer scripts, lab-only update behavior і debug-only diagnosis стають product architecture без owners.
 - Rewrite entire architecture before baseline. Виглядає cleaner, але викидає prototype evidence і створює untested abstractions.
-- Add flexibility for every possible future variant. Розширює test matrix, configuration surface, review cost і support burden.
+- Add flexibility for every possible future variant. Це розширює test matrix, configuration surface, review cost і support burden.
 - Defer manufacturing, service and update concerns until after first release. Release baseline не може залежати від invisible manual steps.
 - Document assumptions only in comments. Comments не створюють ownership, review triggers або discoverability.
-- Freeze prototype behavior immediately. Too early freeze захищає hidden assumptions, а не product architecture.
+- Freeze prototype behavior immediately. Надто ранній freeze захищає hidden assumptions, а не product architecture.
 
 ## Коментар редактора
 
@@ -197,6 +197,6 @@ Chapter 20 відкриває Part IV і змінює джерело архіт�
 
 Відповідь не «slow down», не «rewrite», не «add process». Відповідь — expose assumptions, які зробили prototype successful, і вирішити, які з них можуть survive as product architecture.
 
-Chapter не має primary PEAK concept. Він тримається на The Successful Prototype (`FAILURE-003`) і Temporary Solution (`ANTIPATTERN-006`), із Simplicity Is a Feature (`LAW-004`), Unused Flexibility Is Waste (`LAW-006`), Evidence Before Confidence (`LAW-005`), state ownership, API promises, dependency decisions, Change Radius, ADRs, Decision Journal, Architecture Review і Discoverability.
+Chapter не має primary PEAK concept. Він тримається на The Successful Prototype (`FAILURE-003`) і Temporary Solution (`ANTIPATTERN-006`), із Simplicity Is a Feature (`LAW-004`), Unused Flexibility Is Waste (`LAW-006`), Evidence Before Confidence (`LAW-005`), володінням станом, API promises, dependency decisions, Change Radius, ADRs, Decision Journal, Architecture Review і Discoverability.
 
-Пізніші Part IV chapters ідуть глибше: Chapter 21 - manufacturing and field reality, Chapter 22 - configuration and variants, Chapter 23 - observability, Chapter 24 - release discipline, Chapter 25 - reference project. Chapter 20 створює doorway: product reality is architecture pressure, and it first appears in the gap between a successful prototype and the product it is expected to become.
+Пізніші Part IV chapters ідуть глибше: Chapter 21 — manufacturing and field reality, Chapter 22 — configuration and variants, Chapter 23 — observability, Chapter 24 — release discipline, Chapter 25 — reference project. Chapter 20 створює doorway: product reality є архітектурним pressure, і вперше він проявляється у gap між successful prototype та product, яким він має стати.

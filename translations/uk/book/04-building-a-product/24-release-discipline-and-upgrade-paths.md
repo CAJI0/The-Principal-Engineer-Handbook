@@ -38,7 +38,7 @@ Late defect fix змінив gateway retry window під час first report aft
 
 Перший supported path: latest field release to release candidate, newest hardware revision, standard/regional variants, service tool 4.3+, current configuration schema, no deprecated option. Evidence існувала, але ще потрібні були power-loss migration test і service-tool failure case.
 
-Другий path був supportable with work: one release behind to release candidate, та сама hardware revision/variants, compatibility migration for previous schema. Firmware owns migration, service tool owns failure wording, QA owns path evidence, release owns support note.
+Другий path був supportable with work: one release behind to release candidate, та сама hardware revision/variants, compatibility migration for previous schema. Firmware володіє migration, service tool володіє failure wording, QA володіє path evidence, release володіє support note.
 
 Третій path deferred: early field build to new release вимагав intermediate release, бо old configuration record не мав достатньо information для safe direct migration. Його записали як unsupported direct path, а не support surprise.
 
@@ -62,13 +62,13 @@ Release не ship-нувся того тижня. Він вийшов пізні
 
 Release discipline - це не ceremony навколо build artifact. Це architecture-aware judgment про те, що можна ship, що треба hold, яка evidence потрібна, які promises зроблені і як product можна support after release.
 
-Upgrade path - це supported transition from one product state to another, а не лише firmware image.
+Upgrade path — це supported transition from one product state to another, а не лише firmware image.
 
 Release artifact видимий: file, hash, version label, service-tool success, lab install. Це важливо, але саме по собі не визначає promise. Release commits product to behavior, на який покладатимуться other people, tools, devices, procedures і future versions. Він commits support to explanations, manufacturing/service to compatible paths, customers to meaning of version/variant/configuration/diagnostic/recovery state, future engineers to records.
 
 «Did the new image pass?» - не погане питання, просто замале. Краще: які upgrade paths ми обіцяємо, і що має лишатися true before, during and after upgrade?
 
-Перед upgrade: source version, hardware revision, product variant, configuration schema, calibration state, identity record, data shape, service-tool expectation, diagnostic vocabulary, dependency behavior, support horizon. During upgrade: bootloader/installer states, migration, power-loss windows, network interruptions, partial writes, retries, recovery decisions, first-report handshakes. Після upgrade: product explains what happened і proves target state supportable.
+Перед upgrade: source version, hardware revision, product variant, configuration schema, calibration state, identity record, data shape, service-tool expectation, diagnostic vocabulary, dependency behavior, support horizon. During upgrade: bootloader/installer states, migration, power-loss windows, network interruptions, partial writes, retries, recovery decisions, first-report handshakes. Після upgrade product explains what happened і proves target state supportable.
 
 Every State Has One Owner (`LAW-001`) означає, що release-critical state має authority, перш ніж upgrade може його preserve. Every API Is a Promise (`LAW-002`) означає, що firmware command, diagnostic event, service-tool protocol, manufacturing programming path, configuration schema, update package format або recovery behavior стають promises after release. API Stability (`METRIC-004`) включає behavior, errors, timing і meaning.
 
@@ -127,7 +127,7 @@ Release-іть лише promises, які можете support, і upgrade-іть
 
 ## ADR
 
-### Chapter ADR: Freeze Supported Upgrade Paths Before Field Release
+### ADR розділу: Freeze Supported Upgrade Paths Before Field Release
 
 Status: Accepted for this chapter.
 
@@ -162,7 +162,7 @@ Alternatives Considered:
 - Відкласти upgrade-path definition until after release.
 - Freeze whole architecture.
 
-Відхилено, бо вони ховають field readiness, руйнують trust, створюють Temporary Solution/Silent Coupling risk або freeze too broadly.
+Відхилено, бо вони ховають field readiness, руйнують trust, створюють ризик Temporary Solution/Silent Coupling або заморожують надто широкий контур.
 
 ## Коментар редактора
 

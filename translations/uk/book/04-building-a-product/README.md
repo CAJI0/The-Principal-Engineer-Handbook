@@ -7,6 +7,6 @@ Part IV переводить архітектурні рішення з прос
 - [Від прототипу до продукту](20-from-prototype-to-product.md)
 - [Проєктування для виробництва і польової реальності](21-designing-for-manufacturing-and-field-reality.md)
 - [Конфігурація, варіанти і продуктові лінійки](22-configuration-variants-and-product-lines.md)
-- [Observability в embedded systems](23-observability-in-embedded-systems.md)
+- [Observability в embedded-системах](23-observability-in-embedded-systems.md)
 - [Release-дисципліна і шляхи оновлення](24-release-discipline-and-upgrade-paths.md)
 - [Прохід референсним проєктом](25-reference-project-walkthrough.md)

@@ -30,7 +30,7 @@ First field trial сказав те саме різкіше. Units встано�
 - `SAFE_HOLD_3`
 - `UPD_RECOVERY_ARMED`
 
-Ці names щось означали firmware team, але не support. Technician could see `SAFE_HOLD_3`, але не whether it meant pressure sensor mismatch, missing calibration record, update recovery guard або field wiring problem. Tool exposed internal states instead of support-safe diagnosis.
+Ці names щось означали firmware team, але не support. Technician бачив `SAFE_HOLD_3`, але не розумів, що саме це означає: pressure sensor mismatch, missing calibration record, update recovery guard або field wiring problem. Tool показував internal states замість support-safe diagnosis.
 
 One unit reset during update. Update design був кращий за prototype path, але recovery still assumed developer laptop and private cable. Field technician не мав жодного з них. Support script сказав return the unit. Firmware engineer сказав: «It is recoverable. You just have to connect with the engineering tool and run the loader in manual mode.» Це завершило argument. Recoverable by developer in lab is not recoverable in field.
 
@@ -48,13 +48,13 @@ Every API Is a Promise (`LAW-002`) стало uncomfortable usefully: calibratio
 
 Every Dependency Is a Decision (`LAW-007`) застосовувався до pressure fixture, station script, alternate sensor, board revision encoding, label printer, spreadsheet, service laptop, field cable і update loader. Кожна dependency приносила behavior, failure modes, ownership boundaries і replacement cost.
 
-Перша temptation: broad manufacturing mode. One flag unlocking calibration bypasses, raw state writes, fixture commands, serial number changes і extra logs. Це звучало швидко; насправді це була Global Configuration (`ANTIPATTERN-003`) with a factory badge. One setting would affect calibration, identity, logging, update behavior, safety holds і support diagnostics, increasing Change Radius (`VOCAB-001`, `METRIC-001`).
+Перша temptation: broad manufacturing mode. Один flag відкривав calibration bypasses, raw state writes, fixture commands, serial number changes і extra logs. Це звучало швидко; насправді це була Global Configuration (`ANTIPATTERN-003`) з factory badge. Один setting впливав би на calibration, identity, logging, update behavior, safety holds і support diagnostics, збільшуючи Change Radius (`VOCAB-001`, `METRIC-001`).
 
-Mara наполягла на менших surfaces. Для calibration потрібен був product-owned record зі status, version, source, evidence і validation result. Station могла request calibration, write measurements і receive product-level pass/fail reason, але не створювати hidden state model. Для identity потрібен lifecycle: unassigned, assigned, verified, retired. Fixture access потребував surface, доступної at assembly point. Board revision мав давати product-level capability description. Service diagnosis потребувала stable vocabulary. Update recovery мав мати field path без developer laptop. Logs потребували достатньої persistence, щоб preserve last useful evidence after reset.
+Mara наполягла на менших surfaces. Для calibration потрібен був product-owned record зі status, version, source, evidence і validation result. Station могла request calibration, записувати measurements і отримувати product-level pass/fail reason, але не створювати hidden state model. Для identity потрібен lifecycle: unassigned, assigned, verified, retired. Fixture access потребував surface, доступної at assembly point. Board revision мав давати product-level capability description. Service diagnosis потребувала stable vocabulary. Update recovery мав мати field path без developer laptop. Logs потребували достатньої persistence, щоб зберігати last useful evidence after reset.
 
-Highest-consequence choices пішли в ADR. Smaller evidence gaps - у Decision Journal entries. First field escape створив Mistake Ledger entry: «If recovery works on a developer laptop, it is field recovery.» False.
+Найнаслідковіші choices пішли в ADR. Менші evidence gaps — у Decision Journal entries. First field escape створив Mistake Ledger entry: «If recovery works on a developer laptop, it is field recovery.» False.
 
-Architecture Review (`RITUAL-001`) reviewed architecture surfaces, від яких залежали manufacturing і support: calibration ownership, identity lifecycle, fixture contract, diagnostic vocabulary, update recovery, traceability record. Before pilot build, Architecture Freeze (`RITUAL-002`) заморозив лише кілька decisions: calibration record shape, service diagnosis vocabulary, identity lifecycle, recovery contract. Freeze був temporary and named; він не freeze-ив learning from line or field.
+Architecture Review (`RITUAL-001`) переглянув architecture surfaces, від яких залежали manufacturing і support: calibration ownership, identity lifecycle, fixture contract, diagnostic vocabulary, update recovery, traceability record. Before pilot build, Architecture Freeze (`RITUAL-002`) заморозив лише кілька decisions: calibration record shape, service diagnosis vocabulary, identity lifecycle, recovery contract. Freeze був temporary and named; він не зупиняв learning from line or field.
 
 Result був not glamorous. Unit виглядав так само. Pump still turned on. Enclosure barely changed. Але product survived places where engineers were absent. Manufacturing більше не виводило calibration validity здогадкою. Fixture received product-level errors. Board revision carried capability description without HAL Everywhere (`ANTIPATTERN-002`). Service tool showed support reasons tied to configuration, calibration, hardware, firmware і environment evidence. Logs preserved last trace across reset. Component substitution became decision with evidence. Line workaround міг still happen, але якщо він changed product behavior, йому були потрібні owner, review trigger і removal condition; інакше Temporary Solution (`ANTIPATTERN-006`) would become permanent.
 
@@ -64,31 +64,31 @@ Product crossed a boundary, яку lab не міг simulate: він став arc
 
 ## Обговорення
 
-Manufacturing reality і field reality - не late-stage cleanup. Це design inputs.
+Manufacturing reality і field reality — не late-stage cleanup. Це design inputs.
 
-Lab дає unusual advantages: knowledgeable engineers, direct board access, private tools, flexible timing, forgiving setup, people who remember why strange behavior is acceptable. Manufacturing and field use прибирають ці advantages. Вони питають, чи product можна built repeatedly, configured correctly, calibrated safely, identified reliably, recovered without developers, diagnosed by support і explained from evidence.
+Lab дає unusual advantages: knowledgeable engineers, direct board access, private tools, flexible timing, forgiving setup і people who remember why strange behavior is acceptable. Manufacturing and field use прибирають ці advantages. Вони питають, чи product можна будувати повторювано, налаштовувати правильно, калібрувати безпечно, ідентифікувати надійно, recover without developers, diagnose by support і explain from evidence.
 
 Architecture не має contain every manufacturing procedure. Manufacturing process вирішує, how line runs. Product architecture вирішує, what state exists, хто owns it, які surfaces can change it і what evidence proves it. Field service process вирішує, how support works with customers. Product architecture вирішує, яким diagnosis, recovery, traceability і configuration promises цей process can trust.
 
-Repeatability - перший pressure. Prototype often succeeds through skilled repetition. Manufacturing needs ordinary repetition: shift changes, fixture variation, component lots, board revisions, enclosure constraints, line timing. Якщо step requires judgment, architecture має сказати, яке judgment belongs to person, а яке becomes product decision with clear result.
+Repeatability — перший pressure. Prototype often succeeds through skilled repetition. Manufacturing needs ordinary repetition: shift changes, fixture variation, component lots, board revisions, enclosure constraints, line timing. Якщо step requires judgment, architecture має сказати, яке judgment belongs to person, а яке стає product decision with clear result.
 
-Calibration example: dangerous question is not «Can unit be calibrated?» Better: що product знає after calibration, хто owns that state, як it is validated, що system promise? Без answer calibration becomes Hidden State (`SMELL-004`).
+Calibration example: небезпечне питання — не «Can unit be calibrated?» Краще питати: що product знає after calibration, хто owns that state, як it is validated і що system promises? Без відповіді calibration стає Hidden State (`SMELL-004`).
 
 Identity, provisioning і traceability створюють схожий pressure. Serial number - не лише label. Він connects hardware revision, component lot, firmware version, configuration, calibration, field history і support action. Якщо identity assigned by spreadsheet, label printer, station script і firmware cache без одного product contract, product має Silent Coupling (`SMELL-001`).
 
-Fixture access є architecture, коли product relies on it. Debug connector, hidden inside enclosure, не є manufacturing detail, якщо calibration, identity або recovery depend on it after assembly. Architecture defines product-level contract, який fixture uses, where in assembly flow it is available і what evidence fixture returns.
+Fixture access є architecture, коли product relies on it. Debug connector, hidden inside enclosure, не є manufacturing detail, якщо calibration, identity або recovery depend on it after assembly. Architecture defines product-level contract, який використовує fixture, де в assembly flow він доступний і яку evidence fixture повертає.
 
-Diagnostics matter, бо field makes ambiguity expensive. Developer states precise in wrong language. Support-safe diagnostic surface має separate configuration, hardware, firmware, environment, update і calibration causes, preserve evidence і avoid requiring support to remember private firmware meanings.
+Diagnostics matter, бо field робить ambiguity дорогою. Developer states точні, але неправильною мовою. Support-safe diagnostic surface має розділяти configuration, hardware, firmware, environment, update і calibration causes, зберігати evidence і не змушувати support памʼятати приватні firmware meanings.
 
-Update recovery - та сама promise. Product is recoverable, коли intended support/field path can recover it under realistic access, tooling, time, power і network constraints. Private tools are not field recovery.
+Update recovery — та сама promise. Product is recoverable, коли intended support/field path може recover it за реалістичних access, tooling, time, power і network constraints. Private tools are not field recovery.
 
 Architecture має resist broad catch-all modes. Single manufacturing flag або field-service flag often creates Global Configuration. Smaller owned surfaces легше reason about.
 
-Evidence Before Confidence matters here: lab success is evidence for lab conditions. Pilot manufacturing, component substitution, enclosure assembly, field wiring, customer configuration і support use потребують власної evidence.
+Evidence Before Confidence matters here: lab success є evidence for lab conditions. Pilot manufacturing, component substitution, enclosure assembly, field wiring, customer configuration і support use потребують власної evidence.
 
-Discoverability (`METRIC-003`) becomes product quality. Future maintainer має find decision, owner і contract behind calibration ownership, identity lifecycle, diagnostic vocabulary, recovery path і traceability record. ADRs, Decision Journal і Mistake Ledger entries keep reality attached to architecture.
+Discoverability (`METRIC-003`) becomes product quality. Future maintainer має знайти decision, owner і contract behind calibration ownership, identity lifecycle, diagnostic vocabulary, recovery path і traceability record. ADRs, Decision Journal і Mistake Ledger entries тримають reality attached to architecture.
 
-This chapter is not a manufacturing handbook, field-service manual, fixture-design guide, observability chapter або release-process chapter. Він makes manufacturing and field assumptions explicit before pilot use depends on them.
+This chapter не є manufacturing handbook, field-service manual, fixture-design guide, observability chapter або release-process chapter. Він робить manufacturing and field assumptions explicit, перш ніж pilot use почне від них залежати.
 
 ## Інженерний принцип
 
@@ -100,9 +100,9 @@ This chapter is not a manufacturing handbook, field-service manual, fixture-desi
 2. Хто owns that state?
 3. Яка surface може create, change, validate або retire it?
 4. Що product promises about calibration, identity, configuration і recovery?
-5. Які assumptions live in scripts, spreadsheets, private tools або team memory?
+5. Які assumptions живуть у scripts, spreadsheets, private tools або team memory?
 6. Яка field evidence має survive reset, update failure або loss of connection?
-7. Чи може support separate configuration, hardware, firmware, environment і calibration causes?
+7. Чи може support розділити configuration, hardware, firmware, environment і calibration causes?
 8. Яку dependency manufacturing або field path quietly imported?
 9. Який Change Radius, якщо assumption wrong?
 10. Яка evidence exists outside lab?
@@ -137,7 +137,7 @@ This chapter is not a manufacturing handbook, field-service manual, fixture-desi
 
 ## ADR
 
-### Chapter ADR: `Make Calibration and Recovery Product Responsibilities Before Pilot Manufacturing`
+### ADR розділу: `Make Calibration and Recovery Product Responsibilities Before Pilot Manufacturing`
 
 #### Status
 
@@ -145,19 +145,19 @@ Accepted for the chapter.
 
 #### Context
 
-Product works in lab після prototype-to-product transition. Configuration стала clearer, service tool exists, updates can be tested by engineering. Pilot build approaches. Remaining risk: product obligations still assume engineering presence: developer-assisted calibration scripts, recovery через developer laptop/private cable, identity через spreadsheet/station script, fixture access через debug connector, raw developer states in service diagnostics, field logs lost after reset.
+Product works in lab після prototype-to-product transition. Configuration стала clearer, service tool уже існує, updates can be tested by engineering. Pilot build наближається. Remaining risk: product obligations досі припускають engineering presence — developer-assisted calibration scripts, recovery через developer laptop/private cable, identity через spreadsheet/station script, fixture access через debug connector, raw developer states in service diagnostics і field logs lost after reset.
 
 #### Decision
 
-Make calibration ownership explicit. Firmware-owned calibration record includes status, version, source, validation result і enough evidence for manufacturing/support. Provide manufacturing-safe calibration/provisioning path: fixture requests calibration, submits measurements, provisions required identity/setup values through product contract, receives product-level pass/fail reasons. Він не може create separate hidden state model.
+Зробити calibration ownership explicit. Firmware-owned calibration record містить status, version, source, validation result і enough evidence for manufacturing/support. Надати manufacturing-safe calibration/provisioning path: fixture requests calibration, submits measurements, provisions required identity/setup values через product contract і receives product-level pass/fail reasons. Він не може створювати separate hidden state model.
 
-Define minimum service-visible diagnostic vocabulary, що separates configuration, hardware, firmware, environment, update і calibration causes. Make update recovery possible without developer tools. Treat identity and traceability as architecture contracts: lifecycle, ownership, validation і fields connecting board revision, component substitution, firmware, configuration, calibration і field evidence.
+Визначити minimum service-visible diagnostic vocabulary, яка separates configuration, hardware, firmware, environment, update і calibration causes. Зробити update recovery possible without developer tools. Treat identity and traceability as architecture contracts: lifecycle, ownership, validation і fields, що connect board revision, component substitution, firmware, configuration, calibration і field evidence.
 
-Record residual assumptions і review triggers in ADR, Decision Journal і Mistake Ledger as appropriate. Defer deeper variants, observability, release discipline і reference-project examples to later Part IV chapters.
+Записати residual assumptions і review triggers в ADR, Decision Journal і Mistake Ledger as appropriate. Defer deeper variants, observability, release discipline і reference-project examples to later Part IV chapters.
 
 #### Consequences
 
-Manufacturing can build repeatable units without private engineering judgment. Support can diagnose through product-level reasons. Calibration, identity, recovery і traceability мають owners. Cost: more integration work before pilot, cross-owner agreement, evidence outside lab і constraints on future variants.
+Manufacturing може build repeatable units без private engineering judgment. Support може diagnose through product-level reasons. Calibration, identity, recovery і traceability мають owners. Cost: more integration work before pilot, cross-owner agreement, evidence outside lab і constraints on future variants.
 
 #### Alternatives Considered
 
@@ -174,4 +174,4 @@ Manufacturing can build repeatable units without private engineering judgment. S
 
 Chapter 21 asks whether product decisions survive manufacturing and field reality when engineers are absent. Він не вводить new PEAK concept. Він applies Every State Has One Owner (`LAW-001`), Every API Is a Promise (`LAW-002`), Evidence Before Confidence (`LAW-005`), Every Dependency Is a Decision (`LAW-007`), Change Radius, Discoverability, ADR, Decision Journal, Mistake Ledger, Architecture Review, Architecture Freeze, Temporary Solution, Hidden State, Silent Coupling, Platform Leakage, HAL Everywhere і Global Configuration.
 
-Boundary deliberate: це не manufacturing handbook і не service manual, а architecture chapter about explicit manufacturing and field assumptions. Chapter 22 can now take configuration and product lines; Chapter 23 - observability; Chapter 24 - release; Chapter 25 - reference project.
+Boundary deliberate: це не manufacturing handbook і не service manual, а architecture chapter about explicit manufacturing and field assumptions. Chapter 22 can now take configuration and product lines; Chapter 23 — observability; Chapter 24 — release; Chapter 25 — reference project.
