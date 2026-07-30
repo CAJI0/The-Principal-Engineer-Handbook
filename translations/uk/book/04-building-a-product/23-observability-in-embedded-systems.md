@@ -8,7 +8,7 @@
 
 ### Пристрій, який не міг пояснити себе
 
-Field trial мав довести, що product може вийти з лабораторії. Device уже мав manufacturing identity, supported firmware image, supported configurations, service tool, recovery path і documented product variants. Команда перестала ставитися до кожної плати як до винятку, назвала supported product line і зробила commitments, які могли поділяти manufacturing, support і product.
+Field trial мав довести, що product може вийти з лабораторії. Device уже мав manufacturing identity, supported firmware image, supported configurations, service tool, recovery path і задокументовані product variants. Команда перестала ставитися до кожної плати як до винятку, назвала supported product line і зробила commitments, які могли поділяти manufacturing, support і product.
 
 Потім вийшов перший field update.
 
@@ -30,31 +30,31 @@ Support мав вирішити, чи повторити communication, попр
 
 Вони опиралися й протилежній помилці: не кожен цікавий рядок стає event. Principal Engineer створила Event Catalog і питала про кожен candidate event: хто ним володіє, яке рішення він підтримує, як довго має зберігатися? Events без decisions прибрали. Events без owners повернули на доопрацювання. Копії developer logs відхилили. Mistake Ledger записав хибні assumptions: reset reason доступний після boot; configuration version очевидна з firmware image; gateway error code достатній; manufacturing identity і diagnostics можна зʼєднати пізніше.
 
-Наступний field update не прибрав кожну failure. Він зробив failures пояснюваними. Один silent device сказав, що verify-нув image, migrated configuration, selected cellular variant, втратив gateway handshake після reboot і зберіг brownout reset reason. Інший сказав, що configuration migration failed, бо variant table не мала manufacturing option, burned into unit. Третій не мав device failure: gateway відхилив first report після зміни dependency contract.
+Наступний field update не прибрав кожну failure. Він зробив failures пояснюваними. Один silent device сказав, що перевірив image, виконав migration configuration, selected cellular variant, втратив gateway handshake після reboot і зберіг brownout reset reason. Інший сказав, що configuration migration failed, бо variant table не мала manufacturing option, записаної в unit. Третій не мав device failure: gateway відхилив first report після зміни dependency contract.
 
 Product усе ще мав defects. Команда більше не вгадувала, який саме defect.
 
 ## Обговорення
 
-Embedded observability - це не друкувати все, що знає firmware. Це зберігати evidence, яка дозволяє комусь ухвалити product decision, коли device далеко, частково відмовив, обмежений power, обмежений network і вже не підʼєднаний до debugger.
+Embedded observability — це не друкувати все, що знає firmware. Це зберігати evidence, яка дозволяє комусь ухвалити product decision, коли device далеко, частково відмовив, обмежений power, обмежений network і вже не підʼєднаний до debugger.
 
 Field reality жорсткіша за lab. Developer може rebuild firmware, підʼєднати tools, підняти logging, відтворити path. Support часто має generic failure message, customer report, device identity і, можливо, один шанс запитати device, що сталося. Якщо product не може відповісти stable evidence, organization підставляє confidence, habit, escalation або blame.
 
 Evidence Before Confidence (`LAW-005`) стає конкретним. Evidence має пережити event, через який вона стала потрібною. Reset reason, перезаписаний під час boot, не є field evidence. Update state, що зникає після reboot, не є field evidence. Configuration version, відома лише developer script, не є field evidence. Variant bit не є field evidence, якщо support surface не може його показати.
 
-Перший архітектурний рух - ownership. Every State Has One Owner (`LAW-001`) застосовується до diagnostics. Якщо update state скопійований у три modules, truth не належить нікому. Якщо radio driver, gateway client і product service виробляють той самий `communication failed`, product має hidden state, замаскований під simplicity. Device має називати state transition або boundary outcome на тому рівні, де meaning має owner.
+Перший архітектурний рух — ownership. Every State Has One Owner (`LAW-001`) застосовується до diagnostics. Якщо update state скопійований у три modules, truth не належить нікому. Якщо radio driver, gateway client і product service виробляють той самий `communication failed`, product має hidden state, замаскований під simplicity. Device має називати state transition або boundary outcome на тому рівні, де meaning має owner.
 
 Це API problem. Service tool — API для field organization. `communication failed` обіцяє мало. Last owned events, reset context, firmware/configuration versions, variant identity, update phase, recovery state, manufacturing identity і failure domain дають support обмежені, придатні для дії decisions.
 
-Time - це dependency. Failure може статися до reboot, під час update, після migration, під час очікування gateway response або після first report. Time Is a Dependency (`LAW-003`) не вимагає perfect wall-clock time; вона вимагає useful order: sequence numbers, boot counters, monotonic ticks, install attempts, update phases, retained reset snapshots.
+Time — це dependency. Failure може статися до reboot, під час update, після migration, під час очікування gateway response або після first report. Time Is a Dependency (`LAW-003`) не вимагає perfect wall-clock time; вона вимагає useful order: sequence numbers, boot counters, monotonic ticks, install attempts, update phases, retained reset snapshots.
 
 Every Dependency Is a Decision (`LAW-007`) зʼявляється, коли gateway behavior, radio coverage, vendor drivers, network policy, manufacturing data і configuration delivery беруть участь в одному field symptom. Observability має зробити boundary outcome достатньо явним, щоб вирішити: firmware fix, gateway fix, configuration correction, service action або dependency review.
 
-Event Catalog (`ARTIFACT-005`) - центральний artifact. Добрий event entry записує owner, name, trigger, payload, severity, retention, reset behavior, support visibility, privacy/security constraints, versioning, deprecation і supported decision. Він дає Architecture Review (`RITUAL-001`) concrete surface, а Architecture Freeze (`RITUAL-002`) - diagnostic commitments, які треба зберегти.
+Event Catalog (`ARTIFACT-005`) — центральний artifact. Добрий event entry записує owner, name, trigger, payload, severity, retention, reset behavior, support visibility, privacy/security constraints, versioning, deprecation і supported decision. Він дає Architecture Review (`RITUAL-001`) concrete surface, а Architecture Freeze (`RITUAL-002`) — diagnostic commitments, які треба зберегти.
 
 Embedded constraints усе ще важливі: RAM, flash, CPU, power, radio bandwidth, service access, privacy, security, flash wear. Малий retained ring buffer, counters, boot counter, reset snapshot або bounded crash snapshot можуть бути кращою evidence, ніж huge debug stream, який зникає або розряджає battery.
 
-Протилежний smell - Event Explosion (`SMELL-006`): багато events, мало простіших decisions. Кожен callback, retry і branch emit-ить event; field отримує noise, storage pressure, battery cost, privacy questions і unclear ownership. Discoverability погіршується. Change Radius росте, бо behavior changes торкаються logs, tools, dashboards, support procedures і tests.
+Протилежний smell — Event Explosion (`SMELL-006`): багато events, мало простіших decisions. Кожен callback, retry і branch emit-ить event; field отримує noise, storage pressure, battery cost, privacy questions і unclear ownership. Discoverability погіршується. Change Radius росте, бо behavior changes торкаються logs, tools, dashboards, support procedures і tests.
 
 Уникати Event Explosion не означає скупитися на evidence. Це означає будувати evidence навколо decisions. Якщо event не може змінити support action, engineering triage, recovery behavior, release validation або product learning, йому місце в developer debug log, а не на product diagnostic surface.
 
@@ -62,9 +62,9 @@ Embedded constraints усе ще важливі: RAM, flash, CPU, power, radio b
 
 One Lost Packet (`FAILURE-002`) нагадує: один missing fact може визначати все investigation. Тут missing fact може бути те, чи first post-update report був attempted, яка configuration була active, чи recovery ran, або чи reset стався before migration.
 
-Observability створює shared memory. ADRs записують architectural diagnostic commitments; Decision Journal записує field decisions from incomplete evidence; Mistake Ledger записує assumptions, які escaped; Weak Signal Register (`ARTIFACT-007`) і Weak Signal (`VOCAB-002`) допомагають помічати patterns before confirmed failures.
+Observability створює shared memory. ADRs записують architectural diagnostic commitments; Decision Journal записує field decisions з incomplete evidence; Mistake Ledger записує assumptions, які escaped; Weak Signal Register (`ARTIFACT-007`) і Weak Signal (`VOCAB-002`) допомагають помічати patterns перед confirmed failures.
 
-Product не потребує perfect observability platform. Йому потрібна достатня durable, owned, support-safe evidence, щоб decisions були менш speculative.
+Product не потребує perfect observability platform. Йому потрібна достатньо durable, owned, support-safe evidence, щоб decisions були менш speculative.
 
 ## Інженерний принцип
 
@@ -84,14 +84,14 @@ Product не потребує perfect observability platform. Йому потр�
 
 Оберіть ambiguous field failure або support case: device stops reporting, failed update, confusing configuration issue, manufacturing option, service-tool message, що приховує забагато.
 
-Запишіть decision, яке хтось має ухвалити з field evidence. Визначте missing evidence, що змушує guessing. Зіставте state transition або boundary outcome. Назвіть owner. Чернетково опишіть один event або diagnostic record зі stable name, payload, severity, retention rule, reset behavior, time/sequence, version, configuration, variant і manufacturing identity fields. Вирішіть support-safety, privacy/security constraint, де записується decision, і як validation доводить, що evidence survives failure path.
+Запишіть decision, яке хтось має ухвалити з field evidence. Визначте missing evidence, що змушує guessing. Зіставте state transition або boundary outcome. Назвіть owner. Чернетково опишіть один event або diagnostic record зі stable name, payload, severity, retention rule, reset behavior, time/sequence, version, configuration, variant і manufacturing identity fields. Вирішіть support-safety, privacy/security constraint, де записується decision, і як validation доводить, що evidence переживає failure path.
 
 Результати:
 
-1. one decision evidence must support;
-2. one owned event or diagnostic;
-3. one retained context requirement;
-4. one validation action.
+1. одне decision, яке evidence має підтримати;
+2. один event або diagnostic із owner;
+3. одну вимогу до збереженого context;
+4. одну validation action.
 
 ## Нотатник Principal Engineer
 
@@ -110,32 +110,32 @@ Product не потребує perfect observability platform. Йому потр�
 - Field devices можуть відмовити після update, reset, configuration migration, variant selection, gateway interaction, radio communication або recovery.
 - Developer debug logs корисні в lab, але не є stable product promise для support.
 - Current service surface може зводити багато failure domains до одного generic message.
-- Manufacturing identity, firmware/configuration versions, variant state, reset context і update state мають значення лише тоді, коли preserved і visible.
+- Manufacturing identity, firmware/configuration versions, variant state, reset context і update state мають значення лише тоді, коли їх збережено і видно.
 - Embedded constraints обмежують evidence.
 - Logging everything створив би Event Explosion.
 
 Рішення:
 
 - Підтримувати Event Catalog для product diagnostics: owner, name, trigger, payload, severity, retention, reset behavior, support visibility, privacy/security, validation і supported decision.
-- Treat update, recovery, reset, configuration, variant, gateway, radio і reporting outcomes як owned product events, коли вони впливають на field decisions.
-- Keep developer debug logs окремо від support-safe diagnostics.
+- Ставитися до update, recovery, reset, configuration, variant, gateway, radio і reporting outcomes як до owned product events, коли вони впливають на field decisions.
+- Тримати developer debug logs окремо від support-safe diagnostics.
 - Зберігати достатньо context через reset/recovery, щоб розрізняти firmware, configuration, gateway, network, power, variant, dependency і recovery causes.
 - Записувати false diagnostic assumptions і field escapes у Mistake Ledger.
 
 Наслідки:
 
 - Support може ухвалювати bounded decisions без developer tools для кожної issue.
-- Engineering може triage на основі retained evidence.
+- Engineering може виконувати triage на основі retained evidence.
 - Diagnostic events стають product API і потребують ownership, review, tests і compatibility care.
 - Event versions/deprecation стають support promises.
 - Team має відкидати noisy events і проєктувати з урахуванням storage, power, privacy, security і service-tool constraints.
 
 Розглянуті альтернативи:
 
-- Add verbose logging everywhere.
-- Keep diagnostics developer-only.
-- Add one generic field error code.
-- Defer diagnostics until after field trial.
+- Додати verbose logging всюди.
+- Залишити diagnostics лише для developers.
+- Додати один generic field error code.
+- Відкласти diagnostics до завершення field trial.
 
 Відхилено, бо ці варіанти додають noise, ховають evidence від support або відкладають саме ту evidence, яка потрібна field trial.
 
