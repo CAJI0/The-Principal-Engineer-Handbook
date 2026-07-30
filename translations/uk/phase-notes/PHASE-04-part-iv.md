@@ -64,3 +64,28 @@ Translation Draft complete. Ready for Terminology Review.
   - Canonical labels, PEAK IDs, artifact names, code spans, commands, file paths, interface literals, and embedded/software terms were preserved where required for correctness.
   - No Phase 4 review gates were completed in this remediation run.
   - Phase 5 was not started.
+
+## Terminology Review
+
+- Outcome: Passed.
+- Baseline commit before gate: `4474a08937efc2b84085d566dc6912e780b46f10`
+- Source baseline: `v1.0.0` (`5baef38d555712d6e572888285d3715e46fba118`)
+- Scope reviewed:
+  - `translations/uk/book/04-building-a-product/README.md`
+  - `translations/uk/book/04-building-a-product/20-from-prototype-to-product.md`
+  - `translations/uk/book/04-building-a-product/21-designing-for-manufacturing-and-field-reality.md`
+  - `translations/uk/book/04-building-a-product/22-configuration-variants-and-product-lines.md`
+  - `translations/uk/book/04-building-a-product/23-observability-in-embedded-systems.md`
+  - `translations/uk/book/04-building-a-product/24-release-discipline-and-upgrade-paths.md`
+  - `translations/uk/book/04-building-a-product/25-reference-project-walkthrough.md`
+- Findings:
+  - Canonical source-to-target coverage passed for the complete Phase 4 scope.
+  - Section structure, ADR content, exercises, notebook sections, examples, IDs, code spans, paths, links, and exact literals remain aligned with canonical source and localization governance.
+  - Previously reported English heading, quoted-assumption, part-reference, and ordinary-sentence blockers are corrected.
+  - Broad Latin-script audit found 324 candidate lines and 55 sentence-like Latin lines. All were classified as governed artifact or concept names, stable IDs, acronyms, versions, paths, exact event/message literals, or the proper name `Field Sensor Gateway`.
+  - Exact message literals `write failed`, `unsupported operation`, and `update failed` were verified against canonical source and intentionally retained.
+  - No known or unclassified reader-facing English prose remains in Phase 4.
+  - Strict UTF-8 integrity passed for all seven Phase 4 files.
+  - No canonical English source, governance, tooling, review-record, Phase 5, or later-phase file was modified during the review.
+- Remaining terminology questions:
+  - None for this gate.
