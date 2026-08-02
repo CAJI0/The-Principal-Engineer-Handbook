@@ -174,3 +174,30 @@ Translation Draft complete. Ready for Terminology Review.
   - The remediation commit changed only Chapter 23 in the Phase 4 scope and did not modify the README, Gate records, phase notes, governance files, glossary, tooling, canonical `book/`, Phase 5, later phases, or unrelated files.
 - Remaining terminology questions:
   - None for this gate.
+
+## Ukrainian Editorial Review - Post-Editorial-Remediation 3 Re-review
+
+- Outcome: Passed.
+- Baseline commit before gate: `fe4c9b0f17b001bfc5eae2845fb05587b95056d7`
+- Reader-facing translation state reviewed: `65e32af63b0b5e78e7a2a7c2e6d9b6a7e14d95eb`
+- Source baseline: `v1.0.0` (`5baef38d555712d6e572888285d3715e46fba118`)
+- Scope reviewed:
+  - `translations/uk/book/04-building-a-product/README.md`
+  - `translations/uk/book/04-building-a-product/20-from-prototype-to-product.md`
+  - `translations/uk/book/04-building-a-product/21-designing-for-manufacturing-and-field-reality.md`
+  - `translations/uk/book/04-building-a-product/22-configuration-variants-and-product-lines.md`
+  - `translations/uk/book/04-building-a-product/23-observability-in-embedded-systems.md`
+  - `translations/uk/book/04-building-a-product/24-release-discipline-and-upgrade-paths.md`
+  - `translations/uk/book/04-building-a-product/25-reference-project-walkthrough.md`
+- Findings:
+  - The complete seven-file Phase 4 scope was read as Ukrainian handbook prose after the fresh terminology re-review.
+  - The Chapter 23 Mistake Ledger sentence changed in `65e32af63b0b5e78e7a2a7c2e6d9b6a7e14d95eb` is natural Ukrainian in context and preserves the canonical meaning of false assumptions whose consequences manifested during field operation.
+  - The previous literal `припущення, що втекли в поле` blocker is absent from the reader-facing Phase 4 tree.
+  - Known `field escape` defect formulations in Chapters 21 and 23 remain natural and precise as defects or wrong assumptions discovered in field conditions.
+  - Remaining `вислизнуло` / `вислизнули` uses in Chapters 24 and 25 match canonical `almost escaped`, `escaped release assumptions`, or `escaped assumptions discovered during pilot` contexts and do not repeat the Chapter 23 physical-motion calque.
+  - Ownership and responsibility language remains natural; no blocker-level `володіє` ownership calque was found.
+  - `зіставляє`, `відображення`, `повʼязати`, bring-up / logging-level wording, authoritative-source wording, decision reopening, ADR/RFC/Event Catalog recording actions, and the graph-weight construction were inspected in context and remain idiomatic or technically justified.
+  - Exact message literals `write failed`, `unsupported operation`, `communication failed`, and `update failed` remain only in machine-visible support-tool or product-output contexts.
+  - No new Ukrainian grammar, syntax, agreement, punctuation, referent, agency, responsibility, authority, artifact-lifecycle, or decision-boundary blocker was found.
+- Remaining editorial questions:
+  - None for this gate.
