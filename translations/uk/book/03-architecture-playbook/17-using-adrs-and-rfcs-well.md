@@ -136,7 +136,7 @@ Configuration-update protocol affects firmware, gateway, service tooling, manufa
 
 Convert live protocol proposal into RFC before accepting architecture decision. RFC records motivation, scope, non-goals, proposal, risks, evidence, assumptions, alternatives, affected owners and open questions. It names proposal owner and decision owner. Affected contract review.
 
-Use RFC Friday for lightweight review while alternatives remain open. Escalate unresolved cross-boundary risk to Architecture Review. Close RFC clearly. After acceptance, write ADR with context, decision, consequences, alternatives, owner, status and revisit trigger. Link ADR to RFC, implementation, compatibility tests, release notes, support diagnostics and Architecture Ledger.
+Use RFC Friday for lightweight review while alternatives remain open. Escalate unresolved cross-boundary risk to Architecture Review. Close RFC with an explicit outcome. After acceptance, write ADR with context, decision, consequences, alternatives, owner, status and revisit trigger. Link ADR to RFC, implementation, compatibility tests, release notes, support diagnostics and Architecture Ledger.
 
 Use Decision Journal for smaller reversible choices. Preserve superseded ADRs and link successors.
 

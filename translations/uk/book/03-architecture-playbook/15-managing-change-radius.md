@@ -117,7 +117,7 @@ Ask:
 9. What remains unknown?
 10. Which evidence no longer transfers?
 11. What sequence preserves compatibility?
-12. Which boundaryboundary accepts residual radius?
+12. Which boundary accepts residual radius?
 
 ## Архітектурна вправа
 
