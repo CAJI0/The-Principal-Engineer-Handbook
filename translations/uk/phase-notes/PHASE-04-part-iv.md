@@ -201,3 +201,44 @@ Translation Draft complete. Ready for Terminology Review.
   - No new Ukrainian grammar, syntax, agreement, punctuation, referent, agency, responsibility, authority, artifact-lifecycle, or decision-boundary blocker was found.
 - Remaining editorial questions:
   - None for this gate.
+
+## Publishing Review - Post-Vale-Remediation Review
+
+- Outcome: Passed.
+- Baseline commit before gate: `6165f9f4b837fc8cc680d3cadc340c304a692c6d`
+- Reader-facing translation state reviewed: `65e32af63b0b5e78e7a2a7c2e6d9b6a7e14d95eb`
+- Gate 1 evidence: `fe4c9b0f17b001bfc5eae2845fb05587b95056d7`
+- Gate 2 evidence: `3f3ecdc142488476be3628de344e17a46a792940`
+- Source baseline: `v1.0.0` (`5baef38d555712d6e572888285d3715e46fba118`)
+- Scope reviewed:
+  - `translations/uk/book/04-building-a-product/README.md`
+  - `translations/uk/book/04-building-a-product/20-from-prototype-to-product.md`
+  - `translations/uk/book/04-building-a-product/21-designing-for-manufacturing-and-field-reality.md`
+  - `translations/uk/book/04-building-a-product/22-configuration-variants-and-product-lines.md`
+  - `translations/uk/book/04-building-a-product/23-observability-in-embedded-systems.md`
+  - `translations/uk/book/04-building-a-product/24-release-discipline-and-upgrade-paths.md`
+  - `translations/uk/book/04-building-a-product/25-reference-project-walkthrough.md`
+- Findings:
+  - Phase 4 source-to-target inventory passed: seven canonical Part IV Markdown files and seven Ukrainian counterparts.
+  - All seven Phase 4 reader-facing files remain byte-for-byte unchanged from the state certified by the post-remediation Gate 1 and Gate 2 records.
+  - The Vale remediation changed only glossary wording, Phase 3 wording, and phase-note wording; it did not change Phase 4 reader-facing prose, terminology policy, technical meaning, prior gate outcomes, tooling, canonical `book/`, Phase 5, later phases, or unrelated files.
+  - Strict UTF-8 and corruption scans passed for all seven Phase 4 files and every file changed by the Vale remediation.
+  - No generated `site/` or `dist/` output is tracked.
+- Validation:
+  - `git diff --check` - passed.
+  - `git diff --check 3f3ecdc142488476be3628de344e17a46a792940..HEAD` - passed.
+  - Phase 4 source/target inventory - passed.
+  - Strict UTF-8 and corruption scan - passed.
+  - `npm.cmd run lint:md` - passed.
+  - `npm.cmd run lint:spelling` - passed.
+  - `npm.cmd run lint:links` - passed.
+  - `npx.cmd linkinator "translations/uk/**/*.md" --markdown --recurse --skip "^mailto:" --skip "node_modules" --skip "site" --timeout 60000` - passed.
+  - `vale .` - passed with 0 errors, 3 warnings, and 0 suggestions.
+  - `python -m mkdocs build --strict` - passed.
+  - `python -m pip check` - passed.
+- Retained Vale warnings:
+  - `CONTRIBUTING.md:29` - `PrincipalEngineerHandbook.AuthorBoundary`; pre-existing on `origin/main` and not introduced or changed by Phase 4 work.
+  - `editor/ARCHITECTURE_REVIEW_0.md:49` - `PrincipalEngineerHandbook.AuthorBoundary`; pre-existing on `origin/main` and not introduced or changed by Phase 4 work.
+  - `editor/SOURCE_OF_TRUTH.md:20` - `PrincipalEngineerHandbook.AuthorBoundary`; pre-existing on `origin/main` and not introduced or changed by Phase 4 work.
+- Remaining publishing questions:
+  - None for this gate.
