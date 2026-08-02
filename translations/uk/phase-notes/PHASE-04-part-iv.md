@@ -114,7 +114,7 @@ Translation Draft complete. Ready for Terminology Review.
   - Stable PEAK IDs, links, code spans, versions, and exact message literals remain aligned with canonical source and localization governance.
   - Broad Latin-script audit found 324 candidate lines. All inspected sentence-like candidates were classified as governed canonical names, artifact or concept names, stable IDs, acronyms, versions, paths, exact message literals, or the proper name `Field Sensor Gateway`.
   - Exact message literals `write failed`, `unsupported operation`, `communication failed`, and `update failed` were verified in machine-visible contexts and intentionally retained.
-  - Strict UTF-8 integrity passed for all seven Phase 4 files, with no replacement characters, `???` substitution, mojibake patterns, or suspicious loss of Cyrillic text.
+  - Strict UTF-8 integrity passed for all seven Phase 4 files, with no replacement characters, question-mark substitution, encoding-corruption patterns, or suspicious loss of Cyrillic text.
   - The remediation commit changed only Chapters 20-25 in the Phase 4 scope and did not modify the README, Gate records, phase notes, governance files, glossary, tooling, canonical `book/`, Phase 5, later phases, or unrelated files.
 - Remaining terminology questions:
   - None for this gate.
@@ -139,11 +139,11 @@ Translation Draft complete. Ready for Terminology Review.
   - The remediation diff from `3ed3a55d3519cfaefef2e656f788b2cd74ad986f` to `353afa32039f59305e14b7805682672915293724` was compared against canonical `v1.0.0`, the pre-remediation Ukrainian text, and the current Ukrainian text.
   - The `field escape` remediation preserves the canonical distinction among defects found in manufacturing, defects found in field conditions, containment, evidence, and corrective action.
   - The `map` remediation preserves the canonical relation between internal state and support-safe diagnostic reasons.
-  - The `bring-up`, `authority`, `reopen decision`, `expose assumptions`, and `open Architecture Review` remediations preserve the intended technical or governance action without changing terminology policy.
+  - The `bring-up`, `authority`, `reopen decision`, `expose assumptions`, and `open Architecture Review` remediation changes preserve the intended technical or governance action without changing terminology policy.
   - Stable PEAK IDs, links, code spans, versions, exact message literals, governed artifact names, and the proper name `Field Sensor Gateway` remain aligned with canonical source and localization governance.
   - Broad Latin-script audit found 324 candidate lines and 48 sentence-like Latin lines. All inspected candidates were classified as governed canonical names, artifact or concept names, stable IDs, acronyms, versions, paths, exact message literals, links, or proper names.
   - Exact message literals `write failed`, `unsupported operation`, `communication failed`, and `update failed` were verified in machine-visible contexts and intentionally retained.
-  - Strict UTF-8 integrity passed for all seven Phase 4 files, with no replacement characters, `???` substitution, mojibake patterns, or suspicious loss of Cyrillic text.
+  - Strict UTF-8 integrity passed for all seven Phase 4 files, with no replacement characters, question-mark substitution, encoding-corruption patterns, or suspicious loss of Cyrillic text.
   - The remediation commit changed only Chapters 20-25 in the Phase 4 scope and did not modify the README, Gate records, phase notes, governance files, glossary, tooling, canonical `book/`, Phase 5, later phases, or unrelated files.
 - Remaining terminology questions:
   - None for this gate.
@@ -170,7 +170,7 @@ Translation Draft complete. Ready for Terminology Review.
   - Stable PEAK IDs, links, code spans, versions, exact message literals, governed artifact names, canonical concept names, and the proper name `Field Sensor Gateway` remain aligned with canonical source and localization governance.
   - Broad Latin-script audit found 324 candidate lines and 11 sentence-like lines after filtering code spans, links, stable IDs, acronyms, and governed names. All inspected candidates were classified as governed canonical names, artifact or concept names, stable IDs, acronyms, versions, paths, exact message literals, links, or proper names.
   - Exact message literals `write failed`, `unsupported operation`, `communication failed`, and `update failed` were verified in machine-visible contexts and intentionally retained.
-  - Strict UTF-8 integrity passed for all seven Phase 4 files, with no replacement characters, `???` substitution, mojibake patterns, or suspicious loss of Cyrillic text.
+  - Strict UTF-8 integrity passed for all seven Phase 4 files, with no replacement characters, question-mark substitution, encoding-corruption patterns, or suspicious loss of Cyrillic text.
   - The remediation commit changed only Chapter 23 in the Phase 4 scope and did not modify the README, Gate records, phase notes, governance files, glossary, tooling, canonical `book/`, Phase 5, later phases, or unrelated files.
 - Remaining terminology questions:
   - None for this gate.

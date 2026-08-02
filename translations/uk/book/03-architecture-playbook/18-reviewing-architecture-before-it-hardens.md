@@ -38,7 +38,7 @@ Change Radius (`VOCAB-001` and `METRIC-001`) changed participant list. Decision 
 
 Evidence split into groups: strong enough (device parses/rejects happy path), missing but obtainable (old gateway forwarding, old firmware rejection, service-tool translation, fixture handling), and not blocker if owned (station-only metadata outside payload with Decision Journal trigger).
 
-Outcome was not simply approved or blocked:
+Outcome was not just approved or blocked:
 
 - proceed with envelope shape for firmware work that creates no compatibility promises;
 - change service-tool contract so product-level rejection reasons are stable and raw firmware diagnostics stay diagnostic;

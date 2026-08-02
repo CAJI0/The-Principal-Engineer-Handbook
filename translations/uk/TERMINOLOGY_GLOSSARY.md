@@ -40,7 +40,7 @@
 | Review habit | звичка перегляду | Use for repeated practice questions after an engineering principle. | Avoid leaving the phrase as standalone English outside canonical labels. |
 | hardening point | точка затвердіння | Use for the moment after which a decision becomes expensive to change. | Introduced in Phase 3 review practice. |
 | allowed movement | дозволений рух | Use in Architecture Freeze context. | Means changes permitted inside a frozen decision. |
-| exception path | шлях винятку | Use in Architecture Freeze context. | Means the controlled path for changing or revalidating a frozen decision. |
+| exception path | шлях винятку | Use in Architecture Freeze context. | Means the controlled path for changing or validating a frozen decision again. |
 | contract | контракт | Use for behavioral/API/architecture promises. | Keep `API` and canonical artifact names in English. |
 | owner | власник | Use for a responsible authority in architecture decisions. | Prefer contextual responsibility language where Ukrainian flow requires it. |
 | firmware | firmware | Preserve in English. | Common embedded term; translate surrounding prose. |

@@ -52,7 +52,7 @@ Team drew intended boundary around product-owned control behavior. Product owner
 
 Контракт став явним because Every API Is a Promise (`LAW-002`): product-level commands, accepted inputs, observable outcomes, completion semantics, failure categories, retry ownership, recovery handoff і lifecycle constraints.
 
-Dependency direction changed. Runtime still had callbacks, queues and async completion, but design knowledge stopped pointing from product policy into vendor mechanism. Adapter depended on product-owned contract; product code no longer depended on vendor headers, RTOS bits, packet types, socket structures або driver retry meanings.
+Dependency direction changed. Runtime still had callbacks, queues and asynchronous completion, but design knowledge stopped pointing from product policy into vendor mechanism. Adapter depended on product-owned contract; product code no longer depended on vendor headers, RTOS bits, packet types, socket structures або driver retry meanings.
 
 That made Every Dependency Is a Decision (`LAW-007`) visible. Vendor still mattered; boundary did not pretend hardware reality disappeared. It constrained where imported knowledge could spread.
 
@@ -169,7 +169,7 @@ Product code uses product vocabulary. UI, persistence, command handling, diagnos
 
 Assign authoritative radio control state to product owner. Driver callbacks and adapter events report observations and completions; they do not mutate product truth outside owner.
 
-Place vendor operations in adapters. Adapters translate identifiers, status values, packet shapes, errors, completion, timing assumptions and diagnostics at edge. Preserve async completion without exposing vendor callback signatures as product contract.
+Place vendor operations in adapters. Adapters translate identifiers, status values, packet shapes, errors, completion, timing assumptions and diagnostics at edge. Preserve asynchronous completion without exposing vendor callback signatures as product contract.
 
 Remove direct platform bypasses from product paths. Migrate outbound product message submission first. Record current and desired Change Radius for second radio integration.
 

@@ -22,7 +22,7 @@
 ## Terminology Decisions
 
 - `Principal Engineer`, `ADR`, `RFC`, `API`, `Decision Journal`, `Architecture Review`, `Architecture Ledger`, `Architecture Freeze`, `Change Radius`, `Discoverability`, and PEAK IDs remain in English according to the Ukrainian glossary.
-- Chapter titles use natural Ukrainian while preserving recognizability:
+- Chapter titles use natural Ukrainian while keeping them recognizable:
   - `Architecture Playbook` -> `Архітектурний playbook`
   - `Drawing Boundaries That Survive Change` -> `Проведення меж, які витримують зміни`
   - `Managing Change Radius` -> `Керування Change Radius`
