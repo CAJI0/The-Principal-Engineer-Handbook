@@ -97,3 +97,29 @@ Scope confirmation:
 - No review gate, pull request, merge, release, or Phase 6 work was performed.
 
 Outcome: Translation Draft complete. Ready for Terminology Review.
+
+## Terminology Review - Post-Remediation-2
+
+- Outcome: Passed.
+- Baseline commit before gate: `56f88d1c8574d4d03298ef3008069ea8905187e5`.
+- Source baseline: `v1.0.0` (`5baef38d555712d6e572888285d3715e46fba118`).
+- Scope reviewed:
+  - `translations/uk/book/05-engineering-organization/README.md`
+  - `translations/uk/book/05-engineering-organization/26-technical-leadership-without-authority.md`
+  - `translations/uk/book/05-engineering-organization/27-design-reviews-as-shared-memory.md`
+  - `translations/uk/book/05-engineering-organization/28-building-engineering-rituals.md`
+  - `translations/uk/book/05-engineering-organization/29-mentoring-through-artifacts.md`
+  - `translations/uk/book/05-engineering-organization/30-aligning-teams-around-decisions.md`
+  - `translations/uk/book/05-engineering-organization/31-architecture-health-reviews.md`
+- Findings:
+  - Canonical source-to-target coverage passed for the complete seven-file Phase 5 scope. The Ukrainian README follows the accepted localized-overview precedent and supplies only Chapter 26-31 navigation instead of exposing the canonical author note.
+  - Heading and fenced-code inventories match every canonical source/target pair. Phase 5 source-to-target inventory is `7/7`, with missing `0` and extra `0`.
+  - Stable PEAK identifiers are preserved exactly in Chapters 26-31: missing `0`, extra `0`. Canonical links, literals, artifact names, code spans, product labels, and technical identifiers remain aligned with `v1.0.0`.
+  - Terminology preserves the distinctions among technical influence, authority, responsibility, ownership, evidence, alignment, obligations, review triggers, ritual cadence, reusable mentoring artifacts, and Architecture Health without introducing a score, dashboard, or governance layer.
+  - The two remediation diffs were reviewed against the canonical source and preserve the intended review-trigger, mentoring, architecture-health, boundary, and decision-scope meanings.
+  - Fresh residual-English audit found `201` broad targeted candidate lines and `5` sentence-like Latin-script candidate lines. The sentence-like candidates were classified as three Markdown link paths, governed PEAK names with stable IDs, and the exact canonical UI/ADR literals `apply configuration` and `Retry failed gateway requests three times with exponential delay`.
+  - Both generations of reported Gate 1 blockers are absent from ordinary reader-facing prose, including mixed review-trigger phrasing, English mentoring quotations, health-signal and boundary framing, evidence-based scoped-decision wording, outputs/health-review fragments, and the earlier provisioning, ownership, delayed-telemetry, workflow, diagnostic-language, and ritual-label patterns.
+  - Strict UTF-8 integrity passed for all eight Phase 5 files. No replacement characters, question-mark substitution, mojibake, conflict markers, unintended control characters, or suspicious Cyrillic loss were found.
+  - No canonical English source, prior or later translation phase, governance, glossary, tooling, generated output, or review record changed during this gate.
+- Remaining terminology questions:
+  - None.
