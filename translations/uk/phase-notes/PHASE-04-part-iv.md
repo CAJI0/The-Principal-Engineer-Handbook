@@ -147,3 +147,30 @@ Translation Draft complete. Ready for Terminology Review.
   - The remediation commit changed only Chapters 20-25 in the Phase 4 scope and did not modify the README, Gate records, phase notes, governance files, glossary, tooling, canonical `book/`, Phase 5, later phases, or unrelated files.
 - Remaining terminology questions:
   - None for this gate.
+
+## Terminology Review - Post-Editorial-Remediation 3 Re-review
+
+- Outcome: Passed.
+- Baseline commit before gate: `65e32af63b0b5e78e7a2a7c2e6d9b6a7e14d95eb`
+- Previous terminology record: `dc6674c72c0fee4898175166ea3ea2d1c1f387fa`
+- Source baseline: `v1.0.0` (`5baef38d555712d6e572888285d3715e46fba118`)
+- Scope reviewed:
+  - `translations/uk/book/04-building-a-product/README.md`
+  - `translations/uk/book/04-building-a-product/20-from-prototype-to-product.md`
+  - `translations/uk/book/04-building-a-product/21-designing-for-manufacturing-and-field-reality.md`
+  - `translations/uk/book/04-building-a-product/22-configuration-variants-and-product-lines.md`
+  - `translations/uk/book/04-building-a-product/23-observability-in-embedded-systems.md`
+  - `translations/uk/book/04-building-a-product/24-release-discipline-and-upgrade-paths.md`
+  - `translations/uk/book/04-building-a-product/25-reference-project-walkthrough.md`
+- Findings:
+  - This is a fresh Gate 1 review of the reader-facing state after `fix(translation): resolve residual phase 4 editorial calques`, not a reuse of any historical Gate 1 record.
+  - Canonical source-to-target coverage passed for the complete seven-file Phase 4 scope.
+  - The remediation diff from `dc6674c72c0fee4898175166ea3ea2d1c1f387fa` to `65e32af63b0b5e78e7a2a7c2e6d9b6a7e14d95eb` was compared against canonical `v1.0.0`, the pre-remediation Ukrainian text, and the current Ukrainian text.
+  - The Chapter 23 Mistake Ledger remediation preserves that the ledger records false assumptions whose consequences became visible in field operation, without implying that the assumptions themselves physically moved or escaped.
+  - Stable PEAK IDs, links, code spans, versions, exact message literals, governed artifact names, canonical concept names, and the proper name `Field Sensor Gateway` remain aligned with canonical source and localization governance.
+  - Broad Latin-script audit found 324 candidate lines and 11 sentence-like lines after filtering code spans, links, stable IDs, acronyms, and governed names. All inspected candidates were classified as governed canonical names, artifact or concept names, stable IDs, acronyms, versions, paths, exact message literals, links, or proper names.
+  - Exact message literals `write failed`, `unsupported operation`, `communication failed`, and `update failed` were verified in machine-visible contexts and intentionally retained.
+  - Strict UTF-8 integrity passed for all seven Phase 4 files, with no replacement characters, `???` substitution, mojibake patterns, or suspicious loss of Cyrillic text.
+  - The remediation commit changed only Chapter 23 in the Phase 4 scope and did not modify the README, Gate records, phase notes, governance files, glossary, tooling, canonical `book/`, Phase 5, later phases, or unrelated files.
+- Remaining terminology questions:
+  - None for this gate.
