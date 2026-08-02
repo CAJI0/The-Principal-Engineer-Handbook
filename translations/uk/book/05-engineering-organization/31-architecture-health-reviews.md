@@ -160,7 +160,7 @@ Review має повʼязати кожен сигнал із рішенням �
 
 Заверш із:
 
-1. одним health signal;
+1. одним сигналом архітектурного здоровʼя;
 2. одним рішенням;
 3. одним власником;
 4. одним оновленням артефакту;
@@ -174,7 +174,7 @@ Review має повʼязати кожен сигнал із рішенням �
 
 ## ADR
 
-### Запровадити quarterly Architecture Health Review для provisioning boundary
+### Запровадити щоквартальний Architecture Health Review для межі провізіонування
 
 #### Статус
 
@@ -228,7 +228,7 @@ Review дає явні рішення: лишити, відремонтуват�
 
 Нічого не робити, бо система зараз працює.
 
-Кожна альтернатива пропускає evidence-based, scoped decisions про поточну здатність архітектури нести необхідні зміни.
+Кожна альтернатива оминає рішення, засновані на доказах і обмежені визначеною сферою, щодо поточної здатності архітектури нести необхідні зміни.
 
 ## Коментар редактора
 
@@ -236,8 +236,8 @@ Review дає явні рішення: лишити, відремонтуват�
 
 Зареєстровані концепти активні: `LAW-001`, `LAW-002`, `METRIC-004`, `LAW-005`, `LAW-006`, `ANTIPATTERN-006`, `LAW-007`, Change Radius (`VOCAB-001`, `METRIC-001`), Bus Factor (`METRIC-002`), Discoverability (`METRIC-003`) і Weak Signal (`VOCAB-002`). Записи включають ADR (`ARTIFACT-001`), RFC (`ARTIFACT-002`), Decision Journal (`ARTIFACT-003`), Mistake Ledger (`ARTIFACT-004`), Event Catalog (`ARTIFACT-005`), Architecture Ledger (`ARTIFACT-006`) і Weak Signal Register (`ARTIFACT-007`).
 
-Smells і failures лишаються суттєвими: Silent Coupling (`SMELL-001`), Hidden State (`SMELL-004`), Platform Leakage (`SMELL-005`), Event Explosion (`SMELL-006`), Global Configuration (`ANTIPATTERN-003`), The Hero Engineer (`FAILURE-004`) і Release and Upgrade Failure (`FAILURE-005`).
+Архітектурні запахи та історії відмов лишаються суттєвими: Silent Coupling (`SMELL-001`), Hidden State (`SMELL-004`), Platform Leakage (`SMELL-005`), Event Explosion (`SMELL-006`), Global Configuration (`ANTIPATTERN-003`), The Hero Engineer (`FAILURE-004`) і Release and Upgrade Failure (`FAILURE-005`).
 
-Architecture Review (`RITUAL-001`) і Architecture Freeze (`RITUAL-002`) лишаються межами й можливими outputs, а не дублями health review.
+Architecture Review (`RITUAL-001`) і Architecture Freeze (`RITUAL-002`) лишаються межами й можливими результатами, а не дублями Architecture Health Review.
 
 Межа з Part VI навмисна. Розділ 31 може сказати, що нездорова, погано запамʼятана архітектура стає майбутньою роботою з legacy, але він не навчає модернізації. Розділ 32 відповідає за цей поворот.
